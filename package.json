@@ -1,0 +1,58 @@
+{
+  "name": "mindwp-web",
+  "version": "0.1.0",
+  "private": true,
+  "engines": {
+    "node": ">=20"
+  },
+  "packageManager": "pnpm@11.1.0",
+  "scripts": {
+    "dev": "next dev",
+    "dev-ref": "pnpm --dir _dev-reference/current-site exec next dev -p 3010",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "typecheck": "next typegen && tsc --noEmit",
+    "format": "prettier --write .",
+    "check:copy": "node scripts/check-public-copy.mjs",
+    "check:skills": "node scripts/check-skills.mjs",
+    "check:tools": "node --test tests/scripts/*.test.mjs",
+    "check": "pnpm typecheck && pnpm lint && pnpm check:copy && pnpm check:skills && pnpm check:tools",
+    "test": "playwright test",
+    "capture:route": "node scripts/capture-route.mjs",
+    "capture:home": "node scripts/capture-homepage.mjs",
+    "context:page": "node scripts/export-page-context.mjs"
+  },
+  "dependencies": {
+    "clsx": "2.1.1",
+    "gsap": "^3.15.0",
+    "next": "16.2.6",
+    "react": "19.2.6",
+    "react-dom": "19.2.6",
+    "resend": "6.12.3",
+    "zod": "4.4.3"
+  },
+  "devDependencies": {
+    "@eslint/js": "9.39.4",
+    "@playwright/test": "1.60.0",
+    "@types/node": "20.19.41",
+    "@types/react": "19.2.14",
+    "@types/react-dom": "19.2.3",
+    "@typescript-eslint/eslint-plugin": "8.59.3",
+    "@typescript-eslint/parser": "8.59.3",
+    "axe-core": "4.11.4",
+    "eslint": "9.39.4",
+    "eslint-plugin-jsx-a11y": "6.10.2",
+    "eslint-plugin-react-hooks": "7.1.1",
+    "eslint-plugin-simple-import-sort": "12.1.1",
+    "playwright": "1.60.0",
+    "prettier": "3.8.3",
+    "typescript": "5.9.3"
+  },
+  "pnpm": {
+    "ignoredBuiltDependencies": [
+      "sharp"
+    ]
+  }
+}

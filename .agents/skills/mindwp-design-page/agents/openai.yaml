@@ -1,0 +1,4 @@
+interface:
+  display_name: "MindWP Design Page"
+  short_description: "Build approval-ready MindWP desktop drafts"
+  default_prompt: "Use $mindwp-design-page to turn approved meaning into three to five private spatial constructions, block and build the complete 1640px page, pass a reference-blind composition critique, then calibrate against MindWP brand references before showing the first qualifying draft."

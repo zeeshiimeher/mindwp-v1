@@ -1,0 +1,4 @@
+interface:
+  display_name: "MindWP Finish Page"
+  short_description: "Finish and audit responsive MindWP pages"
+  default_prompt: "Use $mindwp-finish-page to finish, test, audit, and if authorised repair this implemented MindWP page from current source and rendered evidence."

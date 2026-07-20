@@ -1,0 +1,225 @@
+.site-header,
+.section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.section {
+  --section-padding-block: clamp(4rem, 6.5vw, 6rem);
+  --section-gap: var(--space-8);
+
+  gap: var(--section-gap);
+  padding-block: var(--section-padding-block);
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--page-margin);
+}
+
+.container--narrow {
+  max-width: var(--container-narrow);
+}
+
+.container--content {
+  max-width: var(--container-content);
+}
+
+.container--wide {
+  max-width: var(--container-wide);
+}
+
+.container--flow,
+.section-intro,
+.section-title-group,
+.section-copy-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.container--flow,
+.section-intro {
+  gap: var(--container-gap, var(--space-6));
+}
+
+.section-title-group {
+  gap: var(--space-5);
+}
+
+.container--split,
+.section-intro--split {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--container-gap, var(--space-9));
+}
+
+.section-intro--split {
+  align-items: end;
+}
+
+.section-intro--centered {
+  align-items: center;
+  text-align: center;
+}
+
+.section-copy-group {
+  align-items: flex-start;
+}
+
+.section-copy-group > p {
+  max-width: 35rem;
+}
+
+.section-intro--centered > p {
+  max-width: 42rem;
+}
+
+@media (max-width: 48rem) {
+  .section {
+    --section-padding-block: clamp(3.25rem, 12vw, 4.5rem);
+    --section-gap: var(--space-7);
+  }
+
+  .container--split,
+  .section-intro--split {
+    grid-template-columns: 1fr;
+  }
+
+  .section-intro--split {
+    align-items: start;
+  }
+}
+
+.site-header {
+  position: fixed;
+  top: 0;
+  inset-inline: 0;
+  z-index: 20;
+  min-height: 3.5rem;
+  border-bottom: 1px solid transparent;
+  background: transparent;
+  transition:
+    background-color 220ms var(--ease-out),
+    border-color 220ms var(--ease-out);
+}
+
+.site-header--solid {
+  border-bottom-color: var(--color-line);
+  background: rgb(255 255 255 / 92%);
+  backdrop-filter: blur(1rem);
+}
+
+.site-header--on-dark .site-header__brand {
+  color: var(--color-white);
+}
+
+.site-header__inner {
+  min-height: 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+}
+
+.site-header__brand {
+  color: var(--text-primary);
+  font: italic 500 1.25rem/1 var(--font-display);
+  letter-spacing: 0.01em;
+  text-decoration: none;
+}
+
+.skip-link {
+  position: fixed;
+  top: var(--space-3);
+  left: var(--space-3);
+  z-index: 1000;
+  translate: 0 -200%;
+  border-radius: var(--radius-sm);
+  background: var(--color-navy);
+  color: var(--color-white);
+  padding: var(--space-3) var(--space-4);
+}
+
+.skip-link:focus-visible {
+  translate: 0;
+}
+
+@media (max-width: 26rem) {
+  .site-header__inner .btn {
+    padding-inline: var(--space-4);
+    font-size: 0.8125rem;
+  }
+}
+
+.site-footer {
+  background: var(--surface-navy);
+}
+
+.site-footer__top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--space-9);
+  padding-block: var(--space-9) var(--space-8);
+  border-bottom: 1px solid var(--border-navy-hairline);
+}
+
+.site-footer__brand {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  max-width: 20rem;
+}
+
+.site-footer__brand a {
+  width: fit-content;
+  color: var(--text-inverse);
+  font: italic 500 1.375rem/1 var(--font-display);
+  text-decoration: none;
+}
+
+.site-footer__columns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-8) var(--space-9);
+}
+
+.site-footer__column {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  min-width: 9rem;
+}
+
+.site-footer__column-title {
+  color: var(--text-inverse-muted);
+  font: var(--label-caps);
+  letter-spacing: var(--label-caps-tracking);
+  text-transform: uppercase;
+}
+
+.site-footer__column a {
+  width: fit-content;
+  color: var(--text-inverse-muted);
+  font: var(--body-sm);
+  text-decoration: none;
+  transition: color var(--duration-fast) var(--ease-out);
+}
+
+.site-footer__column a:hover {
+  color: var(--text-inverse);
+}
+
+.site-footer__bottom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--space-3) var(--space-6);
+  padding-block: var(--space-6);
+  font: var(--body-xs);
+  color: var(--text-inverse-muted);
+}

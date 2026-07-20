@@ -1,0 +1,4 @@
+interface:
+  display_name: "MindWP Site"
+  short_description: "Route broad MindWP page work concisely"
+  default_prompt: "Use $mindwp-site to route this MindWP task to the smallest correct page phase and authority set."

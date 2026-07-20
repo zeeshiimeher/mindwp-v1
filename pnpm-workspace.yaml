@@ -1,0 +1,10 @@
+# pnpm 11 build-script decisions. sharp's native binary isn't needed for our
+# build (no build-time image optimization yet; the Cloudflare target handles
+# images separately), so its build script is explicitly skipped.
+allowBuilds:
+  sharp: false
+  unrs-resolver: false
+  # browsers are already cached system-wide; don't run the download script
+  "@playwright/test": false
+  playwright: false
+  playwright-core: false
