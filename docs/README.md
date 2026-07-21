@@ -1,6 +1,6 @@
 # MindWP documentation
 
-This directory is MindWP's reusable project memory. Read the smallest route that owns the task; do not turn the map into a workflow or infer authority from file age.
+This directory is MindWP's reusable project memory. Use only the authorities the user supplies or explicitly names; do not turn the map into a workflow or infer authority from file age.
 
 ## Active authorities
 
@@ -38,14 +38,10 @@ These labels describe confidence and scope, not a lifecycle or approval system.
 
 ## Reading routes
 
-### Full orientation
+**Selection rule:** A canonical authority is selected only when the user supplies or explicitly names it. Do not infer selection from the task type, a page plan, a skill, or an exporter option that names something else.
 
-For a fresh strategy, planning or review conversation, read this file, Foundation, Strategy, Writing, Page Planning and Design. Add Engineering only for repository or technical work.
+**Full orientation:** Read the full authority set only when the user explicitly requests full orientation.
 
-### Design or concept work
+**Scoped work:** Use only the page plans and canonical authorities the user supplied or explicitly named. A supplied page plan may be the primary or complete execution brief. If a missing commercial, strategic or writing decision would materially change the result, identify the gap instead of opening an unselected authority.
 
-Read this file, Foundation, the supplied page plan, Writing and Design. Read Strategy only when the plan leaves a commercial question unresolved.
-
-### Build or technical review
-
-Use the design route, then add `AGENTS.md`, Engineering, current route source and fresh renders. Load `mindwp-design-build`, `mindwp-frontend-quality`, both or neither according to the requested work. Inspect other implemented pages only for a named question or explicit request.
+**Implementation or technical review:** Start from the selected brief and context. Inspect relevant current source, foundational CSS, assets and rendered evidence only as the requested implementation work requires. A matching execution skill may be used when its declared trigger matches, but one skill must not automatically load the other skill or a broader authority bundle. A focused exporter or isolated tool task must not inherit wider page, commercial or strategic context.

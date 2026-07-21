@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { link, mkdtemp, readFile, rm, stat, symlink, writeFile } from "node:fs/promises";
+import { link, mkdir, mkdtemp, readFile, rm, stat, symlink, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { dirname, join, resolve } from "node:path";
 import { test } from "node:test";
@@ -19,9 +19,8 @@ function options(args) {
   return parseContextArguments(args, { repositoryRoot });
 }
 
-test("orientation exports the canonical memory set in deterministic order", async () => {
+test("orientation exports the canonical memory set in deterministic order", () => {
   const parsed = options([]);
-  const context = await buildContext(parsed, { generatedAt });
 
   assert.deepEqual(
     contextSourceList(parsed).map((source) => source.label),
@@ -34,17 +33,22 @@ test("orientation exports the canonical memory set in deterministic order", asyn
       "docs/DESIGN.md",
     ],
   );
-  assert.match(context, /^# DERIVED MINDWP CONTEXT — NON-AUTHORITATIVE/m);
-  assert.match(context, /Generated: 2026-07-20T12:00:00.000Z/);
-  assert.doesNotMatch(context, /## Source: docs\/ENGINEERING\.md/);
-  assert.doesNotMatch(context, /## Source: AGENTS\.md/);
 });
 
-test("orientation includes Engineering only when requested", async () => {
+test("orientation includes Engineering only when requested", () => {
   const parsed = options(["orientation", "--engineering"]);
-  const context = await buildContext(parsed, { generatedAt });
-  assert.equal(contextSourceList(parsed).at(-1).label, "docs/ENGINEERING.md");
-  assert.match(context, /## Source: docs\/ENGINEERING\.md/);
+  assert.deepEqual(
+    contextSourceList(parsed).map((source) => source.label),
+    [
+      "docs/README.md",
+      "docs/FOUNDATION.md",
+      "docs/STRATEGY.md",
+      "docs/WRITING.md",
+      "docs/PAGE-PLANNING.md",
+      "docs/DESIGN.md",
+      "docs/ENGINEERING.md",
+    ],
+  );
 });
 
 test("focused base accepts an explicit page plan and zero skills", async () => {
@@ -58,34 +62,39 @@ test("focused base accepts an explicit page plan and zero skills", async () => {
     const context = await buildContext(parsed, { generatedAt });
     assert.deepEqual(
       contextSourceList(parsed).map((source) => source.label),
-      [
-        "docs/README.md",
-        "docs/FOUNDATION.md",
-        "supplied page plan",
-        "docs/WRITING.md",
-        "docs/DESIGN.md",
-      ],
+      ["docs/README.md", "supplied page plan"],
     );
     assert.match(context, /Meaning stays page-specific\./);
+    assert.doesNotMatch(
+      context,
+      /## Source: docs\/(?:FOUNDATION|STRATEGY|WRITING|DESIGN|ENGINEERING)\.md/,
+    );
+    assert.doesNotMatch(context, /## Source: AGENTS\.md/);
+    assert.doesNotMatch(context, /## Source: \.agents\/skills\//);
   } finally {
     await rm(fixture, { recursive: true, force: true });
   }
 });
 
-test("focused optional sources and skills use deterministic order", async () => {
+test("focused optional sources and skills use deterministic order", () => {
   const parsed = options([
     "focused",
     "--skill",
     "mindwp-frontend-quality",
     "--repository",
+    "--foundation",
     "--engineering",
     "--skill",
     "mindwp-design-build",
     "--strategy",
+    "--writing",
+    "--page-planning",
+    "--page-plan",
+    resolve(tmpdir(), "synthetic-page.md"),
+    "--design",
     "--skill",
     "mindwp-design-build",
   ]);
-  await buildContext(parsed, { generatedAt });
 
   assert.deepEqual(
     contextSourceList(parsed).map((source) => source.label),
@@ -95,6 +104,8 @@ test("focused optional sources and skills use deterministic order", async () => 
       "docs/FOUNDATION.md",
       "docs/STRATEGY.md",
       "docs/WRITING.md",
+      "docs/PAGE-PLANNING.md",
+      "supplied page plan",
       "docs/DESIGN.md",
       "docs/ENGINEERING.md",
       ".agents/skills/mindwp-design-build/SKILL.md",
@@ -103,18 +114,73 @@ test("focused optional sources and skills use deterministic order", async () => 
   );
 });
 
+test("focused Engineering and frontend quality do not infer broader context", () => {
+  const parsed = options(["focused", "--engineering", "--skill", "mindwp-frontend-quality"]);
+
+  assert.deepEqual(
+    contextSourceList(parsed).map((source) => source.label),
+    ["docs/README.md", "docs/ENGINEERING.md", ".agents/skills/mindwp-frontend-quality/SKILL.md"],
+  );
+});
+
+test("focused canonical and repository selectors are independent", () => {
+  const selections = [
+    ["--repository", "AGENTS.md"],
+    ["--foundation", "docs/FOUNDATION.md"],
+    ["--strategy", "docs/STRATEGY.md"],
+    ["--writing", "docs/WRITING.md"],
+    ["--page-planning", "docs/PAGE-PLANNING.md"],
+    ["--design", "docs/DESIGN.md"],
+    ["--engineering", "docs/ENGINEERING.md"],
+  ];
+
+  for (const [flag, source] of selections) {
+    const parsed = options(["focused", flag]);
+    assert.deepEqual(
+      contextSourceList(parsed).map((item) => item.label),
+      ["docs/README.md", source],
+    );
+  }
+});
+
 test("focused permits either single execution skill", () => {
   for (const skill of ["mindwp-design-build", "mindwp-frontend-quality"]) {
     const parsed = options(["focused", "--skill", skill]);
     assert.deepEqual(parsed.skills, [skill]);
-    assert.equal(contextSourceList(parsed).at(-1).path, `.agents/skills/${skill}/SKILL.md`);
+    assert.deepEqual(
+      contextSourceList(parsed).map((source) => source.label),
+      ["docs/README.md", `.agents/skills/${skill}/SKILL.md`],
+    );
   }
 });
 
 test("export preserves complete canonical source bodies", async () => {
-  const foundation = await readFile(resolve(repositoryRoot, "docs/FOUNDATION.md"), "utf8");
-  const context = await buildContext(options([]), { generatedAt });
-  assert.ok(context.includes(`## Source: docs/FOUNDATION.md\n\n${foundation}`));
+  const fixture = await mkdtemp(join(tmpdir(), "mindwp-orientation-context-"));
+  const sources = [
+    "docs/README.md",
+    "docs/FOUNDATION.md",
+    "docs/STRATEGY.md",
+    "docs/WRITING.md",
+    "docs/PAGE-PLANNING.md",
+    "docs/DESIGN.md",
+  ];
+
+  try {
+    await mkdir(resolve(fixture, "docs"), { recursive: true });
+    for (const [index, source] of sources.entries()) {
+      await writeFile(resolve(fixture, source), `# Synthetic source ${index}\n`);
+    }
+
+    const parsed = parseContextArguments([], { repositoryRoot: fixture });
+    const context = await buildContext(parsed, { generatedAt });
+    for (const [index, source] of sources.entries()) {
+      assert.ok(context.includes(`## Source: ${source}\n\n# Synthetic source ${index}\n`));
+    }
+    assert.match(context, /^# DERIVED MINDWP CONTEXT — NON-AUTHORITATIVE/m);
+    assert.match(context, /Generated: 2026-07-20T12:00:00.000Z/);
+  } finally {
+    await rm(fixture, { recursive: true, force: true });
+  }
 });
 
 test("task boundaries are normalised and remain non-authoritative", async () => {
@@ -131,7 +197,24 @@ test("arguments reject unknown profiles, options, skills, and profile-inapplicab
   assert.throws(() => options(["planning"]), /Unknown context profile/);
   assert.throws(() => options(["orientation", "--unknown"]), /Unknown context option/);
   assert.throws(() => options(["focused", "--skill", "mindwp-missing"]), /Unknown execution skill/);
-  assert.throws(() => options(["orientation", "--repository"]), /focused profile/);
+  for (const flag of [
+    "--repository",
+    "--foundation",
+    "--strategy",
+    "--writing",
+    "--page-planning",
+    "--design",
+  ]) {
+    assert.throws(() => options(["orientation", flag]), /focused profile/);
+  }
+  assert.throws(
+    () => options(["orientation", "--page-plan", resolve(tmpdir(), "synthetic-page.md")]),
+    /focused profile/,
+  );
+  assert.throws(
+    () => options(["orientation", "--skill", "mindwp-design-build"]),
+    /focused profile/,
+  );
   assert.throws(() => options(["orientation", "--overwrite"]), /requires --output/);
 });
 
@@ -145,7 +228,7 @@ test("missing requested sources fail loudly", async () => {
 
 test("stdout is the default output", async () => {
   let output = "";
-  await runContextExport(["orientation"], {
+  await runContextExport(["focused"], {
     generatedAt,
     repositoryRoot,
     stdout: { write: (value) => (output += value) },
@@ -158,7 +241,7 @@ test("external output refuses replacement unless overwrite is explicit", async (
   try {
     const outputPath = resolve(fixture, "context.md");
     let notice = "";
-    await runContextExport(["orientation", "--output", outputPath], {
+    await runContextExport(["focused", "--output", outputPath], {
       generatedAt,
       repositoryRoot,
       stdout: { write: (value) => (notice += value) },
@@ -168,7 +251,7 @@ test("external output refuses replacement unless overwrite is explicit", async (
 
     await assert.rejects(
       () =>
-        runContextExport(["orientation", "--output", outputPath], {
+        runContextExport(["focused", "--output", outputPath], {
           generatedAt,
           repositoryRoot,
           stdout: { write() {} },
@@ -176,7 +259,7 @@ test("external output refuses replacement unless overwrite is explicit", async (
       /already exists/,
     );
 
-    await runContextExport(["orientation", "--output", outputPath, "--overwrite"], {
+    await runContextExport(["focused", "--output", outputPath, "--overwrite"], {
       generatedAt,
       repositoryRoot,
       stdout: { write() {} },
@@ -195,7 +278,7 @@ test("overwrite replaces an external hard link without mutating its source", asy
     await writeFile(sourcePath, "preserve this source\n", { mode: 0o644 });
     await link(sourcePath, outputPath);
 
-    await runContextExport(["orientation", "--output", outputPath, "--overwrite"], {
+    await runContextExport(["focused", "--output", outputPath, "--overwrite"], {
       generatedAt,
       repositoryRoot,
       stdout: { write() {} },
@@ -213,7 +296,7 @@ test("repository destinations and output symlinks are rejected", async () => {
   await assert.rejects(
     () =>
       runContextExport(
-        ["orientation", "--output", resolve(repositoryRoot, "docs/generated-context.md")],
+        ["focused", "--output", resolve(repositoryRoot, "docs/generated-context.md")],
         { generatedAt, repositoryRoot, stdout: { write() {} } },
       ),
     /outside the repository/,
@@ -227,7 +310,7 @@ test("repository destinations and output symlinks are rejected", async () => {
     await symlink(target, link);
     await assert.rejects(
       () =>
-        runContextExport(["orientation", "--output", link, "--overwrite"], {
+        runContextExport(["focused", "--output", link, "--overwrite"], {
           generatedAt,
           repositoryRoot,
           stdout: { write() {} },
@@ -246,7 +329,7 @@ test("a symlinked parent cannot route output back into the repository", async ()
     await symlink(repositoryRoot, link);
     await assert.rejects(
       () =>
-        runContextExport(["orientation", "--output", resolve(link, "generated-context.md")], {
+        runContextExport(["focused", "--output", resolve(link, "generated-context.md")], {
           generatedAt,
           repositoryRoot,
           stdout: { write() {} },
@@ -264,7 +347,7 @@ test("a missing output parent fails without creating directories", async () => {
     const outputPath = resolve(fixture, "missing", "context.md");
     await assert.rejects(
       () =>
-        runContextExport(["orientation", "--output", outputPath], {
+        runContextExport(["focused", "--output", outputPath], {
           generatedAt,
           repositoryRoot,
           stdout: { write() {} },

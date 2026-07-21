@@ -5,7 +5,7 @@ description: Use when giving MindWP art direction, developing section concepts, 
 
 # MindWP design and build
 
-Apply `docs/DESIGN.md` to the requested page or section. Own the page experience and meaning-bearing composition; do not reproduce the complete design authority here.
+Apply the supplied brief and any explicitly selected design authority to the requested page or section. Own the page experience and meaning-bearing composition; do not reproduce the complete design authority here.
 
 ## Match the requested outcome
 
@@ -23,16 +23,11 @@ For direction or concept work, make consequential proposals concrete enough to s
 
 ## Load bounded context
 
-Read:
+Use only the brief, proof and canonical authorities supplied or explicitly named by the user. A supplied page plan may be the primary or complete execution brief. Do not infer additional canonical reading from the task type or from this skill.
 
-- `docs/README.md` for source roles;
-- `docs/FOUNDATION.md`;
-- the explicitly supplied page plan;
-- `docs/WRITING.md`;
-- `docs/DESIGN.md`;
-- truthful media, work, and proof supplied for the task.
+If a missing business, writing or strategic decision would materially change the work, identify the unresolved point instead of opening another authority without permission.
 
-Read `docs/STRATEGY.md` only when the page plan leaves a commercial question unresolved. Read `docs/ENGINEERING.md` when implementation is requested. Inspect current route source and renders for a redesign, critique, or implementation that depends on implemented reality.
+When implementation is requested, inspect the relevant current source, foundational CSS, assets and rendered evidence required by the requested format. This implementation evidence must not select another canonical authority or execution skill.
 
 Do not inspect Homepage or Local SEO by default. Inspect either only for direct work on that page, a named design or implementation question, a diagnosed regression, or an explicit user request. For a concrete external reconstruction target, inspect that target at the start because fidelity is the task.
 
@@ -44,7 +39,7 @@ Identify what the supplied plan marks fixed, adaptable, open, and unavailable.
 
 Preserve facts, search intent, approved claims, real proof, service ownership, professional and consent boundaries, and wording explicitly marked fixed. Never invent proof, metrics, interfaces, client results, operational detail, account ownership, pricing, or professional capability to complete a design.
 
-Treat plan rows as meaning material, not component or object counts. Do not infer a new business decision from a gap; use Strategy when it owns the answer or report the unresolved point.
+Treat plan rows as meaning material, not component or object counts. Do not infer a new business decision from a gap. Identify the unresolved point only when it materially affects the work, and use Strategy only when the user explicitly selects it.
 
 ## Develop page and focal sections recursively
 
@@ -72,7 +67,7 @@ Use interaction or motion only for orientation, state, causality, connection, me
 
 ## Implement directly when requested
 
-Follow `docs/ENGINEERING.md`. Use semantic source, one meaningful structure across widths, page-local composition, existing shared foundations where they serve the design, and truthful assets. Keep client code inside earned interaction islands and preserve publication boundaries.
+Follow `docs/ENGINEERING.md` only when the user explicitly selects it. Use semantic source, one meaningful structure across widths, page-local composition, existing shared foundations where they serve the design, and truthful assets. Keep client code inside earned interaction islands and preserve publication boundaries.
 
 Do not add draft work to navigation, sitemap, indexing, canonical configuration, deployment, or public release unless the user explicitly includes it. Do not turn one page-specific construction into a global component or token without a proven shared role.
 

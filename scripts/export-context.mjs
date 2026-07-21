@@ -18,12 +18,7 @@ const ORIENTATION_SOURCES = [
   "docs/DESIGN.md",
 ];
 
-const FOCUSED_BASE_SOURCES = [
-  "docs/README.md",
-  "docs/FOUNDATION.md",
-  "docs/WRITING.md",
-  "docs/DESIGN.md",
-];
+const FOCUSED_BASE_SOURCES = ["docs/README.md"];
 
 const SKILL_SOURCES = new Map([
   ["mindwp-design-build", ".agents/skills/mindwp-design-build/SKILL.md"],
@@ -45,7 +40,11 @@ export function parseContextArguments(args, { repositoryRoot = defaultRepository
   let profileSeen = false;
   let pagePlan;
   let repository = false;
+  let foundation = false;
   let strategy = false;
+  let writing = false;
+  let pagePlanning = false;
+  let design = false;
   let engineering = false;
   let task;
   let outputPath;
@@ -77,8 +76,16 @@ export function parseContextArguments(args, { repositoryRoot = defaultRepository
       index += 1;
     } else if (argument === "--repository") {
       repository = true;
+    } else if (argument === "--foundation") {
+      foundation = true;
     } else if (argument === "--strategy") {
       strategy = true;
+    } else if (argument === "--writing") {
+      writing = true;
+    } else if (argument === "--page-planning") {
+      pagePlanning = true;
+    } else if (argument === "--design") {
+      design = true;
     } else if (argument === "--engineering") {
       engineering = true;
     } else if (argument === "--overwrite") {
@@ -104,7 +111,11 @@ export function parseContextArguments(args, { repositoryRoot = defaultRepository
     const focusedOptions = [
       pagePlan && "--page-plan",
       repository && "--repository",
+      foundation && "--foundation",
       strategy && "--strategy",
+      writing && "--writing",
+      pagePlanning && "--page-planning",
+      design && "--design",
       requestedSkills.length && "--skill",
     ].filter(Boolean);
     if (focusedOptions.length) {
@@ -115,9 +126,12 @@ export function parseContextArguments(args, { repositoryRoot = defaultRepository
   const skills = [...SKILL_SOURCES.keys()].filter((skill) => requestedSkills.includes(skill));
 
   return {
+    design,
     engineering,
+    foundation,
     outputPath,
     overwrite,
+    pagePlanning,
     pagePlanPath: pagePlan ? resolve(pagePlan) : undefined,
     profile,
     repository,
@@ -125,6 +139,7 @@ export function parseContextArguments(args, { repositoryRoot = defaultRepository
     skills,
     strategy,
     task: normalizeTask(task),
+    writing,
   };
 }
 
@@ -139,17 +154,19 @@ export function contextSourceList(options) {
     return sources;
   }
 
-  const sources = [canonicalSource(FOCUSED_BASE_SOURCES[0])];
+  const sources = FOCUSED_BASE_SOURCES.map(canonicalSource);
   if (options.repository) sources.push(canonicalSource("AGENTS.md"));
-  sources.push(canonicalSource(FOCUSED_BASE_SOURCES[1]));
+  if (options.foundation) sources.push(canonicalSource("docs/FOUNDATION.md"));
   if (options.strategy) sources.push(canonicalSource("docs/STRATEGY.md"));
+  if (options.writing) sources.push(canonicalSource("docs/WRITING.md"));
+  if (options.pagePlanning) sources.push(canonicalSource("docs/PAGE-PLANNING.md"));
   if (options.pagePlanPath) {
     sources.push({
       absolutePath: options.pagePlanPath,
       label: "supplied page plan",
     });
   }
-  sources.push(...FOCUSED_BASE_SOURCES.slice(2).map(canonicalSource));
+  if (options.design) sources.push(canonicalSource("docs/DESIGN.md"));
   if (options.engineering) sources.push(canonicalSource("docs/ENGINEERING.md"));
   for (const skill of options.skills) sources.push(canonicalSource(SKILL_SOURCES.get(skill)));
   return sources;

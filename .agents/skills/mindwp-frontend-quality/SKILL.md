@@ -1,11 +1,11 @@
 ---
 name: mindwp-frontend-quality
-description: Use when auditing, diagnosing, repairing, or hardening MindWP frontend implementation, including markup, CSS architecture, responsive behaviour, semantics, accessibility, interaction states, motion lifecycle, reduced motion, performance, cleanup, or risk-driven technical QA.
+description: Use when specialist frontend support is requested during MindWP implementation, or when auditing, diagnosing, repairing, or hardening MindWP frontend implementation, including markup, CSS architecture, responsive behaviour, semantics, accessibility, interaction states, motion lifecycle, reduced motion, performance, cleanup, or risk-driven technical QA.
 ---
 
 # MindWP frontend quality
 
-Apply `docs/ENGINEERING.md` to implemented evidence. This is optional specialist support, not a mandatory finishing stage and not a second art-direction loop.
+Apply `docs/ENGINEERING.md` to implemented evidence only when the user explicitly selects it. This is optional specialist support, not a mandatory finishing stage and not a second art-direction loop.
 
 ## Match the requested mode
 
@@ -18,7 +18,9 @@ Do not force a repair when the user asks for an audit. Do not require this skill
 
 ## Start from implemented evidence
 
-Use the build or technical reading route in `docs/README.md` to establish the relevant authority set. Within that set, begin diagnosis from current source and current renders, then apply `docs/ENGINEERING.md` and the accepted design intent. This diagnostic order does not change authority precedence. Read page-specific meaning or Writing closely when a technical change could damage truth, copy, hierarchy, or the visitor action; an isolated tool or script audit may not need page context.
+Begin with relevant current source and available or task-required rendered evidence. Use the supplied page plan or design intent, relevant foundational CSS and only the canonical authorities explicitly selected by the user. Do not inherit a broad design route or infer wider commercial, strategic or writing context.
+
+If a missing decision would materially change the technical result, identify it instead of widening context without permission. A focused exporter or isolated technical audit must not infer broader page context.
 
 Do not inspect Homepage or Local SEO by default. Use either only for direct work on that page, a named implementation question, a specific regression, or an explicit user request.
 
@@ -35,7 +37,7 @@ Trace the issue to the smallest coherent owner:
 - motion target, lifecycle, or reduced-motion branch;
 - form validation, privacy, routing, publication, performance, test, or tool.
 
-If the problem is an absent hierarchy, weak concept, page narrative, section relationship, or final body-copy decision, return it to design-and-build rather than disguising it as technical cleanup.
+If the problem is an absent hierarchy, weak concept, page narrative, section relationship, or final body-copy decision, report it as a design-owned issue. Use `mindwp-design-build` only when the user requested that design work.
 
 ## Preserve accepted design intent
 

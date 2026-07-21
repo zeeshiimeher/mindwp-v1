@@ -50,7 +50,7 @@ src/
   lib/          contact, CTA, SEO, and focused utilities
   styles/       small global token, typography, layout, button, and form foundation
 docs/           canonical project authorities and separately supplied page plans
-.agents/        specialised execution skills and temporary legacy skills
+.agents/        specialised execution skills
 scripts/        repository checks, context export, and capture capabilities
 tests/          script, smoke, interaction, and accessibility coverage
 ```
