@@ -2,7 +2,7 @@
 
 The Next.js website for MindWP, a website-led partner for independent clinics and specialist service businesses.
 
-Read [AGENTS.md](./AGENTS.md) for repository safety and [docs/README.md](./docs/README.md) for the project-memory map and task-sensitive reading routes.
+Read [CLAUDE.md](./CLAUDE.md) for repository safety and [docs/README.md](./docs/README.md) for the project-memory map and task-sensitive reading routes.
 
 ## Requirements and installation
 

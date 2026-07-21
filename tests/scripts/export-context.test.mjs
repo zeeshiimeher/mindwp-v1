@@ -69,8 +69,8 @@ test("focused base accepts an explicit page plan and zero skills", async () => {
       context,
       /## Source: docs\/(?:FOUNDATION|STRATEGY|WRITING|DESIGN|ENGINEERING)\.md/,
     );
-    assert.doesNotMatch(context, /## Source: AGENTS\.md/);
-    assert.doesNotMatch(context, /## Source: \.agents\/skills\//);
+    assert.doesNotMatch(context, /## Source: CLAUDE\.md/);
+    assert.doesNotMatch(context, /## Source: \.claude\/skills\//);
   } finally {
     await rm(fixture, { recursive: true, force: true });
   }
@@ -100,7 +100,7 @@ test("focused optional sources and skills use deterministic order", () => {
     contextSourceList(parsed).map((source) => source.label),
     [
       "docs/README.md",
-      "AGENTS.md",
+      "CLAUDE.md",
       "docs/FOUNDATION.md",
       "docs/STRATEGY.md",
       "docs/WRITING.md",
@@ -108,8 +108,8 @@ test("focused optional sources and skills use deterministic order", () => {
       "supplied page plan",
       "docs/DESIGN.md",
       "docs/ENGINEERING.md",
-      ".agents/skills/mindwp-design-build/SKILL.md",
-      ".agents/skills/mindwp-frontend-quality/SKILL.md",
+      ".claude/skills/mindwp-design-build/SKILL.md",
+      ".claude/skills/mindwp-frontend-quality/SKILL.md",
     ],
   );
 });
@@ -119,13 +119,13 @@ test("focused Engineering and frontend quality do not infer broader context", ()
 
   assert.deepEqual(
     contextSourceList(parsed).map((source) => source.label),
-    ["docs/README.md", "docs/ENGINEERING.md", ".agents/skills/mindwp-frontend-quality/SKILL.md"],
+    ["docs/README.md", "docs/ENGINEERING.md", ".claude/skills/mindwp-frontend-quality/SKILL.md"],
   );
 });
 
 test("focused canonical and repository selectors are independent", () => {
   const selections = [
-    ["--repository", "AGENTS.md"],
+    ["--repository", "CLAUDE.md"],
     ["--foundation", "docs/FOUNDATION.md"],
     ["--strategy", "docs/STRATEGY.md"],
     ["--writing", "docs/WRITING.md"],
@@ -149,7 +149,7 @@ test("focused permits either single execution skill", () => {
     assert.deepEqual(parsed.skills, [skill]);
     assert.deepEqual(
       contextSourceList(parsed).map((source) => source.label),
-      ["docs/README.md", `.agents/skills/${skill}/SKILL.md`],
+      ["docs/README.md", `.claude/skills/${skill}/SKILL.md`],
     );
   }
 });

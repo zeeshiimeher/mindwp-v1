@@ -188,10 +188,10 @@ function referencedSkills(source) {
 
 export async function validateSkills(repositoryRoot = defaultRepositoryRoot) {
   const issues = [];
-  const skillsRoot = resolve(repositoryRoot, ".agents/skills");
+  const skillsRoot = resolve(repositoryRoot, ".claude/skills");
 
   if (!(await exists(skillsRoot))) {
-    return ["Missing .agents/skills directory."];
+    return ["Missing .claude/skills directory."];
   }
 
   const entries = [];
@@ -202,7 +202,7 @@ export async function validateSkills(repositoryRoot = defaultRepositoryRoot) {
     } else if (entry.isDirectory()) {
       entries.push(entry.name);
     } else {
-      issues.push(`${entry.name}: unsupported entry in .agents/skills; expected a directory.`);
+      issues.push(`${entry.name}: unsupported entry in .claude/skills; expected a directory.`);
     }
   }
   entries.sort();
@@ -326,9 +326,9 @@ export async function validateSkills(repositoryRoot = defaultRepositoryRoot) {
     }
   }
 
-  const claudeSkillsRoot = resolve(repositoryRoot, ".claude/skills");
-  if (await exists(claudeSkillsRoot)) {
-    const duplicateShims = (await readdir(claudeSkillsRoot, { withFileTypes: true }))
+  const codexSkillsRoot = resolve(repositoryRoot, ".agents/skills");
+  if (await exists(codexSkillsRoot)) {
+    const duplicateShims = (await readdir(codexSkillsRoot, { withFileTypes: true }))
       .filter(
         (entry) =>
           (entry.isDirectory() || entry.isSymbolicLink()) && entry.name.startsWith("mindwp-"),
@@ -338,7 +338,7 @@ export async function validateSkills(repositoryRoot = defaultRepositoryRoot) {
 
     if (duplicateShims.length > 0) {
       issues.push(
-        `Duplicate MindWP skill shims exist under .claude/skills: ${duplicateShims.join(", ")}.`,
+        `Duplicate MindWP skill shims exist under .agents/skills: ${duplicateShims.join(", ")}.`,
       );
     }
   }
@@ -354,7 +354,7 @@ export async function runSkillValidation() {
     return;
   }
 
-  const skillsRoot = resolve(defaultRepositoryRoot, ".agents/skills");
+  const skillsRoot = resolve(defaultRepositoryRoot, ".claude/skills");
   const skillCount = (await readdir(skillsRoot, { withFileTypes: true })).filter(
     (entry) => entry.isDirectory() && !entry.name.startsWith("."),
   ).length;

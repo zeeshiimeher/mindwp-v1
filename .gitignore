@@ -26,7 +26,7 @@
 /_dev-reference/
 /.pnpm-store
 
-# Local agent execution state. Durable procedures belong in .agents/skills.
+# Local agent execution state. Durable procedures belong in .claude/skills.
 /.superpowers/
 
 # Local isolated feature worktrees.

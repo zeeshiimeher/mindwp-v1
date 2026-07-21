@@ -21,8 +21,8 @@ const ORIENTATION_SOURCES = [
 const FOCUSED_BASE_SOURCES = ["docs/README.md"];
 
 const SKILL_SOURCES = new Map([
-  ["mindwp-design-build", ".agents/skills/mindwp-design-build/SKILL.md"],
-  ["mindwp-frontend-quality", ".agents/skills/mindwp-frontend-quality/SKILL.md"],
+  ["mindwp-design-build", ".claude/skills/mindwp-design-build/SKILL.md"],
+  ["mindwp-frontend-quality", ".claude/skills/mindwp-frontend-quality/SKILL.md"],
 ]);
 
 function normalizeTask(value) {
@@ -155,7 +155,7 @@ export function contextSourceList(options) {
   }
 
   const sources = FOCUSED_BASE_SOURCES.map(canonicalSource);
-  if (options.repository) sources.push(canonicalSource("AGENTS.md"));
+  if (options.repository) sources.push(canonicalSource("CLAUDE.md"));
   if (options.foundation) sources.push(canonicalSource("docs/FOUNDATION.md"));
   if (options.strategy) sources.push(canonicalSource("docs/STRATEGY.md"));
   if (options.writing) sources.push(canonicalSource("docs/WRITING.md"));

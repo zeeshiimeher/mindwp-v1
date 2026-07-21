@@ -20,7 +20,7 @@ The documents have separate domains. When two statements appear to conflict, use
 1. An explicit current user decision is authoritative for its stated scope and may revise an older decision.
 2. The active documents above are canonical within their respective domains.
 3. An explicitly supplied page plan owns that page's job, audience, intent, action, meaning, proof and fixed boundaries. It does not silently redefine the wider business.
-4. `AGENTS.md` owns repository operating safety. Execution skills apply specialised methods; they do not create business or design authority.
+4. `CLAUDE.md` owns repository operating safety. Execution skills apply specialised methods; they do not create business or design authority.
 5. Current source and fresh renders own implemented reality. Report drift from the documents instead of silently treating implementation as a new strategic decision.
 6. Accepted pages are quality and implementation evidence, not templates or automatic global rules.
 7. `_audit-input/old-docs/` and other archived material are non-authoritative preservation sources. Extract from them only when reconciled with current authority.
