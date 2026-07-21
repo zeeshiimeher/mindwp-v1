@@ -14,15 +14,13 @@
     "lint:fix": "eslint . --fix",
     "typecheck": "next typegen && tsc --noEmit",
     "format": "prettier --write .",
-    "check:copy": "node scripts/check-public-copy.mjs",
     "check:skills": "node scripts/check-skills.mjs",
     "check:tools": "node --test tests/scripts/*.test.mjs",
     "check": "pnpm typecheck && pnpm lint && pnpm check:skills && pnpm check:tools",
     "test": "playwright test",
     "capture:route": "node scripts/capture-route.mjs",
     "capture:home": "node scripts/capture-homepage.mjs",
-    "context:export": "node scripts/export-context.mjs",
-    "context:page": "node scripts/export-page-context.mjs"
+    "context:export": "node scripts/export-context.mjs"
   },
   "dependencies": {
     "clsx": "2.1.1",

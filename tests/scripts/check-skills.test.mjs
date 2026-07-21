@@ -22,7 +22,7 @@ async function withSkillFixture(run) {
   }
 }
 
-test("all coexisting MindWP skills are structurally valid", async () => {
+test("all active MindWP skills are structurally valid", async () => {
   assert.deepEqual(await validateSkills(repositoryRoot), []);
 });
 
@@ -54,13 +54,16 @@ test("validation reports missing required files", async () => {
 
 test("validation rejects malformed or mismatched skill metadata", async () => {
   await withSkillFixture(async (fixtureRoot) => {
-    const skillPath = resolve(fixtureRoot, ".agents/skills/mindwp-plan-page/SKILL.md");
+    const skillPath = resolve(fixtureRoot, ".agents/skills/mindwp-design-build/SKILL.md");
     await writeFile(
       skillPath,
       "---\nname: wrong_name\ndescription:\nunknown: value\n---\n\n# Broken\n",
     );
 
-    const metadataPath = resolve(fixtureRoot, ".agents/skills/mindwp-plan-page/agents/openai.yaml");
+    const metadataPath = resolve(
+      fixtureRoot,
+      ".agents/skills/mindwp-design-build/agents/openai.yaml",
+    );
     await writeFile(
       metadataPath,
       'interface:\n  display_name: Plan\n  default_prompt: "Plan this."\n',
@@ -73,24 +76,26 @@ test("validation rejects malformed or mismatched skill metadata", async () => {
     assert.ok(issues.some((issue) => issue.includes("frontmatter name must use lowercase")));
     assert.ok(issues.some((issue) => issue.includes("interface.display_name must be quoted")));
     assert.ok(issues.some((issue) => issue.includes("missing interface.short_description")));
-    assert.ok(issues.some((issue) => issue.includes("must mention $mindwp-plan-page")));
+    assert.ok(issues.some((issue) => issue.includes("must mention $mindwp-design-build")));
   });
 });
 
 test("validation detects duplicate skill definitions", async () => {
   await withSkillFixture(async (fixtureRoot) => {
-    const original = resolve(fixtureRoot, ".agents/skills/mindwp-site");
-    const duplicate = resolve(fixtureRoot, ".agents/skills/mindwp-site-copy");
+    const original = resolve(fixtureRoot, ".agents/skills/mindwp-design-build");
+    const duplicate = resolve(fixtureRoot, ".agents/skills/mindwp-design-build-copy");
     await cp(original, duplicate, { recursive: true });
 
     const issues = await validateSkills(fixtureRoot);
-    assert.ok(issues.some((issue) => issue.includes("duplicate skill definition 'mindwp-site'")));
+    assert.ok(
+      issues.some((issue) => issue.includes("duplicate skill definition 'mindwp-design-build'")),
+    );
   });
 });
 
 test("validation detects unfinished placeholders", async () => {
   await withSkillFixture(async (fixtureRoot) => {
-    const skillPath = resolve(fixtureRoot, ".agents/skills/mindwp-site/SKILL.md");
+    const skillPath = resolve(fixtureRoot, ".agents/skills/mindwp-design-build/SKILL.md");
     const skill = await readFile(skillPath, "utf8");
     await writeFile(skillPath, `${skill}\nTODO: finish this instruction.\n`);
 
@@ -101,11 +106,14 @@ test("validation detects unfinished placeholders", async () => {
 
 test("validation resolves local Markdown and metadata references", async () => {
   await withSkillFixture(async (fixtureRoot) => {
-    const skillPath = resolve(fixtureRoot, ".agents/skills/mindwp-site/SKILL.md");
+    const skillPath = resolve(fixtureRoot, ".agents/skills/mindwp-design-build/SKILL.md");
     const skill = await readFile(skillPath, "utf8");
     await writeFile(skillPath, `${skill}\n[Missing reference](./references/missing.md)\n`);
 
-    const metadataPath = resolve(fixtureRoot, ".agents/skills/mindwp-site/agents/openai.yaml");
+    const metadataPath = resolve(
+      fixtureRoot,
+      ".agents/skills/mindwp-design-build/agents/openai.yaml",
+    );
     const metadata = await readFile(metadataPath, "utf8");
     await writeFile(metadataPath, `${metadata}  icon_small: "./assets/missing.svg"\n`);
 
@@ -121,7 +129,7 @@ test("validation rejects local references outside the repository", async () => {
     try {
       const externalFile = resolve(externalRoot, "outside.md");
       await writeFile(externalFile, "outside\n");
-      const skillPath = resolve(fixtureRoot, ".agents/skills/mindwp-site/SKILL.md");
+      const skillPath = resolve(fixtureRoot, ".agents/skills/mindwp-design-build/SKILL.md");
       const skill = await readFile(skillPath, "utf8");
       await writeFile(skillPath, `${skill}\n[External](${externalFile})\n`);
 
@@ -137,12 +145,15 @@ test("validation rejects escaping metadata and symlinked skill directories", asy
   await withSkillFixture(async (fixtureRoot) => {
     const outsideIcon = resolve(fixtureRoot, "outside.svg");
     await writeFile(outsideIcon, "<svg/>\n");
-    const metadataPath = resolve(fixtureRoot, ".agents/skills/mindwp-site/agents/openai.yaml");
+    const metadataPath = resolve(
+      fixtureRoot,
+      ".agents/skills/mindwp-design-build/agents/openai.yaml",
+    );
     const metadata = await readFile(metadataPath, "utf8");
     await writeFile(metadataPath, `${metadata}  icon_small: "../../../outside.svg"\n`);
 
     const linkedSkill = resolve(fixtureRoot, ".agents/skills/mindwp-linked");
-    await symlink(resolve(fixtureRoot, ".agents/skills/mindwp-site"), linkedSkill);
+    await symlink(resolve(fixtureRoot, ".agents/skills/mindwp-design-build"), linkedSkill);
 
     const issues = await validateSkills(fixtureRoot);
     assert.ok(issues.some((issue) => issue.includes("metadata reference escapes")));
@@ -154,9 +165,12 @@ test("validation rejects escaping metadata and symlinked skill directories", asy
 
 test("validation requires metadata assets to be files", async () => {
   await withSkillFixture(async (fixtureRoot) => {
-    const assetsDirectory = resolve(fixtureRoot, ".agents/skills/mindwp-site/assets");
+    const assetsDirectory = resolve(fixtureRoot, ".agents/skills/mindwp-design-build/assets");
     await mkdir(assetsDirectory, { recursive: true });
-    const metadataPath = resolve(fixtureRoot, ".agents/skills/mindwp-site/agents/openai.yaml");
+    const metadataPath = resolve(
+      fixtureRoot,
+      ".agents/skills/mindwp-design-build/agents/openai.yaml",
+    );
     const metadata = await readFile(metadataPath, "utf8");
     await writeFile(metadataPath, `${metadata}  icon_small: "./assets"\n`);
 
@@ -167,7 +181,7 @@ test("validation requires metadata assets to be files", async () => {
 
 test("validation reports unresolved referenced skills", async () => {
   await withSkillFixture(async (fixtureRoot) => {
-    const skillPath = resolve(fixtureRoot, ".agents/skills/mindwp-site/SKILL.md");
+    const skillPath = resolve(fixtureRoot, ".agents/skills/mindwp-design-build/SKILL.md");
     const skill = await readFile(skillPath, "utf8");
     await writeFile(skillPath, `${skill}\nUse $mindwp-missing-helper when required.\n`);
 
@@ -178,13 +192,13 @@ test("validation reports unresolved referenced skills", async () => {
 
 test("validation does not enforce doctrine phrases or heading order", async () => {
   await withSkillFixture(async (fixtureRoot) => {
-    const skillPath = resolve(fixtureRoot, ".agents/skills/mindwp-design-page/SKILL.md");
+    const skillPath = resolve(fixtureRoot, ".agents/skills/mindwp-design-build/SKILL.md");
     const skill = await readFile(skillPath, "utf8");
     await writeFile(
       skillPath,
       skill
-        .replace("## Run the reference-blind composition critique", "## Review the composition")
-        .replace("three to five substantial spatial constructions", "substantial compositions"),
+        .replace("## Refine from rendered evidence", "## Review visible evidence")
+        .replace("important focal sections", "relevant focal sections"),
     );
 
     assert.deepEqual(await validateSkills(fixtureRoot), []);

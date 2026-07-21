@@ -26,8 +26,6 @@ pnpm build
 pnpm test
 ```
 
-`pnpm check:copy` remains available as a focused legacy public-source scan, but it is not part of the aggregate gate.
-
 ## Context export
 
 The exporter writes a derived, non-authoritative context to stdout by default:

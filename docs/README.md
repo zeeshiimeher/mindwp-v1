@@ -49,19 +49,3 @@ Read this file, Foundation, the supplied page plan, Writing and Design. Read Str
 ### Build or technical review
 
 Use the design route, then add `AGENTS.md`, Engineering, current route source and fresh renders. Load `mindwp-design-build`, `mindwp-frontend-quality`, both or neither according to the requested work. Inspect other implemented pages only for a named question or explicit request.
-
-## Temporarily preserved legacy material
-
-The following remain for preservation and coexistence but are no longer active authorities or required reading:
-
-- `docs/PAGE-WORKFLOW.md`
-- `docs/PAGE-LEDGER.md`
-- `docs/existing-pages-audit.md`
-- `docs/pages/_templates/page.md`
-- `.agents/skills/mindwp-site/`
-- `.agents/skills/mindwp-plan-page/`
-- `.agents/skills/mindwp-design-page/`
-- `.agents/skills/mindwp-finish-page/`
-- `scripts/export-page-context.mjs`
-
-Do not extend their router, phase, ledger, packet or desktop-approval machinery. They remain available only until a separately approved cleanup verifies that all useful material has survived.

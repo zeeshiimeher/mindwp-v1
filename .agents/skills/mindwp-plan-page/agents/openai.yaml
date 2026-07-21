@@ -1,4 +1,0 @@
-interface:
-  display_name: "MindWP Plan Page"
-  short_description: "Plan page meaning and content architecture"
-  default_prompt: "Use $mindwp-plan-page to define this MindWP page's meaning and content architecture, then stop before visual design or implementation."

@@ -38,14 +38,6 @@ test("orientation exports the canonical memory set in deterministic order", asyn
   assert.match(context, /Generated: 2026-07-20T12:00:00.000Z/);
   assert.doesNotMatch(context, /## Source: docs\/ENGINEERING\.md/);
   assert.doesNotMatch(context, /## Source: AGENTS\.md/);
-  assert.ok(
-    contextSourceList(parsed).every(
-      (source) =>
-        !source.label.includes("PAGE-WORKFLOW") &&
-        !source.label.includes("PAGE-LEDGER") &&
-        !source.label.includes("export-page-context"),
-    ),
-  );
 });
 
 test("orientation includes Engineering only when requested", async () => {
