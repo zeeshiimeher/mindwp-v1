@@ -27,13 +27,129 @@ MindWP deliberately uses a recognisable visual family:
 - navy, white, paper, and mist surface roles;
 - serif and sans-serif typographic character;
 - eyebrow, heading, and supporting-copy structures;
-- centred and left-aligned section introductions;
+- centred, left-aligned, and split section introductions;
 - consistent typography and spacing roles;
 - stable container and readable-measure discipline;
+- semantic sections and familiar web-layout foundations;
 - a calm, familiar rhythm of surfaces across a page;
 - deliberate family resemblance between pages.
 
-These are foundations, not repetition failures. Do not count surface occurrences, eyebrow use, centred or left-aligned introductions, repeated typography roles, or recurring section-header grammar. Do not change colour, alignment, or heading placement merely to manufacture novelty.
+These are foundations, not repetition failures. Do not count surface occurrences, eyebrow use, centred or left-aligned introductions, repeated typography roles, recurring section-header grammar, containers, cards, grids, or other familiar structures. Do not change colour, alignment, or heading placement merely to manufacture novelty.
+
+Shared foundations create consistency. Meaning-specific composition creates distinctiveness.
+
+### Structural foundations
+
+Standard web foundations are valid, useful, and normally preferred.
+
+Begin with:
+
+- semantic `<section>` elements;
+- the shared `.section` class for vertical rhythm and surface treatment;
+- `.container` and its established width variants for alignment, gutters, and readable width;
+- the shared section-introduction structures where they serve the material;
+- Flex and Grid for normal layout relationships;
+- familiar structures such as cards, lists, panels, tabs, timelines, and grouped content when the information genuinely has that structure.
+
+Section introductions may be left-aligned, centred, split, embedded, or otherwise positioned according to the communication job. No alignment is inherently more original or more professional than another.
+
+Do not seek originality by avoiding sections, containers, headings, introductions, Flex, Grid, cards, lists, or panels. Judge the hierarchy, proportion, relationships, reading path, responsive behaviour, and visual expression created within those foundations.
+
+The introduction is not automatically the complete section design. The material after and around it should communicate the section's particular relationship, proof, choice, process, comparison, or conclusion.
+
+Start with the existing shared foundations. Extend or depart from them only when the composition has a specific requirement they do not serve. A page-specific visual layer may break out of a container, introduce controlled layering, or establish a different spatial environment while the semantic structure and readable content remain sound.
+
+### Typography character and inheritance
+
+MindWP's typography combines editorial character with operational clarity.
+
+- **Fraunces** carries major ideas, emotional emphasis, important turns, and editorial character.
+- **Inter** carries explanation, evidence, navigation, labels, controls, and operational detail.
+- **Italics** should signal meaningful contrast, qualification, or a change in thought. They should not be added routinely as decoration.
+- **Readable measure** matters as much as font size. Explanatory copy should remain easy to follow rather than expanding merely because space is available.
+
+When implementing, begin with the global semantic typography for `h1`–`h4`, paragraphs, body copy, and established supporting roles.
+
+Do not redefine font sizes in page-specific BEM selectors merely because a new section is being styled. Introduce a different scale, style, measure, or behaviour only when the composition requires a deliberate typographic role.
+
+When an override is justified:
+
+1. Prefer the existing typography scale and tokens.
+2. Prefer an established reusable typography role when the same need already exists.
+3. Use a page-specific treatment only for a genuinely composition-specific role.
+
+Page CSS may still control colour, width, alignment, emphasis, wrapping, and responsive behaviour where required. The aim is inheritance before specialisation, not a prohibition against purposeful typography.
+
+### Surface and colour roles
+
+MindWP's recurring surfaces have recognisable communication roles:
+
+- **Navy** carries conviction, control, connected-system logic, decisive moments, and strong closure.
+- **Paper** supports editorial explanation, argument, and calm long-form clarity.
+- **Mist** supports quieter evidence, reflection, qualification, and transitions.
+- **White** provides clarity, contrast, and contained material within lighter environments.
+
+These roles guide judgement rather than enforcing a fixed page sequence. A surface may support another job when the complete composition justifies it.
+
+Recurring brand surfaces are not generic-design failures. A long page may reuse navy, paper, mist, or white several times. Do not alternate surfaces mechanically, and do not introduce extra colours merely to make neighbouring sections look different.
+
+A background change can support progression, but it is not a substitute for hierarchy, scale, density, relationship, or focal emphasis.
+
+Use existing semantic colour tokens before introducing raw values. Read `tokens.css` when exact values or the complete token inventory are needed; do not duplicate the complete token system here or inside page-specific styles.
+
+### Emerald as controlled attention
+
+Emerald is a controlled attention colour.
+
+Use it for:
+
+- eyebrows, marks, rules, and small emphasis;
+- connection paths and meaningful system relationships;
+- active, selected, success, or status states;
+- focus treatment and accessibility feedback;
+- selected high-priority actions;
+- small operational fills inside truthful visual material.
+
+Emerald may fill a primary CTA on a dark surface when that action deserves clear priority. It may also fill a small component whose state or role requires it.
+
+Do not use emerald as a large decorative section surface or repeatedly fill ordinary cards, panels, and containers with it. Its strength comes from controlled use and clear priority.
+
+### Edge, depth, and material character
+
+MindWP's material character should feel refined without becoming ornamental.
+
+Prefer:
+
+- hairline borders;
+- restrained radii;
+- subtle surface contrast;
+- rare and controlled shadows;
+- intentional layering;
+- clear spacing and proportion;
+- depth that communicates belonging, priority, state, or interaction.
+
+Do not add shadows, glass effects, gradients, floating panels, or increased curvature merely to make a composition appear premium.
+
+Premium character should come primarily from typography, scale, proportion, spacing, hierarchy, material contrast, and careful responsive behaviour. Restraint should not become visual thinness: important material still needs sufficient scale, contrast, depth, evidence, or spatial presence to carry its job.
+
+### Page-scale character
+
+A coherent MindWP page may repeat its typography, introductions, surfaces, containers, and familiar structural grammar. That repetition produces brand recognition.
+
+The complete page should not give every section the same scale, density, visual importance, or reading path.
+
+Use page-level judgement to establish:
+
+- changes in emphasis and atmosphere;
+- shifts between dense and quiet material;
+- differences in reading effort;
+- meaningful continuity between connected ideas;
+- stronger focal treatment for commercially important, proof-bearing, or meaning-critical material;
+- calm supporting treatment where spectacle would add no value.
+
+Not every section needs a bespoke visual concept. Quiet sections are valid and necessary. Distinctiveness should be concentrated where the meaning benefits from a stronger composition rather than distributed as decoration across every section.
+
+A page becomes compositionally flat when different meanings repeatedly receive the same introduction-to-payload relationship, the same internal hierarchy, and the same visual weight. It does not become flat merely because it uses familiar foundations or recurring brand surfaces.
 
 The exact measure, scale, position, and relationship between an introduction and the material around it remain contextual. Shared grammar creates coherence; the meaning-bearing experience after and around it creates distinction.
 

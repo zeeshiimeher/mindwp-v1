@@ -12,6 +12,8 @@ The website is the most controllable public experience a business owns. It is wh
 
 MindWP therefore starts with the customer decision around the website. The work may extend into connected capabilities when they improve that decision or what happens after contact, but the connection must be useful and deliberately scoped.
 
+Website-led is an offer hierarchy, not merely a descriptive phrase and not a claim that the website acts alone. The public identity should begin with the website and the customer decision it supports; connected capabilities remain optional and subordinate. A leakage or automation framing may diagnose a specific problem, but it should not become the organising brand thesis unless stronger evidence shows that the principal offer or buyer need has changed. Memorable copy or a successful previous composition is not by itself sufficient reason to reverse this hierarchy.
+
 ## Audience and buyer principles
 
 MindWP helps businesses where trust, clarity and an enquiry matter commercially or professionally. A buyer may be an owner, operator, practice lead or another person responsible for the public experience and the path around it.

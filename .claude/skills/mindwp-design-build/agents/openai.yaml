@@ -1,4 +1,4 @@
 interface:
   display_name: "MindWP Design & Build"
   short_description: "Design and build meaning-specific MindWP pages"
-  default_prompt: "Use $mindwp-design-build to shape, critique, or implement this MindWP page or section through meaning-specific composition and responsive intent, producing only the format requested."
+  default_prompt: "Use $mindwp-design-build to shape, critique, redesign, or implement this MindWP page or section through meaning-specific composition and responsive intent, producing only the format requested."

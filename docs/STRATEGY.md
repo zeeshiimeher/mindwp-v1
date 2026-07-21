@@ -8,6 +8,12 @@ MindWP is a website-led partner for independent clinics and specialist service b
 
 The website is the principal commercial surface. Connected services are introduced only where they solve a diagnosed problem. MindWP must not read as a compulsory bundle, SaaS product, CRM resale, advertising agency or automation package.
 
+### Homepage positioning consequence
+
+The Homepage should lead with Smart Website Systems and organise its argument around how suitable people find, understand, evaluate and contact the business. It may then show how optional support improves local discovery or what happens after contact. The supporting systems should remain visible enough to understand and reach, but must not become four co-equal reasons for the business to exist.
+
+The older line **â€œWork comes in. Too much slips away.â€** remains strong diagnostic or campaign language. It should not currently define the Homepage because it assumes meaningful attention is already arriving, moves the centre of gravity towards post-enquiry leakage and automation, and makes the five capabilities feel more equal than the approved offer architecture. Reconsidering that decision requires a change in the principal public offer or material buyer evidenceâ€”not simply a preference for the older line or its existing visual execution.
+
 ## Current offer architecture
 
 **Smart Website Systems** is the current principal offer. An engagement may include strategy, site and page structure, copy, distinctive design, WordPress development and measurement around real customer decisions. It owns the public experience through to a useful enquiry: understanding, trust, proof, action, functioning capture, truthful submission confirmation, and delivery to the agreed contact destination.
