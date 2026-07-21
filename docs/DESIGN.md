@@ -1,280 +1,293 @@
-# MindWP design direction
+# MindWP design authority
 
-This is the authority for visual quality, art direction, CSS authorship, interaction, responsive composition, and rendered acceptance criteria. Business meaning comes from [STRATEGY.md](./STRATEGY.md); technical boundaries come from [ENGINEERING.md](./ENGINEERING.md).
+This document owns MindWP's durable visual judgement: shared brand grammar, art direction, meaning-bearing composition, page continuity, responsive intent, purposeful interaction and motion, visual-material choices, and rendered visual review.
 
-## The standard
+It does not decide business truth, offer strategy, page meaning, claims, repository structure, CSS architecture, implementation commands, publication, or page state. Those decisions belong to [FOUNDATION.md](./FOUNDATION.md), [STRATEGY.md](./STRATEGY.md), the supplied page plan, [WRITING.md](./WRITING.md), and [ENGINEERING.md](./ENGINEERING.md).
 
-MindWP's website is part of its portfolio. It must feel designed, not assembled.
+This authority should improve when future execution exposes a repeatable design problem or a better durable principle. Do not turn one successful page, one technique, or one preference into a rule without evidence that it has a stable MindWP role.
 
-The visual experience should demonstrate:
+## The quality standard
 
-- a clear and ownable art direction;
-- memorable typography and composition;
-- large, inspectable work and interface details;
-- depth through crop, layering, light, texture, space, and motion;
-- varied pacing across a long page;
-- interactions that improve meaning or feeling;
-- a mobile composition designed in its own right.
+MindWP's website is part of its portfolio. It should feel considered rather than assembled, while remaining clear, truthful, useful, and appropriate to a professional service business.
 
-Choose inner compositions from the relationship the content must communicate. Equal cards suit genuinely peer items; interface furniture suits genuinely interactive or system-like behaviour. Typography, media, illustration, spatial composition, or a direct diagram may communicate other relationships more honestly.
+The intended qualities should be observable in the work:
 
-This authority defines quality and decision order, not a compulsory page shell. Once meaning is approved, the designer remains free to establish the page-level visual composition and inner treatments through a complete coded desktop draft while preserving the approved semantic architecture; shared CSS defaults provide the first implementation baseline rather than a finished style limit.
+- **Calm confidence:** priority is unmistakable without urgency theatre, visual noise, or exaggerated claims.
+- **Commercial seriousness:** the page connects customer reality, the offer, proof, boundaries, and a useful next action.
+- **Distinctive craft:** typography, spacing, hierarchy, media, edges, depth, and responsive behaviour feel deliberate.
+- **Trustworthiness:** visual material never simulates proof, software capability, certainty, or operational detail that does not exist.
+- **Clarity:** the main argument and important relationships can be understood before every paragraph is read.
 
-## The durable principle
+Technical competence alone is not the standard. If an important composition is generic, visually thin, or structurally interchangeable with unrelated material, refine its underlying relationship and hierarchy rather than trying to rescue it with surface polish.
 
-Meaning determines what must be communicated. It must not determine the visual component used to communicate it. The design process determines how those meanings share space, hierarchy, rhythm and visual form.
+## Shared MindWP grammar
 
-Approved content architecture — headings, jobs, order, essential public meaning, supporting reservoirs and truth boundaries — is semantic material. Supporting payloads are a meaning reservoir, never a public-content count or a required number of visual objects; their details may be synthesised into selective copy, hierarchy and shared visual environments, and may remain private when every essential job, claim, boundary, distinction and CTA stays understandable. Treat copy metaphors as meaning cues rather than literal layout instructions. The design work is translating semantic relationships into visual relationships.
+MindWP deliberately uses a recognisable visual family:
 
-## Composing the page
+- navy, white, paper, and mist surface roles;
+- serif and sans-serif typographic character;
+- eyebrow, heading, and supporting-copy structures;
+- centred and left-aligned section introductions;
+- consistent typography and spacing roles;
+- stable container and readable-measure discipline;
+- a calm, familiar rhythm of surfaces across a page;
+- deliberate family resemblance between pages.
 
-Keep three units distinct:
+These are foundations, not repetition failures. Do not count surface occurrences, eyebrow use, centred or left-aligned introductions, repeated typography roles, or recurring section-header grammar. Do not change colour, alignment, or heading placement merely to manufacture novelty.
 
-- A **semantic landmark** is an ordered heading, communication job and truth boundary that must remain understandable.
-- A **spatial construction or visual act** is a substantial composed experience that may contain several semantic landmarks.
-- A **DOM or evidence unit** supports semantic implementation, testing or capture; it does not automatically define visible composition.
+The exact measure, scale, position, and relationship between an introduction and the material around it remain contextual. Shared grammar creates coherence; the meaning-bearing experience after and around it creates distinction.
 
-Spatial constructions are the primary composition lens. Develop the page-level relationships, silhouette and visual acts first, then place semantic landmarks within them. Several landmarks may share one continuous construction, while a major landmark may dominate one; neither outcome changes heading order, jobs, truth, accessibility or commercial progression. A material change to that semantic architecture requires separate approval.
+## Three design layers
 
-Hierarchy is proportional and decided from the commercial meaning, not from a formula. Determine which moments dominate the page, which support, and which stay quiet. Important service moments earn substantial visual mass and explanatory visual material; quieter arguments may remain compact without their own artefact, card collection or demonstration. Density, scale, alignment and surface should change deliberately across the page and produce a recognisable full-page silhouette. A page may centre one dominant transformation, several medium peaks, a distributed experience, a continuous progression, or another hierarchy supported by its meaning — these are positive review signals, not required layout types or blanket bans.
+Keep three layers distinct:
 
-Whole-page composition precedes and outranks landmark development. Establish the page-level structure before payload rendering or final body copy, and judge the full-page render before crops; the best local treatment depends partly on the constructions around it.
+1. **Shared grammar** provides recognisable MindWP foundations.
+2. **Meaning-bearing composition** expresses the hierarchy, relationship, proof, media, reading behaviour, and experience specific to the material.
+3. **Implementation technique** supplies tools such as grid, flex, cards, lists, panels, horizontal sections, tabs, diagrams, layering, or motion.
 
-Two extremes both fail this standard: a branded template of equal horizontal bands, cards and grids mapped one-to-one from the content list; and an over-conceptual page where a single metaphor, object, material or interface grammar controls every landmark until the service becomes harder to understand. A central concept may organise the page, but the page serves the service, not the concept.
+A technique is neither a design concept nor a defect by itself. Equal cards may suit genuine peers. A timeline may suit a sequence. A simple horizontal section may suit a quiet transition. Reusing an inner pattern is valid when the underlying relationship is genuinely the same.
 
-## Using the references
+The failure is unjustified functional sameness: meaningfully different material receives the same inner hierarchy, payload structure, scale, and reading path while palette or decoration creates only the appearance of variety.
 
-The pages the ledger marks as brand/quality references — currently the Homepage and Local SEO Authority — set the brand character and quality bar; they are not layouts to reproduce. Before fresh composition exists, use current shared source and only focused evidence that isolates a stable foundation such as typography character, palette roles, shell behaviour, buttons, material quality or shared closing behaviour. Do not expose an unrelated new page to complete accepted-page silhouettes or section sequences at that generative point.
+## From meaning to composition
 
-After the new composition passes a reference-blind full-page review, inspect complete accepted-page renders for overall craft, MindWP character and accidental structural copying. Section or act crops may then help verify craft or shared families, but must not become a catalogue of layouts to imitate.
+Meaning determines what must be communicated. It does not predetermine the component used to communicate it.
 
-Reference evidence may be stored in `docs/reference/` as `1640px` renders stamped with the reference page's production commit. A stored render whose stamp matches the current ledger commit is proven current and replaces recapture; a mismatched or missing stamp requires fresh capture. Stored renders are late comparison evidence, not standing or initial generative authority. The content-only digest in `docs/existing-pages-audit.md` may answer a voice or truth question but is not default inner-composition evidence. Current source and fresh renders always own implemented reality.
+For important or uncertain material, reason through this bridge:
 
-A consistent eyebrow, heading and paragraph grammar is shared brand language, not a mandatory layout entry. Headings may integrate into a larger construction without each landmark receiving an autonomous visual scene. Judge originality from the complete inner reading experience, not from a payload treatment appended after a repeated heading block.
+> section job → intended visitor change → essential meaning or proof → relationship that should become visible → focal hierarchy → eye path → spatial behaviour → content adaptation → relationship with neighbouring material → narrow-width transformation → purposeful motion or interaction
 
-Privately separate transferable MindWP brand grammar from already-used inner compositions. Typography, palette roles, clarity, restraint, spatial discipline, shell behaviour and material quality may transfer. A page-specific hero mechanism, signature diagram, artefact family, repeated card treatment, scene rhythm or full-page silhouette is occupied creative territory unless a new content relationship genuinely earns a transformed use.
+The visitor change should be concrete. After this material, should the visitor understand a distinction, trust a claim, compare alternatives, see causality, recognise ownership, follow a sequence, inspect proof, choose a path, or feel ready to act?
 
-Reference labels describe permission, not automatic quality or timing. Develop the new page from its approved meaning and shared brand foundations, pass the first reference-blind composition review, then compare the actual draft with permitted full-page references for accidental duplication and overall quality. Use rejected or excluded work only in the role the ledger explicitly permits, and leave unclassified work out of creative evidence until [PAGE-LEDGER.md](./PAGE-LEDGER.md) assigns a role.
+The relationship might be:
 
-## The first-draft standard
+- comparison, peerhood, or contrast;
+- sequence, accumulation, or causality;
+- a whole and its parts;
+- evidence and conclusion;
+- context and focal point;
+- choice, threshold, or consequence;
+- responsibility, handoff, or connection;
+- expectation and resolution;
+- continuity or a deliberate interruption.
 
-Before its body copy is read, a qualifying desktop draft has:
+Choose a relationship because it clarifies the material, not because it suggests an attractive artefact. Treat metaphors in copy as meaning cues rather than compulsory visual instructions.
 
-- a distinctive, recognisable full-page silhouette;
-- obvious important moments carrying meaningful visual mass;
-- intentional changes of density, scale and surface;
-- a service understandable through visual structure alone;
-- an unmistakably MindWP character that is not a rearranged Homepage or Local SEO page;
-- inner experiences that do not merely repeat `entry → copy → payload renderer` beneath different surface treatments;
-- no reliance on equally weighted stripes or repeated equal-card or small-interface payload renderers;
-- no decorative metaphor overwhelming the service;
-- the feel of deliberate art direction rather than requirements mapping.
+### Compositional variables
 
-Technical competence is not enough. If a draft is merely competent, generic, repetitive, visually thin, overly template-like or below the reference pages, its direction — not its polish — is wrong: recompose at page or act level rather than rescuing it with spacing, border, colour or type adjustments.
+Use these as dimensions for judgement, not a checklist or library of layouts:
 
-The actionable drafting procedure — meaning intake, private spatial construction, composition-first blocking, build, reference-blind critique, late brand calibration and the quality-threshold loop — belongs to the `mindwp-design-page` skill. The phase boundary, drafting modes and decision rules belong to [PAGE-WORKFLOW.md](./PAGE-WORKFLOW.md). In every mode, the user-facing deliverable is the rendered page or requested scope, not the private synthesis.
+- **Priority:** scale, span, contrast, negative space, and visual anchoring.
+- **Direction:** alignment, orientation, and sequence.
+- **Belonging:** containment, breakout, and adjacency.
+- **Dependency:** overlap, layering, and depth.
+- **Pace and effort:** density, repetition, and negative space.
+- **Page relationship:** continuity, interruption, and transition.
 
-## Long-page composition
+Changing one or two variables purposefully can establish hierarchy without adding cards, panels, interfaces, or decoration. More ingredients do not make a stronger composition.
 
-Use only the contrasts the page draft needs. Possible shifts include:
+## A real section concept
 
-- full-viewport and compact;
-- dark and light;
-- editorial and spatial;
-- static and interactive;
-- full-bleed and contained;
-- proof-led and copy-led;
-- dense and quiet.
+A component name, background change, card grid, differently shaped panel, small interface, or decorative artefact is not by itself a design concept.
 
-Short principle strips should behave as transitions, not full template bands. Closely related landmarks may share one visual environment without erasing their semantic distinctions.
+For an important section or genuinely connected group, the executor should be able to reason about:
 
-Let container use, spacing, heading placement, media scale, material treatment, and entry behaviour follow each construction's role; repetition should be intentional.
+- what the visitor should understand, trust, compare, choose, or do afterwards;
+- which relationship the visual treatment makes clear;
+- what deserves dominant scale and what should recede;
+- how the eye moves through the material;
+- why the composition fits this particular meaning and evidence;
+- what adaptable content should be shortened, deepened, regrouped, or rewritten;
+- how the material inherits from and hands off to its neighbours;
+- what meaningful structure remains when decoration is removed;
+- how the core relationship survives at narrow widths;
+- whether interaction or motion has a genuine communication job.
 
-When a page uses recurring heading grammar, it may provide connective tissue without becoming a repeated entry block. Judge repetition by the inner relationship and visitor experience, not merely by heading alignment or surface variation. When adjacent landmarks repeat the same copy-to-payload reading sequence without a content reason, recompose their inner experience or let them share a more coherent construction.
+This is a reasoning bridge, not a form, packet, ledger, or required written explanation. Quiet transitional material does not need bespoke spectacle or this depth of concept development.
 
-Review the whole rendered silhouette before presenting the desktop draft. Look for alignment and scale changes, surface and density rhythm, construction height, focal hierarchy, repeated composition families, reading effort, interaction concentration, and quiet versus dominant moments. The best local layout depends partly on the constructions around it.
+## Four doctrine examples
 
-For an important or uncertain construction, judge what should be understood at first glance, the relationship or hierarchy being communicated, and the role it plays around neighbouring constructions. Add mass, density, motion, responsive reinterpretation or interaction only when material. Do not prescribe objects, counts or micro-layouts unless the content relationship or a concrete reconstruction target requires them.
+These examples clarify judgement. They are not layouts to reproduce.
 
-## CSS decision
+- **Quiet section that passes:** a mist surface uses a familiar centred eyebrow, heading, and short supporting paragraph to clarify a professional boundary. The message is singular, the reading effort is intentionally low, and no artefact is added merely to make it look designed.
+- **Dominant section that fails:** a commercially important explanation of why enquiries break down becomes four equal icon cards. The cards hide causality, give every point the same weight, and could accept unrelated agency copy unchanged. Larger shadows or a navy background would not solve it.
+- **Coherent long page that passes:** familiar surfaces and introduction grammar recur, while a few consequential moments receive meaning-specific scale, proof, or spatial relationships. Supporting passages stay calm, related ideas connect, and the page builds toward its action without demanding novelty from every section.
+- **Superficially varied page that fails:** colours, alignments, panel shapes, and decorative styles alternate, but every section still opens into an interchangeable cluster of short items with the same weight and reading path. The page is cosmetically varied and experientially repetitive.
 
-MindWP uses **custom CSS**, not Tailwind, as its visual authoring system.
+## Work at page scale and focal-section scale
 
-- Global CSS owns reset behavior, shared accessibility states, true brand tokens, and stable shell/form foundations.
-- Page CSS owns art direction, composition, local variables, responsive behavior, and signature visuals.
-- Component CSS owns an isolated interaction or genuinely reused behavior.
-- BEM classes name page-specific composition without replacing the shared foundation.
+Work recursively between page scale and focal-section scale.
 
-Use local custom properties and one-off values when they express a deliberate page concept. Promote a value to a global token only after it becomes a stable repeated role.
+1. Understand the page job, audience, commercial progression, and broad job of each section or group.
+2. Establish a provisional full-page visual progression and rhythm around the supplied narrative.
+3. Develop important or uncertain section compositions early.
+4. Let those sections alter grouping, pacing, scale, proof placement, and neighbouring transitions.
+5. Draft and reshape adaptable content as the compositions develop.
+6. Reassess the complete page from those focal decisions.
+7. Continue moving between both scales until neither is merely accommodating decisions frozen at the other scale.
+8. Establish credible narrow-width behaviour while concepts remain adaptable.
+9. Refine content, composition, and responsive behaviour from rendered evidence.
 
-Keep selectors readable, shallow, and close to the markup they style. CSS should support semantic JSX rather than require wrapper-heavy component factories.
+Do not design a collection of isolated substantial sections and then assemble them. Do not create a polished full-page silhouette containing weak individual sections. Neither scale precedes or outranks the other.
 
-### CSS authoring guide
+A planned section is meaning material, not a mandatory horizontal band. Several sections may share one visual environment when they form a continuous meaning or experience. Shared colour or a common container is not sufficient: every important meaning unit within the group still needs a clear hierarchy, role, and transition.
 
-These are working defaults, not blanket bans. Apply judgment when the active page concept, readable content, accessibility, or a rendered comparison demonstrates that an exception has a clear purpose.
+Separate horizontal sections remain valid when the argument, hierarchy, atmosphere, or reading behaviour genuinely changes.
 
-**When siblings form one layout flow:** put their ordinary spacing on the parent with `gap`. This keeps rows, stacks, and grids consistent as they wrap or recompose. A child margin is still appropriate for an intentional offset, optical adjustment, or a boundary outside that shared flow; state the visual reason when making that exception.
+## Develop content and composition together
 
-**When a semantic `<section>` or other DOM unit has more than one direct container or content group:** let that DOM unit own its responsive block padding and the flow between those direct children. Let containers own width, centering, and inline margins; use shared container flow or split-layout roles before recreating a generic stack in page CSS. Page classes should focus on the composition that is specific to that construction.
+Preserve:
 
-**When implementing an established composition:** render semantic HTML with `.container`, global type roles, tokens, and existing shared classes wherever they serve the blocked geometry. Use that baseline as implementation support, not as the method that discovers the composition. Add a container modifier, wrapper, BEM type override, or local value when it owns a visible job; this keeps the shared defaults useful without turning them into a page silhouette.
+- facts;
+- approved claims;
+- search intent;
+- genuine proof;
+- professional, clinical, legal, privacy, and consent boundaries;
+- wording explicitly marked fixed.
 
-Inspect those foundations in current shared source and phase-appropriate focused evidence rather than copying token values or component recipes into skills and page records. Page CSS should extend the live baseline for original inner compositions. During finishing, remove accidental duplication and obsolete overrides while retaining intentional exceptions needed by the approved page character.
+Where the page plan allows, adapt:
 
-**When styling ordinary copy:** let the global heading, paragraph, list, label, and small-text roles inherit first. Section CSS may set alignment, color, emphasis, or composition without restating a complete type system. Add or use a shared display role only when an editorial moment—such as a hero or closing statement—has visibly earned a distinct scale or treatment. Prefer changing the one property the role needs over replacing its family, size, weight, and leading through a complete `font` shorthand.
+- headings;
+- explanatory copy;
+- grouping;
+- sequence;
+- depth;
+- supporting points;
+- presentation format.
 
-**When constraining a line or asset:** add a `max-width` only for a visible purpose: a readable measure, deliberate heading composition, or an actual media constraint. Do not use a narrow width merely to force a reference line wrap or reproduce fixed screenshot geometry; verify the constraint at the required rendered widths.
+Use credible real content early. Do not write and freeze the complete body copy before major compositions exist. Do not build empty visual containers and force unrelated copy into them.
 
-**When changing for smaller screens:** keep one semantic markup structure and recompose it with CSS. Change the parent flow, grid, alignment, order, or decorative treatment as the composition needs; do not duplicate desktop and mobile content just to obtain a different layout. Prefer reducing decorative complexity before reducing readable type, proof, or touch targets.
+Let composition expose a better communication structure: shorten repetition, deepen a necessary distinction, regroup related evidence, or rewrite adaptable copy for a clearer eye path. Let content expose where the composition is too shallow, misleading, or decorative. The final implemented copy belongs to the design-and-build scope and should not remain filler for a mandatory later finishing stage.
 
-**When artwork needs clipping:** scope `overflow: hidden` to the decorative layer that needs it. Do not clip an entire DOM/evidence unit as a repair for responsive layout; content, focus outlines, cards, illustrations, and proof must remain visible. Fix unintended document overflow at its source.
+Supporting planning detail is not a required public-copy count or a required number of visual objects. It may be synthesised or omitted when the essential meaning, claim, proof, boundary, distinction, and action remain understandable.
 
-## Tokens
+Never invent unavailable proof, metrics, testimonials, systems, client results, or operational detail to complete a visual idea.
 
-Create page-local tokens as the visual draft establishes real roles, not before the page reveals what it needs.
+## Choose visual material by its communication job
 
-Global tokens should represent repeated roles:
+Visual material should make meaning easier to perceive, evidence easier to inspect, or an action easier to understand.
 
-- page and text colors;
-- focus and status colors;
-- shared spacing and containers;
-- stable type roles;
-- repeated radii and elevation;
-- motion durations and easings;
-- shell layers.
+- **Typography-led composition** suits language whose contrast, cadence, sequence, or emphasis carries the idea. It fails when display treatment substitutes for an argument.
+- **Photography and real media** provide context, human specificity, place, process, or atmosphere. Crop for the important content rather than defaulting to a convenient centre.
+- **Actual work and proof** should be large and legible enough to judge. Keep evidence connected to the claim it supports.
+- **Document-like evidence** can make a real deliverable, decision, or process inspectable. Do not invent paperwork to imply rigour.
+- **Diagrams** help when a relationship is clearer spatially than verbally. Reject a diagram that requires more interpretation than the written point.
+- **Illustration and abstract systems** may express concepts, tone, or invisible relationships. Do not present them as evidence or force one metaphor across unrelated material.
+- **Code-native spatial artwork** can create depth, connection, sequence, or atmosphere when those qualities support the argument. Decoration alone is not proof of design.
+- **Interface-like material** is appropriate for a real interface, state, choice, or system behaviour. Do not default to a browser frame merely because the work is web-based, or fabricate dashboards, browser scenes, controls, or tiny UI merely to make a service look tangible.
+- **Motion-led explanation and interaction** may clarify state, causality, connection, or spatial continuity. The static equivalent must retain the essential meaning.
+- **Mixed visual languages** are valid when each form has a distinct job and the page still feels coherent.
 
-Page-specific gradients, masks, perspective, project accents, textures, and choreography values should remain local until repetition proves otherwise.
+Cards, lists, grids, panels, timelines, browser frames, and interfaces remain available primitives. Use them because the information or interaction has that structure, not because they create the appearance of a designed payload.
 
-## Typography
+## Compose continuity across the full page
 
-Typography carries much of the brand personality.
+A complete page should make its commercial progression, changes of argument, proof, and intended action perceptible without assigning equal visual weight to every section.
 
-- Let the global semantic roles size ordinary `h1`, `h2`, `h3`, paragraph, list, and small text by default.
-- When a real editorial or interface role differs, use an existing shared type role or type token before writing a complete font shorthand in a BEM selector.
-- Preview the inherited role before adding a page-local size, line-height, weight, or family. Keep a custom family only when it is part of an intentional page role, not an accidental side effect of tuning size.
-- Do not tune local heading sizes merely to preserve one screenshot wrap; verify the natural hierarchy across the required widths.
-- Choose the display and body families for the page art direction, not because they already exist in the repository.
-- Use display scale, weight, width, italic, contrast, and line breaks intentionally.
-- Allow different landmark headings to have different roles and compositions.
-- Keep body text readable and restrained.
-- Use utility or mono styling only when the content is genuinely procedural, locational, timed, or system-like.
-- Keep important text crawlable; do not place meaning only in images, canvas, or pseudo-elements.
+Judge:
 
-Avoid using viewport scaling as a substitute for a coherent type system. Audit custom roles at the default desktop/mobile pair and add an intermediate check when the wrap, scale, or breakpoint behavior makes it useful.
+- narrative progression and changes in visitor understanding;
+- visual anticipation and payoff;
+- continuity between genuinely related ideas;
+- deliberate interruption when the argument changes;
+- shifts in scale, density, surface, and reading effort;
+- focal, supporting, and quiet roles without quotas;
+- placement and legibility of proof;
+- preparation for the primary action;
+- accumulated visual and cognitive fatigue.
 
-## Color and material
+A long page, many sections, recurring surfaces, or several horizontal bands are not defects. Adjacent sections do not need to look different merely because they are adjacent. Ask whether recurrence provides useful continuity or gives genuinely different meanings the same treatment and weight.
 
-Choose a compact palette with named roles and verified contrast. Brand color should guide attention rather than cover every component.
+Necessary cautions can still flatten progression when several versions of the same boundary each claim focal headline scale or a long pause. Consolidate them, let some recede into supporting copy, or place them beside the claim they qualify when that keeps the argument moving. Check this again at narrow widths, where stacked sections amplify equal weight and duration.
 
-Follow the global CSS and global tokens.
+The strongest transferability and originality questions belong primarily to major, proof-bearing, or meaning-critical compositions. A quiet section may appropriately resemble another MindWP section.
 
-Depth may come from:
+## Design responsive transformation early
 
-- tonal variation;
-- controlled gradients and light;
-- soft transparency or blur;
-- grain or texture;
-- shadow and overlap;
-- project-derived accent color;
-- high-contrast scene changes.
+Major compositions need a credible narrow-width reading order while their concepts remain adaptable. Responsive design is recomposition, not automatic shrinking or stacking.
 
-Do not use effects simply to imitate a trend. Status colors retain actual state meaning.
+Mobile should preserve:
 
-## Layout
+- meaning and truthful boundaries;
+- priority and focal hierarchy;
+- comparison, sequence, causality, or other essential relationships;
+- proof and its connection to the relevant claim;
+- the intended action;
+- essential interaction.
 
-Use containers as alignment anchors, not cages. Full-bleed media, controlled overflow, sticky scenes, offset text, nested grids, and layered compositions are allowed.
+Natural linear stacking is valid when the meaning is linear. Reject stacking or uniform card conversion when it destroys comparison, causality, sequence, proof association, ownership, or hierarchy.
 
-Use grid for deliberate two-dimensional composition and flex for rows, clusters, and alignment. Prefer intrinsic sizing. Reserve absolute positioning for controlled layers, annotations, and decoration rather than normal content flow.
+Reorder presentation, simplify supporting decoration, change crop, reduce layering, or replace a dense visual explanation when necessary, while keeping the underlying reading order and meaning coherent. Use intermediate breakpoints because content or geometry needs them, not because a fixed device list requires them.
 
-Construction spacing should express relationship and pacing. Adjacent parts of one act may sit close; a major change of argument or atmosphere may need more space.
+## Give interaction and motion a real job
 
-An eyebrow, heading and paragraph can provide consistent brand grammar without obliging every semantic landmark to begin as the same stacked entry. Integrate headings into the construction where its relationship calls for it; add another container only when that content needs its own width or alignment context.
+Interaction and motion may serve:
 
-## Components
+- orientation;
+- state;
+- causality;
+- connection;
+- meaningful emphasis;
+- spatial continuity.
 
-Build the first page locally. Share only after repetition is real.
+The static composition must remain complete. Essential meaning cannot depend on hover, animation, or a transient state without an equivalent accessible form.
 
-Shared components are valuable when they preserve stable behavior, semantics, accessibility, or repeated visual roles. They must not force unique spatial constructions into one shell.
+Reject:
 
-Do not create prop-heavy marketing factories, universal section components, or a large primitive library before the homepage establishes the actual design language.
+- blanket reveal animation;
+- hover movement on non-interactive material;
+- motion used to rescue a weak static composition;
+- constant or distracting ambient movement;
+- long waits or scroll behaviour that removes orientation;
+- interaction that simulates functionality the service does not provide.
 
-Actions, navigation, and forms must retain semantic elements, visible focus, adequate touch targets, clear labels, and complete interaction states. Their visual treatments may differ by real role.
+Concentrate authored motion where it clarifies a relationship or state. The technical lifecycle, input states, accessibility, reduced-motion implementation, and performance constraints belong to Engineering.
 
-## Media and proof
+## Use accepted-page evidence carefully
 
-Show work large enough to judge. Use purposeful crops and separate mobile treatments when a desktop screenshot would become unreadable.
+The Homepage and Local SEO page are accepted examples of implementation quality, current brand character, and family resemblance. Their audited durable foundations and practices are already distilled into this document and Engineering. They are not default executor reading.
 
-Reserve media space and provide explicit dimensions or aspect ratios. Preserve the important part of each asset rather than defaulting to centre-crop.
+Inspect either page only when:
 
-Choose the visual language from the service meaning, available truthful evidence, desired reading behaviour and implementation context. It may be typographic, interface-based, code-native, spatial, illustrative, image-led, motion-led, document-like or mixed.
+- directly editing or auditing that page;
+- answering a named design, craft, or implementation question;
+- diagnosing a specific regression;
+- the user explicitly requests it.
 
-Do not create fake analytics, fabricated client interfaces, invented maps, fake testimonials, or decorative dashboards.
+They are not templates, pattern libraries, creative briefs, page-length or section-count targets, required surface sequences, breakpoint rules, animation rules, or compositional ceilings.
 
-## Motion
+Their exact fans, staircases, radial systems, tabs, browser scenes, mock interfaces, grids, breakout geometries, hero mechanisms, and motion choreography are page-specific evidence. Do not browse those constructions as a menu of future solutions or copy their anatomy merely because it is available.
 
-Use motion at:
+Page-specific does not mean permanently forbidden. A technique may be reused when the new material independently creates the same need. A future page may also differ substantially while remaining recognisably MindWP.
 
-1. **Feedback:** CSS transitions for hover, focus, active, selected, and control states.
-2. **Choreography:** coordinated CSS or GSAP sequences for handoff, contrast, connection, or proof.
-3. **Atmosphere:** restrained ambient movement, parallax, or pointer response that adds depth without carrying essential meaning.
-4. **Entry:** selective in-view reveals or page-load sequences where they improve pacing.
+Do not promote a recurring value or device to a global design rule unless it is owned by a genuine shared foundation or explicitly adopted as a project decision.
 
-Concentrate choreography into a few authored moments instead of revealing every block the same way.
+## Judge rendered evidence
 
-Choose motion targets from the content structure. An intro may stagger its eyebrow, heading, lead, and action while the cards or list below use a separate sequence. A tab change may transition its message, label, and repeated children rather than moving one coarse panel wrapper. These are useful patterns when motion is earned, not a requirement to animate every landmark or construction.
+Rendering should begin while content and composition remain adaptable, not only after implementation appears complete.
 
-Author the component states that exist: hover, focus-visible, active, open, and selected. Keep hover supplemental, restrict movement-heavy hover to fine pointers, and use restrained material feedback on non-interactive cards so they do not appear clickable.
+A complete-page visual review normally needs:
 
-The static composition must be complete. Do not hide the hero headline, primary action, LCP asset, or core proof behind animation. Reduced motion must remove non-essential movement without removing information.
+- a broad desktop full-page view;
+- a narrow or mobile full-page view;
+- close inspection of important focal sections;
+- an intermediate width when the composition or breakpoint behaviour creates material risk.
 
-Avoid scroll hijacking, long waits, hover-only meaning, constant expensive animation, and pinned scenes that lose orientation.
+This is an evidence standard, not a screenshot packet or fixed capture count. A bounded section task needs only the coupled evidence necessary to judge its page-level consequence. Source code alone cannot prove visual quality.
 
-## Responsive composition
+Review first-glance hierarchy, commercial progression, focal weight, proof legibility, reading effort, neighbour transitions, responsive transformation, interaction intent, and accumulated fatigue. Current source and fresh renders own implemented reality when a particular page is being inspected.
 
-Responsive design is recomposition, not shrinking.
+### Qualitative anti-generic questions
 
-- Preserve the dominant idea of each spatial construction and the order and understanding of its semantic landmarks.
-- Replace or reframe dense desktop media where needed.
-- Keep source order logical.
-- Reduce decorative layers before reducing readable type or touch targets.
-- Reinterpret sticky, overlapping, and interactive constructions deliberately for smaller screens.
-- Ensure proof remains inspectable.
+Use these as judgement prompts, not scores, validators, or quotas:
 
-During the desktop visual-draft phase, carry a credible mobile reinterpretation intent and avoid desktop structure that makes responsive completion implausible. Detailed tablet/mobile CSS and verification begin after the user approves the desktop visual direction.
+- **Shared shell:** after ignoring the palette, typography, surface, alignment, and introduction grammar, does the important inner composition express this material's relationship?
+- **Meaning:** does the visual structure make a real comparison, sequence, dependency, proof relationship, or decision easier to understand, or merely decorate the copy?
+- **Hierarchy:** is the most important idea or evidence visibly unmistakable?
+- **Recurrence:** where a reading pattern repeats, does the material genuinely have the same role and structure? Where meanings differ, do their payload hierarchy, scale, and eye path differ for a reason?
+- **Grouping:** does a shared environment create one continuous experience, or merely conceal ordinary independent bands inside a wrapper?
+- **Truth:** does every apparent proof object contain real evidence or clearly identify itself as illustration?
+- **Mobile:** is the central relationship preserved or thoughtfully simplified, rather than fragmented into an automatic stack?
+- **Reference contamination:** was a recognisable accepted-page construction reused because this material independently needed it, or only because it was available?
 
-During production finishing, implement and review CSS behavior across desktop, tablet, and mobile even when the evidence stays compact. Making `1024px` capture conditional does not make tablet layout, breakpoint logic or code inspection optional.
-
-Review widths:
-
-- `1640px` is the visual-draft decision width. Full-page evidence is primary at this phase; crops are subordinate local evidence and do not define the visible composition. The `mindwp-design-page` skill owns the capture order, critique packets, calibration and recompose loop.
-- `1640px` desktop and `400px` mobile are the default finishing and final-audit pair and the generic route-capture default.
-- Add `1280px`, `1024px`, or `766px` when a breakpoint, dense navigation, overlap, artwork, type wrap, or diagnosed defect needs intermediate evidence. The generic route capture's `--full` pass provides the extended matrix when that is more efficient than selecting checks manually.
-- Add desktop/mobile reduced-motion captures when the work introduces or changes motion.
-- Include `1920px` when the supplied comparison was captured at that width or wide-screen behavior is specifically in question. Treat its wraps and total page height as visual evidence, not a fixed geometry contract.
-- Reuse an existing local dev server when it serves current source; do not restart it merely to capture the route.
-
-Check below `400px` when a specific composition risks overflow.
-
-## Visual decision and final acceptance
-
-Build output is not visual approval, and technical competence is not enough for the first presentation.
-
-For the first visual decision, the `1640px` full page must make the first-draft standard inspectable; only the smallest useful act or evidence crops should supplement it. A direct DOM section is a capture boundary, not proof that its semantic landmark needs an autonomous composition. Detailed mobile, motion, accessibility, performance, test and release hardening do not belong to this desktop visual decision. The `mindwp-design-page` skill owns the qualifying-draft procedure; [PAGE-WORKFLOW.md](./PAGE-WORKFLOW.md) owns the human decision boundary.
-
-After visual approval, finishing and final audit require the default full-page pair. A single-section change needs that section's crop; several named changes need those crops; a full-page finish needs every direct section available for audit. Multiple or all crops are summarised into one labelled contact sheet per default viewport so the reviewer can triage the page before opening only the full-resolution crops that need close inspection. Add state, intermediate-width and reduced-motion evidence according to actual risks.
-
-The active page skill owns the exact capture commands and review sequence for its phase. Crops remain evidence for close inspection, not a demand that each semantic landmark become visually autonomous. An approved desktop render still requires semantic, responsive, accessible production finishing and a final rendered audit.
-
-Review:
-
-- first-glance impact;
-- commercial clarity without reading every paragraph;
-- typography and composition;
-- full-page silhouette, visual mass and memorable anchors;
-- visual repetition and fatigue;
-- whether each visual explains more than its heading alone;
-- proof scale and cropping;
-- interaction quality;
-- mobile hierarchy;
-- accessibility on the actual composed backgrounds;
-- whether the result feels specific to MindWP.
+No design rule should require surface counts, alternating alignments, card limits, fixed focal moments, a repetition budget, bespoke artwork for every section, or a prescribed number of concepts. Distinction is earned by meaning; coherence is not a failure of originality.

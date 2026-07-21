@@ -1,0 +1,4 @@
+interface:
+  display_name: "MindWP Frontend Quality"
+  short_description: "Audit and harden MindWP frontend implementation"
+  default_prompt: "Use $mindwp-frontend-quality to audit or repair this MindWP implementation from current source and rendered evidence while preserving accepted design intent."

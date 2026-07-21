@@ -1,5 +1,5 @@
 :root {
-  /* ---- Display scale (serif) — pick per section, don't repeat ---- */
+  /* ---- Display scale (serif) — choose by hierarchy and context ---- */
   --display-2xl: 700 clamp(3rem, 2.2rem + 3.5vw, 6.5rem) / 0.98 var(--font-display);
   --display-xl: 600 clamp(2.5rem, 2rem + 2.2vw, 4.75rem) / 1.02 var(--font-display);
   --display-lg: 500 clamp(2rem, 1.7rem + 1.4vw, 3.375rem) / 1.08 var(--font-display);

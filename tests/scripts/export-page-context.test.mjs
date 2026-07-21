@@ -1,264 +1,285 @@
 import assert from "node:assert/strict";
-import { cp, mkdir, mkdtemp, readFile, rm, writeFile } from "node:fs/promises";
+import { link, mkdtemp, readFile, rm, stat, symlink, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { dirname, join, resolve } from "node:path";
 import { test } from "node:test";
 import { fileURLToPath } from "node:url";
 
 import {
-  buildPageContext,
-  pageRecordHasApprovedMeaning,
+  buildContext,
+  contextSourceList,
   parseContextArguments,
-} from "../../scripts/export-page-context.mjs";
+  runContextExport,
+} from "../../scripts/export-context.mjs";
 
 const repositoryRoot = resolve(dirname(fileURLToPath(import.meta.url)), "../..");
+const generatedAt = new Date("2026-07-20T12:00:00.000Z");
 
-test("planning context contains meaning authority and the active page record only", async () => {
-  const context = await buildPageContext({
-    pageId: "lead-response-handling",
-    profile: "planning",
-    repositoryRoot,
-  });
+function options(args) {
+  return parseContextArguments(args, { repositoryRoot });
+}
 
-  assert.match(context, /## Source: docs\/PAGE-WORKFLOW\.md/);
-  assert.match(context, /## Source: docs\/STRATEGY\.md/);
-  assert.match(context, /## Source: docs\/pages\/lead-response-handling\/page\.md/);
-  assert.doesNotMatch(context, /## Source: docs\/DESIGN\.md/);
+test("orientation exports the canonical memory set in deterministic order", async () => {
+  const parsed = options([]);
+  const context = await buildContext(parsed, { generatedAt });
+
+  assert.deepEqual(
+    contextSourceList(parsed).map((source) => source.label),
+    [
+      "docs/README.md",
+      "docs/FOUNDATION.md",
+      "docs/STRATEGY.md",
+      "docs/WRITING.md",
+      "docs/PAGE-PLANNING.md",
+      "docs/DESIGN.md",
+    ],
+  );
+  assert.match(context, /^# DERIVED MINDWP CONTEXT — NON-AUTHORITATIVE/m);
+  assert.match(context, /Generated: 2026-07-20T12:00:00.000Z/);
   assert.doesNotMatch(context, /## Source: docs\/ENGINEERING\.md/);
-  assert.doesNotMatch(context, /prototype\.md/);
+  assert.doesNotMatch(context, /## Source: AGENTS\.md/);
+  assert.ok(
+    contextSourceList(parsed).every(
+      (source) =>
+        !source.label.includes("PAGE-WORKFLOW") &&
+        !source.label.includes("PAGE-LEDGER") &&
+        !source.label.includes("export-page-context"),
+    ),
+  );
 });
 
-test("design context contains the complete visual-draft authority set", async () => {
-  const context = await buildPageContext({
-    pageId: "lead-response-handling",
-    profile: "design",
-    repositoryRoot,
-  });
-
-  assert.doesNotMatch(context, /## Source: docs\/STRATEGY\.md/);
-  assert.match(context, /## Source: docs\/DESIGN\.md/);
+test("orientation includes Engineering only when requested", async () => {
+  const parsed = options(["orientation", "--engineering"]);
+  const context = await buildContext(parsed, { generatedAt });
+  assert.equal(contextSourceList(parsed).at(-1).label, "docs/ENGINEERING.md");
   assert.match(context, /## Source: docs\/ENGINEERING\.md/);
-  assert.match(context, /## Source: docs\/pages\/lead-response-handling\/page\.md/);
-  assert.match(context, /## Source: \.agents\/skills\/mindwp-design-page\/SKILL\.md/);
-  assert.match(context, /Build the approved Lead Response page/);
-  assert.match(context, /Homepage and Local SEO Authority/);
-  assert.match(context, /semantic landmark/);
-  assert.match(context, /spatial construction or visual act/);
-  assert.match(context, /three to five substantial spatial constructions/);
-  assert.match(context, /entry → copy → payload renderer/);
-  assert.match(context, /reference-blind composition critique/);
-  assert.match(context, /independent read-only visual critic/);
-  assert.match(context, /discard and recompose/);
-  assert.match(context, /User-visible drafts are approved or rejected/);
-
-  const meaningPosition = context.indexOf("## Source: docs/pages/lead-response-handling/page.md");
-  const designPosition = context.indexOf("## Source: docs/DESIGN.md");
-  const skillPosition = context.indexOf("## Source: .agents/skills/mindwp-design-page/SKILL.md");
-  assert.ok(meaningPosition < designPosition);
-  assert.ok(designPosition < skillPosition);
 });
 
-test("finish and audit profiles contain production authorities and the meaning record", async () => {
-  for (const profile of ["finish", "audit"]) {
-    const context = await buildPageContext({
-      pageId: "lead-response-handling",
-      profile,
-      repositoryRoot,
-    });
-
-    assert.match(context, /## Source: docs\/STRATEGY\.md/);
-    assert.match(context, /## Source: docs\/DESIGN\.md/);
-    assert.match(context, /## Source: docs\/ENGINEERING\.md/);
-    assert.match(context, /## Source: docs\/pages\/lead-response-handling\/page\.md/);
-    assert.match(context, /verify implemented reality from current source and renders/);
-  }
-});
-
-test("context export tolerates a page without a page record", async () => {
-  const context = await buildPageContext({
-    pageId: "page-without-record",
-    profile: "design",
-    repositoryRoot,
-  });
-
-  assert.match(context, /# MindWP page context: page-without-record/);
-  assert.doesNotMatch(context, /docs\/pages\/page-without-record\/page\.md/);
-  assert.match(context, /## Source: docs\/STRATEGY\.md/);
-});
-
-test("a present but unapproved page record does not suppress strategy", async () => {
-  const fixtureRoot = await mkdtemp(join(tmpdir(), "mindwp-context-check-"));
-
+test("focused base accepts an explicit page plan and zero skills", async () => {
+  const fixture = await mkdtemp(join(tmpdir(), "mindwp-focused-context-"));
   try {
-    await cp(resolve(repositoryRoot, "docs"), resolve(fixtureRoot, "docs"), {
-      recursive: true,
-    });
-    await cp(resolve(repositoryRoot, ".agents"), resolve(fixtureRoot, ".agents"), {
-      recursive: true,
-    });
-    await mkdir(resolve(fixtureRoot, "docs/pages/draft-page"), { recursive: true });
-    await writeFile(
-      resolve(fixtureRoot, "docs/pages/draft-page/page.md"),
-      "---\npage_id: draft-page\ntitle: Draft page\nroute: /draft-page\n---\n\n# Draft page\n",
+    const pagePlan = resolve(fixture, "synthetic-page.md");
+    await writeFile(pagePlan, "# Synthetic page\n\nMeaning stays page-specific.\n");
+
+    const parsed = options(["focused", "--page-plan", pagePlan]);
+    assert.deepEqual(parsed.skills, []);
+    const context = await buildContext(parsed, { generatedAt });
+    assert.deepEqual(
+      contextSourceList(parsed).map((source) => source.label),
+      [
+        "docs/README.md",
+        "docs/FOUNDATION.md",
+        "supplied page plan",
+        "docs/WRITING.md",
+        "docs/DESIGN.md",
+      ],
     );
-
-    const ledgerPath = resolve(fixtureRoot, "docs/PAGE-LEDGER.md");
-    const ledger = await readFile(ledgerPath, "utf8");
-    await writeFile(
-      ledgerPath,
-      ledger.replace(
-        "\n## Update rule",
-        "\n| **Draft page** | `/draft-page` | draft | not started | not started | not started | not started | not approved | none | Meaning is not approved. |\n\n## Update rule",
-      ),
-    );
-
-    const context = await buildPageContext({
-      pageId: "draft-page",
-      profile: "design",
-      repositoryRoot: fixtureRoot,
-    });
-
-    assert.match(context, /## Source: docs\/pages\/draft-page\/page\.md/);
-    assert.match(context, /## Source: docs\/STRATEGY\.md/);
+    assert.match(context, /Meaning stays page-specific\./);
   } finally {
-    await rm(fixtureRoot, { recursive: true, force: true });
+    await rm(fixture, { recursive: true, force: true });
   }
 });
 
-test("approved meaning requires a matching approved ledger row", async () => {
-  const pageRecord = "---\nroute: /example\n---\n";
-  assert.equal(
-    pageRecordHasApprovedMeaning(pageRecord, "| **Example** | `/example` | approved | rendered |"),
-    true,
-  );
-  assert.equal(
-    pageRecordHasApprovedMeaning(pageRecord, "| **Example** | `/example` | draft | rendered |"),
-    false,
-  );
-  assert.equal(
-    pageRecordHasApprovedMeaning(pageRecord, "| **Other** | `/other` | approved | rendered |"),
-    false,
-  );
-});
-
-test("drafting principles, record schema, and procedure remain in their owning authorities", async () => {
-  const [design, skill, workflow, engineering, template, pageRecord] = await Promise.all([
-    readFile(resolve(repositoryRoot, "docs/DESIGN.md"), "utf8"),
-    readFile(resolve(repositoryRoot, ".agents/skills/mindwp-design-page/SKILL.md"), "utf8"),
-    readFile(resolve(repositoryRoot, "docs/PAGE-WORKFLOW.md"), "utf8"),
-    readFile(resolve(repositoryRoot, "docs/ENGINEERING.md"), "utf8"),
-    readFile(resolve(repositoryRoot, "docs/pages/_templates/page.md"), "utf8"),
-    readFile(resolve(repositoryRoot, "docs/pages/lead-response-handling/page.md"), "utf8"),
+test("focused optional sources and skills use deterministic order", async () => {
+  const parsed = options([
+    "focused",
+    "--skill",
+    "mindwp-frontend-quality",
+    "--repository",
+    "--engineering",
+    "--skill",
+    "mindwp-design-build",
+    "--strategy",
+    "--skill",
+    "mindwp-design-build",
   ]);
+  await buildContext(parsed, { generatedAt });
 
-  assert.match(design, /Keep three units distinct/);
-  assert.match(design, /Whole-page composition precedes and outranks landmark development/);
-  assert.match(design, /After the new composition passes a reference-blind full-page review/);
-  assert.match(skill, /For each construction, decide:/);
-  assert.match(skill, /minimal heading labels and only provisional supporting language/);
-  assert.match(skill, /Run the reference-blind composition critique/);
-  assert.match(template, /Essential public meaning and truth boundary \| Supporting reservoir/);
-  assert.match(pageRecord, /Essential public meaning and truth boundary/);
-  assert.match(pageRecord, /Supporting reservoir/);
-  assert.doesNotMatch(workflow, /For each construction, decide:/);
-  assert.doesNotMatch(engineering, /three to five substantial spatial constructions/);
-  assert.doesNotMatch(engineering, /entry → copy → payload renderer/);
-});
-
-test("optional session boundary is portable and non-authoritative", async () => {
-  const context = await buildPageContext({
-    pageId: "home",
-    profile: "design",
-    repositoryRoot,
-    mode: "section redesign in page context",
-    scope: "homepage certainty section",
-    task: "build one stronger composition without changing approved meaning",
-  });
-
-  assert.match(context, /## Session boundary \(non-authoritative\)/);
-  assert.match(context, /- Mode: section redesign in page context/);
-  assert.match(context, /- Scope: homepage certainty section/);
-  assert.match(
-    context,
-    /- Exact task: build one stronger composition without changing approved meaning/,
+  assert.deepEqual(
+    contextSourceList(parsed).map((source) => source.label),
+    [
+      "docs/README.md",
+      "AGENTS.md",
+      "docs/FOUNDATION.md",
+      "docs/STRATEGY.md",
+      "docs/WRITING.md",
+      "docs/DESIGN.md",
+      "docs/ENGINEERING.md",
+      ".agents/skills/mindwp-design-build/SKILL.md",
+      ".agents/skills/mindwp-frontend-quality/SKILL.md",
+    ],
   );
-  assert.match(context, /does not replace the private design synthesis/);
-  assert.match(context, /phase-appropriate evidence review/);
-
-  const contextWithoutBoundary = await buildPageContext({
-    pageId: "home",
-    profile: "planning",
-    repositoryRoot,
-  });
-  assert.doesNotMatch(contextWithoutBoundary, /## Session boundary/);
 });
 
-test("session boundary values stay on one Markdown line", async () => {
-  const context = await buildPageContext({
-    pageId: "home",
-    profile: "planning",
-    repositoryRoot,
-    task: "review the section\n- injected field",
-  });
-
-  assert.match(context, /- Exact task: review the section - injected field/);
-  assert.doesNotMatch(context, /\n- injected field/);
-});
-
-test("context arguments reject unsafe page ids, retired profiles, and repository output", () => {
-  assert.throws(
-    () => parseContextArguments(["../home"], { repositoryRoot }),
-    /lowercase letters, digits, and hyphens/,
-  );
-
-  for (const retiredProfile of ["production", "claude-design"]) {
-    assert.throws(
-      () =>
-        parseContextArguments(["home", "--profile", retiredProfile], {
-          repositoryRoot,
-        }),
-      /Unknown profile/,
-    );
+test("focused permits either single execution skill", () => {
+  for (const skill of ["mindwp-design-build", "mindwp-frontend-quality"]) {
+    const parsed = options(["focused", "--skill", skill]);
+    assert.deepEqual(parsed.skills, [skill]);
+    assert.equal(contextSourceList(parsed).at(-1).path, `.agents/skills/${skill}/SKILL.md`);
   }
+});
 
-  assert.throws(
+test("export preserves complete canonical source bodies", async () => {
+  const foundation = await readFile(resolve(repositoryRoot, "docs/FOUNDATION.md"), "utf8");
+  const context = await buildContext(options([]), { generatedAt });
+  assert.ok(context.includes(`## Source: docs/FOUNDATION.md\n\n${foundation}`));
+});
+
+test("task boundaries are normalised and remain non-authoritative", async () => {
+  const context = await buildContext(
+    options(["focused", "--task", "Review this page\n  without inventing strategy"]),
+    { generatedAt },
+  );
+  assert.match(context, /## Task boundary \(non-authoritative\)/);
+  assert.match(context, /Review this page without inventing strategy/);
+  assert.doesNotMatch(context, /Review this page\n/);
+});
+
+test("arguments reject unknown profiles, options, skills, and profile-inapplicable flags", () => {
+  assert.throws(() => options(["planning"]), /Unknown context profile/);
+  assert.throws(() => options(["orientation", "--unknown"]), /Unknown context option/);
+  assert.throws(() => options(["focused", "--skill", "mindwp-missing"]), /Unknown execution skill/);
+  assert.throws(() => options(["orientation", "--repository"]), /focused profile/);
+  assert.throws(() => options(["orientation", "--overwrite"]), /requires --output/);
+});
+
+test("missing requested sources fail loudly", async () => {
+  const missingPlan = resolve(tmpdir(), "mindwp-context-plan-does-not-exist.md");
+  await assert.rejects(
+    () => buildContext(options(["focused", "--page-plan", missingPlan]), { generatedAt }),
+    /Missing requested context source: supplied page plan/,
+  );
+});
+
+test("stdout is the default output", async () => {
+  let output = "";
+  await runContextExport(["orientation"], {
+    generatedAt,
+    repositoryRoot,
+    stdout: { write: (value) => (output += value) },
+  });
+  assert.match(output, /^# DERIVED MINDWP CONTEXT — NON-AUTHORITATIVE/);
+});
+
+test("external output refuses replacement unless overwrite is explicit", async () => {
+  const fixture = await mkdtemp(join(tmpdir(), "mindwp-context-output-"));
+  try {
+    const outputPath = resolve(fixture, "context.md");
+    let notice = "";
+    await runContextExport(["orientation", "--output", outputPath], {
+      generatedAt,
+      repositoryRoot,
+      stdout: { write: (value) => (notice += value) },
+    });
+    assert.equal(notice, `${outputPath}\n`);
+    assert.match(await readFile(outputPath, "utf8"), /DERIVED MINDWP CONTEXT/);
+
+    await assert.rejects(
+      () =>
+        runContextExport(["orientation", "--output", outputPath], {
+          generatedAt,
+          repositoryRoot,
+          stdout: { write() {} },
+        }),
+      /already exists/,
+    );
+
+    await runContextExport(["orientation", "--output", outputPath, "--overwrite"], {
+      generatedAt,
+      repositoryRoot,
+      stdout: { write() {} },
+    });
+    assert.equal((await stat(outputPath)).mode & 0o777, 0o600);
+  } finally {
+    await rm(fixture, { recursive: true, force: true });
+  }
+});
+
+test("overwrite replaces an external hard link without mutating its source", async () => {
+  const fixture = await mkdtemp(join(tmpdir(), "mindwp-context-hardlink-"));
+  try {
+    const sourcePath = resolve(fixture, "source.md");
+    const outputPath = resolve(fixture, "context.md");
+    await writeFile(sourcePath, "preserve this source\n", { mode: 0o644 });
+    await link(sourcePath, outputPath);
+
+    await runContextExport(["orientation", "--output", outputPath, "--overwrite"], {
+      generatedAt,
+      repositoryRoot,
+      stdout: { write() {} },
+    });
+
+    assert.equal(await readFile(sourcePath, "utf8"), "preserve this source\n");
+    assert.match(await readFile(outputPath, "utf8"), /DERIVED MINDWP CONTEXT/);
+    assert.equal((await stat(outputPath)).mode & 0o777, 0o600);
+  } finally {
+    await rm(fixture, { recursive: true, force: true });
+  }
+});
+
+test("repository destinations and output symlinks are rejected", async () => {
+  await assert.rejects(
     () =>
-      parseContextArguments(
-        ["home", "--output", `${repositoryRoot}/docs/generated-home-context.md`],
-        { repositoryRoot },
+      runContextExport(
+        ["orientation", "--output", resolve(repositoryRoot, "docs/generated-context.md")],
+        { generatedAt, repositoryRoot, stdout: { write() {} } },
       ),
     /outside the repository/,
   );
+
+  const fixture = await mkdtemp(join(tmpdir(), "mindwp-context-symlink-"));
+  try {
+    const target = resolve(fixture, "target.md");
+    const link = resolve(fixture, "output.md");
+    await writeFile(target, "keep\n");
+    await symlink(target, link);
+    await assert.rejects(
+      () =>
+        runContextExport(["orientation", "--output", link, "--overwrite"], {
+          generatedAt,
+          repositoryRoot,
+          stdout: { write() {} },
+        }),
+      /symbolic link/,
+    );
+  } finally {
+    await rm(fixture, { recursive: true, force: true });
+  }
 });
 
-test("design context accepts a user-requested normal variant route as session scope", async () => {
-  const options = parseContextArguments(
-    [
-      "--",
-      "lead-response-handling",
-      "--profile",
-      "design",
-      "--mode",
-      "user-requested route variant",
-      "--scope",
-      "/services/lead-response-handling-variant-2",
-      "--task",
-      "build a different complete desktop visual draft",
-      "--output",
-      "/tmp/mindwp-lead-response-variant-2-context.md",
-    ],
-    { repositoryRoot },
-  );
+test("a symlinked parent cannot route output back into the repository", async () => {
+  const fixture = await mkdtemp(join(tmpdir(), "mindwp-context-parent-"));
+  try {
+    const link = resolve(fixture, "repository-link");
+    await symlink(repositoryRoot, link);
+    await assert.rejects(
+      () =>
+        runContextExport(["orientation", "--output", resolve(link, "generated-context.md")], {
+          generatedAt,
+          repositoryRoot,
+          stdout: { write() {} },
+        }),
+      /outside the repository/,
+    );
+  } finally {
+    await rm(fixture, { recursive: true, force: true });
+  }
+});
 
-  assert.equal(options.pageId, "lead-response-handling");
-  assert.equal(options.profile, "design");
-  assert.equal(options.mode, "user-requested route variant");
-  assert.equal(options.scope, "/services/lead-response-handling-variant-2");
-  assert.equal(options.task, "build a different complete desktop visual draft");
-  assert.equal(options.outputPath, "/tmp/mindwp-lead-response-variant-2-context.md");
-
-  const context = await buildPageContext(options);
-  assert.match(context, /- Scope: \/services\/lead-response-handling-variant-2/);
-  assert.match(context, /## Source: docs\/pages\/lead-response-handling\/page\.md/);
-  assert.doesNotMatch(context, /prototype\.md/);
+test("a missing output parent fails without creating directories", async () => {
+  const fixture = await mkdtemp(join(tmpdir(), "mindwp-context-parent-missing-"));
+  try {
+    const outputPath = resolve(fixture, "missing", "context.md");
+    await assert.rejects(
+      () =>
+        runContextExport(["orientation", "--output", outputPath], {
+          generatedAt,
+          repositoryRoot,
+          stdout: { write() {} },
+        }),
+      /parent must already exist/,
+    );
+  } finally {
+    await rm(fixture, { recursive: true, force: true });
+  }
 });

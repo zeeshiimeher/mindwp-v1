@@ -1,88 +1,16 @@
 #!/usr/bin/env node
 
-import { access, readdir, readFile } from "node:fs/promises";
-import { dirname, resolve } from "node:path";
+import { access, readdir, readFile, realpath, stat } from "node:fs/promises";
+import { dirname, relative, resolve, sep } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 
 const scriptDirectory = dirname(fileURLToPath(import.meta.url));
 const defaultRepositoryRoot = resolve(scriptDirectory, "..");
 
-const EXPECTED_SKILLS = [
-  "mindwp-site",
-  "mindwp-plan-page",
-  "mindwp-design-page",
-  "mindwp-finish-page",
-];
-
-const REQUIRED_MARKERS = {
-  "mindwp-site": ["mindwp-plan-page", "mindwp-design-page", "mindwp-finish-page"],
-  "mindwp-plan-page": [
-    "Plan meaning and content architecture only",
-    "Do not propose visual territories",
-    "If a build prompt names an already approved page, do not re-plan it",
-    "semantic landmark",
-    "essential public meaning and truth boundary",
-    "Supporting payloads are a reservoir of meaning and truth",
-    "Neighbour distinctions protect rhetorical progression",
-  ],
-  "mindwp-design-page": [
-    "Begin from meaning and stable foundations",
-    "Do not inspect complete Homepage or Local SEO Authority renders before fresh composition exists",
-    "Homepage and Local SEO Authority",
-    "semantic landmark",
-    "spatial construction or visual act",
-    "DOM or evidence unit",
-    "supports semantic implementation, testing or capture; it does not define the visible composition by default",
-    "three to five substantial spatial constructions before designing individual semantic sections",
-    "Use the count as a private forcing function for substantial page-level composition, not as a reusable layout pattern, public band count or semantic-section quota",
-    "## Challenge the page-level composition",
-    "isolated mini-sections hidden inside a shared background",
-    "Block the composition before final copy",
-    "minimal heading labels and only provisional supporting language",
-    "final body copy, full payload lists or payload-derived components generate the geometry",
-    "Build the complete desktop page",
-    "Synthesize or omit supporting payload detail publicly",
-    "Keep every essential communication job, claim, truth boundary, distinction and CTA publicly understandable",
-    "reference-blind composition critique",
-    "Do not provide complete accepted-page screenshots, section crops, the private composition brief",
-    "entry → copy → payload renderer",
-    "Shared backgrounds, unequal cards, documents, photography or reduced colour alternation",
-    "--desktop --sections",
-    "independent read-only visual critic",
-    "Only after the reference-blind composition review passes",
-    "discard and recompose",
-    "Do not use a fixed iteration count",
-    "Present only the first threshold-passing",
-    "User-visible drafts have two default decisions",
-    "**Approve:** record visual approval and move to `mindwp-finish-page`.",
-    "**Reject:** record the draft as rejected and excluded from creative evidence. Do not carry its presentation into a replacement.",
-    "Targeted refinement happens only when the user explicitly asks",
-  ],
-  "mindwp-finish-page": [
-    "Finish production",
-    "Audit-only",
-    "responsive",
-    "Final audit",
-    "must not flatten a distinctive page into the shared baseline",
-  ],
-};
-
-const DESIGN_SEQUENCE_MARKERS = [
-  "## Begin from meaning and stable foundations",
-  "## Compose three to five substantial spatial constructions",
-  "## Challenge the page-level composition",
-  "## Block the composition before final copy",
-  "## Build the complete desktop page",
-  "## Run the reference-blind composition critique",
-  "## Calibrate with accepted MindWP references",
-];
-
-const RETIRED_SKILL_REFERENCES = [
-  "mindwp-build-page",
-  "mindwp-css",
-  "mindwp-rendered-review",
-  "mindwp-claude-design-handoff",
-];
+const PLACEHOLDER_PATTERN =
+  /\b(?:TODO|TBD|FIXME|XXX)\b|\{\{[^}]+\}\}|\[(?:insert|placeholder)\b[^\]]*\]/i;
+const REQUIRED_INTERFACE_FIELDS = ["display_name", "short_description", "default_prompt"];
+const SKILL_NAME_PATTERN = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 
 async function exists(path) {
   try {
@@ -93,29 +21,202 @@ async function exists(path) {
   }
 }
 
-function frontmatterValue(frontmatter, key) {
-  const match = frontmatter.match(new RegExp(`^\\s*${key}:\\s*(.+)$`, "m"));
-  return match?.[1]?.trim().replace(/^['"]|['"]$/g, "");
+function unquote(value) {
+  const trimmed = value.trim();
+  const quoted = trimmed.match(/^(["'])([\s\S]*)\1$/);
+  return quoted ? quoted[2] : trimmed;
+}
+
+function parseFlatMapping(source, label, issues, { allowedKeys } = {}) {
+  const values = new Map();
+
+  for (const [index, rawLine] of source.split(/\r?\n/).entries()) {
+    const line = rawLine.trim();
+    if (!line || line.startsWith("#")) continue;
+
+    const match = rawLine.match(/^([a-zA-Z][\w-]*):\s*(.*)$/);
+    if (!match) {
+      issues.push(`${label}: invalid mapping at line ${index + 1}.`);
+      continue;
+    }
+
+    const [, key, rawValue] = match;
+    if (values.has(key)) issues.push(`${label}: duplicate '${key}' definition.`);
+    if (allowedKeys && !allowedKeys.has(key)) {
+      issues.push(`${label}: unsupported frontmatter field '${key}'.`);
+    }
+    const trimmedValue = rawValue.trim();
+    if (
+      trimmedValue &&
+      (/^[\[\]{|}>]/.test(trimmedValue) ||
+        (/^["']/.test(trimmedValue) && !/^(?:"[^"]*"|'[^']*')$/.test(trimmedValue)))
+    ) {
+      issues.push(`${label}: '${key}' must be a single string scalar.`);
+    }
+    values.set(key, unquote(rawValue));
+  }
+
+  return values;
+}
+
+function parseMetadata(source, skillName, issues) {
+  const lines = source.split(/\r?\n/);
+  const topLevel = new Set();
+  const interfaceValues = new Map();
+  let section;
+
+  if (lines.some((line) => line.includes("\t"))) {
+    issues.push(`${skillName}: agents/openai.yaml must use spaces, not tabs.`);
+  }
+
+  for (const [index, rawLine] of lines.entries()) {
+    if (!rawLine.trim() || rawLine.trimStart().startsWith("#")) continue;
+
+    const topMatch = rawLine.match(/^([a-zA-Z][\w-]*):\s*(.*)$/);
+    if (topMatch) {
+      const [, key, trailing] = topMatch;
+      if (topLevel.has(key)) {
+        issues.push(`${skillName}: agents/openai.yaml duplicates top-level '${key}'.`);
+      }
+      topLevel.add(key);
+      section = key;
+      if (trailing.trim()) {
+        issues.push(`${skillName}: agents/openai.yaml '${key}' must be a mapping.`);
+      }
+      continue;
+    }
+
+    const nestedMatch = rawLine.match(/^  ([a-zA-Z][\w-]*):\s*(.*)$/);
+    if (!nestedMatch) {
+      if (!/^\s{4,}-\s|^\s{4,}[a-zA-Z][\w-]*:\s*/.test(rawLine)) {
+        issues.push(`${skillName}: invalid agents/openai.yaml structure at line ${index + 1}.`);
+      }
+      continue;
+    }
+
+    if (!section) {
+      issues.push(`${skillName}: agents/openai.yaml has a field without a parent mapping.`);
+      continue;
+    }
+
+    if (section === "interface") {
+      const [, key, rawValue] = nestedMatch;
+      if (interfaceValues.has(key)) {
+        issues.push(`${skillName}: agents/openai.yaml duplicates interface.${key}.`);
+      }
+      if (!rawValue.trim()) {
+        issues.push(`${skillName}: agents/openai.yaml interface.${key} must be a scalar.`);
+      } else if (!/^(?:"[^"]*"|'[^']*')$/.test(rawValue.trim())) {
+        issues.push(`${skillName}: agents/openai.yaml interface.${key} must be quoted.`);
+      }
+      interfaceValues.set(key, unquote(rawValue));
+    }
+  }
+
+  if (!topLevel.has("interface")) {
+    issues.push(`${skillName}: agents/openai.yaml is missing the interface mapping.`);
+  }
+
+  for (const field of REQUIRED_INTERFACE_FIELDS) {
+    if (!interfaceValues.get(field)?.trim()) {
+      issues.push(`${skillName}: agents/openai.yaml is missing interface.${field}.`);
+    }
+  }
+
+  return interfaceValues;
+}
+
+function isWithin(path, parent) {
+  const relation = relative(parent, path);
+  return relation === "" || (!relation.startsWith(`..${sep}`) && relation !== "..");
+}
+
+function localMarkdownReferences(source) {
+  const references = [];
+  const linkPattern = /\]\(([^)\s]+)(?:\s+["'][^"']*["'])?\)/g;
+
+  for (const match of source.matchAll(linkPattern)) {
+    const reference = match[1].replace(/^<|>$/g, "").split("#", 1)[0];
+    if (
+      reference &&
+      !reference.startsWith("#") &&
+      !/^[a-z][a-z0-9+.-]*:/i.test(reference) &&
+      !reference.includes("<") &&
+      !reference.includes(">")
+    ) {
+      references.push(reference);
+    }
+  }
+
+  return references;
+}
+
+async function validateLocalReferences({
+  source,
+  sourceDirectory,
+  repositoryRoot,
+  skillName,
+  issues,
+}) {
+  for (const reference of localMarkdownReferences(source)) {
+    const target = resolve(sourceDirectory, reference);
+    if (!isWithin(target, repositoryRoot)) {
+      issues.push(`${skillName}: local reference escapes the repository: '${reference}'.`);
+    } else if (!(await exists(target))) {
+      issues.push(`${skillName}: unresolved local reference '${reference}'.`);
+    } else {
+      const [realRepository, realTarget] = await Promise.all([
+        realpath(repositoryRoot),
+        realpath(target),
+      ]);
+      if (!isWithin(realTarget, realRepository)) {
+        issues.push(
+          `${skillName}: local reference resolves outside the repository: '${reference}'.`,
+        );
+      }
+    }
+  }
+}
+
+function referencedSkills(source) {
+  const references = new Set();
+  for (const match of source.matchAll(/\$(mindwp-[a-z0-9-]+)\b|`(mindwp-[a-z0-9-]+)`/g)) {
+    references.add(match[1] ?? match[2]);
+  }
+  return references;
 }
 
 export async function validateSkills(repositoryRoot = defaultRepositoryRoot) {
   const issues = [];
   const skillsRoot = resolve(repositoryRoot, ".agents/skills");
-  const entries = (await readdir(skillsRoot, { withFileTypes: true }))
-    .filter((entry) => entry.isDirectory() && !entry.name.startsWith("."))
-    .map((entry) => entry.name)
-    .sort();
 
-  const expected = [...EXPECTED_SKILLS].sort();
-  if (JSON.stringify(entries) !== JSON.stringify(expected)) {
-    issues.push(
-      `Expected exactly ${EXPECTED_SKILLS.length} focused skills: ${EXPECTED_SKILLS.join(", ")}.`,
-    );
+  if (!(await exists(skillsRoot))) {
+    return ["Missing .agents/skills directory."];
   }
 
-  for (const skillName of EXPECTED_SKILLS) {
-    const skillPath = resolve(skillsRoot, skillName, "SKILL.md");
-    const metadataPath = resolve(skillsRoot, skillName, "agents/openai.yaml");
+  const entries = [];
+  for (const entry of await readdir(skillsRoot, { withFileTypes: true })) {
+    if (entry.name.startsWith(".")) continue;
+    if (entry.isSymbolicLink()) {
+      issues.push(`${entry.name}: skill directories must not be symbolic links.`);
+    } else if (entry.isDirectory()) {
+      entries.push(entry.name);
+    } else {
+      issues.push(`${entry.name}: unsupported entry in .agents/skills; expected a directory.`);
+    }
+  }
+  entries.sort();
+  const definitions = new Map();
+  const skillReferences = new Map();
+
+  for (const skillName of entries) {
+    if (!SKILL_NAME_PATTERN.test(skillName)) {
+      issues.push(`${skillName}: directory name must use lowercase hyphen-case.`);
+    }
+
+    const skillDirectory = resolve(skillsRoot, skillName);
+    const skillPath = resolve(skillDirectory, "SKILL.md");
+    const metadataPath = resolve(skillDirectory, "agents/openai.yaml");
 
     if (!(await exists(skillPath))) {
       issues.push(`${skillName}: missing SKILL.md.`);
@@ -127,84 +228,100 @@ export async function validateSkills(repositoryRoot = defaultRepositoryRoot) {
     }
 
     const skill = await readFile(skillPath, "utf8");
-    const match = skill.match(/^---\n([\s\S]*?)\n---\n/);
-    if (!match) {
+    const frontmatterMatch = skill.match(/^---\r?\n([\s\S]*?)\r?\n---(?:\r?\n|$)/);
+    if (!frontmatterMatch) {
       issues.push(`${skillName}: invalid YAML frontmatter boundary.`);
       continue;
     }
 
-    const name = frontmatterValue(match[1], "name");
-    const description = frontmatterValue(match[1], "description");
-    if (name !== skillName)
-      issues.push(`${skillName}: frontmatter name is '${name ?? "missing"}'.`);
-    if (!description || description.includes("TODO")) {
-      issues.push(`${skillName}: description is missing or unfinished.`);
+    const frontmatter = parseFlatMapping(frontmatterMatch[1], `${skillName} frontmatter`, issues, {
+      allowedKeys: new Set(["name", "description"]),
+    });
+    const name = frontmatter.get("name");
+    const description = frontmatter.get("description");
+
+    if (name !== skillName) {
+      issues.push(`${skillName}: frontmatter name is '${name || "missing"}'.`);
     }
-    if (/\bTODO\b/.test(skill)) issues.push(`${skillName}: contains an unfinished TODO.`);
-    if (skill.split("\n").length > 500) issues.push(`${skillName}: SKILL.md exceeds 500 lines.`);
+    if (name && !SKILL_NAME_PATTERN.test(name)) {
+      issues.push(`${skillName}: frontmatter name must use lowercase hyphen-case.`);
+    }
+    if (!description?.trim()) {
+      issues.push(`${skillName}: description is missing or empty.`);
+    }
+    if (name) {
+      const priorDirectory = definitions.get(name);
+      if (priorDirectory) {
+        issues.push(
+          `${skillName}: duplicate skill definition '${name}' also appears in '${priorDirectory}'.`,
+        );
+      } else {
+        definitions.set(name, skillName);
+      }
+    }
+
+    if (PLACEHOLDER_PATTERN.test(skill)) {
+      issues.push(`${skillName}: contains an unfinished placeholder.`);
+    }
+    skillReferences.set(skillName, referencedSkills(skill));
+    if (skill.split(/\r?\n/).length > 500) {
+      issues.push(`${skillName}: SKILL.md exceeds 500 lines.`);
+    }
+
+    await validateLocalReferences({
+      source: skill,
+      sourceDirectory: skillDirectory,
+      repositoryRoot: resolve(repositoryRoot),
+      skillName,
+      issues,
+    });
 
     const metadata = await readFile(metadataPath, "utf8");
-    const defaultPrompt = frontmatterValue(metadata, "default_prompt");
-    const shortDescription = frontmatterValue(metadata, "short_description");
-    if (!defaultPrompt?.includes(`$${skillName}`)) {
-      issues.push(`${skillName}: default_prompt must mention $${skillName}.`);
+    const interfaceValues = parseMetadata(metadata, skillName, issues);
+    const defaultPrompt = interfaceValues.get("default_prompt");
+    const shortDescription = interfaceValues.get("short_description");
+
+    if (defaultPrompt && !defaultPrompt.includes(`$${skillName}`)) {
+      issues.push(`${skillName}: interface.default_prompt must mention $${skillName}.`);
     }
-    if (
-      skillName === "mindwp-design-page" &&
-      !defaultPrompt?.includes("three to five private spatial constructions")
-    ) {
-      issues.push("mindwp-design-page: default_prompt must begin from page-level constructions.");
+    if (shortDescription && (shortDescription.length < 25 || shortDescription.length > 64)) {
+      issues.push(`${skillName}: interface.short_description must be 25-64 characters.`);
     }
-    if (
-      skillName === "mindwp-design-page" &&
-      !defaultPrompt?.includes("reference-blind composition critique")
-    ) {
-      issues.push("mindwp-design-page: default_prompt must protect reference-blind critique.");
-    }
-    if (
-      skillName === "mindwp-design-page" &&
-      /inspect the approved reference renders/i.test(defaultPrompt ?? "")
-    ) {
-      issues.push(
-        "mindwp-design-page: default_prompt must not inspect accepted full-page references before composition.",
-      );
-    }
-    if (
-      skillName === "mindwp-design-page" &&
-      /refine (?:it )?once|refine it from a 1640px render/i.test(defaultPrompt ?? "")
-    ) {
-      issues.push(
-        "mindwp-design-page: default_prompt must not reduce the quality gate to one refinement.",
-      );
-    }
-    if (!shortDescription || shortDescription.length < 25 || shortDescription.length > 64) {
-      issues.push(`${skillName}: short_description must be 25-64 characters.`);
-    }
-    if (/allow_implicit_invocation:\s*false/.test(metadata)) {
-      issues.push(`${skillName}: consolidated page skills must allow implicit routing.`);
+    if (PLACEHOLDER_PATTERN.test(metadata)) {
+      issues.push(`${skillName}: agents/openai.yaml contains an unfinished placeholder.`);
     }
 
-    for (const marker of REQUIRED_MARKERS[skillName] ?? []) {
-      if (!skill.includes(marker)) {
-        issues.push(`${skillName}: missing workflow marker '${marker}'.`);
-      }
-    }
+    for (const field of ["icon_small", "icon_large"]) {
+      const reference = interfaceValues.get(field);
+      if (!reference) continue;
 
-    if (skillName === "mindwp-design-page") {
-      const positions = DESIGN_SEQUENCE_MARKERS.map((marker) => skill.indexOf(marker));
-      if (
-        positions.some((position) => position < 0) ||
-        positions.some((position, index) => index > 0 && position <= positions[index - 1])
-      ) {
+      const target = resolve(skillDirectory, reference);
+      if (!isWithin(target, skillDirectory)) {
         issues.push(
-          "mindwp-design-page: meaning, construction, challenge, blocking, build, blind critique, and late calibration must remain in order.",
+          `${skillName}: metadata reference escapes the skill directory: '${reference}'.`,
         );
+      } else if (!(await exists(target))) {
+        issues.push(`${skillName}: unresolved metadata reference '${reference}'.`);
+      } else {
+        const [realSkillDirectory, realTarget] = await Promise.all([
+          realpath(skillDirectory),
+          realpath(target),
+        ]);
+        if (!isWithin(realTarget, realSkillDirectory)) {
+          issues.push(
+            `${skillName}: metadata reference resolves outside the skill directory: '${reference}'.`,
+          );
+        } else if (!(await stat(realTarget)).isFile()) {
+          issues.push(`${skillName}: metadata reference must resolve to a file: '${reference}'.`);
+        }
       }
     }
+  }
 
-    for (const retiredName of RETIRED_SKILL_REFERENCES) {
-      if (skill.includes(retiredName) || metadata.includes(retiredName)) {
-        issues.push(`${skillName}: still references retired skill '${retiredName}'.`);
+  for (const [skillName, references] of skillReferences) {
+    for (const reference of references) {
+      if (!definitions.has(reference)) {
+        issues.push(`${skillName}: unresolved skill reference '${reference}'.`);
       }
     }
   }
@@ -212,13 +329,16 @@ export async function validateSkills(repositoryRoot = defaultRepositoryRoot) {
   const claudeSkillsRoot = resolve(repositoryRoot, ".claude/skills");
   if (await exists(claudeSkillsRoot)) {
     const duplicateShims = (await readdir(claudeSkillsRoot, { withFileTypes: true }))
-      .filter((entry) => entry.isDirectory() && entry.name.startsWith("mindwp-"))
+      .filter(
+        (entry) =>
+          (entry.isDirectory() || entry.isSymbolicLink()) && entry.name.startsWith("mindwp-"),
+      )
       .map((entry) => entry.name)
       .sort();
 
     if (duplicateShims.length > 0) {
       issues.push(
-        `Remove duplicate Claude skill shims; repository skills live only in .agents/skills: ${duplicateShims.join(", ")}.`,
+        `Duplicate MindWP skill shims exist under .claude/skills: ${duplicateShims.join(", ")}.`,
       );
     }
   }
@@ -234,7 +354,11 @@ export async function runSkillValidation() {
     return;
   }
 
-  console.log(`Validated ${EXPECTED_SKILLS.length} focused MindWP skills.`);
+  const skillsRoot = resolve(defaultRepositoryRoot, ".agents/skills");
+  const skillCount = (await readdir(skillsRoot, { withFileTypes: true })).filter(
+    (entry) => entry.isDirectory() && !entry.name.startsWith("."),
+  ).length;
+  console.log(`Validated ${skillCount} structurally sound MindWP skills.`);
 }
 
 const isMain = process.argv[1] && pathToFileURL(resolve(process.argv[1])).href === import.meta.url;
