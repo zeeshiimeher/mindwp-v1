@@ -324,6 +324,14 @@ Necessary cautions can still flatten progression when several versions of the sa
 
 The strongest transferability and originality questions belong primarily to major, proof-bearing, or meaning-critical compositions. A quiet section may appropriately resemble another MindWP section.
 
+### Separate narrative acts from surface rhythm
+
+Narrative acts organise what the visitor learns and how the commercial argument progresses. Surface environments — navy, paper, mist, imagery, gradients, and overlays — control atmosphere, emphasis, contrast, and visual pacing.
+
+These systems should inform each other, but they must not map one-to-one. One narrative act may move through several surfaces, while one surface environment may carry meanings from more than one act.
+
+Do not assign one background to each act or treat every surface change as a narrative boundary. Compose the surface rhythm across the complete page, using recurrence, shared environments, and selective dark returns according to the communication need.
+
 ## Design responsive transformation early
 
 Major compositions need a credible narrow-width reading order while their concepts remain adaptable. Responsive design is recomposition, not automatic shrinking or stacking.
