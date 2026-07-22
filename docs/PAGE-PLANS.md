@@ -1,3 +1,5 @@
+NOTE: Dont Read Unless we ask.
+
 # MindWP page strategy
 
 This catalogue records each planned page's job, search intent and working section meanings. It is planning material, not a set of execution briefs:
