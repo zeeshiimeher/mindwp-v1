@@ -16,7 +16,7 @@ export function HomeWork() {
             The work
           </p>
           <h2 data-home-sequence-item>
-            Website work <span className="home-heading-muted">you can inspect.</span>
+            Website work <em>you can inspect.</em>
           </h2>
         </div>
         <div className="section-copy-group">

@@ -1,6 +1,6 @@
 # MindWP
 
-The Next.js website for MindWP, a website-led partner for independent clinics and specialist service businesses.
+The Next.js website for MindWP, a website-led partner for established service businesses and expert-led businesses.
 
 Read [CLAUDE.md](./CLAUDE.md) for repository safety and [docs/README.md](./docs/README.md) for the project-memory map and task-sensitive reading routes.
 

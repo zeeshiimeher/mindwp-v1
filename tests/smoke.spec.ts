@@ -129,7 +129,7 @@ test("homepage follows the approved reference structure", async ({ page }) => {
   await expect(faqButton).toHaveAttribute("aria-expanded", "true");
   await expect(page.getByRole("region", { name: "Do I need all five systems?" })).toBeVisible();
   await expect(page.locator("footer")).toContainText(
-    "Smart websites for specialist clinics and established service businesses",
+    "Smart websites for established service businesses and expert-led businesses",
   );
 });
 
@@ -341,6 +341,41 @@ test("homepage motion initializes without hiding reduced-motion content", async 
         ).length,
     );
   expect(hiddenRevealItemCount).toBe(0);
+});
+
+test("shared navigation fragment links resolve on every rendered route", async ({ page }) => {
+  await page.goto("/");
+  const homeIds = new Set(
+    await page.locator("[id]").evaluateAll((elements) => elements.map((element) => element.id)),
+  );
+
+  for (const path of ["/", "/services/local-seo-authority"]) {
+    await page.goto(path);
+    const pageIds =
+      path === "/"
+        ? homeIds
+        : new Set(
+            await page
+              .locator("[id]")
+              .evaluateAll((elements) => elements.map((element) => element.id)),
+          );
+
+    const hrefs = await page
+      .locator("header.site-header a, footer a")
+      .evaluateAll((anchors) =>
+        anchors
+          .map((anchor) => anchor.getAttribute("href") ?? "")
+          .filter((href) => href.includes("#")),
+      );
+    expect(hrefs.length, `fragment links present on ${path}`).toBeGreaterThan(0);
+
+    for (const href of hrefs) {
+      const [base, fragment] = href.split("#");
+      if (base !== "" && base !== "/") continue;
+      const targetIds = base === "/" ? homeIds : pageIds;
+      expect(targetIds.has(fragment), `${href} must resolve from ${path}`).toBe(true);
+    }
+  }
 });
 
 test("implemented local SEO route remains an unpublished review surface", async ({ page }) => {

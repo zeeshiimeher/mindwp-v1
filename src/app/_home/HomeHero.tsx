@@ -20,7 +20,7 @@ export function HomeHero() {
             </p>
             <h1 data-home-hero-item>
               <span className="home-hero__headline-line">Work comes in.</span>
-              <span className="home-heading-muted">Too much slips away.</span>
+              <em>Too much slips away.</em>
             </h1>
           </div>
           <p className="home-hero__lede text-lead" data-home-hero-item>

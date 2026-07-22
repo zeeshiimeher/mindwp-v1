@@ -5,22 +5,6 @@
   position: relative;
 }
 
-.lseo-section h2 em,
-.lseo-section h1 em {
-  color: var(--lseo-muted-display);
-  font-style: italic;
-  font-weight: 400;
-}
-
-.lseo-section.on-dark h2 em,
-.lseo-section.on-dark h1 em {
-  color: #9daab0;
-}
-
-.lseo-section h3 {
-  font-style: normal;
-}
-
 .lseo-section-intro,
 .lseo-centered-intro {
   display: flex;

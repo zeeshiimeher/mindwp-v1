@@ -12,7 +12,7 @@ Start with [docs/README.md](./docs/README.md). It maps the active project-memory
 ## Repository safety
 
 - Inspect the worktree before editing and preserve unrelated user changes.
-- Keep `_audit-input/old-docs/` and any isolated old-site copy unchanged and non-authoritative unless the user explicitly scopes archival work.
+- Keep any archived material or isolated old-site copy unchanged and non-authoritative unless the user explicitly scopes archival work.
 - Keep draft and variant routes out of navigation, sitemap, indexing, deployment, and publication unless release work is explicitly authorised.
 - Use truthful proof. Keep enquiry data, credentials, founder details, and private implementation information out of public source and logs unless their exact use is approved.
 - Use one meaningful semantic structure across widths unless the content itself genuinely differs.

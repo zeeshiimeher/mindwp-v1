@@ -84,6 +84,8 @@ svg {
 }
 
 .on-dark {
+  --heading-turn-color: var(--text-inverse-muted);
+
   color: var(--color-text-inverse-muted);
 }
 

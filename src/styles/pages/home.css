@@ -18,20 +18,8 @@
   position: relative;
 }
 
-.home-heading-muted {
-  color: var(--text-secondary);
-  font-style: italic;
-  font-weight: 400;
-}
-
-.on-dark .home-heading-muted {
-  color: var(--text-inverse-muted);
-}
-
-.section-intro--centered h2 .home-heading-muted,
-.home-work h2 .home-heading-muted,
-.home-context h2 .home-heading-muted,
-.home-faq h2 .home-heading-muted {
+.home-work h2 em,
+.home-context h2 em {
   display: block;
 }
 
@@ -164,7 +152,7 @@
   white-space: nowrap;
 }
 
-.home-hero h1 .home-heading-muted {
+.home-hero h1 em {
   display: block;
 }
 
@@ -465,10 +453,6 @@
   background: var(--surface-card);
 }
 
-.home-leaks h2 .home-heading-muted {
-  font-style: italic;
-}
-
 .home-leaks__layout {
   --container-gap: clamp(3rem, 5vw, 4.75rem);
 
@@ -585,8 +569,6 @@
 }
 
 .home-leaks__detail h3 {
-  color: var(--text-primary);
-  font-style: normal;
   font-weight: 600;
 }
 
@@ -752,7 +734,7 @@
   background: var(--surface-navy);
 }
 
-.home-certainty h2 .home-heading-muted {
+.home-certainty h2 em {
   display: block;
 }
 
@@ -791,10 +773,6 @@
 
 .home-one-system {
   background: var(--surface-card);
-}
-
-.home-one-system h2 .home-heading-muted {
-  display: inline;
 }
 
 .home-one-system__crossed {
@@ -982,11 +960,6 @@
   font: var(--label-caps);
   letter-spacing: var(--label-caps-tracking);
   text-transform: uppercase;
-}
-
-.home-systems__surface h3 {
-  color: var(--text-inverse);
-  font-style: normal;
 }
 
 .home-systems__statements {
@@ -1538,9 +1511,7 @@
 }
 
 .home-context__heading h3 {
-  color: var(--text-inverse);
   font: var(--display-md);
-  font-style: normal;
 }
 
 .home-context__comparison .home-editorial-note {
@@ -1648,10 +1619,6 @@
   background: var(--surface-card);
 }
 
-.home-compounds h2 .home-heading-muted {
-  display: inline;
-}
-
 .home-compounds__experience {
   --container-gap: var(--space-8);
 }
@@ -1724,11 +1691,6 @@
   flex-direction: column;
   align-items: flex-start;
   gap: var(--space-4);
-}
-
-.home-compounds__copy h3 {
-  color: var(--text-primary);
-  font-style: normal;
 }
 
 .home-compounds__copy .home-editorial-note {
@@ -1960,8 +1922,6 @@
 }
 
 .home-review__steps h3 {
-  color: var(--text-inverse);
-  font-style: normal;
   font-weight: 600;
 }
 
@@ -1983,10 +1943,6 @@
 
 .home-faq {
   background: var(--surface-page);
-}
-
-.home-faq h2 .home-heading-muted {
-  display: inline;
 }
 
 .home-faq .section-intro--centered > p:last-child {
@@ -2057,13 +2013,9 @@
   max-width: 24ch;
 }
 
-.home-closing h2 > span:not(.home-heading-muted) {
+.home-closing h2 > span {
   color: var(--color-emerald);
   font-style: italic;
-}
-
-.home-closing h2 .home-heading-muted {
-  display: inline;
 }
 
 .home-closing .section-intro--centered > p:not(.eyebrow) {

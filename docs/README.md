@@ -10,6 +10,7 @@ This directory is MindWP's reusable project memory. Use only the authorities the
 | [STRATEGY.md](./STRATEGY.md)           | Current approved commercial direction, offers, service responsibilities, qualification, conversion direction, page roles and open decisions |
 | [WRITING.md](./WRITING.md)             | Voice, claims discipline and responsible public-language practice                                                                           |
 | [PAGE-PLANNING.md](./PAGE-PLANNING.md) | Page research, jobs, intent, narrative, meaning, proof, boundaries and the compact page-brief contract                                      |
+| [PAGE-PLANS.md](./PAGE-PLANS.md)       | Catalogue of current page jobs, search intents and working section meanings — planning material, not execution briefs until promoted under PAGE-PLANNING's status contract |
 | [DESIGN.md](./DESIGN.md)               | Shared visual grammar, meaning-bearing composition, page experience, responsive intent, motion intent and rendered visual judgement         |
 | [ENGINEERING.md](./ENGINEERING.md)     | Repository-specific source, CSS, responsive, accessibility, interaction, performance and validation rules                                   |
 
@@ -23,7 +24,7 @@ The documents have separate domains. When two statements appear to conflict, use
 4. `CLAUDE.md` owns repository operating safety. Execution skills apply specialised methods; they do not create business or design authority.
 5. Current source and fresh renders own implemented reality. Report drift from the documents instead of silently treating implementation as a new strategic decision.
 6. Accepted pages are quality and implementation evidence, not templates or automatic global rules.
-7. `_audit-input/old-docs/` and other archived material are non-authoritative preservation sources. Extract from them only when reconciled with current authority.
+7. Archived or historical material, including anything recovered from git history, is a non-authoritative preservation source. Extract from it only when reconciled with current authority.
 
 Public routes, navigation and publication state come from active source and explicit release decisions. A document entry does not make a route live.
 
@@ -38,7 +39,7 @@ These labels describe confidence and scope, not a lifecycle or approval system.
 
 ## Reading routes
 
-**Selection rule:** A canonical authority is selected only when the user supplies or explicitly names it. Do not infer selection from the task type, a page plan, a skill, or an exporter option that names something else.
+**Selection rule:** A canonical authority is selected only when the user supplies or explicitly names it. Do not infer selection from the task type, a page plan, or an exporter option that names something else. One exception: when an execution skill's declared trigger matches the task, the specific context that skill explicitly declares counts as explicitly selected — nothing broader.
 
 **Full orientation:** Read the full authority set only when the user explicitly requests full orientation.
 

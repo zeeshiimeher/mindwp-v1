@@ -4,7 +4,7 @@ This document owns MindWP's current approved commercial direction. It is authori
 
 ## Current positioning
 
-MindWP is a website-led partner for independent clinics and specialist service businesses. It combines strategic clarity, distinctive web design and careful implementation around real customer decisions.
+MindWP is a website-led partner for established service businesses and expert-led businesses. It combines strategic clarity, distinctive web design and careful implementation around real customer decisions. Independent clinics are an important market, but they are not the default visual or verbal expression of the global brand; “specialist” refers to the depth and precision of MindWP's thinking, not to any one sector's aesthetic.
 
 The website is the principal commercial surface. Connected services are introduced only where they solve a diagnosed problem. MindWP must not read as a compulsory bundle, SaaS product, CRM resale, advertising agency or automation package.
 
@@ -12,7 +12,7 @@ The website is the principal commercial surface. Connected services are introduc
 
 The Homepage should lead with Smart Website Systems and organise its argument around how suitable people find, understand, evaluate and contact the business. It may then show how optional support improves local discovery or what happens after contact. The supporting systems should remain visible enough to understand and reach, but must not become four co-equal reasons for the business to exist.
 
-The older line **â€œWork comes in. Too much slips away.â€** remains strong diagnostic or campaign language. It should not currently define the Homepage because it assumes meaningful attention is already arriving, moves the centre of gravity towards post-enquiry leakage and automation, and makes the five capabilities feel more equal than the approved offer architecture. Reconsidering that decision requires a change in the principal public offer or material buyer evidenceâ€”not simply a preference for the older line or its existing visual execution.
+The older line **“Work comes in. Too much slips away.”** remains strong diagnostic or campaign language. It should not currently define the Homepage because it assumes meaningful attention is already arriving, moves the centre of gravity towards post-enquiry leakage and automation, and makes the five capabilities feel more equal than the approved offer architecture. Reconsidering that decision requires a change in the principal public offer or material buyer evidence — not simply a preference for the older line or its existing visual execution.
 
 ## Current offer architecture
 
@@ -41,7 +41,7 @@ Measurement should help reveal real customer decisions and useful weak points: w
 
 ## Audience and qualification
 
-The current audience is independent clinics and specialist service businesses. Good fit depends on the actual decision, value and trust at stake; available proof; capacity to act; and whether MindWP can own a useful scope. Industry pages should express the industry's real customer or patient decision, terminology, evidence and professional limits.
+The current audience is established service businesses and expert-led businesses, with independent clinics as one important market within it. Good fit depends on the actual decision, value and trust at stake; available proof; capacity to act; and whether MindWP can own a useful scope. Industry pages should express the industry's real customer or patient decision, terminology, evidence and professional limits.
 
 Qualification is diagnostic rather than exclusionary. Do not infer a universal rule that every buyer must be established, have an existing website, belong to one launch industry or purchase an ongoing service. A page plan may set a narrower audience when evidence supports it.
 

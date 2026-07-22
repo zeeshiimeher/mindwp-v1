@@ -2,29 +2,32 @@ import Link from "next/link";
 
 import { SITE } from "@/config/site";
 
+/* Root-relative fragments so the shared footer resolves from nested routes
+   (docs/ENGINEERING.md, Routing). Column labels stay as implemented until the
+   approved Homepage rebuild revisits the footer IA. */
 const COLUMNS = [
   {
     title: "What we build",
     links: [
-      { href: "#five-systems", label: "Smart Website Systems" },
-      { href: "#five-systems", label: "Lead Response & Handling" },
-      { href: "#five-systems", label: "Follow-Up & CRM" },
-      { href: "#five-systems", label: "Reputation & Review" },
+      { href: "/#five-systems", label: "Smart Website Systems" },
+      { href: "/#five-systems", label: "Lead Response & Handling" },
+      { href: "/#five-systems", label: "Follow-Up & CRM" },
+      { href: "/#five-systems", label: "Reputation & Review" },
     ],
   },
   {
     title: "Industries",
     links: [
-      { href: "#scenario", label: "Specialist Clinics" },
-      { href: "#work", label: "Home Services" },
+      { href: "/#context", label: "Specialist Clinics" },
+      { href: "/#work", label: "Home Services" },
     ],
   },
   {
     title: "Company",
     links: [
-      { href: "#work", label: "Work" },
-      { href: "#builders", label: "About" },
-      { href: "#review", label: "Contact" },
+      { href: "/#work", label: "Work" },
+      { href: "/#builders", label: "About" },
+      { href: "/#review", label: "Contact" },
     ],
   },
 ];

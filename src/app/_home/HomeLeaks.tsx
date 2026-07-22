@@ -107,8 +107,7 @@ export function HomeLeaks() {
             Where work slips
           </p>
           <h2 data-home-sequence-item>
-            The work is already there.{" "}
-            <span className="home-heading-muted">These are the leaks.</span>
+            The work is already there. <em>These are the leaks.</em>
           </h2>
         </div>
       </div>

@@ -6,10 +6,14 @@ export const SITE = {
   name: "MindWP",
   /** Production origin — no trailing slash. Override with NEXT_PUBLIC_SITE_URL. */
   url: rawUrl.replace(/\/$/, ""),
-  /** Public anchor line (CLAUDE.md and docs/STRATEGY.md). */
+  /**
+   * Implemented legacy anchor line. docs/STRATEGY.md supersedes it for future
+   * work (Homepage positioning consequence); replace it during the approved
+   * Homepage rebuild rather than piecemeal.
+   */
   tagline: "Work Comes In. Too Much Slips Away.",
   description:
-    "Smart websites for specialist clinics and established service businesses — the site and the handling around every enquiry, designed together.",
+    "Smart websites for established service businesses and expert-led businesses — the site and the handling around every enquiry, designed together.",
   locale: "en",
 } as const;
 

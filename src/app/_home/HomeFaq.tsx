@@ -53,7 +53,7 @@ export function HomeFaq() {
           Straight answers
         </p>
         <h2 data-home-sequence-item>
-          Questions, <span className="home-heading-muted">answered plainly.</span>
+          Questions, <em>answered plainly.</em>
         </h2>
         <p data-home-sequence-item>
           No buried sales language. The common questions are practical because the work is

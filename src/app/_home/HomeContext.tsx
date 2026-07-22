@@ -33,7 +33,7 @@ export function HomeContext() {
           Built with context
         </p>
         <h2 data-home-sequence-item>
-          The website should <span className="home-heading-muted">understand the work.</span>
+          The website should <em>understand the work.</em>
         </h2>
         <p data-home-sequence-item>
           A patient considering treatment and a homeowner planning a major project are both looking

@@ -4,7 +4,7 @@
   --display-xl: 600 clamp(2.5rem, 2rem + 2.2vw, 4.75rem) / 1.02 var(--font-display);
   --display-lg: 500 clamp(2rem, 1.7rem + 1.4vw, 3.375rem) / 1.08 var(--font-display);
   --display-md: 500 clamp(1.625rem, 1.45rem + 0.8vw, 2.375rem) / 1.14 var(--font-display);
-  --display-sm: italic 400 clamp(1.375rem, 1.27rem + 0.5vw, 1.75rem) / 1.3 var(--font-display);
+  --display-sm: 400 clamp(1.375rem, 1.27rem + 0.5vw, 1.75rem) / 1.3 var(--font-display);
 
   /* Optional variation-settings for Fraunces' soft/wonk axes on the largest
      display moments; ignored gracefully if the loaded font instance doesn't
@@ -45,6 +45,15 @@ h3 {
 
 h4 {
   font: var(--display-md);
+}
+
+/* Muted heading turn — the shared two-tone device: a roman statement followed
+   by a quieter italic turn. Pages control layout (inline/block) and may
+   re-colour a turn locally via --heading-turn-color or a scoped rule. */
+h1 em,
+h2 em {
+  color: var(--heading-turn-color, var(--text-secondary));
+  font-weight: 400;
 }
 
 p,

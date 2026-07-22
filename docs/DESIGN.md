@@ -4,7 +4,7 @@ This document owns MindWP's durable visual judgement: shared brand grammar, art 
 
 It does not decide business truth, offer strategy, page meaning, claims, repository structure, CSS architecture, implementation commands, publication, or page state. Those decisions belong to [FOUNDATION.md](./FOUNDATION.md), [STRATEGY.md](./STRATEGY.md), the supplied page plan, [WRITING.md](./WRITING.md), and [ENGINEERING.md](./ENGINEERING.md).
 
-This authority should improve when future execution exposes a repeatable design problem or a better durable principle. Do not turn one successful page, one technique, or one preference into a rule without evidence that it has a stable MindWP role.
+This authority should improve when future execution exposes a repeatable design problem or a better durable principle. Do not turn one successful page, one technique, or one preference into a rule without evidence that it has a stable MindWP role. Only durable, cross-page principles belong here; lessons from individual rejected attempts are not preserved as design rules.
 
 ## The quality standard
 
@@ -19,6 +19,10 @@ The intended qualities should be observable in the work:
 - **Clarity:** the main argument and important relationships can be understood before every paragraph is read.
 
 Technical competence alone is not the standard. If an important composition is generic, visually thin, or structurally interchangeable with unrelated material, refine its underlying relationship and hierarchy rather than trying to rescue it with surface polish.
+
+### Sector-flexible expression
+
+MindWP's specialist depth is the precision of its thinking, not any one industry's aesthetic. The global visual and verbal language — including artefacts, illustration, iconography and recurring examples — stays sector-neutral, so the same brand can credibly serve a clinic, a law boutique, a workshop or a venue. Sector imagery, terminology and visual material belong to industry pages and other page-specific work; they do not join the shared language by recurrence alone.
 
 ## Shared MindWP grammar
 
@@ -282,6 +286,8 @@ Never invent unavailable proof, metrics, testimonials, systems, client results, 
 ## Choose visual material by its communication job
 
 Visual material should make meaning easier to perceive, evidence easier to inspect, or an action easier to understand.
+
+Operational interface fragments are one legitimate mode — not the default. Visual material may equally be a conceptual model, human or editorial illustration, an object-led composition, photography, or real evidence, selected by the meaning to be carried and the emotional register the moment needs. Human and editorial illustration suits ownership, situations and relationships that interface fragments cannot express; drawn with MindWP's restraint and palette around specific situations, it should never lapse into generic stock character art. A precise MindWP illustration style is deliberately not defined here — establish it through real page work before treating any of it as a rule.
 
 - **Typography-led composition** suits language whose contrast, cadence, sequence, or emphasis carries the idea. It fails when display treatment substitutes for an argument.
 - **Photography and real media** provide context, human specificity, place, process, or atmosphere. Crop for the important content rather than defaulting to a convenient centre.

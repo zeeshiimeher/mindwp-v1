@@ -76,7 +76,7 @@ export function HomeCertainty() {
         </p>
         <h2 data-home-sequence-item>
           They do not need more information.
-          <span className="home-heading-muted">They need enough certainty to ask.</span>
+          <em>They need enough certainty to ask.</em>
         </h2>
       </div>
       <ol className="container home-certainty__steps" data-home-stagger>
@@ -102,7 +102,7 @@ export function HomeOneSystem() {
           One responsibility, not five handoffs
         </p>
         <h2 data-home-sequence-item>
-          One system, <span className="home-heading-muted">not five vendors.</span>
+          One system, <em>not five vendors.</em>
         </h2>
         <p className="home-one-system__crossed" data-home-sequence-item>
           Not <s>an SEO retainer,</s> plus <s>a website agency,</s>

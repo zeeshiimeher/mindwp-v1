@@ -1,5 +1,12 @@
 # MindWP page strategy
 
+This catalogue records each planned page's job, search intent and working section meanings. It is planning material, not a set of execution briefs:
+
+- Eyebrows and headings are working planning language — adaptable during design unless a brief marks them fixed. They are not approved public copy.
+- Section rows are meaning material. Several rows may share one visual environment; row count is not a section count, a layout, or a claim of equal visual weight.
+- Before a page is executed, promote its entry to a compact brief carrying [PAGE-PLANNING.md](./PAGE-PLANNING.md)'s status contract: fixed, adaptable, open and unavailable material, available proof, and unresolved decisions.
+- The implemented Homepage predates this catalogue's Homepage plan. The plan supersedes the implementation; the difference is documented drift, not approved direction.
+
 ## Homepage
 
 ### Page job

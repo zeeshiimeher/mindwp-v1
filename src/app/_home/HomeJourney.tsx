@@ -58,7 +58,7 @@ export function HomeCompoundingSection() {
           What changes over time
         </p>
         <h2 data-home-sequence-item>
-          It is not a launch. <span className="home-heading-muted">It compounds.</span>
+          It is not a launch. <em>It compounds.</em>
         </h2>
         <p data-home-sequence-item>
           The starting point differs by business; what compounds does not. Clearer pages, stronger
@@ -208,7 +208,7 @@ export function HomeClosing() {
         </p>
         <h2 className="display-feature" data-home-sequence-item>
           If the website isn&apos;t carrying the work, <span>find out</span>{" "}
-          <span className="home-heading-muted">where it stops.</span>
+          <em>where it stops.</em>
         </h2>
         <p data-home-sequence-item>
           One private conversation. We review the website and the path around every enquiry, then
