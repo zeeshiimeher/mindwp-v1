@@ -26,7 +26,7 @@ Route visitors to the relevant service or a Visibility & Enquiry Review.
 
 | # | Eyebrow | Heading |
 |---:|---|---|
-| 1 | SMART WEBSITE SYSTEMS | A smarter website for how people find, understand and choose your business. |
+| 1 | SMART WEBSITE SYSTEMS | A smarter website for how people find, understand and choose you. |
 | 2 | EXISTING ATTENTION | Search, referrals and advertising still need somewhere convincing to land. |
 | 3 | BEFORE ENQUIRY | Before people contact you, the website has to make the decision easier. |
 | 4 | AFTER ENQUIRY | A useful enquiry still needs an answer, an owner and a clear next step. |
