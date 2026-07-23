@@ -30,10 +30,11 @@ export function HomeContext() {
         data-home-sequence
       >
         <p className="eyebrow eyebrow--centered" data-home-sequence-item>
-          Built with context
+          Smart website
         </p>
         <h2 data-home-sequence-item>
-          The website should <em>understand the work.</em>
+          The website is built around{" "}
+          <em>the questions, evidence and actions people need to decide.</em>
         </h2>
         <p data-home-sequence-item>
           A patient considering treatment and a homeowner planning a major project are both looking

@@ -5,7 +5,6 @@ import { HomeContext } from "@/app/_home/HomeContext";
 import { HomeFaq } from "@/app/_home/HomeFaq";
 import { HomeHero } from "@/app/_home/HomeHero";
 import {
-  HomeBuilders,
   HomeClosing,
   HomeCompoundingSection,
   HomeFit,
@@ -34,7 +33,6 @@ export default function HomePage() {
       <HomeWork />
       <HomeContext />
       <HomeCompoundingSection />
-      <HomeBuilders />
       <HomeFit />
       <HomeReview />
       <HomeFaq />

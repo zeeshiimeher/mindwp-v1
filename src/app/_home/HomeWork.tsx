@@ -15,10 +15,10 @@ export function HomeWork() {
       <div className="container section-intro section-intro--split" data-home-sequence>
         <div className="section-title-group">
           <p className="eyebrow" data-home-sequence-item>
-            The work
+            The work, applied
           </p>
           <h2 data-home-sequence-item>
-            Website work <em>you can inspect.</em>
+            See how strategy, structure and execution <em>come together.</em>
           </h2>
         </div>
         <div className="section-copy-group">

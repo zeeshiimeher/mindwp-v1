@@ -16,11 +16,11 @@ export function HomeHero() {
         <div className="home-hero__intro container--flow" data-home-hero-sequence>
           <div className="section-title-group">
             <p className="eyebrow" data-home-hero-item>
-              The website and the enquiry, designed together
+              Smart websites
             </p>
             <h1 data-home-hero-item>
-              <span className="home-hero__headline-line">Work comes in.</span>
-              <em>Too much slips away.</em>
+              <span className="home-hero__headline-line">A smarter website</span>
+              <em>for being found, understood and chosen.</em>
             </h1>
           </div>
           <p className="home-hero__lede text-lead" data-home-hero-item>

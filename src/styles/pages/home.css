@@ -10,7 +10,6 @@
 .home-work,
 .home-context,
 .home-compounds,
-.home-builders,
 .home-fit,
 .home-review,
 .home-faq,
@@ -1732,26 +1731,6 @@
   text-transform: uppercase;
 }
 
-/* Builders */
-
-.home-builders {
-  --section-padding-block: clamp(4.5rem, 7vw, 6.5rem);
-
-  background: var(--surface-navy);
-}
-
-.home-builders h2 {
-  max-width: 20ch;
-}
-
-.home-builders .section-intro--centered > p:not(.eyebrow) {
-  max-width: 44rem;
-}
-
-.home-builders .home-editorial-note {
-  color: var(--color-emerald);
-}
-
 /* Fit */
 
 .home-fit {
@@ -1971,11 +1950,6 @@
 
 .home-closing h2 {
   max-width: 24ch;
-}
-
-.home-closing h2 > span {
-  color: var(--color-emerald);
-  font-style: italic;
 }
 
 .home-closing .section-intro--centered > p:not(.eyebrow) {

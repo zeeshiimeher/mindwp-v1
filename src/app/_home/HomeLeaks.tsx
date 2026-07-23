@@ -104,10 +104,11 @@ export function HomeLeaks() {
       <div className="container section-intro" data-home-sequence>
         <div className="section-title-group">
           <p className="eyebrow" data-home-sequence-item>
-            Where work slips
+            Existing attention
           </p>
           <h2 data-home-sequence-item>
-            The work is already there. <em>These are the leaks.</em>
+            Search, referrals and advertising{" "}
+            <em>still need somewhere convincing to land.</em>
           </h2>
         </div>
       </div>

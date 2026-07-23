@@ -26,7 +26,7 @@ const COLUMNS = [
     title: "Company",
     links: [
       { href: "/#work", label: "Work" },
-      { href: "/#builders", label: "About" },
+      { href: "/#review", label: "About" },
       { href: "/#review", label: "Contact" },
     ],
   },

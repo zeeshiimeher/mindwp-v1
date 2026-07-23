@@ -55,10 +55,11 @@ export function HomeCompoundingSection() {
         data-home-sequence
       >
         <p className="eyebrow eyebrow--centered" data-home-sequence-item>
-          What changes over time
+          Clear ownership
         </p>
         <h2 data-home-sequence-item>
-          It is not a launch. <em>It compounds.</em>
+          Know what MindWP builds,{" "}
+          <em>what your business owns and what happens after launch.</em>
         </h2>
         <p data-home-sequence-item>
           The starting point differs by business; what compounds does not. Clearer pages, stronger
@@ -74,44 +75,18 @@ export function HomeCompoundingSection() {
   );
 }
 
-export function HomeBuilders() {
-  return (
-    <section id="builders" className="home-builders section on-dark">
-      <div
-        className="container container--narrow section-intro section-intro--centered"
-        data-home-sequence
-      >
-        <p className="eyebrow eyebrow--centered" data-home-sequence-item>
-          Built by builders
-        </p>
-        <h2 className="display-feature" data-home-sequence-item>
-          Built by the people who actually build it.
-        </h2>
-        <p data-home-sequence-item>
-          The person who scopes the work is the person who designs it, builds it and connects the
-          handling — hands-on in WordPress since 2015, start to finish, in-house.
-        </p>
-        <p data-home-sequence-item>
-          When something needs to change after launch, you are still talking to the person who built
-          it, not opening a ticket to someone new.
-        </p>
-        <p className="home-editorial-note" data-home-sequence-item>
-          — The builder behind MindWP
-        </p>
-      </div>
-    </section>
-  );
-}
-
 export function HomeFit() {
   return (
     <section id="fit" className="home-fit section">
       <div className="container section-intro" data-home-sequence>
         <div className="section-title-group">
           <p className="eyebrow" data-home-sequence-item>
-            Honest about fit
+            Right fit
           </p>
-          <h2 data-home-sequence-item>This is not for everyone.</h2>
+          <h2 data-home-sequence-item>
+            For independent clinics and specialist service businesses{" "}
+            <em>where customers choose carefully.</em>
+          </h2>
         </div>
         <div className="section-copy-group">
           <p data-home-sequence-item>
@@ -162,7 +137,10 @@ export function HomeReview() {
             <p className="eyebrow" data-home-sequence-item>
               How we start
             </p>
-            <h2 data-home-sequence-item>First we review. Then we decide what matters.</h2>
+            <h2 data-home-sequence-item>
+              First we review how people find, choose and contact you.{" "}
+              <em>Then we show you where to start.</em>
+            </h2>
           </div>
           <p data-home-sequence-item>
             You share how work arrives today; we examine the website and the path around it. What
@@ -204,11 +182,10 @@ export function HomeClosing() {
         data-home-sequence
       >
         <p className="eyebrow eyebrow--centered" data-home-sequence-item>
-          Find the stopping point
+          Visibility &amp; enquiry review
         </p>
         <h2 className="display-feature" data-home-sequence-item>
-          If the website isn&apos;t carrying the work, <span>find out</span>{" "}
-          <em>where it stops.</em>
+          See what should become easier <em>across your visibility, website and enquiry path.</em>
         </h2>
         <p data-home-sequence-item>
           One private conversation. We review the website and the path around every enquiry, then

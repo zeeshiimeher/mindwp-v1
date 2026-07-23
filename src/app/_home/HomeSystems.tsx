@@ -16,9 +16,12 @@ export function HomeDistance() {
         <div className="home-distance__copy container--flow" data-home-sequence>
           <div className="section-title-group">
             <p className="eyebrow" data-home-sequence-item>
-              Before a buyer reaches out
+              Before enquiry
             </p>
-            <h2 data-home-sequence-item>The shorter the distance, the easier the decision.</h2>
+            <h2 data-home-sequence-item>
+              They do not need more information.{" "}
+              <em>They need enough certainty to act.</em>
+            </h2>
           </div>
           <p data-home-sequence-item>
             Distance is everything a visitor still has to do before asking: find the page that
@@ -72,11 +75,11 @@ export function HomeCertainty() {
         data-home-sequence
       >
         <p className="eyebrow eyebrow--centered" data-home-sequence-item>
-          Before the form
+          After enquiry
         </p>
         <h2 data-home-sequence-item>
-          They do not need more information.
-          <em>They need enough certainty to ask.</em>
+          A useful enquiry still needs{" "}
+          <em>an answer, an owner and a clear next step.</em>
         </h2>
       </div>
       <ol className="container home-certainty__steps" data-home-stagger>
@@ -99,10 +102,10 @@ export function HomeOneSystem() {
         data-home-sequence
       >
         <p className="eyebrow eyebrow--centered" data-home-sequence-item>
-          One responsibility, not five handoffs
+          Connected where useful
         </p>
         <h2 data-home-sequence-item>
-          One system, <em>not five vendors.</em>
+          The website leads. <em>Support connects where the journey needs it.</em>
         </h2>
         <p className="home-one-system__crossed" data-home-sequence-item>
           Not <s>an SEO retainer,</s> plus <s>a website agency,</s>
@@ -155,9 +158,11 @@ export function HomeFiveSystems() {
         data-home-sequence
       >
         <p className="eyebrow eyebrow--centered" data-home-sequence-item>
-          The connected capabilities
+          Beyond the website
         </p>
-        <h2 data-home-sequence-item>Five systems. One working surface.</h2>
+        <h2 data-home-sequence-item>
+          Add the support <em>that earns its place.</em>
+        </h2>
         <p data-home-sequence-item>
           The website is the foundation. The other four attach where your work actually slips — some
           clients need all five, most start with one or two.

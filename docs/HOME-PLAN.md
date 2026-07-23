@@ -2,18 +2,25 @@ NOTE: Dont Read Unless we ask.
 
 # MindWP page strategy
 
-This catalogue records each planned page's job, search intent and working section meanings. It is planning material, not a set of execution briefs:
+## Service page planning contract
 
-- Eyebrows and headings are working planning language — adaptable during design unless a brief marks them fixed. They are not approved public copy.
-- Section rows are meaning material. Several rows may share one visual environment; row count is not a section count, a layout, or a claim of equal visual weight.
-- Before a page is executed, promote its entry to a compact brief carrying [PAGE-PLANNING.md](./PAGE-PLANNING.md)'s status contract: fixed, adaptable, open and unavailable material, available proof, and unresolved decisions.
-- The implemented Homepage predates this catalogue's Homepage plan. The plan supersedes the implementation; the difference is documented drift, not approved direction.
+The following contract applies to all five service-page plans unless a page entry explicitly overrides it:
+
+- **Fixed:** The page job, the service responsibility and its boundaries with neighbouring services.
+- **Adaptable:** Eyebrows, headlines, supporting copy, grouping and composition until a page-specific brief marks public wording as fixed.
+- **Open:** Ownership, handover, ongoing management and support details that depend on the engagement.
+- **Unavailable:** Testimonials, performance metrics and quantified results unless they are explicitly supplied and approved.
+- **Shared CTA:** Use **Request a Visibility & Enquiry Review**, or **Request a Review** where space is limited. The review works with or without an existing website.
+
+Section rows record required meaning. Related rows may share one visual environment and should not automatically become equal standalone sections.
 
 ## Homepage
 
 ### Page job
 
-Establish MindWP as the website-led partner for independent clinics and specialist service businesses. Make Smart Website Systems the principal offer, introduce the four optional supporting systems and show how discovery, decision and response connect without implying a compulsory bundle or software product.
+Establish MindWP as the website-led partner for independent clinics and specialist service businesses. Make the Smart Website the principal offer, introduce four optional supporting services and show how discovery, decision and response connect without implying a compulsory bundle or software product.
+
+Local Visibility receives its own substantial environment. First Response, Purposeful Follow-Up and Visible Reputation share one subordinate Optional Support environment.
 
 Route visitors to the relevant service or a Visibility & Enquiry Review.
 
@@ -33,7 +40,20 @@ Route visitors to the relevant service or a Visibility & Enquiry Review.
 
 ### Sections
 
-For the Homepage, these eyebrows and headlines are fixed public copy. Supporting copy and composition remain adaptable. The rows define required meanings, not 16 separate visual sections; related rows may share one visual environment.
+For the Homepage, the following eyebrows and headlines are fixed public copy. Supporting copy, internal labels, examples, tabs, steps and FAQs remain adaptable and should be rewritten to serve the new meaning.
+
+Homepage A is the fixed design and composition baseline:
+
+- Keep its existing section order, visual compositions, layouts, components, interactions, styling and motion.
+- Do not redesign, merge, move, rename or invent a visual environment.
+- Omit the existing **Built by Builders** environment.
+- Keep Local Visibility and Smart Website as substantial standalone environments.
+- Reuse the existing connected-capabilities selector for the three optional supports only.
+- Do not interpret the three selector items as standalone page sections.
+
+After omitting **Built by Builders**, the Homepage contains exactly **14 visible sections**.
+
+#### Final 14-section order
 
 | # | Eyebrow | Heading |
 |---:|---|---|
@@ -42,14 +62,25 @@ For the Homepage, these eyebrows and headlines are fixed public copy. Supporting
 | 3 | BEFORE ENQUIRY | They do not need more information. They need enough certainty to act. |
 | 4 | AFTER ENQUIRY | A useful enquiry still needs an answer, an owner and a clear next step. |
 | 5 | CONNECTED WHERE USEFUL | The website leads. Support connects where the journey needs it. |
-| 6 | SMART WEBSITE | The website is built around the questions, evidence and actions people need to decide. |
+| 6 | BEYOND THE WEBSITE | Add the support that earns its place. |
 | 7 | LOCAL VISIBILITY | Found nearby—trusted before they call. |
-| 8 | FIRST RESPONSE | Acknowledge each enquiry and place it with someone responsible. |
-| 9 | PURPOSEFUL FOLLOW-UP | Keep worthwhile decisions visible without replacing human judgement. |
-| 10 | VISIBLE REPUTATION | Let genuine customer experience strengthen the next person’s decision. |
-| 11 | SELECTED WORK | Website work you can inspect. |
-| 12 | CLEAR OWNERSHIP | Know what MindWP builds, what your business owns and what happens after launch. |
-| 13 | RIGHT FIT | For independent clinics and specialist service businesses where customers choose carefully. |
-| 14 | VISIBILITY & ENQUIRY REVIEW | First we review how people find, choose and contact you. Then we show you where to start. |
-| 15 | STRAIGHT ANSWERS | Questions, answered plainly. |
-| 16 | VISIBILITY & ENQUIRIES | See what should become easier across your visibility, website and enquiry path. |
+| 8 | THE WORK, APPLIED | See how strategy, structure and execution come together. |
+| 9 | SMART WEBSITE | The website is built around the questions, evidence and actions people need to decide. |
+| 10 | CLEAR OWNERSHIP | Know what MindWP builds, what your business owns and what happens after launch. |
+| 11 | RIGHT FIT | For independent clinics and specialist service businesses where customers choose carefully. |
+| 12 | HOW WE START | First we review how people find, choose and contact you. Then we show you where to start. |
+| 13 | STRAIGHT ANSWERS | Questions, answered plainly. |
+| 14 | VISIBILITY & ENQUIRY REVIEW | See what should become easier across your visibility, website and enquiry path. |
+
+#### Optional Support selector
+
+The existing selector remains one visible section. Its three selectable items use the following fixed public copy:
+
+| Selector item | Eyebrow | Heading |
+|---:|---|---|
+| 1 | FIRST RESPONSE | Acknowledge each enquiry and place it with someone responsible. |
+| 2 | PURPOSEFUL FOLLOW-UP | Keep worthwhile decisions visible without replacing human judgement. |
+| 3 | VISIBLE REPUTATION | Let genuine customer experience strengthen the next person’s decision. |
+
+Smart Website is excluded because it has its own standalone environment. Local Visibility is excluded because it also remains standalone.
+

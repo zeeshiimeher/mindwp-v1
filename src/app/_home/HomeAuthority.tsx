@@ -7,7 +7,7 @@ export function HomeAuthority() {
         <div className="home-authority__copy container--flow" data-home-sequence>
           <div className="section-title-group">
             <p className="eyebrow" data-home-sequence-item>
-              Local SEO Authority
+              Local visibility
             </p>
             <h2 data-home-sequence-item>Found nearby — trusted before they call.</h2>
           </div>
