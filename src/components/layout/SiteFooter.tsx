@@ -9,10 +9,10 @@ const COLUMNS = [
   {
     title: "What we build",
     links: [
-      { href: "/#five-systems", label: "Smart Website Systems" },
-      { href: "/#five-systems", label: "Lead Response & Handling" },
-      { href: "/#five-systems", label: "Follow-Up & CRM" },
-      { href: "/#five-systems", label: "Reputation & Review" },
+      { href: "/#hero", label: "Smart Website Systems" },
+      { href: "/#beyond-website", label: "Lead Response & Handling" },
+      { href: "/#beyond-website", label: "Follow-Up & CRM" },
+      { href: "/#beyond-website", label: "Reputation & Review" },
     ],
   },
   {

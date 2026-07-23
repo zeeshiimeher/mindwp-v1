@@ -1,22 +1,22 @@
-import { HomeCompounds } from "@/app/_home/HomeCompounds";
+import { HomeOwnershipTabs } from "@/app/_home/HomeOwnership";
 import { Button } from "@/components/ui/Button";
 import { Icon, type IconName } from "@/components/ui/Icon";
-import { PRIMARY_CTA_LABEL } from "@/lib/cta/labels";
+import { PRIMARY_CTA_LABEL, PRIMARY_CTA_LABEL_SHORT } from "@/lib/cta/labels";
 
 const GOOD_FIT = [
-  "You run an established clinic or service business with real enquiries worth protecting.",
-  "Calls, forms, quotes, bookings, or reviews are slipping between handoffs.",
-  "Each patient or project is valuable enough to deserve a clear owner and next step.",
-  "You value a clear, maintainable website you can actually edit.",
-  "Or you are newer — but serious about setting the website and handling up properly from the start.",
+  "An independent clinic or specialist service business where customers compare carefully before choosing.",
+  "Each enquiry represents a real decision — a patient, a project, a client — worth getting right.",
+  "Trust and evidence matter to your buyers at least as much as price.",
+  "You want a website you can maintain and adapt yourself, not one locked behind an agency.",
+  "Established or newer — as long as getting the website and its handling right from the start matters to you.",
 ];
 
 const NOT_FIT = [
-  "Chasing the cheapest website",
-  "Looking for a brochure-only redesign",
-  "Hoping a website alone will invent demand",
-  "Expecting promised rankings or instant results",
-  "Want another software platform to operate",
+  "Chasing the cheapest website available",
+  "Looking for a brochure nobody has to act on",
+  "Expecting a website alone to create demand",
+  "Expecting guaranteed rankings or instant enquiries",
+  "Wanting another software platform to operate day to day",
 ];
 
 const REVIEW_STEPS: readonly {
@@ -26,20 +26,20 @@ const REVIEW_STEPS: readonly {
   icon: IconName;
 }[] = [
   {
-    title: "How work arrives today.",
-    body: "The website, where enquiries come from, what happens after someone gets in touch — and what already works. That sets the agenda.",
+    title: "How enquiries and customers reach you today.",
+    body: "The website, where visibility already comes from, and what happens after someone makes contact. That sets the starting point.",
     tag: "You share",
     icon: "message-square",
   },
   {
-    title: "The site and the path around it.",
-    body: "Pages, proof, local presence, and the route from first contact to next step — read against what your buyers actually need.",
+    title: "The path from search to a made decision.",
+    body: "Local presence, the pages people actually land on, the evidence they see, and the route from interest to a useful enquiry.",
     tag: "We examine",
     icon: "search",
   },
   {
-    title: "Findings first, not a pitch.",
-    body: "A clear view of what is worth fixing and what can wait. Recommendations follow your situation, not a package — and scope and cost are agreed before any work begins.",
+    title: "A prioritised starting point, not a pitch.",
+    body: "A clear view of what is worth fixing first. Recommendations follow what the review finds — scope and cost are agreed before anything begins.",
     tag: "You decide",
     icon: "circle-check",
   },
@@ -47,9 +47,9 @@ const REVIEW_STEPS: readonly {
 
 const CLOSING_ICONS: readonly IconName[] = ["globe", "map-pin", "phone", "folder", "star"];
 
-export function HomeCompoundingSection() {
+export function HomeOwnershipSection() {
   return (
-    <section id="compounds" className="home-compounds section">
+    <section id="ownership" className="home-ownership section">
       <div
         className="container container--content section-intro section-intro--centered"
         data-home-sequence
@@ -62,14 +62,13 @@ export function HomeCompoundingSection() {
           <em>what your business owns and what happens after launch.</em>
         </h2>
         <p data-home-sequence-item>
-          The starting point differs by business; what compounds does not. Clearer pages, stronger
-          proof, more useful reviews, better handling — each improvement stays, and the next one is
-          informed by real enquiries rather than guesswork. Hand the site over or keep it managed;
-          the layers are yours either way.
+          Every engagement draws a clear line: what MindWP defines and builds, what remains yours
+          to decide, and what happens once the site is live. None of it should be a surprise after
+          the fact.
         </p>
       </div>
       <div className="container container--content">
-        <HomeCompounds />
+        <HomeOwnershipTabs />
       </div>
     </section>
   );
@@ -90,8 +89,9 @@ export function HomeFit() {
         </div>
         <div className="section-copy-group">
           <p data-home-sequence-item>
-            We would rather say so up front. A smart website system makes sense when there is real
-            work to protect, and too much of it is slipping.
+            We would rather say this plainly than let a website assume it. MindWP works best for
+            businesses whose customers already compare carefully before they choose, and where each
+            enquiry has real value.
           </p>
         </div>
       </div>
@@ -143,12 +143,12 @@ export function HomeReview() {
             </h2>
           </div>
           <p data-home-sequence-item>
-            You share how work arrives today; we examine the website and the path around it. What
-            comes back is a read on what is worth fixing first — because every business starts from
-            a different place.
+            The Visibility &amp; Enquiry Review looks at how people find you, whether the website
+            answers what they need, and what happens once they make contact. What comes back is a
+            clear starting point, not a generic package.
           </p>
           <Button href="#closing" variant="on-dark" data-home-sequence-item>
-            {PRIMARY_CTA_LABEL}
+            {PRIMARY_CTA_LABEL_SHORT}
           </Button>
           <small data-home-sequence-item>
             No obligation to continue. No pitch hidden in the findings.
@@ -188,13 +188,14 @@ export function HomeClosing() {
           See what should become easier <em>across your visibility, website and enquiry path.</em>
         </h2>
         <p data-home-sequence-item>
-          One private conversation. We review the website and the path around every enquiry, then
-          show you which gaps are worth fixing first — useful whether or not we build together.
+          One private conversation. MindWP reviews your visibility, your website and the path every
+          enquiry takes, then shows you what&apos;s worth fixing first — useful whether or not you
+          build together afterwards.
         </p>
         <div
           className="home-closing__icons"
           role="img"
-          aria-label="The five connected systems"
+          aria-label="The website and its optional supporting systems"
           data-home-stagger
         >
           {CLOSING_ICONS.map((icon) => (

@@ -2,7 +2,7 @@ import type { CSSProperties, ReactNode } from "react";
 
 import { Button } from "@/components/ui/Button";
 import { Icon, type IconName } from "@/components/ui/Icon";
-import { PRIMARY_CTA_LABEL } from "@/lib/cta/labels";
+import { PRIMARY_CTA_LABEL, PRIMARY_CTA_LABEL_SHORT } from "@/lib/cta/labels";
 
 import { LOCAL_SEO_FAQS } from "../content";
 import { LocalSeoIntentTabs } from "./LocalSeoIntentTabs";
@@ -533,7 +533,7 @@ export function LocalSeoAuthorityPage() {
             ))}
           </ol>
           <Button href="#closing" variant="on-dark" data-lseo-fade>
-            {PRIMARY_CTA_LABEL}
+            {PRIMARY_CTA_LABEL_SHORT}
           </Button>
         </div>
       </section>

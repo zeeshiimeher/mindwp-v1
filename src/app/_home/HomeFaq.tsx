@@ -4,24 +4,24 @@ import { useState } from "react";
 
 const FAQS = [
   {
-    question: "What does the Website Review actually involve?",
+    question: "What makes a website “smart”?",
     answer:
-      "You share your website and how enquiries arrive today. We review the site, the pages that matter, your local presence, and what happens after someone makes contact — then come back with what is worth fixing first. It is a private conversation, not a demo or a sales script.",
+      "It is built around the questions your customers actually ask, the evidence that answers them, and a next step that fits the decision — not a template with your logo on it.",
   },
   {
-    question: "Do I need all five systems?",
+    question: "Can MindWP improve a website I already have?",
     answer:
-      "No. The website is the hub, but the other capabilities attach only where the work actually slips. Some businesses need one or two first; the review establishes the useful starting point.",
+      "Often, yes. The review looks at what already works before recommending a rebuild. Sometimes the priority is a page, a clearer path, or the handling around the existing site.",
   },
   {
-    question: "I already have a website. Do I have to rebuild?",
+    question: "Is Local Visibility, or the other supporting systems, compulsory?",
     answer:
-      "Not automatically. We review what is already working before recommending a rebuild. Sometimes the priority is a page, a clearer path, or the handling around the existing site.",
+      "No. The website is the foundation. The other capabilities attach only where the review finds a real weakness — most businesses start with one, some with none.",
   },
   {
-    question: "We already spend on ads. How does this help?",
+    question: "Does MindWP replace my team's judgement?",
     answer:
-      "Ads can bring attention, but the website still has to turn that attention into a confident next step. The review looks for the gaps that make paid interest hesitate or disappear after contact.",
+      "No. MindWP builds the structure that carries an enquiry to the right person — acknowledgement, routing and follow-up stay visible to your team, and every commercial or clinical decision stays with you.",
   },
   {
     question: "Who owns the website?",
@@ -29,14 +29,19 @@ const FAQS = [
       "You do. The site is built to remain clear, maintainable, and transferable rather than locking the business into a proprietary platform.",
   },
   {
-    question: "Do you hand over, or manage it ongoing?",
+    question: "Does MindWP guarantee rankings or enquiries?",
     answer:
-      "Either. The structure is designed for a clean handover, and ongoing work can continue when that is useful. The layers already built remain yours in both cases.",
+      "No — nobody honestly can. The website is built to give the business a fair chance: clarity, proof and an easy next step. MindWP does not promise rankings, leads or bookings.",
   },
   {
-    question: "How much does it cost?",
+    question: "What happens during the Visibility & Enquiry Review?",
     answer:
-      "Scope depends on what the review finds and what should be fixed first. Recommendations and a fixed scope are agreed before work begins rather than forcing every business into one package.",
+      "You share how work arrives today; MindWP reviews your visibility, your website and the enquiry path, then comes back with what is worth fixing first. It is a private conversation, not a demo or a sales script.",
+  },
+  {
+    question: "What happens after launch?",
+    answer:
+      "The structure is designed for a clean handover, and ongoing management can continue when that is useful. Either way, what is already built stays yours.",
   },
 ] as const;
 

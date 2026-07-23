@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 
 import { Button } from "@/components/ui/Button";
-import { PRIMARY_CTA_LABEL } from "@/lib/cta/labels";
+import { PRIMARY_CTA_LABEL_SHORT } from "@/lib/cta/labels";
 import { cn } from "@/lib/utils";
 
 export function SiteHeader() {
@@ -31,7 +31,7 @@ export function SiteHeader() {
           MindWP
         </Link>
         <Button href="#review" variant={solid ? "primary" : "on-dark"}>
-          {PRIMARY_CTA_LABEL}
+          {PRIMARY_CTA_LABEL_SHORT}
         </Button>
       </div>
     </header>

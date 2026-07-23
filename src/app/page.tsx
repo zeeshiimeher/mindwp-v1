@@ -1,21 +1,16 @@
 import "@/styles/pages/home.css";
 
+import { HomeAttention } from "@/app/_home/HomeAttention";
 import { HomeAuthority } from "@/app/_home/HomeAuthority";
 import { HomeContext } from "@/app/_home/HomeContext";
 import { HomeFaq } from "@/app/_home/HomeFaq";
 import { HomeHero } from "@/app/_home/HomeHero";
-import {
-  HomeClosing,
-  HomeCompoundingSection,
-  HomeFit,
-  HomeReview,
-} from "@/app/_home/HomeJourney";
-import { HomeLeaks } from "@/app/_home/HomeLeaks";
+import { HomeClosing, HomeFit, HomeOwnershipSection, HomeReview } from "@/app/_home/HomeJourney";
 import { HomeMotion } from "@/app/_home/HomeMotion";
 import {
-  HomeCertainty,
+  HomeAfterEnquiry,
+  HomeBeyondWebsite,
   HomeDistance,
-  HomeFiveSystems,
   HomeOneSystem,
 } from "@/app/_home/HomeSystems";
 import { HomeWork } from "@/app/_home/HomeWork";
@@ -24,15 +19,15 @@ export default function HomePage() {
   return (
     <>
       <HomeHero />
-      <HomeLeaks />
+      <HomeAttention />
       <HomeDistance />
-      <HomeCertainty />
+      <HomeAfterEnquiry />
       <HomeOneSystem />
-      <HomeFiveSystems />
+      <HomeBeyondWebsite />
       <HomeAuthority />
       <HomeWork />
       <HomeContext />
-      <HomeCompoundingSection />
+      <HomeOwnershipSection />
       <HomeFit />
       <HomeReview />
       <HomeFaq />

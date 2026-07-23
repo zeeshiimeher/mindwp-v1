@@ -7,9 +7,19 @@ import { useResponsiveTabOrientation } from "@/app/_home/useResponsiveTabOrienta
 import { Icon, type IconName } from "@/components/ui/Icon";
 import { CANONICAL_SYSTEMS } from "@/content/canonical";
 
+const SUPPORT_SLUGS = ["lead-response-handling", "follow-up-crm", "reputation-review"] as const;
+
+type SupportSlug = (typeof SUPPORT_SLUGS)[number];
+
+const SUPPORT_SYSTEMS = CANONICAL_SYSTEMS.filter(
+  (system): system is (typeof CANONICAL_SYSTEMS)[number] & { slug: SupportSlug } =>
+    (SUPPORT_SLUGS as readonly string[]).includes(system.slug),
+);
+
 const DETAILS: Record<
-  (typeof CANONICAL_SYSTEMS)[number]["slug"],
+  SupportSlug,
   {
+    displayName: string;
     tag: string;
     icon: IconName;
     problem: string;
@@ -17,50 +27,37 @@ const DETAILS: Record<
     reach: readonly [string, string, string, string];
   }
 > = {
-  "smart-website-systems": {
-    tag: "The hub",
-    icon: "globe",
-    problem: "A generic site cannot carry the whole journey on its own.",
-    promise: "One site designed to hold the offer, the proof, and every next step.",
-    reach: ["Found", "Answered", "Owned", "Proven"],
-  },
-  "local-seo-authority": {
-    tag: "Found",
-    icon: "map-pin",
-    problem: "Nearby buyers cannot find or verify the business first.",
-    promise: "Service pages, listings, and proof stay aligned with what search shows.",
-    reach: ["Found", "Answered", "Owned", "Proven"],
-  },
   "lead-response-handling": {
-    tag: "Answered",
+    displayName: "First Response",
+    tag: "Lead Response & Handling",
     icon: "phone",
-    problem: "Calls, forms, and bookings land nowhere in particular.",
-    promise: "Every enquiry reaches a useful first response and a clear route.",
+    problem: "Calls, forms and bookings land, then wait for whoever happens to notice.",
+    promise: "Acknowledge the enquiry and place it with someone responsible.",
     reach: ["Found", "Answered", "Owned", "Proven"],
   },
   "follow-up-crm": {
-    tag: "Owned",
+    displayName: "Purposeful Follow-Up",
+    tag: "Follow-Up & CRM",
     icon: "folder",
-    problem: "The next step lives in memory instead of a system.",
-    promise: "Every enquiry gets an owner and a visible next step.",
+    problem: "A quote or plan goes out, and the next touch depends on someone remembering to make it.",
+    promise: "Keep worthwhile decisions visible without replacing human judgement.",
     reach: ["Found", "Answered", "Owned", "Proven"],
   },
   "reputation-review": {
-    tag: "Proven",
+    displayName: "Visible Reputation",
+    tag: "Reputation & Review",
     icon: "star",
-    problem: "Finished work never becomes proof for the next buyer.",
-    promise: "Reviews get requested at the moment they are easiest to give.",
+    problem: "Good work ends quietly — no review asked, nothing carried back to the website.",
+    promise: "Help genuine customer experiences strengthen future customer decisions.",
     reach: ["Found", "Answered", "Owned", "Proven"],
   },
 };
 
 export function HomeSystemsSelector() {
-  const [activeSlug, setActiveSlug] =
-    useState<(typeof CANONICAL_SYSTEMS)[number]["slug"]>("smart-website-systems");
+  const [activeSlug, setActiveSlug] = useState<SupportSlug>("lead-response-handling");
   const orientation = useResponsiveTabOrientation();
-  const activeSystem = CANONICAL_SYSTEMS.find((system) => system.slug === activeSlug)!;
-  const detail = DETAILS[activeSlug];
   const activeIndex = CANONICAL_SYSTEMS.findIndex((system) => system.slug === activeSlug);
+  const detail = DETAILS[activeSlug];
 
   const handleKeys = (event: KeyboardEvent<HTMLButtonElement>, index: number) => {
     if (!["ArrowLeft", "ArrowRight", "ArrowUp", "ArrowDown", "Home", "End"].includes(event.key)) {
@@ -70,15 +67,15 @@ export function HomeSystemsSelector() {
     event.preventDefault();
     let nextIndex = index;
     if (["ArrowLeft", "ArrowUp"].includes(event.key)) {
-      nextIndex = (index - 1 + CANONICAL_SYSTEMS.length) % CANONICAL_SYSTEMS.length;
+      nextIndex = (index - 1 + SUPPORT_SYSTEMS.length) % SUPPORT_SYSTEMS.length;
     }
     if (["ArrowRight", "ArrowDown"].includes(event.key)) {
-      nextIndex = (index + 1) % CANONICAL_SYSTEMS.length;
+      nextIndex = (index + 1) % SUPPORT_SYSTEMS.length;
     }
     if (event.key === "Home") nextIndex = 0;
-    if (event.key === "End") nextIndex = CANONICAL_SYSTEMS.length - 1;
+    if (event.key === "End") nextIndex = SUPPORT_SYSTEMS.length - 1;
 
-    setActiveSlug(CANONICAL_SYSTEMS[nextIndex].slug);
+    setActiveSlug(SUPPORT_SYSTEMS[nextIndex].slug);
     const tabs = event.currentTarget
       .closest("[role='tablist']")
       ?.querySelectorAll<HTMLButtonElement>("[role='tab']");
@@ -90,11 +87,11 @@ export function HomeSystemsSelector() {
       <div
         className="home-systems__selector"
         role="tablist"
-        aria-label="Connected MindWP systems"
+        aria-label="Optional support beyond the website"
         aria-orientation={orientation}
         data-home-stagger
       >
-        {CANONICAL_SYSTEMS.map((system, index) => {
+        {SUPPORT_SYSTEMS.map((system, index) => {
           const systemDetail = DETAILS[system.slug];
           const selected = system.slug === activeSlug;
           return (
@@ -117,7 +114,7 @@ export function HomeSystemsSelector() {
               <span>
                 <Icon name={systemDetail.icon} size={18} />
               </span>
-              {system.label}
+              {systemDetail.displayName}
             </button>
           );
         })}
@@ -133,7 +130,7 @@ export function HomeSystemsSelector() {
         key={activeSlug}
       >
         <p className="home-systems__tag">{detail.tag}</p>
-        <h3>{activeSystem.label}</h3>
+        <h3>{detail.displayName}</h3>
         <div className="home-systems__statements">
           <p className="home-systems__problem">
             <span aria-hidden="true">×</span>

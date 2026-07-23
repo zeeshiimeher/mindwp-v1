@@ -51,7 +51,12 @@ test("the unpublished Local SEO production route renders its approved structure"
 
   await expect(page.getByText("Illustrative framework", { exact: true })).toBeVisible();
   await expect(page.getByText(/Explained everything before starting/)).toHaveCount(0);
-  await expect(page.getByRole("link", { name: "Request a Website Review" })).toHaveCount(4);
+  await expect(
+    page.getByRole("link", { name: "Request a Visibility & Enquiry Review", exact: true }),
+  ).toHaveCount(2);
+  await expect(
+    page.getByRole("link", { name: "Request a Review", exact: true }),
+  ).toHaveCount(2);
 });
 
 test("Local SEO intent tabs and FAQ are keyboard and pointer operable", async ({ page }) => {

@@ -23,9 +23,9 @@ export function HomeWork() {
         </div>
         <div className="section-copy-group">
           <p data-home-sequence-item>
-            Judge it the way a buyer would: the structure, the responsive decisions, the
-            interactions, and the thinking each business needed. The craft should be visible before
-            we ever speak.
+            Judge it the way a buyer would: the structure behind each page, the design decisions
+            that shape it, and the thinking a specific business actually needed — not a gallery of
+            pretty screens.
           </p>
         </div>
       </div>
@@ -56,8 +56,8 @@ export function HomeWork() {
             <strong>Home services lead-gen site</strong>
           </div>
           <p>
-            Offer clarity, local proof, action paths, and service-area trust visible in one built
-            surface.
+            Offer clarity, local proof and a clear action path, built into one working homepage
+            rather than described in a proposal.
           </p>
         </div>
       </div>

@@ -37,9 +37,9 @@ export function HomeContext() {
           <em>the questions, evidence and actions people need to decide.</em>
         </h2>
         <p data-home-sequence-item>
-          A patient considering treatment and a homeowner planning a major project are both looking
-          for confidence — just not in the same evidence, the same language, or the same next step.
-          So the structure, the proof and the ask are drawn from the work itself.
+          A patient weighing treatment and a homeowner planning a major project are both looking
+          for confidence — just not from the same questions, the same evidence, or the same next
+          step. So each website is shaped around the work itself, not a shared template.
         </p>
       </div>
 

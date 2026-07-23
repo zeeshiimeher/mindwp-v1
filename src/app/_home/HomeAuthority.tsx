@@ -12,9 +12,10 @@ export function HomeAuthority() {
             <h2 data-home-sequence-item>Found nearby — trusted before they call.</h2>
           </div>
           <p data-home-sequence-item>
-            Before anyone calls, they check: does the treatment or service page answer their case,
-            do the reviews feel real, does the listing match the website? Local authority holds when
-            all of it tells one story.
+            Before anyone calls, they check quietly: does the service or treatment page match what
+            they searched for, does the listing agree with the website, do the reviews feel real?
+            Local visibility holds when the website, the local listing and the reputation all tell
+            the same story.
           </p>
           <dl className="home-authority__points" data-home-stagger>
             <div data-home-stagger-item>
@@ -26,7 +27,7 @@ export function HomeAuthority() {
             </div>
             <div data-home-stagger-item>
               <dt>Verified</dt>
-              <dd>Listing, reviews, and the pages behind them tell one consistent story.</dd>
+              <dd>The listing, the reviews and the pages behind them agree with each other.</dd>
             </div>
           </dl>
         </div>

@@ -1,10 +1,10 @@
 import { HomeSystemsSelector } from "@/app/_home/HomeSystemsSelector";
 
-const CERTAINTY_STEPS = [
-  ["01", "Understand"],
-  ["02", "Trust"],
-  ["03", "Ask"],
-  ["04", "Be answered"],
+const AFTER_ENQUIRY_STEPS = [
+  ["01", "Acknowledged"],
+  ["02", "Owned"],
+  ["03", "Answered"],
+  ["04", "Handled consistently"],
 ] as const;
 
 const CONNECTED_LABELS = ["Local SEO", "Lead Response", "Follow-Up & CRM", "Reputation"];
@@ -24,9 +24,9 @@ export function HomeDistance() {
             </h2>
           </div>
           <p data-home-sequence-item>
-            Distance is everything a visitor still has to do before asking: find the page that
-            answers their question, see proof they can believe, understand what happens next. A
-            smart website closes that space.
+            Before anyone gets in touch, they need three things settled: that the page they landed
+            on actually answers their situation, that the proof on it can be checked, and that the
+            next step is obvious. A smart website closes that distance instead of adding to it.
           </p>
           <p className="home-editorial-note" data-home-sequence-item>
             Clarity is not more copy. It is less distance between the question and the answer.
@@ -67,9 +67,9 @@ export function HomeDistance() {
   );
 }
 
-export function HomeCertainty() {
+export function HomeAfterEnquiry() {
   return (
-    <section id="certainty" className="home-certainty section on-dark">
+    <section id="after-enquiry" className="home-after-enquiry section on-dark">
       <div
         className="container container--content section-intro section-intro--centered"
         data-home-sequence
@@ -81,9 +81,14 @@ export function HomeCertainty() {
           A useful enquiry still needs{" "}
           <em>an answer, an owner and a clear next step.</em>
         </h2>
+        <p data-home-sequence-item>
+          A slow reply, an unclear owner, or a next step nobody can see all cost the same thing:
+          confidence the enquiry was worth sending. None of this needs automation to replace your
+          team — it needs the handling to be visible.
+        </p>
       </div>
-      <ol className="container home-certainty__steps" data-home-stagger>
-        {CERTAINTY_STEPS.map(([number, label]) => (
+      <ol className="container home-after-enquiry__steps" data-home-stagger>
+        {AFTER_ENQUIRY_STEPS.map(([number, label]) => (
           <li key={number} data-home-stagger-item>
             <small>{number}</small>
             <strong>{label}</strong>
@@ -119,9 +124,9 @@ export function HomeOneSystem() {
           <br /> and <u>proven</u> is built in.
         </p>
         <p data-home-sequence-item>
-          Five logins, five invoices — and still nobody owns the enquiry. Connected does not mean
-          replacing everything at once; it means the thinking joins up in one place, so nothing is
-          lost in a hand-off between suppliers.
+          Nothing here is compulsory. The website is the foundation; a supporting capability
+          connects only when the review finds a real gap in discovery, response, follow-up or
+          reputation — and it is scoped on its own, not sold as a set.
         </p>
       </div>
 
@@ -150,9 +155,9 @@ export function HomeOneSystem() {
   );
 }
 
-export function HomeFiveSystems() {
+export function HomeBeyondWebsite() {
   return (
-    <section id="five-systems" className="home-systems section on-dark">
+    <section id="beyond-website" className="home-systems section on-dark">
       <div
         className="container container--content section-intro section-intro--centered"
         data-home-sequence
@@ -164,8 +169,9 @@ export function HomeFiveSystems() {
           Add the support <em>that earns its place.</em>
         </h2>
         <p data-home-sequence-item>
-          The website is the foundation. The other four attach where your work actually slips — some
-          clients need all five, most start with one or two.
+          The Smart Website stays the foundation. These three connect only where the review finds
+          a specific gap — most businesses need one, some need none, and none of them replace the
+          site itself.
         </p>
       </div>
       <div className="container">

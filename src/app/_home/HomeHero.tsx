@@ -24,9 +24,10 @@ export function HomeHero() {
             </h1>
           </div>
           <p className="home-hero__lede text-lead" data-home-hero-item>
-            For specialist clinics and established service businesses, the website is only half of
-            it. MindWP designs the other half too — what happens to every call, form and
-            consultation request after it arrives — as one piece of work.
+            MindWP designs smarter websites for independent clinics and specialist service
+            businesses — built to help the right customers find you, understand the work, and
+            choose you with confidence. Everything else MindWP offers exists to support that one
+            job, not replace it.
           </p>
           <Button href="#review" variant="on-dark" data-home-hero-item>
             {PRIMARY_CTA_LABEL}
