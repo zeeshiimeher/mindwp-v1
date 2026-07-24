@@ -103,8 +103,8 @@ export function HomeFit() {
 export function HomeReview() {
   return (
     <section id="review" className="home-review section on-dark">
-      <div className="container container--split home-review__layout">
-        <div className="home-review__intro container--flow" data-home-sequence>
+      <div className="container section-intro--split home-review__layout">
+        <div className="home-review__intro section-intro" data-home-sequence>
           <div className="section-title-group">
             <p className="eyebrow" data-home-sequence-item>
               How we start
@@ -150,7 +150,7 @@ export function HomeClosing() {
   return (
     <section id="closing" className="home-closing section on-dark">
       <div
-        className="container container--content section-intro section-intro--centered"
+        className="container section-intro section-intro--centered"
         data-home-sequence
       >
         <p className="eyebrow eyebrow--centered" data-home-sequence-item>

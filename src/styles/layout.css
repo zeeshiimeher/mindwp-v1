@@ -62,6 +62,8 @@
 }
 
 .section-intro--centered {
+  max-width: 1200px;
+  margin-inline: auto;
   align-items: center;
   text-align: center;
 }
@@ -72,10 +74,6 @@
 
 .section-copy-group > p {
   max-width: 35rem;
-}
-
-.section-intro--centered > p {
-  max-width: 42rem;
 }
 
 @media (max-width: 48rem) {
@@ -103,8 +101,8 @@
   border-bottom: 1px solid transparent;
   background: transparent;
   transition:
-    background-color 220ms var(--ease-out),
-    border-color 220ms var(--ease-out);
+    background-color var(--duration-base) var(--ease-out),
+    border-color var(--duration-base) var(--ease-out);
 }
 
 .site-header--solid {

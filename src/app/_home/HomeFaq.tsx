@@ -51,7 +51,7 @@ export function HomeFaq() {
   return (
     <section id="faq" className="home-faq section">
       <div
-        className="container container--content section-intro section-intro--centered"
+        className="container section-intro section-intro--centered"
         data-home-sequence
       >
         <p className="eyebrow eyebrow--centered" data-home-sequence-item>

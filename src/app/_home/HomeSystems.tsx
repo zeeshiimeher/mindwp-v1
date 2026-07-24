@@ -12,8 +12,8 @@ const CONNECTED_LABELS = ["Local SEO", "Lead Response", "Follow-Up & CRM", "Repu
 export function HomeDistance() {
   return (
     <section id="distance" className="home-distance section on-mist">
-      <div className="container container--split home-distance__layout">
-        <div className="home-distance__copy container--flow" data-home-sequence>
+      <div className="container section-intro--split home-distance__layout">
+        <div className="home-distance__copy section-intro" data-home-sequence>
           <div className="section-title-group">
             <p className="eyebrow" data-home-sequence-item>
               Before enquiry
@@ -71,7 +71,7 @@ export function HomeAfterEnquiry() {
   return (
     <section id="after-enquiry" className="home-after-enquiry section on-dark">
       <div
-        className="container container--content section-intro section-intro--centered"
+        className="container section-intro section-intro--centered"
         data-home-sequence
       >
         <p className="eyebrow eyebrow--centered" data-home-sequence-item>
@@ -103,7 +103,7 @@ export function HomeOneSystem() {
   return (
     <section id="one-system" className="home-one-system section">
       <div
-        className="container container--content section-intro section-intro--centered"
+        className="container section-intro section-intro--centered"
         data-home-sequence
       >
         <p className="eyebrow eyebrow--centered" data-home-sequence-item>
@@ -159,7 +159,7 @@ export function HomeBeyondWebsite() {
   return (
     <section id="beyond-website" className="home-systems section on-dark">
       <div
-        className="container container--content section-intro section-intro--centered"
+        className="container section-intro section-intro--centered"
         data-home-sequence
       >
         <p className="eyebrow eyebrow--centered" data-home-sequence-item>

@@ -126,7 +126,7 @@ export function HomeCompounding() {
   return (
     <section id="compounding" className="home-compounding section on-mist">
       <div
-        className="container container--content section-intro section-intro--centered"
+        className="container section-intro section-intro--centered"
         data-home-sequence
       >
         <p className="eyebrow eyebrow--centered" data-home-sequence-item>
@@ -138,7 +138,7 @@ export function HomeCompounding() {
         <p data-home-sequence-item>{COMPOUND_INTRO}</p>
       </div>
 
-      <div className="container container--content home-compounding__stage" data-home-fade>
+      <div className="container home-compounding__stage" data-home-fade>
         <div
           className="home-compounding__map"
           ref={mapRef}

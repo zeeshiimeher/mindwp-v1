@@ -26,7 +26,7 @@ export function HomeContext() {
   return (
     <section id="context" className="home-context section on-dark">
       <div
-        className="container container--content section-intro section-intro--centered"
+        className="container section-intro section-intro--centered"
         data-home-sequence
       >
         <p className="eyebrow eyebrow--centered" data-home-sequence-item>
@@ -97,7 +97,7 @@ export function HomeContext() {
         </article>
       </div>
 
-      <p className="container container--content home-context__closing" data-home-fade>
+      <p className="container home-context__closing" data-home-fade>
         Different work, different evidence, different first step — which is why every build starts
         by understanding yours.
       </p>

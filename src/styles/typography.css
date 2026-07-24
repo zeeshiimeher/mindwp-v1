@@ -40,6 +40,7 @@ h4 {
 
 h1 {
   font: var(--display-2xl);
+  letter-spacing: -0.035em;
 }
 
 h2 {

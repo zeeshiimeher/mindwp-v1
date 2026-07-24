@@ -3,8 +3,8 @@ import { Icon } from "@/components/ui/Icon";
 export function HomeAuthority() {
   return (
     <section id="local-authority" className="home-authority section">
-      <div className="container container--split home-authority__layout">
-        <div className="home-authority__copy container--flow" data-home-sequence>
+      <div className="container section-intro--split home-authority__layout">
+        <div className="home-authority__copy section-intro" data-home-sequence>
           <div className="section-title-group">
             <p className="eyebrow" data-home-sequence-item>
               Local visibility
