@@ -2,10 +2,11 @@ import "@/styles/pages/home.css";
 
 import { HomeAttention } from "@/app/_home/HomeAttention";
 import { HomeAuthority } from "@/app/_home/HomeAuthority";
+import { HomeCompounding } from "@/app/_home/HomeCompounding";
 import { HomeContext } from "@/app/_home/HomeContext";
 import { HomeFaq } from "@/app/_home/HomeFaq";
 import { HomeHero } from "@/app/_home/HomeHero";
-import { HomeClosing, HomeFit, HomeOwnershipSection, HomeReview } from "@/app/_home/HomeJourney";
+import { HomeClosing, HomeFit, HomeReview } from "@/app/_home/HomeJourney";
 import { HomeMotion } from "@/app/_home/HomeMotion";
 import {
   HomeAfterEnquiry,
@@ -27,7 +28,7 @@ export default function HomePage() {
       <HomeAuthority />
       <HomeWork />
       <HomeContext />
-      <HomeOwnershipSection />
+      <HomeCompounding />
       <HomeFit />
       <HomeReview />
       <HomeFaq />

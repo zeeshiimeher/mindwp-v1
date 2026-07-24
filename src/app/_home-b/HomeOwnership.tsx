@@ -2,7 +2,7 @@
 
 import { type KeyboardEvent, useState } from "react";
 
-import { focusAndRevealTab, revealTab } from "@/app/_home/tabNavigation";
+import { focusAndRevealTab, revealTab } from "@/app/_home-b/tabNavigation";
 
 const OWNERSHIP_TABS = [
   {
@@ -74,13 +74,13 @@ export function HomeOwnershipTabs() {
   };
 
   return (
-    <div className="home-ownership__experience container--flow">
+    <div className="home-b-ownership__experience container--flow">
       <div
-        className="home-ownership__tabs"
+        className="home-b-ownership__tabs"
         role="tablist"
         aria-label="What MindWP builds, what you own, and what happens after launch"
         aria-orientation="horizontal"
-        data-home-fade
+        data-home-b-fade
       >
         {OWNERSHIP_TABS.map((stage, index) => (
           <button
@@ -104,22 +104,22 @@ export function HomeOwnershipTabs() {
       </div>
 
       <div
-        className="home-ownership__panel"
+        className="home-b-ownership__panel"
         role="tabpanel"
         id="ownership-panel"
         aria-labelledby={`ownership-tab-${active.id}`}
         tabIndex={0}
-        data-home-fade
+        data-home-b-fade
         key={active.id}
       >
-        <div className="home-ownership__copy">
-          <p className="home-artifact-label">{active.eyebrow}</p>
+        <div className="home-b-ownership__copy">
+          <p className="home-b-artifact-label">{active.eyebrow}</p>
           <h3>{active.heading}</h3>
           <p>{active.body}</p>
-          <p className="home-editorial-note">{active.note}</p>
+          <p className="home-b-editorial-note">{active.note}</p>
         </div>
-        <div className="home-ownership__layers">
-          <p className="home-artifact-label">What this covers</p>
+        <div className="home-b-ownership__layers">
+          <p className="home-b-artifact-label">What this covers</p>
           {active.layers.map(([number, title, description, tag]) => (
             <article key={number}>
               <small>{number}</small>

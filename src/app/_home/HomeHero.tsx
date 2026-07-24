@@ -2,11 +2,11 @@ import { Button } from "@/components/ui/Button";
 import { PRIMARY_CTA_LABEL } from "@/lib/cta/labels";
 
 const JOURNEY = [
-  ["01", "Found nearby", "Website opened and checked."],
-  ["02", "Enquiry sent", "Details land somewhere useful."],
-  ["03", "First response", "Right person is notified."],
-  ["04", "Owner and next step", "Follow-up stays visible."],
-  ["05", "Work completed", "Good work becomes proof."],
+  ["01", "Found nearby"],
+  ["02", "Enquiry sent"],
+  ["03", "First response"],
+  ["04", "Owner and next step"],
+  ["05", "Work completed"],
 ] as const;
 
 export function HomeHero() {
@@ -25,9 +25,8 @@ export function HomeHero() {
           </div>
           <p className="home-hero__lede text-lead" data-home-hero-item>
             MindWP designs smarter websites for independent clinics and specialist service
-            businesses — built to help the right customers find you, understand the work, and
-            choose you with confidence. Everything else MindWP offers exists to support that one
-            job, not replace it.
+            businesses — helping the right customers find you, understand the work, and choose
+            you with confidence.
           </p>
           <Button href="#review" variant="on-dark" data-home-hero-item>
             {PRIMARY_CTA_LABEL}
@@ -98,12 +97,11 @@ export function HomeHero() {
           How a typical enquiry plays out
         </p>
         <ol>
-          {JOURNEY.map(([number, title, description], index) => (
+          {JOURNEY.map(([number, title], index) => (
             <li key={number} data-home-hero-item>
               <span className={index === 0 ? "is-active" : undefined} aria-hidden="true" />
               <small>{number}</small>
               <strong>{title}</strong>
-              <p>{description}</p>
             </li>
           ))}
         </ol>
