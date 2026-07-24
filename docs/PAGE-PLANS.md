@@ -4,10 +4,12 @@ NOTE: Dont Read Unless we ask.
 
 ## Service page planning contract
 
-The following contract applies to all five service-page plans unless a page entry explicitly overrides it:
+MindWP has approved a website-led direction: the Smart Website is the principal offer, while supporting services connect only where they are useful. Earlier messaging—including **“Work comes in. Too much slips away.”**—was retired because it overemphasised post-enquiry problems and made optional supporting systems feel like the main offer.
+
+The following contract applies to all page plans unless a page entry explicitly overrides it:
 
 - **Fixed:** The page job, the service responsibility and its boundaries with neighbouring services.
-- **Adaptable:** Eyebrows, headlines, supporting copy, grouping and composition until a page-specific brief marks public wording as fixed.
+- **Adaptable:** supporting copy, grouping and composition until a page-specific brief marks public wording as fixed.
 - **Open:** Ownership, handover, ongoing management and support details that depend on the engagement.
 - **Unavailable:** Testimonials, performance metrics and quantified results unless they are explicitly supplied and approved.
 - **Shared CTA:** Use **Request a Visibility & Enquiry Review**, or **Request a Review** where space is limited. The review works with or without an existing website.
@@ -16,11 +18,13 @@ Section rows record required meaning. Related rows may share one visual environm
 
 ## Homepage
 
+The Homepage copy pass was completed and promoted to the live route on 2026-07-25. This entry is the single stable Homepage copy record; the Final approved copy section below records the implemented wording in full. It should not be reconsidered while the remaining pages are built unless a genuine strategic contradiction appears.
+
 ### Page job
 
-Establish MindWP as the website-led partner for independent clinics and specialist service businesses. Make the Smart Website the principal offer, introduce four optional supporting services and show how discovery, decision and response connect without implying a compulsory bundle or software product.
+Establish MindWP as the website-led partner for independent clinics and specialist service businesses. Make the Smart Website the principal offer, present the supporting services positively — sold alongside a Smart Website or separately where suitable — and show how discovery, decision and response connect without implying a compulsory bundle or software product. Supporting services are not repeatedly weakened by "optional" framing; the no-bundle boundary is stated once, positively.
 
-Local Visibility receives its own substantial environment. First Response, Purposeful Follow-Up and Visible Reputation share one subordinate Optional Support environment.
+Local Visibility receives its own substantial environment. The remaining support is expressed as five visitor-facing moments sharing one Beyond the Website environment.
 
 Route visitors to the relevant service or a Visibility & Enquiry Review.
 
@@ -40,18 +44,14 @@ Route visitors to the relevant service or a Visibility & Enquiry Review.
 
 ### Sections
 
-For the Homepage, the following eyebrows and headlines are fixed public copy. Supporting copy, internal labels, examples, tabs, steps and FAQs remain adaptable and should be rewritten to serve the new meaning.
+The eyebrows, headlines and supporting copy recorded below are the implemented, approved public copy. The design and composition baseline is fixed:
 
-Homepage A is the fixed design and composition baseline:
-
-- Keep its existing section order, visual compositions, layouts, components, interactions, styling and motion.
+- Keep the existing section order, visual compositions, layouts, components, interactions, styling and motion.
 - Do not redesign, merge, move, rename or invent a visual environment.
-- Omit the existing **Built by Builders** environment.
 - Keep Local Visibility and Smart Website as substantial standalone environments.
-- Reuse the existing connected-capabilities selector for the three optional supports only.
-- Do not interpret the three selector items as standalone page sections.
+- The Beyond the Website selector holds five visitor-facing moments; they are not standalone page sections.
 
-After omitting **Built by Builders**, the Homepage contains exactly **14 visible sections**.
+The Homepage contains exactly **14 visible sections**.
 
 #### Final 14-section order
 
@@ -62,27 +62,82 @@ After omitting **Built by Builders**, the Homepage contains exactly **14 visible
 | 3 | BEFORE ENQUIRY | They do not need more information. They need enough certainty to act. |
 | 4 | AFTER ENQUIRY | A useful enquiry still needs an answer, an owner and a clear next step. |
 | 5 | CONNECTED WHERE USEFUL | The website leads. Support connects where the journey needs it. |
-| 6 | LOCAL VISIBILITY | Found nearby—trusted before they call. |
-| 7 | OPTIONAL SUPPORT | Add the support that earns its place. |
+| 6 | BEYOND THE WEBSITE | Add the support that earns its place. |
+| 7 | LOCAL VISIBILITY | Found nearby — trusted before they call. |
 | 8 | SELECTED WORK | Website work you can inspect. |
 | 9 | SMART WEBSITE | The website is built around the questions, evidence and actions people need to decide. |
-| 10 | CLEAR OWNERSHIP | Know what MindWP builds, what your business owns and what happens after launch. |
+| 10 | NOT A LAUNCH — AN ASSET | A smart website doesn't peak at launch. It compounds. |
 | 11 | RIGHT FIT | For independent clinics and specialist service businesses where customers choose carefully. |
 | 12 | HOW WE START | First we review how people find, choose and contact you. Then we show you where to start. |
 | 13 | STRAIGHT ANSWERS | Questions, answered plainly. |
 | 14 | VISIBILITY & ENQUIRY REVIEW | See what should become easier across your visibility, website and enquiry path. |
 
-#### Optional Support selector
+#### Beyond the Website selector (Section 6)
 
-The existing selector remains one visible section. Its three selectable items use the following fixed public copy:
+The selector holds five visitor-facing moments, not an internal service catalogue. A visitor should recognise the situation before needing to understand MindWP's service structure. Each moment names its related public service as a small "Part of …" tag:
 
-| Selector item | Eyebrow | Heading |
-|---:|---|---|
-| 1 | FIRST RESPONSE | Acknowledge each enquiry and place it with someone responsible. |
-| 2 | PURPOSEFUL FOLLOW-UP | Keep worthwhile decisions visible without replacing human judgement. |
-| 3 | VISIBLE REPUTATION | Let genuine customer experience strengthen the next person’s decision. |
+| Moment | Promise | Related service |
+|---|---|---|
+| Missed calls | Acknowledge every missed call and keep the conversation open. | Lead Response & Handling |
+| New enquiries | Acknowledge each enquiry and place it with someone responsible. | Lead Response & Handling |
+| Follow-up | Keep every open decision visible, with an owner and a next step. | Follow-Up & CRM |
+| Reviews | Invite genuine reviews at the right moment and show them where people decide. | Reputation & Review |
+| One record | One shared record of every enquiry: its status, its history and who moves it next. | Follow-Up & CRM |
 
-Smart Website is excluded because it has its own standalone environment. Local Visibility is excluded because it also remains standalone.
+Smart Website and Local Visibility are excluded because each has its own standalone environment. The section intro explains once — for the whole page — that MindWP plans, configures, connects and tests the selected systems, then helps the team use them. CRM is named only in the Follow-Up & CRM service tags; it is never the Homepage's central promise.
+
+#### Final approved copy
+
+**1 — Hero.** Eyebrow: SMART WEBSITES. H1: "A smarter website *for being found, understood and chosen.*" Lede: "MindWP designs smarter websites for independent clinics and specialist service businesses — helping the right customers find you, understand the work, and choose you with confidence." CTA: Request a Visibility & Enquiry Review. Journey rail ("How a typical enquiry plays out"): Found nearby → Enquiry sent → First response → Owner and next step → Work completed. Hero artifacts (visual copy): Book a consultation · Offer/Trust/Proof · Enquiry form · Send enquiry · ✓ Sent — routed · New enquiry status card (Routing: Notified / Status: Owner assigned / Next step: Visible / Follow-up: Scheduled).
+
+**2 — Existing attention.** Six tab moments, each with title, body and note:
+1. *The exact search* — "They searched for exactly this, and landed on everything." / "A search for one specific treatment or service opens onto a general homepage instead of the page built to answer it. The click already proved intent; the page didn't meet it." / "The most qualified attention is the easiest to lose."
+2. *The local search* — "Nearby and looking, not yet convinced." / "A map listing gets someone as far as the website. If the site doesn't confirm the same service, area and trust the listing promised, the next result gets the click instead." / "Being found nearby only starts the decision."
+3. *The referral* — "Someone already vouched for you." / "A referred visitor arrives already inclined to trust you. A generic homepage that doesn't confirm what they were told wastes the warmest attention a business gets." / "A referral deserves a site that meets it halfway."
+4. *The paid click* — "The advert earns the click; the page has to earn the rest." / "Advertising can put the offer in front of the right person. What the click lands on still has to confirm relevance and offer a clear next step, or the spend only bought a visit." / "Attention doesn't stay just because it was paid for."
+5. *The second look* — "They check the proof before they call." / "Reviews, past work and credentials get checked quietly before contact. If the website doesn't hold that proof, the visitor goes looking for it somewhere else." / "Confidence is usually built before the phone is picked up."
+6. *The remembered name* — "They come back later, still undecided." / "A visitor who has seen the business before returns directly, by name rather than by search. If the site still doesn't answer their question, familiarity alone won't close the gap." / "A second visit deserves a clearer answer than the first."
+
+**3 — Before enquiry.** Body: "Before anyone gets in touch, they need three things settled: that the page they landed on actually answers their situation, that the proof on it can be checked, and that the next step is obvious. A smart website closes that distance instead of adding to it." Note: "Clarity is not more copy. It is less distance between the question and the answer." Diagram markers: Arrive curious → My question, answered / Proof I can check / A clear next step → Distance closed, Ready to ask.
+
+**4 — After enquiry.** Body: "A slow reply, an unclear owner, or a next step nobody can see all cost the same thing: confidence the enquiry was worth sending. None of this needs automation to replace your team — it needs the handling to be visible." Steps: Acknowledged → Owned → Answered → Handled consistently.
+
+**5 — Connected where useful.** Crossed list: "Not ~~an SEO retainer,~~ plus ~~a website agency,~~ plus ~~a forms tool,~~ plus ~~a half-set-up CRM,~~ plus ~~a review platform.~~" Promise: "One website where being found, answered, owned, and proven is built in." Closing: "The website is the foundation. Around it, we connect the support your customers' journey actually needs — being found nearby, enquiries answered, follow-up kept moving, reviews working for you. Each piece is planned and scoped on its own, so you add what helps rather than buying a set." Fan labels (visual): Local SEO · Lead Response · Follow-Up & CRM · Reputation → Website.
+
+**6 — Beyond the website.** Intro: "The website gives people a clear place to understand the offer, decide and get in touch. These five moments shape what happens around it. MindWP plans them around how your business works, connects them to the website and phones, tests the complete path, and shows your team how everything works before handover." Five moments (problem × / promise ✓ / earns line / a three-step flow under the label "How it works"):
+1. *Missed calls* (Part of Lead Response & Handling) — × "A call rings out while you're with a patient or on a job — with no acknowledgement and no clear owner for the return call." ✓ "Acknowledge every missed call and keep the conversation open." Earns: "Earns its place when nobody can watch the phone all day." Steps: Call missed ("It rings out while the team is busy or closed.") → Caller hears back ("A message goes back so they know they've been seen.") → Call returned ("The missed call sits with a named person until it's returned.")
+2. *New enquiries* (Part of Lead Response & Handling) — × "Forms and messages land in a shared inbox, then wait for whoever happens to notice." ✓ "Acknowledge each enquiry and place it with someone responsible." Earns: "Earns its place when enquiries arrive faster than they get answered." Steps: Enquiry arrives ("A form, message or booking request lands.") → Sender acknowledged ("They know it was received and what happens next.") → Routed to an owner ("It reaches a named person, not a shared inbox.")
+3. *Follow-up* (Part of Follow-Up & CRM) — × "A quote or treatment plan goes out — then the next step depends on someone remembering." ✓ "Keep every open decision visible, with an owner and a next step." Earns: "Earns its place when good enquiries stall between the quote and the decision." Steps: Quote or plan sent ("The open decision is recorded, not left to memory.") → Reminder surfaces ("A prompt appears when the next touch is due.") → Decision reached ("The thread closes properly, one way or the other.")
+4. *Reviews* (Part of Reputation & Review) — × "Good work ends quietly — no review asked for, nothing carried back to the website." ✓ "Invite genuine reviews at the right moment and show them where people decide." Earns: "Earns its place when customers complete the work but the review request is easily forgotten." Steps: Work completed ("The job or treatment is genuinely finished.") → Review invited ("A real customer is asked to share their experience.") → Proof visible ("Their words appear where the next person is deciding.")
+5. *One record* (Part of Follow-Up & CRM) — × "Half the story sits in an inbox, half in someone's phone — nobody sees the whole picture." ✓ "One shared record of every enquiry: its status, its history and who moves it next." Earns: "Earns its place when 'where did that enquiry get to?' has no quick answer." Steps: Everything in one place ("Calls, forms and messages land against one customer record.") → Status stays current ("The team sees what's new, what's open and what changed.") → Next move owned ("Every open conversation shows who acts next.")
+
+**7 — Local visibility.** Body: "Before anyone calls, they check quietly: does the service or treatment page match what they searched for, does the listing agree with the website, do the reviews feel real? Local visibility holds when the website, the local listing and the reputation all tell the same story." Points — Found: "You appear when someone nearby searches for the treatment or service you actually offer." Verified: "The listing, the reviews and the pages behind them agree with each other." Illustrative search artifact (visual copy): search bar "dental implants near me"; map "Your local area"; listings "Your local clinic" ("Details aligned with the website" / badge "Your listing"), "Nearby clinic", "Another provider"; checks "◉ Details match the site" · "◉ Treatments listed" · "○ Recent reviews".
+
+**8 — Selected work.** Body: "Look at the work the way your own customers would look at yours: what each page answers, how it's organised, and the next step it leads to — not a gallery of pretty screens." Featured work: browser-bar label "Home services lead-gen site"; caption category "Home services", title "Home services lead-gen site"; caption body "A clear offer, local proof and an obvious next step — built into one working homepage, not just described in a proposal." Work cards (category — title): Healthcare — "Healthcare service page"; Retail — "Optical retail website"; Property — "Property management website"; Product — "SaaS product website"; Support — "Support program website"; Tourism — "Tourism service website".
+
+**9 — Smart website.** Body: "A patient weighing treatment and a homeowner planning a major project are both looking for confidence — just not from the same questions, the same evidence, or the same next step. So each website is shaped around the work itself, not a shared template." Two columns — Specialist clinics: note "The patient moves carefully. Credibility is weighed before contact, and the first step has to feel private."; under the label "What a patient is really asking": "Is this treatment right for my case? / Who would actually be treating me? / What happens at the first consultation?"; under the label "So the website leads with": "Treatment pages that answer a specific concern / The practitioner — named and visible up front / A private, unhurried consultation path." Home services: note "The homeowner is deciding who to let into the house. Finished work nearby does most of the convincing."; under the label "What a homeowner is really asking": "Have they done work like mine? / Do they actually cover my area? / What happens at the survey?"; under the label "So the website leads with": Proof — "Finished projects, shown by service" / Coverage — "A service area that is specific, not implied" / Next step — "A survey or estimate you can actually book." Closing: "Different work, different evidence, different first step — which is why every build starts by understanding yours."
+
+**10 — Not a launch — an asset.** Intro: "Most websites are treated as a launch date — live, then slowly going stale. A smart website is the opposite: it keeps building, so everything you have just seen keeps paying off long after go-live." Hub: Launch day — "Your site goes live — answering clearly and routing every enquiry to someone responsible." Satellites (map node label → detail heading and note): "Proof builds" → Proof keeps adding up ("Every satisfied customer can leave a review, and each one makes the next person's decision a little easier.") / "Local presence" → Local presence strengthens ("As the site, the listing and the reviews stay aligned, the business gets easier to find and trust nearby.") / "Refinements stack" → Each improvement stacks ("The review keeps finding the next worthwhile fix — building on the last, not starting the site over.") / "Channels compound" → Every channel works harder ("Search, referrals and ads all keep landing on a site that answers better than it did the month before."). Close: "A typical site peaks at launch and drifts. This one keeps building — which is exactly why it is worth getting right from the start."
+
+**11 — Right fit.** Body: "We would rather say this plainly than let a website assume it. MindWP works best for businesses whose customers already compare carefully before they choose, and where each enquiry has real value." Under the label "A good fit if": "An independent clinic or specialist service business where customers compare carefully before choosing." / "Each enquiry represents a real decision — a patient, a project, a client — worth getting right." / "Trust and evidence matter to your buyers at least as much as price." / "You want a website you can maintain and adapt yourself, not one locked behind an agency." / "Established or newer — as long as getting the website and its handling right from the start matters to you." Under the label "Not the right fit if": "Chasing the cheapest website available" / "Looking for a brochure nobody has to act on" / "Expecting a website alone to create demand" / "Expecting guaranteed rankings or instant enquiries" / "Wanting another software platform to operate day to day".
+
+**12 — How we start.** Body: "The Visibility & Enquiry Review looks at how people find you, whether the website answers what they need, and what happens once they make contact. What comes back is a clear starting point, not a generic package." CTA: Request a Review. Reassurance: "No obligation to continue. No pitch hidden in the findings." Steps (tag — heading / body):
+1. You share — "How enquiries and customers reach you today." / "The website, where visibility already comes from, and what happens after someone makes contact. That sets the starting point."
+2. We examine — "The path from search to a made decision." / "Local presence, the pages people actually land on, the evidence they see, and the route from interest to a useful enquiry."
+3. You decide — "A prioritised starting point, not a pitch." / "A clear view of what is worth fixing first. Recommendations follow what the review finds — scope and cost are agreed before anything begins."
+
+**13 — Straight answers.** Intro: "No buried sales language. The common questions are practical because the work is practical." Nine questions:
+1. "What makes a website “smart”?" — "It is built around the questions your customers actually ask, the evidence that answers them, and a next step that fits the decision — not a template with your logo on it."
+2. "Can MindWP improve a website I already have?" — "Often, yes. The review looks at what already works before recommending a rebuild. Sometimes the priority is a page, a clearer path, or the handling around the existing site."
+3. "Do I have to take the supporting services?" — "No — the website stands on its own. Around it you can add what fits how work actually arrives: local visibility, enquiry handling, follow-up or reviews. Each is scoped separately, and we recommend only what the review shows is worth adding."
+4. "Who sets all of this up — and do we end up running new software?" — "MindWP handles the setup. We plan how each piece should work, configure and connect it, test the complete path, and onboard your team before handover. If your team needs to use a shared inbox or CRM, it is set up around their work — you are not handed an empty system and left to figure it out."
+5. "Does MindWP replace my team's judgement?" — "No. MindWP builds the structure that carries an enquiry to the right person — acknowledgement, routing and follow-up stay visible to your team, and every commercial or clinical decision stays with you."
+6. "How are website ownership and handover handled?" — "Ownership, licences, handover and ongoing responsibilities are set out clearly in the proposal before work begins. The exact arrangement depends on what is being built and which services are included."
+7. "Does MindWP guarantee rankings or enquiries?" — "No — nobody honestly can. The website is built to give the business a fair chance: clarity, proof and an easy next step. MindWP does not promise rankings, leads or bookings."
+8. "What happens during the Visibility & Enquiry Review?" — "You share how work arrives today; MindWP reviews your visibility, your website and the enquiry path, then comes back with what is worth fixing first. It is a private conversation, not a demo or a sales script."
+9. "What happens after launch?" — "The build is designed for a clean handover, and MindWP can remain involved with updates, improvements and care for the connected systems where agreed. Either way, the handover and ongoing responsibilities are made clear."
+
+**14 — Visibility & enquiry review.** Body: "One private conversation. MindWP reviews your visibility, your website and the path every enquiry takes, then shows you what's worth fixing first — useful whether or not you build together afterwards." CTA: Request a Visibility & Enquiry Review.
 
 ## Smart Website Systems
 

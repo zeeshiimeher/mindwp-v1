@@ -54,7 +54,7 @@ Keep founder details, private platforms, credentials, enquiry data and account i
 
 ## Tools, CRM, AI and automation
 
-Tools are supporting means, not the offer.
+Tools are supporting means, not the offer. Lead with situations and outcomes a business owner recognises; use service names, CRM terms and internal categories only where they make the message clearer.
 
 - Explain CRM-related work through ownership, status, permission and a justified next action before software features.
 - Do not imply that MindWP prepares, prices, approves or sends a client's quote unless that responsibility is explicitly real.

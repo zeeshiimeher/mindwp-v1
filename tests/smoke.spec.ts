@@ -60,7 +60,7 @@ test("homepage follows the approved reference structure", async ({ page }) => {
     "local-authority",
     "work",
     "context",
-    "ownership",
+    "compounding",
     "fit",
     "review",
     "faq",
@@ -95,61 +95,63 @@ test("homepage follows the approved reference structure", async ({ page }) => {
   await page.keyboard.press("Home");
   await expectAttentionTab("The exact search");
 
-  const systemTablist = page.getByRole("tablist", { name: "Optional support beyond the website" });
-  await expect(systemTablist).toHaveAttribute("aria-orientation", "vertical");
-  const firstSystemTab = page.getByRole("tab", { name: "First Response" });
+  const systemTablist = page.getByRole("tablist", { name: "Support beyond the website" });
+  await expect(systemTablist.getByRole("tab")).toHaveCount(5);
+  const firstSystemTab = page.getByRole("tab", { name: "Missed calls" });
   await expect(firstSystemTab).toHaveAttribute("aria-selected", "true");
   await firstSystemTab.focus();
   await page.keyboard.press("ArrowDown");
-  const followUpTab = page.getByRole("tab", { name: "Purposeful Follow-Up" });
-  await expect(followUpTab).toHaveAttribute("aria-selected", "true");
-  await expect(followUpTab).toBeFocused();
-  await expect(page.getByRole("tabpanel", { name: "Purposeful Follow-Up" })).toContainText(
-    "A quote or plan goes out, and the next touch depends on someone remembering to make it.",
+  const enquiriesTab = page.getByRole("tab", { name: "New enquiries" });
+  await expect(enquiriesTab).toHaveAttribute("aria-selected", "true");
+  await expect(enquiriesTab).toBeFocused();
+  await expect(page.getByRole("tabpanel", { name: "New enquiries" })).toContainText(
+    "Forms and messages land in a shared inbox",
   );
   await page.keyboard.press("End");
-  await expect(page.getByRole("tab", { name: "Visible Reputation" })).toBeFocused();
+  await expect(page.getByRole("tab", { name: "One record" })).toBeFocused();
   await page.keyboard.press("Home");
   await expect(firstSystemTab).toBeFocused();
 
-  const builtTab = page.getByRole("tab", { name: "What's built" });
-  await expect(builtTab).toHaveAttribute("aria-selected", "true");
-  await builtTab.focus();
+  const compoundingTablist = page.getByRole("tablist", { name: "What compounds after launch" });
+  await expect(compoundingTablist).toBeVisible();
+  const proofTab = page.getByRole("tab", { name: "Proof builds" });
+  await expect(proofTab).toHaveAttribute("aria-selected", "true");
+  await proofTab.focus();
   await page.keyboard.press("ArrowRight");
-  await expect(page.getByRole("tab", { name: "What you own" })).toBeFocused();
+  await expect(page.getByRole("tab", { name: "Local presence" })).toBeFocused();
   await page.keyboard.press("End");
-  await expect(page.getByRole("tab", { name: "After launch" })).toBeFocused();
+  await expect(page.getByRole("tab", { name: "Channels compound" })).toBeFocused();
   await page.keyboard.press("Home");
-  await expect(builtTab).toBeFocused();
+  await expect(proofTab).toBeFocused();
 
   const faqButton = page.getByRole("button", {
-    name: "Is Local Visibility, or the other supporting systems, compulsory?",
+    name: "Do I have to take the supporting services?",
   });
   await expect(faqButton).toHaveAttribute("aria-expanded", "false");
   await faqButton.click();
   await expect(faqButton).toHaveAttribute("aria-expanded", "true");
   await expect(
-    page.getByRole("region", { name: "Is Local Visibility, or the other supporting systems, compulsory?" }),
+    page.getByRole("region", { name: "Do I have to take the supporting services?" }),
   ).toBeVisible();
   await expect(page.locator("footer")).toContainText(
     "Smart websites for established service businesses and expert-led businesses",
   );
 });
 
-test("system tabs retain their vertical selector at tablet width", async ({ page }) => {
+test("system moments keep a single segment row at tablet width", async ({ page }) => {
   await page.setViewportSize({ width: 1024, height: 900 });
   await page.emulateMedia({ reducedMotion: "reduce" });
   await page.goto("/");
 
-  const systemTabs = page.getByRole("tablist", { name: "Optional support beyond the website" });
-  await expect(systemTabs).toHaveAttribute("aria-orientation", "vertical");
-  await expect(systemTabs).toHaveCSS("display", "flex");
-  await expect(systemTabs).toHaveCSS("flex-direction", "column");
-  await expect(page.locator(".home-systems__layout")).toHaveCSS("display", "grid");
-  const systemLayoutColumns = await page
-    .locator(".home-systems__layout")
-    .evaluate((element) => getComputedStyle(element).gridTemplateColumns.split(" ").length);
-  expect(systemLayoutColumns).toBe(2);
+  const systemTabs = page.getByRole("tablist", { name: "Support beyond the website" });
+  await expect(systemTabs).toBeVisible();
+  const segmentTabs = systemTabs.getByRole("tab");
+  await expect(segmentTabs).toHaveCount(5);
+  const segmentTops = await segmentTabs.evaluateAll((elements) =>
+    elements.map((element) => Math.round(element.getBoundingClientRect().top)),
+  );
+  expect(new Set(segmentTops).size).toBe(1);
+  await expect(page.locator(".home-systems__stage")).toBeVisible();
 });
 
 test("homepage tab navigation remains usable on mobile", async ({ browser, baseURL }) => {
@@ -165,24 +167,18 @@ test("homepage tab navigation remains usable on mobile", async ({ browser, baseU
     await page.goto("/");
 
     const leakTabs = page.getByRole("tablist", { name: "Where existing attention arrives" });
-    const systemTabs = page.getByRole("tablist", { name: "Optional support beyond the website" });
-    const compoundTabs = page.getByRole("tablist", {
-      name: "What MindWP builds, what you own, and what happens after launch",
-    });
+    const compoundTabs = page.getByRole("tablist", { name: "What compounds after launch" });
 
     await expect(leakTabs).toBeVisible();
-    await expect(systemTabs).toBeVisible();
     await expect(compoundTabs).toBeVisible();
     await expect(leakTabs).toHaveAttribute("aria-orientation", "horizontal");
-    await expect(systemTabs).toHaveAttribute("aria-orientation", "horizontal");
-    await expect(compoundTabs).toHaveAttribute("aria-orientation", "horizontal");
 
     const touchActions = await Promise.all(
-      [leakTabs, systemTabs, compoundTabs].map((rail) =>
+      [leakTabs, compoundTabs].map((rail) =>
         rail.evaluate((element) => getComputedStyle(element).touchAction),
       ),
     );
-    expect(touchActions).toEqual(["auto", "auto", "auto"]);
+    expect(touchActions).toEqual(["auto", "auto"]);
 
     const leakRailMetrics = await leakTabs.evaluate((element) => ({
       clientWidth: element.clientWidth,
@@ -191,8 +187,10 @@ test("homepage tab navigation remains usable on mobile", async ({ browser, baseU
     expect(leakRailMetrics.scrollWidth).toBeGreaterThan(leakRailMetrics.clientWidth);
 
     await expect(page.getByRole("tab", { name: "The exact search" })).toBeVisible();
-    await expect(page.getByRole("tab", { name: "First Response" })).toBeVisible();
-    await expect(page.getByRole("tab", { name: "What's built" })).toBeVisible();
+    const missedCallsHead = page.getByRole("button", { name: "Missed calls", exact: true });
+    await expect(missedCallsHead).toBeVisible();
+    await expect(missedCallsHead).toHaveAttribute("aria-expanded", "true");
+    await expect(page.getByRole("tab", { name: "Proof builds" })).toBeVisible();
 
     const lastLeakTab = page.getByRole("tab", { name: "The remembered name" });
     await lastLeakTab.tap();
@@ -201,18 +199,30 @@ test("homepage tab navigation remains usable on mobile", async ({ browser, baseU
       "They come back later, still undecided.",
     );
 
-    const lastSystemTab = page.getByRole("tab", { name: "Visible Reputation" });
-    await lastSystemTab.tap();
-    await expect(lastSystemTab).toHaveAttribute("aria-selected", "true");
-    await expect(page.getByRole("tabpanel", { name: "Visible Reputation" })).toContainText(
+    const missedCallsBody = page.locator("#system-body-missed-calls");
+    const reviewsBody = page.locator("#system-body-reviews");
+    await expect(missedCallsBody).toBeVisible();
+    expect(await missedCallsBody.getAttribute("inert")).toBeNull();
+    await expect(reviewsBody).not.toBeVisible();
+    expect(await reviewsBody.getAttribute("inert")).not.toBeNull();
+
+    const reviewsHead = page.getByRole("button", { name: "Reviews", exact: true });
+    await reviewsHead.tap();
+    await expect(reviewsHead).toHaveAttribute("aria-expanded", "true");
+    await expect(page.getByRole("region", { name: "Reviews", exact: true })).toContainText(
       "Good work ends quietly",
     );
+    await expect(reviewsBody).toBeVisible();
+    expect(await reviewsBody.getAttribute("inert")).toBeNull();
+    await expect(missedCallsHead).toHaveAttribute("aria-expanded", "false");
+    await expect(missedCallsBody).not.toBeVisible();
+    expect(await missedCallsBody.getAttribute("inert")).not.toBeNull();
 
-    const afterLaunchTab = page.getByRole("tab", { name: "After launch" });
-    await afterLaunchTab.tap();
-    await expect(afterLaunchTab).toHaveAttribute("aria-selected", "true");
-    await expect(page.getByRole("tabpanel", { name: "After launch" })).toContainText(
-      "What launches stays yours",
+    const channelsTab = page.getByRole("tab", { name: "Channels compound" });
+    await channelsTab.tap();
+    await expect(channelsTab).toHaveAttribute("aria-selected", "true");
+    await expect(page.getByRole("tabpanel", { name: "Channels compound" })).toContainText(
+      "Search, referrals and ads",
     );
 
     const viewportWidth = await page.evaluate(() => document.documentElement.clientWidth);
@@ -242,32 +252,21 @@ test("mobile tab compositions keep keyboard selection visible", async ({ page })
   await expect(thirdLeakTab).toHaveAttribute("aria-selected", "true");
   await expectHorizontallyContained(thirdLeakTab, leakTabs);
 
-  const systemTabs = page.getByRole("tablist", { name: "Optional support beyond the website" });
-  await expect(systemTabs).toHaveCSS("display", "grid");
-  const systemMetrics = await systemTabs.evaluate((element) => ({
-    clientWidth: element.clientWidth,
-    columns: getComputedStyle(element).gridTemplateColumns.split(" ").length,
-    scrollWidth: element.scrollWidth,
-  }));
-  expect(systemMetrics.columns).toBe(2);
-  expect(systemMetrics.scrollWidth).toBe(systemMetrics.clientWidth);
+  const accordionRows = page.locator(".home-systems__row-head");
+  await expect(accordionRows).toHaveCount(5);
+  const followUpHead = page.getByRole("button", { name: "Follow-up", exact: true });
+  await followUpHead.click();
+  await expect(followUpHead).toHaveAttribute("aria-expanded", "true");
+  await expectHorizontallyContained(followUpHead, page.locator(".home-systems__accordion"));
 
-  const firstSupportTab = page.getByRole("tab", { name: "First Response" });
-  expect(await firstSupportTab.evaluate((element) => getComputedStyle(element).gridColumnEnd)).toBe(
-    "-1",
-  );
-
-  const compoundTabs = page.getByRole("tablist", {
-    name: "What MindWP builds, what you own, and what happens after launch",
-  });
-  await expect(compoundTabs).toHaveCSS("display", "grid");
-  const compoundMetrics = await compoundTabs.evaluate((element) => ({
-    clientWidth: element.clientWidth,
-    columns: getComputedStyle(element).gridTemplateColumns.split(" ").length,
-    scrollWidth: element.scrollWidth,
-  }));
-  expect(compoundMetrics.columns).toBe(3);
-  expect(compoundMetrics.scrollWidth).toBe(compoundMetrics.clientWidth);
+  const compoundTabs = page.getByRole("tablist", { name: "What compounds after launch" });
+  const localPresenceTab = page.getByRole("tab", { name: "Local presence" });
+  await localPresenceTab.click();
+  await page.keyboard.press("ArrowRight");
+  const refinementsTab = page.getByRole("tab", { name: "Refinements stack" });
+  await expect(refinementsTab).toBeFocused();
+  await expect(refinementsTab).toHaveAttribute("aria-selected", "true");
+  await expectHorizontallyContained(refinementsTab, compoundTabs);
 });
 
 test("mobile homepage content stays inside its sections", async ({ page }) => {

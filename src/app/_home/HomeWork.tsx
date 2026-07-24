@@ -15,16 +15,16 @@ export function HomeWork() {
       <div className="container section-intro section-intro--split" data-home-sequence>
         <div className="section-title-group">
           <p className="eyebrow" data-home-sequence-item>
-            The work, applied
+            Selected work
           </p>
           <h2 data-home-sequence-item>
-            See how strategy, structure and execution <em>come together.</em>
+            Website work <em>you can inspect.</em>
           </h2>
         </div>
         <div className="section-copy-group">
           <p data-home-sequence-item>
-            Judge it the way a buyer would: the structure behind each page, the design decisions
-            that shape it, and the thinking a specific business actually needed — not a gallery of
+            Look at the work the way your own customers would look at yours: what each page
+            answers, how it&apos;s organised, and the next step it leads to — not a gallery of
             pretty screens.
           </p>
         </div>
@@ -56,8 +56,8 @@ export function HomeWork() {
             <strong>Home services lead-gen site</strong>
           </div>
           <p>
-            Offer clarity, local proof and a clear action path, built into one working homepage
-            rather than described in a proposal.
+            A clear offer, local proof and an obvious next step — built into one working homepage,
+            not just described in a proposal.
           </p>
         </div>
       </div>

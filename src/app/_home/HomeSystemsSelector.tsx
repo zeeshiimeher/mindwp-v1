@@ -6,73 +6,156 @@ import { type KeyboardEvent, useEffect, useRef, useState } from "react";
 import { focusAndRevealTab } from "@/app/_home/tabNavigation";
 import { useResponsiveTabOrientation } from "@/app/_home/useResponsiveTabOrientation";
 import { Icon, type IconName } from "@/components/ui/Icon";
-import { CANONICAL_SYSTEMS } from "@/content/canonical";
 
-const SUPPORT_SLUGS = ["lead-response-handling", "follow-up-crm", "reputation-review"] as const;
+interface SupportMoment {
+  slug: string;
+  displayName: string;
+  tag: string;
+  icon: IconName;
+  problem: string;
+  promise: string;
+  earns: string;
+  mechanism: readonly [
+    { icon: IconName; label: string; note: string },
+    { icon: IconName; label: string; note: string },
+    { icon: IconName; label: string; note: string },
+  ];
+}
 
-type SupportSlug = (typeof SUPPORT_SLUGS)[number];
-
-const SUPPORT_SYSTEMS = CANONICAL_SYSTEMS.filter(
-  (system): system is (typeof CANONICAL_SYSTEMS)[number] & { slug: SupportSlug } =>
-    (SUPPORT_SLUGS as readonly string[]).includes(system.slug),
-);
-
-const DETAILS: Record<
-  SupportSlug,
+/**
+ * Five visitor-facing moments, not a service catalogue. Each maps back to a
+ * public service via its tag; two share Lead Response & Handling and two share
+ * Follow-Up & CRM by design.
+ */
+const MOMENTS: readonly SupportMoment[] = [
   {
-    displayName: string;
-    tag: string;
-    icon: IconName;
-    problem: string;
-    promise: string;
-    earns: string;
-    mechanism: readonly [
-      { icon: IconName; label: string; note: string },
-      { icon: IconName; label: string; note: string },
-      { icon: IconName; label: string; note: string },
-    ];
-  }
-> = {
-  "lead-response-handling": {
-    displayName: "First Response",
+    slug: "missed-calls",
+    displayName: "Missed calls",
     tag: "Lead Response & Handling",
     icon: "phone",
-    problem: "Calls, forms and bookings land, then wait for whoever happens to notice.",
-    promise: "Acknowledge the enquiry and place it with someone responsible.",
-    earns: "Earns its place when enquiries already arrive faster than they get answered.",
+    problem:
+      "A call rings out while you're with a patient or on a job — with no acknowledgement and no clear owner for the return call.",
+    promise: "Acknowledge every missed call and keep the conversation open.",
+    earns: "Earns its place when nobody can watch the phone all day.",
     mechanism: [
-      { icon: "message-square", label: "Enquiry arrives", note: "A call, form or booking lands." },
-      { icon: "phone", label: "Routed to someone", note: "It reaches a named owner, not a shared inbox." },
-      { icon: "circle-check", label: "Acknowledged", note: "The sender knows it was received." },
+      { icon: "phone", label: "Call missed", note: "It rings out while the team is busy or closed." },
+      {
+        icon: "message-square",
+        label: "Caller hears back",
+        note: "A message goes back so they know they've been seen.",
+      },
+      {
+        icon: "circle-check",
+        label: "Call returned",
+        note: "The missed call sits with a named person until it's returned.",
+      },
     ],
   },
-  "follow-up-crm": {
-    displayName: "Purposeful Follow-Up",
+  {
+    slug: "new-enquiries",
+    displayName: "New enquiries",
+    tag: "Lead Response & Handling",
+    icon: "mail",
+    problem: "Forms and messages land in a shared inbox, then wait for whoever happens to notice.",
+    promise: "Acknowledge each enquiry and place it with someone responsible.",
+    earns: "Earns its place when enquiries arrive faster than they get answered.",
+    mechanism: [
+      {
+        icon: "message-square",
+        label: "Enquiry arrives",
+        note: "A form, message or booking request lands.",
+      },
+      {
+        icon: "mail",
+        label: "Sender acknowledged",
+        note: "They know it was received and what happens next.",
+      },
+      {
+        icon: "circle-check",
+        label: "Routed to an owner",
+        note: "It reaches a named person, not a shared inbox.",
+      },
+    ],
+  },
+  {
+    slug: "follow-up",
+    displayName: "Follow-up",
     tag: "Follow-Up & CRM",
     icon: "folder",
-    problem: "A quote or plan goes out, and the next touch depends on someone remembering to make it.",
-    promise: "Keep worthwhile decisions visible without replacing human judgement.",
+    problem: "A quote or treatment plan goes out — then the next step depends on someone remembering.",
+    promise: "Keep every open decision visible, with an owner and a next step.",
     earns: "Earns its place when good enquiries stall between the quote and the decision.",
     mechanism: [
-      { icon: "folder", label: "Quote sent", note: "The decision is recorded, not lost." },
-      { icon: "message-square", label: "Next touch reminder", note: "A prompt surfaces when it is due." },
-      { icon: "circle-check", label: "Decision made", note: "The thread closes, one way or another." },
+      {
+        icon: "folder",
+        label: "Quote or plan sent",
+        note: "The open decision is recorded, not left to memory.",
+      },
+      {
+        icon: "message-square",
+        label: "Reminder surfaces",
+        note: "A prompt appears when the next touch is due.",
+      },
+      {
+        icon: "circle-check",
+        label: "Decision reached",
+        note: "The thread closes properly, one way or the other.",
+      },
     ],
   },
-  "reputation-review": {
-    displayName: "Visible Reputation",
+  {
+    slug: "reviews",
+    displayName: "Reviews",
     tag: "Reputation & Review",
     icon: "star",
-    problem: "Good work ends quietly — no review asked, nothing carried back to the website.",
-    promise: "Help genuine customer experiences strengthen future customer decisions.",
-    earns: "Earns its place when finished work never makes it back onto the page.",
+    problem: "Good work ends quietly — no review asked for, nothing carried back to the website.",
+    promise: "Invite genuine reviews at the right moment and show them where people decide.",
+    earns: "Earns its place when customers complete the work but the review request is easily forgotten.",
     mechanism: [
-      { icon: "circle-check", label: "Job finished", note: "The work is genuinely complete." },
-      { icon: "star", label: "Review requested", note: "A real customer is invited to speak." },
-      { icon: "globe", label: "Live as proof", note: "Their words return to the site." },
+      {
+        icon: "circle-check",
+        label: "Work completed",
+        note: "The job or treatment is genuinely finished.",
+      },
+      {
+        icon: "star",
+        label: "Review invited",
+        note: "A real customer is asked to share their experience.",
+      },
+      {
+        icon: "globe",
+        label: "Proof visible",
+        note: "Their words appear where the next person is deciding.",
+      },
     ],
   },
-};
+  {
+    slug: "one-record",
+    displayName: "One record",
+    tag: "Follow-Up & CRM",
+    icon: "search",
+    problem: "Half the story sits in an inbox, half in someone's phone — nobody sees the whole picture.",
+    promise: "One shared record of every enquiry: its status, its history and who moves it next.",
+    earns: "Earns its place when “where did that enquiry get to?” has no quick answer.",
+    mechanism: [
+      {
+        icon: "mail",
+        label: "Everything in one place",
+        note: "Calls, forms and messages land against one customer record.",
+      },
+      {
+        icon: "folder",
+        label: "Status stays current",
+        note: "The team sees what's new, what's open and what changed.",
+      },
+      {
+        icon: "circle-check",
+        label: "Next move owned",
+        note: "Every open conversation shows who acts next.",
+      },
+    ],
+  },
+];
 
 /**
  * Beyond the website — desktop reads as a segmented console (segments above a
@@ -83,13 +166,13 @@ export function HomeSystemsSelector() {
   const orientation = useResponsiveTabOrientation();
   const isStacked = orientation === "horizontal";
 
-  const [activeSlug, setActiveSlug] = useState<SupportSlug | "">(SUPPORT_SYSTEMS[0].slug);
+  const [activeSlug, setActiveSlug] = useState<string>(MOMENTS[0].slug);
   const activeIndex = Math.max(
-    SUPPORT_SYSTEMS.findIndex((system) => system.slug === activeSlug),
+    MOMENTS.findIndex((moment) => moment.slug === activeSlug),
     0,
   );
-  const activeSlugSafe = SUPPORT_SYSTEMS[activeIndex].slug;
-  const detail = DETAILS[activeSlugSafe];
+  const activeSlugSafe = MOMENTS[activeIndex].slug;
+  const detail = MOMENTS[activeIndex];
   const flowRef = useRef<HTMLOListElement | null>(null);
 
   useEffect(() => {
@@ -141,15 +224,15 @@ export function HomeSystemsSelector() {
     event.preventDefault();
     let nextIndex = index;
     if (["ArrowLeft", "ArrowUp"].includes(event.key)) {
-      nextIndex = (index - 1 + SUPPORT_SYSTEMS.length) % SUPPORT_SYSTEMS.length;
+      nextIndex = (index - 1 + MOMENTS.length) % MOMENTS.length;
     }
     if (["ArrowRight", "ArrowDown"].includes(event.key)) {
-      nextIndex = (index + 1) % SUPPORT_SYSTEMS.length;
+      nextIndex = (index + 1) % MOMENTS.length;
     }
     if (event.key === "Home") nextIndex = 0;
-    if (event.key === "End") nextIndex = SUPPORT_SYSTEMS.length - 1;
+    if (event.key === "End") nextIndex = MOMENTS.length - 1;
 
-    setActiveSlug(SUPPORT_SYSTEMS[nextIndex].slug);
+    setActiveSlug(MOMENTS[nextIndex].slug);
     const tabs = event.currentTarget
       .closest("[role='tablist']")
       ?.querySelectorAll<HTMLButtonElement>("[role='tab']");
@@ -159,27 +242,26 @@ export function HomeSystemsSelector() {
   if (isStacked) {
     return (
       <div className="home-systems__accordion">
-        {SUPPORT_SYSTEMS.map((system, i) => {
-          const systemDetail = DETAILS[system.slug];
-          const open = system.slug === activeSlug;
+        {MOMENTS.map((moment, i) => {
+          const open = moment.slug === activeSlug;
           return (
-            <article key={system.slug} className={`home-systems__row${open ? " is-open" : ""}`}>
+            <article key={moment.slug} className={`home-systems__row${open ? " is-open" : ""}`}>
               <h3 className="home-systems__row-heading">
                 <button
                   type="button"
-                  id={`system-head-${system.slug}`}
+                  id={`system-head-${moment.slug}`}
                   className="home-systems__row-head"
                   aria-expanded={open}
-                  aria-controls={`system-body-${system.slug}`}
-                  onClick={() => setActiveSlug(open ? "" : system.slug)}
+                  aria-controls={`system-body-${moment.slug}`}
+                  onClick={() => setActiveSlug(open ? "" : moment.slug)}
                 >
                   <span className="home-systems__row-num" aria-hidden="true">
                     {String(i + 1).padStart(2, "0")}
                   </span>
                   <span className="home-systems__row-icon">
-                    <Icon name={systemDetail.icon} size={20} />
+                    <Icon name={moment.icon} size={20} />
                   </span>
-                  <span className="home-systems__row-id">{systemDetail.displayName}</span>
+                  <span className="home-systems__row-id">{moment.displayName}</span>
                   <span className="home-systems__row-chevron" aria-hidden="true">
                     <Icon name="arrow-right" size={16} />
                   </span>
@@ -188,21 +270,23 @@ export function HomeSystemsSelector() {
 
               <div
                 className="home-systems__row-body"
-                id={`system-body-${system.slug}`}
+                id={`system-body-${moment.slug}`}
                 role="region"
-                aria-labelledby={`system-head-${system.slug}`}
+                aria-labelledby={`system-head-${moment.slug}`}
+                inert={!open}
               >
                 <div className="home-systems__row-inner">
                   <div className="home-systems__statements">
                     <p className="home-systems__problem">
                       <span aria-hidden="true">×</span>
-                      {systemDetail.problem}
+                      {moment.problem}
                     </p>
                     <p className="home-systems__promise">
                       <span aria-hidden="true">✓</span>
-                      {systemDetail.promise}
+                      {moment.promise}
                     </p>
-                    <p className="home-systems__earns">{systemDetail.earns}</p>
+                    <p className="home-systems__earns">{moment.earns}</p>
+                    <p className="home-artifact-label">Part of {moment.tag}</p>
                   </div>
 
                   <div className="home-systems__row-flow">
@@ -210,7 +294,7 @@ export function HomeSystemsSelector() {
                     <ol className="home-systems__row-flow-steps">
                       <span className="home-systems__row-flow-rail" aria-hidden="true" />
                       <span className="home-systems__row-flow-progress" aria-hidden="true" />
-                      {systemDetail.mechanism.map((step) => (
+                      {moment.mechanism.map((step) => (
                         <li key={step.label} className="home-systems__row-flow-step">
                           <span className="home-systems__row-flow-node" aria-hidden="true">
                             <Icon name={step.icon} size={16} />
@@ -237,28 +321,27 @@ export function HomeSystemsSelector() {
       <div
         className="home-systems__segments"
         role="tablist"
-        aria-label="Optional support beyond the website"
+        aria-label="Support beyond the website"
       >
-        {SUPPORT_SYSTEMS.map((system, index) => {
-          const systemDetail = DETAILS[system.slug];
-          const selected = system.slug === activeSlugSafe;
+        {MOMENTS.map((moment, index) => {
+          const selected = moment.slug === activeSlugSafe;
           return (
             <button
               type="button"
-              key={system.slug}
+              key={moment.slug}
               role="tab"
-              id={`system-tab-${system.slug}`}
+              id={`system-tab-${moment.slug}`}
               aria-controls="system-stage"
               aria-selected={selected}
               tabIndex={selected ? 0 : -1}
               className={`home-systems__segment${selected ? " is-active" : ""}`}
-              onClick={() => setActiveSlug(system.slug)}
+              onClick={() => setActiveSlug(moment.slug)}
               onKeyDown={(event) => onKey(event, index)}
             >
               <span className="home-systems__segment-icon">
-                <Icon name={systemDetail.icon} size={18} />
+                <Icon name={moment.icon} size={18} />
               </span>
-              {systemDetail.displayName}
+              {moment.displayName}
             </button>
           );
         })}
@@ -290,6 +373,7 @@ export function HomeSystemsSelector() {
           </div>
 
           <p className="home-systems__earns">{detail.earns}</p>
+          <p className="home-artifact-label">Part of {detail.tag}</p>
         </div>
 
         <div className="home-systems__stage-flow">

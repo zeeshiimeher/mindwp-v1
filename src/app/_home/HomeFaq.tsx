@@ -14,9 +14,14 @@ const FAQS = [
       "Often, yes. The review looks at what already works before recommending a rebuild. Sometimes the priority is a page, a clearer path, or the handling around the existing site.",
   },
   {
-    question: "Is Local Visibility, or the other supporting systems, compulsory?",
+    question: "Do I have to take the supporting services?",
     answer:
-      "No. The website is the foundation. The other capabilities attach only where the review finds a real weakness — most businesses start with one, some with none.",
+      "No — the website stands on its own. Around it you can add what fits how work actually arrives: local visibility, enquiry handling, follow-up or reviews. Each is scoped separately, and we recommend only what the review shows is worth adding.",
+  },
+  {
+    question: "Who sets all of this up — and do we end up running new software?",
+    answer:
+      "MindWP handles the setup. We plan how each piece should work, configure and connect it, test the complete path, and onboard your team before handover. If your team needs to use a shared inbox or CRM, it is set up around their work — you are not handed an empty system and left to figure it out.",
   },
   {
     question: "Does MindWP replace my team's judgement?",
@@ -24,9 +29,9 @@ const FAQS = [
       "No. MindWP builds the structure that carries an enquiry to the right person — acknowledgement, routing and follow-up stay visible to your team, and every commercial or clinical decision stays with you.",
   },
   {
-    question: "Who owns the website?",
+    question: "How are website ownership and handover handled?",
     answer:
-      "You do. The site is built to remain clear, maintainable, and transferable rather than locking the business into a proprietary platform.",
+      "Ownership, licences, handover and ongoing responsibilities are set out clearly in the proposal before work begins. The exact arrangement depends on what is being built and which services are included.",
   },
   {
     question: "Does MindWP guarantee rankings or enquiries?",
@@ -41,7 +46,7 @@ const FAQS = [
   {
     question: "What happens after launch?",
     answer:
-      "The structure is designed for a clean handover, and ongoing management can continue when that is useful. Either way, what is already built stays yours.",
+      "The build is designed for a clean handover, and MindWP can remain involved with updates, improvements and care for the connected systems where agreed. Either way, the handover and ongoing responsibilities are made clear.",
   },
 ] as const;
 

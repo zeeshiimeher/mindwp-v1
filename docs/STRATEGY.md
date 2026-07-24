@@ -10,7 +10,7 @@ The website is the principal commercial surface. Connected services are introduc
 
 ### Homepage positioning consequence
 
-The Homepage should lead with Smart Website Systems and organise its argument around how suitable people find, understand, evaluate and contact the business. It may then show how optional support improves local discovery or what happens after contact. The supporting systems should remain visible enough to understand and reach, but must not become four co-equal reasons for the business to exist.
+The Homepage should lead with Smart Website Systems and organise its argument around how suitable people find, understand, evaluate and contact the business. It may then show how connected support improves local discovery or what happens after contact — presented positively, without repeatedly weakening the services as "optional", and without letting them become four co-equal reasons for the business to exist.
 
 The older line **“Work comes in. Too much slips away.”** remains strong diagnostic or campaign language. It should not currently define the Homepage because it assumes meaningful attention is already arriving, moves the centre of gravity towards post-enquiry leakage and automation, and makes the five capabilities feel more equal than the approved offer architecture. Reconsidering that decision requires a change in the principal public offer or material buyer evidence — not simply a preference for the older line or its existing visual execution.
 
@@ -20,7 +20,7 @@ The older line **“Work comes in. Too much slips away.”** remains strong diag
 
 A **useful enquiry** means the person could understand the relevant offer and provide appropriate contact or request context through the intended channel. It does not mean a qualified lead, booked appointment, sale, clinical decision, or guaranteed outcome. Lead Response & Handling begins once that contact event exists; it owns the acknowledgement, useful context, routing, and visible human responsibility that follow.
 
-Four optional supporting services may be included and scoped individually where useful. Whether any is normally sold without a website engagement remains an open decision:
+Four supporting services surround the principal offer. They are actively recommended alongside a Smart Website where the diagnosis supports them, and each may also be sold separately where suitable. Local SEO Authority is substantial hands-on work rather than a light add-on. Each service is scoped individually; none is a compulsory part of any engagement:
 
 | Current public service name  | Current responsibility                                                                                     | Boundary                                                                                     |
 | ---------------------------- | ---------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
@@ -32,6 +32,8 @@ Four optional supporting services may be included and scoped individually where 
 The shorter labels Local SEO, Lead Response, Follow-Up and Reputation are planning shorthand only. They do not rename these public services, their canonical identifiers, routes, titles or navigation.
 
 The services are related because discovery, website evaluation, enquiry handling, follow-up and reputation can affect the same customer decision. That relationship does not create an automatic sequence, equal weighting or a requirement to buy all five.
+
+The client buys a planned, configured and working system, not raw access to software. CRM and automation platforms are enabling technology behind delivery, never the product.
 
 ## Attention and measurement
 
@@ -49,6 +51,8 @@ Qualification is diagnostic rather than exclusionary. Do not infer a universal r
 
 Every engagement should make scope, responsibilities, access, support, third-party costs, data handling and handoff or ongoing management clear before work begins.
 
+MindWP's delivery role is hands-on: it plans how each agreed piece should work, configures and connects it, tests the complete path and onboards the team before handover. Ongoing management, maintenance and improvement may continue where agreed.
+
 No single handover or ongoing-management model is approved for every engagement. Website ownership, service-account ownership, subscription responsibility, data access and ongoing management remain proposal-level decisions until a general policy is explicitly settled.
 
 Current pricing is tailored and private. There is no approved public tier table, starting price or universal qualification signal. Public pricing posture and any standard floor remain open decisions; a proposal should still make cost and scope clear.
@@ -57,7 +61,7 @@ Current pricing is tailored and private. There is no approved public tier table,
 
 The broader current direction is an internal working concept called a **Visibility & Enquiry Review** that can be useful with or without an existing website. It should diagnose the relevant public experience and enquiry path before prescribing a project.
 
-The final public label and commitment level remain open. Active public source currently uses **Request a Website Review**; preserve that live wording unless an explicitly supplied page plan or user decision authorises another label. **See the work** remains a useful lower-commitment path when a page plan supports it.
+The final public label and commitment level remain open. Active public source currently uses **Request a Visibility & Enquiry Review** (with **Request a Review** where space is limited); preserve that live wording unless an explicitly supplied page plan or user decision authorises another label. **See the work** remains a useful lower-commitment path when a page plan supports it.
 
 ## Implementation pathways
 
@@ -83,7 +87,6 @@ Page length, section count and visual structure follow the page job. A conceptua
 
 These questions are deliberately open and do not block general design-system work:
 
-- whether and when each supporting service may be purchased without a website engagement;
 - the preferred balance between handover and ongoing management;
 - standard website, service-account, data and subscription ownership terms;
 - a public pricing floor or qualification signal;

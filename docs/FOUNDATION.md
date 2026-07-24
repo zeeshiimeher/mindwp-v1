@@ -55,6 +55,8 @@ MindWP does not sell advertising management. Advertising may bring attention; Mi
 
 MindWP is not positioned as a SaaS product, CRM resale, automation package, AI replacement, generic tool setup or compulsory capability bundle. WordPress, builders, CRM systems, automation and AI may support delivery, but tools are not the public product.
 
+What MindWP does sell is planned and implemented work: websites and the connected business systems around them, not raw access to software. Where a connected tool earns its place, MindWP configures it, tests the complete path and introduces it to the team. Continued management and improvement may be provided where agreed.
+
 MindWP does not promise rankings, leads, bookings, ratings, revenue, conversion improvement or professional outcomes without real, supportable evidence. It does not silently assume ownership of a client's commercial or professional judgement.
 
 These boundaries protect both the buyer and MindWP while leaving the current commercial arrangement free to evolve in Strategy.

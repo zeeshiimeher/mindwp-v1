@@ -124,9 +124,10 @@ export function HomeOneSystem() {
           <br /> and <u>proven</u> is built in.
         </p>
         <p data-home-sequence-item>
-          Nothing here is compulsory. The website is the foundation; a supporting capability
-          connects only when the review finds a real gap in discovery, response, follow-up or
-          reputation — and it is scoped on its own, not sold as a set.
+          The website is the foundation. Around it, we connect the support your customers&apos;
+          journey actually needs — being found nearby, enquiries answered, follow-up kept moving,
+          reviews working for you. Each piece is planned and scoped on its own, so you add what
+          helps rather than buying a set.
         </p>
       </div>
 
@@ -169,9 +170,10 @@ export function HomeBeyondWebsite() {
           Add the support <em>that earns its place.</em>
         </h2>
         <p data-home-sequence-item>
-          The Smart Website stays the foundation. These three connect only where the review finds
-          a specific gap — most businesses need one, some need none, and none of them replace the
-          site itself.
+          The website gives people a clear place to understand the offer, decide and get in touch.
+          These five moments shape what happens around it. MindWP plans them around how your
+          business works, connects them to the website and phones, tests the complete path, and
+          shows your team how everything works before handover.
         </p>
       </div>
       <div className="container">
