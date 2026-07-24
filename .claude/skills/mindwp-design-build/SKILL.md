@@ -141,7 +141,11 @@ Do not add blanket reveals, hover motion to non-interactive material, or motion 
 
 ## Implement directly when requested
 
-Follow `docs/ENGINEERING.md`.
+Distinguish two implementation situations before starting.
+
+**Draft or variant exploration** — a first pass, or several variants of the same section built to compare. Favor creative range over full engineering rigor: a genuinely beautiful, well-composed draft beats a technically tidy but timid one. Still required even here: semantic colour, spacing, radius, shadow, and motion tokens over raw values; inherited global typography roles rather than invented ones; real semantic structure (heading order, landmarks, alt text, keyboard reachability); and page- or section-local CSS only — do not edit shared global foundation files (tokens, typography, layout, buttons, shared components) while exploring, so a rejected variant stays trivially discardable. Everything else can wait: exact CSS-ownership specificity, `minmax()`/grid-track precision, full hover coverage, exhaustive responsive tightening, replacing absolute-positioning shortcuts with flex/grid, complete interaction-state coverage, and the `pnpm check`/`build`/`test` gate. Once the user approves and merges a draft, run `mindwp-frontend-quality`'s Finalize mode to bring it up to full standard — don't treat draft-quality implementation as finished on its own.
+
+**Merge-ready build** — implementing the page or section the user has already decided on. Follow `docs/ENGINEERING.md` in full:
 
 Before adding page-specific styling, inspect the relevant existing foundations, including the actual token, typography, layout, button, form, and global styles needed for the task.
 

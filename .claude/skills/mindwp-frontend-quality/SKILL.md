@@ -1,6 +1,6 @@
 ---
 name: mindwp-frontend-quality
-description: Use when specialist frontend support is requested during MindWP implementation, or when auditing, diagnosing, repairing, or hardening MindWP frontend implementation, including markup, CSS architecture, responsive behaviour, semantics, accessibility, interaction states, motion lifecycle, reduced motion, performance, cleanup, or risk-driven technical QA.
+description: Use when specialist frontend support is requested during MindWP implementation, when finalizing an approved and merged draft's CSS, spacing, responsive behaviour, and motion, or when auditing, diagnosing, repairing, or hardening MindWP frontend implementation, including markup, CSS architecture, responsive behaviour, semantics, accessibility, interaction states, motion lifecycle, reduced motion, performance, cleanup, or risk-driven technical QA.
 ---
 
 # MindWP frontend quality
@@ -13,8 +13,9 @@ Apply `docs/ENGINEERING.md` to implemented evidence only when the user explicitl
 - **Fix and verify:** diagnose an observed defect, repair its coherent root owner, and rerun the relevant evidence.
 - **Technical hardening:** improve semantics, accessibility, states, responsive mechanics, motion lifecycle, performance, or maintainability within accepted design intent.
 - **Implementation support:** resolve a specialist frontend concern while design-and-build work is still active.
+- **Finalize:** bring an approved, merged page or section fully up to the project's technical standard — spacing, typography inheritance, responsive behaviour, hover and reveal motion — without reopening layout or composition decisions.
 
-Do not force a repair when the user asks for an audit. Do not require this skill after every design task.
+Do not force a repair when the user asks for an audit. Do not require this skill after every design task. Only use Finalize once the user has approved and merged the relevant draft or variant — not mid-draft, and not as a substitute for Audit-only or Fix-and-verify when the actual ask is a single narrow issue, even on an already-finished page.
 
 ## Start from implemented evidence
 
@@ -44,6 +45,21 @@ If the problem is an absent hierarchy, weak concept, page narrative, section rel
 Distinguish a defect from an intentional local exception. Do not normalise page-specific typography, measures, overlap, density, surfaces, or responsive behaviour into global defaults merely because a shared primitive exists.
 
 When both skills are active, preserve the accepted meaning-bearing relationship and responsive intent. If a real technical constraint would materially change the concept, make that consequence explicit and return the decision to design rather than flattening it silently.
+
+## What finalize looks for
+
+These are judgment prompts, not hard rules — apply what's actually true of the page, skip what isn't.
+
+- **Typography:** headings and paragraphs should inherit the global type scale unless a section has a genuine, deliberate display moment; remove page-local font-size duplication that just restates the global default.
+- **Measure and width:** let a container or a shared measure-governing mechanism (like a `.section-intro--centered` style primitive) control width rather than stacking ad hoc `max-width` on individual headlines and paragraphs. Watch for the same width value duplicated across several sections in slightly different forms — that's usually one mechanism trying to happen in many places.
+- **Layout mechanism:** flexbox or grid with `gap` for ordinary content and spacing. Reserve absolute positioning for genuinely layered or diagram-like compositions (radial diagrams, overlapping artifact cards) — not as a shortcut for centering or spacing ordinary content.
+- **Spacing:** `gap` on the flex/grid parent over `margin` between siblings. When a divider or border sits inside a gapped layout, center it in the gap rather than letting it sit flush against one side's content.
+- **Sizing:** prefer content-driven height (padding plus line-height) over an enforced `min-height`. Keep `min-height` only where an element positions children absolutely inside itself and needs the reserved space, or where a `next/image fill` needs an explicitly sized parent — prefer `aspect-ratio` there instead of a fixed height that needs manual retuning per breakpoint.
+- **Grid tracks:** a `minmax()` floor wider than a track actually needs can silently steal space from its sibling track at specific viewport widths and distort an intended ratio — check whether every floor is load-bearing.
+- **Motion and hover:** extend the page's existing reveal/GSAP convention rather than inventing a new one; add hover feedback only to genuinely interactive elements — skip decorative or illustrative material — using the duration, easing, and transform vocabulary already active elsewhere on the site.
+- **Responsive:** confirm padding, gaps, and font sizes actually shrink at the existing breakpoints rather than just being copied from desktop.
+
+Converging a duplicated technical mechanism into one already-authorized shared owner is a repair. Changing the resulting width, proportion, or alignment beyond what the duplicated instances already expressed is a design decision — surface it, don't decide it.
 
 ## Repair coherently
 
