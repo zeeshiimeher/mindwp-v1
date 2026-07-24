@@ -62,11 +62,11 @@ After omitting **Built by Builders**, the Homepage contains exactly **14 visible
 | 3 | BEFORE ENQUIRY | They do not need more information. They need enough certainty to act. |
 | 4 | AFTER ENQUIRY | A useful enquiry still needs an answer, an owner and a clear next step. |
 | 5 | CONNECTED WHERE USEFUL | The website leads. Support connects where the journey needs it. |
-| 6 | BEYOND THE WEBSITE | Add the support that earns its place. |
-| 7 | LOCAL VISIBILITY | Found nearby—trusted before they call. |
-| 8 | THE WORK, APPLIED | See how strategy, structure and execution come together. |
+| 6 | LOCAL VISIBILITY | Found nearby—trusted before they call. |
+| 7 | OPTIONAL SUPPORT | Add the support that earns its place. |
+| 8 | SELECTED WORK | Website work you can inspect. |
 | 9 | SMART WEBSITE | The website is built around the questions, evidence and actions people need to decide. |
-| 10 | Not a launch — an asset | A smart website doesn't peak at launch. It compounds.|
+| 10 | CLEAR OWNERSHIP | Know what MindWP builds, what your business owns and what happens after launch. |
 | 11 | RIGHT FIT | For independent clinics and specialist service businesses where customers choose carefully. |
 | 12 | HOW WE START | First we review how people find, choose and contact you. Then we show you where to start. |
 | 13 | STRAIGHT ANSWERS | Questions, answered plainly. |
@@ -84,14 +84,17 @@ The existing selector remains one visible section. Its three selectable items us
 
 Smart Website is excluded because it has its own standalone environment. Local Visibility is excluded because it also remains standalone.
 
-
 ## Smart Website Systems
 
 ### Page job
 
 Sell MindWP’s flagship website service: strategy, structure, copy, distinctive design, WordPress development and measurement organised around real customer decisions.
 
-Own the experience through to a useful enquiry. Local SEO owns ongoing local discovery; Lead Response owns what happens once contact has occurred.
+The service owns the customer journey through to a useful enquiry:
+
+- Local SEO owns ongoing local discovery.
+- Lead Response owns acknowledgement, routing and follow-up after contact.
+- Connected systems remain optional, not compulsory parts of every website.
 
 ### SEO
 
@@ -102,32 +105,42 @@ Own the experience through to a useful enquiry. Local SEO owns ongoing local dis
 
 ### Sections
 
-| # | Eyebrow | Heading |
-|---:|---|---|
-| 1 | SMART WEBSITE SYSTEMS | Turn specialist work into a website people can understand, trust and act on. |
-| 2 | BEYOND REDESIGN | A new look cannot fix a journey that was never properly planned. |
-| 3 | DELIBERATE SYSTEM | Smart does not mean more technology. It means every part has a useful job. |
-| 4 | DECISION STRUCTURE | Plan the pages around the services, questions and decisions that matter most. |
-| 5 | ARRIVAL CONTEXT | Search, referrals and advertising should land on an answer built for why people came. |
-| 6 | PURPOSEFUL CONTENT | Explain specialised work clearly without flattening it or hiding behind jargon. |
-| 7 | DISTINCTIVE PRESENCE | Look recognisably like this business—not another version of its category. |
-| 8 | PROOF IN CONTEXT | Place evidence beside the concern it helps resolve. |
-| 9 | USEFUL ACTIONS | Match each next step to the decision and prepare a more useful enquiry. |
-| 10 | MEASURABLE ACTIONS | See which pages and routes create useful enquiries—not just visits. |
-| 11 | TECHNICAL FOUNDATION | Make speed, accessibility, search readiness and maintainability part of the build. |
-| 12 | OWNED DELIVERY | Bring strategy, content, design and development into one documented build, with ownership, licences and ongoing dependencies explicit. |
-| 13 | BUILT WORK | See how the commercial thinking survives into finished websites. |
-| 14 | RIGHT FIT | Best for substantial offers that a generic website undersells. |
-| 15 | STRAIGHT ANSWERS | Questions about planning, rebuilding, ownership and ongoing support. |
-| 16 | VISIBILITY & ENQUIRIES | Clarify what a new or rebuilt website should make easier to find, understand, trust and do. |
+| # | Eyebrow | Heading | Section job |
+|---:|---|---|---|
+| 1 | SMART WEBSITE SYSTEMS | Turn specialist work into a website people can understand, trust and act on. | Introduce the flagship service as a commercially useful website built around real customer decisions. |
+| 2 | BEYOND REDESIGN | A website can look right while the customer journey remains unresolved. | Challenge the assumption that visual improvement alone will fix unclear positioning, weak structure or difficult next steps. |
+| 3 | DELIBERATE SYSTEM | The page is the surface. The thinking underneath gives every part a job. | Explain that “smart” means purposeful strategy, structure, content, design and development—not compulsory technology or automation. |
+| 4 | DECISION STRUCTURE | Plan the pages around the services, questions and decisions that matter most. | Show how the site structure reflects what the business offers and what customers need to understand before choosing. |
+| 5 | ARRIVAL CONTEXT | Search, referrals and advertising should land on an answer built for why people came. | Explain how different visitor intentions should lead to relevant pages and information rather than one generic route. |
+| 6 | PURPOSEFUL CONTENT | Explain specialised work clearly without flattening it or hiding behind jargon. | Show how content makes complex services understandable while preserving their expertise, value and distinctions. |
+| 7 | DISTINCTIVE PRESENCE | Look recognisably like this business—not another version of its category. | Position design as an expression of the particular business rather than a reusable industry template. |
+| 8 | PROOF IN CONTEXT | Place evidence beside the concern it helps resolve. | Explain how reviews, examples, credentials and process evidence support specific decisions instead of sitting in an isolated proof block. |
+| 9 | BUILT WORK | See how the commercial thinking survives into finished websites. | Provide a mid-page evidence break showing that the strategy becomes distinctive, functional finished work. |
+| 10 | USEFUL ACTIONS | Match each next step to the decision and prepare a more useful enquiry. | Cover purposeful calls to action, forms and enquiry routes that suit the visitor’s readiness and capture useful context. |
+| 11 | MEANINGFUL MEASUREMENT | See where people act, which journeys produce useful enquiries and where the website needs attention. | Explain how website behaviour and enquiry quality reveal strengths and weak points without promising conversions or leads. |
+| 12 | TECHNICAL FOUNDATION | Make speed, accessibility, search readiness and maintainability part of the build. | Establish technical quality as part of the website itself rather than an optional clean-up after launch. |
+| 13 | FROM PLAN TO BUILD | Strategy, copy, design and development should carry the same customer journey. | Show how the original thinking remains consistent through content, visual design and the completed WordPress build. |
+| 14 | RIGHT FIT | Best for substantial offers that a generic website undersells. | Qualify clinics and specialist service businesses that need clearer positioning, stronger customer journeys and distinctive execution. |
+| 15 | STRAIGHT ANSWERS | Questions about planning, rebuilding, ownership and ongoing support. | Resolve practical concerns without publishing client-specific scope, licensing or responsibility arrangements. |
+| 16 | VISIBILITY & ENQUIRY REVIEW | Clarify what a new or rebuilt website should make easier to find, understand, trust and do. | Invite the business to identify what its website needs to improve before assuming that a redesign is the answer. |
+
+### Page progression
+
+**Looks right but underperforms → deliberate thinking → customer structure → clear explanation → distinctive execution → contextual proof → useful action → measurement → durable build → review**
+
+### Public-page boundary
+
+Exact scope, licences, dependencies, ownership arrangements and post-launch responsibilities vary by project. Those details belong in the meeting, proposal and agreed scope—not in a dedicated public section.
 
 ## Local SEO Authority
 
 ### Page job
 
-Help suitable nearby customers discover and evaluate a real business across Google Search, Maps and the website.
+Help suitable nearby customers discover, assess and choose a real business across Google Search, Maps and the website.
 
-Align the Business Profile, genuine services and locations, local pages, listings, proof and measurement without selling rank positions or promising leads.
+Align genuine services and locations, the Business Profile, website pages, consistent business information, reviews, local authority and measurement—without selling ranking positions or promising leads.
+
+Existing genuine reviews may support local evaluation. Systematic review requests, feedback handling and replies belong to Reputation & Review.
 
 ### SEO
 
@@ -138,23 +151,29 @@ Align the Business Profile, genuine services and locations, local pages, listing
 
 ### Sections
 
-| # | Eyebrow | Heading |
-|---:|---|---|
-| 1 | LOCAL SEO | Be easier to find when nearby customers search for the work you actually provide. |
-| 2 | BEYOND RANKINGS | Visibility matters only when the result gives people a credible reason to look closer. |
-| 3 | SEARCH INTENT | Focus on the services, locations and needs your business can genuinely serve. |
-| 4 | BUSINESS PROFILE | Answer practical questions where local customers first encounter the business. |
-| 5 | CONSISTENT SIGNALS | Names, details, services and locations should tell one accurate story wherever people find you. |
-| 6 | LANDING PAGES | Continue the search answer on the page that receives the visit. |
-| 7 | CHOICE SIGNALS | Nearby searchers compare relevance, current information and credible proof—not position alone. |
-| 8 | EARNED PROMINENCE | Build local authority through credible evidence and relationships—not shortcuts. |
-| 9 | LOCAL CONTENT | Answer real local questions without manufacturing pages for search engines. |
-| 10 | MEANINGFUL MEASURES | Track visibility, actions and enquiry quality—not rankings alone. |
-| 11 | ONGOING ACCURACY | Profiles, pages and proof need attention as the business changes. |
-| 12 | CLEAR OWNERSHIP | Agree what MindWP maintains, what the business owns and how changes are handled. |
-| 13 | RIGHT FIT | Best for clinics and service businesses people compare before choosing a nearby provider. |
-| 14 | STRAIGHT ANSWERS | Questions about local visibility, profiles, pages and ongoing work. |
-| 15 | VISIBILITY & ENQUIRIES | See what nearby customers can find, understand and act on before they choose. |
+| # | Eyebrow | Heading | Section job |
+|---:|---|---|---|
+| 1 | LOCAL SEO | Be found nearby—and give customers a reason to choose you. | Introduce Local SEO as visibility connected to trust and customer choice. |
+| 2 | BEYOND RANKINGS | Visibility earns the look. What they find next shapes the decision. | Establish that ranking is only the beginning; the result, profile and website must support the decision. |
+| 3 | SEARCH INTENT | Focus on the services, locations and needs your business can genuinely serve. | Explain how MindWP targets relevant searches grounded in the real business rather than chasing every keyword. |
+| 4 | TRUST IS BUILT IN LAYERS | The profile, website, proof and business details need to tell one credible story. | Introduce the connected local-trust model and show how its main parts support one another. |
+| 5 | BUSINESS PROFILE | Make the first local impression accurate, useful and worth exploring. | Show how the Google Business Profile answers practical questions and encourages customers to investigate further. |
+| 6 | LANDING PAGES | The search result earns the visit. The right page must carry the decision forward. | Explain how relevant service and location pages continue the answer, build confidence and provide an appropriate next step. |
+| 7 | CONSISTENT SIGNALS | One business, accurately represented wherever people check. | Show why services, locations and business information should remain consistent across the website, profile and trusted listings. |
+| 8 | REVIEWS & PROOF | Genuine customer experience shortens the distance to trust. | Explain how genuine reviews and supporting evidence help nearby customers evaluate the business. |
+| 9 | LOCAL AUTHORITY | Earn prominence through useful local content, credible mentions and real relationships. | Cover sustainable authority-building without manufactured pages, artificial links or shortcuts. |
+| 10 | MEANINGFUL MEASURES | Track visibility, actions and enquiry quality—not rankings alone. | Explain how progress is assessed across discovery, customer actions, website behaviour and suitable enquiries. |
+| 11 | ONGOING MANAGEMENT | A local presence needs tending, not a launch date. | Set the expectation that profiles, pages, information and proof must remain current as the business changes. |
+| 12 | WHERE TO START | The weakest part of your local presence should set the priority. | Show that the work is prioritised around the actual weakness rather than delivered as an identical checklist. |
+| 13 | RIGHT FIT | Best for clinics and specialist service businesses people compare before choosing nearby. | Qualify suitable businesses and honestly identify when Local SEO may not be the immediate priority. |
+| 14 | STRAIGHT ANSWERS | Questions about profiles, pages, reviews and ongoing local SEO. | Resolve practical buyer questions, misconceptions and concerns without explaining client-specific delivery terms. |
+| 15 | VISIBILITY & ENQUIRY REVIEW | See what nearby customers can find, understand and act on before they choose. | Invite the business to review its current local discovery and decision journey and identify the right starting point. |
+
+### Page progression
+
+**Found → inspected → trusted → strengthened → measured → maintained → prioritised → reviewed**
+
+Client-specific responsibilities, exact deliverables and maintenance boundaries remain outside the public page. Those will be agreed during the meeting and proposal stage.
 
 ## Lead Response & Handling
 
@@ -162,7 +181,7 @@ Align the Business Profile, genuine services and locations, local pages, listing
 
 Protect the first move after calls, forms, messages or consultation requests through truthful acknowledgement, useful context, appropriate routing and visible human ownership.
 
-Stop at the handoff: MindWP does not make booking, commercial, professional or clinical decisions.
+The service stops at the handoff. MindWP does not make booking, pricing, commercial, professional or clinical decisions.
 
 ### SEO
 
@@ -173,25 +192,39 @@ Stop at the handoff: MindWP does not make booking, commercial, professional or c
 
 ### Sections
 
-| # | Eyebrow | Heading |
-|---:|---|---|
-| 1 | LEAD RESPONSE | The enquiry arrived. Responsibility for the next move did not. |
-| 2 | MISSED OWNERSHIP | Received is not the same as handled. |
-| 3 | USEFUL ACKNOWLEDGEMENT | Reply promptly with what happens next—without pretending the answer is ready. |
-| 4 | CONTACT ROUTES | Calls, forms, messages and consultation requests each need an agreed first move. |
-| 5 | MISSED CALLS | A call missed during busy work or after hours should not become a dead end. |
-| 6 | DIFFERENT REQUESTS | A treatment question, booking request and new project should not receive the same path. |
-| 7 | NECESSARY CONTEXT | Capture only what helps the right person understand the request. |
-| 8 | CLEAR DESTINATION | Send the enquiry to someone who knows why it is theirs. |
-| 9 | VISIBLE HANDOFF | Show what arrived, what was acknowledged and where responsibility went. |
-| 10 | HUMAN OWNERSHIP | The system stops where a responsible person must judge what happens next. |
-| 11 | CONSENT & BOUNDARIES | Acknowledgement must follow channel, privacy and consent rules; booking, quotations, advice and professional decisions remain human. |
-| 12 | RESPONSE SETUP | Map the routes, agree first moves, connect destinations and test each handoff. |
-| 13 | RIGHT FIT | Best where worthwhile enquiries arrive—and a person is ready to own what follows. |
-| 14 | STRAIGHT ANSWERS | Questions about acknowledgement, routing, handoff and responsibility. |
-| 15 | VISIBILITY & ENQUIRIES | Trace where a call, form or message loses acknowledgement, context or ownership. |
+| # | Eyebrow | Heading | Section job |
+|---:|---|---|---|
+| 1 | LEAD RESPONSE | Make sure calls, forms and messages receive a prompt response—and reach the right person. | Introduce the service as the connection between an enquiry arriving, receiving a useful first response and reaching the appropriate person. |
+| 2 | MISSED OWNERSHIP | Received is not the same as handled. | Expose the gap between a system recording an enquiry and a person knowing it requires action. |
+| 3 | USEFUL ACKNOWLEDGEMENT | Respond quickly without sounding robotic—or pretending the answer is ready. | Explain how a truthful response can confirm receipt and set expectations without giving unapproved answers. |
+| 4 | CONTACT ROUTES | Calls, forms, messages and consultation requests each need an agreed first move. | Show that each contact channel requires an appropriate response and destination rather than identical handling. |
+| 5 | MISSED CALLS | A call missed during busy work or after hours should not become a dead end. | Explain how missed-call acknowledgement can preserve the connection and guide the caller towards an appropriate next step. |
+| 6 | DIFFERENT REQUESTS | A treatment question, booking request and new project should not receive the same path. | Show how enquiries can be distinguished and directed according to what the person needs. |
+| 7 | NECESSARY CONTEXT | Capture only what helps the right person understand the request. | Explain how useful details prepare the handoff without creating an excessive form or collecting unnecessary information. |
+| 8 | VISIBLE OWNERSHIP | The system makes the first move. Your team owns what follows. | Show how each enquiry reaches someone who can see what arrived, what was acknowledged and why it requires attention. |
+| 9 | HUMAN BOUNDARY | Automation can acknowledge and route. The right person still decides. | Establish that people remain responsible for bookings, quotations, advice and professional judgement. |
+| 10 | RESPONSE SETUP | Map the routes. Agree the first moves. Test every handoff. | Explain how MindWP plans the enquiry paths, connects their destinations and verifies that each handoff works. |
+| 11 | RIGHT FIT | Best where worthwhile enquiries arrive—and a person is ready to own what follows. | Qualify businesses with genuine incoming demand and the human capacity to take responsibility after the handoff. |
+| 12 | STRAIGHT ANSWERS | Questions about acknowledgement, routing, handoff and responsibility. | Resolve practical concerns about contact channels, response timing, automation, privacy and the human role. |
+| 13 | VISIBILITY & ENQUIRY REVIEW | See whether each enquiry has a clear first move and a visible owner. | Invite the business to identify where incoming enquiries currently lose clarity, momentum or ownership. |
 
-## Follow-Up Systems
+### Page progression
+
+**Enquiry arrives → prompt acknowledgement → appropriate route → useful context → visible owner → human decision**
+
+### Fixed service boundary
+
+Lead Response & Handling ends when the appropriate person can see, understand and own the enquiry.
+
+It does not make:
+
+- Booking or scheduling decisions
+- Pricing or quotation decisions
+- Commercial decisions
+- Professional or clinical decisions
+- Promises about the final outcome
+
+## Follow-Up & CRM
 
 ### Page job
 
@@ -219,12 +252,12 @@ Use an appropriate CRM behind the scenes while respecting communication permissi
 | 7 | HUMAN JUDGEMENT | The system can preserve the next step; it cannot decide what should happen. |
 | 8 | STOPPING RULES | A clear no, completed decision or agreed pause should stop unnecessary contact. |
 | 9 | CRM SUPPORT | Use an appropriate CRM to preserve the agreed work without turning software into the service. |
-| 10 | DELIVERY OPTIONS | Choose a documented handover or agreed ongoing support. |
+| 10 | ONGOING RESPONSIBILITY | Make access, responsibility, support and what happens after setup explicit before the work begins. |
 | 11 | RIGHT FIT | Best where worthwhile decisions take time and open conversations are too valuable to leave to memory. |
 | 12 | STRAIGHT ANSWERS | Questions about ownership, permission, CRM use and ongoing support. |
-| 13 | VISIBILITY & ENQUIRIES | See where open opportunities lose ownership, context or a credible next step. |
+| 13 | VISIBILITY & ENQUIRY REVIEW | See where open opportunities lose ownership, context or a credible next step. |
 
-## Reputation & Review Systems
+## Reputation & Review
 
 ### Page job
 
@@ -243,12 +276,12 @@ Include ownership of incoming feedback while prohibiting incentives, sentiment f
 
 | # | Eyebrow | Heading |
 |---:|---|---|
-| 1 | REVIEW MANAGEMENT | Build a fair path from completed work to honest feedback and visible proof. |
+| 1 | REPUTATION & REVIEW | Turn completed work into honest feedback, responsible replies and proof people can trust. |
 | 2 | INVISIBLE QUALITY | The public picture can remain incomplete even when customers are genuinely satisfied. |
 | 3 | RIGHT MOMENT | Ask after a genuine experience—not after predicting what somebody will say. |
 | 4 | CONSISTENT REQUESTS | A dependable process should not rely on somebody remembering to ask. |
 | 5 | HONEST INVITATION | Invite reviews consistently without filtering people by expected sentiment. |
-| 6 | SEPARATE ROUTES | Keep public reviews and private feedback available without steering between them. |
+| 6 | FAIR ROUTES | Offer public review and private feedback routes without using one to suppress the other. |
 | 7 | REVIEW OWNERSHIP | New reviews and private feedback need an owner, not only a collection link. |
 | 8 | THOUGHTFUL REPLIES | Respond without confirming or exposing a private customer or patient relationship. |
 | 9 | VISIBLE PROOF | Place genuine reviews where future customers already compare and decide. |
@@ -256,7 +289,7 @@ Include ownership of incoming feedback while prohibiting incentives, sentiment f
 | 11 | REPUTATION SETUP | Agree the moments, messages, destinations, alerts and ongoing responsibility. |
 | 12 | RIGHT FIT | Best where good work already happens but requests and replies remain inconsistent. |
 | 13 | STRAIGHT ANSWERS | Questions about ethical requests, private feedback, public replies and ownership. |
-| 14 | VISIBILITY & ENQUIRIES | See where genuine customer experience stops becoming feedback, responsible replies and visible proof. |
+| 14 | VISIBILITY & ENQUIRY REVIEW | See where genuine customer experience stops becoming feedback, responsible replies and visible proof. |
 
 ## Industry page strategy
 
