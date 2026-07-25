@@ -1,0 +1,905 @@
+/* Smart Website Systems — shared base styles.
+   This file now holds only the sections reused as-is by sws-b: Deliberate
+   System, Decision Structure, Arrival Context, Built Work, Useful Actions,
+   Meaningful Measurement, Technical Foundation, Right Fit, Straight Answers
+   and Closing. Hero, Beyond Redesign, Purposeful Content, Distinctive
+   Presence, Proof in Context and Plan to Working System were rebuilt for
+   sws-b and live in sws-b.css. */
+
+.sws-deliberate-system,
+.sws-decision-structure,
+.sws-arrival-context,
+.sws-built-work,
+.sws-useful-actions,
+.sws-meaningful-measurement,
+.sws-technical-foundation,
+.sws-fit,
+.sws-faq,
+.sws-closing {
+  position: relative;
+}
+
+.sws-artifact-label {
+  color: var(--color-emerald-deep);
+  font: var(--label-caps);
+  letter-spacing: var(--label-caps-tracking);
+  text-transform: uppercase;
+}
+
+.on-dark .sws-artifact-label {
+  color: var(--color-emerald);
+}
+
+@keyframes sws-panel-copy-in {
+  from {
+    opacity: 0.35;
+    transform: translateY(0.45rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* ================================================================
+   3 · Deliberate System — a layered cross-section diagram.
+   ================================================================ */
+
+.sws-deliberate-system__diagram {
+  width: 100%;
+  max-width: 46rem;
+  margin-inline: auto;
+}
+
+.sws-deliberate-system__svg {
+  width: 100%;
+  height: auto;
+}
+
+.sws-ds__page-band {
+  fill: var(--surface-card);
+  stroke: var(--border-mist-hairline);
+  stroke-width: 1;
+}
+
+.sws-ds__thinking-band {
+  fill: var(--surface-navy);
+}
+
+.sws-ds__band-label {
+  fill: var(--text-secondary);
+  font: var(--label-caps);
+  letter-spacing: var(--label-caps-tracking);
+  text-transform: uppercase;
+}
+
+.sws-ds__band-label--dim {
+  fill: var(--text-inverse-muted);
+}
+
+.sws-ds__mark-bright {
+  fill: var(--text-primary);
+  opacity: 0.85;
+}
+
+.sws-ds__mark-dim {
+  fill: var(--text-secondary);
+  opacity: 0.4;
+}
+
+.sws-ds__mark-halo {
+  fill: var(--emerald-tint-strong);
+}
+
+.sws-ds__mark-tick {
+  stroke: var(--color-emerald-deep);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+}
+
+.sws-ds__mark-cta {
+  fill: var(--color-emerald-deep);
+  opacity: 0.85;
+}
+
+.sws-ds__root {
+  stroke: var(--color-emerald);
+  stroke-width: 1.5;
+  fill: none;
+}
+
+.sws-ds__root--secondary {
+  stroke: var(--border-navy-hairline);
+  stroke-dasharray: 4 4;
+}
+
+.sws-ds__node {
+  fill: var(--surface-navy);
+  stroke: var(--color-emerald);
+  stroke-width: 2;
+}
+
+.sws-ds__node-label {
+  fill: var(--text-inverse-muted);
+  font: 500 12px/1.4 var(--font-body);
+}
+
+@media (max-width: 36rem) {
+  .sws-deliberate-system__diagram {
+    max-width: 24rem;
+  }
+
+  .sws-ds__node-label {
+    font-size: 11px;
+  }
+}
+
+/* ================================================================
+   4 · Decision Structure — an ascending threshold, not equal boxes.
+   ================================================================ */
+
+.sws-decision-structure {
+  background: var(--surface-card);
+}
+
+.sws-decision-structure__ladder {
+  display: flex;
+  align-items: flex-end;
+  gap: var(--space-5);
+}
+
+.sws-decision-structure__stage {
+  display: flex;
+  flex: 1 1 0;
+  min-width: 0;
+  flex-direction: column;
+  gap: var(--space-3);
+  border-radius: var(--radius-md) var(--radius-md) 0 0;
+  background: var(--surface-sunken);
+  padding: var(--space-6) var(--space-5) var(--space-5);
+}
+
+.sws-decision-structure__stage--one {
+  padding-top: var(--space-5);
+}
+
+/* Ascending weight reads through fill saturation and height alone — a top
+   border here would sit right where the corner radius curves, clashing with
+   it (flagged by the Impeccable design hook; fixed by dropping the border
+   rather than the radius). */
+.sws-decision-structure__stage--two {
+  padding-top: var(--space-7);
+  background: var(--emerald-tint-weak);
+}
+
+.sws-decision-structure__stage--three {
+  padding-top: var(--space-8);
+  background: var(--emerald-tint);
+}
+
+.sws-decision-structure__order {
+  color: var(--color-emerald-deep);
+  font: var(--label-caps);
+  letter-spacing: var(--label-caps-tracking);
+}
+
+.sws-decision-structure__stage h3 {
+  font: 500 1.125rem/1.3 var(--font-display);
+  letter-spacing: var(--display-sm-tracking);
+}
+
+.sws-decision-structure__stage p {
+  font: var(--body-sm);
+}
+
+.sws-decision-structure__threshold {
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+  padding-bottom: var(--space-8);
+}
+
+.sws-decision-structure__threshold span {
+  width: 0.9rem;
+  height: 0.9rem;
+  display: block;
+  border-radius: 50%;
+  background: var(--color-emerald);
+  box-shadow: 0 0 0 0.3rem var(--emerald-tint);
+}
+
+.sws-decision-structure__threshold strong {
+  color: var(--text-primary);
+  font: 600 1rem/1.2 var(--font-display);
+  white-space: nowrap;
+}
+
+@media (max-width: 48rem) {
+  .sws-decision-structure__ladder {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .sws-decision-structure__stage {
+    padding-block: var(--space-5);
+    border-radius: var(--radius-md);
+  }
+
+  .sws-decision-structure__threshold {
+    flex-direction: row;
+    justify-content: center;
+    padding-block: 0;
+  }
+}
+
+/* ================================================================
+   5 · Arrival Context — a signpost tab bar, own mechanism.
+   ================================================================ */
+
+.sws-arrival-context {
+  background: var(--surface-page);
+}
+
+.sws-arrival-context__layout {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.sws-arrival-context__tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.sws-arrival-context__tab {
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-pill);
+  background: var(--surface-card);
+  padding: var(--space-3) var(--space-5);
+  color: var(--text-secondary);
+  cursor: pointer;
+  font: var(--ui-strong);
+  transition:
+    border-color var(--duration-base) var(--ease-out),
+    background-color var(--duration-base) var(--ease-out),
+    color var(--duration-base) var(--ease-out);
+}
+
+.sws-arrival-context__tab.is-active {
+  border-color: var(--color-emerald-deep);
+  background: var(--emerald-tint-weak);
+  color: var(--color-emerald-deep);
+}
+
+.sws-arrival-context__panel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-md);
+  background: var(--surface-card);
+  padding: clamp(var(--space-6), 3.5vw, var(--space-8));
+  animation: sws-panel-copy-in 320ms var(--ease-out) backwards;
+}
+
+.sws-arrival-context__panel-row {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.sws-arrival-context__panel-row p {
+  max-width: var(--measure-copy);
+  font: var(--body-lg);
+}
+
+.sws-arrival-context__panel-row--lead {
+  border-top: 1px solid var(--border-hairline);
+  padding-top: var(--space-5);
+}
+
+.sws-arrival-context__panel-row--lead p {
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .sws-arrival-context__tab:hover {
+    border-color: var(--emerald-line-soft);
+    color: var(--color-emerald-deep);
+  }
+}
+
+/* ================================================================
+   9 · Built Work — featured case + filmstrip, not a symmetric grid.
+   ================================================================ */
+
+.sws-built-work {
+  background: var(--surface-card);
+}
+
+.sws-built-work__feature {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.sws-built-work__feature-frame {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border: 1px solid var(--border-mist-hairline);
+  border-radius: var(--radius-md);
+  aspect-ratio: 17 / 9;
+  background: var(--surface-sunken);
+  box-shadow: var(--elev-raised);
+}
+
+.sws-built-work__feature-image {
+  object-fit: cover;
+  object-position: top center;
+}
+
+.sws-built-work__feature-caption {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--space-6);
+}
+
+.sws-built-work__feature-caption > div {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.sws-built-work__feature-caption small,
+.sws-built-work__frame-caption small {
+  color: var(--color-emerald-deep);
+  font: var(--label-caps);
+  letter-spacing: var(--label-caps-tracking);
+  text-transform: uppercase;
+}
+
+.sws-built-work__feature-caption strong {
+  color: var(--text-primary);
+  font: 600 1.375rem/1.2 var(--font-display);
+  letter-spacing: var(--display-md-tracking);
+}
+
+.sws-built-work__status {
+  width: fit-content;
+  margin-top: var(--space-2);
+  border: 1px solid var(--border-mist-hairline);
+  border-radius: var(--radius-pill);
+  padding: 0.25rem 0.625rem;
+  color: var(--text-secondary);
+  font: var(--body-xs);
+}
+
+.sws-built-work__job {
+  max-width: 26rem;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  color: var(--text-secondary);
+  font: italic 500 1.0625rem/1.5 var(--font-display);
+}
+
+.sws-built-work__provenance {
+  color: var(--text-secondary);
+  font: var(--body-sm);
+}
+
+.sws-built-work__more-label {
+  margin-top: var(--space-2);
+}
+
+.sws-built-work__filmstrip {
+  display: flex;
+  gap: var(--space-5);
+  overflow-x: auto;
+  scroll-snap-type: x proximity;
+  padding-bottom: var(--space-2);
+}
+
+.sws-built-work__frame {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  width: 20rem;
+  overflow: hidden;
+  border: 1px solid var(--border-mist-hairline);
+  border-radius: var(--radius-md);
+  background: var(--surface-card);
+}
+
+.sws-built-work__thumb {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  border-bottom: 1px solid var(--border-mist-hairline);
+}
+
+.sws-built-work__thumb-image {
+  object-fit: cover;
+  object-position: top center;
+}
+
+.sws-built-work__thumb--blue {
+  background: #bdcce2;
+}
+
+.sws-built-work__thumb--sage {
+  background: #d4ddd6;
+}
+
+.sws-built-work__thumb--steel {
+  background: #aabed6;
+}
+
+.sws-built-work__thumb--sand {
+  background: #ead29c;
+}
+
+.sws-built-work__thumb--aqua {
+  background: #9dccd7;
+}
+
+.sws-built-work__frame-caption {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-1);
+  padding: var(--space-4);
+}
+
+.sws-built-work__frame-caption strong {
+  color: var(--text-primary);
+  font: 600 1rem/1.3 var(--font-display);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .sws-built-work__frame {
+    transition:
+      border-color var(--duration-base) var(--ease-out),
+      box-shadow var(--duration-base) var(--ease-out),
+      transform var(--duration-base) var(--ease-out);
+  }
+
+  .sws-built-work__frame:hover {
+    border-color: var(--emerald-line-soft);
+    box-shadow: var(--elev-focal);
+    transform: translateY(-0.25rem);
+  }
+}
+
+@media (max-width: 48rem) {
+  .sws-built-work__feature-caption {
+    flex-direction: column;
+  }
+
+  .sws-built-work__job {
+    max-width: none;
+  }
+}
+
+@media (max-width: 36rem) {
+  .sws-built-work__frame {
+    width: 78vw;
+  }
+}
+
+/* ================================================================
+   10 · Useful Actions — 4-column grid, 6 genuine peers.
+   ================================================================ */
+
+.sws-useful-actions__grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--space-5);
+}
+
+.sws-useful-actions__card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-md);
+  background: var(--surface-card);
+  padding: var(--space-6) var(--space-5);
+}
+
+.sws-useful-actions__icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--emerald-tint);
+  color: var(--color-emerald-deep);
+}
+
+.sws-useful-actions__state {
+  color: var(--text-secondary);
+  font: var(--body-sm);
+}
+
+.sws-useful-actions__action {
+  color: var(--text-primary);
+  font: 600 1.0625rem/1.3 var(--font-display);
+}
+
+.sws-useful-actions__boundary {
+  max-width: var(--measure-copy);
+  margin-inline: auto;
+  text-align: center;
+}
+
+@media (max-width: 64rem) {
+  .sws-useful-actions__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 36rem) {
+  .sws-useful-actions__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ================================================================
+   11 · Meaningful Measurement — a qualitative triptych, no dashboard.
+   ================================================================ */
+
+.sws-meaningful-measurement {
+  background: var(--surface-card);
+}
+
+.sws-meaningful-measurement__triptych {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.sws-mm__baseline {
+  width: 100%;
+  height: 2px;
+}
+
+.sws-mm__baseline-path {
+  stroke: var(--border-hairline);
+  stroke-width: 2;
+}
+
+.sws-mm__lenses {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(var(--space-6), 4vw, var(--space-8));
+}
+
+.sws-mm__lens {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-3);
+}
+
+.sws-mm__glyph {
+  width: 4rem;
+  height: 2.5rem;
+}
+
+.sws-mm__glyph-path {
+  stroke: var(--color-emerald-deep);
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  fill: none;
+}
+
+.sws-mm__glyph-node {
+  fill: var(--color-emerald-deep);
+}
+
+.sws-mm__glyph-dim {
+  fill: var(--border-hairline);
+}
+
+.sws-mm__glyph-flag {
+  fill: var(--color-warning);
+}
+
+.sws-mm__lens strong {
+  color: var(--text-primary);
+  font: 500 1.1875rem/1.3 var(--font-display);
+  letter-spacing: var(--display-sm-tracking);
+}
+
+.sws-mm__lens p {
+  font: var(--body-sm);
+}
+
+@media (max-width: 48rem) {
+  .sws-mm__lenses {
+    grid-template-columns: 1fr;
+    gap: var(--space-7);
+  }
+}
+
+/* ================================================================
+   12 · Technical Foundation — quiet 4-up grid, 4 genuine peers.
+   ================================================================ */
+
+.sws-technical-foundation {
+  background: var(--surface-card);
+}
+
+.sws-technical-foundation__grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(var(--space-6), 4vw, var(--space-8));
+}
+
+.sws-technical-foundation__grid li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+  text-align: center;
+}
+
+.sws-technical-foundation__icon {
+  width: 2.75rem;
+  height: 2.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border-hairline);
+  border-radius: 50%;
+  color: var(--color-emerald-deep);
+}
+
+.sws-technical-foundation__grid strong {
+  color: var(--text-primary);
+  font: 500 1.0625rem/1.3 var(--font-display);
+}
+
+.sws-technical-foundation__grid p {
+  max-width: 16rem;
+  font: var(--body-sm);
+}
+
+@media (max-width: 48rem) {
+  .sws-technical-foundation__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 30rem) {
+  .sws-technical-foundation__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sws-technical-foundation__grid li {
+    align-items: flex-start;
+    text-align: left;
+  }
+}
+
+/* ================================================================
+   14 · Right Fit — Home Fit's exact split composition, reworked tone
+   (mist page, card-toned "not fit" box — inverted from Home's
+   paper page / mist box, to fit this slot's fixed mist surface).
+   ================================================================ */
+
+.sws-fit__layout {
+  --container-gap: clamp(3rem, 5vw, 5rem);
+
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  align-items: stretch;
+}
+
+.sws-fit__good,
+.sws-fit__not {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.sws-fit__not {
+  align-self: start;
+  border: 1px solid var(--border-mist-hairline);
+  border-radius: var(--radius-md);
+  background: var(--surface-card);
+  padding: clamp(2rem, 4vw, 3.5rem);
+}
+
+.sws-fit__good ul,
+.sws-fit__not ul {
+  margin: 0;
+}
+
+.sws-fit__good li,
+.sws-fit__not li {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  border-top: 1px solid var(--border-mist-hairline);
+  padding-block: var(--space-4);
+}
+
+.sws-fit__good li:last-child {
+  border-bottom: 1px solid var(--border-mist-hairline);
+}
+
+.sws-fit__good li > span,
+.sws-fit__not li > span {
+  width: 1.45rem;
+  height: 1.45rem;
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border-mist-hairline);
+  border-radius: 50%;
+  background: var(--surface-card);
+  color: var(--color-emerald-deep);
+  font: 700 0.75rem/1 var(--font-body);
+}
+
+.sws-fit__not li {
+  border: 0;
+  padding-block: var(--space-3);
+  color: var(--text-secondary);
+  font: var(--body-sm);
+}
+
+.sws-fit__not li > span {
+  background: var(--surface-sunken);
+  color: var(--text-secondary);
+}
+
+@media (max-width: 64rem) {
+  .sws-fit__layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 36rem) {
+  .sws-fit__not {
+    padding: var(--space-6);
+  }
+}
+
+/* ================================================================
+   15 · Straight Answers — Home FAQ's exact accordion composition.
+   ================================================================ */
+
+.sws-faq {
+  background: var(--surface-card);
+}
+
+.sws-faq__items {
+  width: 100%;
+  max-width: 54rem;
+  margin-inline: auto;
+}
+
+.sws-faq__items article {
+  border-top: 1px solid var(--border-hairline);
+}
+
+.sws-faq__items article:last-child {
+  border-bottom: 1px solid var(--border-hairline);
+}
+
+.sws-faq__items h3 {
+  font: inherit;
+}
+
+.sws-faq__items button {
+  width: 100%;
+  min-height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-6);
+  border: 0;
+  background: transparent;
+  padding: var(--space-5) 0;
+  color: var(--text-primary);
+  cursor: pointer;
+  font: 500 1.1875rem/1.35 var(--font-display);
+  letter-spacing: -0.008em;
+  text-align: left;
+  transition: color var(--duration-fast) var(--ease-out);
+}
+
+.sws-faq__items article.is-open button {
+  color: var(--color-emerald-deep);
+}
+
+.sws-faq__items button span {
+  width: 1.75rem;
+  height: 1.75rem;
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border-hairline);
+  border-radius: 50%;
+  color: var(--color-emerald-deep);
+  font-size: 1.125rem;
+  transition:
+    border-color var(--duration-fast) var(--ease-out),
+    background-color var(--duration-fast) var(--ease-out);
+}
+
+.sws-faq__items article.is-open button span {
+  border-color: var(--emerald-line-soft);
+  background: var(--emerald-tint-weak);
+}
+
+.sws-faq__items [role="region"] {
+  padding: 0 var(--space-9) var(--space-6) 0;
+  animation: sws-panel-copy-in 320ms var(--ease-out) backwards;
+}
+
+.sws-faq__items [role="region"] p {
+  max-width: var(--measure-copy);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .sws-faq__items button:hover {
+    color: var(--color-emerald-deep);
+  }
+}
+
+@media (max-width: 36rem) {
+  .sws-faq__items [role="region"] {
+    padding-right: 0;
+  }
+}
+
+/* ================================================================
+   16 · Closing — Home Closing's exact composition, all navy.
+   ================================================================ */
+
+.sws-closing {
+  --section-padding-block: clamp(3.5rem, 6vw, 5rem);
+
+  background: var(--surface-navy);
+}
+
+.sws-closing__icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-4);
+}
+
+.sws-closing__icons span {
+  width: 2.75rem;
+  height: 2.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgb(47 185 140 / 14%);
+  color: var(--color-emerald);
+}
+
+.sws-closing + .site-footer,
+body:has(.sws-closing) .site-footer {
+  background: var(--surface-navy);
+}
+
+@media (max-width: 36rem) {
+  .sws-closing__icons {
+    gap: var(--space-2);
+  }
+}

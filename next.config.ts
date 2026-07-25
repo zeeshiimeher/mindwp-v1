@@ -9,17 +9,21 @@ const scriptSrc = [
   .filter(Boolean)
   .join(" ");
 
+// Dev-only allowance so impeccable live mode can load. Guarded by NODE_ENV.
+const __impeccableLiveDev =
+  process.env.NODE_ENV === "development" ? " http://localhost:8400" : "";
+
 const CSP = [
   "default-src 'self'",
   "base-uri 'self'",
-  "connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com https://challenges.cloudflare.com",
+  `connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com https://challenges.cloudflare.com${__impeccableLiveDev}`,
   "font-src 'self' data:",
   "form-action 'self'",
   "frame-ancestors 'none'",
   "frame-src https://challenges.cloudflare.com",
   "img-src 'self' data: blob:",
   "object-src 'none'",
-  scriptSrc,
+  `${scriptSrc}${__impeccableLiveDev}`,
   "style-src 'self' 'unsafe-inline'",
   "upgrade-insecure-requests",
 ].join("; ");
