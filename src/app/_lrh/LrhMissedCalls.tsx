@@ -1,88 +1,83 @@
 /**
- * One event, two outcomes, drawn as two tracks of deliberately unequal length.
+ * One fragment, gaining attributes.
  *
- * The unacknowledged track is grey, dashed, and stops a third of the way down
- * at an open terminus. The acknowledged track is emerald, continuous, runs the
- * full height through three stops and closes with a resolved cap. The
- * difference in *length* is the argument — nothing else has to say it.
+ * Two earlier versions failed for opposite reasons: two text timelines asked
+ * the visitor to read seven lines to reach the point, and an empty box beside a
+ * full one donated a third of the section to a blank rectangle that read as
+ * unfinished rather than as a designed absence.
  *
- * Only the acknowledged track animates, once, on entry: the dead end has
- * nothing to draw. Its rail is a `--lrh-draw`-scaled overlay, so with no JS or
- * under reduced motion the finished track is what renders.
+ * This shows one subject changing instead of two subjects competing. A missed
+ * call leaves a single stark fragment — an unknown number and a time — and the
+ * text-back attaches three things to that same fragment. Same object, before
+ * and after.
+ *
+ * The attachment is scrubbed to the visitor's own scroll rather than played on
+ * entry, because accrual is the meaning: the rail grows and each attribute
+ * lands as they move down the page. No pinning, so trackpads and touch keep
+ * their scroll. `--lrh-scrub` defaults to 1, so without JS or under reduced
+ * motion the finished state is what renders.
  */
 
-const DEAD_END = [
-  "The call rings out.",
-  "Nothing goes back.",
-  "The call ends there, or the caller may try elsewhere.",
-] as const;
-
-const ANSWERED = [
-  "The call rings out.",
-  "An agreed acknowledgement goes back — who you are, and what to do next.",
-  "They can reply, use the route you chose, or wait to be called.",
-  "The missed call sits with a named person until it is returned.",
+const ATTACHED = [
+  ["Acknowledged", "A message they have already received, on the number they rang."],
+  ["Owned", "A named person the call now belongs to."],
+  ["Open", "A thread they can reply to instead of calling the next name."],
 ] as const;
 
 export function LrhMissedCalls() {
   return (
-    <section id="missed-calls" className="lrh-calls section">
-      <div className="container container--split lrh-calls__layout">
-        <div className="lrh-calls__copy section-intro" data-lrh-sequence>
-          <div className="section-title-group">
-            <p className="eyebrow" data-lrh-sequence-item>
-              Missed calls
-            </p>
-            <h2 data-lrh-sequence-item>
-              A call missed during busy work or after hours{" "}
-              <em>should not become a dead end.</em>
-            </h2>
-          </div>
-          <p data-lrh-sequence-item>
-            A call that rings out leaves no message, no name and no reason. Nobody can tell whether
-            it was a new enquiry, a supplier, or someone who has already tried once today. The
-            caller only knows that nobody answered.
+    <section id="missed-calls" className="lrh-calls section section--focal">
+      <div className="container lrh-calls__band">
+        <div className="lrh-calls__copy" data-lrh-sequence>
+          <p className="eyebrow" data-lrh-sequence-item>
+            Missed calls
           </p>
-          <p className="editorial-note" data-lrh-sequence-item>
-            You cannot answer every call. You can make sure no caller is left guessing.
+          <h2 data-lrh-sequence-item>
+            A missed call is the only enquiry <em>that leaves nothing behind.</em>
+          </h2>
+          <p data-lrh-sequence-item>
+            No message, no name, no reason. Nobody can tell whether it was a new enquiry, a
+            supplier, or someone who has already tried once today — and the caller only knows that
+            nobody answered.
+          </p>
+          <p className="lrh-calls__feature" data-lrh-sequence-item>
+            <span className="lrh-artifact-label">The capability</span>
+            <strong>Missed-call text-back.</strong> The call is detected, an agreed message goes out
+            on the number they rang, and the missed call is placed with the person who returns
+            calls.
           </p>
         </div>
 
-        <div className="lrh-calls__tracks">
-          <div className="lrh-calls__track lrh-calls__track--dead">
-            <p className="lrh-artifact-label">Without a first move</p>
-            <ol>
-              <span className="lrh-calls__rail" aria-hidden="true" />
-              {DEAD_END.map((step) => (
-                <li key={step}>
-                  <span className="lrh-calls__node" aria-hidden="true" />
-                  {step}
-                </li>
-              ))}
-            </ol>
-            <p className="lrh-calls__terminus">
-              <span aria-hidden="true" />
-              Nothing continues from here.
+        <div className="lrh-calls__stage" data-lrh-scrub>
+          <div className="lrh-calls__fragment">
+            <p className="lrh-calls__fragment-label">All a missed call leaves behind</p>
+            <p className="lrh-calls__fragment-value">
+              <span>Unknown caller</span>
+              <b aria-hidden="true">·</b>
+              <span>14:32</span>
             </p>
           </div>
 
-          <div className="lrh-calls__track lrh-calls__track--live" data-lrh-draw>
-            <p className="lrh-artifact-label">With an agreed first move</p>
+          <div className="lrh-calls__attached">
+            <span className="lrh-calls__spine" aria-hidden="true" />
+            <span className="lrh-calls__spine-grow" aria-hidden="true" />
+
+            <p className="lrh-calls__nothing">Nothing attached.</p>
+
             <ol>
-              <span className="lrh-calls__rail" aria-hidden="true" />
-              <span className="lrh-calls__rail-draw" aria-hidden="true" />
-              {ANSWERED.map((step) => (
-                <li key={step}>
+              {ATTACHED.map(([label, note], index) => (
+                <li key={label} style={{ "--i": index } as React.CSSProperties}>
                   <span className="lrh-calls__node" aria-hidden="true" />
-                  {step}
+                  <strong>{label}</strong>
+                  <small>{note}</small>
                 </li>
               ))}
             </ol>
-            <p className="lrh-calls__terminus lrh-calls__terminus--resolved">
-              <span aria-hidden="true" />
-              The connection is still open.
-            </p>
           </div>
+
+          <p className="lrh-calls__stage-close">
+            The same missed call — now something a person can pick up.
+          </p>
         </div>
       </div>
     </section>

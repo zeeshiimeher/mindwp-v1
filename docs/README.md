@@ -10,7 +10,6 @@ This directory is MindWP's reusable project memory. Use only the authorities the
 | [STRATEGY.md](./STRATEGY.md)           | Current approved commercial direction, offers, service responsibilities, qualification, conversion direction, page roles and open decisions |
 | [WRITING.md](./WRITING.md)             | Voice, claims discipline and responsible public-language practice                                                                           |
 | [PAGE-PLANNING.md](./PAGE-PLANNING.md) | Page research, jobs, intent, narrative, meaning, proof, boundaries and the compact page-brief contract                                      |
-| [PAGE-PLANS.md](./PAGE-PLANS.md)       | Catalogue of current page jobs, search intents and working section meanings — planning material, not execution briefs until promoted under PAGE-PLANNING's status contract |
 | [DESIGN.md](./DESIGN.md)               | Shared visual grammar, meaning-bearing composition, page experience, responsive intent, motion intent and rendered visual judgement         |
 | [ENGINEERING.md](./ENGINEERING.md)     | Repository-specific source, CSS, responsive, accessibility, interaction, performance and validation rules                                   |
 

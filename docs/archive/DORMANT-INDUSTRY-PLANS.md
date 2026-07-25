@@ -454,3 +454,328 @@ Attract people and families researching future funeral or cemetery arrangements 
 | Yacht-refit, marine-electronics and specialist yacht-service firms | Capture service enquiries, follow estimates and communicate approvals and progress. |
 | Premium event-hire operators | Capture event briefs, route availability checks, follow quotations and support waitlists. |
 | Pre-need funeral and cemetery-planning providers | Capture appointment requests, send information with permission and support agreed document handoff. |
+
+
+
+
+
+/impeccable:impeccable  /ui-ux-pro-max:ui-ux-pro-max  /ui-ux-pro-max:banner-design 
+
+Ok lets Plan the Lead response & handling 
+
+
+please understand the homepage content fully for better understandind and fully preview the design of homepage section by section as well first. please only read the homepage dont read any other page tsx or css files. also dont read the page-plans.md file
+
+you can copy the home hero exactly but exclude the bottom timeline and rebuild the right artifact accoridng. you can copy the fit,faq and homeclosing sections exact same and update content accoridng to lrh.
+
+but LRH inner sections can be totally unique and good design.
+you can use tabs,3 col 6 items card.a split layout,veritcle layout.horizontal layout but make sure design is good.
+also dont create a page/website mockups or etc in sections or illustartions etc.
+
+you must build a beautifull,interactive and good looking design. please dont mix the design/compsition with sections job or content as this way ai builds a bad sections so first then and plan sections and then adjust/write the content accordingly.i attached the homepage screenshot as well you can copy the home hero exactly but rebuild the right artifact.you can copy the fit,faq and homeclosing sections exact same with updated content accoridng to LRH plan.
+
+
+## Lead Response & Handling
+
+### Page job
+
+Protect the first move after calls, forms, messages or consultation requests through truthful acknowledgement, useful context, appropriate routing and visible human ownership.
+
+The service stops at the handoff. MindWP does not make booking, pricing, commercial, professional or clinical decisions.
+
+### SEO
+
+- **Primary target:** `lead response automation`
+- **Supporting targets:** `automated lead response system`, `lead routing automation`, `missed call text back`, `website enquiry automation`
+- **SEO title:** Lead Response Automation for Service Businesses | MindWP
+- **SEO description:** Lead response automation for clinics and service businesses, connecting missed calls, forms and messages to acknowledgement, routing and human ownership.
+
+### Sections
+
+| # | Eyebrow | Heading | Section job |
+|---:|---|---|---|
+| 1 | LEAD RESPONSE | Make sure calls, forms and messages receive a prompt response—and reach the right person. | Introduce the service as the connection between an enquiry arriving, receiving a useful first response and reaching the appropriate person. |
+| 2 | MISSED OWNERSHIP | Received is not the same as handled. | Expose the gap between a system recording an enquiry and a person knowing it requires action. |
+| 3 | USEFUL ACKNOWLEDGEMENT | Respond quickly without sounding robotic—or pretending the answer is ready. | Explain how a truthful response can confirm receipt and set expectations without giving unapproved answers. |
+| 4 | CONTACT ROUTES | Calls, forms, messages and consultation requests each need an agreed first move. | Show that each contact channel requires an appropriate response and destination rather than identical handling. |
+| 5 | MISSED CALLS | A call missed during busy work or after hours should not become a dead end. | Explain how missed-call acknowledgement can preserve the connection and guide the caller towards an appropriate next step. |
+| 6 | DIFFERENT REQUESTS | A treatment question, booking request and new project should not receive the same path. | Show how enquiries can be distinguished and directed according to what the person needs. |
+| 7 | NECESSARY CONTEXT | Capture only what helps the right person understand the request. | Explain how useful details prepare the handoff without creating an excessive form or collecting unnecessary information. |
+| 8 | VISIBLE OWNERSHIP | The system makes the first move. Your team owns what follows. | Show how each enquiry reaches someone who can see what arrived, what was acknowledged and why it requires attention. |
+| 9 | HUMAN BOUNDARY | Automation can acknowledge and route. The right person still decides. | Establish that people remain responsible for bookings, quotations, advice and professional judgement. |
+| 10 | RESPONSE SETUP | Map the routes. Agree the first moves. Test every handoff. | Explain how MindWP plans the enquiry paths, connects their destinations and verifies that each handoff works. |
+| 11 | RIGHT FIT | Best where worthwhile enquiries arrive—and a person is ready to own what follows. | Qualify businesses with genuine incoming demand and the human capacity to take responsibility after the handoff. |
+| 12 | STRAIGHT ANSWERS | Questions about acknowledgement, routing, handoff and responsibility. | Resolve practical concerns about contact channels, response timing, automation, privacy and the human role. |
+| 13 | VISIBILITY & ENQUIRY REVIEW | See whether each enquiry has a clear first move and a visible owner. | Invite the business to identify where incoming enquiries currently lose clarity, momentum or ownership. |
+
+
+MindWP's audience for this page is the business owner deciding whether to buy a local seo but along with encouraging why smart website is better and imoprtant; it's not a patient-facing page, and it should never narrate a patient's medical situation or how a practitioner assesses etc.
+
+
+
+
+Clone the current Local SEO Authority page into an isolated noindex variant as lseo-legacy. Keep the current live route unchanged.
+Apply the revised Local SEO Authority plan attached below
+Reuse the current page’s accepted visual language and most existing section compositions. Do not redesign the complete page.
+Reorder and map the existing designs as follows:
+
+* Keep the Hero.
+* Keep Beyond Rankings.
+* Move the current search-intent section to Section 3.
+* Keep the four-connected-responsibilities treatment for Trust Is Built in Layers.
+* Recompose the current early navy section as Business Profile, preserving its environment but creating a larger and more concrete profile artefact.
+* Move and keep the current landing-page section.
+* Keep the five-entry-point treatment for Consistent Business Information.
+* Keep the Reviews & Proof section.
+* Build a new Local Authority section.
+* Fully rebuild Meaningful Measures.
+* Reuse the current “What is actually managed” table for Ongoing Management.
+* Keep Where to Start, Right Fit, FAQ and the closing review CTA.
+
+Do not preserve the current order when it conflicts with the revised plan.
+The major design work is limited to:
+
+1. Business Profile — recompose.
+2. Local Authority — new.
+3. Meaningful Measures — rebuild.
+4. Ongoing Management — content and table refinement.
+
+Keep cards, grids, interfaces and other familiar techniques available when the meaning supports them. Do not pursue difference by banning components.
+Render the entire variant at 1600px and 400px before asking for section-level approval.
+Clone the current Local SEO Authority page into an isolated noindex variant. Keep the current live route unchanged.
+Apply the revised Local SEO Authority plan from `page-plans.md`.
+Reuse the current page’s accepted visual language and most existing section compositions. Do not redesign the complete page.
+Reorder and map the existing designs as follows:
+
+* Keep the Hero.
+* Keep Beyond Rankings.
+* Move the current search-intent section to Section 3.
+* Keep the four-connected-responsibilities treatment for Trust Is Built in Layers.
+* Recompose the current early navy section as Business Profile, preserving its environment but creating a larger and more concrete profile artefact.
+* Move and keep the current landing-page section.
+* Keep the five-entry-point treatment for Consistent Business Information.
+* Keep the Reviews & Proof section.
+* Build a new Local Authority section.
+* Fully rebuild Meaningful Measures.
+* Reuse the current “What is actually managed” table for Ongoing Management.
+* Keep Where to Start, Right Fit, FAQ and the closing review CTA.
+
+Do not preserve the current order when it conflicts with the revised plan.
+The major design work is limited to:
+
+1. Business Profile — recompose.
+2. Local Authority — new.
+3. Meaningful Measures — rebuild.
+4. Ongoing Management — content and table refinement.
+
+Keep cards, grids, interfaces and other familiar techniques available when the meaning supports them. Do not pursue difference by banning components.
+Render the entire variant at 1600px and 400px before asking for section-level approval.
+you can read the homepage code i also attached the screenshots of homepage and lseo as design reference only .
+
+do not read sws or any other page 
+home is the only approved and css fined tune page which you can read only as inspiration.
+dont read core docs or page-plans.md 
+
+Local SEO Authority
+
+Status
+
+Fixed: Page job, service responsibility, cross-service boundaries, section order and primary CTA.
+
+Approved working copy: Section eyebrows and headlines.
+
+Adaptable: Supporting copy, examples, grouping within each section and visual composition.
+
+Open / unresearched: Final keyword targets and search-demand validation.
+
+Unavailable unless supplied: Testimonials, performance metrics, ranking claims, lead claims and quantified results.
+
+Page job
+
+Help suitable nearby patients and customers discover, assess and choose a clinic or expert-led business across Google Search, Maps and the website.
+
+Align genuine services and locations, the Google Business Profile, relevant website pages, consistent business information, existing reviews, local relevance and useful measurement.
+
+Local SEO Authority owns ongoing local discovery and evaluation.
+
+Smart Website Systems owns the wider website decision and enquiry path.
+
+Reputation & Review owns systematic review requests, feedback handling and replies.
+
+MindWP does not sell ranking positions, manage advertising or promise leads.
+
+SEO
+
+The following targets are working directions and remain open until validated through current keyword research.
+
+Primary target: local SEO services
+
+Supporting targets: local SEO for clinics, local SEO for professional services, Google Business Profile optimisation services, local search optimisation services
+
+SEO title: Local SEO Services for Clinics & Expert-Led Businesses | MindWP
+
+SEO description: Local SEO services for clinics and expert-led businesses, aligning Google Business Profile, website pages, business information and genuine reviews.
+
+Sections
+
+#
+
+Eyebrow
+
+Heading
+
+Section job
+
+1
+
+LOCAL SEO
+
+Be found nearby—and give customers a reason to choose you.
+
+Introduce Local SEO as visibility connected to trust and customer choice.
+
+2
+
+BEYOND RANKINGS
+
+Visibility earns the look. What they find next shapes the decision.
+
+Establish that ranking is only the beginning; the search result, profile and website must support the decision.
+
+3
+
+SEARCH INTENT
+
+Focus on the services, places and searches your business can genuinely serve.
+
+Explain how MindWP prioritises relevant searches grounded in real services, real locations and genuine customer needs rather than chasing every keyword.
+
+4
+
+TRUST IS BUILT IN LAYERS
+
+The profile, website, proof and business details need to tell one credible story.
+
+Introduce the connected local-trust model and show how its main parts support one another.
+
+5
+
+BUSINESS PROFILE
+
+Make the first local impression accurate, useful and worth exploring.
+
+Show how the Google Business Profile answers practical questions and encourages suitable customers to investigate further.
+
+6
+
+LANDING PAGES
+
+The search result earns the visit. The right page must carry the decision forward.
+
+Explain how relevant service and location pages continue the answer, build confidence and provide an appropriate next step.
+
+7
+
+CONSISTENT BUSINESS INFORMATION
+
+Keep the same services, locations and business details wherever customers check.
+
+Show how accurate names, contact details, locations, service areas and service descriptions should remain consistent across the website, Google Business Profile and credible listings.
+
+8
+
+REVIEWS & PROOF
+
+Genuine customer experience shortens the distance to trust.
+
+Explain how existing genuine reviews and relevant evidence help nearby customers evaluate the business. Systematic review requests, feedback handling and replies remain the responsibility of Reputation & Review.
+
+9
+
+LOCAL AUTHORITY
+
+Build local relevance through useful pages, credible mentions and real relationships.
+
+Cover sustainable local relevance through useful content, credible local mentions and genuine relationships without manufactured pages, artificial links or shortcuts.
+
+10
+
+MEANINGFUL MEASURES
+
+Measure discovery, profile actions, website behaviour and useful enquiry signals—not rankings alone.
+
+Explain how progress is assessed across search visibility, profile activity, website behaviour and relevant enquiries without claiming perfect attribution or guaranteed commercial outcomes.
+
+11
+
+ONGOING MANAGEMENT
+
+A local presence needs tending, not a launch date.
+
+Set the expectation that profiles, pages, business information and proof need to remain current as the business changes.
+
+12
+
+WHERE TO START
+
+The weakest part of your local presence should set the priority.
+
+Show that the work is prioritised around the actual weakness rather than delivered as an identical checklist.
+
+13
+
+RIGHT FIT
+
+Best for clinics and expert-led businesses whose customers compare locally before choosing.
+
+Qualify clinics and expert-led businesses where local visibility, trust and a considered decision matter, while identifying when Local SEO is not the immediate priority.
+
+14
+
+STRAIGHT ANSWERS
+
+Questions about profiles, pages, reviews and ongoing local SEO.
+
+Resolve practical buyer questions and misconceptions without publishing client-specific scope, ownership, maintenance or delivery terms.
+
+15
+
+VISIBILITY & ENQUIRY REVIEW
+
+See what nearby customers can find, understand and act on before they choose.
+
+Invite the business to review its current local discovery and decision journey and identify the right starting point.
+
+Page progression
+
+Discovered → matched → inspected → verified → trusted → strengthened → measured → maintained → prioritised → reviewed
+
+CTA
+
+Primary CTA: Request a Visibility & Enquiry Review
+
+Short CTA: Request a Review
+
+Scope: Review how nearby customers find the business, what they see across Search, Maps and the website, what supports trust, and where improvement should begin.
+
+Public-page boundary
+
+Client-specific responsibilities, exact deliverables, access, maintenance, ownership, reporting frequency and ongoing-management boundaries remain outside the public page.
+
+Those details belong in the review, proposal and agreed scope.
+
+The public page must not promise:
+
+ranking positions;
+
+lead volume;
+
+booking volume;
+
+revenue;
+
+review ratings;
+
+perfect attribution;
+
+advertising outcomes.

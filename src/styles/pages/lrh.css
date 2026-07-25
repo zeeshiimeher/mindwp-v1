@@ -1,11 +1,20 @@
 /* Lead Response & Handling.
 
-   Surface rhythm is composed across the page rather than alternated: navy
-   arrives for the promise (hero), the connected-system comparison (contact
-   routes), the page's centre (visible ownership and the boundary that follows
-   it) and closure. Paper and mist each carry two adjacent sections, so the
-   change between neighbours comes from density and composition rather than a
-   background swap. */
+   Two rules govern this page, and they exist because the first build read like
+   a well-set article: thirteen text blocks under thirteen identical headings.
+
+   1 · No two neighbouring sections share a surface. Five surfaces are in
+       rotation — navy, paper, sunken, mist, white — so the page changes ground
+       under the reader at every step.
+
+   2 · No two neighbouring sections share an entry. A standard eyebrow-heading-
+       lede opening is used four times, not eleven; the rest open on a statement
+       alone, on their artefact, or with the heading embedded beside the payload.
+
+   Alongside those, the moves that give the page object presence rather than
+   article flatness: two bands run edge to edge, the important objects carry
+   real elevation, oversized numerals anchor two compositions, and one payload
+   deliberately breaks the container's right edge. */
 
 .lrh-hero,
 .lrh-gap,
@@ -15,7 +24,7 @@
 .lrh-requests,
 .lrh-context,
 .lrh-handoff,
-.lrh-boundary,
+.lrh-automation,
 .lrh-setup,
 .lrh-fit,
 .lrh-faq,
@@ -23,21 +32,32 @@
   position: relative;
 }
 
+/* ---- Surface rotation ---- */
+
 .lrh-hero,
 .lrh-routes,
-.lrh-handoff,
-.lrh-boundary,
+.lrh-automation,
 .lrh-closing {
   background: var(--surface-navy);
 }
 
 .lrh-gap,
-.lrh-ack,
 .lrh-calls,
-.lrh-fit,
-.lrh-faq {
+.lrh-handoff,
+.lrh-setup {
   background: var(--surface-page);
 }
+
+.lrh-ack {
+  background: var(--surface-sunken);
+}
+
+.lrh-context,
+.lrh-faq {
+  background: var(--surface-card);
+}
+
+/* .lrh-requests and .lrh-fit take mist from the shared `on-mist` class. */
 
 .lrh-artifact-label {
   color: var(--color-emerald-deep);
@@ -65,9 +85,6 @@
 
 /* ================================================================
    1 · Hero
-   The headline and the relay share the stage. No journey rail beneath:
-   the artwork already carries arrival, acknowledgement, ownership and the
-   handoff, so a second horizontal legend would only repeat it.
    ================================================================ */
 
 .lrh-hero {
@@ -82,7 +99,7 @@
 
   grid-template-columns: minmax(0, 1.06fr) minmax(0, 0.94fr);
   align-items: center;
-  padding-block: clamp(3.5rem, 6vw, 5.5rem) clamp(3.5rem, 6vw, 5.5rem);
+  padding-block: clamp(3.5rem, 6vw, 5.5rem);
 }
 
 .lrh-hero__intro {
@@ -93,8 +110,7 @@
 }
 
 /* A fourteen-word promise cannot take the Homepage's three-word display size:
-   at --display-2xl it runs to six lines and the artwork loses the stage. One
-   step down keeps the same voice and lands it in five. */
+   at --display-2xl it runs to six lines and the artwork loses the stage. */
 .lrh-hero h1 {
   font-size: clamp(2.375rem, 1.55rem + 2.9vw, 3.875rem);
   color: var(--text-inverse);
@@ -116,11 +132,10 @@
   justify-content: center;
 }
 
-/* ---- Hero artwork ----
-   Base values are the finished still: every stroke drawn, both nodes lit,
-   all three rail steps marked. The loop adds travelling pulses and a
-   sequencing rail on top of that, so reduced motion and a script-free render
-   both land on a complete composition. */
+/* ---- Hero artwork: three scenes, one frame ----
+   Base values are the finished still — the Owned scene, every stroke drawn,
+   every rail step marked — so reduced motion and a script-free render both land
+   on the outcome rather than an empty frame. */
 
 .lrh-art {
   --la-loop: 15s;
@@ -128,14 +143,14 @@
 
   position: relative;
   width: 100%;
-  max-width: 39rem;
+  max-width: 38rem;
 }
 
 .lrh-art__glow {
   position: absolute;
-  top: 6%;
-  left: 18%;
-  width: 52%;
+  top: 4%;
+  left: 22%;
+  width: 56%;
   aspect-ratio: 1;
   border-radius: 50%;
   background: var(--emerald-glow);
@@ -153,8 +168,6 @@
   display: none;
 }
 
-/* Channels */
-
 .lrh-art__chip {
   fill: var(--surface-navy-panel);
   stroke: var(--border-navy-hairline);
@@ -162,39 +175,43 @@
 }
 
 .lrh-art__chip-label {
-  fill: var(--text-inverse-muted);
-  font: 500 13px/1 var(--font-body);
-  letter-spacing: 0.02em;
+  fill: var(--text-inverse);
+  font: 500 15px/1 var(--font-body);
+  letter-spacing: 0.01em;
 }
 
-.lrh-art__channel {
-  animation: la-channel var(--la-loop) var(--ease-out) infinite;
-  animation-delay: calc(var(--i) * 0.18s);
+/* The sender, still present but no longer the subject. */
+.lrh-art__chip-group--dim {
+  opacity: 0.45;
 }
-
-/* Strokes */
 
 .lrh-art__converge path {
   fill: none;
   stroke: var(--emerald-line-soft);
-  stroke-width: 1.5;
+  stroke-width: 1.75;
   stroke-linecap: round;
+  stroke-dasharray: 1;
+  animation: la-converge var(--la-loop) var(--ease-out) infinite;
 }
 
 .lrh-art__ack {
   stroke: var(--color-emerald);
-  stroke-width: 1.75;
-  stroke-linecap: round;
-}
-
-.lrh-art__onward {
-  stroke: var(--color-emerald);
   stroke-width: 2;
   stroke-linecap: round;
+  stroke-dasharray: 1;
+  animation: la-ack var(--la-loop) var(--ease-out) infinite;
 }
 
 .lrh-art__arrowhead {
   fill: var(--color-emerald);
+}
+
+.lrh-art__onward {
+  stroke: var(--color-emerald);
+  stroke-width: 2.25;
+  stroke-linecap: round;
+  stroke-dasharray: 1;
+  animation: la-onward var(--la-loop) var(--ease-out) infinite;
 }
 
 .lrh-art__boundary {
@@ -212,12 +229,23 @@
   opacity: 0.45;
 }
 
-/* Nodes */
+.lrh-art__tag {
+  fill: var(--emerald-tint);
+  stroke: var(--emerald-line-soft);
+  stroke-width: 1;
+}
+
+.lrh-art__tag-label {
+  fill: var(--color-emerald);
+  font: 600 13px/1 var(--font-body);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
 
 .lrh-art__node {
   fill: var(--surface-navy-panel);
   stroke: var(--color-emerald);
-  stroke-width: 1.75;
+  stroke-width: 2;
 }
 
 .lrh-art__node-core {
@@ -231,7 +259,7 @@
 .lrh-art__owner-glyph {
   fill: none;
   stroke: var(--color-emerald);
-  stroke-width: 1.8;
+  stroke-width: 2;
   stroke-linecap: round;
 }
 
@@ -245,16 +273,18 @@
   animation: la-halo var(--la-loop) var(--ease-out) infinite;
 }
 
-/* Labels */
-
 .lrh-art__label {
   fill: var(--text-inverse);
-  font: 500 14px/1 var(--font-body);
-  letter-spacing: 0.005em;
+  font: 500 15px/1 var(--font-body);
 }
 
-.lrh-art__label--ack {
-  fill: var(--color-emerald);
+.lrh-art__caption {
+  fill: var(--text-inverse-muted);
+  font: 400 15px/1 var(--font-body);
+}
+
+.lrh-art__svg--narrow .lrh-art__caption {
+  font-size: 14px;
 }
 
 .lrh-art__boundary-label {
@@ -263,8 +293,6 @@
   letter-spacing: 0.09em;
   text-transform: uppercase;
 }
-
-/* Step rail */
 
 .lrh-art__rail {
   stroke: var(--border-navy-hairline);
@@ -287,103 +315,99 @@
   letter-spacing: 0.01em;
 }
 
-.lrh-art__svg--narrow .lrh-art__step-label {
-  font-size: 14px;
+/* ---- The scene timeline ---- */
+
+.lrh-art__scene--a {
+  opacity: 0;
+  animation: la-scene-a var(--la-loop) var(--ease-out) infinite;
 }
 
-/* Travelling pulses. Only rendered where offset-path resolves, so an
-   unsupported engine gets the still composition instead of a dot parked at
-   the origin. */
-
-.lrh-art__pulse {
-  display: none;
+.lrh-art__scene--b {
+  opacity: 0;
+  animation: la-scene-b var(--la-loop) var(--ease-out) infinite;
 }
 
-@supports (offset-path: path("M 0 0 L 1 1")) {
-  .lrh-art__pulse {
-    display: block;
-    fill: var(--color-emerald);
-    opacity: 0;
-    transform-box: view-box;
-    offset-rotate: 0deg;
-    animation: la-pulse var(--la-loop) linear infinite;
-  }
-
-  .lrh-art__pulse--ack {
-    animation-name: la-pulse-ack;
-  }
-
-  .lrh-art__svg--wide .lrh-art__pulse {
-    offset-path: path("M 122 245 C 166 245, 178 228, 214 228 L 570 228");
-  }
-
-  .lrh-art__svg--wide .lrh-art__pulse--ack {
-    offset-path: path("M 242 201 C 242 142, 236 116, 176 112");
-  }
-
-  .lrh-art__svg--narrow .lrh-art__pulse {
-    offset-path: path("M 180 48 C 180 92, 118 96, 76 108 L 76 348");
-  }
-
-  .lrh-art__svg--narrow .lrh-art__pulse--ack {
-    offset-path: path("M 76 196 C 128 196, 150 186, 168 166");
-  }
+.lrh-art__scene--c {
+  animation: la-scene-c var(--la-loop) var(--ease-out) infinite;
 }
 
-@keyframes la-pulse {
-  0% {
-    offset-distance: 0%;
-    opacity: 0;
-  }
-
-  4% {
-    opacity: 1;
-  }
-
-  62% {
-    offset-distance: 100%;
-    opacity: 1;
-  }
-
-  70%,
-  100% {
-    offset-distance: 100%;
-    opacity: 0;
-  }
-}
-
-@keyframes la-pulse-ack {
+@keyframes la-scene-a {
   0%,
-  26% {
-    offset-distance: 0%;
+  28% {
+    opacity: 1;
+  }
+
+  33%,
+  95% {
     opacity: 0;
   }
 
-  30% {
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes la-scene-b {
+  0%,
+  28% {
+    opacity: 0;
+  }
+
+  33%,
+  61% {
     opacity: 1;
   }
 
-  44% {
-    offset-distance: 100%;
+  66%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes la-scene-c {
+  0%,
+  61% {
+    opacity: 0;
+  }
+
+  66%,
+  100% {
     opacity: 1;
+  }
+}
+
+@keyframes la-converge {
+  0% {
+    stroke-dashoffset: 1;
+  }
+
+  18%,
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes la-ack {
+  0%,
+  34% {
+    stroke-dashoffset: 1;
   }
 
   50%,
   100% {
-    offset-distance: 100%;
-    opacity: 0;
+    stroke-dashoffset: 0;
   }
 }
 
-@keyframes la-channel {
+@keyframes la-onward {
   0%,
-  4% {
-    opacity: 0.55;
+  67% {
+    stroke-dashoffset: 1;
   }
 
-  12%,
+  80%,
   100% {
-    opacity: 1;
+    stroke-dashoffset: 0;
   }
 }
 
@@ -393,41 +417,35 @@
     scale: 0.72;
   }
 
-  18% {
-    opacity: 0;
-    scale: 1.05;
-  }
-
+  20%,
   100% {
     opacity: 0;
-    scale: 1.05;
+    scale: 1.06;
   }
 }
 
 @keyframes la-step {
   0%,
   30% {
-    opacity: 1;
-    scale: 1.32;
+    scale: 1.34;
   }
 
   40%,
   100% {
-    opacity: 1;
     scale: 1;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .lrh-art__channel,
+  .lrh-art__scene--a,
+  .lrh-art__scene--b,
+  .lrh-art__scene--c,
+  .lrh-art__converge path,
+  .lrh-art__ack,
+  .lrh-art__onward,
   .lrh-art__halo,
-  .lrh-art__step-dot,
-  .lrh-art__pulse {
+  .lrh-art__step-dot {
     animation: none;
-  }
-
-  .lrh-art__pulse {
-    display: none;
   }
 }
 
@@ -459,8 +477,7 @@
   line-height: 0.95;
   /* Display tracking and the hero WONK axis are both wrong for an outlined
      word: the tight fit plus Fraunces' wonky ascenders makes the d–l pair in
-     "Handled" read as an extra stem. Both words take the calmer axis and open
-     up, so the pair still looks like one treatment. */
+     "Handled" read as an extra stem. */
   font-variation-settings: var(--display-axes);
   letter-spacing: -0.004em;
 }
@@ -477,8 +494,8 @@
 }
 
 @supports (-webkit-text-stroke: 1px currentcolor) {
-  /* Ghosted rather than pure outline: a trace of fill keeps each letter
-     reading as one shape instead of a set of loose stems. */
+  /* Ghosted rather than pure outline: a trace of fill keeps each letter reading
+     as one shape instead of a set of loose stems. */
   .lrh-gap__word--hollow {
     color: var(--color-ink);
     opacity: 1;
@@ -516,195 +533,209 @@
 }
 
 /* ================================================================
-   3 · Useful acknowledgement — the message, annotated
+   3 · Useful acknowledgement — a subset, drawn
+   Containment rather than adjacency: one ordered list of everything a person
+   wants settled, with a frame around only the part the automated response can
+   reach.
    ================================================================ */
 
-.lrh-ack__stage {
+.lrh-ack__band {
   display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
-  gap: clamp(2.5rem, 4.5vw, 4.5rem);
-  align-items: start;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  gap: clamp(2.5rem, 5vw, 5rem);
+  align-items: center;
 }
 
-.lrh-ack__message {
-  margin: 0;
-  border: 1px solid var(--border-hairline);
-  border-radius: var(--radius-lg);
-  background: var(--surface-card);
-  padding: clamp(1.75rem, 3.5vw, 3rem);
-  box-shadow: var(--elev-raised);
-}
-
-.lrh-ack__message > p:first-child {
-  color: var(--text-primary);
-  font: 400 clamp(1.25rem, 1.02rem + 0.92vw, 1.75rem) / 1.55 var(--font-display);
-  letter-spacing: -0.006em;
-}
-
-.lrh-ack__clause {
-  border-radius: 0.3rem;
-  padding: 0.08em 0.06em;
-  transition:
-    background-color var(--duration-base) var(--ease-out),
-    color var(--duration-base) var(--ease-out);
-}
-
-.lrh-ack__clause[data-active] {
-  background: var(--emerald-tint);
-}
-
-.lrh-ack__clause sup {
-  margin-inline-start: 0.15em;
-  color: var(--color-emerald-deep);
-  font: 600 0.5em/1 var(--font-body);
-  letter-spacing: 0.06em;
-  vertical-align: super;
-}
-
-/* The words MindWP does not write. Marked as a variable rather than left to
-   look like unfinished copy. */
-/* Padding here shows up as a gap before the following full stop, so it stays
-   tight enough to read as one word rather than a dropped character. */
-.lrh-ack__slot {
-  border-bottom: 1px dashed var(--emerald-line);
-  background: var(--emerald-tint-weak);
-  padding: 0.02em 0.07em;
-  color: var(--color-emerald-deep);
-  font-style: italic;
-}
-
-.lrh-ack__legend {
-  margin-top: var(--space-6);
-  border-top: 1px solid var(--border-hairline);
-  padding-top: var(--space-4);
-  font: var(--body-sm);
-}
-
-.lrh-ack__notes {
-  margin: 0;
-  border-top: 1px solid var(--border-hairline);
-}
-
-.lrh-ack__notes li {
-  border-bottom: 1px solid var(--border-hairline);
-}
-
-.lrh-ack__notes button {
-  width: 100%;
+/* The intro leads the markup because it leads the reading, then swaps to the
+   right-hand column on desktop by explicit placement. `direction: rtl` would
+   have done it in one line and dragged punctuation and alignment along too. */
+.lrh-ack__intro {
+  grid-column: 2;
+  grid-row: 1;
   display: flex;
-  align-items: baseline;
+  flex-direction: column;
+  align-items: flex-start;
   gap: var(--space-4);
-  border: 0;
-  border-inline-start: 2px solid transparent;
-  background: transparent;
-  padding: var(--space-5) var(--space-4) var(--space-5) var(--space-4);
-  text-align: left;
-  cursor: pointer;
-  transition:
-    background-color var(--duration-base) var(--ease-out),
-    border-color var(--duration-base) var(--ease-out);
 }
 
-.lrh-ack__notes li[data-active] button {
-  border-inline-start-color: var(--color-emerald);
-  background: var(--emerald-tint-weak);
+.lrh-ack__intro h2 {
+  max-width: 20ch;
 }
 
-.lrh-ack__notes small {
-  flex: 0 0 auto;
-  color: var(--color-emerald-deep);
-  font-variant-numeric: tabular-nums;
-}
-
-.lrh-ack__notes span {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-2);
-  color: var(--text-secondary);
-  font: var(--body-sm);
-}
-
-.lrh-ack__notes strong {
-  color: var(--text-primary);
-  font: 500 1.0625rem/1.35 var(--font-display);
-}
-
-.lrh-ack__boundary {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-3);
-  border-top: 1px solid var(--border-hairline);
-  padding-top: var(--space-5);
-}
-
-.lrh-ack__boundary > p {
+.lrh-ack__intro > p:last-child {
   max-width: var(--measure-copy);
 }
 
+.lrh-ack__set {
+  --lrh-scrub: 1;
+
+  grid-column: 1;
+  grid-row: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  border: 1px solid var(--border-mist-hairline);
+  border-radius: var(--radius-lg);
+  background: var(--surface-card);
+  padding: clamp(1.75rem, 3.2vw, 2.75rem);
+  box-shadow: var(--elev-raised);
+}
+
+.lrh-ack__set-label {
+  color: var(--text-secondary);
+  font: var(--label-caps);
+  letter-spacing: var(--label-caps-tracking);
+  text-transform: uppercase;
+}
+
+/* The subset. The frame is the argument — the reach of the automated response
+   is strictly smaller than what was asked. */
+.lrh-ack__reach {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  border-radius: var(--radius-md);
+  background: var(--emerald-tint-weak);
+  padding: clamp(1.25rem, 2.4vw, 1.75rem);
+}
+
+/* Drawn by the scroll rather than simply present: the boundary is established
+   as you arrive at it. Base value is 1, so it is complete without JS. */
+.lrh-ack__reach-edge {
+  position: absolute;
+  inset: 0;
+  border: 1px solid var(--emerald-line);
+  border-radius: var(--radius-md);
+  clip-path: inset(0 calc((1 - var(--lrh-scrub)) * 100%) 0 0);
+  pointer-events: none;
+}
+
+.lrh-ack__reach-label {
+  color: var(--color-emerald-deep);
+  font: var(--label-caps);
+  letter-spacing: var(--label-caps-tracking);
+  text-transform: uppercase;
+  opacity: clamp(0, calc(var(--lrh-scrub) * 2 - 0.7), 1);
+  translate: calc((1 - clamp(0, calc(var(--lrh-scrub) * 2 - 0.7), 1)) * -0.75rem) 0;
+}
+
+.lrh-ack__set ol {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin: 0;
+  padding-inline-start: var(--space-7);
+  list-style: decimal-leading-zero;
+}
+
+.lrh-ack__set li {
+  padding-inline-start: var(--space-2);
+  font: 500 clamp(1.0625rem, 0.94rem + 0.46vw, 1.375rem) / 1.3 var(--font-display);
+  letter-spacing: var(--display-md-tracking);
+}
+
+.lrh-ack__set li::marker {
+  color: var(--color-emerald-deep);
+  font: var(--body-xs);
+  font-variant-numeric: tabular-nums;
+}
+
+.lrh-ack__reach li {
+  color: var(--text-primary);
+}
+
+/* Outside the frame: the same list, continuing, but nothing the system can
+   answer. */
+.lrh-ack__beyond {
+  padding-block: var(--space-1) var(--space-2);
+}
+
+.lrh-ack__beyond li,
+.lrh-ack__beyond li::marker {
+  color: var(--text-secondary);
+}
+
+.lrh-ack__close {
+  border-top: 1px solid var(--border-hairline);
+  padding-top: var(--space-4);
+  max-width: var(--measure-copy);
+  font: var(--body-sm);
+}
+
 /* ================================================================
-   4 · Contact routes — four peers, three shared properties
-   One lattice so the eye can read across as well as down. The row labels
-   exist inside every column for assistive technology and are hidden only
-   while the gutter is doing that job visually.
+   4 · Contact routes — four verdicts, read across
+   Oversized outlined numerals give the band graphic weight of its own rather
+   than leaving text floating on navy.
    ================================================================ */
 
 .lrh-routes__grid {
   display: grid;
-  grid-template-columns: minmax(7rem, 0.62fr) repeat(4, minmax(0, 1fr));
-  column-gap: clamp(1.25rem, 2.4vw, 2.25rem);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0;
+  margin: 0;
   border-top: 1px solid var(--border-navy-hairline);
 }
 
-.lrh-routes__gutter,
-.lrh-routes__col,
-.lrh-routes__col dl,
-.lrh-routes__col dl > div {
-  display: contents;
+.lrh-routes__col {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: var(--space-6) clamp(1.25rem, 2.2vw, 2.25rem) var(--space-7) 0;
 }
 
-.lrh-routes__gutter span {
-  grid-column: 1;
-  grid-row: var(--row);
-  align-self: start;
-  border-top: 1px solid var(--border-navy-hairline);
-  padding-block: var(--space-5);
+.lrh-routes__col + .lrh-routes__col {
+  border-inline-start: 1px solid var(--border-navy-hairline);
+  padding-inline-start: clamp(1.25rem, 2.2vw, 2.25rem);
+}
+
+.lrh-routes__numeral {
+  display: block;
+  color: transparent;
+  font: var(--display-2xl);
+  font-size: clamp(2.75rem, 3.6vw, 4.25rem);
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+  -webkit-text-stroke: 1px var(--color-navy-hairline);
+}
+
+.lrh-routes__channel {
   color: var(--color-emerald);
   font: var(--label-caps);
   letter-spacing: var(--label-caps-tracking);
   text-transform: uppercase;
 }
 
-.lrh-routes__col > h3 {
-  grid-column: var(--col);
-  grid-row: 1;
-  padding-block: var(--space-6) var(--space-5);
+/* The three-second layer: four short verdicts, readable across the whole row. */
+.lrh-routes__verdict {
   color: var(--text-inverse);
-  font: 500 clamp(1.125rem, 1rem + 0.5vw, 1.4375rem) / 1.2 var(--font-display);
+  font: 500 clamp(1.25rem, 1rem + 0.95vw, 1.75rem) / 1.18 var(--font-display);
   letter-spacing: var(--display-md-tracking);
+  text-wrap: balance;
+}
+
+.lrh-routes__col dl {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  margin-top: var(--space-4);
+  border-top: 1px solid var(--border-navy-hairline);
+  padding-top: var(--space-4);
 }
 
 .lrh-routes__col dt {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  clip-path: inset(50%);
-  white-space: nowrap;
+  margin-bottom: 0.15rem;
+  color: var(--text-inverse-muted);
+  font: var(--body-xs);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  opacity: 0.7;
 }
 
 .lrh-routes__col dd {
-  grid-column: var(--col);
-  grid-row: var(--row);
   margin: 0;
-  border-top: 1px solid var(--border-navy-hairline);
-  padding-block: var(--space-5);
   color: var(--text-inverse-muted);
   font: var(--body-sm);
-}
-
-/* The agreed move is the row the section exists to make legible. */
-.lrh-routes__col dl > div:nth-child(2) dd {
-  color: var(--text-inverse);
 }
 
 .lrh-routes__close {
@@ -713,251 +744,346 @@
 }
 
 /* ================================================================
-   5 · Missed calls — two tracks, unequal on purpose
+   5 · Missed calls — one fragment, gaining attributes
+   One subject changing, rather than two subjects competing. The attachment is
+   scrubbed to the visitor's scroll because accrual is the meaning; `--lrh-scrub`
+   defaults to 1 so the finished state renders without JS.
    ================================================================ */
 
-.lrh-calls__layout {
-  --container-gap: clamp(3rem, 6vw, 6rem);
-
-  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+.lrh-calls__band {
+  display: grid;
+  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+  gap: clamp(2.5rem, 5vw, 5rem);
   align-items: center;
 }
 
 .lrh-calls__copy {
-  --container-gap: var(--space-6);
-}
-
-.lrh-calls__tracks {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: clamp(1.5rem, 3vw, 2.75rem);
-  align-items: start;
-}
-
-.lrh-calls__track {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   gap: var(--space-5);
+  max-width: 34rem;
 }
 
-.lrh-calls__track ol {
-  position: relative;
-  margin: 0;
-  padding-inline-start: var(--space-7);
-}
-
-.lrh-calls__rail,
-.lrh-calls__rail-draw {
-  position: absolute;
-  top: 0.75rem;
-  bottom: 0.75rem;
-  left: 0.3125rem;
-  width: 1px;
-}
-
-.lrh-calls__rail {
-  background: var(--border-mist-hairline);
-}
-
-.lrh-calls__track--dead .lrh-calls__rail {
-  background: repeating-linear-gradient(to bottom, var(--color-line) 0 4px, transparent 4px 9px);
-}
-
-.lrh-calls__rail-draw {
-  background: var(--color-emerald);
-  scale: 1 var(--lrh-draw, 1);
-  transform-origin: 50% 0;
-}
-
-.lrh-calls__track li {
-  position: relative;
-  padding-block: var(--space-4);
-  font: var(--body-sm);
-}
-
-.lrh-calls__track li + li {
-  border-top: 1px solid var(--border-hairline);
-}
-
-.lrh-calls__node {
-  position: absolute;
-  top: 1.4rem;
-  left: calc(var(--space-7) * -1);
-  width: 0.6875rem;
-  height: 0.6875rem;
-  border-radius: 50%;
-}
-
-.lrh-calls__track--dead .lrh-calls__node {
-  border: 1px solid var(--border-mist-hairline);
-  background: var(--surface-page);
-}
-
-.lrh-calls__track--live .lrh-calls__node {
-  border: 1px solid var(--color-emerald);
-  background: var(--color-emerald);
-}
-
-/* The dead end stops early and stays grey; the live track runs on. */
-.lrh-calls__track--dead {
-  color: var(--text-secondary);
-  opacity: 0.72;
-}
-
-.lrh-calls__track--dead .lrh-artifact-label {
-  color: var(--text-secondary);
-}
-
-.lrh-calls__track--live {
-  border-inline-start: 0;
-}
-
-.lrh-calls__terminus {
-  display: flex;
-  align-items: center;
-  gap: var(--space-3);
-  padding-inline-start: 0.0625rem;
-  font: italic 500 0.9375rem/1.4 var(--font-display);
-}
-
-.lrh-calls__terminus > span {
-  width: 0.6875rem;
-  height: 0.6875rem;
-  flex: 0 0 auto;
-  border: 1px solid var(--border-mist-hairline);
-  border-radius: 50%;
-}
-
-.lrh-calls__terminus--resolved > span {
-  border-color: var(--color-emerald);
-  background: var(--emerald-tint-strong);
-  box-shadow: 0 0 0 3px var(--emerald-tint-weak);
-}
-
-/* The live track is taller because it has further to go — set on the copy,
-   not faked with padding. */
-.lrh-calls__track--live ol {
-  min-height: 100%;
-}
-
-/* ================================================================
-   6 · Different requests — a rail of kinds, a stage that shows the path
-   ================================================================ */
-
-.lrh-requests__layout {
-  display: grid;
-  grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr);
-  gap: clamp(1.75rem, 3vw, 3rem);
-  align-items: start;
-}
-
-.lrh-requests__rail {
-  display: flex;
-  flex-direction: column;
-  border-top: 1px solid var(--border-mist-hairline);
-}
-
-.lrh-requests__tab {
-  display: flex;
-  align-items: baseline;
-  gap: var(--space-4);
-  border: 0;
-  border-bottom: 1px solid var(--border-mist-hairline);
-  border-inline-start: 2px solid transparent;
-  background: transparent;
-  padding: var(--space-5) var(--space-4);
-  color: var(--text-secondary);
-  font: 500 1.0625rem/1.35 var(--font-display);
-  text-align: left;
-  cursor: pointer;
-  transition:
-    background-color var(--duration-fast) var(--ease-out),
-    border-color var(--duration-fast) var(--ease-out),
-    color var(--duration-fast) var(--ease-out);
-}
-
-.lrh-requests__tab small {
-  flex: 0 0 auto;
-  color: var(--color-emerald-deep);
-  font-variant-numeric: tabular-nums;
-}
-
-.lrh-requests__tab.is-active {
-  border-inline-start-color: var(--color-emerald-deep);
-  background: var(--surface-card);
-  color: var(--text-primary);
-}
-
-.lrh-requests__stage {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-6);
-  border: 1px solid var(--border-mist-hairline);
-  border-radius: var(--radius-lg);
-  background: var(--surface-card);
-  padding: clamp(1.75rem, 3.2vw, 2.75rem);
-  animation: lrh-panel-in 320ms var(--ease-out) backwards;
-}
-
-.lrh-requests__stage:focus-visible {
-  outline-offset: 4px;
-}
-
-.lrh-requests__summary {
-  max-width: var(--measure-copy);
-  color: var(--text-primary);
-  font: italic 500 clamp(1.0625rem, 1.014rem + 0.192vw, 1.1875rem) / 1.5 var(--font-display);
-}
-
-/* The path reads across: signal, first move, destination. */
-.lrh-requests__path {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 0;
-  margin: 0;
-  border-top: 1px solid var(--border-mist-hairline);
-}
-
-.lrh-requests__path > li {
+.lrh-calls__feature {
   display: flex;
   flex-direction: column;
   gap: var(--space-2);
-  padding: var(--space-5) var(--space-5) var(--space-2) 0;
+  border-top: 1px solid var(--border-hairline);
+  padding-top: var(--space-4);
+  font: var(--body-sm);
 }
 
-.lrh-requests__path > li + li {
-  border-inline-start: 1px solid var(--border-mist-hairline);
-  padding-inline-start: var(--space-5);
-}
-
-.lrh-requests__path small {
-  color: var(--color-emerald-deep);
-  font-variant-numeric: tabular-nums;
-}
-
-.lrh-requests__path strong {
+.lrh-calls__feature strong {
   color: var(--text-primary);
+  font: 500 1.125rem/1.3 var(--font-display);
+}
+
+.lrh-calls__stage {
+  --lrh-scrub: 1;
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+/* The whole of what a missed call leaves: an unknown number and a time. */
+.lrh-calls__fragment {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  border-top: 1px solid var(--border-hairline);
+  border-bottom: 1px solid var(--border-hairline);
+  padding-block: var(--space-5);
+}
+
+.lrh-calls__fragment-label {
+  color: var(--text-secondary);
   font: var(--label-caps);
   letter-spacing: var(--label-caps-tracking);
   text-transform: uppercase;
 }
 
-.lrh-requests__path p {
+.lrh-calls__fragment-value {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--space-4);
+  color: var(--text-primary);
+  font: 500 clamp(1.75rem, 1.25rem + 1.9vw, 2.75rem) / 1.1 var(--font-display);
+  letter-spacing: var(--display-lg-tracking);
+}
+
+.lrh-calls__fragment-value b {
+  color: var(--color-emerald);
+  font-weight: 400;
+}
+
+.lrh-calls__attached {
+  position: relative;
+  padding-inline-start: var(--space-7);
+  min-height: 4rem;
+}
+
+.lrh-calls__spine,
+.lrh-calls__spine-grow {
+  position: absolute;
+  top: 0;
+  bottom: 1.5rem;
+  left: 0.34375rem;
+  width: 1px;
+}
+
+.lrh-calls__spine {
+  background: var(--border-mist-hairline);
+}
+
+/* Grows with the scroll, so the rail arrives with the attributes. */
+.lrh-calls__spine-grow {
+  background: var(--color-emerald);
+  scale: 1 var(--lrh-scrub);
+  transform-origin: 50% 0;
+}
+
+/* Present only until the first attribute lands. */
+.lrh-calls__nothing {
+  position: absolute;
+  top: 0;
+  left: var(--space-7);
+  color: var(--text-secondary);
+  font: italic 400 1rem/1.4 var(--font-display);
+  opacity: clamp(0, calc(1 - var(--lrh-scrub) * 5), 1);
+}
+
+.lrh-calls__attached ol {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  margin: 0;
+}
+
+.lrh-calls__attached li {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  opacity: clamp(0, calc(var(--lrh-scrub) * 5 - var(--i)), 1);
+  translate: 0 calc((1 - clamp(0, calc(var(--lrh-scrub) * 5 - var(--i)), 1)) * 0.5rem);
+}
+
+.lrh-calls__node {
+  position: absolute;
+  top: 0.45rem;
+  left: calc(var(--space-7) * -1);
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 50%;
+  border: 1px solid var(--color-emerald);
+  background: var(--color-emerald);
+}
+
+.lrh-calls__attached strong {
+  color: var(--text-primary);
+  font: 500 clamp(1.125rem, 1rem + 0.45vw, 1.375rem) / 1.25 var(--font-display);
+  letter-spacing: var(--display-md-tracking);
+}
+
+.lrh-calls__attached small {
+  color: var(--text-secondary);
   font: var(--body-sm);
 }
 
-.lrh-requests__boundary {
-  max-width: var(--measure-intro);
-  margin-inline: auto;
-  border-top: 1px solid var(--border-mist-hairline);
-  padding-top: var(--space-6);
-  text-align: center;
-  font: italic 500 clamp(1.0625rem, 1.014rem + 0.192vw, 1.1875rem) / 1.5 var(--font-display);
+.lrh-calls__stage-close {
+  font: italic 400 0.9375rem/1.45 var(--font-display);
+  opacity: clamp(0, calc(var(--lrh-scrub) * 3 - 2), 1);
 }
 
-/* Stacked rows below the rail breakpoint */
+/* ================================================================
+   6 · Different requests — the routing board
+   Four enquiries on the left, four destinations on the right, and paths that
+   cross between them. The crossing is the point: what arrives and where it
+   belongs are not the same ordering. The connector lives entirely inside the
+   spine column, so no path ever runs under a word.
+   ================================================================ */
 
-.lrh-requests__accordion {
+.lrh-board__head {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) clamp(11rem, 20vw, 20rem) minmax(0, 1fr);
+  gap: 0;
+  margin-bottom: var(--space-5);
+}
+
+.lrh-board__head p {
+  color: var(--color-emerald-deep);
+  font: var(--label-caps);
+  letter-spacing: var(--label-caps-tracking);
+  text-transform: uppercase;
+}
+
+.lrh-board__head p:first-child {
+  text-align: right;
+  padding-inline-end: var(--space-5);
+}
+
+.lrh-board__head p:nth-child(2) {
+  text-align: center;
+  color: var(--text-secondary);
+}
+
+.lrh-board__head p:last-child {
+  padding-inline-start: var(--space-5);
+}
+
+.lrh-board {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) clamp(11rem, 20vw, 20rem) minmax(0, 1fr);
+  gap: 0;
+  align-items: stretch;
+  border-top: 1px solid var(--border-mist-hairline);
+  border-bottom: 1px solid var(--border-mist-hairline);
+}
+
+.lrh-board__col {
+  display: grid;
+  grid-template-rows: repeat(4, minmax(4.75rem, 1fr));
+}
+
+.lrh-board__token {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--space-4);
+  border: 0;
+  border-bottom: 1px solid var(--border-mist-hairline);
+  background: transparent;
+  padding: var(--space-4) var(--space-5) var(--space-4) var(--space-3);
+  color: var(--text-secondary);
+  font: 500 clamp(1rem, 0.92rem + 0.3vw, 1.1875rem) / 1.25 var(--font-display);
+  text-align: right;
+  cursor: pointer;
+  transition:
+    color var(--duration-base) var(--ease-out),
+    background-color var(--duration-base) var(--ease-out);
+}
+
+.lrh-board__col > *:last-child {
+  border-bottom: 0;
+}
+
+.lrh-board__token small {
+  order: -1;
+  color: var(--color-emerald-deep);
+  font-variant-numeric: tabular-nums;
+  opacity: 0.6;
+}
+
+.lrh-board__token.is-active {
+  background: var(--surface-card);
+  color: var(--text-primary);
+}
+
+.lrh-board__token.is-active small {
+  opacity: 1;
+}
+
+.lrh-board__destination {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--border-mist-hairline);
+  padding: var(--space-4) var(--space-3) var(--space-4) var(--space-5);
+  color: var(--text-secondary);
+  font: 500 clamp(1rem, 0.92rem + 0.3vw, 1.1875rem) / 1.25 var(--font-display);
+  transition:
+    color var(--duration-base) var(--ease-out),
+    background-color var(--duration-base) var(--ease-out);
+}
+
+.lrh-board__destination.is-active {
+  background: var(--surface-card);
+  color: var(--text-primary);
+}
+
+/* The connector: paths, the rail they resolve onto, and the marker that
+   slides to the active destination. */
+.lrh-board__spine {
+  position: relative;
+  border-inline: 1px solid var(--border-mist-hairline);
+}
+
+.lrh-board__spine svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.lrh-board__path {
+  fill: none;
+  stroke: var(--color-emerald);
+  stroke-width: 1.25;
+  stroke-linecap: round;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 0;
+  opacity: 0.2;
+  transition: opacity var(--duration-base) var(--ease-out);
+}
+
+.lrh-board__path.is-active {
+  stroke-width: 2;
+  opacity: 1;
+}
+
+.lrh-board__rail {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 1px;
+  background: var(--emerald-line-soft);
+  translate: -50% 0;
+}
+
+/* The signal itself: drawn to the route, then carried along it by MotionPath
+   and landed on the destination. */
+.lrh-board__signal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 0.875rem;
+  height: 0.875rem;
+  margin: -0.4375rem 0 0 -0.4375rem;
+  border-radius: 50%;
+  background: var(--color-emerald);
+  box-shadow: 0 0 0 5px var(--emerald-tint);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.lrh-board__caption {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-6) clamp(2rem, 4vw, 4rem);
+  margin-top: var(--space-6);
+  animation: lrh-panel-in 320ms var(--ease-out) backwards;
+}
+
+.lrh-board__caption p {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  color: var(--text-primary);
+  font: 500 clamp(1.0625rem, 0.96rem + 0.36vw, 1.25rem) / 1.4 var(--font-display);
+}
+
+.lrh-board__caption-destination {
+  color: var(--color-emerald-deep);
+}
+
+/* Stacked rows below the board breakpoint. */
+
+.lrh-requests__stack {
   border-top: 1px solid var(--border-mist-hairline);
 }
 
@@ -969,7 +1095,6 @@
   font: inherit;
 }
 
-.lrh-requests__row-head,
 .lrh-requests__row button {
   width: 100%;
   display: flex;
@@ -1025,167 +1150,254 @@
   display: none;
 }
 
-/* ================================================================
-   7 · Necessary context — each detail paired with the question it removes
-   ================================================================ */
-
-.lrh-context__layout {
-  --container-gap: clamp(2.5rem, 5vw, 5rem);
-
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  align-items: start;
-}
-
-.lrh-context__copy {
-  --container-gap: var(--space-5);
-}
-
-.lrh-context__boundary {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-2);
-  border-top: 1px solid var(--border-mist-hairline);
-  padding-top: var(--space-4);
-  font: var(--body-sm);
-}
-
-.lrh-context__pairs {
-  margin: 0;
-  border-top: 1px solid var(--border-mist-hairline);
-}
-
-.lrh-context__pairs > div {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
-  gap: var(--space-4);
-  align-items: baseline;
-  border-bottom: 1px solid var(--border-mist-hairline);
-  padding-block: var(--space-5);
-}
-
-.lrh-context__pairs dt {
+.lrh-requests__destination {
+  max-width: 18ch;
   color: var(--text-primary);
-  font: 500 1.0625rem/1.35 var(--font-display);
+  font: 500 clamp(1.5rem, 1.2rem + 1.2vw, 2rem) / 1.14 var(--font-display);
+  letter-spacing: var(--display-lg-tracking);
+  text-wrap: balance;
 }
 
-.lrh-context__pairs dd {
-  position: relative;
+.lrh-requests__row-body dl {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
   margin: 0;
-  padding-inline-start: var(--space-5);
-  color: var(--text-secondary);
-  font: var(--body-sm);
-}
-
-.lrh-context__pairs dd::before {
-  content: "";
-  position: absolute;
-  top: 0.65em;
-  left: 0;
-  width: 0.75rem;
-  height: 1px;
-  background: var(--color-emerald-deep);
-}
-
-/* ================================================================
-   8 · Visible ownership — an asymmetric threshold
-   The built part is small and finite; the human part is the large one.
-   ================================================================ */
-
-.lrh-handoff__threshold {
-  display: grid;
-  grid-template-columns: minmax(0, 0.78fr) minmax(0, 1.22fr);
-  gap: clamp(2.5rem, 5vw, 5rem);
-  align-items: center;
-}
-
-.lrh-handoff__carried {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-5);
-}
-
-.lrh-handoff__carried > div {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-2);
-  border-top: 1px solid var(--border-navy-hairline);
+  border-top: 1px solid var(--border-mist-hairline);
   padding-top: var(--space-4);
 }
 
-.lrh-handoff__carried strong {
-  color: var(--text-inverse);
+.lrh-requests__row-body dt {
+  margin-bottom: var(--space-2);
+  color: var(--color-emerald-deep);
   font: var(--label-caps);
   letter-spacing: var(--label-caps-tracking);
   text-transform: uppercase;
 }
 
-.lrh-handoff__carried p {
+.lrh-requests__row-body dd {
+  margin: 0;
+  color: var(--text-secondary);
   font: var(--body-sm);
 }
 
-.lrh-handoff__person {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-6);
-  border-inline-start: 1px solid var(--emerald-line);
-  padding-inline-start: clamp(2rem, 4vw, 4rem);
-}
-
-/* Two classes so this clears `.on-dark p`, which would otherwise mute the
-   largest statement on the page. */
-.lrh-handoff__person .lrh-handoff__line {
-  color: var(--text-inverse);
-  font: var(--display-xl);
-  font-size: clamp(2.25rem, 1.6rem + 2.4vw, 3.75rem);
-  letter-spacing: var(--display-xl-tracking);
-  font-variation-settings: var(--display-axes-hero);
-}
-
-.lrh-handoff__person > p:not(.lrh-handoff__line) {
-  max-width: var(--measure-copy);
-  font: var(--body-lg);
+.lrh-requests__boundary {
+  max-width: var(--measure-intro);
+  margin-inline: auto;
+  border-top: 1px solid var(--border-mist-hairline);
+  padding-top: var(--space-6);
+  text-align: center;
+  font: italic 500 clamp(1.0625rem, 1.014rem + 0.192vw, 1.1875rem) / 1.5 var(--font-display);
 }
 
 /* ================================================================
-   9 · Human boundary — the same navy act, quietly
+   7 · Necessary context — one axis, one threshold
+   Above the line is asked for; below it is refused. A single rule carries the
+   whole decision, so this is one list with a limit rather than two competing
+   columns.
    ================================================================ */
 
-.lrh-boundary {
-  border-top: 1px solid var(--border-navy-hairline);
+.lrh-context__inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-7);
 }
 
-.lrh-boundary__inner {
-  display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
-  gap: clamp(2rem, 4vw, 4rem);
-  align-items: center;
-}
-
-.lrh-boundary__copy {
+.lrh-context__head {
   display: flex;
   flex-direction: column;
   gap: var(--space-4);
   align-items: flex-start;
 }
 
-.lrh-boundary__copy h3 {
-  max-width: 30rem;
-  color: var(--text-inverse);
+.lrh-context__head h2 {
+  max-width: 24ch;
 }
 
-.lrh-boundary__copy p {
+.lrh-context__threshold {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.lrh-context__asked,
+.lrh-context__refused {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4) clamp(1.5rem, 3.5vw, 3.5rem);
+  margin: 0;
+}
+
+.lrh-context__asked li {
+  position: relative;
+  padding-inline-start: var(--space-5);
+  color: var(--text-primary);
+  font: 500 clamp(1.0625rem, 0.96rem + 0.36vw, 1.25rem) / 1.3 var(--font-display);
+}
+
+.lrh-context__asked li::before {
+  content: "";
+  position: absolute;
+  top: 0.55em;
+  left: 0;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: var(--color-emerald);
+}
+
+.lrh-context__rule {
+  height: 1px;
+  background: var(--color-emerald-deep);
+  opacity: 0.55;
+}
+
+.lrh-context__refused li {
+  position: relative;
+  padding-inline-start: var(--space-5);
+  color: var(--text-secondary);
+  font: var(--body-sm);
+  opacity: 0.8;
+}
+
+.lrh-context__refused li::before {
+  content: "×";
+  position: absolute;
+  top: -0.05em;
+  left: 0;
+  color: var(--text-secondary);
+}
+
+.lrh-context__note {
   max-width: var(--measure-copy);
   font: var(--body-sm);
 }
 
-.lrh-boundary__decisions {
+/* ================================================================
+   8 · Visible ownership — one sentence, on light ground
+   Centred and dominated by the statement; the three things that travel with
+   the enquiry run beneath it as a compact strip rather than a second column.
+   ================================================================ */
+
+.lrh-handoff__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-6);
+  max-width: 58rem;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.lrh-handoff__line {
+  font: var(--display-2xl);
+  font-size: clamp(2.5rem, 1.4rem + 4vw, 5.25rem);
+  letter-spacing: var(--display-2xl-tracking);
+  font-variation-settings: var(--display-axes-hero);
+}
+
+.lrh-handoff__inner > p {
+  max-width: var(--measure-intro);
+  font: var(--body-lg);
+}
+
+.lrh-handoff__carried {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+  margin: 0;
+  border-top: 1px solid var(--border-hairline);
+}
+
+.lrh-handoff__carried > div {
+  padding: var(--space-5) clamp(1.25rem, 2.4vw, 2.5rem) 0 0;
+}
+
+.lrh-handoff__carried > div + div {
+  border-inline-start: 1px solid var(--border-hairline);
+  padding-inline-start: clamp(1.25rem, 2.4vw, 2.5rem);
+}
+
+.lrh-handoff__carried dt {
+  margin-bottom: var(--space-2);
+  color: var(--color-emerald-deep);
+  font: var(--label-caps);
+  letter-spacing: var(--label-caps-tracking);
+  text-transform: uppercase;
+}
+
+.lrh-handoff__carried dd {
+  margin: 0;
+  color: var(--text-secondary);
+  font: var(--body-sm);
+}
+
+/* ================================================================
+   9 · Automation — six things it performs, one it never does
+   A capability section rather than a caution. The boundary lands harder at
+   the end of a list of things the system genuinely does.
+   ================================================================ */
+
+.lrh-automation__performs {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+  margin: 0;
+  border-top: 1px solid var(--border-navy-hairline);
+}
+
+.lrh-automation__performs li {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  border-bottom: 1px solid var(--border-navy-hairline);
+  padding: var(--space-5) clamp(1.25rem, 2.4vw, 2.5rem) var(--space-6) 0;
+}
+
+.lrh-automation__performs li:not(:nth-child(3n + 1)) {
+  border-inline-start: 1px solid var(--border-navy-hairline);
+  padding-inline-start: clamp(1.25rem, 2.4vw, 2.5rem);
+}
+
+.lrh-automation__performs li > span {
+  color: var(--color-emerald);
+  font: var(--body-xs);
+  font-variant-numeric: tabular-nums;
+}
+
+.lrh-automation__performs strong {
+  color: var(--text-inverse);
+  font: 500 clamp(1.375rem, 1.1rem + 1vw, 2rem) / 1.15 var(--font-display);
+  letter-spacing: var(--display-md-tracking);
+}
+
+.lrh-automation__performs small {
+  color: var(--text-inverse-muted);
+  font: var(--body-sm);
+}
+
+.lrh-automation__stop {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-4) var(--space-6);
+  padding-top: var(--space-2);
+}
+
+.lrh-automation__stop-line {
+  color: var(--text-inverse);
+  font: 500 clamp(1.5rem, 1.2rem + 1.1vw, 2.25rem) / 1.15 var(--font-display);
+  letter-spacing: var(--display-md-tracking);
+}
+
+.lrh-automation__stop ul {
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-3);
   margin: 0;
 }
 
-.lrh-boundary__decisions li {
+.lrh-automation__stop li {
   border: 1px solid var(--border-navy-hairline);
   border-radius: var(--radius-pill);
   background: var(--surface-navy-panel);
@@ -1194,10 +1406,14 @@
   font: var(--body-xs);
 }
 
+.lrh-automation__stop-note {
+  flex-basis: 100%;
+  max-width: var(--measure-copy);
+  font: var(--body-sm);
+}
+
 /* ================================================================
    10 · Response setup — one rule, three characters
-   Dashed while the routes are provisional, solid once agreed, capped once
-   verified. The line narrates the work getting firmer.
    ================================================================ */
 
 .lrh-setup__stages {
@@ -1240,8 +1456,7 @@
   inset: 0;
   display: block;
   /* One sweep across all three: each stage takes its own third of the parent's
-     draw progress, so the rule reads as continuous rather than three lines
-     appearing at once. */
+     draw progress, so the rule reads as continuous. */
   scale: clamp(0, calc(var(--lrh-draw, 1) * 3 - var(--i)), 1) 1;
   transform-origin: 0 50%;
 }
@@ -1285,8 +1500,7 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-2);
-  margin: 0;
-  margin-top: var(--space-1);
+  margin: var(--space-1) 0 0;
 }
 
 .lrh-setup__stage > ul li {
@@ -1314,29 +1528,28 @@
 }
 
 /* ================================================================
-   11 · Right fit
+   11 · Right fit — statement only
    ================================================================ */
 
 .lrh-fit__layout {
   --container-gap: clamp(3rem, 5vw, 5rem);
 
   grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
-  align-items: stretch;
+  align-items: start;
 }
 
 .lrh-fit__good,
 .lrh-fit__not {
   display: flex;
   flex-direction: column;
-  gap: var(--space-4);
+  gap: var(--space-5);
 }
 
 .lrh-fit__not {
-  align-self: start;
   border: 1px solid var(--border-mist-hairline);
   border-radius: var(--radius-md);
-  background: var(--surface-mist);
-  padding: clamp(2rem, 4vw, 3.5rem);
+  background: var(--surface-card);
+  padding: clamp(1.75rem, 3.2vw, 2.75rem);
 }
 
 .lrh-fit__good ul,
@@ -1348,17 +1561,17 @@
 .lrh-fit__not li {
   display: flex;
   align-items: flex-start;
-  gap: var(--space-3);
-  border-top: 1px solid var(--border-hairline);
+  gap: var(--space-4);
+  border-top: 1px solid var(--border-mist-hairline);
   padding-block: var(--space-4);
 }
 
 .lrh-fit__good li:last-child {
-  border-bottom: 1px solid var(--border-hairline);
+  border-bottom: 1px solid var(--border-mist-hairline);
 }
 
-.lrh-fit__good li > span,
-.lrh-fit__not li > span {
+.lrh-fit__good li > span:first-child,
+.lrh-fit__not li > span:first-child {
   width: 1.45rem;
   height: 1.45rem;
   display: flex;
@@ -1370,6 +1583,24 @@
   background: var(--surface-card);
   color: var(--color-emerald-deep);
   font: 700 0.75rem/1 var(--font-body);
+  margin-top: 0.15rem;
+}
+
+.lrh-fit__good li > span:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.lrh-fit__good strong {
+  color: var(--text-primary);
+  font: 500 1.1875rem/1.3 var(--font-display);
+  letter-spacing: -0.006em;
+}
+
+.lrh-fit__good small {
+  color: var(--text-secondary);
+  font: var(--body-sm);
 }
 
 .lrh-fit__not li {
@@ -1379,8 +1610,14 @@
   font: var(--body-sm);
 }
 
-.lrh-fit__not li > span {
+.lrh-fit__not li > span:first-child {
   color: var(--text-secondary);
+}
+
+.lrh-fit__note {
+  border-top: 1px solid var(--border-mist-hairline);
+  padding-top: var(--space-4);
+  font: italic 400 0.9375rem/1.5 var(--font-display);
 }
 
 /* ================================================================
@@ -1532,12 +1769,8 @@ body:has(.lrh-closing) .site-footer__bottom {
    ================================================================ */
 
 @media (hover: hover) and (pointer: fine) {
-  .lrh-ack__notes button:hover {
-    background: var(--surface-sunken);
-  }
-
-  .lrh-requests__tab:hover {
-    border-inline-start-color: var(--emerald-line);
+  .lrh-board__token:hover {
+    background: var(--surface-card);
     color: var(--text-primary);
   }
 
@@ -1557,10 +1790,7 @@ body:has(.lrh-closing) .site-footer__bottom {
 @media (max-width: 64rem) {
   .lrh-hero__top,
   .lrh-gap__layout,
-  .lrh-calls__layout,
-  .lrh-context__layout,
-  .lrh-handoff__threshold,
-  .lrh-boundary__inner,
+  .lrh-calls__band,
   .lrh-fit__layout {
     grid-template-columns: 1fr;
     align-items: stretch;
@@ -1575,72 +1805,56 @@ body:has(.lrh-closing) .site-footer__bottom {
   }
 
   .lrh-art {
-    max-width: 34rem;
+    max-width: 32rem;
   }
 
   .lrh-gap__copy,
-  .lrh-calls__copy,
-  .lrh-context__copy {
+  .lrh-calls__copy {
     max-width: 44rem;
   }
 
-  .lrh-ack__stage {
+  /* Four verdicts become two rows of two: the comparison survives, the row
+     never becomes four unreadable columns. */
+  .lrh-routes__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .lrh-routes__col:nth-child(odd) {
+    border-inline-start: 0;
+    padding-inline-start: 0;
+  }
+
+  .lrh-routes__col:nth-child(n + 3) {
+    border-top: 1px solid var(--border-navy-hairline);
+    padding-top: var(--space-6);
+  }
+
+  .lrh-handoff__carried {
     grid-template-columns: 1fr;
   }
 
-  /* Four channels become four labelled groups rather than one flattened
-     stack: the comparison survives as repeated fields. */
-  .lrh-routes__grid {
-    display: flex;
-    flex-direction: column;
-    border-top: 0;
+  .lrh-handoff__carried > div {
+    border-bottom: 1px solid var(--border-hairline);
+    padding: var(--space-4) 0;
   }
 
-  .lrh-routes__gutter {
-    display: none;
-  }
-
-  .lrh-routes__col {
-    display: block;
-    border-top: 1px solid var(--border-navy-hairline);
-  }
-
-  .lrh-routes__col > h3 {
-    padding-block: var(--space-5) var(--space-4);
-  }
-
-  .lrh-routes__col dl,
-  .lrh-routes__col dl > div {
-    display: block;
-  }
-
-  .lrh-routes__col dl > div {
-    padding-bottom: var(--space-4);
-  }
-
-  .lrh-routes__col dt {
-    position: static;
-    width: auto;
-    height: auto;
-    clip-path: none;
-    white-space: normal;
-    margin-bottom: var(--space-1);
-    color: var(--color-emerald);
-    font: var(--label-caps);
-    letter-spacing: var(--label-caps-tracking);
-    text-transform: uppercase;
-  }
-
-  .lrh-routes__col dd {
-    border-top: 0;
-    padding-block: 0;
-  }
-
-  .lrh-handoff__person {
+  .lrh-handoff__carried > div + div {
     border-inline-start: 0;
-    border-top: 1px solid var(--emerald-line);
     padding-inline-start: 0;
-    padding-top: clamp(2rem, 5vw, 3rem);
+  }
+
+  .lrh-automation__performs {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .lrh-automation__performs li:not(:nth-child(3n + 1)) {
+    border-inline-start: 0;
+    padding-inline-start: 0;
+  }
+
+  .lrh-automation__performs li:nth-child(even) {
+    border-inline-start: 1px solid var(--border-navy-hairline);
+    padding-inline-start: clamp(1.25rem, 2.4vw, 2.5rem);
   }
 
   .lrh-setup__stages {
@@ -1692,11 +1906,11 @@ body:has(.lrh-closing) .site-footer__bottom {
 
 @media (max-width: 48rem) {
   .lrh-hero__top {
-    padding-block: clamp(2.5rem, 9vw, 3.5rem) clamp(2.5rem, 9vw, 3.5rem);
+    padding-block: clamp(2.5rem, 9vw, 3.5rem);
   }
 
   /* Swap to the authored narrow composition rather than reflowing the wide
-     one — the relay stays one path instead of becoming a card stack. */
+     one — the three scenes stay one system instead of becoming a card stack. */
   .lrh-art {
     max-width: 24rem;
   }
@@ -1710,9 +1924,9 @@ body:has(.lrh-closing) .site-footer__bottom {
   }
 
   .lrh-art__glow {
-    top: 4%;
-    left: 2%;
-    width: 52%;
+    top: 2%;
+    left: 12%;
+    width: 58%;
     filter: blur(2.75rem);
   }
 
@@ -1724,33 +1938,32 @@ body:has(.lrh-closing) .site-footer__bottom {
     max-width: none;
   }
 
-  .lrh-calls__tracks {
+  .lrh-routes__grid {
     grid-template-columns: 1fr;
-    gap: var(--space-7);
   }
 
-  .lrh-requests__path {
-    grid-template-columns: 1fr;
-    border-top: 0;
-  }
-
-  .lrh-requests__path > li {
-    border-top: 1px solid var(--border-mist-hairline);
-    padding: var(--space-4) 0;
-  }
-
-  .lrh-requests__path > li + li {
+  .lrh-routes__col,
+  .lrh-routes__col + .lrh-routes__col {
     border-inline-start: 0;
     padding-inline-start: 0;
   }
 
-  .lrh-context__pairs > div {
-    grid-template-columns: 1fr;
-    gap: var(--space-2);
+  .lrh-routes__col + .lrh-routes__col {
+    border-top: 1px solid var(--border-navy-hairline);
+    padding-top: var(--space-6);
   }
 
-  .lrh-context__pairs dd {
-    padding-inline-start: var(--space-5);
+  .lrh-board__caption {
+    grid-template-columns: 1fr;
+  }
+
+  .lrh-automation__performs {
+    grid-template-columns: 1fr;
+  }
+
+  .lrh-automation__performs li:nth-child(even) {
+    border-inline-start: 0;
+    padding-inline-start: 0;
   }
 
   .lrh-closing__resolution li + li {
@@ -1763,10 +1976,6 @@ body:has(.lrh-closing) .site-footer__bottom {
 }
 
 @media (max-width: 30rem) {
-  .lrh-ack__notes button {
-    padding-inline: var(--space-3);
-  }
-
   .lrh-closing__resolution {
     flex-direction: column;
     align-items: stretch;

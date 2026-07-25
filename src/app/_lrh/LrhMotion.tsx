@@ -118,6 +118,27 @@ export function LrhMotion() {
           });
         });
 
+        // Scrubbed accrual: the visitor's own scroll drives the attachment, so
+        // `--lrh-scrub` is tied to progress rather than played once. No pinning
+        // — taking over the scroll would cost more on trackpads and touch than
+        // the effect is worth.
+        gsap.utils.toArray<HTMLElement>("[data-lrh-scrub]").forEach((item) => {
+          gsap.fromTo(
+            item,
+            { "--lrh-scrub": 0 },
+            {
+              "--lrh-scrub": 1,
+              ease: "none",
+              scrollTrigger: {
+                trigger: item,
+                start: "top 78%",
+                end: "bottom 62%",
+                scrub: 0.4,
+              },
+            },
+          );
+        });
+
         // Meaning-bearing strokes: the line itself is the argument, so it is
         // drawn rather than faded, and only once.
         gsap.utils.toArray<HTMLElement>("[data-lrh-draw]").forEach((item) => {

@@ -1,138 +1,82 @@
-"use client";
-
-import { useState } from "react";
-
 /**
- * The acknowledgement itself, annotated.
+ * A subset, drawn.
  *
- * The artefact here is the message — set at reading scale as editorial
- * typography, not as a chat bubble or an inbox row — with each clause marked
- * and explained. Hovering or focusing an annotation lights its clause, and
- * vice versa, which is the only job the interaction has: connecting a claim to
- * the words that support it.
+ * One ordered list of everything a person wants settled when they get in
+ * touch, and a frame around only the part the automated response can reach.
+ * The automated response's reach is a strict subset of what was asked — which
+ * is the whole argument, and containment is the one shape that states it
+ * without a caption.
  *
- * The words MindWP cannot write are rendered as explicit variables rather than
- * bracketed placeholders. The timing commitment, the routing and the urgent
- * route belong to the business; the page should show that plainly instead of
- * inventing a promise on its behalf.
+ * The list is ordered by certainty rather than importance: it runs from what
+ * is already a fact the moment the enquiry lands to what nobody can settle
+ * without a person. The frame simply marks where facts run out.
  *
- * Static state is complete: every clause and every annotation is legible with
- * nothing hovered, focused or open.
+ * The intro comes first in the markup because it is the entry point for
+ * reading and for assistive technology; on desktop it is placed into the right
+ * column with explicit grid placement rather than `direction: rtl`, which
+ * would drag punctuation and alignment along with it.
+ *
+ * The frame's edge draws itself as the section is scrolled, and its label
+ * arrives with it — `--lrh-scrub` defaults to 1, so the boundary is fully
+ * present without JS and under reduced motion.
  */
 
-interface Clause {
-  note: string;
-  title: string;
-}
+const REACHED = [
+  "That it actually arrived",
+  "What it was about",
+  "Who has it now",
+  "When they will hear back",
+] as const;
 
-const CLAUSES: readonly Clause[] = [
-  {
-    title: "Confirms what arrived",
-    note: "Their own words, repeated back — so they know the right message reached the right business.",
-  },
-  {
-    title: "Names where it sits",
-    note: "A team or a person, never “our system”. Someone is already accountable for it.",
-  },
-  {
-    title: "Sets an expectation you agreed",
-    note: "The window is yours to set, and it is the only timing commitment the message makes.",
-  },
-  {
-    title: "Offers a real route",
-    note: "For anything that cannot wait for the next working day, on a route you have chosen.",
-  },
-];
-
-function Marker({ index }: { index: number }) {
-  return <sup aria-hidden="true">{String(index + 1).padStart(2, "0")}</sup>;
-}
+const BEYOND = [
+  "Whether the slot they want is free",
+  "What it is going to cost",
+  "Whether it is the right thing for them",
+] as const;
 
 export function LrhAcknowledgement() {
-  const [active, setActive] = useState<number | null>(null);
-
-  const clauseProps = (index: number) => ({
-    className: "lrh-ack__clause",
-    "data-active": active === index ? "true" : undefined,
-    onMouseEnter: () => setActive(index),
-    onMouseLeave: () => setActive((current) => (current === index ? null : current)),
-  });
-
   return (
-    <section id="acknowledgement" className="lrh-ack section">
-      <div className="container section-intro" data-lrh-sequence>
-        <div className="section-title-group">
+    <section id="acknowledgement" className="lrh-ack section section--focal">
+      <div className="container lrh-ack__band">
+        <div className="lrh-ack__intro" data-lrh-sequence>
           <p className="eyebrow" data-lrh-sequence-item>
             Useful acknowledgement
           </p>
           <h2 data-lrh-sequence-item>
-            Respond quickly without sounding robotic <em>— or pretending the answer is ready.</em>
+            Everything that is already true can go out immediately.{" "}
+            <em>Nothing else can.</em>
           </h2>
-        </div>
-        <div className="section-copy-group">
           <p data-lrh-sequence-item>
-            An automatic first response can be honest. It confirms what arrived, says where it now
-            sits, sets the expectation you agreed, and offers a route if the situation cannot wait.
-            What it must never do is answer on your behalf.
+            When someone gets in touch, they want a handful of things settled. Some are already true
+            the second the enquiry lands. The rest are decisions — and a decision is not the
+            system&apos;s to make.
           </p>
         </div>
-      </div>
 
-      <div className="container lrh-ack__stage" data-lrh-fade>
-        <blockquote className="lrh-ack__message">
-          <p>
-            <span {...clauseProps(0)}>
-              Thanks for getting in touch about{" "}
-              <span className="lrh-ack__slot">what they asked about</span>.<Marker index={0} />
-            </span>{" "}
-            <span {...clauseProps(1)}>
-              We have your message and it is with{" "}
-              <span className="lrh-ack__slot">the team or person who handles this</span>.
-              <Marker index={1} />
-            </span>{" "}
-            <span {...clauseProps(2)}>
-              You will hear back <span className="lrh-ack__slot">within the window you agreed</span>
-              .<Marker index={2} />
-            </span>{" "}
-            <span {...clauseProps(3)}>
-              If it cannot wait, <span className="lrh-ack__slot">the route you have chosen</span>.
-              <Marker index={3} />
-            </span>
+        <div className="lrh-ack__set" data-lrh-scrub>
+          <p className="lrh-ack__set-label">What someone wants settled</p>
+
+          <div className="lrh-ack__reach">
+            <span className="lrh-ack__reach-edge" aria-hidden="true" />
+            <p className="lrh-ack__reach-label">The automated response reaches this far</p>
+            <ol>
+              {REACHED.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ol>
+          </div>
+
+          <ol className="lrh-ack__beyond" start={REACHED.length + 1}>
+            {BEYOND.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ol>
+
+          <p className="lrh-ack__close">
+            Everything outside the frame is a person&apos;s to answer — which is exactly why the
+            four inside it can be answered in seconds.
           </p>
-          <p className="lrh-ack__legend">
-            Tinted wording is yours. MindWP drafts it with you and you approve it before anything
-            goes live.
-          </p>
-        </blockquote>
-
-        <ol className="lrh-ack__notes">
-          {CLAUSES.map((clause, index) => (
-            <li key={clause.title} data-active={active === index ? "true" : undefined}>
-              <button
-                type="button"
-                onMouseEnter={() => setActive(index)}
-                onMouseLeave={() => setActive((current) => (current === index ? null : current))}
-                onFocus={() => setActive(index)}
-                onBlur={() => setActive((current) => (current === index ? null : current))}
-                onClick={() => setActive((current) => (current === index ? null : index))}
-              >
-                <small>{String(index + 1).padStart(2, "0")}</small>
-                <span>
-                  <strong>{clause.title}</strong>
-                  {clause.note}
-                </span>
-              </button>
-            </li>
-          ))}
-        </ol>
-      </div>
-
-      <div className="container lrh-ack__boundary" data-lrh-fade>
-        <span className="lrh-artifact-label">What it never does</span>
-        <p>
-          Confirm a booking, quote a price, or give clinical, legal or professional advice. Those
-          answers come from your team.
-        </p>
+        </div>
       </div>
     </section>
   );

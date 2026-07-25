@@ -42,7 +42,7 @@ const STAGES: readonly Stage[] = [
 
 export function LrhSetup() {
   return (
-    <section id="response-setup" className="lrh-setup section section--focal on-mist">
+    <section id="response-setup" className="lrh-setup section section--focal">
       <div className="container section-intro section-intro--centered" data-lrh-sequence>
         <p className="eyebrow eyebrow--centered" data-lrh-sequence-item>
           Response setup

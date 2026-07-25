@@ -1,107 +1,88 @@
 /**
- * Four channels compared across the same three properties.
+ * Four channels, compared.
  *
- * These are genuine peers with genuinely different properties, so the
- * composition has to let the eye read *across* as well as down — four cards
- * would hide exactly the comparison the section exists to make. One grid, a
- * label gutter, and hairlines that belong to the lattice rather than to four
- * separate objects.
+ * The comparison is carried by four short verdicts set at display scale — the
+ * agreed first move for each channel, readable across the whole row in a few
+ * seconds. Everything else is supporting detail sized as supporting detail,
+ * which is what stops this reading as twelve paragraphs in a grid.
  *
- * At narrow widths the gutter is dropped and each channel becomes its own
- * labelled group, so the comparison survives as repeated labelled fields
- * instead of collapsing into an undifferentiated stack. The row labels are
- * present in the markup for every channel — visually hidden while the gutter
- * is doing that job — so each value is always labelled for assistive
- * technology.
+ * Oversized numerals anchor the columns and give the band some graphic weight
+ * of its own rather than leaving it as text floating on navy.
  */
 
-const ROWS = ["What arrives", "The agreed first move", "Where it goes"] as const;
-
-const CHANNELS: readonly { name: string; values: readonly [string, string, string] }[] = [
+const CHANNELS: readonly {
+  channel: string;
+  verdict: string;
+  arrives: string;
+  owner: string;
+}[] = [
   {
-    name: "A missed call",
-    values: [
-      "A number, a time, and nothing else. No name, no reason, no way to tell it apart from the last one.",
-      "An agreed acknowledgement on an available channel — often a text-back where appropriate.",
-      "The person responsible for returning calls.",
-    ],
+    channel: "Missed call",
+    verdict: "Text back.",
+    arrives: "A number and a time. Nothing else.",
+    owner: "Whoever returns calls.",
   },
   {
-    name: "A website form",
-    values: [
-      "The fields you chose, in their own words, with whatever context they decided to add.",
-      "A confirmation naming what they asked about and when to expect a reply.",
-      "The person who handles that kind of enquiry.",
-    ],
+    channel: "Website form",
+    verdict: "Confirm and name it.",
+    arrives: "The fields you chose, in their own words.",
+    owner: "Whoever handles that kind of enquiry.",
   },
   {
-    name: "A message",
-    values: [
-      "A short line, often mid-conversation, on a channel your team may not be watching.",
-      "An acknowledgement on the same channel it arrived on.",
-      "The person or agreed destination responsible for that channel.",
-    ],
+    channel: "Message",
+    verdict: "Reply on the same channel.",
+    arrives: "A short line, often mid-conversation.",
+    owner: "Whoever owns that channel.",
   },
   {
-    name: "A consultation request",
-    values: [
-      "A specific ask, usually with a date, a service or a preference attached.",
-      "An acknowledgement that the request has been received — not that it is booked.",
-      "Whoever confirms availability and decides.",
-    ],
+    channel: "Consultation request",
+    verdict: "Received — not booked.",
+    arrives: "A date, a service, a preference.",
+    owner: "Whoever confirms availability.",
   },
 ];
 
 export function LrhRoutes() {
   return (
-    <section id="contact-routes" className="lrh-routes section on-dark">
+    <section id="contact-routes" className="lrh-routes section section--focal on-dark">
       <div className="container section-intro" data-lrh-sequence>
         <div className="section-title-group">
           <p className="eyebrow" data-lrh-sequence-item>
             Contact routes
           </p>
           <h2 data-lrh-sequence-item>
-            Calls, forms, messages and consultation requests{" "}
-            <em>each need an agreed first move.</em>
+            Four ways in. <em>Four different first moves.</em>
           </h2>
         </div>
         <div className="section-copy-group">
           <p data-lrh-sequence-item>
-            The same reply cannot serve all four. A missed call and a consultation request arrive
-            with different information, different urgency and different destinations — so each gets
-            its own agreed response and its own place to land.
+            One reply cannot serve all four. Each channel arrives with different information and
+            belongs somewhere different, so each gets its own agreed response.
           </p>
         </div>
       </div>
 
-      <div className="container lrh-routes__grid" data-lrh-stagger>
-        <div className="lrh-routes__gutter" aria-hidden="true">
-          {ROWS.map((row, index) => (
-            <span key={row} style={{ "--row": index + 2 } as React.CSSProperties}>
-              {row}
+      <ol className="container lrh-routes__grid" data-lrh-stagger>
+        {CHANNELS.map((item, index) => (
+          <li key={item.channel} className="lrh-routes__col" data-lrh-stagger-item>
+            <span className="lrh-routes__numeral" aria-hidden="true">
+              {String(index + 1).padStart(2, "0")}
             </span>
-          ))}
-        </div>
-
-        {CHANNELS.map((channel, columnIndex) => (
-          <article
-            key={channel.name}
-            className="lrh-routes__col"
-            style={{ "--col": columnIndex + 2 } as React.CSSProperties}
-            data-lrh-stagger-item
-          >
-            <h3>{channel.name}</h3>
+            <p className="lrh-routes__channel">{item.channel}</p>
+            <p className="lrh-routes__verdict">{item.verdict}</p>
             <dl>
-              {channel.values.map((value, rowIndex) => (
-                <div key={ROWS[rowIndex]} style={{ "--row": rowIndex + 2 } as React.CSSProperties}>
-                  <dt>{ROWS[rowIndex]}</dt>
-                  <dd>{value}</dd>
-                </div>
-              ))}
+              <div>
+                <dt>Arrives as</dt>
+                <dd>{item.arrives}</dd>
+              </div>
+              <div>
+                <dt>Goes to</dt>
+                <dd>{item.owner}</dd>
+              </div>
             </dl>
-          </article>
+          </li>
         ))}
-      </div>
+      </ol>
 
       <p className="container lrh-routes__close editorial-note" data-lrh-fade>
         You agree each first move once. After that it happens the same way every time.

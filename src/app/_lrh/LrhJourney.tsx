@@ -3,12 +3,24 @@ import { Icon, type IconName } from "@/components/ui/Icon";
 import { CONTACT_PATH } from "@/config/routes";
 import { PRIMARY_CTA_LABEL } from "@/lib/cta/labels";
 
-const GOOD_FIT = [
-  "Enquiries already arrive by phone, form or message — and some are missed or answered late.",
-  "Each enquiry is worth real money or real trust, so losing one is not a rounding error.",
-  "Calls come in while your team is with a patient, on a job, or closed.",
-  "There is a person, or a rota, who can genuinely own what happens after the first response.",
-  "You want the same first move every time, without being handed an empty platform to configure and make sense of yourselves.",
+/**
+ * Right fit opens on the statement alone — no eyebrow above it and no lede
+ * beneath — because the qualification is the heading. Each condition then
+ * leads with a short bold clause and explains itself in one small line, so the
+ * column reads as five decisions rather than five sentences.
+ */
+const GOOD_FIT: readonly (readonly [string, string])[] = [
+  [
+    "Enquiries already arrive",
+    "By phone, form or message — and some are missed or answered late.",
+  ],
+  ["Each one is worth something", "Real money or real trust, so losing one is not a rounding error."],
+  ["The phone rings while you work", "With a patient, on a job, or after you have closed."],
+  ["Someone can own it", "A person, or a rota, who takes responsibility after the first response."],
+  [
+    "You want it configured, not handed over",
+    "A working setup, rather than an empty platform to make sense of yourselves.",
+  ],
 ];
 
 const NOT_FIT = [
@@ -32,40 +44,26 @@ const RESOLUTION: readonly { icon: IconName; label: string }[] = [
 
 export function LrhFit() {
   return (
-    <section id="fit" className="lrh-fit section">
-      <div className="container section-intro" data-lrh-sequence>
-        <div className="section-title-group">
-          <p className="eyebrow" data-lrh-sequence-item>
-            Right fit
-          </p>
-          <h2 data-lrh-sequence-item>
-            Best where worthwhile enquiries arrive{" "}
-            <em>— and a person is ready to own what follows.</em>
-          </h2>
-        </div>
-        <div className="section-copy-group">
-          <p data-lrh-sequence-item>
-            Lead Response &amp; Handling protects demand that already exists. It does not create it,
-            and it does not replace the person who has to answer. Both need to be true for it to be
-            worth doing.
-          </p>
-        </div>
-      </div>
-
+    <section id="fit" className="lrh-fit section on-mist">
       <div className="container container--split lrh-fit__layout">
         <div className="lrh-fit__good" data-lrh-sequence>
-          <p className="lrh-artifact-label" data-lrh-sequence-item>
-            A good fit if
-          </p>
+          <h2 data-lrh-sequence-item>
+            Best where worthwhile enquiries already arrive{" "}
+            <em>— and someone is ready to own what follows.</em>
+          </h2>
           <ul data-lrh-stagger>
-            {GOOD_FIT.map((item) => (
-              <li key={item} data-lrh-stagger-item>
+            {GOOD_FIT.map(([lead, note]) => (
+              <li key={lead} data-lrh-stagger-item>
                 <span aria-hidden="true">✓</span>
-                {item}
+                <span>
+                  <strong>{lead}</strong>
+                  <small>{note}</small>
+                </span>
               </li>
             ))}
           </ul>
         </div>
+
         <aside className="lrh-fit__not" data-lrh-sequence>
           <p className="lrh-artifact-label" data-lrh-sequence-item>
             Not the right fit if
@@ -78,6 +76,10 @@ export function LrhFit() {
               </li>
             ))}
           </ul>
+          <p className="lrh-fit__note" data-lrh-sequence-item>
+            This protects demand that already exists. It does not create it, and it does not replace
+            the person who has to answer.
+          </p>
         </aside>
       </div>
     </section>
