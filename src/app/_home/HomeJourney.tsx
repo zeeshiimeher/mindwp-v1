@@ -45,12 +45,7 @@ const REVIEW_STEPS: readonly {
   },
 ];
 
-/** The three things the review actually looks at, in the order it looks. */
-const CLOSING_LENSES: readonly { icon: IconName; title: string; note: string }[] = [
-  { icon: "map-pin", title: "Visibility", note: "How suitable people come across you" },
-  { icon: "globe", title: "Website", note: "What they find when they arrive" },
-  { icon: "message-square", title: "Enquiry path", note: "What happens once they act" },
-];
+const CLOSING_ICONS: readonly IconName[] = ["globe", "map-pin", "phone", "folder", "star"];
 
 export function HomeFit() {
   return (
@@ -171,43 +166,19 @@ export function HomeClosing() {
           enquiry takes, then shows you what&apos;s worth fixing first — useful whether or not you
           build together afterwards.
         </p>
-        <div className="home-closing__review" data-home-stagger>
-          <ul className="home-closing__lenses">
-            {CLOSING_LENSES.map((lens) => (
-              <li key={lens.title} data-home-stagger-item>
-                <span className="home-closing__lens-icon">
-                  <Icon name={lens.icon} size={18} />
-                </span>
-                <strong>{lens.title}</strong>
-                <small>{lens.note}</small>
-              </li>
-            ))}
-          </ul>
-
-          <svg
-            className="home-closing__converge"
-            viewBox="0 0 600 48"
-            fill="none"
-            aria-hidden="true"
-            focusable="false"
-            preserveAspectRatio="none"
-          >
-            <path d="M100 0 V 16 Q 100 32 300 32 V 48" />
-            <path d="M300 0 V 48" />
-            <path d="M500 0 V 16 Q 500 32 300 32 V 48" />
-          </svg>
-
-          <p className="home-closing__resolve">
-            <span>One prioritised starting point</span>
-          </p>
-        </div>
-
-        <Button
-          href={CONTACT_PATH}
-          variant="on-dark"
-          className="btn-lg"
-          data-home-sequence-item
+        <div
+          className="home-closing__icons"
+          role="img"
+          aria-label="The website and its optional supporting systems"
+          data-home-stagger
         >
+          {CLOSING_ICONS.map((icon) => (
+            <span key={icon} data-home-stagger-item>
+              <Icon name={icon} size={18} />
+            </span>
+          ))}
+        </div>
+        <Button href={CONTACT_PATH} variant="on-dark" data-home-sequence-item>
           {PRIMARY_CTA_LABEL}
         </Button>
       </div>

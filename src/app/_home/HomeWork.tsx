@@ -1,21 +1,71 @@
 import Image from "next/image";
 
 /**
- * Every screenshot here is real client work shown with identifying marks
- * removed — business names, logos, phone numbers, email addresses, street
- * addresses and, in one case, a strip of named customers, are obscured in the
- * source assets. The section states that once, near the heading, rather than
- * repeating a status chip on every tile; the alt text carries it too, so
- * nothing can be read as a named client endorsement or a measured result.
+ * Proof status is carried per item, not by one global sentence, so a mixed
+ * catalogue can hold different evidence types without forcing every tile into
+ * the same claim. All seven items were verified individually and are live
+ * client websites, so they currently share one status; the field stays per item
+ * because a demonstration build or design concept must be able to join without
+ * rewriting the section's provenance.
+ *
+ * These assets are NOT anonymised. A blur covers the top-left logo area only;
+ * trading names, telephone numbers, email and street addresses, towns and — on
+ * the home services and SaaS items — strips of named reviewers all remain
+ * legible. The source PNGs are 1440x1728 and are served from /public/work at
+ * full resolution however small a tile renders, so display size hides nothing.
+ * Never describe these as anonymised, obscured or redacted.
+ *
+ * Metrics visible inside a client's own screenshot ("$40M+", "40% de
+ * performance") are that client's published claim. They are never restated in
+ * MindWP copy and never presented as a MindWP measured outcome. Provenance
+ * belongs in the visible label beside the work, not in alt text.
  */
 
+const PUBLISHED = "Published client website";
+
 const WORK_ITEMS = [
-  ["Healthcare", "Clinic treatment page", "blue", "work-healthcare-service-page.png"],
-  ["Retail", "Optical retail website", "sage", "work-optical-retail-site.png"],
-  ["Property", "Property management website", "steel", "work-property-management-site.png"],
-  ["Product", "SaaS product website", "blue", "work-saas-product-site.png"],
-  ["Support", "Support program website", "sand", "work-support-program-site.png"],
-  ["Tourism", "Tourism service website", "aqua", "work-tourism-service-site.png"],
+  {
+    category: "Healthcare",
+    title: "Clinic treatment page",
+    tone: "blue",
+    file: "work-healthcare-service-page.png",
+    status: PUBLISHED,
+  },
+  {
+    category: "Retail",
+    title: "Optical retail website",
+    tone: "sage",
+    file: "work-optical-retail-site.png",
+    status: PUBLISHED,
+  },
+  {
+    category: "Property",
+    title: "Property management website",
+    tone: "steel",
+    file: "work-property-management-site.png",
+    status: PUBLISHED,
+  },
+  {
+    category: "Product",
+    title: "SaaS product website",
+    tone: "blue",
+    file: "work-saas-product-site.png",
+    status: PUBLISHED,
+  },
+  {
+    category: "Support",
+    title: "Support program website",
+    tone: "sand",
+    file: "work-support-program-site.png",
+    status: PUBLISHED,
+  },
+  {
+    category: "Tourism",
+    title: "Tourism service website",
+    tone: "aqua",
+    file: "work-tourism-service-site.png",
+    status: PUBLISHED,
+  },
 ] as const;
 
 export function HomeWork() {
@@ -37,7 +87,8 @@ export function HomeWork() {
             pretty screens.
           </p>
           <p className="home-work__provenance" data-home-sequence-item>
-            Client work, shown with identifying details removed.
+            Published client websites, shown as they appear online. Each item is labelled with its
+            status.
           </p>
         </div>
       </div>
@@ -55,7 +106,7 @@ export function HomeWork() {
           <div className="home-work__hero-preview">
             <Image
               src="/work/work-home-services-site.png"
-              alt="Home services lead-generation website homepage, shown with identifying details removed"
+              alt="Home services lead-generation website, homepage screenshot"
               fill
               priority
               sizes="(min-width: 64rem) 68rem, 100vw"
@@ -67,6 +118,7 @@ export function HomeWork() {
           <div>
             <small>Home services</small>
             <strong>Home services lead-gen site</strong>
+            <p className="home-work__status">{PUBLISHED}</p>
           </div>
           <p>
             A clear offer, local proof and an obvious next step — built into one working homepage,
@@ -76,12 +128,12 @@ export function HomeWork() {
       </div>
 
       <div className="container home-work__grid" data-home-stagger>
-        {WORK_ITEMS.map(([category, title, tone, file]) => (
+        {WORK_ITEMS.map(({ category, title, tone, file, status }) => (
           <article className="home-work__card" key={title} data-home-stagger-item>
             <div className={`home-work__preview home-work__preview--${tone}`}>
               <Image
                 src={`/work/${file}`}
-                alt={`${title}, shown with identifying details removed`}
+                alt={`${title}, screenshot`}
                 fill
                 sizes="(min-width: 64rem) 22rem, (min-width: 40rem) 45vw, 90vw"
                 className="home-work__card-image"
@@ -95,6 +147,7 @@ export function HomeWork() {
             <div className="home-work__card-body">
               <small>{category}</small>
               <strong>{title}</strong>
+              <p className="home-work__status">{status}</p>
             </div>
           </article>
         ))}

@@ -10,16 +10,16 @@ const CLINIC_LEADS = [
   "A private, unhurried consultation path",
 ];
 
-const HOME_QUESTIONS = [
-  "Have they done work like mine?",
-  "Do they actually cover my area?",
-  "What happens at the survey?",
+const EMPLOYER_QUESTIONS = [
+  "Can we qualify for a licence at all?",
+  "Who would actually be handling this?",
+  "What happens if we are audited?",
 ];
 
-const HOME_LEADS = [
-  ["Proof", "Finished projects, shown by service"],
-  ["Coverage", "A service area that is specific, not implied"],
-  ["Next step", "A survey or estimate you can actually book"],
+const ADVISER_LEADS = [
+  ["Situation", "Matter pages that name the employer's position, not the statute"],
+  ["Accountability", "The adviser who would handle it, named"],
+  ["First step", "A confidential conversation, not an open enquiry form"],
 ] as const;
 
 export function HomeContext() {
@@ -37,7 +37,7 @@ export function HomeContext() {
           <em>the questions, evidence and actions people need to decide.</em>
         </h2>
         <p data-home-sequence-item>
-          A patient weighing treatment and a homeowner planning a major project are both looking
+          A patient weighing treatment and an employer facing a sponsor-licence decision are both looking
           for confidence — just not from the same questions, the same evidence, or the same next
           step. So each website is shaped around the work itself, not a shared template.
         </p>
@@ -70,15 +70,15 @@ export function HomeContext() {
         <article data-home-stagger-item>
           <div className="home-context__heading">
             <small>02</small>
-            <h3>Home services</h3>
+            <h3>Immigration law boutiques</h3>
           </div>
           <p className="editorial-note">
-            The homeowner is deciding who to let into the house. Finished work nearby does most of
-            the convincing.
+            The employer is exposed. A licence carries duties they will be audited against, so
+            credentials get checked long before anyone picks up the phone.
           </p>
-          <p className="home-artifact-label">What a homeowner is really asking</p>
+          <p className="home-artifact-label">What an employer is really asking</p>
           <ol className="home-context__questions home-context__questions--numbered">
-            {HOME_QUESTIONS.map((question, index) => (
+            {EMPLOYER_QUESTIONS.map((question, index) => (
               <li key={question}>
                 <small>0{index + 1}</small>
                 {question}
@@ -87,7 +87,7 @@ export function HomeContext() {
           </ol>
           <p className="home-artifact-label">So the website leads with</p>
           <dl className="home-context__tiles">
-            {HOME_LEADS.map(([term, description]) => (
+            {ADVISER_LEADS.map(([term, description]) => (
               <div key={term}>
                 <dt>{term}</dt>
                 <dd>{description}</dd>

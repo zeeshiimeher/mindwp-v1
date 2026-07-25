@@ -2603,79 +2603,22 @@
   background: var(--surface-navy);
 }
 
-/* Three lenses resolving into one starting point — the shape of the offer,
-   not five decorative circles. */
-.home-closing__review {
-  width: 100%;
-  max-width: 46rem;
+.home-closing__icons {
   display: flex;
-  flex-direction: column;
   align-items: center;
+  justify-content: center;
+  gap: var(--space-4);
 }
 
-.home-closing__lenses {
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: var(--space-5);
-}
-
-.home-closing__lenses li {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--space-2);
-  border: 1px solid var(--border-navy-hairline);
-  border-radius: var(--radius-md);
-  background: var(--surface-navy-panel);
-  padding: var(--space-5) var(--space-4);
-  text-align: center;
-}
-
-.home-closing__lens-icon {
-  width: 2.5rem;
-  height: 2.5rem;
+.home-closing__icons span {
+  width: 2.75rem;
+  height: 2.75rem;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  background: var(--emerald-tint);
+  background: rgb(47 185 140 / 14%);
   color: var(--color-emerald);
-}
-
-.home-closing__lenses strong {
-  color: var(--text-inverse);
-  font: 600 1.0625rem/1.25 var(--font-display);
-}
-
-.home-closing__lenses small {
-  color: var(--text-inverse-muted);
-}
-
-.home-closing__converge {
-  width: min(100%, 26rem);
-  height: 3rem;
-}
-
-.home-closing__converge path {
-  stroke: var(--emerald-line);
-  stroke-width: 1.5;
-  vector-effect: non-scaling-stroke;
-  fill: none;
-}
-
-.home-closing__resolve {
-  display: flex;
-  justify-content: center;
-}
-
-.home-closing__resolve span {
-  border: 1px solid var(--color-emerald);
-  border-radius: var(--radius-pill);
-  background: var(--emerald-tint);
-  padding: var(--space-3) var(--space-6);
-  color: var(--text-inverse);
-  font: var(--ui-strong);
 }
 
 .home-closing + .site-footer,
@@ -3069,24 +3012,8 @@ body:has(.home-closing) .site-footer__bottom {
     padding-right: 0;
   }
 
-  .home-closing__lenses {
-    grid-template-columns: 1fr;
-    gap: var(--space-3);
-  }
-
-  .home-closing__lenses li {
-    flex-direction: row;
-    align-items: center;
-    gap: var(--space-4);
-    text-align: left;
-  }
-
-  .home-closing__lenses strong {
-    flex: 0 0 auto;
-  }
-
-  .home-closing__converge {
-    height: 2rem;
+  .home-closing__icons {
+    gap: var(--space-2);
   }
 
   .home-work__card-body {

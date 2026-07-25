@@ -26,6 +26,8 @@ Prefer the real object or action: a website, service page, treatment explanation
 
 Use “system” when it describes a connected responsibility. Do not use it as prestige language. Avoid generic agency and SaaS phrasing such as seamless, robust, cutting-edge, all-in-one platform, growth machine, demo or free trial unless the literal fact requires it.
 
+Smart Website Systems is an approved public offer name. “System” is justified there because the engagement connects strategy, structure, content, design, development, enquiry capture and agreed integrations around one customer decision. Elsewhere, use the term only when a real connected responsibility is being described.
+
 Headings should make a specific observation, distinction or conclusion. Eyebrows and short labels may orient the reader to a stage, responsibility or decision; they do not need to manufacture novelty.
 
 Paragraphs should develop the heading rather than paraphrase it. If a visual or proof object already explains a relationship, surrounding copy should frame the implication instead of restating every detail.

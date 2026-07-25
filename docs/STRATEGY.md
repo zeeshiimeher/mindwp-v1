@@ -23,11 +23,28 @@ MindWP is a website-led partner for independent clinics and expert-led businesse
 
 The website is the principal commercial surface. Connected services are introduced only where they solve a diagnosed problem. MindWP must not read as a compulsory bundle, SaaS product, CRM resale, advertising agency or automation package.
 
-### Homepage positioning consequence
+### Active Homepage direction
 
-The Homepage leads with Smart Website Systems and organises its argument around how suitable people find, understand, evaluate and contact the business. The approved architecture, as built and promoted, runs: the destination case first, so that existing attention has somewhere convincing to land; then the connected moments around the website, acknowledged positively; then the principal offer explained in depth, with inspectable proof placed before it. That order is deliberate and is what the live page implements. A future page may argue it differently, but Strategy should describe the architecture actually approved rather than an intention the page did not adopt. It may then show how connected support improves local discovery or what happens after contact — presented positively, without repeatedly weakening the services as "optional", and without letting them become four co-equal reasons for the business to exist.
+The Homepage leads with Smart Website Systems and organises its argument around how suitable people find, understand, evaluate and contact the business. The approved architecture runs: the destination case first, so that existing attention has somewhere convincing to land; then the connected moments around the website, acknowledged positively; then the principal offer explained in depth, with inspectable proof placed before it. Connected support may then show how it improves local discovery or what happens after contact — presented positively, without repeatedly weakening the services as "optional", and without letting them become four co-equal reasons for the business to exist.
 
-The older line **“Work comes in. Too much slips away.”** remains strong diagnostic or campaign language. It should not currently define the Homepage because it assumes meaningful attention is already arriving, moves the centre of gravity towards post-enquiry leakage and automation, and makes the five capabilities feel more equal than the approved offer architecture. Reconsidering that decision requires a change in the principal public offer or material buyer evidence — not simply a preference for the older line or its existing visual execution.
+### Decision note
+
+**“Work comes in. Too much slips away.”** is benched as the Homepage thesis and remains available for diagnostic or campaign use. It assumes meaningful attention is already arriving, moves the centre of gravity towards post-enquiry leakage and automation, and makes the five capabilities feel more equal than the approved offer architecture. Reopening it requires a change in the principal public offer or material buyer evidence, not a preference for the line or its previous visual execution.
+
+## Why MindWP is different
+
+MindWP combines customer-decision strategy, copy, distinctive website design and careful implementation in one accountable engagement. The work continues through functioning enquiry capture and delivery, with CRM and automation connected only where they serve a defined responsibility. Clients receive a planned and tested working system — not an isolated design, an empty platform or a collection of disconnected tools.
+
+These are the affirmative reasons to choose MindWP:
+
+1. The customer decision shapes the website.
+2. Strategy, copy, design and development stay connected.
+3. Responsibility continues through a functioning useful enquiry.
+4. CRM and automation are applied deliberately rather than sold as generic tooling.
+5. The complete path is configured and tested.
+6. Proof and professional boundaries remain truthful.
+
+The non-claims recorded in Foundation support these reasons; they must not dominate them. A page that only says what MindWP refuses to promise has not yet given anyone a reason to buy.
 
 ## Current offer architecture
 
@@ -104,6 +121,38 @@ Keep the public site proof-led and purposeful. Active route configuration owns w
 - Review or contact material supports a diagnostic next step without implying publication, delivery or fit in advance.
 
 Page length, section count and visual structure follow the page job. A conceptual capability list is not a page catalogue or release plan.
+
+## Proof development
+
+Inspectable craft currently carries most of MindWP's trust burden. Foundation permits five proof forms — permitted named client work, responsibly anonymised work, honestly labelled demonstration work, inspectable craft and transparent process — and does not require MindWP to remain permanently anonymous or metric-free. It requires each proof item to be truthful and correctly labelled.
+
+A thin proof surface is answered with more proof that meets the standard, never with a weaker standard. This is an active business-development workstream, not something deferred until proof happens to appear.
+
+**Immediate**
+
+- Properly anonymised client work.
+- Clearly labelled demonstration projects.
+- Large, inspectable website specimens.
+- Specific descriptions of what MindWP planned, wrote, designed, connected and tested.
+- A concrete process showing real decisions and responsibilities.
+
+**Next**
+
+- Permissioned Google reviews and testimonials.
+- Short case narratives covering the original situation, what was unclear, what MindWP changed, what can be inspected and what was not measured.
+
+**Later**
+
+- Named case studies where permission exists.
+- Before-and-after comparisons.
+- Measured results only where a reliable baseline, timeframe and attribution exist.
+- Relevant review counts or ratings only while current and verifiable.
+
+Owners and per-item evidence status are not yet assigned. Assign them before the next proof item ships.
+
+Never close a proof gap by inventing metrics, adding weak testimonials, publishing named work without permission, making unsupported founder-history claims, adding a public price only to appear transparent, inflating the company through "we" language, or weakening the useful-enquiry boundary. Those constraints protect the business; the remedy is stronger evidence and clearer positive positioning.
+
+**Current state.** The live Homepage work section presents client websites as they publicly appear rather than anonymised, and its provenance copy states that plainly. Display permission for those sites is recorded outside this document.
 
 ## Open commercial decisions
 
