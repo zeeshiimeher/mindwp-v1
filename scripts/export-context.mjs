@@ -21,7 +21,9 @@ const ORIENTATION_SOURCES = [
 const FOCUSED_BASE_SOURCES = ["docs/README.md"];
 
 const SKILL_SOURCES = new Map([
-  ["mindwp-design-build", ".claude/skills/mindwp-design-build/SKILL.md"],
+  ["mindwp-page-design", ".claude/skills/mindwp-page-design/SKILL.md"],
+  ["mindwp-page-build", ".claude/skills/mindwp-page-build/SKILL.md"],
+  ["mindwp-design-eye", ".claude/skills/mindwp-design-eye/SKILL.md"],
   ["mindwp-frontend-quality", ".claude/skills/mindwp-frontend-quality/SKILL.md"],
 ]);
 

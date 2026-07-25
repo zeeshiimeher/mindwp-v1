@@ -85,7 +85,7 @@ test("focused optional sources and skills use deterministic order", () => {
     "--foundation",
     "--engineering",
     "--skill",
-    "mindwp-design-build",
+    "mindwp-page-design",
     "--strategy",
     "--writing",
     "--page-planning",
@@ -93,7 +93,7 @@ test("focused optional sources and skills use deterministic order", () => {
     resolve(tmpdir(), "synthetic-page.md"),
     "--design",
     "--skill",
-    "mindwp-design-build",
+    "mindwp-page-design",
   ]);
 
   assert.deepEqual(
@@ -108,7 +108,7 @@ test("focused optional sources and skills use deterministic order", () => {
       "supplied page plan",
       "docs/DESIGN.md",
       "docs/ENGINEERING.md",
-      ".claude/skills/mindwp-design-build/SKILL.md",
+      ".claude/skills/mindwp-page-design/SKILL.md",
       ".claude/skills/mindwp-frontend-quality/SKILL.md",
     ],
   );
@@ -143,8 +143,13 @@ test("focused canonical and repository selectors are independent", () => {
   }
 });
 
-test("focused permits either single execution skill", () => {
-  for (const skill of ["mindwp-design-build", "mindwp-frontend-quality"]) {
+test("focused permits any single execution skill", () => {
+  for (const skill of [
+    "mindwp-page-design",
+    "mindwp-page-build",
+    "mindwp-design-eye",
+    "mindwp-frontend-quality",
+  ]) {
     const parsed = options(["focused", "--skill", skill]);
     assert.deepEqual(parsed.skills, [skill]);
     assert.deepEqual(
@@ -212,7 +217,7 @@ test("arguments reject unknown profiles, options, skills, and profile-inapplicab
     /focused profile/,
   );
   assert.throws(
-    () => options(["orientation", "--skill", "mindwp-design-build"]),
+    () => options(["orientation", "--skill", "mindwp-page-design"]),
     /focused profile/,
   );
   assert.throws(() => options(["orientation", "--overwrite"]), /requires --output/);

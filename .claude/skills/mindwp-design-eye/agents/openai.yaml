@@ -1,0 +1,4 @@
+interface:
+  display_name: "MindWP Design Eye"
+  short_description: "Judge whether a built MindWP page is visually good"
+  default_prompt: "Use $mindwp-design-eye to capture this MindWP page, read the full page before the section crops, and return a ranked visual verdict on rhythm, payload legibility, object craft and emphasis."

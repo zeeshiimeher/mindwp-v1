@@ -38,7 +38,7 @@ Trace the issue to the smallest coherent owner:
 - motion target, lifecycle, or reduced-motion branch;
 - form validation, privacy, routing, publication, performance, test, or tool.
 
-If the problem is an absent hierarchy, weak concept, page narrative, section relationship, or final body-copy decision, report it as a design-owned issue. Use `mindwp-design-build` only when the user requested that design work.
+If the problem is an absent hierarchy, weak concept, page narrative, section relationship, or final body-copy decision, report it as a design-owned issue. Use `mindwp-page-design` only when the user requested that design work.
 
 ## Preserve accepted design intent
 

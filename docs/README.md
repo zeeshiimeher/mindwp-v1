@@ -1,6 +1,6 @@
 # MindWP documentation
 
-This directory is MindWP's reusable project memory. Use only the authorities the user supplies or explicitly names; do not turn the map into a workflow or infer authority from file age.
+This directory is MindWP's reusable project memory. Open only the authorities the work in hand needs — the reading routes below say which those are. Do not turn the map into a workflow or infer authority from file age.
 
 ## Active authorities
 
@@ -26,7 +26,7 @@ Read [STRATEGY.md](./STRATEGY.md) when a task depends on the audience lane, mark
 3. An explicitly supplied page plan owns that page's job, audience, intent, action, meaning, proof and fixed boundaries. It does not silently redefine the wider business.
 4. `CLAUDE.md` owns repository operating safety. Execution skills apply specialised methods; they do not create business or design authority.
 5. Current source and fresh renders own implemented reality. Report drift from the documents instead of silently treating implementation as a new strategic decision.
-6. Accepted pages are quality and implementation evidence, not templates or automatic global rules.
+6. The Homepage is the accepted quality and implementation reference — evidence of the standard to reach, not a template or an automatic global rule. A page awaiting rebuild carries no authority over new work, whatever it currently demonstrates.
 7. Archived or historical material, including anything recovered from git history, is a non-authoritative preservation source. Extract from it only when reconciled with current authority.
 
 Public routes, navigation and publication state come from active source and explicit release decisions. A document entry does not make a route live.
@@ -42,10 +42,29 @@ These labels describe confidence and scope, not a lifecycle or approval system.
 
 ## Reading routes
 
-**Selection rule:** A canonical authority is selected only when the user supplies or explicitly names it. Do not infer selection from the task type, a page plan, or an exporter option that names something else. One exception: when an execution skill's declared trigger matches the task, the specific context that skill explicitly declares counts as explicitly selected — nothing broader.
+**Selection rule:** A canonical authority is selected when the user supplies or explicitly names it, or when the route below assigns it to the work in hand. Do not infer selection from an exporter option that names something else, and do not open the full set for orientation.
 
-**Full orientation:** Read the full authority set only when the user explicitly requests full orientation.
+**Page design or redesign** — the supplied page plan, `DESIGN.md`, and a fresh capture of the accepted Homepage. Open Homepage source only when implementation understanding is necessary; the visual reference leads.
 
-**Scoped work:** Use only the page plans and canonical authorities the user supplied or explicitly named. A supplied page plan may be the primary or complete execution brief. If a missing commercial, strategic or writing decision would materially change the result, identify the gap instead of opening an unselected authority.
+**Page build** — the approved design specification and `ENGINEERING.md`, plus the existing foundational CSS the task needs. Not the Homepage: the design is already decided at this point.
 
-**Implementation or technical review:** Start from the selected brief and context. Inspect relevant current source, foundational CSS, assets and rendered evidence only as the requested implementation work requires. A matching execution skill may be used when its declared trigger matches, but one skill must not automatically load the other skill or a broader authority bundle. A focused exporter or isolated tool task must not inherit wider page, commercial or strategic context.
+**Visual audit** — fresh captures of the page under review, `DESIGN.md`, and the Homepage capture as the quality benchmark.
+
+**Repair, copy edit, tooling, or isolated technical work** — the changed scope and the authority that owns it. Nothing wider. A focused exporter or tool task must not inherit page, commercial or strategic context.
+
+**Full orientation** — the complete authority set, only when explicitly requested. `pnpm context:export orientation` assembles it for use outside the repository.
+
+In every route, open Foundation, Strategy or Writing when a business, positioning or claims question is genuinely open — not for background. If a missing decision would materially change the result, identify the gap rather than inventing an answer.
+
+## Execution skills
+
+Optional specialists, not a mandatory chain. Each declares its own trigger and context.
+
+| Skill | Use for | Opens the Homepage |
+| ----- | ------- | ------------------ |
+| `mindwp-page-design`     | Deciding a page or section design; direction, concept and critique. Produces a specification, no code | Yes — capture first |
+| `mindwp-page-build`      | Implementing an approved design in source                                                             | No                  |
+| `mindwp-design-eye`      | Judging whether a built page is visually good                                                         | Yes — capture only  |
+| `mindwp-frontend-quality`| Technical repair, finalisation and frontend quality review                                            | No                  |
+
+Design is decided and reviewed before implementation begins. One skill does not automatically load another or a broader authority bundle.

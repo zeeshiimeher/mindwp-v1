@@ -131,11 +131,12 @@ Prefer:
 - intentional layering;
 - clear spacing and proportion;
 - depth that communicates belonging, priority, state, or interaction.
-use only controlled shadows,gradients.
-Do not add glass effects,floating panels, or increased curvature merely to make a composition appear premium.
 
+Use controlled shadows and gradients. Overlap, rotation, layering, and curvature are valid when they communicate relationship, belonging, sequence, or depth; they fail when added to make a composition appear premium. The test is whether removing the effect would cost the reader information.
 
 Premium character should come primarily from typography, scale, proportion, spacing, hierarchy, material contrast, and careful responsive behaviour. Restraint should not become visual thinness: important material still needs sufficient scale, contrast, depth, evidence, or spatial presence to carry its job.
+
+A depth effect that is invisible against its own background is not restraint — it is an unfinished object. Check the rendered contrast, not the intent.
 
 ### Page-scale character
 
@@ -155,6 +156,12 @@ Use page-level judgement to establish:
 Not every section needs a bespoke visual concept. Quiet sections are valid and necessary. Distinctiveness should be concentrated where the meaning benefits from a stronger composition rather than distributed as decoration across every section.
 
 A page becomes compositionally flat when different meanings repeatedly receive the same introduction-to-payload relationship, the same internal hierarchy, and the same visual weight. It does not become flat merely because it uses familiar foundations or recurring brand surfaces.
+
+**Focal treatment follows focal payload.** Additional height, padding, or motion cannot be the primary source of emphasis. Before giving a section focal scale, identify the dominant object, the relationship it reveals, and why it needs that scale. A small payload inside a tall band is not a focal section; it is empty space.
+
+Across a substantial service page, section depth should vary according to importance and payload. Focal sections should be capable of occupying most or all of a desktop viewport when their composition warrants it. At least one central section should feel like a genuine event rather than another content band.
+
+These are proportions to judge, not measurements to hit. Do not lengthen a quiet section to reach a target depth.
 
 The exact measure, scale, position, and relationship between an introduction and the material around it remain contextual. Shared grammar creates coherence; the meaning-bearing experience after and around it creates distinction.
 
@@ -205,7 +212,9 @@ Use these as dimensions for judgement, not a checklist or library of layouts:
 - **Pace and effort:** density, repetition, and negative space.
 - **Page relationship:** continuity, interruption, and transition.
 
-Changing one or two variables purposefully can establish hierarchy without adding cards, panels, interfaces, or decoration. More ingredients do not make a stronger composition.
+Changing one or two variables purposefully can establish hierarchy without adding cards, panels, interfaces, or decoration.
+
+Additional ingredients are valid when they improve the central relationship, and decorative when they only accompany it. Count is not the test. A section carrying an important meaning with nothing but copy, rules, and spacing is under-built for the same reason a section stacked with unrelated artefacts is over-built.
 
 ## A real section concept
 
@@ -231,7 +240,7 @@ This is a reasoning bridge, not a form, packet, ledger, or required written expl
 These examples clarify judgement. They are not layouts to reproduce.
 
 - **Quiet section that passes:** a mist surface uses a familiar centred eyebrow, heading, and short supporting paragraph to clarify a professional boundary. The message is singular, the reading effort is intentionally low, and no artefact is added merely to make it look designed.
-- **Dominant section that fails:** a commercially important explanation of why enquiries break down becomes four equal icon cards. The cards hide causality, give every point the same weight, and could accept unrelated agency copy unchanged. Larger shadows or a navy background would not solve it.
+- **Dominant section that fails:** a commercially important explanation of *why* enquiries break down becomes four equal icon cards. The material is causal, and equal cards flatten causality into four peers of the same weight — the copy could be swapped for unrelated agency copy unchanged. The defect is the mismatch, not the cards: the same equal-card set is correct where the items genuinely are peers, such as the distinct ways attention arrives. Larger shadows or a navy background would not solve the causal case.
 - **Coherent long page that passes:** familiar surfaces and introduction grammar recur, while a few consequential moments receive meaning-specific scale, proof, or spatial relationships. Supporting passages stay calm, related ideas connect, and the page builds toward its action without demanding novelty from every section.
 - **Superficially varied page that fails:** colours, alignments, panel shapes, and decorative styles alternate, but every section still opens into an interchangeable cluster of short items with the same weight and reading path. The page is cosmetically varied and experientially repetitive.
 
@@ -284,22 +293,48 @@ Supporting planning detail is not a required public-copy count or a required num
 
 Never invent unavailable proof, metrics, testimonials, systems, client results, or operational detail to complete a visual idea.
 
-## Choose visual material by its communication job
+## Material expression
 
-Visual material should make meaning easier to perceive, evidence easier to inspect, or an action easier to understand.
+Composition decides how material is arranged. This decides what the material *is*.
 
-Operational interface fragments are one legitimate mode — not the default. Visual material may equally be a conceptual model, human or editorial illustration, an object-led composition, photography, or real evidence, selected by the meaning to be carried and the emotional register the moment needs. Human and editorial illustration suits ownership, situations and relationships that interface fragments cannot express; drawn with MindWP's restraint and palette around specific situations, it should never lapse into generic stock character art. A precise MindWP illustration style is deliberately not defined here — establish it through real page work before treating any of it as a rule.
+Visual material should make meaning easier to perceive, evidence easier to inspect, or an action easier to understand. Choose it by the meaning being carried and the register the moment needs.
 
-- **Typography-led composition** suits language whose contrast, cadence, sequence, or emphasis carries the idea. It fails when display treatment substitutes for an argument.
-- **Photography and real media** provide context, human specificity, place, process, or atmosphere. Crop for the important content rather than defaulting to a convenient centre.
-- **Actual work and proof** should be large and legible enough to judge. Keep evidence connected to the claim it supports.
-- **Document-like evidence** can make a real deliverable, decision, or process inspectable. Do not invent paperwork to imply rigour.
-- **Diagrams** help when a relationship is clearer spatially than verbally. Reject a diagram that requires more interpretation than the written point.
-- **Illustration and abstract systems** may express concepts, tone, or invisible relationships. Do not present them as evidence or force one metaphor across unrelated material.
-- **Code-native spatial artwork** can create depth, connection, sequence, or atmosphere when those qualities support the argument. Decoration alone is not proof of design.
-- **Interface-like material** is appropriate for a real interface, state, choice, or system behaviour. Do not default to a browser frame merely because the work is web-based, or fabricate dashboards, browser scenes, controls, or tiny UI merely to make a service look tangible.
-- **Motion-led explanation and interaction** may clarify state, causality, connection, or spatial continuity. The static equivalent must retain the essential meaning.
-- **Mixed visual languages** are valid when each form has a distinct job and the page still feels coherent.
+Name the primary payload before drawing the section. A substantial section may be carried by:
+
+- **constructed interface** — a token-built scene demonstrating real system behaviour;
+- **real evidence** — photography, shipped work, or permissioned proof;
+- **node model** — weighted entities and visible connections;
+- **icon-carried set** — genuine peers distinguished by authored marks;
+- **depth set** — overlap, rotation, or stagger expressing belonging, sequence, or hierarchy;
+- **state surface** — tabs, selection, or another meaningful state change;
+- **type as object** — language operating at artefact scale rather than as ordinary body copy;
+- **spatial sequence** — a path, threshold, track, or transformation made visible;
+- **bare typeset arrangement** — copy and rules carrying a deliberately quiet transition.
+
+Choose the material because it externalises the section's relationship, not because the page needs another visual technique. The list is a vocabulary, not an inventory to work through, and it is open — a payload that externalises its relationship well and belongs to none of these categories is still correct.
+
+Bare typeset arrangements are the quiet register. If they dominate a substantial page, explain why the main meanings do not require stronger material expression.
+
+**A named object succeeds only when its central relationship is legible in the render, survives responsive transformation, and remains meaningful without decorative explanation.** Naming a payload does not make it good. An object that needs its supporting paragraph to be understood has not externalised anything.
+
+The recurring failures are craft failures, not vocabulary failures: an object at the same value as its own background, text clipped by an overlapping neighbour, ghost typography too faint to read, a shape carrying no relationship, an interface fragment too small to inspect, or a diagram that needs prose to explain what it depicts.
+
+### How each material fails
+
+Interface fragments are one legitimate mode, not the default. Illustration suits ownership, situations, and relationships that an interface cannot express; drawn with MindWP's restraint and palette around specific situations, it should never lapse into generic stock character art. A precise MindWP illustration style is deliberately not defined here — establish it through real page work before treating any of it as a rule.
+
+- **Constructed interface** fails when it is a frame chosen because the work is web-based, or a dashboard, control, or tiny UI fabricated to make a service look tangible. Ask what the scene proves; if the answer is "that we build websites", it is decoration. It also fails when rendered too small to inspect.
+- **Real evidence** should be large and legible enough to judge, cropped for the important content rather than a convenient centre, and kept connected to the claim it supports. Document-like evidence can make a real deliverable or decision inspectable — never invent paperwork to imply rigour.
+- **Node model** fails when the diagram requires more interpretation than the written point would.
+- **Icon-carried set** fails when the items are not genuine peers: equal weight then flattens sequence, causality, or priority into a grid.
+- **Depth set** fails when overlap clips content, or when the stacked objects sit at the same value as their own ground and disappear.
+- **State surface** fails when it simulates functionality the service does not provide, or when the essential meaning exists only in a state the visitor may never open.
+- **Type as object** fails when display treatment substitutes for an argument.
+- **Spatial sequence** fails when the path is drawn but the relationship along it is not — a line connecting two labels is not a sequence.
+- **Abstract and code-native artwork** may express concepts, tone, or invisible relationships, and creates depth, connection, or atmosphere when those qualities support the argument. Do not present it as evidence, force one metaphor across unrelated material, or treat decoration as proof of design.
+- **Motion-led explanation** may clarify state, causality, connection, or spatial continuity. The static equivalent must retain the essential meaning.
+
+Mixed visual languages are valid when each form has a distinct job and the page still feels coherent.
 
 Cards, lists, grids, panels, timelines, browser frames, and interfaces remain available primitives. Use them because the information or interaction has that structure, not because they create the appearance of a designed payload.
 
@@ -376,33 +411,37 @@ Concentrate authored motion where it clarifies a relationship or state. The tech
 
 ## Use accepted-page evidence carefully
 
-The Homepage and Local SEO page are accepted examples of implementation quality, current brand character, and family resemblance. Their audited durable foundations and practices are already distilled into this document and Engineering. They are not default executor reading.
+The Homepage is the accepted example of MindWP implementation quality, current brand character, and family resemblance.
 
-Inspect either page only when:
+**Open it during page planning, page design, and visual audit.** Open a fresh section capture first, and its source only when implementation understanding is necessary — the visual reference should lead, because opening source first makes an executor imitate implementation detail instead of studying visual weight and page rhythm.
 
-- directly editing or auditing that page;
-- answering a named design, craft, or implementation question;
-- diagnosing a specific regression;
-- the user explicitly requests it.
+Do not open it for build, repair, copy, or ordinary engineering tasks. Those have a decided design already; the reference adds nothing and invites drift.
 
-They are not templates, pattern libraries, creative briefs, page-length or section-count targets, required surface sequences, breakpoint rules, animation rules, or compositional ceilings.
+It is a quality reference, not an anatomy library. It is not a template, pattern library, creative brief, page-length or section-count target, required surface sequence, breakpoint rule, animation rule, or compositional ceiling.
 
-Their exact fans, staircases, radial systems, tabs, browser scenes, mock interfaces, grids, breakout geometries, hero mechanisms, and motion choreography are page-specific evidence. Do not browse those constructions as a menu of future solutions or copy their anatomy merely because it is available.
+Its exact fans, staircases, radial systems, tabs, browser scenes, mock interfaces, grids, breakout geometries, hero mechanisms, and motion choreography are page-specific evidence. Study them for the standard of resolution they reach. Reuse a construction when this material independently creates the same need; do not transplant its anatomy because it is available.
 
-Page-specific does not mean permanently forbidden. A technique may be reused when the new material independently creates the same need. A future page may also differ substantially while remaining recognisably MindWP.
+Study what a section is made of and how much weight it carries. Do not conclude that a new page needs the same objects.
+
+A future page may differ substantially while remaining recognisably MindWP.
 
 Do not promote a recurring value or device to a global design rule unless it is owned by a genuine shared foundation or explicitly adopted as a project decision.
+
+Pages not listed here are not references. A page awaiting rebuild carries no authority over new work, whatever it currently demonstrates.
 
 ## Judge rendered evidence
 
 Rendering should begin while content and composition remain adaptable, not only after implementation appears complete.
 
-A complete-page visual review normally needs:
+A complete-page visual review normally needs, in this order:
 
-- a broad desktop full-page view;
-- a narrow or mobile full-page view;
-- close inspection of important focal sections;
-- an intermediate width when the composition or breakpoint behaviour creates material risk.
+1. a broad desktop full-page view;
+2. a narrow or mobile full-page view;
+3. a section contact sheet;
+4. close inspection of important focal sections;
+5. an intermediate width when the composition or breakpoint behaviour creates material risk.
+
+Read the full page before the crops. Page rhythm, accumulated fatigue, and emphasis distribution are invisible in section crops, and a section that reads well alone can still be the fourth of its kind. Thumbnails also misrepresent type size and contrast in both directions — confirm a suspected craft problem at full resolution before naming it.
 
 This is an evidence standard, not a screenshot packet or fixed capture count. A bounded section task needs only the coupled evidence necessary to judge its page-level consequence. Source code alone cannot prove visual quality.
 
@@ -413,6 +452,10 @@ Review first-glance hierarchy, commercial progression, focal weight, proof legib
 Use these as judgement prompts, not scores, validators, or quotas:
 
 - **Shared shell:** after ignoring the palette, typography, surface, alignment, and introduction grammar, does the important inner composition express this material's relationship?
+- **Material:** does the relationship exist as something in the render, or only in the copy? Cover the paragraphs and check what is left.
+- **Object craft:** is each payload legible against its own background, uncropped at its intended width, and understandable before the copy beside it is read?
+- **Emphasis:** does every section given focal scale contain a payload that earns it, or is the extra depth carrying empty space?
+- **Quiet or unfinished:** where a section is calm, is that a decision about the material, or the absence of one?
 - **Meaning:** does the visual structure make a real comparison, sequence, dependency, proof relationship, or decision easier to understand, or merely decorate the copy?
 - **Hierarchy:** is the most important idea or evidence visibly unmistakable?
 - **Recurrence:** where a reading pattern repeats, does the material genuinely have the same role and structure? Where meanings differ, do their payload hierarchy, scale, and eye path differ for a reason?
