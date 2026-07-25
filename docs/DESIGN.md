@@ -22,7 +22,7 @@ Technical competence alone is not the standard. If an important composition is g
 
 ### Sector-flexible expression
 
-MindWP's specialist depth is the precision of its thinking, not any one industry's aesthetic. The global visual and verbal language — including artefacts, illustration, iconography and recurring examples — stays sector-neutral, so the same brand can credibly serve a clinic, a law boutique, a workshop or a venue. Sector imagery, terminology and visual material belong to industry pages and other page-specific work; they do not join the shared language by recurrence alone.
+MindWP's specialist depth is the precision of its thinking, not any one industry's aesthetic. Independent clinics are the primary audience and may lead audience language, content and proof; the visual grammar does not follow them. Clinic-first in audience and content, sector-neutral in visual grammar. The global visual and verbal language — including artefacts, illustration, iconography and recurring examples — stays sector-neutral, so the same brand can credibly serve a clinic, a law boutique or an advisory firm. Sector imagery, terminology and visual material belong to industry pages and other page-specific work; they do not join the shared language by recurrence alone.
 
 ## Shared MindWP grammar
 

@@ -25,19 +25,12 @@ export const CANONICAL_IMPLEMENTATIONS = [
   { slug: "website-rebuild", label: "Website Rebuild" },
 ] as const;
 
+/**
+ * Audience lanes, clinic-first (docs/STRATEGY.md, Settled decisions). This is
+ * audience taxonomy only: it does not govern which work appears in the proof
+ * catalogue, and past work outside these lanes remains valid evidence of craft.
+ */
 export const CANONICAL_INDUSTRY_LANES = [
-  {
-    slug: "home-services",
-    label: "Home Services",
-    verticals: [
-      { slug: "roofing", label: "Roofing" },
-      { slug: "hvac", label: "HVAC" },
-      { slug: "plumbing", label: "Plumbing" },
-      { slug: "foundation-repair", label: "Foundation Repair" },
-      { slug: "septic", label: "Septic Services" },
-      { slug: "tree-service", label: "Tree Service" },
-    ],
-  },
   {
     slug: "specialist-clinics",
     label: "Specialist Clinics",
@@ -52,6 +45,18 @@ export const CANONICAL_INDUSTRY_LANES = [
       { slug: "physiotherapy", label: "Physiotherapy" },
       { slug: "optometry", label: "Optometry" },
       { slug: "orthopaedics", label: "Orthopaedics" },
+    ],
+  },
+  {
+    slug: "expert-led-advisers",
+    label: "Expert-Led Advisers",
+    verticals: [
+      { slug: "sponsor-licence-immigration", label: "Sponsor-Licence & Corporate Immigration" },
+      { slug: "estate-planning-probate", label: "Estate Planning & Probate" },
+      { slug: "forensic-accounting", label: "Forensic Accounting & Valuation" },
+      { slug: "tax-investigation", label: "Tax Investigation" },
+      { slug: "medical-director-compliance", label: "Medical-Director & Compliance Consultancy" },
+      { slug: "business-brokers", label: "Business Brokers & Succession" },
     ],
   },
 ] as const;

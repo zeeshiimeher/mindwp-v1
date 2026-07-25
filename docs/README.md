@@ -16,6 +16,10 @@ This directory is MindWP's reusable project memory. Use only the authorities the
 
 The documents have separate domains. When two statements appear to conflict, use the authority that owns the decision rather than combining both.
 
+## Current commercial commitments
+
+Read [STRATEGY.md](./STRATEGY.md) when a task depends on the audience lane, market emphasis, pricing posture, public voice, offer hierarchy or conversion direction. Those decisions are settled there and are not restated here, so do not treat their absence from this map as an open question. A supplied page plan should carry the specific decisions that page needs.
+
 ## Source roles and precedence
 
 1. An explicit current user decision is authoritative for its stated scope and may revise an older decision.

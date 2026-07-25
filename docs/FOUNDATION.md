@@ -43,7 +43,8 @@ MindWP also avoids unsupported competitor absolutes. The offer should be differe
 ## Privacy and professional boundaries
 
 - Keep enquiry data, credentials, account details and private implementation information out of public copy, client bundles, logs and source-controlled examples.
-- Keep founder and team details private unless the user has explicitly approved the exact public claim.
+- MindWP speaks publicly as "we". Founder and team details — names, images, biographies, credentials, years of experience and locations — stay out of public copy unless the user has explicitly approved the exact public claim.
+- Collective voice must not manufacture operational reality. "We" may describe how the work is genuinely done; it must not imply more people, a longer history, a physical studio or wider capability than actually exists. Where a public claim would depend on headcount or tenure, omit the claim rather than let the pronoun carry it.
 - Use personal, client and patient information only with appropriate authority and purpose.
 - Do not present MindWP as a clinical, legal, compliance or financial decision-maker.
 - Do not imply that automation replaces commercial, clinical, legal or professional judgement.

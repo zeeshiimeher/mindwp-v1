@@ -2,15 +2,30 @@
 
 This document owns MindWP's current approved commercial direction. It is authoritative now but deliberately revisable as the business learns. [FOUNDATION.md](./FOUNDATION.md) owns the durable rationale and boundaries; an explicit later user decision overrides older strategy.
 
+## Settled decisions
+
+These were open and are now closed. They are recorded here because Strategy owns them; no other document should restate them.
+
+| Decision | Settled position |
+|---|---|
+| Audience lane | Clinic-first, plus expert-led businesses |
+| Market emphasis | United Kingdom primary; Australia the natural second market. International English throughout; location not emphasised in public copy |
+| Principal offer | Smart Website Systems, with four separately scoped supporting services |
+| Pricing posture | No public price, tier table or starting figure. Scope and cost are quoted after the Visibility & Enquiry Review |
+| Public voice | MindWP speaks as "we". No named or pictured founder, no personal biography, no location emphasis. Accountability is shown through inspectable work, a stated process and named responsibility inside a client's engagement — not through a founder profile |
+| Company age | Established or newer, provided getting the website and its handling right from the start matters to the buyer |
+
+The market emphasis rests on a practical operating case: working-hours overlap with the UK from the current base, and a private-clinic market where local discovery and considered evaluation both matter. Supporting market conditions are reasoning, not evidence, and must not become public claims.
+
 ## Current positioning
 
-MindWP is a website-led partner for established service businesses and expert-led businesses. It combines strategic clarity, distinctive web design and careful implementation around real customer decisions. Independent clinics are an important market, but they are not the default visual or verbal expression of the global brand; “specialist” refers to the depth and precision of MindWP's thinking, not to any one sector's aesthetic.
+MindWP is a website-led partner for independent clinics and expert-led businesses. It combines strategic clarity, distinctive web design and careful implementation around real customer decisions. Independent clinics are the primary market and may lead audience language, content and proof, while the shared visual and verbal grammar stays sector-neutral so the same brand can credibly serve a law boutique or an advisory firm; “specialist” refers to the depth and precision of MindWP's thinking, not to any one sector's aesthetic.
 
 The website is the principal commercial surface. Connected services are introduced only where they solve a diagnosed problem. MindWP must not read as a compulsory bundle, SaaS product, CRM resale, advertising agency or automation package.
 
 ### Homepage positioning consequence
 
-The Homepage should lead with Smart Website Systems and organise its argument around how suitable people find, understand, evaluate and contact the business. It may then show how connected support improves local discovery or what happens after contact — presented positively, without repeatedly weakening the services as "optional", and without letting them become four co-equal reasons for the business to exist.
+The Homepage leads with Smart Website Systems and organises its argument around how suitable people find, understand, evaluate and contact the business. The approved architecture, as built and promoted, runs: the destination case first, so that existing attention has somewhere convincing to land; then the connected moments around the website, acknowledged positively; then the principal offer explained in depth, with inspectable proof placed before it. That order is deliberate and is what the live page implements. A future page may argue it differently, but Strategy should describe the architecture actually approved rather than an intention the page did not adopt. It may then show how connected support improves local discovery or what happens after contact — presented positively, without repeatedly weakening the services as "optional", and without letting them become four co-equal reasons for the business to exist.
 
 The older line **“Work comes in. Too much slips away.”** remains strong diagnostic or campaign language. It should not currently define the Homepage because it assumes meaningful attention is already arriving, moves the centre of gravity towards post-enquiry leakage and automation, and makes the five capabilities feel more equal than the approved offer architecture. Reconsidering that decision requires a change in the principal public offer or material buyer evidence — not simply a preference for the older line or its existing visual execution.
 
@@ -43,7 +58,14 @@ Measurement should help reveal real customer decisions and useful weak points: w
 
 ## Audience and qualification
 
-The current audience is established service businesses and expert-led businesses, with independent clinics as one important market within it. Good fit depends on the actual decision, value and trust at stake; available proof; capacity to act; and whether MindWP can own a useful scope. Industry pages should express the industry's real customer or patient decision, terminology, evidence and professional limits.
+The current audience is independent clinics first, together with expert-led businesses. The primary market is the United Kingdom, with Australia the natural second.
+
+An **expert-led business** is one where identifiable expertise and accountable judgement materially shape the service, and the buyer evaluates credibility, fit and trust before making contact. This usually includes clinics and professional or advisory firms. It does not automatically include businesses whose primary value is inventory, venue access, transport, equipment hire or undifferentiated transaction handling.
+
+An abstract definition will always leave edge cases, so these examples are approved alongside it:
+
+- **In lane:** independent clinics; sponsor-licence and corporate immigration boutiques; estate-planning and probate practices; forensic accounting and business-valuation boutiques; tax-investigation practices; medical-director and regulatory-compliance consultancies.
+- **Out of lane:** event and equipment hire; venues; chauffeur and transport operators; yacht and vehicle broking; and anything competing primarily on price or availability. Good fit depends on the actual decision, value and trust at stake; available proof; capacity to act; and whether MindWP can own a useful scope. Industry pages should express the industry's real customer or patient decision, terminology, evidence and professional limits.
 
 Qualification is diagnostic rather than exclusionary. Do not infer a universal rule that every buyer must be established, have an existing website, belong to one launch industry or purchase an ongoing service. A page plan may set a narrower audience when evidence supports it.
 
@@ -55,7 +77,7 @@ MindWP's delivery role is hands-on: it plans how each agreed piece should work, 
 
 No single handover or ongoing-management model is approved for every engagement. Website ownership, service-account ownership, subscription responsibility, data access and ongoing management remain proposal-level decisions until a general policy is explicitly settled.
 
-Current pricing is tailored and private. There is no approved public tier table, starting price or universal qualification signal. Public pricing posture and any standard floor remain open decisions; a proposal should still make cost and scope clear.
+Current pricing is tailored and private. There is no approved public tier table, starting price or universal qualification signal. Pricing is quoted after the Visibility & Enquiry Review has established scope. No public price, tier table, starting figure or universal qualification signal is published, and that is a deliberate position rather than an unsettled one. A proposal must still make cost and scope clear before work begins.
 
 ## Current conversion direction
 
@@ -89,11 +111,7 @@ These questions are deliberately open and do not block general design-system wor
 
 - the preferred balance between handover and ongoing management;
 - standard website, service-account, data and subscription ownership terms;
-- a public pricing floor or qualification signal;
 - the final public label and commitment level for the broader review offer;
-- geographic emphasis and any market-specific language;
-- audience-lane priority and narrower new-business qualification;
-- which founder or experience facts may become public proof;
 - future information-architecture expansion and publication order.
 
 Record an answer here only after an explicit decision. Until then, a supplied page plan may resolve a page-specific need without pretending to settle the whole business.
