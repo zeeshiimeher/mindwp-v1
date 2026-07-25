@@ -8,7 +8,7 @@ This authority should improve when future execution exposes a repeatable design 
 
 ## The quality standard
 
-MindWP's website is part of its portfolio. It should feel considered rather than assembled, while remaining clear, truthful, useful, and appropriate to a professional service business.
+MindWP's website should feel considered rather than assembled, while remaining clear, truthful, useful, and appropriate to a professional service business.
 
 The intended qualities should be observable in the work:
 
@@ -22,7 +22,7 @@ Technical competence alone is not the standard. If an important composition is g
 
 ### Sector-flexible expression
 
-MindWP's specialist depth is the precision of its thinking, not any one industry's aesthetic. Independent clinics are the primary audience and may lead audience language, content and proof; the visual grammar does not follow them. Clinic-first in audience and content, sector-neutral in visual grammar. The global visual and verbal language — including artefacts, illustration, iconography and recurring examples — stays sector-neutral, so the same brand can credibly serve a clinic, a law boutique or an advisory firm. Sector imagery, terminology and visual material belong to industry pages and other page-specific work; they do not join the shared language by recurrence alone.
+MindWP's specialist depth is the precision of its thinking, not any one industry's aesthetic. Independent clinics are the primary audience and may lead audience language, content and proof; the visual grammar does not follow them. Clinic-first in audience only. sector-neutral in visual grammar. The global visual and verbal language — including artefacts, illustration, iconography and recurring examples — stays sector-neutral, so the same brand can credibly serve a clinic, a law boutique or an advisory firm. Sector imagery, terminology and visual material belong to industry pages and other page-specific work; they do not join the shared language by recurrence alone.
 
 ## Shared MindWP grammar
 
@@ -59,7 +59,7 @@ Section introductions may be left-aligned, centred, split, embedded, or otherwis
 
 Do not seek originality by avoiding sections, containers, headings, introductions, Flex, Grid, cards, lists, or panels. Judge the hierarchy, proportion, relationships, reading path, responsive behaviour, and visual expression created within those foundations.
 
-The introduction is not automatically the complete section design. The material after and around it should communicate the section's particular relationship, proof, choice, process, comparison, or conclusion.
+The introduction is not automatically the complete section design. The material after and around it should communicate the section's particular relationship.
 
 Start with the existing shared foundations. Extend or depart from them only when the composition has a specific requirement they do not serve. A page-specific visual layer may break out of a container, introduce controlled layering, or establish a different spatial environment while the semantic structure and readable content remain sound.
 
@@ -127,12 +127,13 @@ Prefer:
 - hairline borders;
 - restrained radii;
 - subtle surface contrast;
-- rare and controlled shadows;
+- controlled shadows;
 - intentional layering;
 - clear spacing and proportion;
 - depth that communicates belonging, priority, state, or interaction.
+use only controlled shadows,gradients.
+Do not add glass effects,floating panels, or increased curvature merely to make a composition appear premium.
 
-Do not add shadows, glass effects, gradients, floating panels, or increased curvature merely to make a composition appear premium.
 
 Premium character should come primarily from typography, scale, proportion, spacing, hierarchy, material contrast, and careful responsive behaviour. Restraint should not become visual thinness: important material still needs sufficient scale, contrast, depth, evidence, or spatial presence to carry its job.
 
