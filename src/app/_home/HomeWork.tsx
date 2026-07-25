@@ -1,6 +1,8 @@
 import Image from "next/image";
+import type { ReactNode } from "react";
 
 import { WORK_FEATURE, WORK_ITEMS } from "@/content/work";
+import { cn } from "@/lib/utils";
 
 /**
  * Proof status is carried per item, not by one global sentence, so a mixed
@@ -13,27 +15,40 @@ import { WORK_FEATURE, WORK_ITEMS } from "@/content/work";
  * documented there. Do not reintroduce a local copy of this data.
  */
 
-export function HomeWork() {
+interface HomeWorkProps {
+  className?: string;
+  description?: string;
+  eyebrow?: string;
+  heading?: ReactNode;
+  id?: string;
+  provenance?: string;
+}
+
+export function HomeWork({
+  className,
+  description = "Look at the work the way your own customers would look at yours: what each page answers, how it's organised, and the next step it leads to — not a gallery of pretty screens.",
+  eyebrow = "Selected work",
+  heading = (
+    <>
+      Website work <em>you can inspect.</em>
+    </>
+  ),
+  id = "work",
+  provenance = "Published client websites, shown as they appear online. Each item is labelled with its status.",
+}: HomeWorkProps = {}) {
   return (
-    <section id="work" className="home-work section section--focal on-mist">
+    <section id={id} className={cn("home-work section section--focal on-mist", className)}>
       <div className="container section-intro section-intro--split" data-home-sequence>
         <div className="section-title-group">
           <p className="eyebrow" data-home-sequence-item>
-            Selected work
+            {eyebrow}
           </p>
-          <h2 data-home-sequence-item>
-            Website work <em>you can inspect.</em>
-          </h2>
+          <h2 data-home-sequence-item>{heading}</h2>
         </div>
         <div className="section-copy-group">
-          <p data-home-sequence-item>
-            Look at the work the way your own customers would look at yours: what each page
-            answers, how it&apos;s organised, and the next step it leads to — not a gallery of
-            pretty screens.
-          </p>
+          <p data-home-sequence-item>{description}</p>
           <p className="home-work__provenance" data-home-sequence-item>
-            Published client websites, shown as they appear online. Each item is labelled with its
-            status.
+            {provenance}
           </p>
         </div>
       </div>
