@@ -1,104 +1,65 @@
-"use client";
+import {
+  ArtExactSearch,
+  ArtLocalSearch,
+  ArtPaidClick,
+  ArtReferral,
+  ArtRemembered,
+  ArtSecondLook,
+} from "@/app/_home/HomeAttentionArt";
 
-import { type KeyboardEvent, useState } from "react";
-
-import { focusAndRevealTab, revealTab } from "@/app/_home/tabNavigation";
-import { useResponsiveTabOrientation } from "@/app/_home/useResponsiveTabOrientation";
-import { Icon, type IconName } from "@/components/ui/Icon";
-
-const ATTENTION_MOMENTS: readonly {
-  number: string;
-  label: string;
-  eyebrow: string;
-  icon: IconName;
-  title: string;
-  body: string;
-  note: string;
-}[] = [
+/**
+ * Six ways the same attention arrives.
+ *
+ * These are genuine peers — no order, no sequence, no causality between them —
+ * which is the one relationship equal cells are actually right for. They are
+ * laid out as a hairline lattice rather than six floating tiles, and each cell
+ * draws the surface the visitor arrived from, so the six read as specific to
+ * this argument rather than as a grid that would accept any agency copy.
+ *
+ * No interaction: the page already asks the visitor to operate a control in
+ * Beyond the Website, and repeating that here would give different material the
+ * same reading pattern. Every word is present at once.
+ */
+const MOMENTS = [
   {
     number: "01",
     label: "The exact search",
-    eyebrow: "The exact search",
-    icon: "search",
-    title: "They searched for exactly this, and landed on everything.",
-    body: "A search for one specific treatment or service opens onto a general homepage instead of the page built to answer it. The click already proved intent; the page didn't meet it.",
-    note: "The most qualified attention is the easiest to lose.",
+    body: "A search for one specific treatment or service opens onto a general homepage. The click already proved intent; the page didn't meet it.",
+    Art: ArtExactSearch,
   },
   {
     number: "02",
     label: "The local search",
-    eyebrow: "The local search",
-    icon: "map-pin",
-    title: "Nearby and looking, not yet convinced.",
-    body: "A map listing gets someone as far as the website. If the site doesn't confirm the same service, area and trust the listing promised, the next result gets the click instead.",
-    note: "Being found nearby only starts the decision.",
+    body: "A map listing gets someone as far as the website. If the site doesn't confirm the same service and area, the next result gets the click.",
+    Art: ArtLocalSearch,
   },
   {
     number: "03",
     label: "The referral",
-    eyebrow: "The referral",
-    icon: "message-square",
-    title: "Someone already vouched for you.",
-    body: "A referred visitor arrives already inclined to trust you. A generic homepage that doesn't confirm what they were told wastes the warmest attention a business gets.",
-    note: "A referral deserves a site that meets it halfway.",
+    body: "A referred visitor arrives already inclined to trust you. A homepage that doesn't confirm what they were told wastes the warmest attention a business gets.",
+    Art: ArtReferral,
   },
   {
     number: "04",
     label: "The paid click",
-    eyebrow: "The paid click",
-    icon: "globe",
-    title: "The advert earns the click; the page has to earn the rest.",
-    body: "Advertising can put the offer in front of the right person. What the click lands on still has to confirm relevance and offer a clear next step, or the spend only bought a visit.",
-    note: "Attention doesn't stay just because it was paid for.",
+    body: "Advertising can put the offer in front of the right person. What the click lands on still has to confirm relevance and offer a clear next step.",
+    Art: ArtPaidClick,
   },
   {
     number: "05",
     label: "The second look",
-    eyebrow: "The second look",
-    icon: "star",
-    title: "They check the proof before they call.",
-    body: "Reviews, past work and credentials get checked quietly before contact. If the website doesn't hold that proof, the visitor goes looking for it somewhere else.",
-    note: "Confidence is usually built before the phone is picked up.",
+    body: "Reviews, past work and credentials get checked quietly before contact. If the website doesn't hold that proof, the visitor goes looking elsewhere.",
+    Art: ArtSecondLook,
   },
   {
     number: "06",
     label: "The remembered name",
-    eyebrow: "The remembered name",
-    icon: "folder",
-    title: "They come back later, still undecided.",
-    body: "A visitor who has seen the business before returns directly, by name rather than by search. If the site still doesn't answer their question, familiarity alone won't close the gap.",
-    note: "A second visit deserves a clearer answer than the first.",
+    body: "Someone returns directly, by name rather than by search. If the site still doesn't answer their question, familiarity alone won't close the gap.",
+    Art: ArtRemembered,
   },
-];
+] as const;
 
 export function HomeAttention() {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const orientation = useResponsiveTabOrientation();
-  const active = ATTENTION_MOMENTS[activeIndex];
-
-  const handleKeys = (event: KeyboardEvent<HTMLButtonElement>, index: number) => {
-    if (!["ArrowLeft", "ArrowRight", "ArrowUp", "ArrowDown", "Home", "End"].includes(event.key)) {
-      return;
-    }
-
-    event.preventDefault();
-    let nextIndex = index;
-    if (["ArrowLeft", "ArrowUp"].includes(event.key)) {
-      nextIndex = (index - 1 + ATTENTION_MOMENTS.length) % ATTENTION_MOMENTS.length;
-    }
-    if (["ArrowRight", "ArrowDown"].includes(event.key)) {
-      nextIndex = (index + 1) % ATTENTION_MOMENTS.length;
-    }
-    if (event.key === "Home") nextIndex = 0;
-    if (event.key === "End") nextIndex = ATTENTION_MOMENTS.length - 1;
-
-    setActiveIndex(nextIndex);
-    const tabs = event.currentTarget
-      .closest("[role='tablist']")
-      ?.querySelectorAll<HTMLButtonElement>("[role='tab']");
-    if (tabs) focusAndRevealTab(tabs, nextIndex);
-  };
-
   return (
     <section id="attention" className="home-attention section">
       <div className="container section-intro" data-home-sequence>
@@ -113,59 +74,23 @@ export function HomeAttention() {
       </div>
 
       <div className="container">
-        <div className="container--split home-attention__panel">
-        <ol
-          className="home-attention__index"
-          role="tablist"
-          aria-label="Where existing attention arrives"
-          aria-orientation={orientation}
-          data-home-stagger
-        >
-          {ATTENTION_MOMENTS.map((moment, index) => {
-            const selected = index === activeIndex;
-            return (
-              <li role="presentation" key={moment.number} data-home-stagger-item>
-                <button
-                  type="button"
-                  role="tab"
-                  id={`attention-tab-${moment.number}`}
-                  aria-controls="attention-panel"
-                  aria-selected={selected}
-                  tabIndex={selected ? 0 : -1}
-                  className={selected ? "is-active" : undefined}
-                  onClick={(event) => {
-                    setActiveIndex(index);
-                    revealTab(event.currentTarget);
-                  }}
-                  onKeyDown={(event) => handleKeys(event, index)}
-                >
-                  <span>{moment.label}</span>
-                  <Icon name="arrow-right" size={16} />
-                </button>
-              </li>
-            );
-          })}
-        </ol>
-
-        <article
-          className="home-attention__detail"
-          role="tabpanel"
-          id="attention-panel"
-          aria-labelledby={`attention-tab-${active.number}`}
-          tabIndex={0}
-          data-home-fade
-          key={active.number}
-        >
-          <span className="home-attention__icon">
-            <Icon name={active.icon} size={18} />
-          </span>
-          <p className="home-artifact-label">{active.eyebrow}</p>
-          <h3>{active.title}</h3>
-          <p>{active.body}</p>
-          <p className="home-attention__note">{active.note}</p>
-        </article>
-        </div>
+        <ul className="att" data-home-stagger>
+          {MOMENTS.map(({ number, label, body, Art }) => (
+            <li className="att__cell" key={number} data-home-stagger-item>
+              <span className="att__figure" aria-hidden="true">
+                <Art />
+              </span>
+              <p className="att__num">{number}</p>
+              <h3>{label}</h3>
+              <p className="att__body">{body}</p>
+            </li>
+          ))}
+        </ul>
       </div>
+
+      <p className="container att__close editorial-note" data-home-fade>
+        The most qualified attention is the easiest to lose.
+      </p>
     </section>
   );
 }

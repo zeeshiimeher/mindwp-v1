@@ -67,33 +67,12 @@ test("homepage follows the approved reference structure", async ({ page }) => {
     "closing",
   ]);
 
-  const attentionTablist = page.getByRole("tablist", { name: "Where existing attention arrives" });
-  await expect(attentionTablist).toHaveAttribute("aria-orientation", "vertical");
-
-  const expectAttentionTab = async (name: string) => {
-    const tab = page.getByRole("tab", { name });
-    await expect(tab).toHaveAttribute("aria-selected", "true");
-    await expect(tab).toBeFocused();
-  };
-
-  const firstAttentionTab = page.getByRole("tab", { name: "The exact search" });
-  await expect(firstAttentionTab).toHaveAttribute("aria-selected", "true");
-  await firstAttentionTab.focus();
-  await page.keyboard.press("ArrowRight");
-  await expectAttentionTab("The local search");
-  await expect(page.getByRole("tabpanel", { name: "The local search" })).toContainText(
-    "Nearby and looking, not yet convinced.",
-  );
-  await page.keyboard.press("ArrowUp");
-  await expectAttentionTab("The exact search");
-  await page.keyboard.press("ArrowLeft");
-  await expectAttentionTab("The remembered name");
-  await page.keyboard.press("ArrowDown");
-  await expectAttentionTab("The exact search");
-  await page.keyboard.press("End");
-  await expectAttentionTab("The remembered name");
-  await page.keyboard.press("Home");
-  await expectAttentionTab("The exact search");
+  // Existing Attention is now a six-cell lattice of peers, not a tab set: all
+  // six read at once and none of them is a control.
+  await expect(page.locator("#attention .att__cell")).toHaveCount(6);
+  await expect(page.locator("#attention")).toContainText("The exact search");
+  await expect(page.locator("#attention")).toContainText("The remembered name");
+  await expect(page.locator("#attention").getByRole("tab")).toHaveCount(0);
 
   const systemTablist = page.getByRole("tablist", { name: "Support beyond the website" });
   await expect(systemTablist.getByRole("tab")).toHaveCount(5);
@@ -114,7 +93,8 @@ test("homepage follows the approved reference structure", async ({ page }) => {
 
   // Compounding is deliberately a composition rather than a third tab set:
   // every gain is present and readable without any control being operated.
-  await expect(page.locator("#compounding .cp__gain")).toHaveCount(4);
+  // Compounding is a composition, not a third tab set: every gain reads at once.
+  await expect(page.locator("#compounding .cp__gain")).toHaveCount(5);
   await expect(page.locator("#compounding")).toContainText("Proof keeps adding up");
   await expect(page.locator("#compounding")).toContainText("Every channel works harder");
   await expect(page.locator("#compounding").getByRole("tab")).toHaveCount(0);
@@ -162,34 +142,15 @@ test("homepage tab navigation remains usable on mobile", async ({ browser, baseU
     await page.emulateMedia({ reducedMotion: "reduce" });
     await page.goto("/");
 
-    const leakTabs = page.getByRole("tablist", { name: "Where existing attention arrives" });
+    await expect(page.locator("#attention .att__cell")).toHaveCount(6);
 
-    await expect(leakTabs).toBeVisible();
-    await expect(leakTabs).toHaveAttribute("aria-orientation", "horizontal");
-
-    const touchAction = await leakTabs.evaluate(
-      (element) => getComputedStyle(element).touchAction,
-    );
-    expect(touchAction).toBe("auto");
-
-    const leakRailMetrics = await leakTabs.evaluate((element) => ({
-      clientWidth: element.clientWidth,
-      scrollWidth: element.scrollWidth,
-    }));
-    expect(leakRailMetrics.scrollWidth).toBeGreaterThan(leakRailMetrics.clientWidth);
-
-    await expect(page.getByRole("tab", { name: "The exact search" })).toBeVisible();
+    await expect(page.locator("#attention")).toContainText("The exact search");
     const missedCallsHead = page.getByRole("button", { name: "Missed calls", exact: true });
     await expect(missedCallsHead).toBeVisible();
     await expect(missedCallsHead).toHaveAttribute("aria-expanded", "true");
-    await expect(page.locator("#compounding .cp__gain")).toHaveCount(4);
+    await expect(page.locator("#compounding")).toContainText("Proof keeps adding up");
 
-    const lastLeakTab = page.getByRole("tab", { name: "The remembered name" });
-    await lastLeakTab.tap();
-    await expect(lastLeakTab).toHaveAttribute("aria-selected", "true");
-    await expect(page.getByRole("tabpanel", { name: "The remembered name" })).toContainText(
-      "They come back later, still undecided.",
-    );
+    await expect(page.locator("#attention")).toContainText("The remembered name");
 
     const missedCallsBody = page.locator("#system-body-missed-calls");
     const reviewsBody = page.locator("#system-body-reviews");
@@ -210,7 +171,7 @@ test("homepage tab navigation remains usable on mobile", async ({ browser, baseU
     await expect(missedCallsBody).not.toBeVisible();
     expect(await missedCallsBody.getAttribute("inert")).not.toBeNull();
 
-    await expect(page.locator("#compounding")).toContainText("Search, referrals and ads");
+    await expect(page.locator("#compounding")).toContainText("Every channel works harder");
 
     const viewportWidth = await page.evaluate(() => document.documentElement.clientWidth);
     const pageWidth = await page.evaluate(() => document.documentElement.scrollWidth);
@@ -230,14 +191,11 @@ test("mobile tab compositions keep keyboard selection visible", async ({ page })
   await page.emulateMedia({ reducedMotion: "reduce" });
   await page.goto("/");
 
-  const leakTabs = page.getByRole("tablist", { name: "Where existing attention arrives" });
-  const secondLeakTab = page.getByRole("tab", { name: "The local search" });
-  await secondLeakTab.click();
-  await page.keyboard.press("ArrowRight");
-  const thirdLeakTab = page.getByRole("tab", { name: "The referral" });
-  await expect(thirdLeakTab).toBeFocused();
-  await expect(thirdLeakTab).toHaveAttribute("aria-selected", "true");
-  await expectHorizontallyContained(thirdLeakTab, leakTabs);
+  // The attention lattice has no controls to keep visible — the cells must
+  // simply stay inside their column.
+  const cells = page.locator("#attention .att__cell");
+  await expect(cells).toHaveCount(6);
+  await expectHorizontallyContained(cells.last(), page.locator("#attention .att"));
 
   const accordionRows = page.locator(".home-systems__row-head");
   await expect(accordionRows).toHaveCount(5);
@@ -248,7 +206,7 @@ test("mobile tab compositions keep keyboard selection visible", async ({ page })
 
   // Compounding has no controls to keep visible — it must simply fit its column.
   const gains = page.locator("#compounding .cp__gain");
-  await expect(gains).toHaveCount(4);
+  await expect(gains).toHaveCount(5);
   await expectHorizontallyContained(gains.last(), page.locator("#compounding .cp"));
 });
 

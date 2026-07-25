@@ -572,159 +572,167 @@
   font: var(--ui-strong);
 }
 
-/* Attention */
+/* Attention
+   Six peers in a hairline lattice. Cells share their edges so the six read as
+   one field rather than six floating tiles, and each carries a drawn artefact
+   of the surface the visitor arrived from — the specificity that keeps an
+   equal-weight grid from becoming interchangeable agency copy. */
 
 .home-attention {
   background: var(--surface-card);
 }
 
-/* The rail and the panel are one surface, not a list beside a floating box:
-   a single white card, split by a hairline, so the selected moment reads as
-   the same object opening rather than a separate result appearing. */
-.home-attention__panel {
-  --container-gap: 0;
-
-  grid-template-columns: minmax(0, 0.72fr) minmax(0, 1.28fr);
-  align-items: stretch;
-  border: 1px solid var(--border-mist-hairline);
-  border-radius: var(--radius-lg);
-  background: var(--surface-card);
-  overflow: hidden;
-  box-shadow: var(--elev-raised);
+.att {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-top: 1px solid var(--border-hairline);
+  border-left: 1px solid var(--border-hairline);
 }
 
-/* Navy rail against the white panel: the left side now carries real weight
-   instead of reading as an empty grey gutter beside the content. */
-.home-attention__index {
-  min-width: 0;
-  border-right: 1px solid var(--border-navy-hairline);
-  background: var(--surface-navy);
-  padding: 0;
-}
-
-.home-attention__index button {
+.att__cell {
   position: relative;
-  width: 100%;
-  min-height: 4.5rem;
   display: flex;
-  align-items: center;
-  gap: var(--space-5);
-  border: 0;
-  background: transparent;
-  padding: var(--space-4) var(--space-6);
-  color: var(--text-inverse-muted);
-  cursor: pointer;
-  text-align: left;
-  transition:
-    color var(--duration-base) var(--ease-out),
-    background-color var(--duration-base) var(--ease-out);
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-3);
+  border-right: 1px solid var(--border-hairline);
+  border-bottom: 1px solid var(--border-hairline);
+  padding: clamp(var(--space-6), 2.5vw, var(--space-8));
+  transition: background-color var(--duration-base) var(--ease-out);
 }
 
-.home-attention__index li + li button {
-  border-top: 1px solid var(--border-navy-hairline);
-}
-
-/* The selected row bridges into the panel rather than sitting apart from it. */
-.home-attention__index button::before {
+/* The emerald edge is the only state change: the cells are peers, so none of
+   them may claim more weight than the others. */
+.att__cell::before {
   content: "";
   position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  width: 3px;
-  background: var(--color-emerald);
+  top: -1px;
+  left: -1px;
+  width: 100%;
+  height: 2px;
+  background: var(--color-emerald-deep);
   scale: 0 1;
   transform-origin: left center;
   transition: scale var(--duration-base) var(--ease-out);
 }
 
-.home-attention__index button.is-active {
-  color: var(--text-inverse);
-  background: var(--surface-navy-raised);
+.att__figure {
+  width: 6rem;
+  display: block;
+  margin-bottom: var(--space-2);
 }
 
-.home-attention__index button.is-active::before {
-  scale: 1 1;
+.att__art {
+  width: 100%;
+  height: auto;
+  overflow: visible;
 }
 
-.home-attention__index button span {
-  flex: 1;
-  font: 500 1.25rem/1.25 var(--font-display);
+.att__art-panel {
+  fill: var(--surface-sunken);
+  stroke: var(--border-hairline);
+  stroke-width: 1;
+}
+
+.att__art-field {
+  fill: var(--color-white);
+  stroke: var(--border-hairline);
+  stroke-width: 1;
+}
+
+.att__art-grid {
+  stroke: var(--border-hairline);
+  stroke-width: 1;
+}
+
+.att__art-stroke {
+  stroke: var(--color-emerald-deep);
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+}
+
+.att__art-fill {
+  fill: var(--color-emerald-deep);
+}
+
+.att__art-halo {
+  fill: var(--emerald-tint);
+}
+
+.att__art-ink {
+  fill: var(--text-secondary);
+  opacity: 0.75;
+}
+
+.att__art-dim {
+  fill: var(--text-secondary);
+  opacity: 0.3;
+}
+
+.att__art-dim-fill {
+  fill: var(--border-hairline);
+}
+
+.att__art-caret {
+  fill: var(--color-emerald);
+}
+
+.att__art-tag {
+  fill: var(--emerald-tint-strong);
+}
+
+.att__art-block {
+  fill: var(--border-hairline);
+}
+
+.att__art-cursor {
+  fill: var(--color-white);
+  stroke: var(--color-navy);
+  stroke-width: 1.4;
+  stroke-linejoin: round;
+}
+
+.att__num {
+  color: var(--color-emerald-deep);
+  font: var(--label-caps);
+  letter-spacing: var(--label-caps-tracking);
+}
+
+.att__cell h3 {
+  font: 500 1.375rem/1.2 var(--font-display);
   letter-spacing: var(--display-md-tracking);
 }
 
-.home-attention__index button.is-active span {
-  font-style: italic;
+.att__body {
+  font: var(--body-sm);
 }
 
-.home-attention__index button svg {
-  color: var(--color-emerald);
-  opacity: 0;
-  transition: opacity var(--duration-fast) var(--ease-out);
-}
-
-.home-attention__index button.is-active svg {
-  opacity: 1;
-}
-
-.home-attention__detail {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  gap: var(--space-4);
-  padding: clamp(var(--space-7), 4vw, var(--space-9));
-}
-
-.home-attention__detail > * {
-  animation: home-tab-copy-in 320ms var(--ease-out) backwards;
-}
-
-.home-attention__detail > :nth-child(2) {
-  animation-delay: 45ms;
-}
-
-.home-attention__detail > :nth-child(3) {
-  animation-delay: 80ms;
-}
-
-.home-attention__detail > :nth-child(4) {
-  animation-delay: 115ms;
-}
-
-.home-attention__detail > :nth-child(5) {
-  animation-delay: 150ms;
-}
-
-.home-attention__icon {
-  width: 2.75rem;
-  height: 2.75rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  background: var(--surface-sunken);
-  color: var(--color-emerald-deep);
-}
-
-.home-attention__detail h3 + p {
-  width: 100%;
-}
-
-.home-attention__detail h3 {
-  max-width: 24ch;
-}
-
-.home-attention__detail > p {
+.att__close {
   max-width: var(--measure-copy);
+  margin-inline: auto;
+  text-align: center;
 }
 
-.home-attention__note {
-  width: 100%;
-  border-top: 1px solid var(--border-hairline);
-  padding-top: var(--space-5);
-  color: var(--text-secondary);
-  font: italic 500 1.0625rem/1.5 var(--font-display);
+@media (max-width: 64rem) {
+  .att {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 40rem) {
+  .att {
+    grid-template-columns: 1fr;
+  }
+
+  .att__cell {
+    padding: var(--space-5);
+  }
+
+  .att__figure {
+    width: 5rem;
+  }
 }
 
 /* Decision distance */
@@ -1974,95 +1982,228 @@
 }
 
 /* Compounding
-   One website, and everything threaded onto it since launch. No controls: the
-   page already spends two sections asking the visitor to choose, and this
-   material reads better as a single composition than as a third tab set.
-   Depth and the connecting thread carry the accumulation. */
+   Split by material: the website is SVG artwork (graphical, fixed geometry),
+   the gains are real HTML (text, so it must wrap and respect font settings).
+   A CSS spine ties them together instead of an absolute overlay that would
+   drift at every width. */
 
 .cp {
   display: grid;
-  grid-template-columns: minmax(0, 0.86fr) minmax(0, 1.14fr);
-  gap: clamp(2rem, 4vw, 4rem);
+  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+  gap: clamp(2.5rem, 5vw, 5rem);
   align-items: center;
 }
 
-/* ---- The website itself ---- */
-
-.cp__core {
-  position: relative;
+.cp__art {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: var(--space-4);
 }
 
-.cp__core-frame {
+.cpa {
   width: 100%;
-  max-width: 24rem;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  border: 1px solid var(--color-navy);
-  border-radius: var(--radius-lg);
-  background: var(--surface-navy);
-  box-shadow: var(--elev-focal);
+  max-width: 28rem;
 }
 
-.cp__core-bar {
+.cpa__svg {
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 1.25rem 3rem rgb(7 22 41 / 12%));
+}
+
+.cp__art-label {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 0.35rem;
-  border-bottom: 1px solid var(--border-navy-hairline);
-  padding: var(--space-4) var(--space-5);
-}
-
-.cp__core-bar i {
-  width: 0.4rem;
-  height: 0.4rem;
-  border-radius: 50%;
-  background: var(--border-navy-hairline);
-}
-
-.cp__core-body {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-3);
-  padding: var(--space-7) var(--space-6) var(--space-8);
-}
-
-.cp__core-line {
-  height: 0.5rem;
-  border-radius: var(--radius-pill);
-  background: var(--text-inverse-muted);
-  opacity: 0.32;
-}
-
-.cp__core-line--short {
-  width: 62%;
-}
-
-.cp__core-cta {
-  height: 2rem;
-  width: 62%;
-  margin-top: var(--space-3);
-  border-radius: var(--radius-sm);
-  background: var(--color-emerald);
-}
-
-.cp__core-label {
-  color: var(--text-primary);
-  font: var(--display-lg);
-  letter-spacing: var(--display-md-tracking);
-}
-
-.cp__core-note {
-  max-width: 18rem;
+  gap: var(--space-1);
   color: var(--text-secondary);
   font: var(--body-sm);
   text-align: center;
 }
 
-/* ---- What it has gained ---- */
+.cp__art-label span {
+  color: var(--text-primary);
+  font: var(--display-md);
+  letter-spacing: var(--display-md-tracking);
+}
+
+/* ---- The site being drawn ---- */
+
+.cpa__window {
+  fill: var(--color-white);
+  stroke: var(--border-mist-hairline);
+  stroke-width: 1;
+}
+
+.cpa__hair {
+  stroke: var(--border-hairline);
+  stroke-width: 1;
+}
+
+.cpa__dot {
+  fill: var(--border-mist-hairline);
+}
+
+.cpa__urlbar {
+  fill: var(--surface-sunken);
+}
+
+.cpa__lock {
+  fill: var(--color-emerald-deep);
+}
+
+.cpa__url,
+.cpa__nav {
+  fill: var(--text-secondary);
+  opacity: 0.45;
+}
+
+.cpa__logo {
+  fill: var(--color-navy);
+}
+
+.cpa__ink {
+  fill: var(--color-navy);
+}
+
+.cpa__navcta {
+  fill: var(--emerald-tint-strong);
+}
+
+.cpa__display {
+  fill: var(--text-primary);
+  font: 600 20px/1 var(--font-display);
+  letter-spacing: -0.02em;
+}
+
+.cpa__sun {
+  fill: #ffffff;
+  opacity: 0.18;
+}
+
+.cpa__hill {
+  fill: #0d3f4a;
+  opacity: 0.55;
+}
+
+.cpa__hill2 {
+  fill: #072a33;
+  opacity: 0.6;
+}
+
+.cpa__ln {
+  fill: var(--text-secondary);
+  opacity: 0.4;
+}
+
+.cpa__ln-dim {
+  fill: var(--text-secondary);
+  opacity: 0.22;
+}
+
+.cpa__cta {
+  fill: var(--color-emerald-deep);
+}
+
+.cpa__cta-label {
+  fill: var(--color-white);
+  font: 650 11px/1 var(--font-body);
+}
+
+.cpa__cards rect {
+  fill: var(--surface-sunken);
+}
+
+/* ---- what the site gains, arriving in turn over one loop ---- */
+
+.cpa__pop {
+  fill: var(--color-white);
+  stroke: var(--border-mist-hairline);
+  stroke-width: 1;
+  filter: drop-shadow(0 0.5rem 1.25rem rgb(7 22 41 / 14%));
+}
+
+.cpa__pop-label {
+  fill: var(--text-primary);
+  font: 650 11px/1 var(--font-body);
+}
+
+.cpa__star {
+  fill: var(--color-emerald);
+}
+
+.cpa__pin-halo,
+.cpa__tick-halo {
+  fill: var(--emerald-tint);
+}
+
+.cpa__pin {
+  fill: none;
+  stroke: var(--color-emerald-deep);
+  stroke-width: 1.6;
+}
+
+.cpa__pin-dot {
+  fill: var(--color-emerald-deep);
+}
+
+.cpa__tick {
+  fill: none;
+  stroke: var(--color-emerald-deep);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.cpa__rail {
+  fill: var(--surface-navy);
+}
+
+.cpa__rail-dot {
+  fill: var(--color-emerald);
+}
+
+.cpa__rail-label {
+  fill: var(--text-inverse);
+  font: 500 11px/1 var(--font-body);
+}
+
+.cpa__rail-arrow {
+  stroke: var(--color-emerald);
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+}
+
+/* One 18s loop: each gain arrives in turn and holds with the ones before it,
+   so the site is visibly fuller at the end than at the start. */
+.cpa__gain {
+  animation: cpa-gain 18s var(--ease-out) infinite;
+  animation-delay: calc(var(--s) * 2.4s);
+}
+
+@keyframes cpa-gain {
+  0% {
+    opacity: 0;
+    scale: 0.94;
+  }
+
+  5%,
+  88% {
+    opacity: 1;
+    scale: 1;
+  }
+
+  95%,
+  100% {
+    opacity: 0;
+    scale: 0.94;
+  }
+}
+
+/* ---- The gains, as real text ---- */
 
 .cp__gains {
   position: relative;
@@ -2071,21 +2212,20 @@
   gap: var(--space-5);
 }
 
-/* The thread everything hangs from — one continuous line, not four separate
-   items that happen to sit near each other. */
+/* the spine everything hangs from */
 .cp__gains::before {
   content: "";
   position: absolute;
-  top: 1.75rem;
-  bottom: 1.75rem;
-  left: 1.75rem;
+  top: 1.5rem;
+  bottom: 1.5rem;
+  left: 1.5rem;
   width: 2px;
   border-radius: 2px;
   background: linear-gradient(
     to bottom,
     var(--emerald-line-soft),
-    var(--color-emerald) 35%,
-    var(--color-emerald) 65%,
+    var(--color-emerald) 30%,
+    var(--color-emerald) 70%,
     var(--emerald-line-soft)
   );
 }
@@ -2093,7 +2233,7 @@
 .cp__gain {
   position: relative;
   display: grid;
-  grid-template-columns: 3.5rem minmax(0, 1fr);
+  grid-template-columns: 3rem minmax(0, 1fr);
   align-items: start;
   gap: var(--space-5);
 }
@@ -2101,8 +2241,8 @@
 .cp__gain-node {
   position: relative;
   z-index: 1;
-  width: 3.5rem;
-  height: 3.5rem;
+  width: 3rem;
+  height: 3rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2126,22 +2266,64 @@
   padding-bottom: 0;
 }
 
-.cp__gain-index {
+.cp__gain-tag {
   color: var(--color-emerald-deep);
   font: var(--label-caps);
   letter-spacing: var(--label-caps-tracking);
+  text-transform: uppercase;
 }
 
 .cp__gain strong {
   color: var(--text-primary);
-  font: 500 1.375rem/1.25 var(--font-display);
+  font: 500 1.3125rem/1.25 var(--font-display);
   letter-spacing: var(--display-md-tracking);
 }
 
 .cp__gain-note {
-  max-width: 40ch;
+  max-width: 42ch;
   color: var(--text-secondary);
-  font: var(--body-md);
+  font: var(--body-sm);
+}
+
+/* Staggered arrival, once, when the section is reached. `still` is the
+   finished state, so no-JS and reduced motion never see a blank column. */
+.cp[data-phase="armed"] .cp__gain,
+.cp[data-phase="armed"] .cp__gains::before {
+  opacity: 0;
+}
+
+.cp[data-phase="playing"] .cp__gains::before {
+  animation: cp-spine 700ms var(--ease-out) forwards;
+}
+
+.cp[data-phase="playing"] .cp__gain {
+  opacity: 0;
+  animation: cp-gain-in 620ms var(--ease-out) forwards;
+  animation-delay: calc(220ms + var(--i) * 190ms);
+}
+
+@keyframes cp-spine {
+  from {
+    opacity: 0;
+    scale: 1 0.2;
+  }
+
+  to {
+    opacity: 1;
+    scale: 1 1;
+  }
+}
+
+@keyframes cp-gain-in {
+  from {
+    opacity: 0;
+    translate: 1.25rem 0;
+  }
+
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
 }
 
 .cp__close {
@@ -2163,19 +2345,19 @@
 
 @media (max-width: 36rem) {
   .cp__gain {
-    grid-template-columns: 2.75rem minmax(0, 1fr);
+    grid-template-columns: 2.5rem minmax(0, 1fr);
     gap: var(--space-4);
   }
 
   .cp__gains::before {
-    top: 1.375rem;
-    bottom: 1.375rem;
-    left: 1.375rem;
+    top: 1.25rem;
+    bottom: 1.25rem;
+    left: 1.25rem;
   }
 
   .cp__gain-node {
-    width: 2.75rem;
-    height: 2.75rem;
+    width: 2.5rem;
+    height: 2.5rem;
   }
 
   .cp__gain strong {
@@ -2510,13 +2692,12 @@ body:has(.home-closing) .site-footer__bottom {
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .home-attention__index button:hover {
-    color: var(--text-inverse);
-    background: var(--surface-navy-panel);
+  .att__cell:hover {
+    background: var(--surface-sunken);
   }
 
-  .home-attention__index button:hover::before {
-    scale: 0.35 1;
+  .att__cell:hover::before {
+    scale: 1 1;
   }
 
   .home-systems__segment:hover {
@@ -2575,10 +2756,6 @@ body:has(.home-closing) .site-footer__bottom {
 
   .hero-art {
     max-width: 34rem;
-  }
-
-  .home-attention__panel {
-    --container-gap: 0;
   }
 
   .home-distance__copy {
@@ -2731,83 +2908,6 @@ body:has(.home-closing) .site-footer__bottom {
     margin: 0;
   }
 
-  .home-attention__panel {
-    --container-gap: 0;
-
-    grid-template-columns: 1fr;
-    border-radius: var(--radius-md);
-  }
-
-  .home-attention__index,
-  .home-attention__detail {
-    width: 100%;
-  }
-
-  /* The rail is the only surface here — the buttons sit on it rather than
-     each carrying its own card, border and shadow. */
-  .home-attention__index {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    gap: 0;
-    overflow-x: auto;
-    overscroll-behavior-inline: contain;
-    border-right: 0;
-    border-bottom: 1px solid var(--border-navy-hairline);
-    padding: 0;
-    scroll-snap-type: inline mandatory;
-    scrollbar-width: none;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  .home-attention__index::-webkit-scrollbar {
-    display: none;
-  }
-
-  .home-attention__index li {
-    flex: 0 0 auto;
-    scroll-snap-align: start;
-  }
-
-  .home-attention__index li + li button {
-    border-top: 0;
-    border-left: 1px solid var(--border-navy-hairline);
-  }
-
-  .home-attention__index button {
-    min-height: 3.5rem;
-    gap: var(--space-3);
-    border-radius: 0;
-    background: transparent;
-    padding: var(--space-3) var(--space-5);
-    box-shadow: none;
-  }
-
-  .home-attention__index button::before {
-    top: auto;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 3px;
-  }
-
-  .home-attention__index button.is-active {
-    background: var(--surface-navy-raised);
-  }
-
-  .home-attention__index button span {
-    white-space: nowrap;
-    font: 500 0.9375rem/1.2 var(--font-display);
-  }
-
-  .home-attention__index button svg {
-    display: none;
-  }
-
-  .home-attention__detail {
-    flex: none;
-  }
-
   .home-distance__diagram {
     width: min(100%, 26rem);
   }
@@ -2942,10 +3042,6 @@ body:has(.home-closing) .site-footer__bottom {
     padding: var(--space-5);
   }
 
-  .home-attention__detail {
-    padding: var(--space-6);
-  }
-
   .home-work__grid {
     grid-template-columns: 1fr;
     gap: var(--space-5);
@@ -3036,7 +3132,6 @@ body:has(.home-closing) .site-footer__bottom {
     animation: none;
   }
 
-  .home-attention__detail > *,
   .home-systems__stage > *,
   .cp__detail > *,
   .home-faq__items [role="region"] {
