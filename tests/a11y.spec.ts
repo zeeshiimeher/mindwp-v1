@@ -5,9 +5,12 @@ import { expect, test } from "@playwright/test";
 
 import { LIVE_ROUTES } from "../src/config/routes";
 
+/** Live routes plus the built-but-unpublished ones, which are reviewed to the
+    same standard so publication is never gated on an accessibility backlog. */
 const REVIEW_ROUTES = [
   ...LIVE_ROUTES,
   { path: "/services/local-seo-authority", changeFrequency: "monthly", priority: 0 },
+  { path: "/services/smart-website-systems", changeFrequency: "monthly", priority: 0 },
 ] as const;
 
 const axeSource = readFileSync(join(process.cwd(), "node_modules/axe-core/axe.min.js"), "utf8");
