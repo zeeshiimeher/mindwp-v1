@@ -26,38 +26,34 @@ export function HomeMotion() {
       context?.revert();
 
       if (reducedMotion.matches) {
-        root.dataset.homeMotion = "reduced";
+        root.dataset.hlMotion = "reduced";
         return;
       }
 
       gsap.registerPlugin(ScrollTrigger);
-      root.dataset.homeMotion = "active";
+      root.dataset.hlMotion = "active";
       motionMedia = gsap.matchMedia();
 
       context = gsap.context(() => {
-        const heroCopy = document.querySelector<HTMLElement>("[data-home-hero-sequence]");
-        const heroArtifactGroup = document.querySelector<HTMLElement>("[data-home-hero-artifacts]");
-        const heroJourney = document.querySelector<HTMLElement>("[data-home-hero-journey]");
-        const heroCopyItems = heroCopy ? nestedItems(heroCopy, "data-home-hero-item") : [];
+        const heroCopy = document.querySelector<HTMLElement>("[data-hl-hero-sequence]");
+        const heroArtifactGroup = document.querySelector<HTMLElement>("[data-hl-hero-artifacts]");
+        const heroJourney = document.querySelector<HTMLElement>("[data-hl-hero-journey]");
+        const heroCopyItems = heroCopy ? nestedItems(heroCopy, "data-hl-hero-item") : [];
         const heroArtifacts = heroArtifactGroup
-          ? nestedItems(heroArtifactGroup, "data-home-hero-artifact")
+          ? nestedItems(heroArtifactGroup, "data-hl-hero-artifact")
           : [];
-        const heroJourneyItems = heroJourney ? nestedItems(heroJourney, "data-home-hero-item") : [];
+        const heroJourneyItems = heroJourney ? nestedItems(heroJourney, "data-hl-hero-item") : [];
 
-        // GSAP warns on an empty target set, and a hero variant may legitimately
-        // have no artifacts or no journey rail — only tween what exists.
-        const heroTimeline = gsap.timeline({ defaults: { ease: "power3.out" } });
-        if (heroCopyItems.length > 0) {
-          heroTimeline.from(heroCopyItems, {
+        gsap
+          .timeline({ defaults: { ease: "power3.out" } })
+          .from(heroCopyItems, {
             autoAlpha: 0.28,
             y: 18,
             duration: 0.68,
             stagger: 0.075,
             clearProps: "opacity,visibility,transform",
-          });
-        }
-        if (heroArtifacts.length > 0) {
-          heroTimeline.from(
+          })
+          .from(
             heroArtifacts,
             {
               autoAlpha: 0.24,
@@ -68,10 +64,8 @@ export function HomeMotion() {
               clearProps: "opacity,visibility,transform",
             },
             "-=0.42",
-          );
-        }
-        if (heroJourneyItems.length > 0) {
-          heroTimeline.from(
+          )
+          .from(
             heroJourneyItems,
             {
               autoAlpha: 0.32,
@@ -82,11 +76,10 @@ export function HomeMotion() {
             },
             "-=0.3",
           );
-        }
 
-        const sequences = gsap.utils.toArray<HTMLElement>("[data-home-sequence]");
+        const sequences = gsap.utils.toArray<HTMLElement>("[data-hl-sequence]");
         sequences.forEach((group) => {
-          const items = nestedItems(group, "data-home-sequence-item");
+          const items = nestedItems(group, "data-hl-sequence-item");
           if (items.length === 0) return;
 
           gsap.from(items, {
@@ -104,9 +97,9 @@ export function HomeMotion() {
           });
         });
 
-        const staggerGroups = gsap.utils.toArray<HTMLElement>("[data-home-stagger]");
+        const staggerGroups = gsap.utils.toArray<HTMLElement>("[data-hl-stagger]");
         staggerGroups.forEach((group) => {
-          const items = directItems(group, "data-home-stagger-item");
+          const items = directItems(group, "data-hl-stagger-item");
           if (items.length === 0) return;
 
           gsap.from(items, {
@@ -124,7 +117,7 @@ export function HomeMotion() {
           });
         });
 
-        const accentItems = gsap.utils.toArray<HTMLElement>("[data-home-fade]");
+        const accentItems = gsap.utils.toArray<HTMLElement>("[data-hl-fade]");
         accentItems.forEach((item) => {
           gsap.from(item, {
             autoAlpha: 0.45,
@@ -141,7 +134,7 @@ export function HomeMotion() {
         });
 
         motionMedia?.add("(max-width: 48rem)", () => {
-          const journey = document.querySelector<HTMLElement>("[data-home-journey]");
+          const journey = document.querySelector<HTMLElement>("[data-hl-journey]");
           if (!journey) return;
 
           gsap.set(journey, {
@@ -173,7 +166,7 @@ export function HomeMotion() {
       if (refreshFrame !== undefined) window.cancelAnimationFrame(refreshFrame);
       motionMedia?.revert();
       context?.revert();
-      delete root.dataset.homeMotion;
+      delete root.dataset.hlMotion;
     };
   }, []);
 

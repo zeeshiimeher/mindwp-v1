@@ -24,60 +24,60 @@ const HOME_LEADS = [
 
 export function HomeContext() {
   return (
-    <section id="context" className="home-context section on-dark">
+    <section id="context" className="hl-context section on-dark">
       <div
         className="container section-intro section-intro--centered"
-        data-home-sequence
+        data-hl-sequence
       >
-        <p className="eyebrow eyebrow--centered" data-home-sequence-item>
+        <p className="eyebrow eyebrow--centered" data-hl-sequence-item>
           Smart website
         </p>
-        <h2 data-home-sequence-item>
+        <h2 data-hl-sequence-item>
           The website is built around{" "}
           <em>the questions, evidence and actions people need to decide.</em>
         </h2>
-        <p data-home-sequence-item>
+        <p data-hl-sequence-item>
           A patient weighing treatment and a homeowner planning a major project are both looking
           for confidence — just not from the same questions, the same evidence, or the same next
           step. So each website is shaped around the work itself, not a shared template.
         </p>
       </div>
 
-      <div className="container home-context__comparison" data-home-stagger>
-        <article data-home-stagger-item>
-          <div className="home-context__heading">
+      <div className="container hl-context__comparison" data-hl-stagger>
+        <article data-hl-stagger-item>
+          <div className="hl-context__heading">
             <small>01</small>
             <h3>Specialist clinics</h3>
           </div>
-          <p className="editorial-note">
+          <p className="hl-editorial-note">
             The patient moves carefully. Credibility is weighed before contact, and the first step
             has to feel private.
           </p>
-          <p className="home-artifact-label">What a patient is really asking</p>
-          <ol className="home-context__questions">
+          <p className="hl-artifact-label">What a patient is really asking</p>
+          <ol className="hl-context__questions">
             {CLINIC_QUESTIONS.map((question) => (
               <li key={question}>{question}</li>
             ))}
           </ol>
-          <p className="home-artifact-label">So the website leads with</p>
-          <ul className="home-context__leads">
+          <p className="hl-artifact-label">So the website leads with</p>
+          <ul className="hl-context__leads">
             {CLINIC_LEADS.map((lead) => (
               <li key={lead}>{lead}</li>
             ))}
           </ul>
         </article>
 
-        <article data-home-stagger-item>
-          <div className="home-context__heading">
+        <article data-hl-stagger-item>
+          <div className="hl-context__heading">
             <small>02</small>
             <h3>Home services</h3>
           </div>
-          <p className="editorial-note">
+          <p className="hl-editorial-note">
             The homeowner is deciding who to let into the house. Finished work nearby does most of
             the convincing.
           </p>
-          <p className="home-artifact-label">What a homeowner is really asking</p>
-          <ol className="home-context__questions home-context__questions--numbered">
+          <p className="hl-artifact-label">What a homeowner is really asking</p>
+          <ol className="hl-context__questions hl-context__questions--numbered">
             {HOME_QUESTIONS.map((question, index) => (
               <li key={question}>
                 <small>0{index + 1}</small>
@@ -85,8 +85,8 @@ export function HomeContext() {
               </li>
             ))}
           </ol>
-          <p className="home-artifact-label">So the website leads with</p>
-          <dl className="home-context__tiles">
+          <p className="hl-artifact-label">So the website leads with</p>
+          <dl className="hl-context__tiles">
             {HOME_LEADS.map(([term, description]) => (
               <div key={term}>
                 <dt>{term}</dt>
@@ -97,7 +97,7 @@ export function HomeContext() {
         </article>
       </div>
 
-      <p className="container home-context__closing" data-home-fade>
+      <p className="container hl-context__closing" data-hl-fade>
         Different work, different evidence, different first step — which is why every build starts
         by understanding yours.
       </p>

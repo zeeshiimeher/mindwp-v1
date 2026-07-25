@@ -6,6 +6,7 @@ import { useActionState } from "react";
 import { submitReviewRequest, type SubmitState } from "@/app/contact/actions";
 import { Button } from "@/components/ui/Button";
 import { Field, Input, Select, Textarea } from "@/components/ui/form";
+import { Icon } from "@/components/ui/Icon";
 import { CONTACT_METHODS, PROBLEM_AREAS } from "@/lib/contact/schema";
 import { PRIMARY_CTA_LABEL } from "@/lib/cta/labels";
 
@@ -19,7 +20,10 @@ export function ReviewRequestForm({ system, source }: { system?: string; source?
 
   if (state?.ok) {
     return (
-      <div className="form-success">
+      <div className="form-success" role="status">
+        <span className="form-success__mark" aria-hidden="true">
+          <Icon name="circle-check" size={24} />
+        </span>
         <h2>Request received.</h2>
         <p>{state.message}</p>
       </div>
@@ -105,7 +109,11 @@ export function ReviewRequestForm({ system, source }: { system?: string; source?
         </>
       )}
 
-      {state && !state.ok && <p className="form-message">{state.message}</p>}
+      {state && !state.ok && (
+        <p className="form-message" role="alert">
+          {state.message}
+        </p>
+      )}
 
       <div className="review-form__actions">
         <Button type="submit" disabled={pending}>

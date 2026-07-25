@@ -1,13 +1,12 @@
+import { HomeConnectedArt } from "@/app/_home/HomeConnectedArt";
 import { HomeSystemsSelector } from "@/app/_home/HomeSystemsSelector";
 
 const AFTER_ENQUIRY_STEPS = [
   ["01", "Acknowledged"],
   ["02", "Owned"],
-  ["03", "Answered"],
+  ["03", "Responded"],
   ["04", "Handled consistently"],
 ] as const;
-
-const CONNECTED_LABELS = ["Local SEO", "Lead Response", "Follow-Up & CRM", "Reputation"];
 
 export function HomeDistance() {
   return (
@@ -19,8 +18,7 @@ export function HomeDistance() {
               Before enquiry
             </p>
             <h2 data-home-sequence-item>
-              They do not need more information.{" "}
-              <em>They need enough certainty to act.</em>
+              They do not need more information. <em>They need enough certainty to act.</em>
             </h2>
           </div>
           <p data-home-sequence-item>
@@ -28,7 +26,7 @@ export function HomeDistance() {
             on actually answers their situation, that the proof on it can be checked, and that the
             next step is obvious. A smart website closes that distance instead of adding to it.
           </p>
-          <p className="home-editorial-note" data-home-sequence-item>
+          <p className="editorial-note" data-home-sequence-item>
             Clarity is not more copy. It is less distance between the question and the answer.
           </p>
         </div>
@@ -69,17 +67,13 @@ export function HomeDistance() {
 
 export function HomeAfterEnquiry() {
   return (
-    <section id="after-enquiry" className="home-after-enquiry section on-dark">
-      <div
-        className="container section-intro section-intro--centered"
-        data-home-sequence
-      >
+    <section id="after-enquiry" className="home-after-enquiry section section--quiet on-dark">
+      <div className="container section-intro section-intro--centered" data-home-sequence>
         <p className="eyebrow eyebrow--centered" data-home-sequence-item>
           After enquiry
         </p>
         <h2 data-home-sequence-item>
-          A useful enquiry still needs{" "}
-          <em>an answer, an owner and a clear next step.</em>
+          A useful enquiry still needs <em>a response, an owner and a clear next step.</em>
         </h2>
         <p data-home-sequence-item>
           A slow reply, an unclear owner, or a next step nobody can see all cost the same thing:
@@ -90,6 +84,7 @@ export function HomeAfterEnquiry() {
       <ol className="container home-after-enquiry__steps" data-home-stagger>
         {AFTER_ENQUIRY_STEPS.map(([number, label]) => (
           <li key={number} data-home-stagger-item>
+            <span className="home-after-enquiry__marker" aria-hidden="true" />
             <small>{number}</small>
             <strong>{label}</strong>
           </li>
@@ -102,10 +97,7 @@ export function HomeAfterEnquiry() {
 export function HomeOneSystem() {
   return (
     <section id="one-system" className="home-one-system section">
-      <div
-        className="container section-intro section-intro--centered"
-        data-home-sequence
-      >
+      <div className="container section-intro section-intro--centered" data-home-sequence>
         <p className="eyebrow eyebrow--centered" data-home-sequence-item>
           Connected where useful
         </p>
@@ -113,9 +105,9 @@ export function HomeOneSystem() {
           The website leads. <em>Support connects where the journey needs it.</em>
         </h2>
         <p className="home-one-system__crossed" data-home-sequence-item>
-          Not <s>an SEO retainer,</s> plus <s>a website agency,</s>
+          Not <s>an SEO retainer,</s> plus <s>a website agency,</s>{" "}
           <br />
-          plus <s>a forms tool,</s> plus <s>a half-set-up CRM,</s> plus
+          plus <s>a forms tool,</s> plus <s>a half-set-up CRM,</s> plus{" "}
           <br />
           <s>a review platform.</s>
         </p>
@@ -131,26 +123,8 @@ export function HomeOneSystem() {
         </p>
       </div>
 
-      <div className="container home-one-system__fan" aria-hidden="true" data-home-fade>
-        <svg viewBox="0 0 620 240" preserveAspectRatio="xMidYMid meet">
-          <line x1="310" y1="216" x2="55" y2="42" />
-          <line x1="310" y1="216" x2="225" y2="24" />
-          <line x1="310" y1="216" x2="395" y2="24" />
-          <line x1="310" y1="216" x2="565" y2="42" />
-          {[55, 225, 395, 565].map((x, index) => (
-            <circle key={x} cx={x} cy={index === 0 || index === 3 ? 42 : 24} r="7" />
-          ))}
-          <circle cx="310" cy="216" r="13" className="home-one-system__hub-dot" />
-        </svg>
-        {CONNECTED_LABELS.map((label, index) => (
-          <span
-            className={`home-one-system__fan-label home-one-system__fan-label--${index + 1}`}
-            key={label}
-          >
-            {label}
-          </span>
-        ))}
-        <strong>Website</strong>
+      <div className="container home-one-system__system" data-home-fade>
+        <HomeConnectedArt />
       </div>
     </section>
   );
@@ -159,10 +133,7 @@ export function HomeOneSystem() {
 export function HomeBeyondWebsite() {
   return (
     <section id="beyond-website" className="home-systems section on-dark">
-      <div
-        className="container section-intro section-intro--centered"
-        data-home-sequence
-      >
+      <div className="container section-intro section-intro--centered" data-home-sequence>
         <p className="eyebrow eyebrow--centered" data-home-sequence-item>
           Beyond the website
         </p>
@@ -171,14 +142,18 @@ export function HomeBeyondWebsite() {
         </h2>
         <p data-home-sequence-item>
           The website gives people a clear place to understand the offer, decide and get in touch.
-          These five moments shape what happens around it. MindWP plans them around how your
-          business works, connects them to the website and phones, tests the complete path, and
-          shows your team how everything works before handover.
+          These five moments shape what happens around it. MindWP plans and connects the support
+          that fits your business, using CRM and carefully scoped automation where it makes the
+          path clearer, more consistent and easier for your team to own.
         </p>
       </div>
       <div className="container">
         <HomeSystemsSelector />
       </div>
+      <p className="container home-systems__boundary" data-home-fade>
+        Automation can acknowledge, route, organise and prompt. The decisions that require
+        judgement remain with your team.
+      </p>
     </section>
   );
 }

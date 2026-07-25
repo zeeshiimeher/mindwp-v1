@@ -1,6 +1,5 @@
 import { Button } from "@/components/ui/Button";
 import { Icon, type IconName } from "@/components/ui/Icon";
-import { CONTACT_PATH } from "@/config/routes";
 import { PRIMARY_CTA_LABEL, PRIMARY_CTA_LABEL_SHORT } from "@/lib/cta/labels";
 
 const GOOD_FIT = [
@@ -45,28 +44,23 @@ const REVIEW_STEPS: readonly {
   },
 ];
 
-/** The three things the review actually looks at, in the order it looks. */
-const CLOSING_LENSES: readonly { icon: IconName; title: string; note: string }[] = [
-  { icon: "map-pin", title: "Visibility", note: "How suitable people come across you" },
-  { icon: "globe", title: "Website", note: "What they find when they arrive" },
-  { icon: "message-square", title: "Enquiry path", note: "What happens once they act" },
-];
+const CLOSING_ICONS: readonly IconName[] = ["globe", "map-pin", "phone", "folder", "star"];
 
 export function HomeFit() {
   return (
-    <section id="fit" className="home-fit section">
-      <div className="container section-intro" data-home-sequence>
+    <section id="fit" className="hl-fit section">
+      <div className="container section-intro" data-hl-sequence>
         <div className="section-title-group">
-          <p className="eyebrow" data-home-sequence-item>
+          <p className="eyebrow" data-hl-sequence-item>
             Right fit
           </p>
-          <h2 data-home-sequence-item>
+          <h2 data-hl-sequence-item>
             For independent clinics and specialist service businesses{" "}
             <em>where customers choose carefully.</em>
           </h2>
         </div>
         <div className="section-copy-group">
-          <p data-home-sequence-item>
+          <p data-hl-sequence-item>
             We would rather say this plainly than let a website assume it. MindWP works best for
             businesses whose customers already compare carefully before they choose, and where each
             enquiry has real value.
@@ -74,27 +68,27 @@ export function HomeFit() {
         </div>
       </div>
 
-      <div className="container container--split home-fit__layout">
-        <div className="home-fit__good" data-home-sequence>
-          <p className="home-artifact-label" data-home-sequence-item>
+      <div className="container container--split hl-fit__layout">
+        <div className="hl-fit__good" data-hl-sequence>
+          <p className="hl-artifact-label" data-hl-sequence-item>
             A good fit if
           </p>
-          <ul data-home-stagger>
+          <ul data-hl-stagger>
             {GOOD_FIT.map((item) => (
-              <li key={item} data-home-stagger-item>
+              <li key={item} data-hl-stagger-item>
                 <span aria-hidden="true">✓</span>
                 {item}
               </li>
             ))}
           </ul>
         </div>
-        <aside className="home-fit__not" data-home-sequence>
-          <p className="home-artifact-label" data-home-sequence-item>
+        <aside className="hl-fit__not" data-hl-sequence>
+          <p className="hl-artifact-label" data-hl-sequence-item>
             Not the right fit if
           </p>
-          <ul data-home-stagger>
+          <ul data-hl-stagger>
             {NOT_FIT.map((item) => (
-              <li key={item} data-home-stagger-item>
+              <li key={item} data-hl-stagger-item>
                 <span aria-hidden="true">×</span>
                 {item}
               </li>
@@ -108,35 +102,34 @@ export function HomeFit() {
 
 export function HomeReview() {
   return (
-    <section id="review" className="home-review section on-dark">
-      <div className="container section-intro--split home-review__layout">
-        <div className="home-review__intro section-intro" data-home-sequence>
+    <section id="review" className="hl-review section on-dark">
+      <div className="container section-intro--split hl-review__layout">
+        <div className="hl-review__intro section-intro" data-hl-sequence>
           <div className="section-title-group">
-            <p className="eyebrow" data-home-sequence-item>
+            <p className="eyebrow" data-hl-sequence-item>
               How we start
             </p>
-            <h2 data-home-sequence-item>
+            <h2 data-hl-sequence-item>
               First we review how people find, choose and contact you.{" "}
               <em>Then we show you where to start.</em>
             </h2>
           </div>
-          <p data-home-sequence-item>
+          <p data-hl-sequence-item>
             The Visibility &amp; Enquiry Review looks at how people find you, whether the website
             answers what they need, and what happens once they make contact. What comes back is a
             clear starting point, not a generic package.
           </p>
-          <Button href={CONTACT_PATH} variant="on-dark" data-home-sequence-item>
+          <Button href="#closing" variant="on-dark" data-hl-sequence-item>
             {PRIMARY_CTA_LABEL_SHORT}
           </Button>
-          <small data-home-sequence-item>
-            No obligation to continue. You receive a clear starting point whether or not we work
-            together.
+          <small data-hl-sequence-item>
+            No obligation to continue. No pitch hidden in the findings.
           </small>
         </div>
 
-        <ol className="home-review__steps" data-home-stagger>
+        <ol className="hl-review__steps" data-hl-stagger>
           {REVIEW_STEPS.map((step) => (
-            <li key={step.title} data-home-stagger-item>
+            <li key={step.title} data-hl-stagger-item>
               <span>
                 <Icon name={step.icon} size={18} />
               </span>
@@ -155,59 +148,35 @@ export function HomeReview() {
 
 export function HomeClosing() {
   return (
-    <section id="closing" className="home-closing section on-dark">
+    <section id="closing" className="hl-closing section on-dark">
       <div
         className="container section-intro section-intro--centered"
-        data-home-sequence
+        data-hl-sequence
       >
-        <p className="eyebrow eyebrow--centered" data-home-sequence-item>
+        <p className="eyebrow eyebrow--centered" data-hl-sequence-item>
           Visibility &amp; enquiry review
         </p>
-        <h2 className="display-feature" data-home-sequence-item>
+        <h2 className="display-feature" data-hl-sequence-item>
           See what should become easier <em>across your visibility, website and enquiry path.</em>
         </h2>
-        <p data-home-sequence-item>
+        <p data-hl-sequence-item>
           One private conversation. MindWP reviews your visibility, your website and the path every
           enquiry takes, then shows you what&apos;s worth fixing first — useful whether or not you
           build together afterwards.
         </p>
-        <div className="home-closing__review" data-home-stagger>
-          <ul className="home-closing__lenses">
-            {CLOSING_LENSES.map((lens) => (
-              <li key={lens.title} data-home-stagger-item>
-                <span className="home-closing__lens-icon">
-                  <Icon name={lens.icon} size={18} />
-                </span>
-                <strong>{lens.title}</strong>
-                <small>{lens.note}</small>
-              </li>
-            ))}
-          </ul>
-
-          <svg
-            className="home-closing__converge"
-            viewBox="0 0 600 48"
-            fill="none"
-            aria-hidden="true"
-            focusable="false"
-            preserveAspectRatio="none"
-          >
-            <path d="M100 0 V 16 Q 100 32 300 32 V 48" />
-            <path d="M300 0 V 48" />
-            <path d="M500 0 V 16 Q 500 32 300 32 V 48" />
-          </svg>
-
-          <p className="home-closing__resolve">
-            <span>One prioritised starting point</span>
-          </p>
-        </div>
-
-        <Button
-          href={CONTACT_PATH}
-          variant="on-dark"
-          className="btn-lg"
-          data-home-sequence-item
+        <div
+          className="hl-closing__icons"
+          role="img"
+          aria-label="The website and its optional supporting systems"
+          data-hl-stagger
         >
+          {CLOSING_ICONS.map((icon) => (
+            <span key={icon} data-hl-stagger-item>
+              <Icon name={icon} size={18} />
+            </span>
+          ))}
+        </div>
+        <Button href="#review" variant="on-dark" data-hl-sequence-item>
           {PRIMARY_CTA_LABEL}
         </Button>
       </div>

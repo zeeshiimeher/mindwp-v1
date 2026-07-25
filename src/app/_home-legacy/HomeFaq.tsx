@@ -21,7 +21,7 @@ const FAQS = [
   {
     question: "Who sets all of this up — and do we end up running new software?",
     answer:
-      "MindWP handles the setup. We plan how the website, CRM and appropriate automation should work together, configure and connect each part, test the complete path, and onboard your team before handover. Where your team needs to use a shared inbox or CRM, it is organised around their responsibilities — you are not handed an empty platform and left to build the process yourself.",
+      "MindWP handles the setup. We plan how each piece should work, configure and connect it, test the complete path, and onboard your team before handover. If your team needs to use a shared inbox or CRM, it is set up around their work — you are not handed an empty system and left to figure it out.",
   },
   {
     question: "Does MindWP replace my team's judgement?",
@@ -36,7 +36,7 @@ const FAQS = [
   {
     question: "Does MindWP guarantee rankings or enquiries?",
     answer:
-      "No. MindWP does not promise rankings, leads or bookings. The website is built to improve clarity, proof and the route to an appropriate next step, but commercial outcomes depend on factors beyond the website alone.",
+      "No — nobody honestly can. The website is built to give the business a fair chance: clarity, proof and an easy next step. MindWP does not promise rankings, leads or bookings.",
   },
   {
     question: "What happens during the Visibility & Enquiry Review?",
@@ -54,24 +54,24 @@ export function HomeFaq() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section id="faq" className="home-faq section">
+    <section id="faq" className="hl-faq section">
       <div
         className="container section-intro section-intro--centered"
-        data-home-sequence
+        data-hl-sequence
       >
-        <p className="eyebrow eyebrow--centered" data-home-sequence-item>
+        <p className="eyebrow eyebrow--centered" data-hl-sequence-item>
           Straight answers
         </p>
-        <h2 data-home-sequence-item>
+        <h2 data-hl-sequence-item>
           Questions, <em>answered plainly.</em>
         </h2>
-        <p data-home-sequence-item>
+        <p data-hl-sequence-item>
           No buried sales language. The common questions are practical because the work is
           practical.
         </p>
       </div>
 
-      <div className="container container--narrow home-faq__items" data-home-stagger>
+      <div className="container container--narrow hl-faq__items" data-hl-stagger>
         {FAQS.map((item, index) => {
           const open = index === openIndex;
           const buttonId = `faq-button-${index}`;
@@ -80,7 +80,7 @@ export function HomeFaq() {
             <article
               key={item.question}
               className={open ? "is-open" : undefined}
-              data-home-stagger-item
+              data-hl-stagger-item
             >
               <h3>
                 <button

@@ -10,6 +10,9 @@ export const SITE = {
   tagline: "Smart websites for being found, understood and chosen.",
   description:
     "Smart websites for established service businesses and expert-led businesses — the site and the handling around every enquiry, designed together.",
+  /** Footer positioning line. Claims nothing beyond the approved scope. */
+  footerLine:
+    "Website strategy, design and implementation for service businesses where people choose carefully.",
   locale: "en",
 } as const;
 

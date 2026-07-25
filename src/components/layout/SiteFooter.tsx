@@ -1,36 +1,19 @@
 import Link from "next/link";
 
+import { FOOTER_GROUPS, visibleGroups } from "@/config/navigation";
+import { CONTACT_PATH } from "@/config/routes";
 import { SITE } from "@/config/site";
+import { PRIMARY_CTA_LABEL, SECONDARY_CTA_LABEL } from "@/lib/cta/labels";
 
-/* Root-relative fragments so the shared footer resolves from nested routes
-   (docs/ENGINEERING.md, Routing). Column labels stay as implemented until the
-   approved Homepage rebuild revisits the footer IA. */
-const COLUMNS = [
-  {
-    title: "What we build",
-    links: [
-      { href: "/#hero", label: "Smart Website Systems" },
-      { href: "/#beyond-website", label: "Lead Response & Handling" },
-      { href: "/#beyond-website", label: "Follow-Up & CRM" },
-      { href: "/#beyond-website", label: "Reputation & Review" },
-    ],
-  },
-  {
-    title: "Industries",
-    links: [
-      { href: "/#context", label: "Specialist Clinics" },
-      { href: "/#work", label: "Home Services" },
-    ],
-  },
-  {
-    title: "Company",
-    links: [
-      { href: "/#work", label: "Work" },
-      { href: "/#review", label: "About" },
-      { href: "/#review", label: "Contact" },
-    ],
-  },
-];
+/**
+ * Built from the shared navigation source, so a column can never list a page
+ * the site does not have. Planned entries are hidden until their route exists;
+ * a column whose entries are all planned disappears with them.
+ *
+ * Deliberately quieter than the closing section above it — the footer is
+ * wayfinding, not a second call to action.
+ */
+const GROUPS = visibleGroups(FOOTER_GROUPS);
 
 export function SiteFooter() {
   const year = new Date().getFullYear();
@@ -40,25 +23,31 @@ export function SiteFooter() {
       <div className="container site-footer__top">
         <div className="site-footer__brand">
           <Link href="/">MindWP</Link>
-          <p>{SITE.description}</p>
+          <p className="site-footer__tagline">{SITE.footerLine}</p>
+          <div className="site-footer__brand-links">
+            <Link href={CONTACT_PATH}>{PRIMARY_CTA_LABEL}</Link>
+            <a href="/#work">{SECONDARY_CTA_LABEL}</a>
+          </div>
         </div>
 
-        <div className="site-footer__columns">
-          {COLUMNS.map((column) => (
-            <div className="site-footer__column" key={column.title}>
-              <p className="site-footer__column-title">{column.title}</p>
-              {column.links.map((link) => (
-                <a key={link.label} href={link.href}>
-                  {link.label}
-                </a>
-              ))}
-            </div>
-          ))}
-        </div>
+        {GROUPS.length > 0 && (
+          <div className="site-footer__columns">
+            {GROUPS.map((group) => (
+              <div className="site-footer__column" key={group.label}>
+                <p className="site-footer__column-title">{group.label}</p>
+                {group.items.map((item) => (
+                  <a key={item.label} href={item.href!}>
+                    {item.label}
+                  </a>
+                ))}
+              </div>
+            ))}
+          </div>
+        )}
       </div>
 
       <div className="container site-footer__bottom">
-        <p>&copy; {year} MindWP. Building smart websites since 2015.</p>
+        <p>&copy; {year} MindWP</p>
       </div>
     </footer>
   );

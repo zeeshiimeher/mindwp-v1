@@ -2,8 +2,8 @@
 
 import { type KeyboardEvent, useState } from "react";
 
-import { focusAndRevealTab, revealTab } from "@/app/_home/tabNavigation";
-import { useResponsiveTabOrientation } from "@/app/_home/useResponsiveTabOrientation";
+import { focusAndRevealTab, revealTab } from "@/app/_home-legacy/tabNavigation";
+import { useResponsiveTabOrientation } from "@/app/_home-legacy/useResponsiveTabOrientation";
 import { Icon, type IconName } from "@/components/ui/Icon";
 
 const ATTENTION_MOMENTS: readonly {
@@ -100,31 +100,30 @@ export function HomeAttention() {
   };
 
   return (
-    <section id="attention" className="home-attention section">
-      <div className="container section-intro" data-home-sequence>
+    <section id="attention" className="hl-attention section">
+      <div className="container section-intro" data-hl-sequence>
         <div className="section-title-group">
-          <p className="eyebrow" data-home-sequence-item>
+          <p className="eyebrow" data-hl-sequence-item>
             Existing attention
           </p>
-          <h2 data-home-sequence-item>
+          <h2 data-hl-sequence-item>
             Search, referrals and advertising <em>still need somewhere convincing to land.</em>
           </h2>
         </div>
       </div>
 
-      <div className="container">
-        <div className="container--split home-attention__panel">
+      <div className="container container--split hl-attention__layout">
         <ol
-          className="home-attention__index"
+          className="hl-attention__index"
           role="tablist"
           aria-label="Where existing attention arrives"
           aria-orientation={orientation}
-          data-home-stagger
+          data-hl-stagger
         >
           {ATTENTION_MOMENTS.map((moment, index) => {
             const selected = index === activeIndex;
             return (
-              <li role="presentation" key={moment.number} data-home-stagger-item>
+              <li role="presentation" key={moment.number} data-hl-stagger-item>
                 <button
                   type="button"
                   role="tab"
@@ -139,6 +138,7 @@ export function HomeAttention() {
                   }}
                   onKeyDown={(event) => handleKeys(event, index)}
                 >
+                  <small>{moment.number}</small>
                   <span>{moment.label}</span>
                   <Icon name="arrow-right" size={16} />
                 </button>
@@ -148,23 +148,22 @@ export function HomeAttention() {
         </ol>
 
         <article
-          className="home-attention__detail"
+          className="hl-attention__detail"
           role="tabpanel"
           id="attention-panel"
           aria-labelledby={`attention-tab-${active.number}`}
           tabIndex={0}
-          data-home-fade
+          data-hl-fade
           key={active.number}
         >
-          <span className="home-attention__icon">
+          <span className="hl-attention__icon">
             <Icon name={active.icon} size={18} />
           </span>
-          <p className="home-artifact-label">{active.eyebrow}</p>
+          <p className="hl-artifact-label">{active.eyebrow}</p>
           <h3>{active.title}</h3>
           <p>{active.body}</p>
-          <p className="home-attention__note">{active.note}</p>
+          <p className="hl-attention__note">{active.note}</p>
         </article>
-        </div>
       </div>
     </section>
   );

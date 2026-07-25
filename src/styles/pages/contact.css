@@ -1,0 +1,153 @@
+/* Request a Visibility & Enquiry Review.
+   Split page: the left column explains what the review actually looks at, the
+   right column is the request itself. The form is the focal object, so it sits
+   on a raised white surface against the page's paper ground. */
+
+.contact {
+  background: var(--surface-page);
+  padding-top: calc(var(--header-height) + clamp(2.5rem, 5vw, 4.5rem));
+}
+
+.contact__layout {
+  --container-gap: clamp(3rem, 5vw, 5.5rem);
+
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+  align-items: start;
+}
+
+.contact__intro {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-7);
+}
+
+.contact h1 {
+  font: var(--display-xl);
+  letter-spacing: var(--display-xl-tracking);
+}
+
+.contact h1 em {
+  display: block;
+}
+
+.contact__intro > .text-lead {
+  max-width: var(--measure-copy-narrow);
+}
+
+.contact__label {
+  color: var(--color-emerald-deep);
+  font: var(--label-caps);
+  letter-spacing: var(--label-caps-tracking);
+  text-transform: uppercase;
+}
+
+/* The three review lenses — the same three the closing section names. */
+.contact__lenses {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  border-top: 1px solid var(--border-hairline);
+  padding-top: var(--space-6);
+}
+
+.contact__lenses li {
+  display: grid;
+  grid-template-columns: 2.75rem minmax(0, 1fr);
+  align-items: start;
+  gap: var(--space-4);
+}
+
+.contact__lens-icon {
+  width: 2.75rem;
+  height: 2.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--emerald-tint);
+  color: var(--color-emerald-deep);
+}
+
+.contact__lenses strong {
+  display: block;
+  margin-bottom: var(--space-1);
+  color: var(--text-primary);
+  font: var(--ui-strong);
+}
+
+.contact__lenses p {
+  font: var(--body-sm);
+  max-width: var(--measure-copy-narrow);
+}
+
+.contact__next {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  border-top: 1px solid var(--border-hairline);
+  padding-top: var(--space-6);
+}
+
+.contact__next-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.contact__next-list li {
+  display: grid;
+  grid-template-columns: 2rem minmax(0, 1fr);
+  gap: var(--space-3);
+  align-items: baseline;
+  font: var(--body-sm);
+}
+
+.contact__next-list small {
+  color: var(--color-emerald-deep);
+  font: var(--label-caps);
+}
+
+/* ---- Form panel ---- */
+
+.contact__panel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-lg);
+  background: var(--surface-card);
+  padding: clamp(var(--space-6), 3vw, var(--space-8));
+  box-shadow: var(--elev-focal);
+}
+
+.contact__privacy {
+  border-top: 1px solid var(--border-hairline);
+  padding-top: var(--space-4);
+  font: var(--body-sm);
+}
+
+@media (max-width: 64rem) {
+  .contact__layout {
+    grid-template-columns: 1fr;
+  }
+
+  .contact__intro {
+    max-width: 44rem;
+  }
+}
+
+@media (max-width: 36rem) {
+  .contact__panel {
+    padding: var(--space-5);
+  }
+
+  .contact__lenses li {
+    grid-template-columns: 2.25rem minmax(0, 1fr);
+    gap: var(--space-3);
+  }
+
+  .contact__lens-icon {
+    width: 2.25rem;
+    height: 2.25rem;
+  }
+}

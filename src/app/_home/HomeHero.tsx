@@ -1,4 +1,6 @@
+import { HomeHeroArt } from "@/app/_home/HomeHeroArt";
 import { Button } from "@/components/ui/Button";
+import { CONTACT_PATH } from "@/config/routes";
 import { PRIMARY_CTA_LABEL } from "@/lib/cta/labels";
 
 const JOURNEY = [
@@ -25,66 +27,21 @@ export function HomeHero() {
           </div>
           <p className="home-hero__lede text-lead" data-home-hero-item>
             MindWP designs smarter websites for independent clinics and specialist service
-            businesses — helping the right customers find you, understand the work, and choose
-            you with confidence.
+            businesses — helping the right customers find you, understand the work, and choose you
+            with confidence.
           </p>
-          <Button href="#review" variant="on-dark" data-home-hero-item>
+          <Button
+            href={CONTACT_PATH}
+            variant="on-dark"
+            className="btn-lg"
+            data-home-hero-item
+          >
             {PRIMARY_CTA_LABEL}
           </Button>
         </div>
 
-        <div
-          className="home-hero__art"
-          data-home-hero-artifacts
-          aria-label="A connected enquiry journey"
-        >
-          <div className="home-hero__glow" aria-hidden="true" />
-          <div className="home-hero__offer" data-home-hero-artifact>
-            <span className="home-hero__offer-line home-hero__offer-line--dark" />
-            <span className="home-hero__offer-line" />
-            <span className="home-hero__offer-line home-hero__offer-line--short" />
-            <span className="home-hero__offer-button">Book a consultation</span>
-            <span className="home-hero__offer-tags">
-              Offer&nbsp;&nbsp;&nbsp; Trust&nbsp;&nbsp;&nbsp; Proof
-            </span>
-          </div>
-
-          <div className="home-hero__form home-artifact-card" data-home-hero-artifact>
-            <span className="home-artifact-handle" aria-hidden="true" />
-            <p className="home-artifact-label">Enquiry form</p>
-            <span className="home-hero__field" aria-hidden="true" />
-            <span className="home-hero__field home-hero__field--short" aria-hidden="true" />
-            <span className="home-hero__field" aria-hidden="true" />
-            <span className="home-hero__send">Send enquiry</span>
-            <span className="home-hero__sent">✓ Sent — routed</span>
-          </div>
-
-          <div className="home-hero__route" aria-hidden="true">
-            <span />
-            <span />
-          </div>
-
-          <div className="home-hero__status home-artifact-card" data-home-hero-artifact>
-            <p className="home-artifact-label">New enquiry</p>
-            <dl>
-              <div>
-                <dt>Routing</dt>
-                <dd>Notified</dd>
-              </div>
-              <div>
-                <dt>Status</dt>
-                <dd>Owner assigned</dd>
-              </div>
-              <div>
-                <dt>Next step</dt>
-                <dd>Visible</dd>
-              </div>
-              <div>
-                <dt>Follow-up</dt>
-                <dd>Scheduled</dd>
-              </div>
-            </dl>
-          </div>
+        <div className="home-hero__art-column" data-home-hero-artifacts>
+          <HomeHeroArt />
         </div>
       </div>
 

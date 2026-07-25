@@ -86,7 +86,7 @@ svg {
 .on-dark {
   --heading-turn-color: var(--text-inverse-muted);
 
-  color: var(--color-text-inverse-muted);
+  color: var(--text-inverse-muted);
 }
 
 .on-dark h1,
@@ -97,8 +97,13 @@ svg {
 }
 
 .on-dark p,
-.on-dark li {
-  color: var(--color-text-inverse-muted);
+.on-dark li,
+.on-dark small {
+  color: var(--text-inverse-muted);
+}
+
+.on-dark strong {
+  color: var(--text-inverse);
 }
 
 .on-dark :focus-visible {

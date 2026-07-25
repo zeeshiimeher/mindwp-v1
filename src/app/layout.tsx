@@ -10,9 +10,13 @@ import { SiteHeader } from "@/components/layout/SiteHeader";
 import { ROOT_METADATA } from "@/lib/seo/metadata";
 import { organizationSchema, websiteSchema } from "@/lib/seo/schema";
 
+// SOFT and WONK are loaded so the display scale's font-variation-settings
+// (src/styles/typography.css) actually resolve; opsz lets the browser size
+// Fraunces optically instead of scaling one master across 17px–84px.
 const fraunces = Fraunces({
   subsets: ["latin"],
   style: ["normal", "italic"],
+  axes: ["SOFT", "WONK", "opsz"],
   variable: "--font-fraunces",
   display: "swap",
 });

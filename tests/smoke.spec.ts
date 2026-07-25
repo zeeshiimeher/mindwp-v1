@@ -112,17 +112,12 @@ test("homepage follows the approved reference structure", async ({ page }) => {
   await page.keyboard.press("Home");
   await expect(firstSystemTab).toBeFocused();
 
-  const compoundingTablist = page.getByRole("tablist", { name: "What compounds after launch" });
-  await expect(compoundingTablist).toBeVisible();
-  const proofTab = page.getByRole("tab", { name: "Proof builds" });
-  await expect(proofTab).toHaveAttribute("aria-selected", "true");
-  await proofTab.focus();
-  await page.keyboard.press("ArrowRight");
-  await expect(page.getByRole("tab", { name: "Local presence" })).toBeFocused();
-  await page.keyboard.press("End");
-  await expect(page.getByRole("tab", { name: "Channels compound" })).toBeFocused();
-  await page.keyboard.press("Home");
-  await expect(proofTab).toBeFocused();
+  // Compounding is deliberately a composition rather than a third tab set:
+  // every gain is present and readable without any control being operated.
+  await expect(page.locator("#compounding .cp__gain")).toHaveCount(4);
+  await expect(page.locator("#compounding")).toContainText("Proof keeps adding up");
+  await expect(page.locator("#compounding")).toContainText("Every channel works harder");
+  await expect(page.locator("#compounding").getByRole("tab")).toHaveCount(0);
 
   const faqButton = page.getByRole("button", {
     name: "Do I have to take the supporting services?",
@@ -133,8 +128,9 @@ test("homepage follows the approved reference structure", async ({ page }) => {
   await expect(
     page.getByRole("region", { name: "Do I have to take the supporting services?" }),
   ).toBeVisible();
+  // The rebuilt footer carries the approved positioning line, not the meta description.
   await expect(page.locator("footer")).toContainText(
-    "Smart websites for established service businesses and expert-led businesses",
+    "Website strategy, design and implementation for service businesses where people choose carefully",
   );
 });
 
@@ -167,18 +163,14 @@ test("homepage tab navigation remains usable on mobile", async ({ browser, baseU
     await page.goto("/");
 
     const leakTabs = page.getByRole("tablist", { name: "Where existing attention arrives" });
-    const compoundTabs = page.getByRole("tablist", { name: "What compounds after launch" });
 
     await expect(leakTabs).toBeVisible();
-    await expect(compoundTabs).toBeVisible();
     await expect(leakTabs).toHaveAttribute("aria-orientation", "horizontal");
 
-    const touchActions = await Promise.all(
-      [leakTabs, compoundTabs].map((rail) =>
-        rail.evaluate((element) => getComputedStyle(element).touchAction),
-      ),
+    const touchAction = await leakTabs.evaluate(
+      (element) => getComputedStyle(element).touchAction,
     );
-    expect(touchActions).toEqual(["auto", "auto"]);
+    expect(touchAction).toBe("auto");
 
     const leakRailMetrics = await leakTabs.evaluate((element) => ({
       clientWidth: element.clientWidth,
@@ -190,7 +182,7 @@ test("homepage tab navigation remains usable on mobile", async ({ browser, baseU
     const missedCallsHead = page.getByRole("button", { name: "Missed calls", exact: true });
     await expect(missedCallsHead).toBeVisible();
     await expect(missedCallsHead).toHaveAttribute("aria-expanded", "true");
-    await expect(page.getByRole("tab", { name: "Proof builds" })).toBeVisible();
+    await expect(page.locator("#compounding .cp__gain")).toHaveCount(4);
 
     const lastLeakTab = page.getByRole("tab", { name: "The remembered name" });
     await lastLeakTab.tap();
@@ -218,12 +210,7 @@ test("homepage tab navigation remains usable on mobile", async ({ browser, baseU
     await expect(missedCallsBody).not.toBeVisible();
     expect(await missedCallsBody.getAttribute("inert")).not.toBeNull();
 
-    const channelsTab = page.getByRole("tab", { name: "Channels compound" });
-    await channelsTab.tap();
-    await expect(channelsTab).toHaveAttribute("aria-selected", "true");
-    await expect(page.getByRole("tabpanel", { name: "Channels compound" })).toContainText(
-      "Search, referrals and ads",
-    );
+    await expect(page.locator("#compounding")).toContainText("Search, referrals and ads");
 
     const viewportWidth = await page.evaluate(() => document.documentElement.clientWidth);
     const pageWidth = await page.evaluate(() => document.documentElement.scrollWidth);
@@ -259,14 +246,10 @@ test("mobile tab compositions keep keyboard selection visible", async ({ page })
   await expect(followUpHead).toHaveAttribute("aria-expanded", "true");
   await expectHorizontallyContained(followUpHead, page.locator(".home-systems__accordion"));
 
-  const compoundTabs = page.getByRole("tablist", { name: "What compounds after launch" });
-  const localPresenceTab = page.getByRole("tab", { name: "Local presence" });
-  await localPresenceTab.click();
-  await page.keyboard.press("ArrowRight");
-  const refinementsTab = page.getByRole("tab", { name: "Refinements stack" });
-  await expect(refinementsTab).toBeFocused();
-  await expect(refinementsTab).toHaveAttribute("aria-selected", "true");
-  await expectHorizontallyContained(refinementsTab, compoundTabs);
+  // Compounding has no controls to keep visible — it must simply fit its column.
+  const gains = page.locator("#compounding .cp__gain");
+  await expect(gains).toHaveCount(4);
+  await expectHorizontallyContained(gains.last(), page.locator("#compounding .cp"));
 });
 
 test("mobile homepage content stays inside its sections", async ({ page }) => {
