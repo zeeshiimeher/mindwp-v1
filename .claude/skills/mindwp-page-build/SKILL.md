@@ -7,7 +7,7 @@ description: Use when implementing an approved MindWP page or section design in 
 
 Implement an approved design. Do not decide one.
 
-Read `docs/ENGINEERING.md` for repository source, CSS, accessibility and validation rules. Read `docs/DESIGN.md` when a composition question arises during implementation. Do not open the Homepage — the design is already decided, and the reference invites drift at this stage.
+Read `docs/ENGINEERING.md` for repository source, CSS, accessibility and validation rules. Read `docs/DESIGN.md` when a composition question arises during implementation. Do not open another page as a reference — the design is already decided, and a reference only invites drift at this stage.
 
 ## Implement what was approved
 

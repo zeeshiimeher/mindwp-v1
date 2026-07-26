@@ -1,6 +1,8 @@
 import "@/styles/pages/lrh.css";
 import "./library.css";
 
+import { buildSEO } from "@/lib/seo/metadata";
+
 import { ContextForm } from "./ContextForm";
 import { ContextThreshold } from "./ContextThreshold";
 import { LrhMissedCalls } from "./LrhMissedCalls";
@@ -9,7 +11,6 @@ import { MissedCallsLedger } from "./MissedCallsLedger";
 import { OwnershipHandover } from "./OwnershipHandover";
 import { OwnershipNamed } from "./OwnershipNamed";
 import { RequestsSlips } from "./RequestsSlips";
-import { buildSEO } from "@/lib/seo/metadata";
 
 export const metadata = buildSEO({
   title: "Draft library",

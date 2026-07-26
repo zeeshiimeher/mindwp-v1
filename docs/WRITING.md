@@ -36,23 +36,30 @@ Paragraphs should develop the heading rather than paraphrase it. If a visual or 
 
 Write only what the available evidence and approved scope support.
 
-- Do not invent clients, testimonials, ratings, review counts, locations, dates, rankings, metrics, revenue, results or guarantees.
-- Do not promise leads, bookings, response speed, rankings, ratings, revenue or conversion improvement without real evidence and an authorised claim.
+[FOUNDATION.md](./FOUNDATION.md) owns what may never be claimed — invented clients, testimonials, ratings, locations, rankings, metrics, results and guarantees; promised outcomes without evidence; and unsupported competitor absolutes. Writing owns how permitted material is expressed:
+
 - Label demonstration, anonymised or constructed work when a reasonable visitor could mistake it for a client result. Do not defensively label an obviously explanatory diagram or artefact as proof.
 - Describe what can be inspected or verified. Do not upgrade a useful process into a measured outcome.
-- Avoid unsupported claims about every competitor or every buyer.
 
 When a source is required for a factual or benchmark claim, keep the source and the inference distinguishable. A page plan should mark unsupported material open rather than inviting persuasive invention.
 
+## Who MindWP's own pages address
+
+Every page on MindWP's site is read by a business owner deciding whether to buy. It is never patient-facing or client-customer-facing.
+
+So MindWP's own copy must not narrate a patient's medical situation, describe how a practitioner assesses or treats, or write in the voice of a clinic addressing its patients. Where a page needs to describe what happens to an enquiry, describe it as the owner sees it: a request arriving, being acknowledged, reaching a named person. A service page for one MindWP service should still make the case for the website that carries it — the supporting services exist around the principal offer, not instead of it.
+
+The two audiences are easy to conflate, because MindWP writes for clinics. Below is guidance for copy MindWP produces **on a client's site**. It does not license the same register on MindWP's own pages.
+
 ## Professional, privacy and consent boundaries
 
-Clinic copy may explain a patient's decision, treatment information already approved by the professional and a responsible next step. It must not supply medical advice, treatment guarantees, compliance claims or patient outcomes without proper authority.
+Clinic copy — copy written for a client's own site — may explain a patient's decision, treatment information already approved by the professional and a responsible next step. It must not supply medical advice, treatment guarantees, compliance claims or patient outcomes without proper authority.
 
 The same principle applies to legal, financial and other specialist services: MindWP can clarify the public experience and routing, but it does not replace professional judgement.
 
-Acknowledgements, routing, follow-up and review requests must be described truthfully. Respect permission, stopping rules, sensitive context and visible human ownership. Do not imply that a sequence continues regardless of consent or that automation makes a professional decision.
+Describe acknowledgement, routing, follow-up and review requests as Foundation defines them. In copy, that means never implying a sequence continues regardless of consent, or that automation makes a professional decision.
 
-Keep founder details, private platforms, credentials, enquiry data and account information out of public copy unless their exact use is authorised.
+Founder details, private platforms, credentials, enquiry data and account information stay out of public copy unless their exact use is authorised.
 
 ## Tools, CRM, AI and automation
 
@@ -60,7 +67,7 @@ Tools are supporting means, not the offer. Lead with situations and outcomes a b
 
 - Explain CRM-related work through ownership, status, permission and a justified next action before software features.
 - Do not imply that MindWP prepares, prices, approves or sends a client's quote unless that responsibility is explicitly real.
-- Explain AI or automation through the truthful task it supports. Never present either as a replacement for commercial, clinical, legal or human judgement.
+- Explain AI or automation through the truthful task it supports, never as a replacement for human judgement.
 - Explain WordPress or a builder through maintainability, performance, clarity and implementation fit rather than tool fandom.
 - Do not imply that the client owns, or MindWP operates, a platform or account unless Strategy or the page plan has settled that responsibility.
 
@@ -68,7 +75,7 @@ Tools are supporting means, not the offer. Lead with situations and outcomes a b
 
 Use the current public service names and responsibilities in Strategy. Planning shorthand does not authorise a public rename.
 
-Local SEO language should concern ongoing local discovery and evaluation, not domination or guarantees. Lead Response & Handling should describe truthful acknowledgement, context, routing and human ownership, not an AI receptionist product. Follow-Up & CRM should describe justified next actions after the first response, with permission and stopping rules. Reputation & Review should describe ethical requests, feedback, responsible replies and visible proof, not rating manipulation.
+Strategy's service table owns each responsibility and its boundary. Writing adds only the phrasing risks: never let Local SEO Authority read as domination or a guarantee, Lead Response & Handling as an AI receptionist product, Follow-Up & CRM as automatic pressure, or Reputation & Review as rating management.
 
 Advertising may be named as a source of attention. Do not make MindWP sound like the advertising manager or claim campaign results.
 

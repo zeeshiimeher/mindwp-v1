@@ -26,7 +26,7 @@ Read [STRATEGY.md](./STRATEGY.md) when a task depends on the audience lane, mark
 3. An explicitly supplied page plan owns that page's job, audience, intent, action, meaning, proof and fixed boundaries. It does not silently redefine the wider business.
 4. `CLAUDE.md` owns repository operating safety. Execution skills apply specialised methods; they do not create business or design authority.
 5. Current source and fresh renders own implemented reality. Report drift from the documents instead of silently treating implementation as a new strategic decision.
-6. The Homepage is the accepted quality and implementation reference — evidence of the standard to reach, not a template or an automatic global rule. A page awaiting rebuild carries no authority over new work, whatever it currently demonstrates.
+6. A page becomes a quality or implementation reference only when the user names it for that task. No document records which page that is. An existing page is evidence of a standard, never a template or an automatic global rule, and its presence in the repository grants it no authority over new work.
 7. Archived or historical material, including anything recovered from git history, is a non-authoritative preservation source. Extract from it only when reconciled with current authority.
 
 Public routes, navigation and publication state come from active source and explicit release decisions. A document entry does not make a route live.
@@ -44,11 +44,11 @@ These labels describe confidence and scope, not a lifecycle or approval system.
 
 **Selection rule:** A canonical authority is selected when the user supplies or explicitly names it, or when the route below assigns it to the work in hand. Do not infer selection from an exporter option that names something else, and do not open the full set for orientation.
 
-**Page design or redesign** — the supplied page plan, `DESIGN.md`, and a fresh capture of the accepted Homepage. Open Homepage source only when implementation understanding is necessary; the visual reference leads.
+**Page design or redesign** — the supplied page plan and `DESIGN.md`. If the user names a reference page, capture it and read the capture first; open its source only when implementation understanding is necessary.
 
-**Page build** — the approved design specification and `ENGINEERING.md`, plus the existing foundational CSS the task needs. Not the Homepage: the design is already decided at this point.
+**Page build** — the approved design specification and `ENGINEERING.md`, plus the existing foundational CSS the task needs. The design is already decided at this point, so a reference page adds nothing and invites drift.
 
-**Visual audit** — fresh captures of the page under review, `DESIGN.md`, and the Homepage capture as the quality benchmark.
+**Visual audit** — fresh captures of the page under review, and `DESIGN.md`. Compare against another page only if the user names one.
 
 **Repair, copy edit, tooling, or isolated technical work** — the changed scope and the authority that owns it. Nothing wider. A focused exporter or tool task must not inherit page, commercial or strategic context.
 
@@ -60,11 +60,11 @@ In every route, open Foundation, Strategy or Writing when a business, positionin
 
 Optional specialists, not a mandatory chain. Each declares its own trigger and context.
 
-| Skill | Use for | Opens the Homepage |
-| ----- | ------- | ------------------ |
-| `mindwp-page-design`     | Deciding a page or section design; direction, concept and critique. Produces a specification, no code | Yes — capture first |
+| Skill | Use for | May use a named reference page |
+| ----- | ------- | ------------------------------ |
+| `mindwp-page-design`     | Deciding a page or section design; direction, concept and critique. Produces a specification, no code | on request  — capture first |
 | `mindwp-page-build`      | Implementing an approved design in source                                                             | No                  |
 | `mindwp-design-eye`      | Judging whether a built page is visually good                                                         | Yes — capture only  |
 | `mindwp-frontend-quality`| Technical repair, finalisation and frontend quality review                                            | No                  |
 
-Design is decided and reviewed before implementation begins. One skill does not automatically load another or a broader authority bundle.
+Design is decided and reviewed before implementation begins. One skill does not automatically load another or a broader authority bundle. No skill selects a reference page for itself.

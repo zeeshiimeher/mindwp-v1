@@ -1646,6 +1646,37 @@ body:has(.lrh-closing) .site-footer__bottom {
    ================================================================ */
 
 @media (max-width: 64rem) {
+  .lrh-return__band {
+    grid-template-columns: 1fr;
+    gap: var(--space-7);
+  }
+
+  /* The switchboard's argument is one shared bar across four lanes, and that
+     cannot survive a column-count change. Below this width each lane becomes
+     its own top-to-bottom run with its rule still in the middle, so the
+     sequence is preserved even though the single bar is not. */
+  .lrh-switch__lanes {
+    grid-template-columns: 1fr;
+    row-gap: var(--space-6);
+  }
+
+  .lrh-switch__lane {
+    grid-template-rows: auto 1.25rem auto 1.25rem auto auto;
+    text-align: left;
+  }
+
+  .lrh-switch__drop {
+    justify-self: start;
+    margin-left: var(--space-4);
+  }
+
+  .lrh-switch__rule,
+  .lrh-switch__lane:first-child .lrh-switch__rule,
+  .lrh-switch__lane:last-child .lrh-switch__rule {
+    border-inline-width: 1px;
+    border-radius: var(--radius-md);
+  }
+
   .lrh-hero__top,
   .lrh-gap__layout,
   .lrh-fit__layout {

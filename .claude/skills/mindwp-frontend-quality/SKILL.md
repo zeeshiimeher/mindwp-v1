@@ -23,7 +23,7 @@ Begin with relevant current source and available or task-required rendered evide
 
 If a missing decision would materially change the technical result, identify it instead of widening context without permission. A focused exporter or isolated technical audit must not infer broader page context.
 
-Do not inspect Homepage or Local SEO by default. Use either only for direct work on that page, a named implementation question, a specific regression, or an explicit user request.
+Do not inspect another page by default. Inspect one only for direct work on it, a named implementation question, a specific regression, or when the user names it.
 
 ## Identify the technical owner
 
@@ -58,6 +58,7 @@ These are judgment prompts, not hard rules — apply what's actually true of the
 - **Sizing:** prefer content-driven height (padding plus line-height) over an enforced `min-height`. Keep `min-height` only where an element positions children absolutely inside itself and needs the reserved space, or where a `next/image fill` needs an explicitly sized parent — prefer `aspect-ratio` there instead of a fixed height that needs manual retuning per breakpoint.
 - **Grid tracks:** a `minmax()` floor wider than a track actually needs can silently steal space from its sibling track at specific viewport widths and distort an intended ratio — check whether every floor is load-bearing.
 - **Motion and hover:** extend the page's existing reveal/GSAP convention rather than inventing a new one; add hover feedback only to genuinely interactive elements — skip decorative or illustrative material — using the duration, easing, and transform vocabulary already active elsewhere on the site.
+- **Reveal animtion** page entry anmations but runs once the sections comes into view. use stagger animations.
 - **Responsive:** confirm padding, gaps,column order is correct and font sizes actually shrink at the existing breakpoints rather than just being copied from desktop.
 - Improrve page code,html and css quality keeing the frontend almost same.
 
@@ -74,7 +75,7 @@ Converging a duplicated technical mechanism into one already-authorized shared o
 - Address measured or credible performance risk without reducing meaningful proof or design by reflex.
 - Remove wrappers, selectors, duplication, and local workarounds only when they have no remaining visual or behavioural job.
 
-Do not promote a local technique to a token, global rule, or shared component until repetition or an explicit project decision establishes a stable role. Recurrence across two accepted pages alone is not enough.
+Do not promote a local technique to a token, global rule, or shared component until repetition or an explicit project decision establishes a stable role. Recurrence across two pages alone is not enough.
 
 ## Verify according to risk
 

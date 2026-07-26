@@ -421,25 +421,21 @@ Reject:
 
 Concentrate authored motion where it clarifies a relationship or state. The technical lifecycle, input states, accessibility, reduced-motion implementation, and performance constraints belong to Engineering.
 
-## Use accepted-page evidence carefully
+## Use a reference page carefully
 
-The Homepage is the accepted example of MindWP implementation quality, current brand character, and family resemblance.
+**Which page is a quality reference is the user's decision, and this document does not name one.** Some pages are stronger than others and that changes over time; a page named here would go stale and would quietly grant authority to work the user may already want rebuilt.
 
-**Open it during page planning, page design, and visual audit.** Open a fresh section capture first, and its source only when implementation understanding is necessary — the visual reference should lead, because opening source first makes an executor imitate implementation detail instead of studying visual weight and page rhythm.
+So: use a reference page when the user names one, and do not go looking for one otherwise. Never infer that a page is exemplary because it exists, because it is live, or because it is the largest.
 
-Do not open it for build, repair, copy, or ordinary engineering tasks. Those have a decided design already; the reference adds nothing and invites drift.
+When a reference page has been named, open a fresh section capture first and its source only when implementation understanding is necessary. The visual reference should lead — opening source first makes an executor imitate implementation detail instead of studying visual weight and page rhythm.
 
-It is a quality reference, not an anatomy library. It is not a template, pattern library, creative brief, page-length or section-count target, required surface sequence, breakpoint rule, animation rule, or compositional ceiling.
+A reference is a quality standard, not an anatomy library. It is not a template, pattern library, creative brief, page-length or section-count target, required surface sequence, breakpoint rule, animation rule, or compositional ceiling.
 
-Its exact fans, staircases, radial systems, tabs, browser scenes, mock interfaces, grids, breakout geometries, hero mechanisms, and motion choreography are page-specific evidence. Study them for the standard of resolution they reach. Reuse a construction when this material independently creates the same need; do not transplant its anatomy because it is available.
+Its exact fans, staircases, radial systems, tabs, browser scenes, mock interfaces, grids, breakout geometries, hero mechanisms, and motion choreography are page-specific. Study them for the standard of resolution they reach, and for what a section is made of and how much weight it carries. Reuse a construction when this material independently creates the same need; do not transplant its anatomy because it is available, and do not conclude that a new page needs the same objects.
 
-Study what a section is made of and how much weight it carries. Do not conclude that a new page needs the same objects.
-
-A future page may differ substantially while remaining recognisably MindWP.
+A new page may differ substantially while remaining recognisably MindWP.
 
 Do not promote a recurring value or device to a global design rule unless it is owned by a genuine shared foundation or explicitly adopted as a project decision.
-
-Pages not listed here are not references. A page awaiting rebuild carries no authority over new work, whatever it currently demonstrates.
 
 ## Judge rendered evidence
 
@@ -474,6 +470,6 @@ Use these as judgement prompts, not scores, validators, or quotas:
 - **Grouping:** does a shared environment create one continuous experience, or merely conceal ordinary independent bands inside a wrapper?
 - **Truth:** does every apparent proof object contain real evidence or clearly identify itself as illustration?
 - **Mobile:** is the central relationship preserved or thoughtfully simplified, rather than fragmented into an automatic stack?
-- **Reference contamination:** was a recognisable accepted-page construction reused because this material independently needed it, or only because it was available?
+- **Reference contamination:** was a recognisable construction from another page reused because this material independently needed it, or only because it was available?
 
 No design rule should require surface counts, alternating alignments, card limits, fixed focal moments, a repetition budget, bespoke artwork for every section, or a prescribed number of concepts. Distinction is earned by meaning; coherence is not a failure of originality.

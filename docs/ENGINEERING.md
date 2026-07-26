@@ -35,6 +35,7 @@ Tailwind is not part of the current architecture.
 | `pnpm build`          | Produce a production Next.js build                                                 |
 | `pnpm test`           | Run the Playwright suite against a production-like server                          |
 | `pnpm capture:route`  | Capture a route into an external review directory                                  |
+| `pnpm capture:home`   | Capture the homepage with its own dedicated script                                 |
 | `pnpm context:export` | Assemble an explicit derived orientation or focused context outside the repository |
 
 Do not claim an undocumented or unavailable command as a required check. Lighthouse configuration is retained but is not a supported gate until its dependency and command are deliberately wired.
@@ -132,7 +133,7 @@ Common ownership rules:
 
 Do not hide horizontal overflow on the page merely to mask incorrect geometry. Remove wrappers, overrides, duplicate declarations, and breakpoint patches only when they have no remaining visible or behavioural job.
 
-Promote a page-local token, selector, or component only when a genuine repeated role or explicit project decision supports it. Recurrence across two accepted pages alone is not enough.
+Promote a page-local token, selector, or component only when a genuine repeated role or explicit project decision supports it. Recurrence across two pages alone is not enough.
 
 ## Layout and responsive implementation
 
@@ -201,11 +202,13 @@ Keep visual ambition measurable:
 
 Treat large page components or CSS files as diagnosis prompts, not automatic refactor targets. Split code when it creates a clearer ownership boundary, reusable behaviour, safer state, or more maintainable testing—not merely to reduce line count.
 
-## Accepted implementation evidence
+## Existing implementations as evidence
 
-Homepage and Local SEO are accepted quality, family-resemblance, and implementation evidence. Their durable engineering lessons are already distilled into this authority. They are not default reading, templates, pattern libraries, or sources of universal breakpoints, grids, animation choreography, section anatomy, or page-local CSS devices.
+This authority does not name a reference implementation. Which page is worth learning from is the user's decision and changes over time; a name recorded here would go stale and would grant authority to work that may already be queued for rebuild.
 
-Inspect either implementation only when directly editing or auditing it, answering a named implementation question, diagnosing a specific regression, or responding to an explicit user request. A technique may transfer when the new implementation independently needs it. Availability or recurrence alone does not make it global.
+Inspect another page's implementation only when directly editing or auditing it, answering a named implementation question, diagnosing a specific regression, or when the user names it. An existing implementation is not default reading, a template, a pattern library, or a source of universal breakpoints, grids, animation choreography, section anatomy, or page-local CSS devices.
+
+A technique may transfer when the new implementation independently needs it. Availability or recurrence alone does not make it global.
 
 ## Validation and rendered evidence
 
@@ -236,11 +239,17 @@ pnpm test
 Select the rendered evidence the change needs. The capture tool is an optional capability:
 
 ```bash
-pnpm capture:route -- /route /tmp/mindwp-route-review
-pnpm capture:route -- --full /route /tmp/mindwp-route-risk-review
+pnpm capture:route -- /route /tmp/mindwp-route-review              # 1640 and 400
+pnpm capture:route -- --desktop /route /tmp/mindwp-desktop-review  # 1640 only
+pnpm capture:route -- --full /route /tmp/mindwp-route-risk-review  # wider matrix
+pnpm capture:route -- --sections /route /tmp/mindwp-section-review # every section
 pnpm capture:route -- --section proof /route /tmp/mindwp-proof-review
 ```
 
-Capture output must stay outside the repository. The default desktop/mobile pair, the wider matrix, reduced-motion captures, and section crops are convenient options rather than mandatory packets. The current all-section and targeted-section modes use direct `main > section` elements as their capture boundary; that DOM boundary is not proof that every planned meaning needs its own visible section or crop.
+`--desktop` and `--full` are mutually exclusive, as are `--sections` and `--section`. An output directory is optional; without one the tool writes to a temporary directory and prints the path. `pnpm capture:home` is a separate homepage-specific capability.
+
+Capture output must stay outside the repository. The viewport pair, the wider matrix, reduced-motion captures, and section crops are convenient options rather than mandatory packets. When more than one section is captured, the tool also writes a contact sheet — read the full page before the crops, since page rhythm and accumulated fatigue do not exist in a crop, and thumbnails misrepresent type size and contrast in both directions.
+
+The all-section and targeted-section modes use direct `main > section` elements as their capture boundary; that DOM boundary is not proof that every planned meaning needs its own visible section or crop.
 
 Use a live browser when static images cannot verify focus, keyboard, touch, disclosure, form, motion, or state behaviour. A successful check or build does not establish visual acceptance, and visual readiness does not imply publication approval.

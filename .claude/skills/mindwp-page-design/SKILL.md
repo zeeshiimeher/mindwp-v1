@@ -43,17 +43,19 @@ Two tests before a payload is accepted:
 
 Where the material is genuinely quiet, `bare typeset arrangement` is a correct answer. When it is the answer for most of a page, say why the page's main meanings do not need stronger expression.
 
-## Open the accepted page at this stage
+## A reference page, only if the user names one
 
-The Homepage is the accepted quality reference and this is the stage that may open it. Capture first, source only if implementation understanding is needed:
+This is the stage that may use a quality reference — but **which page that is belongs to the user, and no document records it.** Do not pick one, and do not assume a page is exemplary because it exists or is live.
+
+If the user names a page, capture it and read the capture first; open source only if implementation understanding is needed:
 
 ```
-pnpm capture:route -- --desktop --sections / <output-dir-outside-repo>
+pnpm capture:route -- --desktop --sections <route> <output-dir-outside-repo>
 ```
 
 Study the standard of resolution each section reaches and how weight is distributed across the page. Do not shop its constructions. Reuse one only when this material independently creates the same need.
 
-When redesigning an existing page, capture that page too, and read the full page before the section crops.
+When redesigning an existing page, capture that page regardless, and read the full page before the section crops.
 
 ## Rebuilding a section
 

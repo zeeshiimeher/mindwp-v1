@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
 
+import { LSEO_FAQS } from "@/app/_lseo/content";
 import { LseoPage } from "@/app/_lseo/LseoPage";
 import { JsonLd } from "@/components/JsonLd";
 import { buildSEO } from "@/lib/seo/metadata";
 import { faqSchema, serviceSchema } from "@/lib/seo/schema";
-
-import { LSEO_FAQS } from "@/app/_lseo/content";
 
 /**
  * Isolated variant route. Deliberately noindex, absent from the route registry,

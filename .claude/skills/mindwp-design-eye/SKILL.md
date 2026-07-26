@@ -54,7 +54,7 @@ Name what is working too, specifically enough to keep. A verdict that only remov
 
 ## What not to reward
 
-Do not score similarity to the Homepage's exact constructions. The Homepage is the standard of **resolution** a section should reach, not the set of objects it should contain. A page that reproduces its fans, tabs, browser scenes and hero mechanism has copied an anatomy, not met a standard.
+Do not score similarity to another page's constructions. Where the user has named a reference page, it sets the standard of **resolution** a section should reach, not the set of objects it should contain. A page that reproduces another's fans, tabs, browser scenes and hero mechanism has copied an anatomy, not met a standard. Where no reference has been named, judge against `DESIGN.md` alone — do not go and find one.
 
 Equally, do not treat familiar foundations as failures. Repeated surfaces, recurring eyebrow-and-heading grammar, cards, grids and centred introductions are shared MindWP language. Flatness is different meanings receiving the same inner hierarchy and weight — not a page that looks like itself.
 
