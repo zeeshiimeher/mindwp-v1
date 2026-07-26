@@ -18,13 +18,13 @@ Good copy makes three things easy to follow:
 2. what is currently unclear, unsupported or poorly handled;
 3. what the approved MindWP scope changes.
 
-Do not keep the reader inside problem language for an entire page. Reach the concrete offer and genuine evidence at the point the argument needs them. Do not repeat the complete MindWP model in every section or service page.
+Reach the concrete offer and genuine evidence at the point the argument needs them, rather than holding the reader in problem language for a whole page. Each section and service page carries its own part of the argument; the complete MindWP model belongs in one place, not in every one of them.
 
 ## Concrete language
 
 Prefer the real object or action: a website, service page, treatment explanation, call, form, message, consultation request, booking, person responsible, agreed next step, review request or piece of proof.
 
-Use “system” when it describes a connected responsibility. Do not use it as prestige language. Avoid generic agency and SaaS phrasing such as seamless, robust, cutting-edge, all-in-one platform, growth machine, demo or free trial unless the literal fact requires it.
+Use “system” where it describes a connected responsibility, and something plainer everywhere else — it is a description, not prestige language. Generic agency and SaaS phrasing (seamless, robust, cutting-edge, all-in-one platform, growth machine, demo, free trial) earns its place only when it is the literal fact.
 
 Smart Website Systems is an approved public offer name. “System” is justified there because the engagement connects strategy, structure, content, design, development, enquiry capture and agreed integrations around one customer decision. Elsewhere, use the term only when a real connected responsibility is being described.
 
@@ -66,10 +66,10 @@ Founder details, private platforms, credentials, enquiry data and account inform
 Tools are supporting means, not the offer. Lead with situations and outcomes a business owner recognises; use service names, CRM terms and internal categories only where they make the message clearer.
 
 - Explain CRM-related work through ownership, status, permission and a justified next action before software features.
-- Do not imply that MindWP prepares, prices, approves or sends a client's quote unless that responsibility is explicitly real.
 - Explain AI or automation through the truthful task it supports, never as a replacement for human judgement.
 - Explain WordPress or a builder through maintainability, performance, clarity and implementation fit rather than tool fandom.
-- Do not imply that the client owns, or MindWP operates, a platform or account unless Strategy or the page plan has settled that responsibility.
+- Describe quote preparation, pricing, approval and sending as the client's, unless that responsibility is explicitly MindWP's.
+- Leave platform and account ownership unstated until Strategy or the page plan has settled it.
 
 ## Service language
 
@@ -77,17 +77,17 @@ Use the current public service names and responsibilities in Strategy. Planning 
 
 Strategy's service table owns each responsibility and its boundary. Writing adds only the phrasing risks: never let Local SEO Authority read as domination or a guarantee, Lead Response & Handling as an AI receptionist product, Follow-Up & CRM as automatic pressure, or Reputation & Review as rating management.
 
-Advertising may be named as a source of attention. Do not make MindWP sound like the advertising manager or claim campaign results.
+Advertising may be named as a source of attention, with MindWP's role starting where that attention lands.
 
 ## Industry specificity
 
-Specificity comes from the real customer or patient decision: timing, terminology, concerns, evidence, professional boundaries and the action available. Adding an industry name to generic copy is not specificity.
+Specificity comes from the real customer or patient decision: timing, terminology, concerns, evidence, professional boundaries and the action available. An industry name added to generic copy is not specificity.
 
-Do not invent urgency, response times or decision patterns. Planned and urgent work both require page-specific evidence; neither should become a global writing template.
+Urgency, response times and decision patterns need page-specific evidence. Planned and urgent work each behave differently, and neither becomes a global writing template.
 
 ## FAQs and CTA support
 
-FAQs answer genuine objections, scope boundaries or practical questions plainly. They should not repeat the entire page or introduce commercial promises the main argument cannot support.
+FAQs answer genuine objections, scope boundaries or practical questions plainly, in a few lines each. Keep them to what the main argument can already support.
 
 CTA-supporting copy should explain what the selected action involves, who it is for and what happens next at the level currently known. Keep it low-pressure and specific. Strategy or the page plan selects the action; Writing does not substitute “book a demo,” “start a trial,” “get guaranteed leads” or another familiar CTA merely because it sounds conventional.
 

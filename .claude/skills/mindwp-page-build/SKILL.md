@@ -51,10 +51,15 @@ Use one meaningful source structure across widths. Keep client code inside earne
 
 A section's named payload is the work. When implementation time runs short, the object is what must survive — not the padding around it.
 
-Two failures worth checking for in your own output:
+The specification's `Built by` row is a build instruction, not a note. If it says the payload has an interior, give it a fill and something of a different value inside it. If it says something breaks its container, build the breakout. Delivering the section without those moves delivers a different, flatter section.
 
-- **Padding standing in for emphasis.** `.section--focal` only changes padding and gap. Applying it to a small payload produces a taller band with more empty space, not a focal section. Check that every focal section contains a payload that earns it.
-- **An object invisible against its own ground.** A card, panel or line whose value sits within a step or two of the surface behind it will disappear in the render even though the markup is correct. Verify contrast, clipping and overlap in a capture, not in the source.
+Five failures to check for in your own output before reporting:
+
+- **Padding standing in for emphasis.** `.section--focal` only changes padding and gap. On a small payload it produces a taller band with more empty space, not a focal section. Every focal section needs a payload that earns it.
+- **An object invisible against its own ground.** A card, panel or line whose value sits within a step or two of the surface behind it disappears in the render even though the markup is correct. On light surfaces the whole ladder spans a few points of lightness and `--elev-raised` is faint — an object there usually needs a fill *and* a hairline *and* a shadow, not one of the three.
+- **Text clipped by an overlapping neighbour.** Rotation, overlap and stagger are the moves most likely to crop their own content. Check the widest and narrowest widths, not just the design width.
+- **A missing middle.** Display heading straight to body copy, with nothing between, is the signature of a flat section. Use the scale's middle steps for payload headings.
+- **A responsive block that never arrived.** A multi-column payload with no narrow-width rule will clip and crush at 400px while looking perfect at 1640. Capture both before reporting.
 
 ## Publication boundaries
 

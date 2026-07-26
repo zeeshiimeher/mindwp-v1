@@ -443,7 +443,8 @@
   .lrh-art__ack,
   .lrh-art__onward,
   .lrh-art__halo,
-  .lrh-art__step-dot {
+  .lrh-art__step-dot,
+  .lrh-faq__items [role="region"] {
     animation: none;
   }
 }
@@ -1181,6 +1182,7 @@
 .lrh-slips__placed dd {
   display: inline-flex;
   align-items: center;
+  justify-self: start;
   border-radius: var(--radius-sm);
   background: var(--emerald-tint);
   box-shadow: inset 0 0 0 1px var(--emerald-line-soft);
@@ -1679,9 +1681,19 @@ body:has(.lrh-closing) .site-footer__bottom {
 
   .lrh-hero__top,
   .lrh-gap__layout,
+  .lrh-ack__band,
   .lrh-fit__layout {
     grid-template-columns: 1fr;
     align-items: stretch;
+  }
+
+  /* Below the two-column width the explicit desktop placement (intro in
+     column 2, the card in column 1) has no columns left to place into —
+     stack in source order instead, intro first. */
+  .lrh-ack__intro,
+  .lrh-ack__set {
+    grid-column: 1;
+    grid-row: auto;
   }
 
   .lrh-hero__intro {

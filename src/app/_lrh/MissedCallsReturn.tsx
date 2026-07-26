@@ -40,22 +40,14 @@ export function MissedCallsReturn() {
           </p>
         </div>
 
-        <div className="lrh-return__tracks" data-lrh-scrub>
+        <div className="lrh-return__tracks">
           <figure className="lrh-return__track lrh-return__track--dead">
             <figcaption>
               <span className="lrh-artifact-label">Without it</span>
               <strong>The call ends where it stopped.</strong>
             </figcaption>
             <svg viewBox="0 0 640 90" role="img" aria-label="A call arrives and the track stops.">
-              <line
-                className="lrh-return__rail"
-                x1="8"
-                y1="45"
-                x2="360"
-                y2="45"
-                pathLength="1"
-                data-lrh-draw
-              />
+              <line className="lrh-return__rail" x1="8" y1="45" x2="360" y2="45" />
               <line className="lrh-return__cap" x1="360" y1="24" x2="360" y2="66" />
               <text className="lrh-return__tag" x="8" y="26">
                 Call in
@@ -82,21 +74,12 @@ export function MissedCallsReturn() {
                 y1="45"
                 x2="360"
                 y2="45"
-                pathLength="1"
-                data-lrh-draw
               />
               <path
                 className="lrh-return__loop"
                 d="M360 45 C 408 45 408 105 344 105 L 120 105"
-                pathLength="1"
-                data-lrh-draw
               />
-              <path
-                className="lrh-return__rail lrh-return__rail--live"
-                d="M360 45 L 560 45"
-                pathLength="1"
-                data-lrh-draw
-              />
+              <path className="lrh-return__rail lrh-return__rail--live" d="M360 45 L 560 45" />
               <circle className="lrh-return__node" cx="560" cy="45" r="7" />
               <text className="lrh-return__tag" x="8" y="26">
                 Call in

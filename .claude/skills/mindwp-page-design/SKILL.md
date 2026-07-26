@@ -21,6 +21,8 @@ Surface
 Primary payload   the named material (see DESIGN.md, Material expression)
 Relationship      what the payload makes visible
 First-glance read what a visitor understands before reading any copy
+Built by          which visual moves give it presence (see below)
+Opening           standard eyebrow-heading-lede, or how it differs
 Evidence needed   real content, proof or media the section requires
 Interaction       only when it carries meaning; otherwise "none"
 Desktop           composition, dominant object, eye path
@@ -42,6 +44,19 @@ Two tests before a payload is accepted:
 - **Legible without its paragraph.** If the object only makes sense once the copy beside it is read, it has not externalised the relationship.
 
 Where the material is genuinely quiet, `bare typeset arrangement` is a correct answer. When it is the answer for most of a page, say why the page's main meanings do not need stronger expression.
+
+## Say how each section is built, not only what it means
+
+A specification can name a correct payload for every section and still describe a flat page. `Built by` is where that is prevented. Name the moves the section actually uses — `DESIGN.md`'s *What makes a section look built* has the full set:
+
+an interior (a payload with its own ground and different values inside it) · a contrasting object rather than a changed band · the middle of the type scale · one dominant element · a surface change from its neighbour · a non-standard opening · something breaking its container.
+
+Two things to get right at page scale:
+
+- **Concentrate, don't spread.** One or two sections carry the big moves. A page where every section breaks its container is noise, and a page where none does is timid.
+- **A quiet section says `Built by: nothing, deliberately`.** That is a valid and necessary answer. Leaving the row blank is not — blank reads as undecided, and undecided becomes flat.
+
+If a section's only answer is "a heading, a paragraph and a list", it is either genuinely quiet or it is unfinished. Decide which, in writing, before it reaches build.
 
 ## A reference page, only if the user names one
 
@@ -80,6 +95,10 @@ Two checks: if two options could swap their copy without either breaking, they a
 Judge every rebuilt section against the sections above and below it, never on its own. A section that is strong in isolation and wrong beside its neighbours has failed.
 
 Name the neighbours in the specification, and say what changes at each boundary — surface, density, reading effort, or scale. A contact sheet shows this in one look; a section crop cannot show it at all.
+
+## Who the page is for
+
+Every MindWP page is read by a business owner deciding whether to buy — never by a patient or a client's customer. Design for that reader: describe what happens to an enquiry as the owner sees it, and keep the page out of the register of a clinic addressing its patients. A page for one supporting service should still make the case for the website that carries it.
 
 ## Protect meaning and truth
 

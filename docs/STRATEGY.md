@@ -4,7 +4,7 @@ This document owns MindWP's current approved commercial direction. It is authori
 
 ## Settled decisions
 
-These were open and are now closed. They are recorded here because Strategy owns them; no other document should restate them.
+Strategy owns these; no other document restates them.
 
 | Decision | Settled position |
 |---|---|
@@ -26,10 +26,6 @@ The website is the principal commercial surface. Connected services are introduc
 ### Active Homepage direction
 
 The Homepage leads with Smart Website Systems and organises its argument around how suitable people find, understand, evaluate and contact the business. The approved architecture runs: the destination case first, so that existing attention has somewhere convincing to land; then the connected moments around the website, acknowledged positively; then the principal offer explained in depth, with inspectable proof placed before it. Connected support may then show how it improves local discovery or what happens after contact — presented positively, without repeatedly weakening the services as "optional", and without letting them become four co-equal reasons for the business to exist.
-
-### Decision note
-
-**“Work comes in. Too much slips away.”** is benched as the Homepage thesis and remains available for diagnostic or campaign use. It assumes meaningful attention is already arriving, moves the centre of gravity towards post-enquiry leakage and automation, and makes the five capabilities feel more equal than the approved offer architecture. Reopening it requires a change in the principal public offer or material buyer evidence, not a preference for the line or its previous visual execution.
 
 ## Why MindWP is different
 
@@ -126,33 +122,13 @@ Page length, section count and visual structure follow the page job. A conceptua
 
 Inspectable craft currently carries most of MindWP's trust burden. Foundation permits five proof forms — permitted named client work, responsibly anonymised work, honestly labelled demonstration work, inspectable craft and transparent process — and does not require MindWP to remain permanently anonymous or metric-free. It requires each proof item to be truthful and correctly labelled.
 
-A thin proof surface is answered with more proof that meets the standard, never with a weaker standard. This is an active business-development workstream, not something deferred until proof happens to appear.
+A thin proof surface is answered with more proof that meets the standard, never with a weaker standard. This is active business development, not something deferred until proof happens to appear.
 
-**Immediate**
+What that proof can be, in rough order of how readily it becomes available: properly anonymised client work · clearly labelled demonstration projects · large inspectable website specimens · specific descriptions of what MindWP planned, wrote, designed, connected and tested · a concrete process showing real decisions · permissioned reviews and testimonials · short case narratives covering the situation, what was unclear, what changed, what can be inspected and what was not measured · named case studies where permission exists · before-and-after comparisons · measured results only where a reliable baseline, timeframe and attribution exist.
 
-- Properly anonymised client work.
-- Clearly labelled demonstration projects.
-- Large, inspectable website specimens.
-- Specific descriptions of what MindWP planned, wrote, designed, connected and tested.
-- A concrete process showing real decisions and responsibilities.
+Each item needs a truthful label and, where it shows client work, a recorded permission or anonymity decision.
 
-**Next**
-
-- Permissioned Google reviews and testimonials.
-- Short case narratives covering the original situation, what was unclear, what MindWP changed, what can be inspected and what was not measured.
-
-**Later**
-
-- Named case studies where permission exists.
-- Before-and-after comparisons.
-- Measured results only where a reliable baseline, timeframe and attribution exist.
-- Relevant review counts or ratings only while current and verifiable.
-
-Owners and per-item evidence status are not yet assigned. Assign them before the next proof item ships.
-
-Never close a proof gap by inventing metrics, adding weak testimonials, publishing named work without permission, making unsupported founder-history claims, adding a public price only to appear transparent, inflating the company through "we" language, or weakening the useful-enquiry boundary. Those constraints protect the business; the remedy is stronger evidence and clearer positive positioning.
-
-**Current state.** The live Homepage work section presents client websites as they publicly appear rather than anonymised, and its provenance copy states that plainly. Display permission for those sites is recorded outside this document.
+The remedy for a proof gap is stronger evidence and clearer positive positioning — never invented metrics, weak testimonials, named work published without permission, unsupported founder history, a public price added to appear transparent, or a weakened useful-enquiry boundary.
 
 ## Open commercial decisions
 

@@ -165,19 +165,13 @@ These are proportions to judge, not measurements to hit. Do not lengthen a quiet
 
 The exact measure, scale, position, and relationship between an introduction and the material around it remain contextual. Shared grammar creates coherence; the meaning-bearing experience after and around it creates distinction.
 
-## Three design layers
-
-Keep three layers distinct:
-
-1. **Shared grammar** provides recognisable MindWP foundations.
-2. **Meaning-bearing composition** expresses the hierarchy, relationship, proof, media, reading behaviour, and experience specific to the material.
-3. **Implementation technique** supplies tools such as grid, flex, cards, lists, panels, horizontal sections, tabs, diagrams, layering, or motion.
-
-A technique is neither a design concept nor a defect by itself. Equal cards may suit genuine peers. A timeline may suit a sequence. A simple horizontal section may suit a quiet transition. Reusing an inner pattern is valid when the underlying relationship is genuinely the same.
-
-The failure is unjustified functional sameness: meaningfully different material receives the same inner hierarchy, payload structure, scale, and reading path while palette or decoration creates only the appearance of variety.
-
 ## From meaning to composition
+
+Three layers stay distinct: **shared grammar** provides the recognisable MindWP foundations, **composition** expresses the hierarchy and relationship specific to this material, and **technique** supplies the tools — grid, flex, cards, lists, panels, tabs, diagrams, layering, motion.
+
+A technique is neither a concept nor a defect by itself. Equal cards suit genuine peers, a timeline suits a sequence, a plain horizontal band suits a quiet transition. Reuse an inner pattern when the underlying relationship really is the same.
+
+The failure is unjustified functional sameness: meaningfully different material receiving the same inner hierarchy, payload structure, scale, and reading path, while palette or decoration creates only the appearance of variety.
 
 Meaning determines what must be communicated. It does not predetermine the component used to communicate it.
 
@@ -216,24 +210,25 @@ Changing one or two variables purposefully can establish hierarchy without addin
 
 Additional ingredients are valid when they improve the central relationship, and decorative when they only accompany it. Count is not the test. A section carrying an important meaning with nothing but copy, rules, and spacing is under-built for the same reason a section stacked with unrelated artefacts is over-built.
 
-## A real section concept
+## What makes a section look built
 
-A component name, background change, card grid, differently shaped panel, small interface, or decorative artefact is not by itself a design concept.
+A page can satisfy every rule above and still read like a well-set article: one column of type at one x-position, on one ground, at two sizes. That is the most common way MindWP work goes wrong, and it is a craft failure rather than a reasoning failure. These are the moves that fix it, and each is drawn from work that has actually passed review.
 
-For an important section or genuinely connected group, the executor should be able to reason about:
+**Give the payload an interior.** An object with an edge and no fill disappears — the light surfaces span only a few points of lightness and the raised shadow is intentionally faint. A payload that carries its own ground, and holds something with a different value inside it, reads as an object. Three or four value steps inside one payload is what separates a designed section from a bordered paragraph.
 
-- what the visitor should understand, trust, compare, choose, or do afterwards;
-- which relationship the visual treatment makes clear;
-- what deserves dominant scale and what should recede;
-- how the eye moves through the material;
-- why the composition fits this particular meaning and evidence;
-- what adaptable content should be shortened, deepened, regrouped, or rewritten;
-- how the material inherits from and hands off to its neighbours;
-- what meaningful structure remains when decoration is removed;
-- how the core relationship survives at narrow widths;
-- whether interaction or motion has a genuine communication job.
+**Let the object carry the contrast, not the band.** When a composition needs a dark ground, a dark panel on the page's existing surface is usually better than changing the section's surface — it keeps the page's rhythm intact and gives the object the widest value step available.
 
-This is a reasoning bridge, not a form, packet, ledger, or required written explanation. Quiet transitional material does not need bespoke spectacle or this depth of concept development.
+**Use the middle of the type scale.** Flat sections jump from a display heading straight to body copy. The scale has usable steps between them; a payload with its own heading level reads as a thing rather than as more paragraph.
+
+**Make something large.** Every page needs at least one section where a single element is unmistakably dominant — an object, a figure, a line of type at artefact scale. Uniform politeness across a whole page reads as timidity.
+
+**Change the ground under the reader.** Neighbouring sections should not share a surface. Where several surfaces are in rotation, the page changes beneath the reader at every step without any section having to shout.
+
+**Vary how sections open.** The standard eyebrow–heading–lede opening is correct and should recur — but not eleven times running. A section may open on a statement alone, on its artefact, or with the heading set beside the payload rather than above it. This matters most where payloads are similar; a page with genuinely varied payloads can repeat one opening throughout and still feel various.
+
+**Let something break its container.** A full-bleed band, a payload crossing the container edge, an oversized numeral bleeding past its column: one or two per page, as punctuation.
+
+None of this is a quota. A quiet section needs none of it, and adding all six to every section produces noise rather than craft. But an important section that has none of them is almost certainly flat.
 
 ## Four doctrine examples
 
@@ -248,17 +243,13 @@ These examples clarify judgement. They are not layouts to reproduce.
 
 Work recursively between page scale and focal-section scale.
 
-1. Understand the page job, audience, commercial progression, and broad job of each section or group.
-2. Establish a provisional full-page visual progression and rhythm around the supplied narrative.
-3. Develop important or uncertain section compositions early.
-4. Let those sections alter grouping, pacing, scale, proof placement, and neighbouring transitions.
-5. Draft and reshape adaptable content as the compositions develop.
-6. Reassess the complete page from those focal decisions.
-7. Continue moving between both scales until neither is merely accommodating decisions frozen at the other scale.
-8. Establish credible narrow-width behaviour while concepts remain adaptable.
-9. Refine content, composition, and responsive behaviour from rendered evidence.
+1. Establish a provisional full-page progression and rhythm from the page job and the narrative.
+2. Develop the important or uncertain section compositions early, and draft their real content alongside them.
+3. Let those sections revise the page — grouping, pacing, scale, proof placement, neighbouring transitions.
+4. Establish credible narrow-width behaviour while the concepts are still adaptable.
+5. Repeat until neither scale is merely accommodating decisions frozen at the other.
 
-Do not design a collection of isolated substantial sections and then assemble them. Do not create a polished full-page silhouette containing weak individual sections. Neither scale precedes or outranks the other.
+Neither scale precedes or outranks the other. A page assembled from isolated strong sections and a polished silhouette containing weak ones fail the same way, from opposite directions.
 
 A planned section is meaning material, not a mandatory horizontal band. Several sections may share one visual environment when they form a continuous meaning or experience. Shared colour or a common container is not sufficient: every important meaning unit within the group still needs a clear hierarchy, role, and transition.
 
@@ -293,7 +284,9 @@ Supporting planning detail is not a required public-copy count or a required num
 
 Never invent unavailable proof, metrics, testimonials, systems, client results, or operational detail to complete a visual idea.
 
-### Rebuilding an existing section
+### Rebuilding a section on an existing page
+
+This applies to rebuilding one or more sections of a page that is already built and staying. A new page designed from a supplied plan follows that plan instead, where headings are adaptable unless marked fixed ([PAGE-PLANNING.md](./PAGE-PLANNING.md)).
 
 A rebuild is a new concept, not a re-arrangement of the old one.
 
