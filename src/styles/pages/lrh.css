@@ -20,8 +20,7 @@
 .lrh-gap,
 .lrh-ack,
 .lrh-routes,
-.lrh-calls,
-.lrh-requests,
+.lrh-return,
 .lrh-context,
 .lrh-handoff,
 .lrh-automation,
@@ -42,7 +41,6 @@
 }
 
 .lrh-gap,
-.lrh-calls,
 .lrh-handoff,
 .lrh-setup {
   background: var(--surface-page);
@@ -57,7 +55,8 @@
   background: var(--surface-card);
 }
 
-/* .lrh-requests and .lrh-fit take mist from the shared `on-mist` class. */
+/* .lrh-return sets its own background above. .lrh-switch and .lrh-fit take
+   mist from the shared `on-mist` class. */
 
 .lrh-artifact-label {
   color: var(--color-emerald-deep);
@@ -744,450 +743,246 @@
 }
 
 /* ================================================================
-   5 · Missed calls — one fragment, gaining attributes
-   One subject changing, rather than two subjects competing. The attachment is
-   scrubbed to the visitor's scroll because accrual is the meaning; `--lrh-scrub`
-   defaults to 1 so the finished state renders without JS.
+   5 · Missed calls — the return path
+   Two tracks of the same call: one stops dead at a cap, the other turns back
+   on itself and travels on to a named owner. The direction is drawn rather
+   than described, because "the reply goes back out on the same number" is a
+   direction, and a direction is the one thing a paragraph cannot show.
    ================================================================ */
 
-.lrh-calls__band {
+.lrh-return {
+  background: var(--surface-page);
+}
+
+.lrh-return__band {
   display: grid;
-  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
-  gap: clamp(2.5rem, 5vw, 5rem);
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  gap: var(--space-9);
   align-items: center;
 }
 
-.lrh-calls__copy {
+.lrh-return__copy {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
   gap: var(--space-5);
-  max-width: 34rem;
 }
 
-.lrh-calls__feature {
+.lrh-return__copy p {
+  max-width: var(--measure-copy-narrow);
+}
+
+.lrh-return__feature {
   display: flex;
   flex-direction: column;
   gap: var(--space-2);
   border-top: 1px solid var(--border-hairline);
-  padding-top: var(--space-4);
+  padding-top: var(--space-5);
   font: var(--body-sm);
 }
 
-.lrh-calls__feature strong {
+.lrh-return__feature strong {
   color: var(--text-primary);
-  font: 500 1.125rem/1.3 var(--font-display);
+  font: var(--display-sm);
+  letter-spacing: var(--display-sm-tracking);
 }
 
-.lrh-calls__stage {
-  --lrh-scrub: 1;
-
+.lrh-return__tracks {
   display: flex;
   flex-direction: column;
-  gap: var(--space-6);
+  gap: var(--space-7);
 }
 
-/* The whole of what a missed call leaves: an unknown number and a time. */
-.lrh-calls__fragment {
+/* Each track is an object, not a floating line: it carries its own ground so
+   the drawn geometry has something to sit on. */
+.lrh-return__track {
+  margin: 0;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--elev-hairline), var(--elev-raised);
+  background: var(--surface-card);
+  padding: var(--space-6) var(--space-6) var(--space-4);
+}
+
+.lrh-return__track--dead {
+  background: var(--surface-sunken);
+  box-shadow: var(--elev-hairline);
+}
+
+.lrh-return__track figcaption {
   display: flex;
   flex-direction: column;
-  gap: var(--space-3);
-  border-top: 1px solid var(--border-hairline);
-  border-bottom: 1px solid var(--border-hairline);
-  padding-block: var(--space-5);
+  gap: var(--space-2);
+  margin-bottom: var(--space-4);
 }
 
-.lrh-calls__fragment-label {
-  color: var(--text-secondary);
-  font: var(--label-caps);
-  letter-spacing: var(--label-caps-tracking);
+.lrh-return__track figcaption strong {
+  color: var(--text-primary);
+  font: var(--display-sm);
+  letter-spacing: var(--display-sm-tracking);
+}
+
+.lrh-return__track svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.lrh-return__rail {
+  fill: none;
+  stroke: var(--color-line);
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
+.lrh-return__rail--live {
+  stroke: var(--color-emerald-deep);
+}
+
+.lrh-return__cap {
+  stroke: var(--text-secondary);
+  stroke-width: 2;
+}
+
+.lrh-return__loop {
+  fill: none;
+  stroke: var(--color-emerald);
+  stroke-width: 2;
+  stroke-dasharray: 6 5;
+  stroke-linecap: round;
+}
+
+.lrh-return__node {
+  fill: var(--color-emerald);
+}
+
+.lrh-return__tag {
+  fill: var(--text-secondary);
+  font: 600 0.8125rem/1 var(--font-body);
+  letter-spacing: 0.06em;
   text-transform: uppercase;
 }
 
-.lrh-calls__fragment-value {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: var(--space-4);
-  color: var(--text-primary);
-  font: 500 clamp(1.75rem, 1.25rem + 1.9vw, 2.75rem) / 1.1 var(--font-display);
-  letter-spacing: var(--display-lg-tracking);
-}
-
-.lrh-calls__fragment-value b {
-  color: var(--color-emerald);
+.lrh-return__tag--muted {
+  fill: var(--text-secondary);
+  text-transform: none;
   font-weight: 400;
+  letter-spacing: 0;
 }
 
-.lrh-calls__attached {
-  position: relative;
-  padding-inline-start: var(--space-7);
-  min-height: 4rem;
+.lrh-return__tag--emerald {
+  fill: var(--color-emerald-deep);
+  text-transform: none;
+  letter-spacing: 0;
 }
 
-.lrh-calls__spine,
-.lrh-calls__spine-grow {
-  position: absolute;
-  top: 0;
-  bottom: 1.5rem;
-  left: 0.34375rem;
-  width: 1px;
-}
-
-.lrh-calls__spine {
-  background: var(--border-mist-hairline);
-}
-
-/* Grows with the scroll, so the rail arrives with the attributes. */
-.lrh-calls__spine-grow {
-  background: var(--color-emerald);
-  scale: 1 var(--lrh-scrub);
-  transform-origin: 50% 0;
-}
-
-/* Present only until the first attribute lands. */
-.lrh-calls__nothing {
-  position: absolute;
-  top: 0;
-  left: var(--space-7);
-  color: var(--text-secondary);
-  font: italic 400 1rem/1.4 var(--font-display);
-  opacity: clamp(0, calc(1 - var(--lrh-scrub) * 5), 1);
-}
-
-.lrh-calls__attached ol {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-5);
-  margin: 0;
-}
-
-.lrh-calls__attached li {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: 0.15rem;
-  opacity: clamp(0, calc(var(--lrh-scrub) * 5 - var(--i)), 1);
-  translate: 0 calc((1 - clamp(0, calc(var(--lrh-scrub) * 5 - var(--i)), 1)) * 0.5rem);
-}
-
-.lrh-calls__node {
-  position: absolute;
-  top: 0.45rem;
-  left: calc(var(--space-7) * -1);
-  width: 0.75rem;
-  height: 0.75rem;
-  border-radius: 50%;
-  border: 1px solid var(--color-emerald);
-  background: var(--color-emerald);
-}
-
-.lrh-calls__attached strong {
-  color: var(--text-primary);
-  font: 500 clamp(1.125rem, 1rem + 0.45vw, 1.375rem) / 1.25 var(--font-display);
-  letter-spacing: var(--display-md-tracking);
-}
-
-.lrh-calls__attached small {
-  color: var(--text-secondary);
-  font: var(--body-sm);
-}
-
-.lrh-calls__stage-close {
-  font: italic 400 0.9375rem/1.45 var(--font-display);
-  opacity: clamp(0, calc(var(--lrh-scrub) * 3 - 2), 1);
+.lrh-return__tag--end {
+  fill: var(--color-emerald-deep);
+  text-anchor: end;
 }
 
 /* ================================================================
-   6 · Different requests — the routing board
-   Four enquiries on the left, four destinations on the right, and paths that
-   cross between them. The crossing is the point: what arrives and where it
-   belongs are not the same ordering. The connector lives entirely inside the
-   spine column, so no path ever runs under a word.
+   6 · Different requests — the switchboard
+   Four things arrive at the top, pass through one shared bar, and four
+   different owners come out of the bottom. The bar is the object: it is
+   where the routing decision lives, and every rule written on it is one the
+   business set once.
    ================================================================ */
 
-.lrh-board__head {
+.lrh-switch__board {
+  position: relative;
+}
+
+/* No column gap: the rule bar is one continuous object across all four lanes,
+   and a gap between segments would break it into four cards — which is the
+   opposite of the argument. Lane text gets its own inline padding instead. */
+.lrh-switch__lanes {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) clamp(11rem, 20vw, 20rem) minmax(0, 1fr);
-  gap: 0;
-  margin-bottom: var(--space-5);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  column-gap: 0;
+  margin: 0;
+  list-style: none;
 }
 
-.lrh-board__head p {
-  color: var(--color-emerald-deep);
-  font: var(--label-caps);
-  letter-spacing: var(--label-caps-tracking);
-  text-transform: uppercase;
-}
-
-.lrh-board__head p:first-child {
-  text-align: right;
-  padding-inline-end: var(--space-5);
-}
-
-.lrh-board__head p:nth-child(2) {
+.lrh-switch__lane {
+  display: grid;
+  /* Fixed rows so the rule bar aligns across all four lanes regardless of how
+     long any individual label runs. The bar is the object; it cannot wobble. */
+  grid-template-rows: minmax(4.5rem, auto) 1.75rem minmax(5rem, auto) 1.75rem auto auto;
   text-align: center;
-  color: var(--text-secondary);
 }
 
-.lrh-board__head p:last-child {
-  padding-inline-start: var(--space-5);
-}
-
-.lrh-board {
-  position: relative;
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) clamp(11rem, 20vw, 20rem) minmax(0, 1fr);
-  gap: 0;
-  align-items: stretch;
-  border-top: 1px solid var(--border-mist-hairline);
-  border-bottom: 1px solid var(--border-mist-hairline);
-}
-
-.lrh-board__col {
-  display: grid;
-  grid-template-rows: repeat(4, minmax(4.75rem, 1fr));
-}
-
-.lrh-board__token {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: var(--space-4);
-  border: 0;
-  border-bottom: 1px solid var(--border-mist-hairline);
-  background: transparent;
-  padding: var(--space-4) var(--space-5) var(--space-4) var(--space-3);
-  color: var(--text-secondary);
-  font: 500 clamp(1rem, 0.92rem + 0.3vw, 1.1875rem) / 1.25 var(--font-display);
-  text-align: right;
-  cursor: pointer;
-  transition:
-    color var(--duration-base) var(--ease-out),
-    background-color var(--duration-base) var(--ease-out);
-}
-
-.lrh-board__col > *:last-child {
-  border-bottom: 0;
-}
-
-.lrh-board__token small {
-  order: -1;
-  color: var(--color-emerald-deep);
-  font-variant-numeric: tabular-nums;
-  opacity: 0.6;
-}
-
-.lrh-board__token.is-active {
-  background: var(--surface-card);
+.lrh-switch__arrives {
+  align-self: end;
+  padding-inline: var(--space-4);
   color: var(--text-primary);
-}
-
-.lrh-board__token.is-active small {
-  opacity: 1;
-}
-
-.lrh-board__destination {
-  display: flex;
-  align-items: center;
-  border-bottom: 1px solid var(--border-mist-hairline);
-  padding: var(--space-4) var(--space-3) var(--space-4) var(--space-5);
-  color: var(--text-secondary);
-  font: 500 clamp(1rem, 0.92rem + 0.3vw, 1.1875rem) / 1.25 var(--font-display);
-  transition:
-    color var(--duration-base) var(--ease-out),
-    background-color var(--duration-base) var(--ease-out);
-}
-
-.lrh-board__destination.is-active {
-  background: var(--surface-card);
-  color: var(--text-primary);
-}
-
-/* The connector: paths, the rail they resolve onto, and the marker that
-   slides to the active destination. */
-.lrh-board__spine {
-  position: relative;
-  border-inline: 1px solid var(--border-mist-hairline);
-}
-
-.lrh-board__spine svg {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-}
-
-.lrh-board__path {
-  fill: none;
-  stroke: var(--color-emerald);
-  stroke-width: 1.25;
-  stroke-linecap: round;
-  stroke-dasharray: 1;
-  stroke-dashoffset: 0;
-  opacity: 0.2;
-  transition: opacity var(--duration-base) var(--ease-out);
-}
-
-.lrh-board__path.is-active {
-  stroke-width: 2;
-  opacity: 1;
-}
-
-.lrh-board__rail {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 50%;
-  width: 1px;
-  background: var(--emerald-line-soft);
-  translate: -50% 0;
-}
-
-/* The signal itself: drawn to the route, then carried along it by MotionPath
-   and landed on the destination. */
-.lrh-board__signal {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 2;
-  width: 0.875rem;
-  height: 0.875rem;
-  margin: -0.4375rem 0 0 -0.4375rem;
-  border-radius: 50%;
-  background: var(--color-emerald);
-  box-shadow: 0 0 0 5px var(--emerald-tint);
-  opacity: 0;
-  pointer-events: none;
-}
-
-.lrh-board__caption {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: var(--space-6) clamp(2rem, 4vw, 4rem);
-  margin-top: var(--space-6);
-  animation: lrh-panel-in 320ms var(--ease-out) backwards;
-}
-
-.lrh-board__caption p {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-2);
-  color: var(--text-primary);
-  font: 500 clamp(1.0625rem, 0.96rem + 0.36vw, 1.25rem) / 1.4 var(--font-display);
-}
-
-.lrh-board__caption-destination {
-  color: var(--color-emerald-deep);
-}
-
-/* Stacked rows below the board breakpoint. */
-
-.lrh-requests__stack {
-  border-top: 1px solid var(--border-mist-hairline);
-}
-
-.lrh-requests__row {
-  border-bottom: 1px solid var(--border-mist-hairline);
-}
-
-.lrh-requests__row h3 {
-  font: inherit;
-}
-
-.lrh-requests__row button {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  gap: var(--space-4);
-  border: 0;
-  background: transparent;
-  padding: var(--space-5) 0;
-  color: var(--text-primary);
-  font: 500 1.0625rem/1.35 var(--font-display);
-  text-align: left;
-  cursor: pointer;
-}
-
-.lrh-requests__row button small {
-  flex: 0 0 auto;
-  color: var(--color-emerald-deep);
-  font-variant-numeric: tabular-nums;
-}
-
-.lrh-requests__row button span {
-  flex: 1;
-}
-
-.lrh-requests__row button i {
-  width: 1.75rem;
-  height: 1.75rem;
-  flex: 0 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid var(--border-mist-hairline);
-  border-radius: 50%;
-  color: var(--color-emerald-deep);
-  font-size: 1.125rem;
-  font-style: normal;
-}
-
-.lrh-requests__row.is-open button i {
-  border-color: var(--emerald-line-soft);
-  background: var(--emerald-tint-weak);
-}
-
-.lrh-requests__row-body {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-5);
-  padding-bottom: var(--space-6);
-  animation: lrh-panel-in 320ms var(--ease-out) backwards;
-}
-
-.lrh-requests__row-body[inert] {
-  display: none;
-}
-
-.lrh-requests__destination {
-  max-width: 18ch;
-  color: var(--text-primary);
-  font: 500 clamp(1.5rem, 1.2rem + 1.2vw, 2rem) / 1.14 var(--font-display);
-  letter-spacing: var(--display-lg-tracking);
+  font: var(--display-sm);
+  letter-spacing: var(--display-sm-tracking);
   text-wrap: balance;
 }
 
-.lrh-requests__row-body dl {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-4);
-  margin: 0;
-  border-top: 1px solid var(--border-mist-hairline);
-  padding-top: var(--space-4);
+.lrh-switch__drop {
+  justify-self: center;
+  width: 2px;
+  height: 100%;
+  background: var(--color-mist-hairline);
 }
 
-.lrh-requests__row-body dt {
-  margin-bottom: var(--space-2);
-  color: var(--color-emerald-deep);
+.lrh-switch__drop--out {
+  background: var(--emerald-line);
+}
+
+/* The bar: four segments of one continuous emerald object, joined by their
+   shared edges rather than sitting apart as four cards. */
+.lrh-switch__rule {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  justify-content: center;
+  border: 1px solid var(--color-emerald-deep);
+  border-inline-width: 0 1px;
+  background: var(--color-emerald-deep);
+  padding: var(--space-4) var(--space-3);
+  color: var(--color-white);
+  font: var(--body-sm);
+}
+
+.lrh-switch__lane:first-child .lrh-switch__rule {
+  border-left-width: 1px;
+  border-start-start-radius: var(--radius-md);
+  border-end-start-radius: var(--radius-md);
+}
+
+.lrh-switch__lane:last-child .lrh-switch__rule {
+  border-start-end-radius: var(--radius-md);
+  border-end-end-radius: var(--radius-md);
+}
+
+.lrh-switch__rule-label {
+  color: var(--color-emerald);
   font: var(--label-caps);
   letter-spacing: var(--label-caps-tracking);
   text-transform: uppercase;
 }
 
-.lrh-requests__row-body dd {
-  margin: 0;
-  color: var(--text-secondary);
-  font: var(--body-sm);
+.lrh-switch__owner {
+  margin-top: var(--space-2);
+  padding-inline: var(--space-4);
+  color: var(--text-primary);
+  font: 600 var(--body-md);
 }
 
-.lrh-requests__boundary {
-  max-width: var(--measure-intro);
-  margin-inline: auto;
-  border-top: 1px solid var(--border-mist-hairline);
-  padding-top: var(--space-6);
+.lrh-switch__first {
+  margin-top: var(--space-2);
+  padding-inline: var(--space-4);
+  color: var(--text-secondary);
+  font: var(--body-sm);
+  text-wrap: pretty;
+}
+
+.lrh-switch__close {
+  color: var(--text-secondary);
+  font: italic 500 var(--body-lg) var(--font-display);
   text-align: center;
-  font: italic 500 clamp(1.0625rem, 1.014rem + 0.192vw, 1.1875rem) / 1.5 var(--font-display);
 }
 
 /* ================================================================
@@ -1301,9 +1096,108 @@
   font: var(--body-lg);
 }
 
-/* Card grid reuses .lrh-slips__* from lrh-rebuild.css as-is (same clerical,
-   staggered-paper design as Different Requests), so no rules are duplicated
-   here — only the field content differs. */
+/* Same clerical, staggered-paper card design as Different Requests (6). Kept
+   as its own copy rather than a shared rule, so this section and the draft
+   library each own their `.lrh-slips__*` independently. */
+
+.lrh-slips__stack {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-7) var(--space-6);
+  margin: 0 auto;
+  list-style: none;
+}
+
+/* Rotation stays under a degree and the vertical offset is small: enough for
+   the stack to read as paper, never enough for a slip to crop its neighbour. */
+.lrh-slips__slip {
+  --tilt: calc((var(--i) - 1.5) * 0.35deg);
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  border-radius: var(--radius-md);
+  box-shadow: var(--elev-hairline), var(--elev-focal);
+  background: var(--surface-card);
+  padding: var(--space-6);
+  rotate: var(--tilt);
+  translate: 0 calc(var(--i) * 0.4rem);
+  text-align: left;
+}
+
+.lrh-slips__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border-hairline);
+  padding-bottom: var(--space-3);
+  color: var(--color-emerald-deep);
+  font: var(--label-caps);
+  letter-spacing: var(--label-caps-tracking);
+  text-transform: uppercase;
+}
+
+.lrh-slips__head b {
+  color: var(--color-mist-hairline);
+  font: 500 1.5rem/1 var(--font-display);
+  font-variant-numeric: tabular-nums;
+}
+
+.lrh-slips__arrived {
+  color: var(--text-primary);
+  font: var(--display-md);
+  letter-spacing: var(--display-md-tracking);
+  text-wrap: balance;
+}
+
+.lrh-slips__rows {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.lrh-slips__rows > div {
+  display: grid;
+  grid-template-columns: minmax(0, 7.5rem) minmax(0, 1fr);
+  gap: var(--space-4);
+  align-items: baseline;
+}
+
+.lrh-slips__rows dt {
+  color: var(--text-secondary);
+  font: var(--body-xs);
+  opacity: 0.8;
+}
+
+.lrh-slips__rows dd {
+  margin: 0;
+  color: var(--text-secondary);
+  font: var(--body-sm);
+}
+
+/* The one row whose value is the point gets the stamp treatment. */
+.lrh-slips__placed dd {
+  display: inline-flex;
+  align-items: center;
+  border-radius: var(--radius-sm);
+  background: var(--emerald-tint);
+  box-shadow: inset 0 0 0 1px var(--emerald-line-soft);
+  padding: 0.15rem 0.55rem;
+  color: var(--color-emerald-deep);
+  font: 600 var(--body-sm);
+}
+
+.lrh-slips__first {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  border-top: 1px solid var(--border-hairline);
+  padding-top: var(--space-4);
+  color: var(--text-secondary);
+  font: var(--body-sm);
+}
 
 /* ================================================================
    9 · Automation — six things it performs, one it never does
@@ -1742,15 +1636,6 @@ body:has(.lrh-closing) .site-footer__bottom {
    ================================================================ */
 
 @media (hover: hover) and (pointer: fine) {
-  .lrh-board__token:hover {
-    background: var(--surface-card);
-    color: var(--text-primary);
-  }
-
-  .lrh-requests__row:hover {
-    border-color: var(--emerald-line-soft);
-  }
-
   .lrh-faq__items button:hover {
     color: var(--color-emerald-deep);
   }
@@ -1763,7 +1648,6 @@ body:has(.lrh-closing) .site-footer__bottom {
 @media (max-width: 64rem) {
   .lrh-hero__top,
   .lrh-gap__layout,
-  .lrh-calls__band,
   .lrh-fit__layout {
     grid-template-columns: 1fr;
     align-items: stretch;
@@ -1781,9 +1665,17 @@ body:has(.lrh-closing) .site-footer__bottom {
     max-width: 32rem;
   }
 
-  .lrh-gap__copy,
-  .lrh-calls__copy {
+  .lrh-gap__copy {
     max-width: 44rem;
+  }
+
+  .lrh-slips__stack {
+    grid-template-columns: 1fr;
+  }
+
+  .lrh-slips__slip {
+    rotate: none;
+    translate: none;
   }
 
   /* Four verdicts become two rows of two: the comparison survives, the row
@@ -1912,8 +1804,9 @@ body:has(.lrh-closing) .site-footer__bottom {
     padding-top: var(--space-6);
   }
 
-  .lrh-board__caption {
+  .lrh-slips__rows > div {
     grid-template-columns: 1fr;
+    gap: var(--space-1);
   }
 
   .lrh-automation__performs {

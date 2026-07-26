@@ -4,8 +4,9 @@
  * Centred rather than split, and dominated by one sentence at hero scale.
  * Beneath it, the same routing-slip anatomy used for Different Requests —
  * a label-and-numeral head, a bold record line, a labelled row set with one
- * stamped row, a closing first-move note — carrying the .lrh-slips__* rules
- * from lrh-rebuild.css as-is, so the card is visually identical.
+ * stamped row, a closing first-move note — via this section's own copy of
+ * the `.lrh-slips__*` rules (see lrh.css section 6), so the card is visually
+ * identical.
  *
  * The field set is repointed from routing to custody: instead of the rule
  * that placed it, each record shows what already went back and who has it

@@ -50,6 +50,7 @@ When both skills are active, preserve the accepted meaning-bearing relationship 
 
 These are judgment prompts, not hard rules — apply what's actually true of the page, skip what isn't.
 
+
 - **Typography:** headings and paragraphs should inherit the global type scale unless a section has a genuine, deliberate display moment; remove page-local font-size duplication that just restates the global default.
 - **Measure and width:** let a container or a shared measure-governing mechanism (like a `.section-intro--centered` style primitive) control width rather than stacking ad hoc `max-width` on individual headlines and paragraphs. Watch for the same width value duplicated across several sections in slightly different forms — that's usually one mechanism trying to happen in many places.
 - **Layout mechanism:** flexbox or grid with `gap` for ordinary content and spacing. Reserve absolute positioning for genuinely layered or diagram-like compositions (radial diagrams, overlapping artifact cards) — not as a shortcut for centering or spacing ordinary content.
@@ -57,7 +58,8 @@ These are judgment prompts, not hard rules — apply what's actually true of the
 - **Sizing:** prefer content-driven height (padding plus line-height) over an enforced `min-height`. Keep `min-height` only where an element positions children absolutely inside itself and needs the reserved space, or where a `next/image fill` needs an explicitly sized parent — prefer `aspect-ratio` there instead of a fixed height that needs manual retuning per breakpoint.
 - **Grid tracks:** a `minmax()` floor wider than a track actually needs can silently steal space from its sibling track at specific viewport widths and distort an intended ratio — check whether every floor is load-bearing.
 - **Motion and hover:** extend the page's existing reveal/GSAP convention rather than inventing a new one; add hover feedback only to genuinely interactive elements — skip decorative or illustrative material — using the duration, easing, and transform vocabulary already active elsewhere on the site.
-- **Responsive:** confirm padding, gaps, and font sizes actually shrink at the existing breakpoints rather than just being copied from desktop.
+- **Responsive:** confirm padding, gaps,column order is correct and font sizes actually shrink at the existing breakpoints rather than just being copied from desktop.
+- Improrve page code,html and css quality keeing the frontend almost same.
 
 Converging a duplicated technical mechanism into one already-authorized shared owner is a repair. Changing the resulting width, proportion, or alignment beyond what the duplicated instances already expressed is a design decision — surface it, don't decide it.
 
