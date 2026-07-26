@@ -1,21 +1,60 @@
 /**
  * Visible ownership — the page's centre, moved to light ground.
  *
- * Centred rather than split, and dominated by one sentence at hero scale. The
- * three things that travel with the enquiry run beneath it as a single compact
- * hairline strip, so this reads as one large statement with a footnote rather
- * than a two-column band — which is what it was becoming next to Necessary
- * Context.
+ * Centred rather than split, and dominated by one sentence at hero scale.
+ * Beneath it, the same routing-slip anatomy used for Different Requests —
+ * a label-and-numeral head, a bold record line, a labelled row set with one
+ * stamped row, a closing first-move note — carrying the .lrh-slips__* rules
+ * from lrh-rebuild.css as-is, so the card is visually identical.
+ *
+ * The field set is repointed from routing to custody: instead of the rule
+ * that placed it, each record shows what already went back and who has it
+ * now, because ownership is the argument here, not the routing decision
+ * (that is Different Requests' job). The four records are edge cases about
+ * continuity — after hours, a duplicate message, a returned call, a referral
+ * — rather than the same four request types shown there, so the two sections
+ * don't repeat each other's examples.
  *
  * Automation follows on navy. It is the capability section, not a caution:
  * six verbs the system performs, then the point at which it stops. The
  * boundary lands harder at the end of a list of things it genuinely does.
  */
 
-const CARRIED: readonly (readonly [string, string])[] = [
-  ["What arrived", "In the sender's own words, on the channel it came in on."],
-  ["What was already said", "The exact acknowledgement that went back."],
-  ["Why it needs them", "What kind of request it is, and what it is waiting on."],
+const RECORDS: readonly {
+  arrived: string;
+  channel: string;
+  acknowledged: string;
+  owner: string;
+  firstMove: string;
+}[] = [
+  {
+    arrived: "A form submitted out of hours.",
+    channel: "11:47pm, website form",
+    acknowledged: "First thing the next morning, on the same form",
+    owner: "Whoever opens that morning",
+    firstMove: "Confirm it wasn't missed overnight, then take it from there.",
+  },
+  {
+    arrived: "A second message before the first was answered.",
+    channel: "Same thread, 40 minutes later",
+    acknowledged: "Logged against the open thread, not as a new enquiry",
+    owner: "Whoever already has the first one",
+    firstMove: "One reply covers both messages.",
+  },
+  {
+    arrived: "A missed call, returned.",
+    channel: "Callback within the hour",
+    acknowledged: "Logged as the same enquiry, not a fresh one",
+    owner: "Whoever picked up the callback",
+    firstMove: "Carry on from where the missed call left off.",
+  },
+  {
+    arrived: "A referral from an existing client.",
+    channel: "Form, naming who sent them",
+    acknowledged: "The referral noted before anything else",
+    owner: "Whoever manages that relationship",
+    firstMove: "Thank them for the referral in the first reply.",
+  },
 ];
 
 const PERFORMS: readonly (readonly [string, string])[] = [
@@ -40,20 +79,48 @@ export function LrhHandoff() {
           Then a person takes it.
         </h2>
         <p data-lrh-sequence-item>
-          Not a queue. Not a shared inbox everyone assumes someone else is watching. One named
-          person, who can see the whole enquiry before they reply and owns the next human action
-          after handoff.
+          Not a queue. Not a shared inbox everyone assumes someone else is watching. Ownership is a
+          record, the same way routing is — what already went back, and who has it now.
         </p>
       </div>
 
-      <dl className="container lrh-handoff__carried" data-lrh-stagger>
-        {CARRIED.map(([label, body]) => (
-          <div key={label} data-lrh-stagger-item>
-            <dt>{label}</dt>
-            <dd>{body}</dd>
-          </div>
+      <ol className="container lrh-slips__stack" data-lrh-stagger>
+        {RECORDS.map((record, index) => (
+          <li
+            key={record.arrived}
+            className="lrh-slips__slip"
+            style={{ "--i": index } as React.CSSProperties}
+            data-lrh-stagger-item
+          >
+            <p className="lrh-slips__head">
+              <span>Handoff record</span>
+              <b aria-hidden="true">{String(index + 1).padStart(2, "0")}</b>
+            </p>
+
+            <p className="lrh-slips__arrived">{record.arrived}</p>
+
+            <dl className="lrh-slips__rows">
+              <div>
+                <dt>Arrived on</dt>
+                <dd>{record.channel}</dd>
+              </div>
+              <div>
+                <dt>Acknowledged</dt>
+                <dd>{record.acknowledged}</dd>
+              </div>
+              <div className="lrh-slips__placed">
+                <dt>Owned by</dt>
+                <dd>{record.owner}</dd>
+              </div>
+            </dl>
+
+            <p className="lrh-slips__first">
+              <span className="lrh-artifact-label">First move</span>
+              {record.firstMove}
+            </p>
+          </li>
         ))}
-      </dl>
+      </ol>
     </section>
   );
 }

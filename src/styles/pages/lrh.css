@@ -1301,36 +1301,9 @@
   font: var(--body-lg);
 }
 
-.lrh-handoff__carried {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 0;
-  margin: 0;
-  border-top: 1px solid var(--border-hairline);
-}
-
-.lrh-handoff__carried > div {
-  padding: var(--space-5) clamp(1.25rem, 2.4vw, 2.5rem) 0 0;
-}
-
-.lrh-handoff__carried > div + div {
-  border-inline-start: 1px solid var(--border-hairline);
-  padding-inline-start: clamp(1.25rem, 2.4vw, 2.5rem);
-}
-
-.lrh-handoff__carried dt {
-  margin-bottom: var(--space-2);
-  color: var(--color-emerald-deep);
-  font: var(--label-caps);
-  letter-spacing: var(--label-caps-tracking);
-  text-transform: uppercase;
-}
-
-.lrh-handoff__carried dd {
-  margin: 0;
-  color: var(--text-secondary);
-  font: var(--body-sm);
-}
+/* Card grid reuses .lrh-slips__* from lrh-rebuild.css as-is (same clerical,
+   staggered-paper design as Different Requests), so no rules are duplicated
+   here — only the field content differs. */
 
 /* ================================================================
    9 · Automation — six things it performs, one it never does
@@ -1827,20 +1800,6 @@ body:has(.lrh-closing) .site-footer__bottom {
   .lrh-routes__col:nth-child(n + 3) {
     border-top: 1px solid var(--border-navy-hairline);
     padding-top: var(--space-6);
-  }
-
-  .lrh-handoff__carried {
-    grid-template-columns: 1fr;
-  }
-
-  .lrh-handoff__carried > div {
-    border-bottom: 1px solid var(--border-hairline);
-    padding: var(--space-4) 0;
-  }
-
-  .lrh-handoff__carried > div + div {
-    border-inline-start: 0;
-    padding-inline-start: 0;
   }
 
   .lrh-automation__performs {

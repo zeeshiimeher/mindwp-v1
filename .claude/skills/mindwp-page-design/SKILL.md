@@ -55,11 +55,29 @@ Study the standard of resolution each section reaches and how weight is distribu
 
 When redesigning an existing page, capture that page too, and read the full page before the section crops.
 
+## Rebuilding a section
+
+A rebuild is a new concept, not a re-arrangement of the old one.
+
+**Carry forward four things:** the section's job · its eyebrow and heading · its surface · anything the page plan pins.
+
+**Everything else is free, and is where the new design comes from:** the payload, the data shape, the groupings, the counts, the labels, the supporting copy, the sequence.
+
+The four are kept for page reasons, not section reasons. Eyebrow and heading hold the voice and the reader's place in the argument. Surface holds the page's rhythm — change one section's ground and two neighbours change with it, so that is a page decision, not yours to make inside a section brief.
+
+Before designing, write down what the material could *become*. Doing this after choosing a layout produces the old content in a new box.
+
 ## Design options must differ in substance
 
-When proposing alternatives, each must differ in **relationship and material**, not in container. Three arrangements of one fixed content shape are one option presented three times.
+Each option must differ in **relationship and material**, not in container. Three arrangements of one content shape are one option presented three times.
 
-Before proposing options, state what the content itself could become. A redesign carries forward the section's job, its truth boundaries, and anything the page plan explicitly pins. Labels, counts, groupings, sequence, and copy are free unless pinned — and are usually where a genuinely different design comes from.
+Two checks: if two options could swap their copy without either breaking, they are one option. If two options name the same payload, they are one option.
+
+## Check it against its neighbours
+
+Judge every rebuilt section against the sections above and below it, never on its own. A section that is strong in isolation and wrong beside its neighbours has failed.
+
+Name the neighbours in the specification, and say what changes at each boundary — surface, density, reading effort, or scale. A contact sheet shows this in one look; a section crop cannot show it at all.
 
 ## Protect meaning and truth
 

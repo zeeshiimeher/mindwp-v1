@@ -293,6 +293,18 @@ Supporting planning detail is not a required public-copy count or a required num
 
 Never invent unavailable proof, metrics, testimonials, systems, client results, or operational detail to complete a visual idea.
 
+### Rebuilding an existing section
+
+A rebuild is a new concept, not a re-arrangement of the old one.
+
+Carry forward exactly four things: the section's **job**, its **eyebrow and heading**, its **surface**, and anything the page plan pins. Everything below that line is free — the payload, the data shape, the groupings, the counts, the labels, the supporting copy, the sequence — and it is usually where the new design comes from.
+
+Those four are kept for reasons that belong to the page rather than to the section. The eyebrow and heading hold the page's voice and tell the reader where they are in the argument. The surface holds the page's rhythm: change one section's ground and two neighbours change with it, so a surface change is a page decision, not a section decision. Everything else is local, and preserving it is what produces three arrangements of one fixed idea.
+
+Ask what the material could become before asking how to lay it out. If two proposed directions could swap their copy without either breaking, they are one direction.
+
+Judge a rebuilt section against the sections above and below it, never on its own. A section that is strong in isolation and wrong beside its neighbours has failed, and a contact sheet shows this in one look where a section crop cannot.
+
 ## Material expression
 
 Composition decides how material is arranged. This decides what the material *is*.

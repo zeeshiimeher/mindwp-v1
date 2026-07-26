@@ -1,0 +1,1029 @@
+/* Lead Response & Handling — rebuilt sections 5, 6, 7 and 8.
+   Two complete designs per section, each carrying a different material payload.
+
+   Every object here is built to survive its own background. The audit found the
+   recurring failure across MindWP pages was not weak layout but objects drawn
+   only in hairlines: on paper the surface ladder spans seven points of
+   lightness and `--elev-raised` is a 6% shadow, so a card with an edge and no
+   fill disappears. Objects below therefore carry a fill AND an edge, and on
+   navy they sit on `navy-panel` or `navy-raised` rather than on a border alone.
+
+   Class prefixes are unique so any of these can be lifted into the page and its
+   predecessor deleted without a rename. */
+
+/* ===============================================================
+   5A · The ledger — type as object
+   =============================================================== */
+
+.lrh-ledger {
+  background: var(--surface-page);
+}
+
+/* The band keeps the page's paper rhythm. The contrast this design needs is a
+   property of the object, so the ledger is its own navy panel sitting on
+   paper — the widest value step the system has. */
+.lrh-ledger__sheet {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--elev-focal);
+  background: var(--surface-navy);
+  padding: clamp(var(--space-6), 4vw, var(--space-9));
+}
+
+.lrh-ledger__label {
+  color: var(--color-emerald);
+  font: var(--label-caps);
+  letter-spacing: var(--label-caps-tracking);
+  text-transform: uppercase;
+}
+
+.lrh-ledger__label--after {
+  margin-top: var(--space-7);
+}
+
+/* The repetition is the argument, so the entries are set at a scale where three
+   of them read as one pattern rather than as three facts. */
+.lrh-ledger__raw {
+  margin: var(--space-6) 0 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.lrh-ledger__raw li,
+.lrh-ledger__solid {
+  display: flex;
+  align-items: baseline;
+  gap: clamp(0.75rem, 1.6vw, 1.5rem);
+  font: 500 clamp(1.75rem, 0.95rem + 3.4vw, 3.5rem) / 1.1 var(--font-display);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: var(--display-lg-tracking);
+}
+
+.lrh-ledger__raw li {
+  color: var(--color-navy-hairline);
+}
+
+.lrh-ledger__raw b {
+  color: var(--color-navy-hairline);
+  font-weight: 400;
+}
+
+.lrh-ledger__verdict {
+  margin-top: var(--space-5);
+  color: var(--text-inverse-muted);
+  font: var(--body-sm);
+}
+
+.lrh-ledger__threshold {
+  width: 100%;
+  height: 2px;
+  margin-top: var(--space-7);
+  background: linear-gradient(
+    to right,
+    var(--color-emerald) 0%,
+    var(--color-emerald) 34%,
+    var(--border-navy-hairline) 34%,
+    var(--border-navy-hairline) 100%
+  );
+}
+
+.lrh-ledger__solid {
+  margin: var(--space-4) 0 0;
+  color: var(--text-inverse);
+}
+
+.lrh-ledger__solid b {
+  color: var(--color-emerald);
+  font-weight: 400;
+}
+
+.lrh-ledger__attached {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-6);
+  width: 100%;
+  margin: var(--space-8) 0 0;
+}
+
+/* Each card rises off the call line above it rather than wearing an accent
+   edge. The riser is the attachment — the whole point of this half of the
+   section — so it points at what it attaches to. A side stripe would only
+   have accompanied the card. */
+.lrh-ledger__attached > div {
+  position: relative;
+  border-radius: var(--radius-md);
+  background: var(--surface-navy-panel);
+  padding: var(--space-5);
+}
+
+.lrh-ledger__attached > div::before {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: var(--space-5);
+  width: 2px;
+  height: var(--space-6);
+  background: linear-gradient(to bottom, transparent, var(--color-emerald));
+}
+
+.lrh-ledger__attached dt {
+  color: var(--text-inverse);
+  font: var(--display-sm);
+  letter-spacing: var(--display-sm-tracking);
+}
+
+.lrh-ledger__attached dd {
+  margin: var(--space-2) 0 0;
+  color: var(--text-inverse-muted);
+  font: var(--body-sm);
+}
+
+.lrh-ledger__close {
+  max-width: var(--measure-copy);
+  margin-top: var(--space-7);
+  border-top: 1px solid var(--border-navy-hairline);
+  padding-top: var(--space-5);
+  font: var(--body-sm);
+}
+
+/* ===============================================================
+   5B · The return path — spatial sequence
+   =============================================================== */
+
+.lrh-return {
+  background: var(--surface-page);
+}
+
+.lrh-return__band {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  gap: var(--space-9);
+  align-items: center;
+}
+
+.lrh-return__copy {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.lrh-return__copy p {
+  max-width: var(--measure-copy-narrow);
+}
+
+.lrh-return__feature {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  border-top: 1px solid var(--border-hairline);
+  padding-top: var(--space-5);
+  font: var(--body-sm);
+}
+
+.lrh-return__feature strong {
+  color: var(--text-primary);
+  font: var(--display-sm);
+  letter-spacing: var(--display-sm-tracking);
+}
+
+.lrh-return__tracks {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-7);
+}
+
+/* Each track is an object, not a floating line: it carries its own ground so
+   the drawn geometry has something to sit on. */
+.lrh-return__track {
+  margin: 0;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--elev-hairline), var(--elev-raised);
+  background: var(--surface-card);
+  padding: var(--space-6) var(--space-6) var(--space-4);
+}
+
+.lrh-return__track--dead {
+  background: var(--surface-sunken);
+  box-shadow: var(--elev-hairline);
+}
+
+.lrh-return__track figcaption {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin-bottom: var(--space-4);
+}
+
+.lrh-return__track figcaption strong {
+  color: var(--text-primary);
+  font: var(--display-sm);
+  letter-spacing: var(--display-sm-tracking);
+}
+
+.lrh-return__track svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.lrh-return__rail {
+  fill: none;
+  stroke: var(--color-line);
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
+.lrh-return__rail--live {
+  stroke: var(--color-emerald-deep);
+}
+
+.lrh-return__cap {
+  stroke: var(--text-secondary);
+  stroke-width: 2;
+}
+
+.lrh-return__loop {
+  fill: none;
+  stroke: var(--color-emerald);
+  stroke-width: 2;
+  stroke-dasharray: 6 5;
+  stroke-linecap: round;
+}
+
+.lrh-return__node {
+  fill: var(--color-emerald);
+}
+
+.lrh-return__tag {
+  fill: var(--text-secondary);
+  font: 600 0.8125rem/1 var(--font-body);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.lrh-return__tag--muted {
+  fill: var(--text-secondary);
+  text-transform: none;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.lrh-return__tag--emerald {
+  fill: var(--color-emerald-deep);
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.lrh-return__tag--end {
+  fill: var(--color-emerald-deep);
+  text-anchor: end;
+}
+
+/* ===============================================================
+   6A · The switchboard — node model
+   =============================================================== */
+
+.lrh-switch__board {
+  position: relative;
+}
+
+/* No column gap: the rule bar is one continuous object across all four lanes,
+   and a gap between segments would break it into four cards — which is the
+   opposite of the argument. Lane text gets its own inline padding instead. */
+.lrh-switch__lanes {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  column-gap: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.lrh-switch__lane {
+  display: grid;
+  /* Fixed rows so the rule bar aligns across all four lanes regardless of how
+     long any individual label runs. The bar is the object; it cannot wobble. */
+  grid-template-rows: minmax(4.5rem, auto) 1.75rem minmax(5rem, auto) 1.75rem auto auto;
+  text-align: center;
+}
+
+.lrh-switch__arrives {
+  align-self: end;
+  padding-inline: var(--space-4);
+  color: var(--text-primary);
+  font: var(--display-sm);
+  letter-spacing: var(--display-sm-tracking);
+  text-wrap: balance;
+}
+
+.lrh-switch__drop {
+  justify-self: center;
+  width: 2px;
+  height: 100%;
+  background: var(--color-mist-hairline);
+}
+
+.lrh-switch__drop--out {
+  background: var(--emerald-line);
+}
+
+/* The bar: four segments of one continuous emerald object, joined by their
+   shared edges rather than sitting apart as four cards. */
+.lrh-switch__rule {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  justify-content: center;
+  border: 1px solid var(--color-emerald-deep);
+  border-inline-width: 0 1px;
+  background: var(--color-emerald-deep);
+  padding: var(--space-4) var(--space-3);
+  color: var(--color-white);
+  font: var(--body-sm);
+}
+
+.lrh-switch__lane:first-child .lrh-switch__rule {
+  border-left-width: 1px;
+  border-start-start-radius: var(--radius-md);
+  border-end-start-radius: var(--radius-md);
+}
+
+.lrh-switch__lane:last-child .lrh-switch__rule {
+  border-start-end-radius: var(--radius-md);
+  border-end-end-radius: var(--radius-md);
+}
+
+.lrh-switch__rule-label {
+  color: var(--color-emerald);
+  font: var(--label-caps);
+  letter-spacing: var(--label-caps-tracking);
+  text-transform: uppercase;
+}
+
+.lrh-switch__owner {
+  margin-top: var(--space-2);
+  padding-inline: var(--space-4);
+  color: var(--text-primary);
+  font: 600 var(--body-md);
+}
+
+.lrh-switch__first {
+  margin-top: var(--space-2);
+  padding-inline: var(--space-4);
+  color: var(--text-secondary);
+  font: var(--body-sm);
+  text-wrap: pretty;
+}
+
+.lrh-switch__close {
+  color: var(--text-secondary);
+  font: italic 500 var(--body-lg) var(--font-display);
+  text-align: center;
+}
+
+/* ===============================================================
+   6B · The routing slips — depth set, document-like
+   =============================================================== */
+
+/* Surface comes from `on-mist`, matching the section this replaces. Paper
+   dockets on a mist band suit the material better than dark ones anyway — a
+   routing slip is a piece of paper. */
+
+.lrh-slips__stack {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-7) var(--space-6);
+  margin: 0;
+  list-style: none;
+}
+
+/* Rotation stays under a degree and the vertical offset is small: enough for
+   the stack to read as paper, never enough for a slip to crop its neighbour. */
+.lrh-slips__slip {
+  --tilt: calc((var(--i) - 1.5) * 0.35deg);
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  border-radius: var(--radius-md);
+  box-shadow: var(--elev-hairline), var(--elev-focal);
+  background: var(--surface-card);
+  padding: var(--space-6);
+  rotate: var(--tilt);
+  translate: 0 calc(var(--i) * 0.4rem);
+}
+
+.lrh-slips__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border-hairline);
+  padding-bottom: var(--space-3);
+  color: var(--color-emerald-deep);
+  font: var(--label-caps);
+  letter-spacing: var(--label-caps-tracking);
+  text-transform: uppercase;
+}
+
+.lrh-slips__head b {
+  color: var(--color-mist-hairline);
+  font: 500 1.5rem/1 var(--font-display);
+  font-variant-numeric: tabular-nums;
+}
+
+.lrh-slips__arrived {
+  color: var(--text-primary);
+  font: var(--display-md);
+  letter-spacing: var(--display-md-tracking);
+  text-wrap: balance;
+}
+
+.lrh-slips__rows {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.lrh-slips__rows > div {
+  display: grid;
+  grid-template-columns: minmax(0, 7.5rem) minmax(0, 1fr);
+  gap: var(--space-4);
+  align-items: baseline;
+}
+
+.lrh-slips__rows dt {
+  color: var(--text-secondary);
+  font: var(--body-xs);
+  opacity: 0.8;
+}
+
+.lrh-slips__rows dd {
+  margin: 0;
+  color: var(--text-secondary);
+  font: var(--body-sm);
+}
+
+/* The one row whose value is the point gets the stamp treatment. */
+.lrh-slips__placed dd {
+  display: inline-flex;
+  align-items: center;
+  border-radius: var(--radius-sm);
+  background: var(--emerald-tint);
+  box-shadow: inset 0 0 0 1px var(--emerald-line-soft);
+  padding: 0.15rem 0.55rem;
+  color: var(--color-emerald-deep);
+  font: 600 var(--body-sm);
+}
+
+.lrh-slips__first {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  border-top: 1px solid var(--border-hairline);
+  padding-top: var(--space-4);
+  color: var(--text-secondary);
+  font: var(--body-sm);
+}
+
+.lrh-slips__close {
+  color: var(--text-secondary);
+  font: italic 500 var(--body-lg) var(--font-display);
+}
+
+/* ===============================================================
+   7A · The form that stops — constructed interface
+   =============================================================== */
+
+.lrh-cform {
+  background: var(--surface-card);
+}
+
+.lrh-cform__band {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: var(--space-9);
+  align-items: start;
+}
+
+.lrh-cform__copy {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  position: sticky;
+  top: calc(var(--header-height) + var(--space-7));
+}
+
+.lrh-cform__copy p {
+  max-width: var(--measure-copy-narrow);
+}
+
+.lrh-cform__stage {
+  display: flex;
+  flex-direction: column;
+}
+
+/* The form has a real bottom edge, because the whole argument is where it
+   ends. Everything excluded is rendered below that edge, outside the object. */
+.lrh-cform__sheet {
+  border-radius: var(--radius-lg);
+  box-shadow: var(--elev-hairline), var(--elev-focal);
+  background: var(--surface-page);
+  padding: var(--space-6);
+}
+
+.lrh-cform__sheet-head {
+  color: var(--text-primary);
+  font: var(--display-sm);
+  letter-spacing: var(--display-sm-tracking);
+}
+
+.lrh-cform__fields {
+  margin: var(--space-5) 0 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  counter-reset: cformfield;
+}
+
+.lrh-cform__fields li {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  border-radius: var(--radius-sm);
+  box-shadow: inset 0 0 0 1px var(--border-hairline);
+  background: var(--surface-card);
+  padding: var(--space-4);
+  counter-increment: cformfield;
+}
+
+.lrh-cform__field-label {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-3);
+  color: var(--text-primary);
+  font: 600 var(--body-md);
+}
+
+.lrh-cform__field-label::before {
+  content: counter(cformfield, decimal-leading-zero);
+  color: var(--color-emerald-deep);
+  font: var(--body-xs);
+  font-variant-numeric: tabular-nums;
+}
+
+.lrh-cform__field-hint {
+  padding-left: 1.85rem;
+  color: var(--text-secondary);
+  font: var(--body-sm);
+}
+
+.lrh-cform__submit {
+  display: inline-block;
+  margin-top: var(--space-5);
+  border-radius: var(--radius-sm);
+  background: var(--color-emerald);
+  padding: 0.65rem 1.5rem;
+  color: var(--color-navy);
+  font: 600 var(--body-md);
+}
+
+.lrh-cform__outside {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: var(--space-6) var(--space-6) 0;
+}
+
+.lrh-cform__outside ul {
+  margin: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.lrh-cform__outside li {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-3);
+  color: var(--text-secondary);
+  font: var(--body-sm);
+  text-decoration: line-through;
+  text-decoration-color: var(--color-mist-hairline);
+}
+
+.lrh-cform__outside li::before {
+  content: "×";
+  color: var(--text-secondary);
+  text-decoration: none;
+}
+
+.lrh-cform__note {
+  max-width: var(--measure-copy);
+  margin-top: var(--space-7);
+  color: var(--text-secondary);
+  font: italic 500 var(--body-lg) var(--font-display);
+}
+
+/* ===============================================================
+   7B · The threshold — type as object over a full-bleed edge
+   =============================================================== */
+
+.lrh-thresh {
+  background: var(--surface-card);
+}
+
+.lrh-thresh__head {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.lrh-thresh__asked {
+  margin: 0;
+  list-style: none;
+  counter-reset: thresh;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.lrh-thresh__asked li {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-5);
+  color: var(--text-primary);
+  font: var(--display-md);
+  letter-spacing: var(--display-md-tracking);
+  counter-increment: thresh;
+}
+
+.lrh-thresh__asked li::before {
+  content: counter(thresh, decimal-leading-zero);
+  color: var(--color-emerald-deep);
+  font: var(--body-xs);
+  font-variant-numeric: tabular-nums;
+}
+
+/* A hairline inside a container is a divider. The same line crossing the whole
+   viewport is an edge — which is what a boundary should look like. */
+.lrh-thresh__edge {
+  width: 100%;
+  padding-block: var(--space-2);
+}
+
+.lrh-thresh__rule {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: var(--color-emerald);
+  transform-origin: left center;
+  scale: var(--lrh-scrub, 1) 1;
+}
+
+.lrh-thresh__below {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.lrh-thresh__below ul {
+  margin: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-6);
+}
+
+.lrh-thresh__below li {
+  color: var(--text-secondary);
+  font: var(--body-sm);
+  opacity: 0.75;
+}
+
+.lrh-thresh__note {
+  max-width: var(--measure-copy);
+  margin-top: var(--space-4);
+  font: var(--body-sm);
+}
+
+/* ===============================================================
+   8A · The handover — constructed interface, set-piece
+   =============================================================== */
+
+.lrh-hand {
+  background: var(--surface-page);
+}
+
+.lrh-hand__stage {
+  display: flex;
+  justify-content: center;
+}
+
+/* The page's one large object, at a measure that keeps the quoted lines
+   readable rather than stretched across the full container. White on paper is
+   only a few points of lightness, so the separation comes from a hairline, a
+   real focal shadow, and the emerald bar anchoring the top edge. */
+.lrh-hand__record {
+  width: min(100%, 46rem);
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--elev-hairline), var(--elev-focal);
+  background: var(--surface-card);
+}
+
+.lrh-hand__owner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2) var(--space-3);
+  background: var(--color-emerald-deep);
+  padding: var(--space-4) var(--space-6);
+  color: var(--color-white);
+}
+
+.lrh-hand__owner-mark {
+  width: 0.6rem;
+  height: 0.6rem;
+  border-radius: var(--radius-pill);
+  background: var(--color-emerald);
+}
+
+.lrh-hand__owner-role {
+  font: var(--label-caps);
+  letter-spacing: var(--label-caps-tracking);
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+
+.lrh-hand__owner strong {
+  color: var(--color-white);
+  font: 600 var(--body-md);
+}
+
+.lrh-hand__block {
+  border-bottom: 1px solid var(--border-hairline);
+  padding: var(--space-6);
+}
+
+.lrh-hand__block blockquote {
+  margin: var(--space-3) 0 0;
+  color: var(--text-primary);
+  font: clamp(1.125rem, 0.95rem + 0.7vw, 1.5rem) / 1.45 var(--font-display);
+  text-wrap: pretty;
+}
+
+/* The acknowledgement already went out, so it is set as something sent rather
+   than as something waiting: indented, on its own tinted ground. */
+.lrh-hand__block--sent {
+  background: var(--surface-sunken);
+}
+
+.lrh-hand__block--sent blockquote {
+  border-left: 2px solid var(--color-emerald);
+  padding-left: var(--space-5);
+  color: var(--text-secondary);
+  font-size: clamp(1.0625rem, 0.98rem + 0.35vw, 1.25rem);
+}
+
+.lrh-hand__meta {
+  margin-top: var(--space-3);
+  color: var(--text-secondary);
+  font: var(--body-xs);
+}
+
+.lrh-hand__waiting {
+  padding: var(--space-6);
+}
+
+.lrh-hand__waiting-line {
+  margin-top: var(--space-3);
+  color: var(--text-primary);
+  font: var(--display-md);
+  letter-spacing: var(--display-md-tracking);
+}
+
+.lrh-hand__waiting-note {
+  margin-top: var(--space-2);
+  color: var(--text-secondary);
+  font: var(--body-sm);
+}
+
+.lrh-hand__close {
+  max-width: var(--measure-intro);
+  margin-inline: auto;
+  color: var(--text-secondary);
+  font: var(--body-md);
+  text-align: center;
+}
+
+/* ===============================================================
+   8B · Many, one, four — density as the model
+   =============================================================== */
+
+.lrh-named {
+  background: var(--surface-page);
+}
+
+.lrh-named__head {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.lrh-named__field {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr) minmax(0, 1fr);
+  gap: var(--space-8);
+  align-items: center;
+}
+
+.lrh-named__machine,
+.lrh-named__human {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+/* Small, packed, and read as a texture. Nothing is padded to thicken it — this
+   is every operation the automation section also claims. */
+.lrh-named__machine ul {
+  margin: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.lrh-named__machine li {
+  border-radius: var(--radius-sm);
+  background: var(--surface-sunken);
+  box-shadow: inset 0 0 0 1px var(--border-hairline);
+  padding: 0.25rem 0.55rem;
+  color: var(--text-secondary);
+  font: 500 0.8125rem/1.35 var(--font-body);
+}
+
+.lrh-named__person {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--elev-focal);
+  background: var(--surface-card);
+  padding: var(--space-7) var(--space-6);
+  text-align: center;
+}
+
+.lrh-named__ring {
+  width: clamp(3.5rem, 5vw, 4.75rem);
+  aspect-ratio: 1;
+  border: 2px solid var(--color-emerald);
+  border-radius: var(--radius-pill);
+  background: var(--emerald-tint);
+}
+
+.lrh-named__person-label {
+  color: var(--text-primary);
+  font: var(--display-md);
+  letter-spacing: var(--display-md-tracking);
+}
+
+.lrh-named__person-note {
+  max-width: 18rem;
+  font: var(--body-sm);
+}
+
+/* Few, large, far apart — the opposite texture to the left field. */
+.lrh-named__human ol {
+  margin: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.lrh-named__human li {
+  border-bottom: 1px solid var(--border-hairline);
+  padding-bottom: var(--space-4);
+  color: var(--text-primary);
+  font: var(--display-md);
+  letter-spacing: var(--display-md-tracking);
+}
+
+.lrh-named__human li:last-child {
+  border-bottom: 0;
+}
+
+.lrh-named__close {
+  max-width: var(--measure-copy);
+  font: var(--body-sm);
+}
+
+/* ===============================================================
+   Narrow widths
+   =============================================================== */
+
+@media (max-width: 64rem) {
+  .lrh-return__band,
+  .lrh-cform__band {
+    grid-template-columns: 1fr;
+    gap: var(--space-7);
+  }
+
+  .lrh-cform__copy {
+    position: static;
+  }
+
+  .lrh-ledger__attached {
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+  }
+
+  /* The switchboard's whole argument is one shared bar across four lanes, and
+     that cannot survive a column count change. Below this width each lane
+     becomes its own top-to-bottom run with the rule still in the middle. */
+  .lrh-switch__lanes {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+
+  .lrh-switch__lane {
+    grid-template-rows: auto 1.25rem auto 1.25rem auto auto;
+    text-align: left;
+  }
+
+  .lrh-switch__drop {
+    justify-self: start;
+    margin-left: var(--space-4);
+  }
+
+  .lrh-switch__rule,
+  .lrh-switch__lane:first-child .lrh-switch__rule,
+  .lrh-switch__lane:last-child .lrh-switch__rule {
+    border-inline-width: 1px;
+    border-radius: var(--radius-md);
+  }
+
+  .lrh-slips__stack {
+    grid-template-columns: 1fr;
+  }
+
+  .lrh-slips__slip {
+    rotate: none;
+    translate: none;
+  }
+
+  /* Three fields side by side is the point at desktop; stacked, the density
+     contrast still reads because the type scales differ. */
+  .lrh-named__field {
+    grid-template-columns: 1fr;
+    gap: var(--space-7);
+  }
+
+  .lrh-named__person {
+    max-width: 26rem;
+    margin-inline: auto;
+  }
+}
+
+@media (max-width: 48rem) {
+  .lrh-ledger__raw li,
+  .lrh-ledger__solid {
+    flex-wrap: wrap;
+    gap: 0.4rem 0.9rem;
+  }
+
+  .lrh-ledger__threshold {
+    background: linear-gradient(
+      to right,
+      var(--color-emerald) 0%,
+      var(--color-emerald) 55%,
+      var(--border-navy-hairline) 55%,
+      var(--border-navy-hairline) 100%
+    );
+  }
+
+  .lrh-slips__rows > div {
+    grid-template-columns: 1fr;
+    gap: var(--space-1);
+  }
+
+  .lrh-hand__owner,
+  .lrh-hand__block,
+  .lrh-hand__waiting {
+    padding: var(--space-5);
+  }
+
+  .lrh-thresh__asked li {
+    gap: var(--space-4);
+  }
+}

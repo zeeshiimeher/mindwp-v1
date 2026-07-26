@@ -1,5 +1,5 @@
 import "@/styles/pages/lrh.css";
-import "@/styles/pages/lrh-variants.css";
+import "@/styles/pages/lrh-rebuild.css";
 
 import { LrhAcknowledgement } from "@/app/_lrh/LrhAcknowledgement";
 import { LrhContext } from "@/app/_lrh/LrhContext";
@@ -13,10 +13,14 @@ import { LrhOwnershipGap } from "@/app/_lrh/LrhOwnershipGap";
 import { LrhRequests } from "@/app/_lrh/LrhRequests";
 import { LrhRoutes } from "@/app/_lrh/LrhRoutes";
 import { LrhSetup } from "@/app/_lrh/LrhSetup";
-import { Ownership1Straddle } from "@/app/_lrh/variants/Ownership1Straddle";
-import { Ownership2Register } from "@/app/_lrh/variants/Ownership2Register";
-import { Ownership3Exchange } from "@/app/_lrh/variants/Ownership3Exchange";
-import { VariantsIntro } from "@/app/_lrh/variants/VariantFrame";
+import { ContextForm } from "@/app/_lrh/rebuild/ContextForm";
+import { ContextThreshold } from "@/app/_lrh/rebuild/ContextThreshold";
+import { MissedCallsLedger } from "@/app/_lrh/rebuild/MissedCallsLedger";
+import { MissedCallsReturn } from "@/app/_lrh/rebuild/MissedCallsReturn";
+import { OwnershipHandover } from "@/app/_lrh/rebuild/OwnershipHandover";
+import { OwnershipNamed } from "@/app/_lrh/rebuild/OwnershipNamed";
+import { RequestsSlips } from "@/app/_lrh/rebuild/RequestsSlips";
+import { RequestsSwitchboard } from "@/app/_lrh/rebuild/RequestsSwitchboard";
 import { buildSEO } from "@/lib/seo/metadata";
 
 export const metadata = buildSEO({
@@ -36,8 +40,8 @@ export default function LeadResponseHandlingPage() {
       <LrhOwnershipGap />
       <LrhAcknowledgement />
       <LrhRoutes />
-      <LrhMissedCalls />
-      <LrhRequests />
+      <MissedCallsReturn />
+      <RequestsSwitchboard />
       <LrhContext />
       <LrhHandoff />
       <LrhAutomation />
@@ -46,12 +50,18 @@ export default function LeadResponseHandlingPage() {
       <LrhFaq />
       <LrhClosing />
 
-      {/* Prototypes for review only. Everything from here down comes out once
-          a direction for Visible Ownership is chosen. */}
-      <VariantsIntro />
-      <Ownership1Straddle />
-      <Ownership2Register />
-      <Ownership3Exchange />
+      {/* Rebuilt sections 5, 6, 7 and 8, two complete designs each. Each one is
+          drop-in: lift the component and its stylesheet block into place and
+          delete the section it replaces. Everything from here down comes out
+          once the four directions are chosen. */}
+      <MissedCallsLedger />
+      <LrhMissedCalls />
+      <LrhRequests />
+      <RequestsSlips />
+      <ContextForm />
+      <ContextThreshold />
+      <OwnershipHandover />
+      <OwnershipNamed />
 
       <LrhMotion />
     </>
