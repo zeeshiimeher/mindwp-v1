@@ -33,7 +33,11 @@ A plan row is meaning material. It does not prescribe a card, panel, split layou
 
 A planned section is not automatically one horizontal visual band. Several related meanings may share an environment when they form one continuous experience. One major meaning may need substantial development; a quiet transition may need only clear language and space. Design determines those relationships.
 
-Headings may be planned because they sharpen the argument. They remain adaptable unless explicitly marked fixed. Preserve approved facts, claims, search intent, genuine proof, boundaries and fixed wording; leave explanatory depth, grouping and supporting copy adaptable where possible.
+State what each part must make a visitor understand. Do not fix its eyebrow or heading.
+
+A heading fixed in the plan becomes the design's starting point, and a heading that names a category — a quality, a process, a stage of setup — gives the design nothing to show. The section is then illustrated rather than composed, because the illustration of a category is a diagram. Write the comprehension target instead: one sentence naming what the visitor should be able to understand, or do, or stop believing. Headings, eyebrows and labels are written after the composition is approved.
+
+A plan may still fix wording where meaning, law, search intent or an approved claim depends on it. Mark that wording fixed and say why. Preserve approved facts, claims, search intent, genuine proof and boundaries; leave explanatory depth, grouping and supporting copy adaptable where possible.
 
 Supporting detail is a source of meaning, not a required public-copy or visual-object count. The executor may shorten, deepen, regroup or rewrite adaptable material as content and composition develop. The executor must not invent missing strategy, proof, claims or operational detail.
 
@@ -51,7 +55,7 @@ Use as much of this structure as the page needs. Straightforward pages may use p
 
 ### Each section or genuinely connected group
 
-- **Heading:** a working or fixed heading.
+- **Comprehension target:** one sentence stating what the visitor must be able to understand. Not a heading.
 - **Broad job:** what this part contributes to the page argument.
 - **Essential meaning:** what must remain understandable.
 - **Available proof:** real media, work, evidence, process or source material.
@@ -83,6 +87,7 @@ Before treating the plan as usable, ask:
 - Are offer ownership and cross-page boundaries clear?
 - Does proof appear where trust or a decision actually needs it?
 - Are fixed claims and professional limits visible?
+- Does each part state what the visitor must understand, rather than pre-naming a heading the design then has to illustrate?
 - Is adaptable material flexible enough to improve during design?
 - Are open decisions genuine blockers for this page, or merely deferrable business questions?
 - Could a fresh executor preserve the meaning without being handed a component specification?

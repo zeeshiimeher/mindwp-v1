@@ -2,12 +2,14 @@
 
 Start with [docs/README.md](./docs/README.md). It maps the active project-memory authorities and the smallest reading set for orientation, design, planning, implementation, or review.
 
+Every MindWP page addresses a business owner deciding whether to buy — never a patient or a client's customer. [WRITING.md](./docs/WRITING.md) owns what follows from that.
+
 ## Source roles
 
 - Read only the authorities that own the current decision.
 - An explicitly supplied page plan owns that page's meaning and fixed boundaries.
 - Current source and fresh renders own implemented reality; report drift from the canonical documents rather than silently reconciling it.
-- The execution skills are optional specialists, not a router or mandatory chain. Design is decided before it is built: `mindwp-page-design` produces a specification, `mindwp-page-build` implements it, `mindwp-design-eye` judges the render.
+- The execution skills are optional specialists, not a router or mandatory chain. Design is decided before it is built: `mindwp-page-design` produces a specification, `mindwp-page-build` implements it, `mindwp-design-eye` judges the render, and `mindwp-frontend-quality` handles technical repair and finalisation.
 
 ## Repository safety
 

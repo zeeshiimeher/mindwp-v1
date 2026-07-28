@@ -19,6 +19,7 @@ Visitor change
 Weight            quiet / supporting / focal / set-piece / closure
 Surface
 Primary payload   the named material (see DESIGN.md, Material expression)
+Shows             the specific instance, state or artefact on screen — not a category
 Relationship      what the payload makes visible
 First-glance read what a visitor understands before reading any copy
 Built by          which visual moves give it presence (see below)
@@ -38,12 +39,17 @@ Quiet transitional sections need a row, not a concept. Say so explicitly rather 
 
 Every substantial section names its primary payload from `DESIGN.md`'s material vocabulary. Naming it is the point at which "text in a column" stops being the default answer.
 
-Two tests before a payload is accepted:
+Three tests before a payload is accepted:
 
 - **Sketchable in one sentence** without naming layout containers. "A track where four channels converge on one owner" passes. "A two-column split with a card on the right" does not — that is an arrangement, not a material.
 - **Legible without its paragraph.** If the object only makes sense once the copy beside it is read, it has not externalised the relationship.
+- **An instance, a state or an artefact — not a category.** Name the specific thing on screen. "A form that arrived at 11:47pm and the person who owns it in the morning" is an instance. "The kinds of enquiry that arrive" is a category, and a category has no shape, so it will be drawn as a box with a label on it. If the only available answer is a class of thing, the section will become a diagram no matter which material is named.
+
+The third test is the one that catches a specification which passes everything else and still describes a flat page. Categories produce fields of marks standing for quantities nobody can verify, greeked lines standing for text nobody wrote, and equal boxes standing for ideas. Instances produce objects.
 
 Where the material is genuinely quiet, `bare typeset arrangement` is a correct answer. When it is the answer for most of a page, say why the page's main meanings do not need stronger expression.
+
+The vocabulary is not a variety quota. Two sections may correctly name the same material when their relationships are the same kind, and choosing a weaker payload because a stronger one is "already used" is a design decision made for the wrong reason. Flatness is different meanings receiving the same inner hierarchy and reading path — not the same material appearing twice.
 
 ## Say how each section is built, not only what it means
 
@@ -57,6 +63,16 @@ Two things to get right at page scale:
 - **A quiet section says `Built by: nothing, deliberately`.** That is a valid and necessary answer. Leaving the row blank is not — blank reads as undecided, and undecided becomes flat.
 
 If a section's only answer is "a heading, a paragraph and a list", it is either genuinely quiet or it is unfinished. Decide which, in writing, before it reaches build.
+
+## Make one interaction decision for the whole page
+
+Answer this once, explicitly, at page scale: **which single moment on this page is worth participating in — or why does this page have none?**
+
+Answering it per section produces "none" every time, because no individual section ever needs interaction. The result is a page a visitor only reads.
+
+This is a decision, not a quota. "None, because every relationship here is better shown than operated" is a complete answer and sometimes the right one. What is not acceptable is never asking.
+
+Where the answer names a moment, state the interaction budget for the whole page alongside it, and for each interaction: what the visitor learns by doing it that they could not learn by looking, what the composition shows before any input, and what survives without script and under reduced motion. An interaction holding essential meaning behind a state the visitor may never open has hidden the page's argument.
 
 ## A reference page, only if the user names one
 
@@ -73,6 +89,8 @@ Study the standard of resolution each section reaches and how weight is distribu
 When redesigning an existing page, capture that page regardless, and read the full page before the section crops.
 
 ## Rebuilding a section
+
+This applies to rebuilding part of a page that is already built and staying. It does not apply to a page or a middle being designed from scratch — there, headings are outputs of the design and nothing is carried forward, so applying this rule instead is how a fresh design ends up re-decorating the old one.
 
 A rebuild is a new concept, not a re-arrangement of the old one.
 

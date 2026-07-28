@@ -318,6 +318,10 @@ Name the primary payload before drawing the section. A substantial section may b
 
 Choose the material because it externalises the section's relationship, not because the page needs another visual technique. The list is a vocabulary, not an inventory to work through, and it is open — a payload that externalises its relationship well and belongs to none of these categories is still correct.
 
+It is also not a variety quota. Two sections may correctly name the same material where their relationships are the same kind, and downgrading to a weaker payload because a stronger one is already used elsewhere on the page is a decision made for the wrong reason. Flatness is different meanings receiving the same inner hierarchy and reading path — not the same material appearing twice.
+
+Name what the payload actually shows before accepting it. A payload that can only be described as a *kind* of thing has no shape, and will be drawn as a labelled container: a field of marks standing for a quantity nobody can verify, greeked lines standing for text nobody wrote, or equal boxes standing for ideas. A specific instance, state or artefact has a shape already.
+
 Bare typeset arrangements are the quiet register. If they dominate a substantial page, explain why the main meanings do not require stronger material expression.
 
 **A named object succeeds only when its central relationship is legible in the render, survives responsive transformation, and remains meaningful without decorative explanation.** Naming a payload does not make it good. An object that needs its supporting paragraph to be understood has not externalised anything.

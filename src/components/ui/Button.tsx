@@ -3,7 +3,7 @@ import type { ComponentProps, ReactNode } from "react";
 
 import { cn } from "@/lib/utils";
 
-type Variant = "primary" | "outline" | "link" | "on-dark";
+type Variant = "primary" | "outline" | "link" | "on-dark" | "ghost-dark";
 
 interface CommonProps {
   children: ReactNode;

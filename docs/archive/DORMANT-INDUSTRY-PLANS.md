@@ -1,3 +1,5 @@
+NOTE: Dont Read Unless we ask.
+
 # Dormant industry plans
 
 **Status: dormant. Non-authoritative preservation material.**

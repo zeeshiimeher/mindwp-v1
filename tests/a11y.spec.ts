@@ -11,6 +11,7 @@ const REVIEW_ROUTES = [
   ...LIVE_ROUTES,
   { path: "/services/local-seo-authority", changeFrequency: "monthly", priority: 0 },
   { path: "/services/smart-website-systems", changeFrequency: "monthly", priority: 0 },
+  { path: "/services/follow-up-crm", changeFrequency: "monthly", priority: 0 },
 ] as const;
 
 const axeSource = readFileSync(join(process.cwd(), "node_modules/axe-core/axe.min.js"), "utf8");

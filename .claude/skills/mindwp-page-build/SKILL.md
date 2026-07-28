@@ -53,6 +53,8 @@ A section's named payload is the work. When implementation time runs short, the 
 
 The specification's `Built by` row is a build instruction, not a note. If it says the payload has an interior, give it a fill and something of a different value inside it. If it says something breaks its container, build the breakout. Delivering the section without those moves delivers a different, flatter section.
 
+**Verify in the render that the relationship survived, move by move.** Markup that satisfies a named move is not the same as a render that shows it. A negative margin that breaks no visible edge, a fill within a step of its own ground, a "dominant" object that is not the largest thing in its band — each of these builds the instruction and loses the meaning. Before reporting, take each named move and each stated relationship, find it in the capture, and say where it is. Anything you cannot point at in the render did not get built, whatever the source says.
+
 Five failures to check for in your own output before reporting:
 
 - **Padding standing in for emphasis.** `.section--focal` only changes padding and gap. On a small payload it produces a taller band with more empty space, not a focal section. Every focal section needs a payload that earns it.
