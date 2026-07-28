@@ -124,6 +124,48 @@ export function HomeMotion() {
           });
         });
 
+        const orbitGroups = gsap.utils.toArray<HTMLElement>("[data-home-orbit]");
+        orbitGroups.forEach((group) => {
+          const rings = nestedItems(group, "data-home-orbit-ring");
+          const items = nestedItems(group, "data-home-orbit-item");
+          if (rings.length === 0 && items.length === 0) return;
+
+          const orbitTimeline = gsap.timeline({
+            defaults: { ease: "power2.out" },
+            scrollTrigger: {
+              trigger: group,
+              start: "top 80%",
+              once: true,
+            },
+          });
+
+          if (rings.length > 0) {
+            orbitTimeline.from(rings, {
+              autoAlpha: 0,
+              scale: 0.85,
+              duration: 0.6,
+              stagger: 0.1,
+              clearProps: "opacity,visibility,transform",
+            });
+          }
+          if (items.length > 0) {
+            // Items are in reading order (arrive, 01, 02, 03, core), so the
+            // stagger traces the same clockwise arrival the copy describes.
+            orbitTimeline.from(
+              items,
+              {
+                autoAlpha: 0,
+                scale: 0.82,
+                y: 10,
+                duration: 0.5,
+                stagger: 0.12,
+                clearProps: "opacity,visibility,transform",
+              },
+              rings.length > 0 ? "-=0.35" : 0,
+            );
+          }
+        });
+
         const accentItems = gsap.utils.toArray<HTMLElement>("[data-home-fade]");
         accentItems.forEach((item) => {
           gsap.from(item, {

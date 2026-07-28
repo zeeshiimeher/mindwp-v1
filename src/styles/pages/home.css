@@ -825,9 +825,9 @@
   padding-top: var(--space-5);
 }
 
-/* A square stage: the rings are sized from it, so they cannot be cut off by the
-   column, and the three answers sit at its corners — read as arranged around
-   the centre rather than scattered near it. */
+/* A square stage: the rings are sized from it, so they cannot be cut off by
+   the column, and the three answers sit at north, east and south — an even
+   curve around the core, arriving clockwise from "arrive curious" at west. */
 .home-distance__diagram {
   position: relative;
   width: min(100%, 33rem);
@@ -914,45 +914,53 @@
 
 .home-distance__marker {
   gap: var(--space-2);
-  width: 13.5rem;
+  width: 11.5rem;
+  align-items: center;
   border: 1px solid var(--border-mist-hairline);
   border-radius: var(--radius-sm);
   background: var(--surface-card);
   padding: var(--space-4);
+  text-align: center;
   box-shadow: 0 0.75rem 2rem rgb(7 22 41 / 5%);
 }
 
 .home-distance__marker small {
   color: var(--color-emerald-deep);
   font: var(--label-caps);
+  font-size: 0.625rem;
   letter-spacing: var(--label-caps-tracking);
 }
 
 .home-distance__marker strong {
   color: var(--text-primary);
-  font: 600 1.0625rem/1.25 var(--font-display);
+  font: 600 0.8125rem/1.25 var(--font-display);
 }
 
+/* The three answers sit at north, east and south of the ring — an even,
+   90°-spaced curve around the core that reads as arrival sweeping clockwise
+   from "arrive curious" (west) through to "ready to ask" (centre). */
 .home-distance__marker--one {
-  top: 0;
-  right: -6%;
+  top: -2%;
+  left: 50%;
+  translate: -50% 0;
 }
 
 .home-distance__marker--two {
   top: 50%;
-  right: -12%;
+  right: -16%;
   translate: 0 -50%;
 }
 
 .home-distance__marker--three {
   right: auto;
-  bottom: 0;
-  left: 2%;
+  bottom: -2%;
+  left: 50%;
+  translate: -50% 0;
 }
 
 .home-distance__arrive {
   top: 50%;
-  left: -14%;
+  left: -16%;
   translate: 0 -50%;
 }
 
@@ -2976,9 +2984,28 @@ body:has(.home-closing) .site-footer__bottom {
     padding: var(--space-3);
   }
 
+  .home-distance__marker small {
+    font-size: 0.5625rem;
+  }
+
+  .home-distance__marker strong {
+    font-size: 0.75rem;
+  }
+
+  .home-distance__arrive small {
+    width: 4.75rem;
+    font-size: 0.6875rem;
+  }
+
+  .home-distance__arrive b {
+    font-size: 1.25rem;
+  }
+
   .home-distance__marker--one {
     top: 0;
+    left: auto;
     right: 0;
+    translate: none;
   }
 
   .home-distance__marker--two {
@@ -2992,6 +3019,7 @@ body:has(.home-closing) .site-footer__bottom {
     right: auto;
     bottom: 0;
     left: 0;
+    translate: none;
   }
 
   .home-distance__arrive {

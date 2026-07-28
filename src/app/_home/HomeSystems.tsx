@@ -35,29 +35,29 @@ export function HomeDistance() {
           className="home-distance__diagram"
           role="img"
           aria-label="Three answers close the distance between arriving curious and being ready to ask"
-          data-home-fade
+          data-home-orbit
         >
-          <span className="home-distance__ring home-distance__ring--outer" />
-          <span className="home-distance__ring home-distance__ring--inner" />
-          <span className="home-distance__arrive">
+          <span className="home-distance__ring home-distance__ring--outer" data-home-orbit-ring />
+          <span className="home-distance__ring home-distance__ring--inner" data-home-orbit-ring />
+          <span className="home-distance__arrive" data-home-orbit-item>
             <b>?</b>
             <small>Arrive curious</small>
           </span>
-          <span className="home-distance__core">
-            <small>Distance closed</small>
-            <strong>Ready to ask</strong>
-          </span>
-          <span className="home-distance__marker home-distance__marker--one">
+          <span className="home-distance__marker home-distance__marker--one" data-home-orbit-item>
             <small>01</small>
-            <strong>My question, answered</strong>
+            <strong>Question answered</strong>
           </span>
-          <span className="home-distance__marker home-distance__marker--two">
+          <span className="home-distance__marker home-distance__marker--two" data-home-orbit-item>
             <small>02</small>
             <strong>Proof I can check</strong>
           </span>
-          <span className="home-distance__marker home-distance__marker--three">
+          <span className="home-distance__marker home-distance__marker--three" data-home-orbit-item>
             <small>03</small>
-            <strong>A clear next step</strong>
+            <strong>Clear next step</strong>
+          </span>
+          <span className="home-distance__core" data-home-orbit-item>
+            <small>Distance closed</small>
+            <strong>Ready to ask</strong>
           </span>
         </div>
       </div>
