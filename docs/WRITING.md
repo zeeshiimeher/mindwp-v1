@@ -2,9 +2,9 @@
 
 This document controls how approved MindWP meaning is expressed. Foundation and Strategy own business facts.
 
-An explicitly supplied page brief owns the page job, audience, intent, desired action, essential meaning, available proof, boundaries and any wording explicitly marked fixed.
+An explicitly supplied page plan owns the page job, audience, intent, desired action, essential meaning, available proof, boundaries and any wording explicitly marked fixed.
 
-A page brief does not automatically fix exact section order, headings, eyebrows, component choices, visual anatomy or motion unless the owner explicitly marks them fixed. Writing does not own those decisions either.
+A page plan does not automatically fix exact section order, headings, eyebrows, component choices, visual anatomy or motion unless the owner explicitly marks them fixed. Writing does not own those decisions either.
 
 ## Voice
 
@@ -43,6 +43,26 @@ Do not spend core positioning explaining ordinary website anatomy such as pages,
 Lead instead with the responsibility MindWP owns and the situation the reader recognises — an enquiry acknowledged, reaching a named person, with its context preserved. "We connect your CRM" is a task. "Follow-up no longer depends only on someone remembering" is a responsibility. Prefer the second. Neither example is mandatory public wording.
 
 Explain delivery detail only where it helps a buyer understand the responsibility, the scope or the boundary. A list of what gets built is a proposal, not positioning.
+
+## Make the responsibility desirable
+
+Truthful copy that gives a reader no reason to want the work has only half done its job. MindWP sells a considered, privately priced engagement, and the writing has to make that engagement attractive as well as defensible.
+
+Show why the responsibility matters to this buyer. Operational improvement is worth something because of what it relieves — an owner who stops carrying the process in their head, a team that knows who holds what, a business that behaves the same way on its busiest week as on its quietest. Connect the improvement to relief, confidence, control or plain commercial usefulness, and the mechanism becomes interesting rather than technical.
+
+Lead with what becomes easier, clearer or more consistent, then expand into how it works. A reader who does not yet want the outcome has no reason to follow an explanation of the method. Bring proof in where desire turns into evaluation — the point where the reader starts asking whether this is real — and carry the passage towards a useful action rather than letting it settle.
+
+Strong copy usually moves through five dimensions, in whatever order the material wants:
+
+- **the desired improvement** — what the buyer wants;
+- **MindWP's responsibility** — what MindWP can own;
+- **the mechanism** — how that responsibility works;
+- **the proof** — what supports the claim;
+- **the boundary** — what stays outside MindWP's control.
+
+These are dimensions of good writing, not a five-part paragraph, a section formula or a required order. A short passage may carry one; a service page carries all five across its length.
+
+Warmth and commercial ambition are fully compatible with strict claims discipline. Describe what genuinely becomes better, in the reader's own terms, and let the boundary sit alongside the appeal rather than swallowing it.
 
 ## Supporting growth is not promising growth
 

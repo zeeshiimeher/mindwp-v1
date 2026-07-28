@@ -31,7 +31,7 @@ Thumbnails distort. They make type look smaller and contrast look weaker than it
 
 1. **Full-page rhythm** — does depth vary with importance, or does every section run to roughly the same band?
 2. **Payload legibility** — is each section's relationship visible in the render, or only in the copy? Cover the paragraphs and check what is left.
-3. **The set-piece** — is there a section that is a genuine event, and is it carried by real material rather than by height?
+3. **Focal treatment** — where the specification named a focal moment, is it carried by real material rather than by height? Where it named none, does the page still read as coherent and deliberately quiet rather than undecided?
 4. **Quiet or unfinished** — where a section is calm, does it read as a decision or as an absence? An unfinished section and a deliberately quiet one look identical in a specification and different in a render.
 5. **Object craft** — is each payload legible against its own background, uncropped at its intended width, and understandable before the copy beside it? Look specifically for objects at the same value as their ground, text clipped by an overlapping neighbour, ghost type too faint to read, shapes carrying no relationship, and interface fragments too small to inspect.
 6. **Mobile transformation** — is the central relationship preserved or thoughtfully simplified, or fragmented into an automatic stack?

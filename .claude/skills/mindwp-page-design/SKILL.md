@@ -16,7 +16,7 @@ The deliverable is a design a person can review and reject before anything is bu
 ```
 Job
 Visitor change
-Weight            quiet / supporting / focal / set-piece / closure
+Weight            quiet / supporting / focal / closure
 Surface
 Primary payload   what the section is materially made of
 Shows             the specific instance, state or artefact on screen — not a category
@@ -31,7 +31,9 @@ Mobile            what transforms, what is preserved, what is dropped
 Risk              the thing most likely to fail, to verify in the render
 ```
 
-At page scale, also decide: the complete surface rhythm · a weight map across all sections · which section is the set-piece · which passages are deliberately quiet · the interaction budget for the whole page · the mobile risks worth designing for now.
+At page scale, also decide: the complete surface rhythm · a weight map across all sections · which passages are deliberately quiet · the interaction budget for the whole page · the mobile risks worth designing for now.
+
+**Focal treatment is a judgement, not a requirement.** Identify whether any meaning, proof or customer decision earns focal treatment. Where one does, say which and why. Where none does, a coherent page may remain deliberately quieter — and that is a decision to state rather than a gap. Focal scale is still earned by a payload that carries it; nothing is promoted to make a page look eventful.
 
 Quiet transitional sections need a row, not a concept. Say so explicitly rather than leaving them undecided — an unfinished section and a deliberately quiet one look identical in a specification and different in a render.
 
@@ -57,7 +59,9 @@ Naming a material is not a variety exercise. Two sections may correctly use the 
 
 A specification can name a correct payload for every section and still describe a flat page. `Built by` is where that is prevented: name the moves the section actually uses.
 
-Moves worth having available — an interior, meaning a payload with its own ground and different values inside it · a contrasting object rather than a changed band · the middle of the type scale · one dominant element · a surface change from its neighbour · a non-standard opening · something breaking its container. This is a working list, not a checklist and not doctrine; a section needs the moves its material needs and no others.
+Moves worth having available — an interior, meaning a payload with its own ground and different values inside it · a contrasting object rather than a changed band · the middle of the type scale · one dominant element · a surface change from its neighbour · a non-standard opening · something breaking its container.
+
+These are optional possibilities, selected only when the page material creates the need. They are not a checklist, a quota or a variety programme, no section is expected to use several, and a solution outside this list is equally valid. The list exists so that "text in a column" is not the only move a designer can name.
 
 Two things to get right at page scale:
 
@@ -145,6 +149,6 @@ Do not design isolated strong sections and assemble them. Do not produce a page 
 
 ## Hand off
 
-The specification is complete when every section has a named payload, a stated weight, and a mobile transformation, and the page has a set-piece and a rhythm. Report it for review.
+The specification is complete when every section has a named payload, a stated weight and a mobile transformation, and the page establishes hierarchy, rhythm, changes in reading effort, proof placement and a clear primary action. A focal moment is stated where one is earned, and its absence is stated where none is. Report it for review.
 
 Build begins only after that review. Pass approved work to `mindwp-page-build`.

@@ -1,3 +1,9 @@
+> **Status: archived, non-authoritative planning history.**
+>
+> This file preserves superseded page plans and earlier planning decisions. It is not an active authority, page plan, release plan or source of current wording, structure or design requirements. Use it only when the owner explicitly requests historical material, and reconcile anything extracted from it against the active authorities.
+
+---
+
 NOTE: Dont Read Unless we ask.
 
 # MindWP page strategy

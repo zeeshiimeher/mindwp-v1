@@ -11,11 +11,11 @@ Read `docs/ENGINEERING.md` for repository source, CSS, accessibility and validat
 
 ## Implement what was approved
 
-The approved specification owns payload type, hierarchy, the set-piece, section weight, the relationship each section embodies, and surface role.
+The approved specification owns payload type, hierarchy, any focal moment it names, section weight, the relationship each section embodies, and surface role.
 
 Solve technical geometry freely: grid tracks, spacing, overflow, stacking, state handling, motion lifecycle, breakpoints.
 
-**Do not silently substitute.** If a payload proves impractical, report the conflict and return to design. Replacing a named object with an easier text layout, dropping the set-piece, or downgrading a focal section to fit the available time is a design change made without a design decision — that is the failure this split exists to prevent.
+**Do not silently substitute.** If a payload proves impractical, report the conflict and return to design. Replacing a named object with an easier text layout, dropping a named focal moment, or downgrading a focal section to fit the available time is a design change made without a design decision — that is the failure this split exists to prevent.
 
 Where implementation reveals that the design itself is wrong, say so with the evidence. That is useful, and it is not the same as quietly building something else.
 

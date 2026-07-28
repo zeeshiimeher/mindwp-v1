@@ -91,7 +91,7 @@ Approved examples alongside that definition:
 - **In lane:** independent clinics; sponsor-licence and corporate immigration boutiques; estate-planning and probate practices; forensic accounting and business-valuation boutiques; tax-investigation practices; medical-director and regulatory-compliance consultancies.
 - **Out of lane:** event and equipment hire; venues; chauffeur and transport operators; yacht and vehicle broking; and anything competing primarily on price or availability.
 
-Fit depends on the actual decision, value and trust at stake; available proof; capacity to act; and whether MindWP can own a useful scope. Qualification is diagnostic rather than exclusionary: do not infer that every buyer must be established, have an existing website, belong to one industry or purchase an ongoing service. A page brief may set a narrower audience when evidence supports it.
+Fit depends on the actual decision, value and trust at stake; available proof; capacity to act; and whether MindWP can own a useful scope. Qualification is diagnostic rather than exclusionary: do not infer that every buyer must be established, have an existing website, belong to one industry or purchase an ongoing service. A page plan may set a narrower audience when evidence supports it.
 
 ## Delivery, management and ownership posture
 
@@ -113,7 +113,13 @@ The current direction is an internal working concept called a **Visibility & Enq
 - Short label: **Request a Review**, where space is limited
 - **See the work** may be used as a lower-commitment navigational action where the page justifies it
 
-The Review's paid or unpaid status, commitment level, deliverable and response timing all remain open. Do not settle them in copy, design or a page brief.
+The Review's paid or unpaid status, commitment level, deliverable and response timing all remain open. Do not settle them in copy, design or a page plan.
+
+### Writing to an open decision
+
+When a commercial term remains open, public copy states what is currently known, describes the responsibility or process at the supported level, and leaves the unsettled term unstated. It does not invent certainty, hide the whole offer behind vague language, or let a page-specific assumption silently settle the wider business decision.
+
+Applied to the Review while its terms are open, a page may explain what it examines, who it is for, that it works with or without an existing website, that it identifies a prioritised starting point, and that project scope and price follow afterwards. A page must not invent a price, a duration, a response time, a written deliverable or a guaranteed recommendation.
 
 ## Implementation pathways
 
@@ -147,4 +153,4 @@ These are deliberately open and do not block general design-system work:
 - the Visibility & Enquiry Review's final public label, paid status, commitment level, deliverable and response timing;
 - future information-architecture expansion and publication order.
 
-Record an answer here only after an explicit decision. Until then, a supplied page brief may resolve a page-specific need without pretending to settle the whole business.
+Record an answer here only after an explicit decision. Until then, a supplied page plan may resolve a page-specific need without pretending to settle the whole business.

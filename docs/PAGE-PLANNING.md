@@ -41,7 +41,7 @@ A plan may still fix wording where meaning, law, search intent or an approved cl
 
 Supporting detail is a source of meaning, not a required public-copy or visual-object count. The executor may shorten, deepen, regroup or rewrite adaptable material as content and composition develop. The executor must not invent missing strategy, proof, claims or operational detail.
 
-## Compact page-brief contract
+## Compact page-plan contract
 
 Use as much of this structure as the page needs. Straightforward pages may use prose; complex pages may use a compact table.
 
