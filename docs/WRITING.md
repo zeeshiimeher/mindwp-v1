@@ -14,7 +14,9 @@ Use "we" and "you" naturally. Prefer short and medium sentences, concrete verbs 
 
 Every page on MindWP's site is read by a business owner deciding whether to buy. It is never patient-facing or client-customer-facing.
 
-So MindWP's own copy must not narrate a patient's medical situation, describe how a practitioner assesses or treats, or write in the voice of a clinic addressing its patients. Where a page needs to describe what happens to an enquiry, describe it as the owner sees it: a request arriving, being acknowledged, reaching a named person. A service page for one supporting service should still make the case for the website that carries it.
+So MindWP's own copy must not narrate a patient's medical situation, describe how a practitioner assesses or treats, or write in the voice of a clinic addressing its patients. Where a page needs to describe what happens to an enquiry, describe it as the owner sees it: a request arriving, being acknowledged, reaching a named person.
+
+A connected-service page should make clear that it works against a capable existing website as readily as a new one. Do not imply that a rebuild is a precondition for buying it.
 
 The two audiences are easy to conflate, because MindWP writes for clinics. The clinic-copy guidance below covers copy MindWP produces **on a client's site**. It does not license the same register on MindWP's own pages.
 
@@ -27,6 +29,22 @@ Good copy makes three things easy to follow:
 3. what the approved MindWP scope changes.
 
 Reach the concrete offer and genuine evidence at the point the argument needs them, rather than holding the reader in problem language for a whole page. Each section and service page carries its own part of the argument; the complete MindWP model belongs in one place, not in every one of them.
+
+## Lead with the responsibility, not the task list
+
+A business owner already knows what a website is. MindWP does not need to spend its positioning explaining pages, headings, sections, forms, content blocks or normal website anatomy.
+
+Lead with the responsibility MindWP owns and the situation the reader recognises — an enquiry acknowledged, reaching a named person, with its context preserved and its follow-up not depending on anyone remembering. "We connect your CRM" is a task. "Nobody has to remember to chase it" is a responsibility. Prefer the second.
+
+Explain delivery detail only where it helps a buyer understand the responsibility, the scope or the boundary. A list of what gets built is a proposal, not positioning, and reciting normal website features reads as a web-design service rather than the offer MindWP actually makes.
+
+## Supporting growth is not promising growth
+
+MindWP builds systems designed to support growth through better visibility, better handling and greater operational consistency. That is a claim about a mechanism, and it is available.
+
+Never convert it into an outcome. No leads, bookings, revenue, rankings, ratings, conversion improvements, guaranteed response times or guaranteed growth — not as a headline, an implication or a rounded-up paraphrase. Write what the system does and what it makes consistent, and let the reader draw the commercial conclusion.
+
+Concrete words carry this better than abstract ones: enquiries, acknowledgement, routing, ownership, status, context, follow-up, consistency. Prefer them to "growth", "results", "performance" and "optimisation".
 
 ## Concrete language
 

@@ -6,18 +6,22 @@ export const SITE = {
   name: "MindWP",
   /** Production origin — no trailing slash. Override with NEXT_PUBLIC_SITE_URL. */
   url: rawUrl.replace(/\/$/, ""),
-  /** Mirrors the live Homepage hero headline (docs/STRATEGY.md, Homepage positioning consequence). */
-  tagline: "Smart websites for being found, understood and chosen.",
   /**
-   * Names the audience the page itself leads with. Deliberately omits any
+   * Approved shared public identity (docs/STRATEGY.md). These three strings are
+   * the business proposition, not page copy — the Homepage hero owns its own
+   * headline and is deliberately not derived from the tagline.
+   */
+  tagline: "Smart websites and connected enquiry systems.",
+  /**
+   * Names the audience and the supported-growth posture. Deliberately omits any
    * company-age qualifier: docs/STRATEGY.md settles this as "established or
    * newer", which the Right fit section states in full.
    */
   description:
-    "Smart websites for independent clinics and specialist service businesses — the site and the handling around every enquiry, designed together.",
-  /** Footer positioning line. Claims nothing beyond the approved scope. */
+    "MindWP builds smart websites and connected enquiry systems for clinics and expert-led businesses, designed to support growth through better visibility, better handling and greater operational consistency.",
+  /** Footer positioning line. Claims a supported mechanism, never an outcome. */
   footerLine:
-    "Website strategy, design and implementation for service businesses where people choose carefully.",
+    "Website and enquiry systems for clinics and expert-led businesses—helping improve visibility, enquiry handling and operational consistency.",
   locale: "en",
 } as const;
 

@@ -10,7 +10,8 @@ Strategy owns these; no other document restates them.
 |---|---|
 | Audience lane | Clinic-first, plus expert-led businesses |
 | Market emphasis | United Kingdom primary; Australia the natural second market. International English throughout; location not emphasised in public copy |
-| Principal offer | Smart Website Systems, with four separately scoped supporting services |
+| Business proposition | Website and enquiry systems partner for clinics and expert-led businesses |
+| Principal engagement | Smart Website Systems — the usual entry route, not the whole business |
 | Pricing posture | No public price, tier table or starting figure. Scope and cost are quoted after the Visibility & Enquiry Review |
 | Public voice | MindWP speaks as "we". No named or pictured founder, no personal biography, no location emphasis. Accountability is shown through inspectable work, a stated process and named responsibility inside a client's engagement |
 | Company age | Established or newer, provided getting the website and its handling right from the start matters to the buyer |
@@ -19,9 +20,17 @@ Supporting market conditions are internal reasoning, not evidence, and must not 
 
 ## Current positioning
 
-MindWP is a website-led partner for independent clinics and expert-led businesses, combining strategic clarity, distinctive web design and careful implementation around real customer decisions. Independent clinics are the primary market and may lead audience language, content and proof, while the shared visual and verbal grammar stays sector-neutral. "Specialist" refers to the depth and precision of MindWP's thinking, not to any one sector's aesthetic.
+MindWP is a **website and enquiry systems partner for clinics and expert-led businesses**, combining strategic clarity, distinctive web design and careful implementation around real customer decisions. Independent clinics are the primary market and may lead audience language, content and proof, while the shared visual and verbal grammar stays sector-neutral. "Specialist" refers to the depth and precision of MindWP's thinking, not to any one sector's aesthetic.
 
-The website is the principal commercial surface. Connected services are introduced only where they solve a diagnosed problem. MindWP must not read as a compulsory bundle, SaaS product, CRM resale, advertising agency or automation package.
+The business remains website-centred: the website is the public-facing centre, the strongest visible proof of MindWP's craft and the usual entry engagement. It is no longer the definition of the whole business. Connected enquiry systems are a core second capability, sold with a new website, after one, against a suitable existing website, or as an ongoing managed responsibility.
+
+MindWP must not read as a compulsory bundle, SaaS product, CRM resale, advertising agency or automation package.
+
+### What growth means here
+
+MindWP builds systems designed to support growth through better visibility, better handling and greater operational consistency. Growth may be supported through stronger visibility, clearer evaluation and trust, more suitable enquiry paths, fewer opportunities lost through poor handling, better follow-up, stronger reputation, reduced dependence on manual memory and better operational visibility.
+
+MindWP does not promise leads, bookings, revenue, rankings, ratings, conversion improvements, guaranteed response times or guaranteed growth. **The defensible responsibility is the mechanism, its configuration, connection, testing and ongoing consistency — never the commercial outcome.** Supporting growth and promising growth are different claims, and only the first is available.
 
 ## Why MindWP is different
 
@@ -38,11 +47,20 @@ Foundation's non-claims support these reasons; they must not dominate them. A pa
 
 ## Current offer architecture
 
-**Smart Website Systems** is the current principal offer. An engagement may include strategy, site and page structure, copy, distinctive design, WordPress development and measurement around real customer decisions. It owns the public experience through to a useful enquiry: understanding, trust, proof, action, functioning capture, truthful submission confirmation, and delivery to the agreed contact destination.
+**MindWP** is the business proposition: website and enquiry systems. Within it:
+
+| Tier | What it is |
+|---|---|
+| **Principal engagement** | Smart Website Systems |
+| **Connected services** | Lead Response & Handling · Follow-Up & CRM · Reputation & Review |
+| **Visibility support** | Local SEO Authority |
+| **Recurring layer** | Ongoing management and improvement of agreed website and enquiry-system responsibilities |
+
+**Smart Website Systems** is the principal engagement and the most common entry route — not the complete definition of MindWP. It may include strategy, site and page structure, copy, distinctive design, WordPress development and measurement around real customer decisions. It owns the public experience through to a useful enquiry: understanding, trust, proof, action, functioning capture, truthful submission confirmation, and delivery to the agreed contact destination.
 
 A **useful enquiry** means the person could understand the relevant offer and provide appropriate contact or request context through the intended channel. It does not mean a qualified lead, booked appointment, sale, quotation, clinical decision or guaranteed outcome. Lead Response & Handling begins once that contact event exists; it owns the acknowledgement, useful context, routing and visible human responsibility that follow.
 
-Four supporting services surround the principal offer. They are actively recommended alongside a Smart Website where the diagnosis supports them, and each may also be sold separately. Local SEO Authority is substantial hands-on work rather than a light add-on. Each service is scoped individually; none is a compulsory part of any engagement:
+**The connected services are a first-class route, not an add-on.** They may be sold with a new website, after a website engagement, against a suitable existing website, or as an ongoing managed responsibility. A client whose existing website already serves its purpose is a valid client, and no suitable engagement requires rebuilding a capable website. Local SEO Authority is substantial hands-on work rather than a light add-on. Each service is scoped individually; none is compulsory:
 
 | Current public service name  | Current responsibility                                                                                     | Boundary                                                                                     |
 | ---------------------------- | ---------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
@@ -82,6 +100,8 @@ Every engagement should make scope, responsibilities, access, support, third-par
 
 MindWP's delivery role is hands-on: it plans how each agreed piece should work, configures and connects it, tests the complete path and onboards the team before handover. Ongoing management, maintenance and improvement may continue where agreed.
 
+Ongoing management and improvement of agreed website and enquiry-system responsibilities is a desirable recurring layer and should be offered wherever it creates continuing value. It is encouraged, never compulsory, and a one-off engagement remains legitimate.
+
 No single handover or ongoing-management model is approved for every engagement. Website ownership, service-account ownership, subscription responsibility, data access and ongoing management remain proposal-level decisions until a general policy is explicitly settled.
 
 Pricing is tailored and private. The absence of a public price, tier table, starting figure or universal qualification signal is a deliberate position rather than an unsettled one. A proposal must still make cost and scope clear before work begins.
@@ -93,6 +113,16 @@ The current direction is an internal working concept called a **Visibility & Enq
 Active public source currently uses **Request a Visibility & Enquiry Review**, with **Request a Review** where space is limited. Preserve that live wording unless an explicitly supplied page plan or user decision authorises another label. **See the work** remains a useful lower-commitment path when a page plan supports it.
 
 The Review's paid or unpaid status, commitment level, deliverable and response timing all remain open. Do not settle them in copy, design or a page plan.
+
+### Shared public identity
+
+These strings are the business proposition, not page copy. `src/config/site.ts` is their source owner; every consumer reads from it, and no page should restate them.
+
+- **Tagline** — Smart websites and connected enquiry systems.
+- **Site description** — MindWP builds smart websites and connected enquiry systems for clinics and expert-led businesses, designed to support growth through better visibility, better handling and greater operational consistency.
+- **Footer** — Website and enquiry systems for clinics and expert-led businesses—helping improve visibility, enquiry handling and operational consistency.
+
+The site description is not a Homepage headline. A page owns its own headline.
 
 ## Implementation pathways
 

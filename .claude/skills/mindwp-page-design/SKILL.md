@@ -118,7 +118,9 @@ Name the neighbours in the specification, and say what changes at each boundary 
 
 ## Who the page is for
 
-Every MindWP page is read by a business owner deciding whether to buy — never by a patient or a client's customer. Design for that reader: describe what happens to an enquiry as the owner sees it, and keep the page out of the register of a clinic addressing its patients. A page for one supporting service should still make the case for the website that carries it.
+Every MindWP page is read by a business owner deciding whether to buy — never by a patient or a client's customer. Design for that reader: describe what happens to an enquiry as the owner sees it, and keep the page out of the register of a clinic addressing its patients.
+
+That reader already knows what a website is. A page that spends its weight explaining pages, forms and normal website anatomy is describing a web-design service, not the responsibility MindWP owns. A connected-service page should read as buyable against a capable existing website — do not design it as though a rebuild were a precondition.
 
 ## Protect meaning and truth
 

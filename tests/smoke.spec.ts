@@ -108,9 +108,9 @@ test("homepage follows the approved reference structure", async ({ page }) => {
   await expect(
     page.getByRole("region", { name: "Do I have to take the supporting services?" }),
   ).toBeVisible();
-  // The rebuilt footer carries the approved positioning line, not the meta description.
+  // The footer carries the approved positioning line, not the meta description.
   await expect(page.locator("footer")).toContainText(
-    "Website strategy, design and implementation for service businesses where people choose carefully",
+    "Website and enquiry systems for clinics and expert-led businesses",
   );
 });
 

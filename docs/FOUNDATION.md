@@ -4,15 +4,19 @@ This document preserves MindWP's durable business memory. Durable means expected
 
 Current offer packaging, service names, CTA direction, delivery and commercial choices belong in [STRATEGY.md](./STRATEGY.md).
 
-## Website-led identity
+## Website-centred identity
 
-MindWP is website-led. It helps organisations where a consequential customer or patient decision depends on clarity, trust, proof and a useful route to contact. The current named market focus belongs in Strategy rather than becoming an immutable audience list here.
+MindWP is website-centred rather than limited to selling websites. It helps organisations where a consequential customer or patient decision depends on clarity, trust, proof and a useful route to contact. The current named market focus belongs in Strategy rather than becoming an immutable audience list here.
 
-The website is the most controllable public experience a business owns. It is where a prospective customer or patient can understand the work, evaluate fit and proof, develop confidence and choose a useful next step. Search, referrals, advertising and conversation may create attention elsewhere, but those sources do not remove the need for a clear, trustworthy destination.
+The website is the most controllable public experience a business owns, and it holds two durable roles for MindWP. It is where a prospective customer or patient can understand the work, evaluate fit and proof, develop confidence and choose a useful next step. It is also the **strongest visible proof of MindWP's craft** — the part of the work a buyer can inspect directly, which is why it remains the public centre of the offer.
 
-MindWP therefore starts with the customer decision around the website. The work may extend into connected capabilities when they improve that decision or what happens after contact, but the connection must be useful and deliberately scoped.
+Search, referrals, advertising and conversation may create attention elsewhere, but those sources do not remove the need for a clear, trustworthy destination.
 
-Website-led is an offer hierarchy, not merely a descriptive phrase and not a claim that the website acts alone. The public identity begins with the website and the customer decision it supports; connected capabilities remain optional and subordinate. Reversing that hierarchy requires evidence that the principal offer or buyer need has changed.
+Website-centred is an offer hierarchy, not a claim that the website acts alone and not a claim that MindWP only builds websites. The public identity begins with the website and the customer decision it supports. What happens after contact is a second responsibility of comparable seriousness, and MindWP may own either side, or both.
+
+**A rebuild is not a precondition.** Where an existing website already serves its purpose, MindWP may improve the path around it without rebuilding it. A business with a capable website remains a valid client.
+
+MindWP supports growth through better mechanisms and greater consistency — clearer evaluation, more suitable enquiry paths, fewer opportunities lost to poor handling, less dependence on someone remembering. It does not promise growth. The defensible responsibility is the mechanism, its configuration, connection, testing and ongoing consistency; never the commercial outcome.
 
 ## Audience and buyer principles
 
@@ -24,11 +28,17 @@ Industries may share a broad decision path while needing very different executio
 
 Fit should be judged from the real decision and value at stake, useful evidence, the business's capacity to act and the scope MindWP can responsibly own. Foundation does not impose an absolute company-age, size or geography rule.
 
-## Why connected capabilities are intentional
+## Why connected enquiry systems are intentional
 
-A website can own clarity, trust, proof placement and the route to a useful enquiry. It cannot by itself guarantee discovery, response quality, follow-up or reputation outcomes.
+A website can own clarity, trust, proof placement and the route to a useful enquiry. It cannot by itself acknowledge that enquiry, route it, make ownership visible, preserve context, follow it up or keep a reputation current.
 
-Those adjacent capabilities can still affect whether the website does useful work. MindWP may connect them when the diagnosis and scope justify it. Their relationship is intentional rather than compulsory: useful adjacency is not authority to sell every capability as a bundle or imply equal ownership of every customer moment.
+Those responsibilities are a core adjacent capability rather than an accessory. The durable distinction:
+
+> The website helps someone understand, choose and enquire. The connected system helps the business handle that enquiry consistently.
+
+Both sides are intentional and neither is compulsory. An engagement may take the website alone, the connected side alone against a suitable existing website, both together, or an ongoing responsibility for either. Useful adjacency is not authority to sell every capability as a bundle, imply equal ownership of every customer moment, or claim outcomes that depend on the client's own capacity and judgement.
+
+Adjacent capability beyond that path — discovery, reputation and operational visibility among them — may be connected when the diagnosis and scope justify it, and remains subordinate to the two responsibilities above.
 
 ## Truth and proof
 
