@@ -104,16 +104,16 @@ export function HomeOneSystem() {
         <h2 data-home-sequence-item>
           The website leads. <em>Support connects where the journey needs it.</em>
         </h2>
+        {/* The negation sets up the promise; it must never outweigh it. Line
+            breaks are left to `text-wrap: balance` rather than hard <br />s,
+            which produced an orphaned "owned," at the design width. */}
         <p className="home-one-system__crossed" data-home-sequence-item>
-          Not <s>an SEO retainer,</s> plus <s>a website agency,</s>{" "}
-          <br />
-          plus <s>a forms tool,</s> plus <s>a half-set-up CRM,</s> plus{" "}
-          <br />
-          <s>a review platform.</s>
+          Not <s>an SEO retainer,</s> plus <s>a website agency,</s> plus <s>a forms tool,</s> plus{" "}
+          <s>a half-set-up CRM,</s> plus <s>a review platform.</s>
         </p>
         <p className="home-one-system__promise" data-home-sequence-item>
-          One website where being <u>found</u>, <u>answered</u>, <u>owned</u>,
-          <br /> and <u>proven</u> is built in.
+          One website where being <u>found</u>, <u>answered</u>, <u>owned</u> and <u>proven</u> is
+          built in.
         </p>
         <p data-home-sequence-item>
           The website is the foundation. Around it, we connect the support your customers&apos;

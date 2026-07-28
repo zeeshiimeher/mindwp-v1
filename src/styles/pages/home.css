@@ -196,20 +196,76 @@
   fill: var(--surface-navy);
 }
 
-/* Shared ink levels */
-.hero-art__ln-bright {
+/* ---- Copy inside the artwork ----
+   Sizes are viewBox units. The wide composition renders at roughly 1:1 at its
+   maximum width and the narrow one slightly above 1:1, so these land close to
+   their nominal size on screen and stay legible as the frame scales down. */
+
+.hero-art__t-title {
   fill: var(--text-inverse);
-  opacity: 0.88;
+  font: 600 16px/1 var(--font-body);
 }
 
-.hero-art__ln {
+.hero-art__t-meta {
   fill: var(--text-inverse-muted);
-  opacity: 0.4;
+  font: 400 13px/1 var(--font-body);
 }
 
-.hero-art__ln-dim {
+.hero-art__t-quiet {
   fill: var(--text-inverse-muted);
-  opacity: 0.2;
+  font: 500 14px/1 var(--font-body);
+  opacity: 0.5;
+}
+
+.hero-art__t-tag {
+  fill: var(--color-emerald);
+  font: 600 11px/1 var(--font-body);
+  letter-spacing: 0.07em;
+}
+
+.hero-art__t-display {
+  fill: var(--text-inverse);
+  font: 600 23px/1 var(--font-display);
+  letter-spacing: var(--display-md-tracking);
+}
+
+.hero-art__t-body {
+  fill: var(--text-inverse-muted);
+  font: 400 13px/1 var(--font-body);
+}
+
+.hero-art__t-tile {
+  fill: var(--text-inverse);
+  font: 600 13px/1 var(--font-body);
+}
+
+.hero-art__t-sent {
+  fill: var(--text-inverse);
+  font: 600 14px/1 var(--font-body);
+}
+
+.hero-art__svg--narrow .hero-art__t-title {
+  font-size: 13px;
+}
+
+.hero-art__svg--narrow .hero-art__t-meta {
+  font-size: 11px;
+}
+
+.hero-art__svg--narrow .hero-art__t-quiet {
+  font-size: 12px;
+}
+
+.hero-art__svg--narrow .hero-art__t-display {
+  font-size: 18px;
+}
+
+.hero-art__svg--narrow .hero-art__t-tile {
+  font-size: 12px;
+}
+
+.hero-art__svg--narrow .hero-art__t-sent {
+  font-size: 11px;
 }
 
 .hero-art__tick {
@@ -235,12 +291,17 @@
   fill: none;
 }
 
+/* The query is set text now, so it arrives rather than stretches: scaling a
+   word from zero width reads as a smear, not as typing. */
 .hero-art__query {
   fill: var(--text-inverse);
-  opacity: 0.55;
-  transform-box: fill-box;
-  transform-origin: left center;
+  font: 400 15px/1 var(--font-body);
+  opacity: 0.75;
   animation: ha-query var(--ha-loop) var(--ease-out) infinite;
+}
+
+.hero-art__svg--narrow .hero-art__query {
+  font-size: 12px;
 }
 
 .hero-art__result-live {
@@ -298,7 +359,11 @@
 
 .hero-art__cta-label {
   fill: var(--color-navy);
-  opacity: 0.82;
+  font: 600 14px/1 var(--font-body);
+}
+
+.hero-art__svg--narrow .hero-art__cta-label {
+  font-size: 11px;
 }
 
 /* ---- Scene C · Chosen ---- */
@@ -432,12 +497,12 @@
 @keyframes ha-query {
   0%,
   4% {
-    scale: 0 1;
+    opacity: 0;
   }
 
   16%,
   100% {
-    scale: 1 1;
+    opacity: 0.75;
   }
 }
 
@@ -961,20 +1026,32 @@
   background: var(--surface-card);
 }
 
+/* The crossed list is the setup, not the point: it sits at supporting scale so
+   the promise below it is unmistakably the dominant sentence. Five 2px strikes
+   at display scale made the negation the loudest thing in the section. */
 .home-one-system__crossed {
   color: var(--text-secondary);
-  font: 500 clamp(1.3rem, 1.15rem + 0.45vw, 1.625rem) / 1.5 var(--font-display);
+  font: 400 clamp(1.05rem, 0.99rem + 0.28vw, 1.25rem) / 1.55 var(--font-display);
+  margin-inline: auto;
+  max-width: 44ch;
+  text-wrap: balance;
 }
 
+/* Each struck item stays whole: a strike-through broken across two lines reads
+   as a typo rather than a deletion. */
 .home-one-system__crossed s {
-  text-decoration-color: var(--text-secondary);
-  text-decoration-thickness: 2px;
+  text-decoration-color: currentcolor;
+  text-decoration-thickness: 1px;
+  white-space: nowrap;
 }
 
 .home-one-system__promise {
   color: var(--text-primary);
-  font: 600 clamp(1.65rem, 1.3rem + 0.8vw, 2.5rem) / 1.28 var(--font-display);
+  font: 600 clamp(1.75rem, 1.35rem + 0.9vw, 2.75rem) / 1.24 var(--font-display);
   letter-spacing: var(--display-md-tracking);
+  margin-inline: auto;
+  max-width: 22ch;
+  text-wrap: balance;
 }
 
 .home-one-system__promise u {
@@ -2053,10 +2130,45 @@
   fill: var(--color-emerald-deep);
 }
 
-.cpa__url,
-.cpa__nav {
+/* The address bar stays a bar: a drawn domain would name a business that does
+   not exist. Everything the site itself says is set in real copy. */
+.cpa__url {
   fill: var(--text-secondary);
   opacity: 0.45;
+}
+
+.cpa__nav-label {
+  fill: var(--text-secondary);
+  font: 500 10px/1 var(--font-body);
+  opacity: 0.7;
+}
+
+.cpa__navcta-label {
+  fill: var(--color-emerald-deep);
+  font: 650 10px/1 var(--font-body);
+}
+
+.cpa__body {
+  fill: var(--text-secondary);
+  font: 400 11px/1 var(--font-body);
+  opacity: 0.85;
+}
+
+.cpa__card-title {
+  fill: var(--text-primary);
+  font: 650 11px/1 var(--font-body);
+}
+
+.cpa__card-note {
+  fill: var(--text-secondary);
+  font: 400 9.5px/1 var(--font-body);
+  opacity: 0.7;
+}
+
+.cpa__pop-note {
+  fill: var(--text-secondary);
+  font: 400 9.5px/1 var(--font-body);
+  opacity: 0.85;
 }
 
 .cpa__logo {
@@ -2090,16 +2202,6 @@
 .cpa__hill2 {
   fill: #072a33;
   opacity: 0.6;
-}
-
-.cpa__ln {
-  fill: var(--text-secondary);
-  opacity: 0.4;
-}
-
-.cpa__ln-dim {
-  fill: var(--text-secondary);
-  opacity: 0.22;
 }
 
 .cpa__cta {
@@ -2715,15 +2817,23 @@ body:has(.home-closing) .site-footer__bottom {
     max-width: 44rem;
   }
 
+  /* Stacked, the two columns can never share a screen, so the boundary has to
+     do the comparing. space-9 on both sides of the rule put ~150px of dead
+     band between them and read as a section break; matched space-7 centres the
+     rule in its own gap and keeps the second column within reach. */
   .home-context__comparison {
     flex-direction: column;
-    gap: var(--space-9);
+    gap: var(--space-7);
+  }
+
+  .home-context__comparison > article {
+    gap: var(--space-5);
   }
 
   .home-context__comparison > article + article {
     border-inline-start: 0;
     border-top: 1px solid var(--border-navy-hairline);
-    padding-top: var(--space-9);
+    padding-top: var(--space-7);
     padding-inline-start: 0;
   }
 
@@ -2851,32 +2961,43 @@ body:has(.home-closing) .site-footer__bottom {
     margin: 0;
   }
 
+  /* Narrow widths keep the orbit, but every element moves to a corner of the
+     square stage — the four points furthest from the centred core. Holding a
+     marker at the vertical middle-right (its wide-width position) puts it
+     directly over the core and crops "Ready to ask", which is the payoff the
+     whole section resolves to. Markers are capped at 44% so the two along the
+     bottom edge never meet. */
   .home-distance__diagram {
     width: min(100%, 26rem);
   }
 
   .home-distance__marker {
-    width: 9.5rem;
+    width: min(9.5rem, 44%);
     padding: var(--space-3);
   }
 
   .home-distance__marker--one {
+    top: 0;
     right: 0;
   }
 
   .home-distance__marker--two {
+    top: auto;
     right: 0;
+    bottom: 0;
+    translate: none;
   }
 
   .home-distance__marker--three {
     right: auto;
+    bottom: 0;
     left: 0;
   }
 
   .home-distance__arrive {
     top: 0;
-    left: 50%;
-    translate: -50% 0;
+    left: 0;
+    translate: none;
   }
 
   .home-after-enquiry__steps {
@@ -2968,6 +3089,15 @@ body:has(.home-closing) .site-footer__bottom {
     max-width: 22rem;
   }
 
+  /* The primary label cannot fit one line here, and the shared button sets
+     line-height 1 for the single-line case. Balanced over two even lines
+     instead of a long line with "Review" orphaned beneath it. */
+  .home-hero__intro .btn {
+    padding-block: var(--space-3);
+    line-height: 1.3;
+    text-wrap: balance;
+  }
+
   .home-systems__row-num {
     display: none;
   }
@@ -2983,6 +3113,47 @@ body:has(.home-closing) .site-footer__bottom {
 
   .home-systems__row-inner {
     padding: var(--space-5);
+  }
+
+  /* Three columns inside the open row leaves ~90px per step here, which wraps
+     "Caller hears back" over six lines. The mechanism is a sequence either way,
+     so it turns and the rail runs vertically through the nodes — the same
+     arrangement the wide selector already uses. */
+  .home-systems__row-flow-steps {
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+  }
+
+  .home-systems__row-flow-rail,
+  .home-systems__row-flow-progress {
+    top: 1.4rem;
+    right: auto;
+    bottom: 1.4rem;
+    left: calc(1.4rem - 1px);
+    width: 2px;
+    height: auto;
+  }
+
+  .home-systems__row-flow-progress {
+    bottom: auto;
+    height: calc(100% - 2.8rem);
+    transform: scaleY(0);
+    transform-origin: center top;
+  }
+
+  .home-systems__row.is-open .home-systems__row-flow-progress {
+    transform: scaleY(1);
+  }
+
+  .home-systems__row-flow-step {
+    align-items: flex-start;
+    flex-direction: row;
+    gap: var(--space-3);
+    text-align: left;
+  }
+
+  .home-systems__row-flow-node {
+    flex: none;
   }
 
   .home-work__grid {

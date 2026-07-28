@@ -17,6 +17,11 @@ export function HomeAuthority() {
             Local visibility holds when the website, the local listing and the reputation all tell
             the same story.
           </p>
+          {/* Found and Verified describe a state; Maintained is the part that
+              is actually bought. Local SEO Authority is ongoing local discovery
+              and evaluation, and without the third point this section reads as
+              a one-off setup task. Stated as work rather than as a promised
+              position — the service guarantees no ranking. */}
           <dl className="home-authority__points" data-home-stagger>
             <div data-home-stagger-item>
               <dt>Found</dt>
@@ -29,7 +34,18 @@ export function HomeAuthority() {
               <dt>Verified</dt>
               <dd>The listing, the reviews and the pages behind them agree with each other.</dd>
             </div>
+            <div data-home-stagger-item>
+              <dt>Maintained</dt>
+              <dd>
+                Details drift — opening hours, a service you stopped offering, a new page, a fresh
+                review. Keeping the three in agreement is the work, not a setup you do once.
+              </dd>
+            </div>
           </dl>
+
+          <p className="home-artifact-label" data-home-sequence-item>
+            Part of Local SEO Authority
+          </p>
         </div>
 
         <div

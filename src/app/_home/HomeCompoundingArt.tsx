@@ -6,12 +6,37 @@
  * is real HTML, because text in SVG cannot wrap, ignores the visitor's font
  * size and fights every copy change.
  *
- * Drawn as a recognisable site rather than grey placeholder bars: a real
- * header, a real headline, a real action. Over one loop it visibly gains a
- * review row, a local listing, a refinement and its channels — each arriving in
- * turn and staying until the loop restarts. Decorative throughout; the cards
- * next to it carry the meaning as text.
+ * Drawn as a site somebody actually wrote: real navigation, a real headline, a
+ * real action, real service labels. Over one loop it visibly gains a review, a
+ * local listing, a refinement and its channels — each arriving in turn and
+ * staying until the loop restarts. Decorative throughout; the cards next to it
+ * carry the meaning as text.
+ *
+ * Two things stay deliberately abstract, because drawing them would be an
+ * invention rather than an illustration: the logo mark and the address bar.
+ *
+ * Each gain is described by what happened, never by a fabricated result: the
+ * review chip says a review arrived and went on the page, not what anybody
+ * wrote or what the rating became. There is no reviewer, no quote, no count and
+ * no measured outcome anywhere in this artwork.
  */
+
+const NAV = [
+  { label: "Services", x: 186 },
+  { label: "About", x: 240 },
+  { label: "Contact", x: 282 },
+] as const;
+
+const CARDS = [
+  { x: 34, title: "Consultations", note: "Book or rebook" },
+  { x: 162, title: "Ongoing care", note: "After a first visit" },
+  { x: 290, title: "Fees", note: "What it costs" },
+] as const;
+
+const BODY = [
+  "Everything a first visit involves, in plain language,",
+  "with the next step in the same place.",
+] as const;
 
 export function HomeCompoundingArt() {
   return (
@@ -46,10 +71,15 @@ export function HomeCompoundingArt() {
         <g className="cpa__siteheader">
           <circle cx="46" cy="90" r="9" className="cpa__logo" />
           <rect x="60" y="86" width="46" height="8" rx="4" className="cpa__ink" />
-          <rect x="196" y="87" width="34" height="6" rx="3" className="cpa__nav" />
-          <rect x="240" y="87" width="30" height="6" rx="3" className="cpa__nav" />
-          <rect x="280" y="87" width="26" height="6" rx="3" className="cpa__nav" />
+          {NAV.map(({ label, x }) => (
+            <text key={label} x={x} y="94" className="cpa__nav-label">
+              {label}
+            </text>
+          ))}
           <rect x="330" y="80" width="76" height="21" rx="10.5" className="cpa__navcta" />
+          <text x="368" y="94" textAnchor="middle" className="cpa__navcta-label">
+            Get in touch
+          </text>
           <path d="M14 116 H426" className="cpa__hair" />
         </g>
 
@@ -58,7 +88,8 @@ export function HomeCompoundingArt() {
           Care you can plan around.
         </text>
 
-        {/* a real image, not a grey box */}
+        {/* an image slot, deliberately abstract — a drawn photograph would be a
+            claim about a place and the people in it */}
         <g clipPath="url(#cpaPhotoClip)">
           <rect x="34" y="150" width="372" height="132" fill="url(#cpaPhoto)" />
           <rect x="34" y="150" width="372" height="132" fill="url(#cpaSky)" />
@@ -67,8 +98,12 @@ export function HomeCompoundingArt() {
           <path d="M34 274 q70 -20 132 2 t118 -6 q58 -10 122 10 v22 H34 Z" className="cpa__hill2" />
         </g>
 
-        <rect x="34" y="298" width="214" height="9" rx="4.5" className="cpa__ln" />
-        <rect x="34" y="315" width="166" height="9" rx="4.5" className="cpa__ln" />
+        {BODY.map((line, i) => (
+          <text key={line} x="34" y={302 + i * 18} className="cpa__body">
+            {line}
+          </text>
+        ))}
+
         <rect x="34" y="342" width="140" height="34" rx="8" className="cpa__cta" />
         <text x="104" y="364" className="cpa__cta-label" textAnchor="middle">
           Book a consultation
@@ -76,33 +111,39 @@ export function HomeCompoundingArt() {
 
         {/* three services */}
         <g className="cpa__cards">
-          <rect x="34" y="396" width="116" height="60" rx="9" />
-          <rect x="162" y="396" width="116" height="60" rx="9" />
-          <rect x="290" y="396" width="116" height="60" rx="9" />
+          {CARDS.map(({ x }) => (
+            <rect key={x} x={x} y="396" width="116" height="60" rx="9" />
+          ))}
         </g>
-        <rect x="48" y="412" width="52" height="7" rx="3.5" className="cpa__ln" />
-        <rect x="48" y="426" width="76" height="6" rx="3" className="cpa__ln-dim" />
-        <rect x="176" y="412" width="52" height="7" rx="3.5" className="cpa__ln" />
-        <rect x="176" y="426" width="76" height="6" rx="3" className="cpa__ln-dim" />
-        <rect x="304" y="412" width="52" height="7" rx="3.5" className="cpa__ln" />
-        <rect x="304" y="426" width="76" height="6" rx="3" className="cpa__ln-dim" />
+        {CARDS.map(({ x, title, note }) => (
+          <g key={title}>
+            <text x={x + 14} y="420" className="cpa__card-title">
+              {title}
+            </text>
+            <text x={x + 14} y="436" className="cpa__card-note">
+              {note}
+            </text>
+          </g>
+        ))}
 
         {/* ══ what it gains, arriving one at a time and staying ══ */}
 
-        {/* 1 · a review */}
+        {/* 1 · a review arrives and goes on the page — what happened, not what it said */}
         <g className="cpa__gain" style={{ "--s": 0 } as React.CSSProperties}>
           <rect x="238" y="176" width="180" height="56" rx="10" className="cpa__pop" />
           {[0, 1, 2, 3, 4].map((i) => (
             <path
               key={i}
               d="M0 -4.6 L1.4 -1.4 L4.8 -1.1 L2.2 1.2 L3 4.6 L0 2.8 L-3 4.6 L-2.2 1.2 L-4.8 -1.1 L-1.4 -1.4 Z"
-              transform={`translate(${256 + i * 13} 198)`}
+              transform={`translate(${256 + i * 13} 197)`}
               className="cpa__star"
             />
           ))}
-          <rect x="252" y="212" width="120" height="6" rx="3" className="cpa__ln-dim" />
-          <text x="330" y="202" className="cpa__pop-label">
+          <text x="330" y="201" className="cpa__pop-label">
             New review
+          </text>
+          <text x="256" y="219" className="cpa__pop-note">
+            Added to your page
           </text>
         </g>
 
@@ -118,7 +159,9 @@ export function HomeCompoundingArt() {
           <text x="64" y="219" className="cpa__pop-label">
             Found nearby
           </text>
-          <rect x="64" y="226" width="84" height="6" rx="3" className="cpa__ln-dim" />
+          <text x="64" y="234" className="cpa__pop-note">
+            Matches the site
+          </text>
         </g>
 
         {/* 3 · a refinement kept */}
@@ -129,7 +172,9 @@ export function HomeCompoundingArt() {
           <text x="294" y="350" className="cpa__pop-label">
             Improved
           </text>
-          <rect x="294" y="357" width="98" height="6" rx="3" className="cpa__ln-dim" />
+          <text x="294" y="364" className="cpa__pop-note">
+            One more fix, kept
+          </text>
         </g>
 
         {/* 4 · every channel arriving at a stronger destination */}

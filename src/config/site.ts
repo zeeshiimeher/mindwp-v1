@@ -8,8 +8,13 @@ export const SITE = {
   url: rawUrl.replace(/\/$/, ""),
   /** Mirrors the live Homepage hero headline (docs/STRATEGY.md, Homepage positioning consequence). */
   tagline: "Smart websites for being found, understood and chosen.",
+  /**
+   * Names the audience the page itself leads with. Deliberately omits any
+   * company-age qualifier: docs/STRATEGY.md settles this as "established or
+   * newer", which the Right fit section states in full.
+   */
   description:
-    "Smart websites for established service businesses and expert-led businesses — the site and the handling around every enquiry, designed together.",
+    "Smart websites for independent clinics and specialist service businesses — the site and the handling around every enquiry, designed together.",
   /** Footer positioning line. Claims nothing beyond the approved scope. */
   footerLine:
     "Website strategy, design and implementation for service businesses where people choose carefully.",

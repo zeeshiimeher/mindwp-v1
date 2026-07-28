@@ -6,12 +6,25 @@
  * in the headline:
  *
  *   Found      a nearby search resolves onto this business
- *   Understood the page assembles the answer and the proof
+ *   Understood the page answers what the visitor came to settle
  *   Chosen     the visitor acts, and the enquiry lands with an owner
+ *
+ * Every scene is set in real copy rather than grey placeholder bars. Placeholder
+ * bars made the frame a category — "a website" — which proves nothing; the
+ * sentences below make it an instance a visitor can read. Wording is kept
+ * sector-neutral (`consultation`, `who you'd see`) because the hero is the most
+ * shared surface on the site and has to sit as credibly in front of a law
+ * boutique as a clinic. Copy is declared once and rendered into both
+ * compositions.
+ *
+ * Two boundaries this artwork must not cross: it states that an enquiry reaches
+ * a named owner but never when a reply arrives (no invented speed promise), and
+ * it names no person, client or measured result.
  *
  * Authored as SVG and driven by one shared CSS timeline, so there is no
  * animation dependency and no client boundary. Wide and narrow are separate
- * compositions rather than one reflowed layout.
+ * compositions rather than one reflowed layout. The copy is short, fixed-length
+ * labelling that never needs to wrap, which is why it can stay in SVG text.
  *
  * Reduced motion resolves to a complete still: the search scene hides and the
  * page, its action and the sent confirmation all remain, with every step in
@@ -20,9 +33,28 @@
  */
 
 const ART_LABEL =
-  "A website working through one visitor's decision: found in a nearby search, understood on the page, then chosen by sending an enquiry that reaches a named owner";
+  "A website working through one visitor's decision: found in a nearby search, understood on a page that answers what is involved, what it costs and who they would see, then chosen by sending an enquiry that reaches a named owner";
 
 const STEPS = ["Found", "Understood", "Chosen"] as const;
+
+/** Written once, set twice. */
+const COPY = {
+  query: "consultation near me",
+  resultTitle: "Your practice",
+  resultMeta: "What's involved, and how to start.",
+  resultTag: "YOUR LISTING",
+  otherResults: ["Another provider", "A third result"],
+  pageHeading: ["What's involved,", "start to finish."],
+  pageBody: [
+    "The full process, what it costs, and who you would be",
+    "working with — set out before anyone gets in touch.",
+  ],
+  answers: ["What's involved", "What it costs", "Who you'd see"],
+  cta: "Request a consultation",
+  sentTitle: "Enquiry sent",
+  sentMeta: "It has a named owner",
+  sentMetaShort: "Named owner",
+} as const;
 
 export function HomeHeroArt() {
   return (
@@ -66,61 +98,88 @@ export function HomeHeroArt() {
         <g clipPath="url(#haClip)">
           {/* ---- Scene A · Found ---- */}
           <g className="hero-art__scene hero-art__scene--a">
-            <rect x="74" y="118" width="472" height="42" rx="21" className="hero-art__searchbar" />
-            <g className="hero-art__searchglyph" transform="translate(104 139)">
+            <rect x="74" y="112" width="472" height="40" rx="20" className="hero-art__searchbar" />
+            <g className="hero-art__searchglyph" transform="translate(102 132)">
               <circle cx="0" cy="0" r="7" />
               <path d="M5.2 5.2 L9.5 9.5" />
             </g>
-            <rect x="126" y="133" width="196" height="10" rx="5" className="hero-art__query" />
+            <text x="124" y="137" className="hero-art__query">
+              {COPY.query}
+            </text>
 
             {/* the result that is this business */}
-            <rect x="74" y="186" width="472" height="76" rx="12" className="hero-art__result-live" />
-            <circle cx="112" cy="224" r="16" className="hero-art__pin-badge" />
+            <rect x="74" y="172" width="472" height="76" rx="12" className="hero-art__result-live" />
+            <circle cx="112" cy="210" r="16" className="hero-art__pin-badge" />
             <path
-              d="M112 216 c5 0 8 3.6 8 8 0 5.6 -6 10.4 -7.4 11.5 a1 1 0 0 1 -1.2 0 c-1.4 -1.1 -7.4 -5.9 -7.4 -11.5 0 -4.4 3 -8 8 -8 z"
+              d="M112 202 c5 0 8 3.6 8 8 0 5.6 -6 10.4 -7.4 11.5 a1 1 0 0 1 -1.2 0 c-1.4 -1.1 -7.4 -5.9 -7.4 -11.5 0 -4.4 3 -8 8 -8 z"
               className="hero-art__pin"
             />
-            <circle cx="112" cy="224" r="2.6" className="hero-art__pin-dot" />
-            <rect x="142" y="208" width="150" height="10" rx="5" className="hero-art__ln-bright" />
-            <rect x="142" y="228" width="228" height="8" rx="4" className="hero-art__ln" />
-            <rect x="452" y="216" width="70" height="16" rx="8" className="hero-art__tag" />
+            <circle cx="112" cy="210" r="2.6" className="hero-art__pin-dot" />
+            <text x="142" y="205" className="hero-art__t-title">
+              {COPY.resultTitle}
+            </text>
+            <text x="142" y="228" className="hero-art__t-meta">
+              {COPY.resultMeta}
+            </text>
+            <rect x="428" y="198" width="100" height="24" rx="12" className="hero-art__tag" />
+            <text x="478" y="214" textAnchor="middle" className="hero-art__t-tag">
+              {COPY.resultTag}
+            </text>
 
-            {/* other results, quieter */}
-            <rect x="74" y="278" width="472" height="60" rx="12" className="hero-art__result" />
-            <rect x="98" y="298" width="128" height="8" rx="4" className="hero-art__ln-dim" />
-            <rect x="98" y="314" width="196" height="7" rx="3.5" className="hero-art__ln-dim" />
-            <rect x="74" y="352" width="472" height="60" rx="12" className="hero-art__result" />
-            <rect x="98" y="372" width="112" height="8" rx="4" className="hero-art__ln-dim" />
-            <rect x="98" y="388" width="176" height="7" rx="3.5" className="hero-art__ln-dim" />
-          </g>
-
-          {/* ---- Scene B · Understood (also the still state) ---- */}
-          <g className="hero-art__scene hero-art__scene--b">
-            <rect x="74" y="122" width="268" height="16" rx="8" className="hero-art__ln-bright" />
-            <rect x="74" y="150" width="196" height="16" rx="8" className="hero-art__ln-bright" />
-            <rect x="74" y="190" width="330" height="9" rx="4.5" className="hero-art__ln" />
-            <rect x="74" y="208" width="330" height="9" rx="4.5" className="hero-art__ln" />
-            <rect x="74" y="226" width="238" height="9" rx="4.5" className="hero-art__ln" />
-
-            {[0, 1, 2].map((i) => (
-              <g
-                key={i}
-                className="hero-art__tile"
-                style={{ "--i": i } as React.CSSProperties}
-                transform={`translate(${i * 116} 0)`}
-              >
-                <rect x="74" y="262" width="100" height="72" rx="10" />
-                <circle cx="94" cy="284" r="8" className="hero-art__tile-mark" />
-                <path d="M90.4 284 l2.6 2.6 L98 281.6" className="hero-art__tick" />
-                <rect x="90" y="302" width="52" height="7" rx="3.5" className="hero-art__ln" />
-                <rect x="90" y="316" width="68" height="6" rx="3" className="hero-art__ln-dim" />
+            {/* the alternatives, quieter — named, not judged */}
+            {COPY.otherResults.map((label, i) => (
+              <g key={label}>
+                <rect
+                  x="74"
+                  y={264 + i * 68}
+                  width="472"
+                  height="56"
+                  rx="12"
+                  className="hero-art__result"
+                />
+                <text x="98" y={297 + i * 68} className="hero-art__t-quiet">
+                  {label}
+                </text>
               </g>
             ))}
           </g>
 
-          {/* ---- The action, always present ---- */}
-          <rect x="74" y="360" width="196" height="44" rx="10" className="hero-art__cta" />
-          <rect x="98" y="377" width="148" height="10" rx="5" className="hero-art__cta-label" />
+          {/* ---- Scene B · Understood (also the still state) ---- */}
+          <g className="hero-art__scene hero-art__scene--b">
+            {COPY.pageHeading.map((line, i) => (
+              <text key={line} x="74" y={136 + i * 30} className="hero-art__t-display">
+                {line}
+              </text>
+            ))}
+            {COPY.pageBody.map((line, i) => (
+              <text key={line} x="74" y={198 + i * 20} className="hero-art__t-body">
+                {line}
+              </text>
+            ))}
+
+            {COPY.answers.map((answer, i) => {
+              const x = 74 + i * 158;
+              return (
+                <g key={answer} className="hero-art__tile" style={{ "--i": i } as React.CSSProperties}>
+                  <rect x={x} y="248" width="148" height="76" rx="10" />
+                  <circle cx={x + 24} cy="274" r="9" className="hero-art__tile-mark" />
+                  <path
+                    d={`M${x + 20} 274 l3 3 L${x + 29} 270.4`}
+                    className="hero-art__tick"
+                  />
+                  <text x={x + 16} y="308" className="hero-art__t-tile">
+                    {answer}
+                  </text>
+                </g>
+              );
+            })}
+          </g>
+
+          {/* ---- The action ---- */}
+          <rect x="74" y="360" width="204" height="44" rx="10" className="hero-art__cta" />
+          <text x="176" y="388" textAnchor="middle" className="hero-art__cta-label">
+            {COPY.cta}
+          </text>
 
           {/* ---- Scene C · Chosen ---- */}
           <g className="hero-art__scene hero-art__scene--c">
@@ -132,10 +191,14 @@ export function HomeHeroArt() {
             </g>
             <g className="hero-art__receipt">
               <rect x="306" y="352" width="240" height="60" rx="10" />
-              <circle cx="336" cy="382" r="12" className="hero-art__sent-mark" />
+              <circle cx="336" cy="382" r="13" className="hero-art__sent-mark" />
               <path d="M330.6 382 l3.6 3.6 L342 377.6" className="hero-art__tick" />
-              <rect x="360" y="371" width="96" height="8" rx="4" className="hero-art__ln-bright" />
-              <rect x="360" y="386" width="150" height="7" rx="3.5" className="hero-art__ln-dim" />
+              <text x="362" y="378" className="hero-art__t-sent">
+                {COPY.sentTitle}
+              </text>
+              <text x="362" y="397" className="hero-art__t-meta">
+                {COPY.sentMeta}
+              </text>
             </g>
           </g>
         </g>
@@ -158,7 +221,7 @@ export function HomeHeroArt() {
       {/* ---------- Narrow ---------- */}
       <svg
         className="hero-art__svg hero-art__svg--narrow"
-        viewBox="0 0 360 340"
+        viewBox="0 0 360 380"
         fill="none"
         aria-hidden="true"
         focusable="false"
@@ -169,7 +232,7 @@ export function HomeHeroArt() {
             <stop offset="100%" stopColor="var(--surface-navy-panel)" />
           </linearGradient>
           <clipPath id="haClipN">
-            <rect x="16" y="60" width="328" height="196" />
+            <rect x="16" y="60" width="328" height="236" />
           </clipPath>
         </defs>
 
@@ -177,7 +240,7 @@ export function HomeHeroArt() {
           x="16"
           y="16"
           width="328"
-          height="240"
+          height="280"
           rx="14"
           fill="url(#haFrameN)"
           className="hero-art__frame"
@@ -190,51 +253,62 @@ export function HomeHeroArt() {
 
         <g clipPath="url(#haClipN)">
           <g className="hero-art__scene hero-art__scene--a">
-            <rect x="40" y="80" width="280" height="34" rx="17" className="hero-art__searchbar" />
-            <g className="hero-art__searchglyph" transform="translate(64 97)">
+            <rect x="40" y="78" width="280" height="32" rx="16" className="hero-art__searchbar" />
+            <g className="hero-art__searchglyph" transform="translate(62 94)">
               <circle cx="0" cy="0" r="6" />
               <path d="M4.4 4.4 L8 8" />
             </g>
-            <rect x="82" y="92" width="120" height="9" rx="4.5" className="hero-art__query" />
+            <text x="80" y="99" className="hero-art__query">
+              {COPY.query}
+            </text>
 
-            <rect x="40" y="130" width="280" height="62" rx="10" className="hero-art__result-live" />
-            <circle cx="70" cy="161" r="14" className="hero-art__pin-badge" />
+            <rect x="40" y="124" width="280" height="60" rx="10" className="hero-art__result-live" />
+            <circle cx="68" cy="154" r="13" className="hero-art__pin-badge" />
             <path
-              d="M70 154 c4.4 0 7 3.2 7 7 0 4.9 -5.2 9.1 -6.4 10 a0.9 0.9 0 0 1 -1.1 0 c-1.3 -0.9 -6.5 -5.1 -6.5 -10 0 -3.8 2.6 -7 7 -7 z"
+              d="M68 147 c4.4 0 7 3.2 7 7 0 4.9 -5.2 9.1 -6.4 10 a0.9 0.9 0 0 1 -1.1 0 c-1.3 -0.9 -6.5 -5.1 -6.5 -10 0 -3.8 2.6 -7 7 -7 z"
               className="hero-art__pin"
             />
-            <circle cx="70" cy="161" r="2.3" className="hero-art__pin-dot" />
-            <rect x="96" y="148" width="104" height="9" rx="4.5" className="hero-art__ln-bright" />
-            <rect x="96" y="166" width="146" height="7" rx="3.5" className="hero-art__ln" />
+            <circle cx="68" cy="154" r="2.3" className="hero-art__pin-dot" />
+            <text x="92" y="150" className="hero-art__t-title">
+              {COPY.resultTitle}
+            </text>
+            <text x="92" y="169" className="hero-art__t-meta">
+              {COPY.resultMeta}
+            </text>
 
-            <rect x="40" y="204" width="280" height="46" rx="10" className="hero-art__result" />
-            <rect x="62" y="220" width="96" height="7" rx="3.5" className="hero-art__ln-dim" />
-            <rect x="62" y="234" width="140" height="6" rx="3" className="hero-art__ln-dim" />
+            <rect x="40" y="198" width="280" height="44" rx="10" className="hero-art__result" />
+            <text x="62" y="225" className="hero-art__t-quiet">
+              {COPY.otherResults[0]}
+            </text>
           </g>
 
           <g className="hero-art__scene hero-art__scene--b">
-            <rect x="40" y="84" width="188" height="13" rx="6.5" className="hero-art__ln-bright" />
-            <rect x="40" y="106" width="132" height="13" rx="6.5" className="hero-art__ln-bright" />
-            <rect x="40" y="136" width="236" height="8" rx="4" className="hero-art__ln" />
-            <rect x="40" y="152" width="196" height="8" rx="4" className="hero-art__ln" />
-
-            {[0, 1, 2].map((i) => (
-              <g
-                key={i}
-                className="hero-art__tile"
-                style={{ "--i": i } as React.CSSProperties}
-                transform={`translate(${i * 96} 0)`}
-              >
-                <rect x="40" y="176" width="84" height="34" rx="8" />
-                <circle cx="58" cy="193" r="7" className="hero-art__tile-mark" />
-                <path d="M54.8 193 l2.3 2.3 L61.6 191" className="hero-art__tick" />
-                <rect x="74" y="189" width="36" height="6" rx="3" className="hero-art__ln" />
-              </g>
+            {COPY.pageHeading.map((line, i) => (
+              <text key={line} x="40" y={96 + i * 24} className="hero-art__t-display">
+                {line}
+              </text>
             ))}
+
+            {/* Rows rather than tiles: three boxes across 280 units would set
+                every label at a width its own words cannot fit. */}
+            {COPY.answers.map((answer, i) => {
+              const y = 154 + i * 26;
+              return (
+                <g key={answer} className="hero-art__tile" style={{ "--i": i } as React.CSSProperties}>
+                  <circle cx="50" cy={y - 5} r="8" className="hero-art__tile-mark" />
+                  <path d={`M46 ${y - 5} l3 3 L55 ${y - 9.5}`} className="hero-art__tick" />
+                  <text x="68" y={y} className="hero-art__t-tile">
+                    {answer}
+                  </text>
+                </g>
+              );
+            })}
           </g>
 
-          <rect x="40" y="222" width="148" height="34" rx="8" className="hero-art__cta" />
-          <rect x="58" y="235" width="112" height="8" rx="4" className="hero-art__cta-label" />
+          <rect x="40" y="230" width="150" height="34" rx="8" className="hero-art__cta" />
+          <text x="115" y="252" textAnchor="middle" className="hero-art__cta-label">
+            {COPY.cta}
+          </text>
 
           <g className="hero-art__scene hero-art__scene--c">
             <g className="hero-art__cursor">
@@ -244,22 +318,26 @@ export function HomeHeroArt() {
               />
             </g>
             <g className="hero-art__receipt">
-              <rect x="204" y="216" width="128" height="44" rx="9" />
-              <circle cx="228" cy="238" r="10" className="hero-art__sent-mark" />
-              <path d="M223.6 238 l3 3 L234 234.4" className="hero-art__tick" />
-              <rect x="248" y="229" width="60" height="7" rx="3.5" className="hero-art__ln-bright" />
-              <rect x="248" y="242" width="74" height="6" rx="3" className="hero-art__ln-dim" />
+              <rect x="200" y="230" width="120" height="34" rx="8" />
+              <circle cx="218" cy="247" r="9" className="hero-art__sent-mark" />
+              <path d="M214 247 l3 3 L223 243" className="hero-art__tick" />
+              <text x="234" y="245" className="hero-art__t-sent">
+                {COPY.sentTitle}
+              </text>
+              <text x="234" y="258" className="hero-art__t-meta">
+                {COPY.sentMetaShort}
+              </text>
             </g>
           </g>
         </g>
 
-        <path d="M40 292 H264" className="hero-art__rail" />
+        <path d="M40 330 H264" className="hero-art__rail" />
         {STEPS.map((step, i) => {
           const x = 40 + i * 112;
           return (
             <g key={step} className="hero-art__step" style={{ "--i": i } as React.CSSProperties}>
-              <circle cx={x} cy="292" r="6" className="hero-art__step-dot" />
-              <text x={x} y="320" className="hero-art__step-label" textAnchor="start">
+              <circle cx={x} cy="330" r="6" className="hero-art__step-dot" />
+              <text x={x} y="358" className="hero-art__step-label" textAnchor="start">
                 {step}
               </text>
             </g>

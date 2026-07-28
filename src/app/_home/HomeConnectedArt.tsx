@@ -215,7 +215,17 @@ export function HomeConnectedArt() {
           className="cx__link cx__link--return"
           markerEnd="url(#cxArrowN)"
         />
-        <text x="24" y="352" className="cx__return-label" textAnchor="middle">
+        {/* Set along the return channel rather than across it. Centred at x=24
+            the label ran off the left of the viewBox and sat on its own
+            connector; rotated, it occupies the gutter between the path (x=14)
+            and the cards (x=58). */}
+        <text
+          x="36"
+          y="350"
+          className="cx__return-label"
+          textAnchor="middle"
+          transform="rotate(-90 36 350)"
+        >
           proof returns
         </text>
       </svg>
