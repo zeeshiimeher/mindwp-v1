@@ -1,6 +1,6 @@
 ---
 name: mindwp-page-build
-description: Use when implementing an approved MindWP page or section design in source — building the components and page CSS, integrating responsive behaviour and motion, and refining from rendered evidence. Expects a design specification from mindwp-page-design or an explicit user decision; do not use it to decide the design.
+description: Use when implementing an approved MindWP page or section design in source — building the components and page CSS, preserving the approved spatial envelope, integrating responsive behaviour and motion, and verifying the result in rendered evidence. Expects an approved composition from mindwp-page-design or an explicit user decision; do not use it to decide the design.
 ---
 
 # MindWP page build
@@ -11,11 +11,17 @@ Read `docs/ENGINEERING.md` for repository source, CSS, accessibility and validat
 
 ## Implement what was approved
 
-The approved specification owns payload type, hierarchy, any focal moment it names, section weight, the relationship each section embodies, and surface role.
+The approved composition owns the page's spatial thesis, its environments and width behaviour, the hero, the dominant object, the eye path, weight, proof placement, reading paths, and any interaction or meaning-bearing motion it names. Section development owns payload type, hierarchy, the relationship each section embodies, and surface role.
 
-Solve technical geometry freely: grid tracks, spacing, overflow, stacking, state handling, motion lifecycle, breakpoints.
+**Preserve the spatial envelope.** Where the composition says a moment is wide, full-bleed, breaking its container or continuous across environments, build that. Quietly returning it to the default container is the single easiest way to deliver a different, flatter page while the markup looks correct — the container primitives make the narrow path free and every other path work.
 
-**Do not silently substitute.** If a payload proves impractical, report the conflict and return to design. Replacing a named object with an easier text layout, dropping a named focal moment, or downgrading a focal section to fit the available time is a design change made without a design decision — that is the failure this split exists to prevent.
+If the user asks for build only, build only. Do not reopen strategy, rewrite supplied copy, or improve the composition on the way past.
+
+Solve technical geometry freely: grid tracks, spacing, overflow, stacking, state handling, motion lifecycle, breakpoints. Foundational reveal and feedback motion is inherited from the existing shared implementation — extend it rather than inventing a parallel convention.
+
+**Fill technical silences; return design silences.** An unstated track, gap, breakpoint, easing or cleanup detail is yours. An unstated payload, hierarchy, relationship, proof, claim or spatial property is not — those go back to design or to the owner. An unstated width is a design silence, not a technical one, because the default is not neutral: it decides the question identically every time.
+
+**Do not silently substitute.** If a payload proves impractical, report the conflict and return to design. Replacing a named object with an easier text layout, dropping a named focal moment, collapsing a wide moment into the container, or downgrading a focal section to fit the available time is a design change made without a design decision — that is the failure this split exists to prevent.
 
 Where implementation reveals that the design itself is wrong, say so with the evidence. That is useful, and it is not the same as quietly building something else.
 
@@ -27,7 +33,7 @@ Still required in a draft: semantic colour, spacing, radius, shadow and motion t
 
 Can wait: exact CSS-ownership specificity, `minmax()` and grid-track precision, full hover coverage, exhaustive responsive tightening, replacing absolute-positioning shortcuts with flex or grid, complete interaction-state coverage, and the `pnpm check` / `build` / `test` gate.
 
-A draft is not finished work. After the user approves and merges one, run `mindwp-frontend-quality`'s Finalize mode.
+A draft is not finished work. Once the user has approved and merged one, `mindwp-frontend-quality`'s Finalize mode is available for it — recommend it, and do not treat it as a required step.
 
 **Merge-ready build** — implementing what the user has already decided on. Follow `docs/ENGINEERING.md` in full.
 
@@ -54,6 +60,8 @@ A section's named payload is the work. When implementation time runs short, the 
 The specification's `Built by` row is a build instruction, not a note. If it says the payload has an interior, give it a fill and something of a different value inside it. If it says something breaks its container, build the breakout. Delivering the section without those moves delivers a different, flatter section.
 
 **Verify in the render that the relationship survived, move by move.** Markup that satisfies a named move is not the same as a render that shows it. A negative margin that breaks no visible edge, a fill within a step of its own ground, a "dominant" object that is not the largest thing in its band — each of these builds the instruction and loses the meaning. Before reporting, take each named move and each stated relationship, find it in the capture, and say where it is. Anything you cannot point at in the render did not get built, whatever the source says.
+
+Verify the composition's page-scale claims the same way, and in the capture rather than in the source: the stated width behaviour, every breakout, the environments actually reading as distinct, the named dominant object actually dominating, and the eye path arriving where it was supposed to. A page whose composition promised a wide moment and renders as a uniform centred column has lost its design, however faithful each section is.
 
 Five failures to check for in your own output before reporting:
 
@@ -85,4 +93,4 @@ Recompose a weak section rather than rescuing it with spacing, borders, colour, 
 
 Changed source, rendered evidence, checks run, unresolved material, remaining risk, and any point where the implementation diverged from the approved design and why. Do not claim publication or a business decision the work did not establish.
 
-Hand the finished page to `mindwp-design-eye` before calling it done.
+`mindwp-design-eye` gives the visual verdict, which is a different judgement from implementation success. Recommend it; do not require it. Implementation being correct is not the same as the page being good, and this skill only establishes the first.

@@ -151,6 +151,12 @@ Exact breakpoints, grids, and responsive transformations remain local unless ado
 
 Implement every state that the real interaction exposes: hover, focus-visible, active, open, selected, keyboard, touch, loading, success, and error as applicable. Keep hover enhancement subordinate to a complete non-hover state, and do not animate non-interactive material as though it were actionable.
 
+[DESIGN.md](./DESIGN.md) distinguishes foundational, meaning-bearing and atmospheric motion, and owns each one's visual purpose and character. This document owns their implementation.
+
+**Foundational site motion is owned here and inherited.** Page entry, section reveal, control and navigation feedback, and ordinary state transitions belong to the existing shared implementation — its trigger, timing, easing, stagger, cleanup and reduced-motion branch. A page extends that convention rather than inventing a parallel one, and an execution skill applies it rather than defining a competing version.
+
+This is an available shared behaviour, not a requirement: no section must animate, no single reveal is mandatory for every section, and a page may depart from the convention for a stated reason. Meaning-bearing motion is a design decision and arrives with the approved composition; implement its mechanism here without re-deciding its purpose.
+
 Design owns the communication purpose of interaction and motion. Engineering owns the mechanism, state correctness, lifecycle, accessibility, and performance:
 
 - use CSS transitions for simple local feedback;

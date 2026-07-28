@@ -92,7 +92,17 @@ Composition exists to make a relationship visible. Before deciding how a section
 
 **A section introduction is one part of the section design.** The `eyebrow → heading → supporting paragraph` opening is valid and may recur where it serves the material; a section may equally open on an object, a statement, a situation or a visible state. What matters is that the material after and around the introduction carries the section's particular relationship, rather than every section resolving to `introduction → explanation → small object → next band`.
 
-Familiar structures are used confidently when the information genuinely has that shape. Distinction comes from hierarchy, relationship, scale and craft within them, and repetition is judged by whether different meanings are receiving the same inner treatment — not by counting components.
+Familiar structures are used confidently when the information genuinely has that shape. Distinction comes from hierarchy, relationship, scale and craft within them.
+
+**The spatial envelope is a design decision.** How a page and its objects relate to the viewport — contained, narrow, wide, full-bleed, overlapping, or continuous across more than one environment — is decided by the meaning, not inherited from a container. A container is an alignment foundation, not the maximum visual extent of every object, and material may exceed it where the relationship needs the room.
+
+This is a decision in both directions. A deliberately narrow page is a legitimate answer, and so is a page that never leaves its container. What is not a decision is an unstated envelope, because the default is not neutral — it settles the question on the design's behalf, identically, every time.
+
+There is no width quota and no requirement that a page break out of anything.
+
+**Repetition is judged by the reader's activity, not by component type.** Two sections repeat when they ask the visitor to do the same thing — however differently they are drawn. A grid, a radial diagram, a row of panels, a tab set and an accordion can all ask for exactly one behaviour: read a short label, read a short description, repeat. A page built from five such devices looks varied and reads as one section five times.
+
+So judge repetition by what the eye does and what the reader performs — read one long thing, compare two, scan labelled items, inspect an artefact, follow a sequence, weigh a choice, operate something. Shared surfaces, recurring introduction grammar, cards and grids are house language and are correct; different meanings receiving the same inner treatment and the same reading behaviour are not.
 
 **Develop content and composition together.** Compose against credible real content early, so the composition is shaped by what it actually has to carry. Proof, metrics, testimonials, client results and operational detail are never invented to complete a visual idea.
 
@@ -134,6 +144,8 @@ Photography may support human accountability, real working context, atmosphere, 
 
 A page is read as one thing before it is read as sections. Its progression, its changes of argument, its proof and its intended action should be perceptible while visual weight is distributed unevenly across it.
 
+**The hero is page-specific.** It carries the page's central argument and the visitor's first decision, so it is composed from that page's material rather than assembled from a construction that worked elsewhere. Headline on one side with a constructed object on the other is one available answer among many, and its familiarity is not a reason to reach for it. A hero may be carried by type alone, by one real artefact at a size worth looking at, by a single dominant object, or by very little — whatever the page's own argument needs. When every page opens the same way, the site announces itself identically however different the pages beneath are.
+
 **Rhythm.** Weight varies with importance. A page where every section runs to the same depth and density has told the reader nothing about what matters, whatever the copy says.
 
 **Density is a tool, not a failure.** Where a section has real, specific substance to deliver, packing it in can be the right decision — a dense passage a reader can work through is often more convincing than the same material spread thin. Sparse is not automatically refined. Choose density where the material rewards attention, and space where the reader needs to slow down.
@@ -147,6 +159,16 @@ A page is read as one thing before it is read as sections. Its progression, its 
 ## 7 · Interaction and motion
 
 Interaction and motion are part of the communication, not polish applied afterwards. They serve orientation, state, causality, connection, emphasis and spatial continuity.
+
+### Three kinds of motion
+
+**Foundational site motion** — page entry, section reveal, control and navigation feedback, ordinary state transitions, small staggered entrances. This is shared site character and is inherited. It is not rediscovered per page, does not belong in a page plan or a specification, and a page departs from it only for a stated reason. Engineering owns its mechanism and lifecycle.
+
+**Meaning-bearing motion** — movement that explains something a static composition cannot: a state changing, a sequence advancing, a cause producing an effect, responsibility moving from one place to another, a comparison resolving. This is a design decision and it is **discovered while composition is still open**. Added to a page whose composition is already settled, it decorates a static layout rather than explaining anything.
+
+**Atmospheric motion** — movement that adds life or craft and carries no essential meaning. Optional, subordinate to the composition, and never a substitute for it.
+
+No page is required to carry meaning-bearing or atmospheric motion, and the honest answer for many pages is neither.
 
 - Ordinary content is immediately readable.
 - Interaction provides a useful state or a real choice — something the reader learns by doing that they could not learn by looking.
@@ -171,6 +193,8 @@ What to look for, as qualities rather than a checklist:
 - **Earned emphasis.** Does each section given focal scale hold a payload that deserves it?
 - **Quiet by decision.** Where a section is calm, does that read as a judgement about the material?
 - **Rhythm and momentum.** Does depth vary with importance, and does each screen give a reason to continue?
+- **Reading paths.** How many distinct things is the visitor actually asked to do? Count the behaviours, not the devices — a page of varied components asking for one behaviour is one section repeated.
+- **Space.** Does the page's relationship to the viewport read as chosen? Where it is contained throughout, is that a judgement about the material rather than an envelope nobody set?
 - **Craft.** Is each object visible against its own ground, uncropped at its intended width, and resolved at full size?
 - **Truth.** Does everything shown represent something real, with constructed material identifiable as such?
 - **Narrow width.** Does the composition recompose, keeping its relationships intact?

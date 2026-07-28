@@ -9,7 +9,7 @@ This directory is MindWP's reusable project memory. Open only the authorities th
 | [FOUNDATION.md](./FOUNDATION.md)       | Durable identity, buyer principles, website-centred rationale, truth, proof, privacy and professional boundaries                            |
 | [STRATEGY.md](./STRATEGY.md)           | Current commercial direction, offers, service responsibilities, qualification, conversion direction, page roles and open decisions          |
 | [WRITING.md](./WRITING.md)             | Voice, audience register, claims discipline and responsible public-language practice                                                        |
-| [PAGE-PLANNING.md](./PAGE-PLANNING.md) | Page research, jobs, intent, narrative, meaning, proof, boundaries and the compact page-brief contract                                      |
+| [PAGE-PLANNING.md](./PAGE-PLANNING.md) | The page's commercial responsibility, buyer decision, sibling boundaries, matters, progression, reader demands, proof reality, weight and the handoff into design |
 | [DESIGN.md](./DESIGN.md)               | Shared visual grammar, meaning-bearing composition, page experience, responsive intent, motion intent and the criteria for judging a render |
 | [ENGINEERING.md](./ENGINEERING.md)     | Repository source, CSS, responsive, accessibility, interaction, motion mechanism, performance, capture commands and validation              |
 
@@ -25,6 +25,32 @@ The documents have separate domains. When two statements appear to conflict, use
 6. Archived or historical material, including anything recovered from git history, is a non-authoritative preservation source. Extract from it only when reconciled with current authority.
 
 Public routes, navigation and publication state come from active source and explicit release decisions. A document entry does not make a route live.
+
+## How work enters
+
+Page work does not begin at a fixed point. It begins wherever the supplied material leaves off, and two principles govern that:
+
+> **Enter at the latest stage the supplied material reaches.** Identify a material earlier-stage gap, but do not automatically rerun completed work.
+
+> **Any stage may return a decision upward with evidence. No stage may silently replace a decision owned elsewhere.**
+
+Recognise the stage from what arrives, not from the words used to ask. Say in one line which stage you are entering at, then continue — do not ask the user to classify their own request or to adopt particular terminology.
+
+| What arrives | Already settled | Enter at |
+| ------------ | --------------- | -------- |
+| A route name, a business goal or a rough idea | nothing | Planning |
+| Argument, matters, proof, boundaries, reader demands | the plan | Design |
+| Composition, environments, what each moment is made of | plan and composition | Section development, then build |
+| Final copy and an approved design | plan, composition and copy | Build |
+| A built page and "is this good" | all | Visual judgement |
+| A built page and a named defect | all | Technical repair |
+| One section, one direction, one comparison | varies | The requested scope only |
+
+A supplied plan that skips a stage does not mean that stage is done — it means there is a gap to name. Enter at the latest stage the material actually reaches, and report what an earlier stage left open rather than quietly filling it.
+
+Supplied decisions are authoritative for their stated scope. Check them only for a conflict with an active authority, proof that does not exist, an unsupported claim, an open commercial decision being silently settled, or a serious design, accessibility or technical problem. Do not replan, rewrite or reformat supplied work to fit an internal template.
+
+The escalation rule is what keeps this soft without making it vague. Build returns an impractical payload to design rather than substituting an easier one. Design returns a payload that needs unavailable proof to planning rather than inventing it. Planning returns an open commercial term to the owner rather than settling it. Each escalation is explicit and carries its evidence.
 
 ## The reference-page rule
 
@@ -52,9 +78,11 @@ These labels describe confidence and scope, not a lifecycle or approval system.
 
 A canonical authority is selected when the user supplies or explicitly names it, or when a route below assigns it to the work in hand. Do not open the full set for orientation.
 
+**Page planning** — `PAGE-PLANNING.md`, plus `STRATEGY.md` for offer ownership and page roles, and `FOUNDATION.md` or `WRITING.md` where a truth, proof or claims question is genuinely open. Not `DESIGN.md`, and not `ENGINEERING.md`.
+
 **Page design or redesign** — the supplied page plan and `DESIGN.md`.
 
-**Page build** — the approved design specification and `ENGINEERING.md`, plus the existing foundational CSS the task needs. The design is already decided at this point, so a reference page adds nothing and invites drift.
+**Page build** — the approved composition and whatever section development exists, plus `ENGINEERING.md` and the existing foundational CSS the task needs. The design is already decided at this point, so a reference page adds nothing and invites drift.
 
 **Visual audit** — fresh captures of the page under review, and `DESIGN.md`.
 
@@ -70,9 +98,11 @@ Optional specialists, not a mandatory chain. Each declares its own trigger and c
 
 | Skill | Use for | May use a named reference page |
 | ----- | ------- | ------------------------------ |
-| `mindwp-page-design`     | Deciding a page or section design; direction, concept and critique. Produces a specification, no code | On request — capture first |
-| `mindwp-page-build`      | Implementing an approved design in source                                                             | No                  |
+| `mindwp-page-design`     | Deciding how a page occupies space and what each moment is made of; direction, concept and critique. Produces a page composition first, then proportional section development. No code | On request — capture first |
+| `mindwp-page-build`      | Implementing an approved composition in source                                                        | No                  |
 | `mindwp-design-eye`      | Judging whether a built page is visually good                                                         | Yes — capture only  |
 | `mindwp-frontend-quality`| Technical repair, finalisation and frontend quality review                                            | No                  |
 
-Design is decided and reviewed before implementation begins. One skill does not automatically load another or a broader authority bundle. No skill selects a reference page for itself.
+Page planning has no skill of its own; `PAGE-PLANNING.md` is applied directly.
+
+**These are not a sequence.** No skill automatically follows another, none loads a broader authority bundle, and none selects a reference page for itself. A skill may recommend a next step and must not require it. Design is reviewed before implementation begins, but a request to build only is a request to build only — and a partial request is answered at the scope asked for, not expanded into the full process.

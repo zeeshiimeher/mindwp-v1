@@ -78,6 +78,10 @@ Use "system" where it describes a connected responsibility, and something plaine
 
 Headings should make a specific observation, distinction or conclusion. Eyebrows and short labels may orient the reader to a stage, responsibility or decision; they do not need to manufacture novelty. Paragraphs should develop the heading rather than paraphrase it. If a visual or proof object already explains a relationship, surrounding copy should frame the implication instead of restating every detail.
 
+**Heading form should follow the material.** Eyebrow, heading and supporting paragraph is a valid and useful opening, and so is the two-part heading whose second clause turns or qualifies the first. Neither should become the only verbal anatomy on the site. When one construction is used for nearly every heading, the voice flattens, and the form itself starts dictating the section beneath it — a two-clause heading wants a paragraph, and a paragraph wants an object, so the page is shaped before anyone has designed it.
+
+A heading above a large artefact does a different job from one above an explanation, a comparison or a transition, and it may be a plain statement, a short claim, a question the reader is actually asking, a single word, or the artefact's own label. Vary the form because the material varies, not to avoid repeating yourself. There is no catalogue of approved headline shapes and no requirement that consecutive headings differ.
+
 ## Claims and proof
 
 Write only what the available evidence and approved scope support.
