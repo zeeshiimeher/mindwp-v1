@@ -32,7 +32,7 @@ Nothing proposed for removal touches the website-led hierarchy, proof and claims
 | PAGE-PLANNING | Page meaning and planning contract | Unchanged this pass |
 | ENGINEERING | Repository, CSS, responsive, a11y, motion mechanism, validation | Unchanged this pass |
 
-Two rules should be made explicit and then relied on: **procedure belongs in skills, not authorities**, and **implementation belongs in Engineering, not Design.**
+Two rules should be made explicit and then relied on: **procedure belongs in skills, not authorities**; **implementation belongs in Engineering, not Design.**
 
 ## 3. README.md audit
 
@@ -72,11 +72,9 @@ The strongest document in the set, and the one whose protections matter most.
 
 **Remove.** `119` ("Page length, section count and visual structure follow the page job") is a design statement inside Strategy; one clause is enough as a boundary marker.
 
-**Contradiction.** `26–28` grants an approved Homepage architecture and section order, while `README.md:29` states that an existing page is never a template or automatic global rule. Strategy is asserting page-architecture authority the map denies.
+**Contradiction.** `26–28` grants an approved Homepage architecture and section order, while `README.md:29` states an existing page is never a template or automatic global rule.
 
-**Open.** The strategic context holds that naming remains open for **Local SEO Authority** and **Reputation & Review**. Strategy records both as current public names with no note of that openness. This needs resolving before rewrite, and neither should be renamed during it.
-
-Estimated reduction: ~30%.
+**Open.** The strategic context holds that naming remains open for **Local SEO Authority** and **Reputation & Review**; Strategy records both as current public names with no note of that openness. Resolve before rewrite; rename neither during it. Estimated reduction: ~30%.
 
 ## 6. WRITING.md audit
 
@@ -106,10 +104,7 @@ Estimated reduction: ~30%.
 
 **Remove.** `## Four doctrine examples` (233–241) — narrates how rules were discovered. `## What makes a section look built` (213–231) — seven named moves with an implicit quota ("one or two per page"). `## Material expression` and `### How each material fails` (301–345) — a section catalogue and the largest single block. `160–164` — page-scale prescription with an embedded quota ("at least one central section should feel like a genuine event"). `## Use a reference page carefully` (421–435) — reduce to a pointer.
 
-**Contradictions.**
-1. `7` forbids preserving lessons from rejected attempts; `215`, `301–345` and `327–345` are exactly that.
-2. `293` pins surface as a rebuild carry-forward; `96` says surface roles guide judgement rather than enforcing a sequence.
-3. `307` requires naming a payload *before* drawing the section — constraining exploration before rendered work exists, which `439` then says should begin while composition is still adaptable.
+**Contradictions.** Three, all listed in §9: the self-breaking policy at `7`, surface pinned at `293` versus contextual at `96`, and payload-naming at `307` versus adaptable-composition rendering at `439`.
 
 **The distinction to preserve explicitly.** `eyebrow → heading → supporting paragraph` is not a design failure. It becomes limiting only when the whole section repeatedly resolves to *introduction → explanation → small object → next band*. Design currently gestures at this across several passages; the revised document should say it once, clearly.
 
@@ -158,15 +153,15 @@ Nothing should move *into* Design, Strategy or Writing from Page Planning or Eng
 
 ## 12. Proposed compact outline for each revised document
 
-**README** — Authority table · Precedence · Reference-page rule (single home) · Stability labels, brief · Reading routes · Skills table.
+**README** — Authority table · Precedence · Reference-page rule (single home) · Stability labels · Reading routes · Skills table.
 
 **FOUNDATION** — Website-led identity and offer hierarchy · Buyer principles · Why connected capabilities are intentional · Truth and proof · Privacy and professional boundaries · Durable non-claims.
 
-**STRATEGY** — Settled decisions table · Positioning, brief · Why MindWP is different · Offer architecture and the four services with boundaries · Useful enquiry · Audience and qualification · Delivery, ownership and pricing posture · Conversion direction · Page roles · Proof standard, brief · Open decisions.
+**STRATEGY** — Settled decisions · Positioning · Why MindWP is different · Offer architecture and the four services with boundaries · Useful enquiry · Audience and qualification · Delivery, ownership and pricing · Conversion direction · Page roles · Proof standard · Open decisions.
 
-**WRITING** — Voice · Who MindWP's pages address · Concrete language · Claims phrasing (pointer to Foundation plus Writing-specific rules) · Service phrasing risks · Clinic-copy boundary · Repetition control.
+**WRITING** — Voice · Who MindWP's pages address · Concrete language · Claims phrasing (Foundation pointer plus Writing-specific rules) · Service phrasing risks · Clinic-copy boundary · Repetition control.
 
-**DESIGN** — Quality standard · Sector-neutral visual grammar · Shared foundations and why they are not failures (once) · Composition expresses the material's relationship · Weight, payload and quiet sections · Continuity across a page · Responsive recomposition · Interaction and motion purpose · Truthful visual material · Judging rendered evidence (criteria only).
+**DESIGN** — Quality standard · Sector-neutral visual grammar · Shared foundations, and why they are not failures (once) · Composition expresses the material's relationship · Weight, payload and quiet sections · Page continuity · Responsive recomposition · Interaction and motion purpose · Truthful visual material · Judging rendered evidence (criteria only).
 
 ## 13. Recommended compression level
 
@@ -182,17 +177,17 @@ Core set: 10,870 → roughly 5,400–6,750. Ranges, not targets.
 
 ## 14. Owner decisions required before rewriting
 
-1. Where does `Active Homepage direction` go, and is its extraction in scope for the rewrite or for the separate Homepage task?
+1. Where does `Active Homepage direction` go — and is its extraction in scope for the rewrite, or for the separate Homepage task?
 2. Are Local SEO Authority and Reputation & Review recorded in Strategy as names currently open?
 3. Does the reference-page rule live once in README, with pointers from Design and Engineering?
-4. Does the design-eye skill own the rendered-evidence procedure, leaving Design the judgement criteria?
-5. Does Design retain any material or payload vocabulary, or none at all?
-6. Do rebuild and page-scale *procedures* move to `mindwp-page-design`, or leave the documentation entirely?
-7. Confirm that the Review's commercial terms stay open and unsettled by the rewrite.
+4. Does `mindwp-design-eye` own the rendered-evidence procedure, leaving Design the judgement criteria?
+5. Does Design retain any material or payload vocabulary, or none?
+6. Do rebuild and page-scale procedures move to `mindwp-page-design`, or leave the documentation entirely?
+7. Confirm the Review's commercial terms stay open and unsettled by the rewrite.
 
 ## 15. Recommended rewrite order
 
-1. **Foundation** — smallest change, and it sets the floor every other document defers to.
+1. **Foundation** — smallest change, and it sets the floor the others defer to.
 2. **Strategy** — after the Homepage extraction is decided; its boundaries determine what Writing and Design must not restate.
 3. **Writing** — depends on Foundation's proof and privacy wording being final.
 4. **Design** — the largest rebuild; needs the other three settled so it can point rather than restate.
@@ -200,15 +195,14 @@ Core set: 10,870 → roughly 5,400–6,750. Ranges, not targets.
 
 ## 16. Recommended next action
 
-Owner approval or revision of this audit. Nothing should be rewritten until the seven decisions in §14 are answered — particularly items 1, 3 and 5, which each change what the revised Design document is allowed to contain.
+Owner approval or revision of this audit. Nothing should be rewritten until the §14 decisions are answered — particularly 1, 3 and 5, which each change what the revised Design document is allowed to contain.
 
 ## What is done
 
-- Audited README, Foundation, Strategy, Writing and Design in full; read Page Planning, Engineering and all four skills only to locate authority boundaries and duplication.
-- Classified the significant material, identified nine cross-document duplications, six contradictions or open decisions, and the Homepage-specific and Engineering-owned material that should leave the core documents.
-- Recorded compression ranges and a rewrite order.
-- Created only `docs/DOCS-AUDIT.md`. No other file, no source, no Homepage inspection.
+- Audited the five core documents in full; read Page Planning, Engineering and all four skills only to locate authority boundaries and duplication.
+- Classified the significant material and recorded nine cross-document duplications, six contradictions or open decisions, compression ranges and a rewrite order.
+- Created only `docs/DOCS-AUDIT.md` — no other file, no source, no Homepage inspection.
 
 ## What is next
 
-- Owner approval or revision of this audit, then answers to the §14 decisions before any rewriting begins.
+- Owner approval or revision, then answers to the §14 decisions before any rewriting begins.

@@ -12,26 +12,20 @@ Strategy owns these; no other document restates them.
 | Market emphasis | United Kingdom primary; Australia the natural second market. International English throughout; location not emphasised in public copy |
 | Principal offer | Smart Website Systems, with four separately scoped supporting services |
 | Pricing posture | No public price, tier table or starting figure. Scope and cost are quoted after the Visibility & Enquiry Review |
-| Public voice | MindWP speaks as "we". No named or pictured founder, no personal biography, no location emphasis. Accountability is shown through inspectable work, a stated process and named responsibility inside a client's engagement — not through a founder profile |
+| Public voice | MindWP speaks as "we". No named or pictured founder, no personal biography, no location emphasis. Accountability is shown through inspectable work, a stated process and named responsibility inside a client's engagement |
 | Company age | Established or newer, provided getting the website and its handling right from the start matters to the buyer |
 
-The market emphasis rests on a practical operating case: working-hours overlap with the UK from the current base, and a private-clinic market where local discovery and considered evaluation both matter. Supporting market conditions are reasoning, not evidence, and must not become public claims.
+Supporting market conditions are internal reasoning, not evidence, and must not become public claims.
 
 ## Current positioning
 
-MindWP is a website-led partner for independent clinics and expert-led businesses. It combines strategic clarity, distinctive web design and careful implementation around real customer decisions. Independent clinics are the primary market and may lead audience language, content and proof, while the shared visual and verbal grammar stays sector-neutral so the same brand can credibly serve a law boutique or an advisory firm; “specialist” refers to the depth and precision of MindWP's thinking, not to any one sector's aesthetic.
+MindWP is a website-led partner for independent clinics and expert-led businesses, combining strategic clarity, distinctive web design and careful implementation around real customer decisions. Independent clinics are the primary market and may lead audience language, content and proof, while the shared visual and verbal grammar stays sector-neutral. "Specialist" refers to the depth and precision of MindWP's thinking, not to any one sector's aesthetic.
 
 The website is the principal commercial surface. Connected services are introduced only where they solve a diagnosed problem. MindWP must not read as a compulsory bundle, SaaS product, CRM resale, advertising agency or automation package.
 
-### Active Homepage direction
-
-The Homepage leads with Smart Website Systems and organises its argument around how suitable people find, understand, evaluate and contact the business. The approved architecture runs: the destination case first, so that existing attention has somewhere convincing to land; then the connected moments around the website, acknowledged positively; then the principal offer explained in depth, with inspectable proof placed before it. Connected support may then show how it improves local discovery or what happens after contact — presented positively, without repeatedly weakening the services as "optional", and without letting them become four co-equal reasons for the business to exist.
-
 ## Why MindWP is different
 
-MindWP combines customer-decision strategy, copy, distinctive website design and careful implementation in one accountable engagement. The work continues through functioning enquiry capture and delivery, with CRM and automation connected only where they serve a defined responsibility. Clients receive a planned and tested working system — not an isolated design, an empty platform or a collection of disconnected tools.
-
-These are the affirmative reasons to choose MindWP:
+Clients receive a planned and tested working system — not an isolated design, an empty platform or a collection of disconnected tools. The affirmative reasons to choose MindWP:
 
 1. The customer decision shapes the website.
 2. Strategy, copy, design and development stay connected.
@@ -40,15 +34,15 @@ These are the affirmative reasons to choose MindWP:
 5. The complete path is configured and tested.
 6. Proof and professional boundaries remain truthful.
 
-The non-claims recorded in Foundation support these reasons; they must not dominate them. A page that only says what MindWP refuses to promise has not yet given anyone a reason to buy.
+Foundation's non-claims support these reasons; they must not dominate them. A page that only says what MindWP refuses to promise has not yet given anyone a reason to buy.
 
 ## Current offer architecture
 
 **Smart Website Systems** is the current principal offer. An engagement may include strategy, site and page structure, copy, distinctive design, WordPress development and measurement around real customer decisions. It owns the public experience through to a useful enquiry: understanding, trust, proof, action, functioning capture, truthful submission confirmation, and delivery to the agreed contact destination.
 
-A **useful enquiry** means the person could understand the relevant offer and provide appropriate contact or request context through the intended channel. It does not mean a qualified lead, booked appointment, sale, clinical decision, or guaranteed outcome. Lead Response & Handling begins once that contact event exists; it owns the acknowledgement, useful context, routing, and visible human responsibility that follow.
+A **useful enquiry** means the person could understand the relevant offer and provide appropriate contact or request context through the intended channel. It does not mean a qualified lead, booked appointment, sale, quotation, clinical decision or guaranteed outcome. Lead Response & Handling begins once that contact event exists; it owns the acknowledgement, useful context, routing and visible human responsibility that follow.
 
-Four supporting services surround the principal offer. They are actively recommended alongside a Smart Website where the diagnosis supports them, and each may also be sold separately where suitable. Local SEO Authority is substantial hands-on work rather than a light add-on. Each service is scoped individually; none is a compulsory part of any engagement:
+Four supporting services surround the principal offer. They are actively recommended alongside a Smart Website where the diagnosis supports them, and each may also be sold separately. Local SEO Authority is substantial hands-on work rather than a light add-on. Each service is scoped individually; none is a compulsory part of any engagement:
 
 | Current public service name  | Current responsibility                                                                                     | Boundary                                                                                     |
 | ---------------------------- | ---------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
@@ -57,7 +51,9 @@ Four supporting services surround the principal offer. They are actively recomme
 | **Follow-Up & CRM**          | Justified next actions after the first response, respecting permission, stopping rules and human judgement | No CRM resale, automatic pressure, quote preparation or replacement of commercial judgement  |
 | **Reputation & Review**      | Ethical review requests, feedback, responsible replies and visible proof                                   | No bought or manipulated reviews, guaranteed ratings or ownership of all local discovery     |
 
-The shorter labels Local SEO, Lead Response, Follow-Up and Reputation are planning shorthand only. They do not rename these public services, their canonical identifiers, routes, titles or navigation.
+**Local SEO Authority** and **Reputation & Review** are current working public names. Their final naming remains open. Use them exactly as written until an explicit decision changes them; do not rename either in copy, routes, identifiers or navigation.
+
+The shorter labels Local SEO, Lead Response, Follow-Up and Reputation are planning shorthand only and do not rename these services.
 
 The services are related because discovery, website evaluation, enquiry handling, follow-up and reputation can affect the same customer decision. That relationship does not create an automatic sequence, equal weighting or a requirement to buy all five.
 
@@ -71,16 +67,14 @@ Measurement should help reveal real customer decisions and useful weak points: w
 
 ## Audience and qualification
 
-The current audience is independent clinics first, together with expert-led businesses. The primary market is the United Kingdom, with Australia the natural second.
-
 An **expert-led business** is one where identifiable expertise and accountable judgement materially shape the service, and the buyer evaluates credibility, fit and trust before making contact. This usually includes clinics and professional or advisory firms. It does not automatically include businesses whose primary value is inventory, venue access, transport, equipment hire or undifferentiated transaction handling.
 
-An abstract definition will always leave edge cases, so these examples are approved alongside it:
+Approved examples alongside that definition:
 
 - **In lane:** independent clinics; sponsor-licence and corporate immigration boutiques; estate-planning and probate practices; forensic accounting and business-valuation boutiques; tax-investigation practices; medical-director and regulatory-compliance consultancies.
-- **Out of lane:** event and equipment hire; venues; chauffeur and transport operators; yacht and vehicle broking; and anything competing primarily on price or availability. Good fit depends on the actual decision, value and trust at stake; available proof; capacity to act; and whether MindWP can own a useful scope. Industry pages should express the industry's real customer or patient decision, terminology, evidence and professional limits.
+- **Out of lane:** event and equipment hire; venues; chauffeur and transport operators; yacht and vehicle broking; and anything competing primarily on price or availability.
 
-Qualification is diagnostic rather than exclusionary. Do not infer a universal rule that every buyer must be established, have an existing website, belong to one launch industry or purchase an ongoing service. A page plan may set a narrower audience when evidence supports it.
+Fit depends on the actual decision, value and trust at stake; available proof; capacity to act; and whether MindWP can own a useful scope. Qualification is diagnostic rather than exclusionary: do not infer that every buyer must be established, have an existing website, belong to one industry or purchase an ongoing service. A page plan may set a narrower audience when evidence supports it.
 
 ## Delivery, management and ownership posture
 
@@ -90,23 +84,25 @@ MindWP's delivery role is hands-on: it plans how each agreed piece should work, 
 
 No single handover or ongoing-management model is approved for every engagement. Website ownership, service-account ownership, subscription responsibility, data access and ongoing management remain proposal-level decisions until a general policy is explicitly settled.
 
-Current pricing is tailored and private. There is no approved public tier table, starting price or universal qualification signal. Pricing is quoted after the Visibility & Enquiry Review has established scope. No public price, tier table, starting figure or universal qualification signal is published, and that is a deliberate position rather than an unsettled one. A proposal must still make cost and scope clear before work begins.
+Pricing is tailored and private. The absence of a public price, tier table, starting figure or universal qualification signal is a deliberate position rather than an unsettled one. A proposal must still make cost and scope clear before work begins.
 
 ## Current conversion direction
 
-The broader current direction is an internal working concept called a **Visibility & Enquiry Review** that can be useful with or without an existing website. It should diagnose the relevant public experience and enquiry path before prescribing a project.
+The current direction is an internal working concept called a **Visibility & Enquiry Review**, useful with or without an existing website. It should diagnose the relevant public experience and enquiry path before prescribing a project.
 
-The final public label and commitment level remain open. Active public source currently uses **Request a Visibility & Enquiry Review** (with **Request a Review** where space is limited); preserve that live wording unless an explicitly supplied page plan or user decision authorises another label. **See the work** remains a useful lower-commitment path when a page plan supports it.
+Active public source currently uses **Request a Visibility & Enquiry Review**, with **Request a Review** where space is limited. Preserve that live wording unless an explicitly supplied page plan or user decision authorises another label. **See the work** remains a useful lower-commitment path when a page plan supports it.
+
+The Review's paid or unpaid status, commitment level, deliverable and response timing all remain open. Do not settle them in copy, design or a page plan.
 
 ## Implementation pathways
 
-Current implementation concepts under Smart Website Systems include the WordPress platform and builder paths such as Elementor, Bricks, and Divi; WooCommerce work where commerce is genuinely part of the requirement; and Website Rebuild as a project type. They may support tool-aware search intent, but a platform, builder, capability, or project type is a delivery pathway rather than the value proposition.
+Implementation concepts under Smart Website Systems include WordPress and builder paths such as Elementor, Bricks and Divi; WooCommerce where commerce is genuinely part of the requirement; and Website Rebuild as a project type. They may support tool-aware search intent, but a platform, builder or project type is a delivery pathway rather than the value proposition.
 
 Canonical content does not automatically create a public route. Any future implementation page requires a real page job, useful proof, approved publication scope and a clear relationship to Smart Website Systems.
 
 ## Information architecture and page ownership
 
-Keep the public site proof-led and purposeful. Active route configuration owns what is actually live; strategy describes the role a page should earn.
+Keep the public site proof-led and purposeful. Active route configuration owns what is actually live; Strategy describes the role a page should earn.
 
 - Home orients the buyer to MindWP, the principal offer, credible proof and a useful next step.
 - Smart Website Systems explains the principal website engagement and its responsibility through a useful enquiry.
@@ -116,27 +112,22 @@ Keep the public site proof-led and purposeful. Active route configuration owns w
 - About and process material establish accountable expertise without invented founder or team claims.
 - Review or contact material supports a diagnostic next step without implying publication, delivery or fit in advance.
 
-Page length, section count and visual structure follow the page job. A conceptual capability list is not a page catalogue or release plan.
+Page length, section count and visual structure follow the page job and belong to design.
 
 ## Proof development
 
-Inspectable craft currently carries most of MindWP's trust burden. Foundation permits five proof forms — permitted named client work, responsibly anonymised work, honestly labelled demonstration work, inspectable craft and transparent process — and does not require MindWP to remain permanently anonymous or metric-free. It requires each proof item to be truthful and correctly labelled.
+Inspectable craft currently carries most of MindWP's trust burden. Foundation permits five proof forms and requires each to be truthful and correctly labelled; Strategy adds only that building proof is active business development rather than something deferred until proof happens to appear.
 
-A thin proof surface is answered with more proof that meets the standard, never with a weaker standard. This is active business development, not something deferred until proof happens to appear.
-
-What that proof can be, in rough order of how readily it becomes available: properly anonymised client work · clearly labelled demonstration projects · large inspectable website specimens · specific descriptions of what MindWP planned, wrote, designed, connected and tested · a concrete process showing real decisions · permissioned reviews and testimonials · short case narratives covering the situation, what was unclear, what changed, what can be inspected and what was not measured · named case studies where permission exists · before-and-after comparisons · measured results only where a reliable baseline, timeframe and attribution exist.
-
-Each item needs a truthful label and, where it shows client work, a recorded permission or anonymity decision.
-
-The remedy for a proof gap is stronger evidence and clearer positive positioning — never invented metrics, weak testimonials, named work published without permission, unsupported founder history, a public price added to appear transparent, or a weakened useful-enquiry boundary.
+A thin proof surface is answered with more proof that meets the standard, never with a weaker standard. The remedy for a proof gap is stronger evidence and clearer positive positioning — never invented metrics, weak testimonials, named work published without permission, unsupported founder history, a public price added to appear transparent, or a weakened useful-enquiry boundary.
 
 ## Open commercial decisions
 
-These questions are deliberately open and do not block general design-system work:
+These are deliberately open and do not block general design-system work:
 
 - the preferred balance between handover and ongoing management;
 - standard website, service-account, data and subscription ownership terms;
-- the final public label and commitment level for the broader review offer;
+- the final public names for Local SEO Authority and Reputation & Review;
+- the Visibility & Enquiry Review's final public label, paid status, commitment level, deliverable and response timing;
 - future information-architecture expansion and publication order.
 
 Record an answer here only after an explicit decision. Until then, a supplied page plan may resolve a page-specific need without pretending to settle the whole business.

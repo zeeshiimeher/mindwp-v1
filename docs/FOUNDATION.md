@@ -1,18 +1,18 @@
 # MindWP foundation
 
-This document preserves MindWP's durable business memory and the reasoning behind it. Durable means expected to persist, not immutable: an explicit later user decision can revise this foundation.
+This document preserves MindWP's durable business memory. Durable means expected to persist, not immutable: an explicit later user decision can revise it.
 
 Current offer packaging, service names, CTA direction, delivery and commercial choices belong in [STRATEGY.md](./STRATEGY.md).
 
 ## Website-led identity
 
-MindWP is website-led. It helps organisations where a consequential customer or patient decision depends on clarity, trust, proof, and a useful route to contact. The current named market focus belongs in Strategy rather than becoming an immutable audience list here.
+MindWP is website-led. It helps organisations where a consequential customer or patient decision depends on clarity, trust, proof and a useful route to contact. The current named market focus belongs in Strategy rather than becoming an immutable audience list here.
 
 The website is the most controllable public experience a business owns. It is where a prospective customer or patient can understand the work, evaluate fit and proof, develop confidence and choose a useful next step. Search, referrals, advertising and conversation may create attention elsewhere, but those sources do not remove the need for a clear, trustworthy destination.
 
 MindWP therefore starts with the customer decision around the website. The work may extend into connected capabilities when they improve that decision or what happens after contact, but the connection must be useful and deliberately scoped.
 
-Website-led is an offer hierarchy, not merely a descriptive phrase and not a claim that the website acts alone. The public identity begins with the website and the customer decision it supports; connected capabilities remain optional and subordinate. A leakage or automation framing may diagnose a specific problem without becoming the organising brand thesis — reversing the hierarchy needs evidence that the principal offer or buyer need has changed, not a memorable line.
+Website-led is an offer hierarchy, not merely a descriptive phrase and not a claim that the website acts alone. The public identity begins with the website and the customer decision it supports; connected capabilities remain optional and subordinate. Reversing that hierarchy requires evidence that the principal offer or buyer need has changed.
 
 ## Audience and buyer principles
 
@@ -20,7 +20,7 @@ MindWP helps businesses where trust, clarity and an enquiry matter commercially 
 
 Common problems include unclear services, weak proof, poor local evaluation, enquiries landing badly, uncertain ownership, unjustified follow-up or good work remaining invisible. These are recurring possibilities, not a claim that every business has every problem.
 
-Industries may share a broad decision path while needing very different execution. Specificity comes from the customer's decision, the language they use, the evidence they need and the applicable professional boundaries—not artificial strategic variation or a simple industry-name swap.
+Industries may share a broad decision path while needing very different execution. Specificity comes from the customer's decision, the language they use, the evidence they need and the applicable professional boundaries — never from an industry-name swap.
 
 Fit should be judged from the real decision and value at stake, useful evidence, the business's capacity to act and the scope MindWP can responsibly own. Foundation does not impose an absolute company-age, size or geography rule.
 

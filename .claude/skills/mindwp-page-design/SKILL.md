@@ -18,7 +18,7 @@ Job
 Visitor change
 Weight            quiet / supporting / focal / set-piece / closure
 Surface
-Primary payload   the named material (see DESIGN.md, Material expression)
+Primary payload   what the section is materially made of
 Shows             the specific instance, state or artefact on screen — not a category
 Relationship      what the payload makes visible
 First-glance read what a visitor understands before reading any copy
@@ -37,7 +37,9 @@ Quiet transitional sections need a row, not a concept. Say so explicitly rather 
 
 ## Name the material before drawing
 
-Every substantial section names its primary payload from `DESIGN.md`'s material vocabulary. Naming it is the point at which "text in a column" stops being the default answer.
+Every substantial section names what it is materially made of. Naming it is the point at which "text in a column" stops being the default answer.
+
+There is no fixed list to choose from, and `DESIGN.md` deliberately does not keep one — a taxonomy becomes a menu, and a menu gets worked through. A payload might be a constructed scene, real evidence or media, a model of relationships, language at artefact scale, a spatial sequence, or nothing but well-set copy and rules. Name what this material actually needs.
 
 Three tests before a payload is accepted:
 
@@ -47,19 +49,19 @@ Three tests before a payload is accepted:
 
 The third test is the one that catches a specification which passes everything else and still describes a flat page. Categories produce fields of marks standing for quantities nobody can verify, greeked lines standing for text nobody wrote, and equal boxes standing for ideas. Instances produce objects.
 
-Where the material is genuinely quiet, `bare typeset arrangement` is a correct answer. When it is the answer for most of a page, say why the page's main meanings do not need stronger expression.
+Where the material is genuinely quiet, copy and rules alone is a correct answer. When it is the answer for most of a page, say why the page's main meanings do not need stronger expression.
 
-The vocabulary is not a variety quota. Two sections may correctly name the same material when their relationships are the same kind, and choosing a weaker payload because a stronger one is "already used" is a design decision made for the wrong reason. Flatness is different meanings receiving the same inner hierarchy and reading path — not the same material appearing twice.
+Naming a material is not a variety exercise. Two sections may correctly use the same material when their relationships are the same kind, and choosing a weaker payload because a stronger one is "already used" is a decision made for the wrong reason. Flatness is different meanings receiving the same inner hierarchy and reading path — not the same material appearing twice.
 
 ## Say how each section is built, not only what it means
 
-A specification can name a correct payload for every section and still describe a flat page. `Built by` is where that is prevented. Name the moves the section actually uses — `DESIGN.md`'s *What makes a section look built* has the full set:
+A specification can name a correct payload for every section and still describe a flat page. `Built by` is where that is prevented: name the moves the section actually uses.
 
-an interior (a payload with its own ground and different values inside it) · a contrasting object rather than a changed band · the middle of the type scale · one dominant element · a surface change from its neighbour · a non-standard opening · something breaking its container.
+Moves worth having available — an interior, meaning a payload with its own ground and different values inside it · a contrasting object rather than a changed band · the middle of the type scale · one dominant element · a surface change from its neighbour · a non-standard opening · something breaking its container. This is a working list, not a checklist and not doctrine; a section needs the moves its material needs and no others.
 
 Two things to get right at page scale:
 
-- **Concentrate, don't spread.** One or two sections carry the big moves. A page where every section breaks its container is noise, and a page where none does is timid.
+- **Concentrate, don't spread.** A few sections carry the strong moves. Every section shouting is noise; no section doing anything is timid.
 - **A quiet section says `Built by: nothing, deliberately`.** That is a valid and necessary answer. Leaving the row blank is not — blank reads as undecided, and undecided becomes flat.
 
 If a section's only answer is "a heading, a paragraph and a list", it is either genuinely quiet or it is unfinished. Decide which, in writing, before it reaches build.
@@ -94,11 +96,11 @@ This applies to rebuilding part of a page that is already built and staying. It 
 
 A rebuild is a new concept, not a re-arrangement of the old one.
 
-**Carry forward four things:** the section's job · its eyebrow and heading · its surface · anything the page plan pins.
+**Carry forward:** the section's job · its eyebrow and heading · anything the page plan pins. Keep its surface too, by default — change one section's ground and its neighbours change with it, so a surface change is a page decision rather than a section one. Make it deliberately or not at all.
 
 **Everything else is free, and is where the new design comes from:** the payload, the data shape, the groupings, the counts, the labels, the supporting copy, the sequence.
 
-The four are kept for page reasons, not section reasons. Eyebrow and heading hold the voice and the reader's place in the argument. Surface holds the page's rhythm — change one section's ground and two neighbours change with it, so that is a page decision, not yours to make inside a section brief.
+These are kept for page reasons, not section reasons: eyebrow and heading hold the voice and the reader's place in the argument.
 
 Before designing, write down what the material could *become*. Doing this after choosing a layout produces the old content in a new box.
 

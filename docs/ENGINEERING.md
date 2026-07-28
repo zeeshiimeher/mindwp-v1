@@ -204,11 +204,9 @@ Treat large page components or CSS files as diagnosis prompts, not automatic ref
 
 ## Existing implementations as evidence
 
-This authority does not name a reference implementation. Which page is worth learning from is the user's decision and changes over time; a name recorded here would go stale and would grant authority to work that may already be queued for rebuild.
+[README.md](./README.md) owns the reference-page rule: a page becomes a reference only when the user names it, and no document records which page that is.
 
-Inspect another page's implementation only when directly editing or auditing it, answering a named implementation question, diagnosing a specific regression, or when the user names it. An existing implementation is not default reading, a template, a pattern library, or a source of universal breakpoints, grids, animation choreography, section anatomy, or page-local CSS devices.
-
-A technique may transfer when the new implementation independently needs it. Availability or recurrence alone does not make it global.
+Applied here: inspect another page's implementation only when directly editing or auditing it, answering a named implementation question, diagnosing a specific regression, or when the user names it. An existing implementation is not default reading, a template, a pattern library, or a source of universal breakpoints, grids, animation choreography, section anatomy or page-local CSS devices. A technique may transfer when the new implementation independently needs it; availability or recurrence alone does not make it global.
 
 ## Validation and rendered evidence
 
