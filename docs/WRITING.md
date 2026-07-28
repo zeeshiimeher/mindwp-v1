@@ -1,6 +1,10 @@
 # MindWP writing
 
-This document controls how approved MindWP meaning is expressed. Foundation and Strategy own business facts; an explicitly supplied page plan owns the page job, audience, action and order. Writing does not choose those decisions or prescribe layout.
+This document controls how approved MindWP meaning is expressed. Foundation and Strategy own business facts.
+
+An explicitly supplied page brief owns the page job, audience, intent, desired action, essential meaning, available proof, boundaries and any wording explicitly marked fixed.
+
+A page brief does not automatically fix exact section order, headings, eyebrows, component choices, visual anatomy or motion unless the owner explicitly marks them fixed. Writing does not own those decisions either.
 
 ## Voice
 
@@ -28,27 +32,27 @@ Good copy makes three things easy to follow:
 2. what is currently unclear, unsupported or poorly handled;
 3. what the approved MindWP scope changes.
 
+The customer or patient in point 1 is the *buyer's* customer, not the reader. Describe their decision as something the owner is responsible for improving — never by addressing them directly or slipping into the voice of a business speaking to its own customers.
+
 Reach the concrete offer and genuine evidence at the point the argument needs them, rather than holding the reader in problem language for a whole page. Each section and service page carries its own part of the argument; the complete MindWP model belongs in one place, not in every one of them.
 
 ## Lead with the responsibility, not the task list
 
-A business owner already knows what a website is. MindWP does not need to spend its positioning explaining pages, headings, sections, forms, content blocks or normal website anatomy.
+Do not spend core positioning explaining ordinary website anatomy such as pages, headings, sections, forms and content blocks.
 
-Lead with the responsibility MindWP owns and the situation the reader recognises — an enquiry acknowledged, reaching a named person, with its context preserved and its follow-up not depending on anyone remembering. "We connect your CRM" is a task. "Nobody has to remember to chase it" is a responsibility. Prefer the second.
+Lead instead with the responsibility MindWP owns and the situation the reader recognises — an enquiry acknowledged, reaching a named person, with its context preserved. "We connect your CRM" is a task. "Follow-up no longer depends only on someone remembering" is a responsibility. Prefer the second. Neither example is mandatory public wording.
 
-Explain delivery detail only where it helps a buyer understand the responsibility, the scope or the boundary. A list of what gets built is a proposal, not positioning, and reciting normal website features reads as a web-design service rather than the offer MindWP actually makes.
+Explain delivery detail only where it helps a buyer understand the responsibility, the scope or the boundary. A list of what gets built is a proposal, not positioning.
 
 ## Supporting growth is not promising growth
 
 MindWP builds systems designed to support growth through better visibility, better handling and greater operational consistency. That is a claim about a mechanism, and it is available.
 
-Never convert it into an outcome. No leads, bookings, revenue, rankings, ratings, conversion improvements, guaranteed response times or guaranteed growth — not as a headline, an implication or a rounded-up paraphrase. Write what the system does and what it makes consistent, and let the reader draw the commercial conclusion.
-
-Concrete words carry this better than abstract ones: enquiries, acknowledgement, routing, ownership, status, context, follow-up, consistency. Prefer them to "growth", "results", "performance" and "optimisation".
+Never convert it into an outcome — not as a headline, an implication or a rounded-up paraphrase. Write what the system does and what it makes consistent, and let the reader draw the commercial conclusion. Foundation and Strategy own the list of outcomes that may never be promised.
 
 ## Concrete language
 
-Prefer the real object or action: a website, service page, treatment explanation, call, form, message, consultation request, booking, person responsible, agreed next step, review request or piece of proof.
+Prefer the real object or action: a website, service page, treatment explanation, call, form, message, consultation request, booking, person responsible, agreed next step, review request or piece of proof. Around the connected side, prefer enquiries, acknowledgement, routing, ownership, status, context, follow-up and consistency to "growth", "results", "performance" and "optimisation".
 
 Use "system" where it describes a connected responsibility, and something plainer everywhere else — it is a description, not prestige language. Generic agency and SaaS phrasing (seamless, robust, cutting-edge, all-in-one platform, growth machine, demo, free trial) earns its place only when it is the literal fact. Smart Website Systems is an approved public offer name, and "system" is justified there because the engagement connects strategy, structure, content, design, development, enquiry capture and agreed integrations around one customer decision.
 
@@ -72,15 +76,15 @@ Clinic copy — copy written for a client's own site — may explain a patient's
 
 Describe acknowledgement, routing, follow-up and review requests as Foundation defines them. In copy, that means never implying a sequence continues regardless of consent, or that automation makes a professional decision.
 
-## Tools, CRM, AI and automation
+## Tools, platforms and ownership
 
-Tools are supporting means, not the offer. Lead with situations and outcomes a business owner recognises; use service names, CRM terms and internal categories only where they make the message clearer.
+Use service names, CRM terms and internal categories only where they make the message clearer.
 
 - Explain CRM-related work through ownership, status, permission and a justified next action before software features.
 - Explain AI or automation through the truthful task it supports, never as a replacement for human judgement.
 - Explain WordPress or a builder through maintainability, performance, clarity and implementation fit rather than tool fandom.
 - Describe quote preparation, pricing, approval and sending as the client's, unless that responsibility is explicitly MindWP's.
-- Leave platform and account ownership unstated until Strategy or the page plan has settled it.
+- Never imply platform, account or data ownership that has not been agreed. State platform, account, access and cost information where Strategy, the proposal, legal disclosure or the approved page context requires it, and do not turn vendor identity into marketing positioning.
 
 ## Service language
 

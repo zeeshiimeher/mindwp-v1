@@ -1,153 +1,178 @@
 # MindWP design authority
 
-This document owns MindWP's durable visual judgement: shared brand grammar, art direction, meaning-bearing composition, page continuity, responsive intent, purposeful interaction and motion, and the criteria for judging a render.
+Durable visual judgement for MindWP's own website: what the work should achieve, what it is made of, how meaning becomes composition, and how a finished page is judged.
 
-It does not decide business truth, offer strategy, page meaning, claims, repository structure, CSS architecture, capture commands, publication or page state. Those belong to [FOUNDATION.md](./FOUNDATION.md), [STRATEGY.md](./STRATEGY.md), the supplied page plan, [WRITING.md](./WRITING.md) and [ENGINEERING.md](./ENGINEERING.md).
+Page meaning, proof and boundaries come from the supplied page plan. Business truth and positioning come from [FOUNDATION.md](./FOUNDATION.md) and [STRATEGY.md](./STRATEGY.md); language from [WRITING.md](./WRITING.md); source, CSS, motion mechanism, accessibility and capture commands from [ENGINEERING.md](./ENGINEERING.md). Design method belongs to `mindwp-page-design`, and review procedure to `mindwp-design-eye`.
 
-Only durable, cross-page principles belong here. A single page, technique or preference does not become a rule, and lessons from individual rejected attempts are not preserved as design rules.
+## 1 · What this design is for
 
-## The quality standard
+Every MindWP page is read by a business owner, operator or practice lead deciding whether to buy. They are evaluating a supplier while comparing alternatives, usually quickly, often sceptically. The page has to make its argument legible before it is read closely, and give someone enough to act on.
 
-MindWP's website should feel considered rather than assembled, while remaining clear, truthful, useful and appropriate to a professional service business.
+**MindWP's own website is part of the evidence of its design judgement, craft and implementation quality.** A prospective client can inspect it directly, and many will. That raises the standard: a page has not succeeded merely by communicating adequately, because the way it communicates is itself the demonstration.
 
-- **Calm confidence:** priority is unmistakable without urgency theatre, visual noise or exaggerated claims.
-- **Commercial seriousness:** the page connects customer reality, the offer, proof, boundaries and a useful next action.
-- **Distinctive craft:** typography, spacing, hierarchy, media, edges, depth and responsive behaviour feel deliberate.
-- **Trustworthiness:** visual material never simulates proof, software capability, certainty or operational detail that does not exist.
-- **Clarity:** the main argument and important relationships can be understood before every paragraph is read.
+That principle is bounded. The website evidences design, craft and implementation. It does not evidence enquiry-handling outcomes, client results, growth or operational performance — those need real proof, and no amount of visual quality substitutes for it.
 
-Technical competence alone is not the standard. If an important composition is generic, visually thin or structurally interchangeable with unrelated material, refine its underlying relationship and hierarchy rather than rescuing it with surface polish.
+Two consequences follow, and they run through everything below. Ambition is warranted: work that looks careful but timid understates the capability it is meant to prove. And restraint is not the same as thinness — a page that avoids every risk demonstrates only caution.
 
-## Sector-neutral visual grammar
+## 2 · Visual character
 
-MindWP's specialist depth is the precision of its thinking, not any one industry's aesthetic. Independent clinics are the primary audience and may lead audience language, content and proof; the visual grammar does not follow them.
+MindWP should feel **composed rather than assembled**. Someone decided where things sit, how large they are and what the reader meets first. That impression comes before any sentence is read, and it is most of what a page communicates in its first two seconds.
 
-Clinic-first in audience, sector-neutral in visual language. The shared visual and verbal language — including artefacts, illustration, iconography and recurring examples — stays sector-neutral, so the same brand can credibly serve a clinic, a law boutique or an advisory firm. Sector imagery, terminology and visual material belong to industry pages and other page-specific work; they do not join the shared language by recurrence alone.
+The register is serious without severity, and warm without softness. Confidence shows as clarity and unhurried priority rather than volume: nothing shouts, and the important thing is unmistakable anyway.
 
-## Shared foundations
+**Light is the primary emotional instrument.** The palette runs from a deep navy to near-white paper, and moving between those poles is how a page changes its temperature — conviction and closure at the dark end, clarity and open thought at the light end. Use that range deliberately; it does more work than any decorative device.
 
-MindWP deliberately uses a recognisable visual family: navy, white, paper and mist surface roles; serif and sans-serif typographic character; eyebrow, heading and supporting-copy structures; centred, left-aligned and split section introductions; consistent typography and spacing roles; stable container and readable-measure discipline; semantic sections and familiar web-layout foundations.
+**Space is used with intent in both directions.** Generous where a reader needs to slow down or where one thing should dominate. Tight where there is real substance to deliver and spreading it out would only make it harder to hold. Neither is more sophisticated than the other.
 
-Standard web foundations are valid, useful and normally preferred: semantic sections, the shared section and container roles, the shared section-introduction structures, Flex and Grid, and familiar structures such as cards, lists, panels, tabs, timelines and grouped content when the information genuinely has that structure. Section introductions may be left-aligned, centred, split, embedded or otherwise positioned according to the communication job; no alignment is inherently more original or more professional.
+**Scale is available.** A page may make something genuinely large — an object, a figure, a line of type — where the material deserves it. Uniform politeness across a whole page reads as timidity rather than taste.
 
-**Familiar foundations are not failures.** Recurring surfaces, repeated typography roles, recurring section-header grammar, containers, cards, grids, long pages and several horizontal bands are shared MindWP language, and a page does not become weak by looking like itself. Do not count surface occurrences or introduction styles, do not change colour, alignment or heading placement to manufacture novelty, and do not seek originality by avoiding sections, headings, introductions, Flex, Grid, cards or panels.
+**Clinic-first in audience, sector-neutral in visual language.** Independent clinics are the primary market and may lead audience language, content and proof. The shared visual language stays sector-neutral, so the same brand credibly serves a clinic, a law boutique or an advisory firm — MindWP's specialist depth is the precision of its thinking rather than any one industry's aesthetic. Sector-specific imagery and visual material belong to industry pages and other page-specific work, and join the shared system only by explicit adoption.
 
-**Sameness of treatment is the real failure.** A page goes flat when meaningfully different material repeatedly receives the same inner hierarchy, payload structure, scale and reading path, while palette or decoration creates only the appearance of variety. Judge whether recurrence provides useful continuity or gives genuinely different meanings the same weight.
+### Two things every page carries
 
-The `eyebrow → heading → supporting paragraph` opening is correct and should recur. It becomes limiting only when the whole section repeatedly resolves to `introduction → explanation → small visual object → next horizontal band`. The introduction is not the complete section design; the material after and around it should communicate the section's particular relationship.
+MindWP sells a public website *and* the connected enquiry systems around it. Those two subjects want different qualities from the design:
 
-Start from the existing shared foundations. Extend or depart from them only when a composition has a requirement they do not serve. A page-specific visual layer may break out of a container, introduce controlled layering or establish a different spatial environment while the semantic structure and readable content remain sound.
+- The **public experience** carries distinction, trust, desirability, clarity and expressive craft.
+- The **connected work** carries ownership, state, sequence, handoff, control, consistency and human responsibility.
 
-### Typography character
+They must feel like one brand, and the unifying rule is simple: **the operational material is drawn with the same craft as the expressive material.** Where a page shows how something is owned or handed off, that deserves the same typography, the same restraint about ornament and the same attention to proportion as a hero. A page that switches into a flatter "diagram mode" for its systems material has produced two brands.
 
-MindWP's typography combines editorial character with operational clarity.
+This is a description of qualities, not a page structure. Neither register maps to a section, a surface or a position on the page, and many pages will carry only one of them.
 
-- **Fraunces** carries major ideas, emotional emphasis, important turns and editorial character.
-- **Inter** carries explanation, evidence, navigation, labels, controls and operational detail.
-- **Italics** should signal meaningful contrast, qualification or a change in thought, not routine decoration.
-- **Readable measure** matters as much as font size. Explanatory copy should stay easy to follow rather than expanding because space is available.
+**What MindWP does not look like.** The palette, the typographic seriousness and the refusal of ornament already do most of this work, but state it plainly: MindWP is not a SaaS product, a platform reseller, an automation agency, an all-in-one marketing provider, or a collection of dashboards and flowcharts. Where operational material starts to resemble a product UI, the correction is usually more typographic craft and fewer chrome-like affordances.
 
-Inherit the established typographic roles before introducing a new one, and introduce a different scale, style, measure or behaviour only when the composition requires a deliberate typographic role. Engineering owns how that inheritance is implemented.
+### Expressing growth
 
-### Surface and colour roles
+MindWP supports growth through better visibility, better handling and greater operational consistency, and promises no growth outcome. The visual language carries that honestly through **clarity, organised movement, continuity, visible responsibility, fewer gaps, stronger control, and a system becoming easier to understand and manage.**
+
+Invented metrics, rising charts, counters, oversized arrows, urgency devices and growth-hacking aesthetics all claim an outcome MindWP has not earned, and read as the work of a different kind of supplier.
+
+## 3 · The material system
+
+### Type
+
+**Fraunces** carries major ideas, emotional emphasis, important turns and editorial character. **Inter** carries explanation, evidence, navigation, labels, controls and operational detail. Italics signal genuine contrast, qualification or a change in thought.
+
+**The type scale has a usable middle, and using it is what separates a designed section from a well-set paragraph.** A composition that jumps from a display heading straight to body copy has only two voices; giving an object its own heading level lets it read as a thing rather than as more text.
+
+Measure matters as much as size: explanatory copy stays at a width that keeps it easy to follow, whatever space is available. Display type is a compositional instrument — a line set large enough to be an object in its own right is one of the most reliable ways to make a page feel authored.
+
+### Surface
 
 - **Navy** carries conviction, control, connected-system logic, decisive moments and strong closure.
 - **Paper** supports editorial explanation, argument and calm long-form clarity.
 - **Mist** supports quieter evidence, reflection, qualification and transitions.
 - **White** provides clarity, contrast and contained material within lighter environments.
 
-These roles guide judgement rather than enforcing a fixed page sequence, and a surface may support another job when the composition justifies it. A long page may reuse any of them several times. Do not alternate surfaces mechanically, and do not introduce extra colours merely to make neighbouring sections look different. A background change can support progression but is not a substitute for hierarchy, scale, density, relationship or focal emphasis.
+A surface may take another job where the composition justifies it, and a long page may return to any of them. Surface changes support progression, atmosphere, contrast and shifts in reading behaviour; hierarchy, scale and relationship remain the primary means of distinguishing one section from another.
 
-**Emerald is a controlled attention colour** — eyebrows, marks, rules and small emphasis; connection paths and meaningful system relationships; active, selected, success and status states; focus treatment; a primary action that deserves clear priority; and small operational fills inside truthful visual material. Do not use it as a large decorative surface or repeatedly fill ordinary cards and panels with it. Its strength comes from controlled use.
+**Emerald marks controlled attention** — small emphasis, connection paths, meaningful system relationships, active and selected states, focus treatment, and a primary action that deserves clear priority. Its strength comes from that reservation.
 
-### Edge, depth and material character
+Beyond navy, emerald and the neutral ladder, colour enters through real imagery and whatever colour that material genuinely has. The brand does not need a wider palette to be expressive.
 
-Prefer hairline borders, restrained radii, subtle surface contrast, controlled shadows, intentional layering, clear spacing and proportion, and depth that communicates belonging, priority, state or interaction.
+### Depth and edge
 
-Overlap, rotation, layering and curvature are valid when they communicate relationship, belonging, sequence or depth; they fail when added to make a composition appear premium. The test is whether removing the effect would cost the reader information.
+Hairline borders, restrained radii, subtle surface contrast, controlled shadows and intentional layering, where depth communicates belonging, priority, state or interaction. Overlap, rotation and curvature suit relationship, sequence and depth — the useful test is whether removing the effect would cost the reader information.
 
-Premium character comes primarily from typography, scale, proportion, spacing, hierarchy, material contrast and careful responsive behaviour. Restraint should not become visual thinness: important material still needs sufficient scale, contrast, depth, evidence or spatial presence to carry its job. A depth effect invisible against its own background is not restraint but an unfinished object — check the rendered contrast, not the intent.
+**An object has to be visible against its own ground.** The light end of the palette spans only a few steps, so an object on a light surface usually needs a fill *and* an edge *and* a shadow to exist as an object at all — one of the three is rarely enough. Confirm that in the render rather than in the intent.
 
-## Composition expresses the material's relationship
+Premium character comes from typography, scale, proportion, spacing, hierarchy and material contrast rather than from effects.
 
-Three layers stay distinct: **shared grammar** provides the recognisable foundations, **composition** expresses the hierarchy and relationship specific to this material, and **technique** supplies the tools.
+## 4 · Composition
 
-A technique is neither a concept nor a defect by itself. Equal cards suit genuine peers, a timeline suits a sequence, a plain horizontal band suits a quiet transition. Reuse an inner pattern when the underlying relationship really is the same. Meaning determines what must be communicated; it does not predetermine the component used to communicate it.
+Composition exists to make a relationship visible. Before deciding how a section looks, decide what relationship the reader should be able to see: a comparison, a sequence, a whole and its parts, evidence supporting a conclusion, a choice and its consequence, a responsibility handed from one place to another. The composition then makes that relationship perceptible before the copy is read.
 
-For important or uncertain material, reason through this bridge:
+**Design from instances, not categories.** Material named as a class of thing — a quality, a kind of enquiry, a stage of setup — has no shape, and will be drawn as a labelled box no matter how much care follows. Material named as a specific instance has a shape already: a particular message, at a particular moment, with a particular consequence. This single distinction accounts for more flat sections than any other cause.
 
-> section job → intended visitor change → essential meaning or proof → relationship that should become visible → focal hierarchy → eye path → relationship with neighbouring material → narrow-width transformation → purposeful motion or interaction
+**A section is substantial when it has something to look at that carries meaning.** In practice that means the payload has an interior rather than only an outline; it is legible without the paragraph beside it; and it survives narrow widths with its relationship intact. A section that fails those is not necessarily wrong — it may be genuinely quiet — but it is not yet carrying weight.
 
-The visitor change should be concrete. After this material, should the visitor understand a distinction, trust a claim, compare alternatives, see causality, recognise ownership, follow a sequence, inspect proof, choose a path or feel ready to act?
+**Focal scale is earned by a focal payload.** Before giving a section focal treatment, name the dominant object and the relationship it reveals; that object is what the extra space is holding. Height, padding and motion support emphasis that a payload already carries.
 
-The relationship might be comparison, sequence or causality, a whole and its parts, evidence and conclusion, context and focal point, choice and consequence, responsibility and handoff, or continuity and deliberate interruption. Choose one because it clarifies the material, not because it suggests an attractive artefact, and treat metaphors in copy as meaning cues rather than visual instructions.
+**Quiet sections are legitimate and necessary.** A page where every section competes has no hierarchy. Distinctiveness concentrates where the meaning benefits from it, and a transition may be nothing but well-set type.
 
-Composition works through scale, span, contrast, negative space, alignment, sequence, containment, breakout, overlap, layering, density and transition. Changing one or two purposefully can establish hierarchy without adding cards, panels or decoration. Additional ingredients are valid when they improve the central relationship and decorative when they only accompany it; count is not the test.
+**A section introduction is one part of the section design.** The `eyebrow → heading → supporting paragraph` opening is valid and may recur where it serves the material; a section may equally open on an object, a statement, a situation or a visible state. What matters is that the material after and around the introduction carries the section's particular relationship, rather than every section resolving to `introduction → explanation → small object → next band`.
 
-Visual material can be many things — a constructed scene, real evidence or media, a model of relationships, language set at artefact scale, a spatial sequence, or nothing but well-set copy and rules. That list is illustrative and deliberately incomplete. Choose material because it externalises the section's relationship, and judge it by whether that relationship is legible in the render, survives responsive transformation and remains meaningful without a paragraph explaining it.
+Familiar structures are used confidently when the information genuinely has that shape. Distinction comes from hierarchy, relationship, scale and craft within them, and repetition is judged by whether different meanings are receiving the same inner treatment — not by counting components.
 
-Develop content and composition together. Use credible real content early rather than building empty containers and forcing copy into them. Never invent proof, metrics, testimonials, systems, client results or operational detail to complete a visual idea.
+**Develop content and composition together.** Compose against credible real content early, so the composition is shaped by what it actually has to carry. Proof, metrics, testimonials, client results and operational detail are never invented to complete a visual idea.
 
-## Weight, payload and quiet sections
+## 5 · Showing work that has no natural picture
 
-A complete page should not give every section the same scale, density, visual importance or reading path. Use page-level judgement to establish changes in emphasis and atmosphere, shifts between dense and quiet material, differences in reading effort, meaningful continuity between connected ideas, stronger treatment for commercially important or proof-bearing material, and calm treatment where spectacle would add no value.
+Much of what MindWP sells is invisible. Acknowledgement, routing, ownership, status, follow-up and review activity are real responsibilities with no photograph and no obvious object. This is the recurring design problem of the business, and the wrong answer — a fabricated dashboard — is always available and always tempting.
 
-Not every section needs a bespoke visual concept. **Quiet sections are valid and necessary**, and distinctiveness should be concentrated where the meaning benefits from it rather than distributed as decoration.
+**The strongest available material is usually what the service actually produces.** The wording of a message MindWP writes, the shape of a reply, the fields a record keeps, the decisions a client approves before anything is connected: these are real, they belong to MindWP, they need nobody's permission, and a business owner recognises them immediately. A page showing the actual words of an invitation is doing something a diagram of "the invitation process" cannot.
 
-Focal treatment follows focal payload. Additional height, padding or motion cannot be the primary source of emphasis: before giving a section focal scale, identify the dominant object and the relationship it reveals. A small payload inside a tall band is not a focal section but empty space. These are proportions to judge, not measurements to hit, and no section should be lengthened to reach a target depth.
+Beyond that, truthful routes include:
 
-## Page continuity
+- **real artefacts** — the actual thing produced, at a scale where it can be read;
+- **clearly identified demonstrations** — constructed material whose status is visible;
+- **states** — a thing before and after something happens to it;
+- **sequences** — where position carries the argument rather than decorating it;
+- **responsibility and handoff** — who holds something, and where it goes next;
+- **real configuration evidence** where it exists and may be shown.
 
-A complete page should make its commercial progression, changes of argument, proof and intended action perceptible without assigning equal visual weight to every section. Judge progression and changes in understanding, anticipation and payoff, continuity between related ideas, deliberate interruption when the argument changes, shifts in scale and reading effort, placement and legibility of proof, preparation for the primary action, and accumulated fatigue.
+No technique is prescribed and none is required. A dashboard, an interface and a flow diagram are all available where they genuinely suit the material — and all three are weak when reached for as the default picture of "a system".
 
-Necessary cautions can flatten progression when several versions of the same boundary each claim focal scale. Consolidate them, let some recede into supporting copy, or place them beside the claim they qualify. Check again at narrow widths, where stacking amplifies equal weight.
+Where nothing real exists to show, the honest answer is quieter material rather than a convincing fabrication. A section carried by careful type is stronger than a section carried by an invented screen.
 
-Narrative acts and surface rhythm are different systems and must not map one-to-one. One narrative act may move through several surfaces, and one surface environment may carry meanings from more than one act. Do not assign one background per act or treat every surface change as a narrative boundary. Several sections may share one visual environment when they form a continuous experience — but each meaning inside that group still needs a clear role, hierarchy and transition, or the group is only ordinary bands inside a wrapper.
+### Truth boundaries
 
-## Responsive recomposition
+These are absolute:
 
-Major compositions need a credible narrow-width reading order while their concepts remain adaptable. Responsive design is recomposition, not automatic shrinking or stacking.
+- Constructed material must never masquerade as client evidence, a measured result or a live operational state.
+- A demonstration must never be presented as a real implementation, and its status stays identifiable wherever a visitor could mistake it.
+- Capability must never be implied beyond what the service actually provides.
+- Private information, client data and operational detail must never appear in public visual material.
 
-Narrow widths must preserve meaning and truthful boundaries, priority and focal hierarchy, the essential relationship the composition carries, proof and its connection to the relevant claim, the intended action, and essential interaction.
+A useful check on any constructed scene is what it demonstrates. Where the honest answer is only that the work exists, it is decoration, and the section is better served by material showing a real relationship.
 
-Natural linear stacking is valid when the meaning is linear. Reject stacking or uniform card conversion when it destroys comparison, causality, sequence, proof association, ownership or hierarchy. Reorder presentation, simplify supporting decoration, change crop, reduce layering or replace a dense visual explanation when necessary, while keeping the reading order coherent.
+### Photography
 
-## Interaction and motion purpose
+Photography may support human accountability, real working context, atmosphere, evidence, and relief from screen-heavy material. It is optional and page-specific: some pages need it, many do not, and it earns its place by doing one of those jobs rather than by filling space. Real imagery should be large and legible enough to judge, cropped for what matters, and kept connected to the claim it supports.
 
-Interaction and motion may serve orientation, state, causality, connection, meaningful emphasis or spatial continuity.
+## 6 · The page as an experience
 
-**The static composition must remain complete.** Essential meaning cannot depend on hover, animation or a transient state without an equivalent accessible form, and reduced-motion and script-free renders must retain the same information.
+A page is read as one thing before it is read as sections. Its progression, its changes of argument, its proof and its intended action should be perceptible while visual weight is distributed unevenly across it.
 
-Reject blanket reveal animation, hover movement on non-interactive material, motion used to rescue a weak static composition, constant ambient movement, scroll behaviour that removes orientation, and interaction that simulates functionality the service does not provide. Concentrate authored motion where it clarifies a relationship or state.
+**Rhythm.** Weight varies with importance. A page where every section runs to the same depth and density has told the reader nothing about what matters, whatever the copy says.
 
-Engineering owns the technical lifecycle, input states, accessibility, reduced-motion implementation and performance.
+**Density is a tool, not a failure.** Where a section has real, specific substance to deliver, packing it in can be the right decision — a dense passage a reader can work through is often more convincing than the same material spread thin. Sparse is not automatically refined. Choose density where the material rewards attention, and space where the reader needs to slow down.
 
-## Truthful visual material
+**Momentum.** Each screen should leave a reason to continue: something opened, something promised, something changed. A page that resolves everything in each band gives no reason to reach the next.
 
-Visual material should make meaning easier to perceive, evidence easier to inspect or an action easier to understand.
+**Continuity.** Narrative acts and surface rhythm are separate systems that inform each other. One act may move through several surfaces, and one surface environment may carry more than one act. Several sections may share a single visual environment where they form a continuous experience — each meaning inside that group still needs its own role, hierarchy and transition, or the group is ordinary bands inside a wrapper.
 
-Constructed explanations, diagrams and artefacts may clarify an idea, but they must never masquerade as evidence or operational reality. Do not fabricate an interface, dashboard, record or result to make a service look tangible; ask what a scene proves, and if the answer is only "that we build websites", it is decoration. Real evidence should be large and legible enough to judge, cropped for the important content and kept connected to the claim it supports. Where a reasonable visitor could mistake constructed work for a client result, label it.
+**Responsive recomposition.** Narrow widths are a re-composition, not a shrunken copy. They preserve meaning and truthful boundaries, priority and focal hierarchy, the relationship the composition carries, proof and its connection to the claim, the intended action, and essential interaction. Linear stacking suits linear meaning; comparison, causality, sequence, ownership and proof association need a narrow-width composition that keeps those relationships intact — by reordering, simplifying supporting material, changing crop, reducing layering or replacing a dense explanation with a clearer one.
 
-Mixed visual languages are valid when each form has a distinct job and the page still feels coherent.
+## 7 · Interaction and motion
 
-## Judging rendered evidence
+Interaction and motion are part of the communication, not polish applied afterwards. They serve orientation, state, causality, connection, emphasis and spatial continuity.
 
-**Visual quality is established by fresh rendered evidence, not by source inspection or intent.** Render while content and composition can still change, and read the complete page before any section crop — page rhythm, accumulated fatigue and emphasis distribution do not exist in a crop, and a section that reads well alone can still be the fourth of its kind. Thumbnails misrepresent type size and contrast in both directions, so confirm a suspected craft problem at full resolution before naming it.
+- Ordinary content is immediately readable.
+- Interaction provides a useful state or a real choice — something the reader learns by doing that they could not learn by looking.
+- Authored motion concentrates where movement explains something: a state changing, a sequence advancing, a cause producing an effect, a connection being made.
+- The static composition contains the complete meaning.
 
-Engineering owns the capture commands. `mindwp-design-eye` owns the review procedure. This document owns what to judge:
+**Essential meaning is always available without hover, animation or a transient state**, and reduced-motion and script-free renders carry the same information. Interaction never simulates functionality the service does not provide.
 
-- **Shared shell:** after ignoring palette, typography, surface, alignment and introduction grammar, does the important inner composition express this material's relationship?
-- **Material:** does the relationship exist as something in the render, or only in the copy? Cover the paragraphs and check what is left.
-- **Object craft:** is each payload legible against its own background, uncropped at its intended width, and understandable before the copy beside it is read?
-- **Emphasis:** does every section given focal scale contain a payload that earns it, or is the extra depth carrying empty space?
-- **Quiet or unfinished:** where a section is calm, is that a decision about the material, or the absence of one?
-- **Meaning:** does the visual structure make a real comparison, sequence, dependency, proof relationship or decision easier to understand, or merely decorate the copy?
-- **Hierarchy:** is the most important idea or evidence visibly unmistakable?
-- **Recurrence:** where a reading pattern repeats, does the material genuinely have the same role? Where meanings differ, do their hierarchy, scale and eye path differ for a reason?
-- **Grouping:** does a shared environment create one continuous experience, or conceal ordinary independent bands inside a wrapper?
+A page with one interaction that genuinely teaches something is stronger than a page with several that decorate. "None, because every relationship here is better shown than operated" is a complete answer.
 
-Use these as judgement prompts, not scores, validators or quotas.
+Engineering owns lifecycle, input states, accessibility, reduced-motion implementation and performance.
 
-## Reference pages
+## 8 · Judging the result
 
-[README.md](./README.md) owns the reference-page rule. In short: a page becomes a reference only when the user names it, and a named reference sets a standard of quality — never a template, pattern library, section catalogue or required anatomy.
+**Visual quality is established by fresh rendered evidence.** Render while content and composition can still change. Read the complete page before any section crop — rhythm, momentum, accumulated fatigue and emphasis distribution exist only at page scale, and a section that reads well alone can still be the fourth of its kind. Thumbnails misrepresent type size and contrast in both directions, so confirm a suspected craft problem at full resolution before naming it.
+
+What to look for, as qualities rather than a checklist:
+
+- **First impression.** Before reading, does the page look like someone decided? Is the most important thing unmistakable?
+- **Relationship in the render.** Cover the paragraphs. Does the important material still communicate, or does the meaning live only in the copy?
+- **Substance.** Does each significant section have something that carries weight, with an interior, legible on its own?
+- **Earned emphasis.** Does each section given focal scale hold a payload that deserves it?
+- **Quiet by decision.** Where a section is calm, does that read as a judgement about the material?
+- **Rhythm and momentum.** Does depth vary with importance, and does each screen give a reason to continue?
+- **Craft.** Is each object visible against its own ground, uncropped at its intended width, and resolved at full size?
+- **Truth.** Does everything shown represent something real, with constructed material identifiable as such?
+- **Narrow width.** Does the composition recompose, keeping its relationships intact?
+
+Where the user has named a reference page, it sets a standard of resolution to reach rather than an anatomy to reproduce; new work derives its own composition from its own meaning. [README.md](./README.md) owns that rule in full.

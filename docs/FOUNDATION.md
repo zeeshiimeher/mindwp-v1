@@ -8,15 +8,15 @@ Current offer packaging, service names, CTA direction, delivery and commercial c
 
 MindWP is website-centred rather than limited to selling websites. It helps organisations where a consequential customer or patient decision depends on clarity, trust, proof and a useful route to contact. The current named market focus belongs in Strategy rather than becoming an immutable audience list here.
 
-The website is the most controllable public experience a business owns, and it holds two durable roles for MindWP. It is where a prospective customer or patient can understand the work, evaluate fit and proof, develop confidence and choose a useful next step. It is also the **strongest visible proof of MindWP's craft** — the part of the work a buyer can inspect directly, which is why it remains the public centre of the offer.
+The website is the most controllable public experience a business owns. It is where a prospective customer or patient can understand the work, evaluate fit and proof, develop confidence and choose a useful next step. It is also work a buyer can inspect directly, which is part of why it remains the public centre of the offer.
 
 Search, referrals, advertising and conversation may create attention elsewhere, but those sources do not remove the need for a clear, trustworthy destination.
 
-Website-centred is an offer hierarchy, not a claim that the website acts alone and not a claim that MindWP only builds websites. The public identity begins with the website and the customer decision it supports. What happens after contact is a second responsibility of comparable seriousness, and MindWP may own either side, or both.
+Website-centred is an offer hierarchy, not a claim that the website acts alone and not a claim that MindWP only builds websites. The website remains the public centre; handling what happens after contact is a core capability alongside it. Either may be scoped independently, and neither implies that every client buys everything.
 
 **A rebuild is not a precondition.** Where an existing website already serves its purpose, MindWP may improve the path around it without rebuilding it. A business with a capable website remains a valid client.
 
-MindWP supports growth through better mechanisms and greater consistency — clearer evaluation, more suitable enquiry paths, fewer opportunities lost to poor handling, less dependence on someone remembering. It does not promise growth. The defensible responsibility is the mechanism, its configuration, connection, testing and ongoing consistency; never the commercial outcome.
+MindWP may support commercial improvement through planned and implemented mechanisms, but it does not guarantee commercial outcomes.
 
 ## Audience and buyer principles
 
@@ -30,15 +30,11 @@ Fit should be judged from the real decision and value at stake, useful evidence,
 
 ## Why connected enquiry systems are intentional
 
-A website can own clarity, trust, proof placement and the route to a useful enquiry. It cannot by itself acknowledge that enquiry, route it, make ownership visible, preserve context, follow it up or keep a reputation current.
-
-Those responsibilities are a core adjacent capability rather than an accessory. The durable distinction:
+A website can own clarity, trust, proof placement and the route to a useful enquiry. It cannot by itself acknowledge that enquiry, route it, make ownership visible, preserve context or follow it up.
 
 > The website helps someone understand, choose and enquire. The connected system helps the business handle that enquiry consistently.
 
-Both sides are intentional and neither is compulsory. An engagement may take the website alone, the connected side alone against a suitable existing website, both together, or an ongoing responsibility for either. Useful adjacency is not authority to sell every capability as a bundle, imply equal ownership of every customer moment, or claim outcomes that depend on the client's own capacity and judgement.
-
-Adjacent capability beyond that path — discovery, reputation and operational visibility among them — may be connected when the diagnosis and scope justify it, and remains subordinate to the two responsibilities above.
+That handling is a core adjacent capability rather than an accessory. Both sides are intentional and neither is compulsory: an engagement may take one, the other or both. Useful adjacency is not authority to sell every capability as a bundle, imply equal ownership of every customer moment, or claim outcomes that depend on the client's own capacity and judgement.
 
 ## Truth and proof
 
@@ -64,7 +60,7 @@ MindWP also avoids unsupported competitor absolutes. The offer should be differe
 
 MindWP does not sell advertising management. Advertising may bring attention; MindWP's role begins with the experience and path the approved scope actually owns.
 
-MindWP is not positioned as a SaaS product, CRM resale, automation package, AI replacement, generic tool setup or compulsory capability bundle. WordPress, builders, CRM systems, automation and AI may support delivery, but tools are not the public product.
+MindWP is not positioned as a SaaS product, CRM resale, automation package, AI replacement, generic tool setup or compulsory capability bundle. Software and platforms may support delivery, but tools are never the public product and no third-party platform may be presented as MindWP's own.
 
 What MindWP does sell is planned and implemented work: websites and the connected business systems around them, not raw access to software. How that work is delivered, managed and handed over is Strategy's to set.
 

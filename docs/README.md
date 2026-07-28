@@ -6,7 +6,7 @@ This directory is MindWP's reusable project memory. Open only the authorities th
 
 | Document                               | Owns                                                                                                                                        |
 | -------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
-| [FOUNDATION.md](./FOUNDATION.md)       | Durable identity, buyer principles, website-led rationale, truth, proof, privacy and professional boundaries                                |
+| [FOUNDATION.md](./FOUNDATION.md)       | Durable identity, buyer principles, website-centred rationale, truth, proof, privacy and professional boundaries                            |
 | [STRATEGY.md](./STRATEGY.md)           | Current commercial direction, offers, service responsibilities, qualification, conversion direction, page roles and open decisions          |
 | [WRITING.md](./WRITING.md)             | Voice, audience register, claims discipline and responsible public-language practice                                                        |
 | [PAGE-PLANNING.md](./PAGE-PLANNING.md) | Page research, jobs, intent, narrative, meaning, proof, boundaries and the compact page-brief contract                                      |
