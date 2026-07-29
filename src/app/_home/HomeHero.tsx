@@ -18,17 +18,17 @@ export function HomeHero() {
         <div className="home-hero__intro container--flow" data-home-hero-sequence>
           <div className="section-title-group">
             <p className="eyebrow" data-home-hero-item>
-              Smart websites
+              Website &amp; enquiry systems
             </p>
             <h1 data-home-hero-item>
-              <span className="home-hero__headline-line">A smarter website</span>
-              <em>for being found, understood and chosen.</em>
+              <span className="home-hero__headline-line">Smart websites</span>
+              <em>and connected enquiry systems.</em>
             </h1>
           </div>
           <p className="home-hero__lede text-lead" data-home-hero-item>
-            MindWP designs smarter websites for independent clinics and specialist service
-            businesses — helping the right customers find you, understand the work, and choose you
-            with confidence.
+            MindWP builds smart websites and connected enquiry systems for clinics and expert-led
+            businesses, designed to support growth through better visibility, better handling and
+            greater operational consistency.
           </p>
           <Button
             href={CONTACT_PATH}

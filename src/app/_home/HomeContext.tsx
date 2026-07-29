@@ -30,7 +30,7 @@ export function HomeContext() {
         data-home-sequence
       >
         <p className="eyebrow eyebrow--centered" data-home-sequence-item>
-          Smart website
+          Built around a decision
         </p>
         <h2 data-home-sequence-item>
           The website is built around{" "}

@@ -24,7 +24,8 @@ export function HomeDistance() {
           <p data-home-sequence-item>
             Before anyone gets in touch, they need three things settled: that the page they landed
             on actually answers their situation, that the proof on it can be checked, and that the
-            next step is obvious. A smart website closes that distance instead of adding to it.
+            next step is obvious. A website built around that decision closes the distance instead
+            of adding to it.
           </p>
           <p className="editorial-note" data-home-sequence-item>
             Clarity is not more copy. It is less distance between the question and the answer.
@@ -70,15 +71,16 @@ export function HomeAfterEnquiry() {
     <section id="after-enquiry" className="home-after-enquiry section section--quiet on-dark">
       <div className="container section-intro section-intro--centered" data-home-sequence>
         <p className="eyebrow eyebrow--centered" data-home-sequence-item>
-          After enquiry
+          After contact
         </p>
         <h2 data-home-sequence-item>
-          A useful enquiry still needs <em>a response, an owner and a clear next step.</em>
+          A form that submits <em>is not yet an enquiry that has been answered.</em>
         </h2>
         <p data-home-sequence-item>
-          A slow reply, an unclear owner, or a next step nobody can see all cost the same thing:
-          confidence the enquiry was worth sending. None of this needs automation to replace your
-          team — it needs the handling to be visible.
+          Smart Website Systems owns the path as far as a useful enquiry — the person understood the
+          offer, gave enough context to be answered, and the request reached the destination you
+          agreed, with a truthful confirmation that it was sent. Acknowledgement, useful context,
+          routing and a visible owner are separate work, scoped on their own terms.
         </p>
       </div>
       <ol className="container home-after-enquiry__steps" data-home-stagger>
@@ -90,6 +92,12 @@ export function HomeAfterEnquiry() {
           </li>
         ))}
       </ol>
+      <p
+        className="container home-after-enquiry__attribution home-artifact-label"
+        data-home-fade
+      >
+        Part of Lead Response &amp; Handling
+      </p>
     </section>
   );
 }
@@ -99,27 +107,31 @@ export function HomeOneSystem() {
     <section id="one-system" className="home-one-system section">
       <div className="container section-intro section-intro--centered" data-home-sequence>
         <p className="eyebrow eyebrow--centered" data-home-sequence-item>
-          Connected where useful
+          One partner, separately scoped
         </p>
         <h2 data-home-sequence-item>
-          The website leads. <em>Support connects where the journey needs it.</em>
+          The website is the public centre. <em>It is not the whole of what we can own.</em>
         </h2>
-        {/* The negation sets up the promise; it must never outweigh it. Line
-            breaks are left to `text-wrap: balance` rather than hard <br />s,
-            which produced an orphaned "owned," at the design width. */}
-        <p className="home-one-system__crossed" data-home-sequence-item>
-          Not <s>an SEO retainer,</s> plus <s>a website agency,</s> plus <s>a forms tool,</s> plus{" "}
-          <s>a half-set-up CRM,</s> plus <s>a review platform.</s>
-        </p>
+        {/* The promise leads and the negation qualifies it. Stated the other way
+            round, the section opened on what MindWP is not — which reads as a
+            defence rather than an offer now that the connected services are a
+            first-class route. Line breaks are left to `text-wrap: balance`
+            rather than hard <br />s, which produced an orphaned "owned," at the
+            design width. */}
         <p className="home-one-system__promise" data-home-sequence-item>
-          One website where being <u>found</u>, <u>answered</u>, <u>owned</u> and <u>proven</u> is
-          built in.
+          One partner for being <u>found</u>, <u>answered</u>, <u>owned</u> and <u>proven</u> — in
+          whatever combination you need.
+        </p>
+        <p className="home-one-system__crossed" data-home-sequence-item>
+          Not <s>a separate SEO retainer,</s> plus <s>a website agency,</s> plus{" "}
+          <s>a forms tool,</s> plus <s>a half-set-up CRM,</s> plus <s>a review platform.</s>
         </p>
         <p data-home-sequence-item>
-          The website is the foundation. Around it, we connect the support your customers&apos;
-          journey actually needs — being found nearby, enquiries answered, follow-up kept moving,
-          reviews working for you. Each piece is planned and scoped on its own, so you add what
-          helps rather than buying a set.
+          The website is the public centre and the usual place to start, but it is not a
+          precondition. Local SEO Authority supports discovery and evaluation before someone reaches
+          the website. Lead Response &amp; Handling, Follow-Up &amp; CRM and Reputation &amp; Review
+          begin once someone makes contact. Each is planned and scoped on its own, against a new website or one
+          you already have.
         </p>
       </div>
 
@@ -135,16 +147,13 @@ export function HomeBeyondWebsite() {
     <section id="beyond-website" className="home-systems section on-dark">
       <div className="container section-intro section-intro--centered" data-home-sequence>
         <p className="eyebrow eyebrow--centered" data-home-sequence-item>
-          Beyond the website
+          Connected services
         </p>
-        <h2 data-home-sequence-item>
-          Add the support <em>that earns its place.</em>
-        </h2>
+        <h2 data-home-sequence-item>What happens once someone gets in touch.</h2>
         <p data-home-sequence-item>
-          The website gives people a clear place to understand the offer, decide and get in touch.
-          These five moments shape what happens around it. MindWP plans and connects the support
-          that fits your business, using CRM and carefully scoped automation where it makes the
-          path clearer, more consistent and easier for your team to own.
+          Lead Response &amp; Handling, Follow-Up &amp; CRM and Reputation &amp; Review are
+          independently scoped responsibilities. MindWP plans how each should work, configures and
+          connects it, tests the path and onboards the team. None requires a new website.
         </p>
       </div>
       <div className="container">

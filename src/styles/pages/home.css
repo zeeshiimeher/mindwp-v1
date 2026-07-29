@@ -143,13 +143,18 @@
 }
 
 /* ---- Hero artwork ----
-   One 16s timeline shared by every layer, so the scenes stay in phase without
-   a JS clock. Base (unanimated) values are the complete still: the search
-   scene hides, the page and its action stay, the sent confirmation stays, and
-   every step in the rail reads as reached. Reduced motion therefore lands on a
-   frame that still carries the whole argument. */
+   One 18s timeline shared by every layer, so the scenes stay in phase without
+   a JS clock. Every animated path carries pathLength="1", which lets a single
+   dash-offset keyframe drive geometry of any length.
+
+   Authored values are the settled frame: paths complete, enquiry held inside a
+   closed ring, agreed step extended. Reduced motion and a script-free render
+   therefore land on the state that carries the whole argument, and the loop
+   only ever removes and rebuilds what is already true. */
 
 .hero-art {
+  --ha-loop: 18s;
+
   position: relative;
   width: 100%;
   max-width: 39rem;
@@ -157,13 +162,13 @@
 
 .hero-art__glow {
   position: absolute;
-  top: 6%;
-  left: 20%;
-  width: 62%;
+  top: 16%;
+  left: 14%;
+  width: 56%;
   aspect-ratio: 1;
   border-radius: 50%;
   background: var(--emerald-glow);
-  filter: blur(4rem);
+  filter: blur(4.5rem);
   pointer-events: none;
 }
 
@@ -171,305 +176,162 @@
   position: relative;
   width: 100%;
   height: auto;
+  overflow: visible;
 }
 
 .hero-art__svg--narrow {
   display: none;
 }
 
-.hero-art__frame {
-  stroke: var(--border-navy-hairline);
-  stroke-width: 1;
-  filter: drop-shadow(0 1.5rem 3rem rgb(0 0 0 / 32%));
+/* ---- The website: a widening of the path, not a container around it ---- */
+
+.ha__band {
+  animation: ha-band var(--ha-loop) var(--ease-out) infinite;
 }
 
-.hero-art__hairline {
-  stroke: var(--border-navy-hairline);
-  stroke-width: 1;
+/* Scattered in, parallel out. The ordering lives in the geometry, so drawing
+   the strands is what makes it visible — no path morphing required, and the
+   still frame already shows the resolved state. */
+.ha__strand {
+  stroke: var(--text-inverse-muted);
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-dasharray: 1;
+  opacity: 0.5;
+  animation: ha-draw var(--ha-loop) var(--ease-out) infinite;
+  animation-delay: calc(var(--i) * 0.12s);
 }
 
-.hero-art__dot {
-  fill: var(--border-navy-hairline);
+.ha__converge {
+  stroke: var(--text-inverse-muted);
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-dasharray: 1;
+  opacity: 0.6;
+  animation: ha-converge var(--ha-loop) var(--ease-out) infinite;
 }
 
-.hero-art__chrome {
-  fill: var(--surface-navy);
+.ha__route {
+  stroke: var(--text-inverse-muted);
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-dasharray: 1;
+  opacity: 0.45;
+  animation: ha-route var(--ha-loop) var(--ease-out) infinite;
 }
 
-/* ---- Copy inside the artwork ----
-   Sizes are viewBox units. The wide composition renders at roughly 1:1 at its
-   maximum width and the narrow one slightly above 1:1, so these land close to
-   their nominal size on screen and stay legible as the frame scales down. */
+/* ---- The enquiry ---- */
 
-.hero-art__t-title {
+/* Authored at rest inside the ring, so the still frame shows it held. The loop
+   translates it back to the release point and returns it along sampled points
+   of its own travel curve. */
+.ha__packet {
+  transform-box: view-box;
+  animation: ha-packet-wide var(--ha-loop) var(--ease-out) infinite;
+}
+
+.ha__packet--narrow {
+  animation-name: ha-packet-narrow;
+}
+
+.ha__packet-body {
   fill: var(--text-inverse);
-  font: 600 16px/1 var(--font-body);
 }
 
-.hero-art__t-meta {
-  fill: var(--text-inverse-muted);
-  font: 400 13px/1 var(--font-body);
-}
-
-.hero-art__t-quiet {
-  fill: var(--text-inverse-muted);
-  font: 500 14px/1 var(--font-body);
+.ha__packet-rule {
+  stroke: var(--surface-navy);
+  stroke-width: 1.5;
+  stroke-linecap: round;
   opacity: 0.5;
 }
 
-.hero-art__t-tag {
-  fill: var(--color-emerald);
-  font: 600 11px/1 var(--font-body);
-  letter-spacing: 0.07em;
+/* Context does not follow the enquiry, it travels attached to it — which is
+   the whole reason the marks sit inside the moving group. */
+.ha__context {
+  stroke: var(--text-inverse-muted);
+  stroke-width: 1.25;
+  stroke-linecap: round;
+  opacity: 0.65;
 }
 
-.hero-art__t-display {
-  fill: var(--text-inverse);
-  font: 600 23px/1 var(--font-display);
-  letter-spacing: var(--display-md-tracking);
-}
+/* ---- Confirmation and ownership: the only emerald in the artwork ---- */
 
-.hero-art__t-body {
-  fill: var(--text-inverse-muted);
-  font: 400 13px/1 var(--font-body);
-}
-
-.hero-art__t-tile {
-  fill: var(--text-inverse);
-  font: 600 13px/1 var(--font-body);
-}
-
-.hero-art__t-sent {
-  fill: var(--text-inverse);
-  font: 600 14px/1 var(--font-body);
-}
-
-.hero-art__svg--narrow .hero-art__t-title {
-  font-size: 13px;
-}
-
-.hero-art__svg--narrow .hero-art__t-meta {
-  font-size: 11px;
-}
-
-.hero-art__svg--narrow .hero-art__t-quiet {
-  font-size: 12px;
-}
-
-.hero-art__svg--narrow .hero-art__t-display {
-  font-size: 18px;
-}
-
-.hero-art__svg--narrow .hero-art__t-tile {
-  font-size: 12px;
-}
-
-.hero-art__svg--narrow .hero-art__t-sent {
-  font-size: 11px;
-}
-
-.hero-art__tick {
+.ha__tick {
   stroke: var(--color-emerald);
-  stroke-width: 2;
+  stroke-width: 2.25;
   stroke-linecap: round;
   stroke-linejoin: round;
-  fill: none;
+  transform-box: view-box;
+  transform-origin: 518px 292px;
+  animation: ha-tick var(--ha-loop) var(--ease-out) infinite;
 }
 
-/* ---- Scene A · Found ---- */
-
-.hero-art__searchbar {
-  fill: var(--surface-navy);
-  stroke: var(--border-navy-hairline);
-  stroke-width: 1;
+.hero-art__svg--narrow .ha__tick {
+  transform-origin: 185px 322px;
 }
 
-.hero-art__searchglyph {
+/* The recognisable gesture. Two arcs swing shut around the enquiry and hold
+   it; they are the largest discrete form here, because a closure the reader
+   cannot see is the difference between this and a glowing abstract line. */
+.ha__ring-arc {
   stroke: var(--color-emerald);
-  stroke-width: 1.8;
+  stroke-width: 3;
   stroke-linecap: round;
-  fill: none;
+  transform-box: view-box;
+  transform-origin: 548px 420px;
 }
 
-/* The query is set text now, so it arrives rather than stretches: scaling a
-   word from zero width reads as a smear, not as typing. */
-.hero-art__query {
-  fill: var(--text-inverse);
-  font: 400 15px/1 var(--font-body);
-  opacity: 0.75;
-  animation: ha-query var(--ha-loop) var(--ease-out) infinite;
+.hero-art__svg--narrow .ha__ring-arc {
+  transform-origin: 150px 386px;
 }
 
-.hero-art__svg--narrow .hero-art__query {
-  font-size: 12px;
+.ha__ring-arc--a {
+  animation: ha-ring-a var(--ha-loop) var(--ease-out) infinite;
 }
 
-.hero-art__result-live {
-  fill: var(--surface-navy);
-  stroke: var(--color-emerald);
-  stroke-width: 1.5;
+.ha__ring-arc--b {
+  animation: ha-ring-b var(--ha-loop) var(--ease-out) infinite;
 }
 
-.hero-art__result {
-  fill: var(--surface-navy);
-  stroke: var(--border-navy-hairline);
-  stroke-width: 1;
+/* ---- Agreed, never automatic ---- */
+
+/* Thinner, dashed, and terminating in nothing. It extends out of the ring
+   rather than arriving from elsewhere, so it reads as a step that may follow
+   rather than one that will. There is deliberately no return arc: a loop that
+   always closes would imply every engagement contains every service. */
+.ha__continue {
+  stroke: var(--text-inverse-muted);
+  stroke-width: 1.25;
+  stroke-linecap: round;
+  stroke-dasharray: 5 7;
+  opacity: 0.55;
 }
 
-.hero-art__pin-badge {
-  fill: var(--emerald-tint-strong);
+.ha__continue-shell {
+  transform-box: view-box;
+  transform-origin: 548px 462px;
+  animation: ha-continue var(--ha-loop) var(--ease-out) infinite;
 }
 
-.hero-art__pin {
-  fill: none;
-  stroke: var(--color-emerald);
-  stroke-width: 1.6;
+.ha__continue-shell--narrow {
+  transform-origin: 150px 422px;
 }
 
-.hero-art__pin-dot {
-  fill: var(--color-emerald);
-}
+/* ---- The shared timeline ----
+   0–4 % settle in · 4–32 % attention draws and orders through the website ·
+   32–38 % it converges and the enquiry is released · 38–48 % the enquiry
+   travels and its send is confirmed · 50–57 % the ring closes around it ·
+   58–66 % the agreed step extends · 66–92 % long settled hold · 92–100 % quiet
+   fade before the next arrival. */
 
-.hero-art__tag {
-  fill: var(--emerald-tint);
-}
-
-/* ---- Scene B · Understood ---- */
-
-.hero-art__tile > rect:first-child {
-  fill: var(--surface-navy);
-  stroke: var(--border-navy-hairline);
-  stroke-width: 1;
-}
-
-.hero-art__tile-mark {
-  fill: var(--emerald-tint);
-}
-
-.hero-art__tile {
-  animation: ha-tile var(--ha-loop) var(--ease-out) infinite;
-  animation-delay: calc(var(--i) * 0.4s);
-}
-
-/* ---- The action ---- */
-
-.hero-art__cta {
-  fill: var(--color-emerald);
-}
-
-.hero-art__cta-label {
-  fill: var(--color-navy);
-  font: 600 14px/1 var(--font-body);
-}
-
-.hero-art__svg--narrow .hero-art__cta-label {
-  font-size: 11px;
-}
-
-/* ---- Scene C · Chosen ---- */
-
-.hero-art__receipt > rect:first-child {
-  fill: var(--surface-navy);
-  stroke: var(--emerald-line);
-  stroke-width: 1.5;
-}
-
-.hero-art__sent-mark {
-  fill: var(--emerald-tint-strong);
-}
-
-.hero-art__receipt {
-  animation: ha-receipt var(--ha-loop) var(--ease-out) infinite;
-}
-
-.hero-art__cursor-shape {
-  fill: var(--color-white);
-  stroke: var(--color-navy);
-  stroke-width: 1.2;
-  stroke-linejoin: round;
-}
-
-.hero-art__cursor {
-  opacity: 0;
-  animation: ha-cursor var(--ha-loop) var(--ease-out) infinite;
-}
-
-/* ---- Step rail ---- */
-
-.hero-art__rail {
-  stroke: var(--border-navy-hairline);
-  stroke-width: 1;
-}
-
-.hero-art__step-dot {
-  fill: var(--color-emerald);
-  animation: ha-step var(--ha-loop) var(--ease-out) infinite;
-  /* Negative by a full period so dot i lights during its own third from the
-     very first cycle, instead of holding its base state until its turn. */
-  animation-delay: calc(var(--i) * var(--ha-third) - var(--ha-loop));
-}
-
-.hero-art__step-label {
-  fill: var(--text-inverse);
-  font: 600 15px/1 var(--font-body);
-  letter-spacing: 0.01em;
-}
-
-.hero-art__svg--narrow .hero-art__step-label {
-  font-size: 14px;
-}
-
-/* ---- The shared timeline ---- */
-
-.hero-art {
-  --ha-loop: 16s;
-  --ha-third: 5.333s;
-  --ha-cursor-from-x: 330px;
-  --ha-cursor-from-y: 300px;
-  --ha-cursor-x: 158px;
-  --ha-cursor-y: 368px;
-  --ha-cursor-press: 371px;
-}
-
-.hero-art__scene--a {
-  opacity: 0;
-  animation: ha-scene-a var(--ha-loop) var(--ease-out) infinite;
-}
-
-.hero-art__scene--b,
-.hero-art__cta,
-.hero-art__cta-label {
-  animation: ha-scene-b var(--ha-loop) var(--ease-out) infinite;
-}
-
-.hero-art__scene--c {
-  animation: ha-scene-c var(--ha-loop) var(--ease-out) infinite;
-}
-
-@keyframes ha-scene-a {
+@keyframes ha-band {
   0%,
-  24% {
-    opacity: 1;
-  }
-
-  30%,
-  94% {
+  6% {
     opacity: 0;
   }
 
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes ha-scene-b {
-  0%,
-  24% {
-    opacity: 0;
-  }
-
-  32%,
-  94% {
+  26%,
+  92% {
     opacity: 1;
   }
 
@@ -478,105 +340,231 @@
   }
 }
 
-@keyframes ha-scene-c {
-  0%,
-  56% {
+@keyframes ha-draw {
+  0% {
+    stroke-dashoffset: 1;
     opacity: 0;
   }
 
-  64%,
-  94% {
-    opacity: 1;
-  }
-
-  100% {
-    opacity: 0;
-  }
-}
-
-@keyframes ha-query {
-  0%,
   4% {
-    opacity: 0;
+    opacity: 0.5;
   }
 
-  16%,
+  32% {
+    stroke-dashoffset: 0;
+  }
+
+  92% {
+    stroke-dashoffset: 0;
+    opacity: 0.5;
+  }
+
   100% {
-    opacity: 0.75;
+    stroke-dashoffset: 0;
+    opacity: 0;
   }
 }
 
-@keyframes ha-tile {
+@keyframes ha-converge {
   0%,
-  28% {
+  30% {
+    stroke-dashoffset: 1;
     opacity: 0;
   }
 
-  38%,
+  32% {
+    opacity: 0.6;
+  }
+
+  38% {
+    stroke-dashoffset: 0;
+  }
+
+  92% {
+    stroke-dashoffset: 0;
+    opacity: 0.6;
+  }
+
   100% {
+    stroke-dashoffset: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes ha-route {
+  0%,
+  34% {
+    stroke-dashoffset: 1;
+    opacity: 0;
+  }
+
+  36% {
+    opacity: 0.45;
+  }
+
+  48% {
+    stroke-dashoffset: 0;
+  }
+
+  92% {
+    stroke-dashoffset: 0;
+    opacity: 0.45;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 0;
+  }
+}
+
+/* Sampled from the travel curve, so the enquiry keeps to its own route. */
+@keyframes ha-packet-wide {
+  0%,
+  36% {
+    translate: -78px -170px;
+    opacity: 0;
+  }
+
+  38% {
+    translate: -78px -170px;
     opacity: 1;
   }
+
+  41% {
+    translate: -52.7px -131.4px;
+  }
+
+  44% {
+    translate: -32.25px -90.6px;
+  }
+
+  47% {
+    translate: -15.3px -46.9px;
+  }
+
+  50%,
+  92% {
+    translate: 0 0;
+    opacity: 1;
+  }
+
+  100% {
+    translate: 0 0;
+    opacity: 0;
+  }
 }
 
-@keyframes ha-receipt {
+@keyframes ha-packet-narrow {
   0%,
-  56% {
-    translate: 0 12px;
+  36% {
+    translate: 0 -104px;
+    opacity: 0;
+  }
+
+  38% {
+    translate: 0 -104px;
+    opacity: 1;
+  }
+
+  41% {
+    translate: 0 -78px;
+  }
+
+  44% {
+    translate: 0 -52px;
+  }
+
+  47% {
+    translate: 0 -26px;
+  }
+
+  50%,
+  92% {
+    translate: 0 0;
+    opacity: 1;
+  }
+
+  100% {
+    translate: 0 0;
+    opacity: 0;
+  }
+}
+
+@keyframes ha-tick {
+  0%,
+  42% {
+    opacity: 0;
+    scale: 0.7;
+  }
+
+  46%,
+  92% {
+    opacity: 1;
+    scale: 1;
+  }
+
+  100% {
+    opacity: 0;
+    scale: 1;
+  }
+}
+
+@keyframes ha-ring-a {
+  0%,
+  50% {
+    rotate: -32deg;
+    opacity: 0.4;
+  }
+
+  57%,
+  92% {
+    rotate: 0deg;
+    opacity: 1;
+  }
+
+  100% {
+    rotate: 0deg;
+    opacity: 0;
+  }
+}
+
+@keyframes ha-ring-b {
+  0%,
+  50% {
+    rotate: 32deg;
+    opacity: 0.4;
+  }
+
+  57%,
+  92% {
+    rotate: 0deg;
+    opacity: 1;
+  }
+
+  100% {
+    rotate: 0deg;
+    opacity: 0;
+  }
+}
+
+@keyframes ha-continue {
+  0%,
+  58% {
+    scale: 1 0;
+    opacity: 0;
   }
 
   66%,
-  100% {
-    translate: 0 0;
+  92% {
+    scale: 1 1;
+    opacity: 1;
   }
-}
 
-@keyframes ha-cursor {
-  0%,
-  44% {
+  100% {
+    scale: 1 1;
     opacity: 0;
-    translate: var(--ha-cursor-from-x) var(--ha-cursor-from-y);
-  }
-
-  50% {
-    opacity: 1;
-    translate: var(--ha-cursor-from-x) var(--ha-cursor-from-y);
-  }
-
-  58%,
-  60% {
-    opacity: 1;
-    translate: var(--ha-cursor-x) var(--ha-cursor-y);
-  }
-
-  61% {
-    translate: var(--ha-cursor-x) var(--ha-cursor-press);
-  }
-
-  63%,
-  78% {
-    opacity: 1;
-    translate: var(--ha-cursor-x) var(--ha-cursor-y);
-  }
-
-  86%,
-  100% {
-    opacity: 0;
-    translate: var(--ha-cursor-x) var(--ha-cursor-y);
   }
 }
-
-@keyframes ha-step {
-  0%,
-  30% {
-    fill: var(--color-emerald);
-  }
-
-  33%,
-  100% {
-    fill: var(--border-navy-hairline);
-  }
-}
-
 .home-hero__journey {
   --container-gap: var(--space-6);
   --journey-progress: 0;
@@ -636,6 +624,7 @@
   color: var(--text-inverse);
   font: var(--ui-strong);
 }
+
 
 /* Attention
    Six peers in a hairline lattice. Cells share their edges so the six read as
@@ -1028,15 +1017,25 @@
   letter-spacing: var(--display-md-tracking);
 }
 
+/* The service the four stages belong to, named rather than left implied. Set on
+   the same centred measure as the section introduction above it, matching the
+   closing-note pattern used by `.att__close` and `.home-systems__boundary`. */
+.home-after-enquiry__attribution {
+  max-width: var(--measure-copy);
+  margin-inline: auto;
+  text-align: center;
+}
+
 /* One system */
 
 .home-one-system {
   background: var(--surface-card);
 }
 
-/* The crossed list is the setup, not the point: it sits at supporting scale so
-   the promise below it is unmistakably the dominant sentence. Five 2px strikes
-   at display scale made the negation the loudest thing in the section. */
+/* The crossed list qualifies the promise above it rather than making the point
+   itself, so it sits at supporting scale and the promise stays unmistakably the
+   dominant sentence. Five 2px strikes at display scale made the negation the
+   loudest thing in the section. */
 .home-one-system__crossed {
   color: var(--text-secondary);
   font: 400 clamp(1.05rem, 0.99rem + 0.28vw, 1.25rem) / 1.55 var(--font-display);
@@ -2067,411 +2066,193 @@
 }
 
 /* Compounding
-   Split by material: the website is SVG artwork (graphical, fixed geometry),
-   the gains are real HTML (text, so it must wrap and respect font settings).
-   A CSS spine ties them together instead of an absolute overlay that would
-   drift at every width. */
+   One customer question, the answer the website establishes, and three later
+   pieces that reuse what it settled. The relationship is directional, so the
+   treatment is deliberately unequal: the answer is the only element with a
+   ground, and the extensions are annotations tied back to it by a hairline.
+   Four equally-treated panels would say these are peers, which is the one
+   thing this composition must not say. */
 
-.cp {
-  display: grid;
-  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
-  gap: clamp(2.5rem, 5vw, 5rem);
-  align-items: center;
+.home-compounding {
+  background: var(--surface-mist);
 }
 
-.cp__art {
+.cmpd {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: var(--space-4);
+  gap: var(--space-7);
 }
 
-.cpa {
-  width: 100%;
-  max-width: 28rem;
-}
+/* ---- The customer's question ---- */
 
-.cpa__svg {
-  width: 100%;
-  height: auto;
-  filter: drop-shadow(0 1.25rem 3rem rgb(7 22 41 / 12%));
-}
-
-.cp__art-label {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--space-1);
-  color: var(--text-secondary);
-  font: var(--body-sm);
+/* The speaker is named beneath the quotation because this is the client's
+   customer talking, never MindWP addressing the visitor. Without it the line
+   reads as the page asking the reader. */
+/* A rem measure, not `ch`: the figure inherits body size, so a ch value here
+   resolves against the wrong font and sets the question seven lines deep. */
+.cmpd__question {
+  max-width: 46rem;
+  margin-inline: auto;
   text-align: center;
 }
 
-.cp__art-label span {
+.cmpd__question blockquote {
   color: var(--text-primary);
-  font: var(--display-md);
+  font: 600 clamp(1.9rem, 1.3rem + 2.1vw, 3rem) / 1.18 var(--font-display);
   letter-spacing: var(--display-md-tracking);
+  text-wrap: balance;
 }
 
-/* ---- The site being drawn ---- */
-
-.cpa__window {
-  fill: var(--color-white);
-  stroke: var(--border-mist-hairline);
-  stroke-width: 1;
+.cmpd__question figcaption {
+  margin-top: var(--space-4);
+  color: var(--text-secondary);
+  font: var(--label-caps);
+  letter-spacing: var(--label-caps-tracking);
+  text-transform: uppercase;
 }
 
-.cpa__hair {
-  stroke: var(--border-hairline);
-  stroke-width: 1;
+/* Attached once to the whole payload, never repeated on a fragment. */
+.cmpd__label {
+  max-width: var(--measure-copy);
+  margin-inline: auto;
+  text-align: center;
 }
 
-.cpa__dot {
-  fill: var(--border-mist-hairline);
-}
+/* ---- One object, three annotations ---- */
 
-.cpa__urlbar {
-  fill: var(--surface-sunken);
-}
-
-.cpa__lock {
-  fill: var(--color-emerald-deep);
-}
-
-/* The address bar stays a bar: a drawn domain would name a business that does
-   not exist. Everything the site itself says is set in real copy. */
-.cpa__url {
-  fill: var(--text-secondary);
-  opacity: 0.45;
-}
-
-.cpa__nav-label {
-  fill: var(--text-secondary);
-  font: 500 10px/1 var(--font-body);
-  opacity: 0.7;
-}
-
-.cpa__navcta-label {
-  fill: var(--color-emerald-deep);
-  font: 650 10px/1 var(--font-body);
-}
-
-.cpa__body {
-  fill: var(--text-secondary);
-  font: 400 11px/1 var(--font-body);
-  opacity: 0.85;
-}
-
-.cpa__card-title {
-  fill: var(--text-primary);
-  font: 650 11px/1 var(--font-body);
-}
-
-.cpa__card-note {
-  fill: var(--text-secondary);
-  font: 400 9.5px/1 var(--font-body);
-  opacity: 0.7;
-}
-
-.cpa__pop-note {
-  fill: var(--text-secondary);
-  font: 400 9.5px/1 var(--font-body);
-  opacity: 0.85;
-}
-
-.cpa__logo {
-  fill: var(--color-navy);
-}
-
-.cpa__ink {
-  fill: var(--color-navy);
-}
-
-.cpa__navcta {
-  fill: var(--emerald-tint-strong);
-}
-
-.cpa__display {
-  fill: var(--text-primary);
-  font: 600 20px/1 var(--font-display);
-  letter-spacing: -0.02em;
-}
-
-.cpa__sun {
-  fill: #ffffff;
-  opacity: 0.18;
-}
-
-.cpa__hill {
-  fill: #0d3f4a;
-  opacity: 0.55;
-}
-
-.cpa__hill2 {
-  fill: #072a33;
-  opacity: 0.6;
-}
-
-.cpa__cta {
-  fill: var(--color-emerald-deep);
-}
-
-.cpa__cta-label {
-  fill: var(--color-white);
-  font: 650 11px/1 var(--font-body);
-}
-
-.cpa__cards rect {
-  fill: var(--surface-sunken);
-}
-
-/* ---- what the site gains, arriving in turn over one loop ---- */
-
-.cpa__pop {
-  fill: var(--color-white);
-  stroke: var(--border-mist-hairline);
-  stroke-width: 1;
-  filter: drop-shadow(0 0.5rem 1.25rem rgb(7 22 41 / 14%));
-}
-
-.cpa__pop-label {
-  fill: var(--text-primary);
-  font: 650 11px/1 var(--font-body);
-}
-
-.cpa__star {
-  fill: var(--color-emerald);
-}
-
-.cpa__pin-halo,
-.cpa__tick-halo {
-  fill: var(--emerald-tint);
-}
-
-.cpa__pin {
-  fill: none;
-  stroke: var(--color-emerald-deep);
-  stroke-width: 1.6;
-}
-
-.cpa__pin-dot {
-  fill: var(--color-emerald-deep);
-}
-
-.cpa__tick {
-  fill: none;
-  stroke: var(--color-emerald-deep);
-  stroke-width: 2;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-
-.cpa__rail {
-  fill: var(--surface-navy);
-}
-
-.cpa__rail-dot {
-  fill: var(--color-emerald);
-}
-
-.cpa__rail-label {
-  fill: var(--text-inverse);
-  font: 500 11px/1 var(--font-body);
-}
-
-.cpa__rail-arrow {
-  stroke: var(--color-emerald);
-  stroke-width: 1.6;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  fill: none;
-}
-
-/* One 18s loop: each gain arrives in turn and holds with the ones before it,
-   so the site is visibly fuller at the end than at the start. */
-.cpa__gain {
-  animation: cpa-gain 18s var(--ease-out) infinite;
-  animation-delay: calc(var(--s) * 2.4s);
-}
-
-@keyframes cpa-gain {
-  0% {
-    opacity: 0;
-    scale: 0.94;
-  }
-
-  5%,
-  88% {
-    opacity: 1;
-    scale: 1;
-  }
-
-  95%,
-  100% {
-    opacity: 0;
-    scale: 0.94;
-  }
-}
-
-/* ---- The gains, as real text ---- */
-
-.cp__gains {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-5);
-}
-
-/* the spine everything hangs from */
-.cp__gains::before {
-  content: "";
-  position: absolute;
-  top: 1.5rem;
-  bottom: 1.5rem;
-  left: 1.5rem;
-  width: 2px;
-  border-radius: 2px;
-  background: linear-gradient(
-    to bottom,
-    var(--emerald-line-soft),
-    var(--color-emerald) 30%,
-    var(--color-emerald) 70%,
-    var(--emerald-line-soft)
-  );
-}
-
-.cp__gain {
-  position: relative;
+.cmpd__grid {
   display: grid;
-  grid-template-columns: 3rem minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  gap: var(--space-7);
   align-items: start;
-  gap: var(--space-5);
 }
 
-.cp__gain-node {
-  position: relative;
-  z-index: 1;
-  width: 3rem;
-  height: 3rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  border: 1px solid var(--emerald-line-soft);
-  background: var(--surface-card);
-  color: var(--color-emerald-deep);
-  box-shadow: var(--elev-raised);
-}
-
-.cp__gain-body {
+/* Fill, edge and shadow together: the light ladder spans a few steps, so a
+   white panel on mist needs all three to exist as an object at all. This is
+   the only element in the section that gets one. */
+.cmpd__answer {
   display: flex;
   flex-direction: column;
-  gap: var(--space-1);
-  border-bottom: 1px solid var(--border-mist-hairline);
-  padding-bottom: var(--space-5);
+  gap: var(--space-5);
+  background: var(--surface-card);
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--elev-focal);
+  padding: clamp(1.5rem, 2.6vw, 2.5rem);
 }
 
-.cp__gain:last-child .cp__gain-body {
-  border-bottom: 0;
-  padding-bottom: 0;
-}
-
-.cp__gain-tag {
+.cmpd__answer-role {
   color: var(--color-emerald-deep);
   font: var(--label-caps);
   letter-spacing: var(--label-caps-tracking);
   text-transform: uppercase;
 }
 
-.cp__gain strong {
-  color: var(--text-primary);
-  font: 500 1.3125rem/1.25 var(--font-display);
-  letter-spacing: var(--display-md-tracking);
+.cmpd__answer dl {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
 }
 
-.cp__gain-note {
-  max-width: 42ch;
+.cmpd__answer dt {
   color: var(--text-secondary);
   font: var(--body-sm);
 }
 
-/* Staggered arrival, once, when the section is reached. `still` is the
-   finished state, so no-JS and reduced motion never see a blank column. */
-.cp[data-phase="armed"] .cp__gain,
-.cp[data-phase="armed"] .cp__gains::before {
-  opacity: 0;
+/* The three statements the later pieces quote, at the middle of the type scale
+   so the answer reads as the dominant material without a display size. */
+.cmpd__answer dd {
+  margin-top: var(--space-2);
+  color: var(--text-primary);
+  font: 600 clamp(1.15rem, 1.02rem + 0.5vw, 1.45rem) / 1.34 var(--font-display);
+  letter-spacing: var(--display-md-tracking);
+  text-wrap: pretty;
 }
 
-.cp[data-phase="playing"] .cp__gains::before {
-  animation: cp-spine 700ms var(--ease-out) forwards;
+.cmpd__extensions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  padding-top: var(--space-6);
 }
 
-.cp[data-phase="playing"] .cp__gain {
-  opacity: 0;
-  animation: cp-gain-in 620ms var(--ease-out) forwards;
-  animation-delay: calc(220ms + var(--i) * 190ms);
+.cmpd__extensions li {
+  position: relative;
+  padding-left: var(--space-6);
 }
 
-@keyframes cp-spine {
-  from {
-    opacity: 0;
-    scale: 1 0.2;
-  }
-
-  to {
-    opacity: 1;
-    scale: 1 1;
-  }
+/* The connector runs back toward the answer rather than enclosing the item:
+   these are annotations on the object beside them, not cards of their own. */
+.cmpd__extensions li::before {
+  content: "";
+  position: absolute;
+  top: 0.6rem;
+  left: calc(var(--space-7) * -1);
+  width: calc(var(--space-7) + var(--space-5));
+  height: 1px;
+  background: var(--border-hairline);
 }
 
-@keyframes cp-gain-in {
-  from {
-    opacity: 0;
-    translate: 1.25rem 0;
-  }
-
-  to {
-    opacity: 1;
-    translate: 0 0;
-  }
+.cmpd__reuse {
+  color: var(--color-emerald-deep);
+  font: var(--label-caps);
+  letter-spacing: var(--label-caps-tracking);
+  text-transform: uppercase;
 }
 
-.cp__close {
+/* A deliberate step below the answer's statements: same family, smaller voice. */
+.cmpd__extensions h3 {
+  margin-top: var(--space-2);
+  color: var(--text-primary);
+  font: 600 1.25rem/1.3 var(--font-display);
+  letter-spacing: var(--display-md-tracking);
+}
+
+.cmpd__extension-body {
+  margin-top: var(--space-2);
+  color: var(--text-secondary);
+  font: var(--body-sm);
+}
+
+.cmpd__boundary {
   max-width: var(--measure-copy);
   margin-inline: auto;
+  color: var(--text-secondary);
+  font: var(--body-sm);
   text-align: center;
 }
 
-@media (max-width: 64rem) {
-  .cp {
-    grid-template-columns: 1fr;
-    justify-items: center;
+/* Stacked, the sideways connector has nothing to point at, so it becomes a
+   short rule above each item and the reuse label carries the relationship. */
+@media (max-width: 68rem) {
+  .cmpd__grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--space-6);
   }
 
-  .cp__gains {
-    width: 100%;
+  .cmpd__extensions {
+    padding-top: var(--space-2);
+  }
+
+  .cmpd__extensions li {
+    padding-left: 0;
+    padding-top: var(--space-4);
+  }
+
+  .cmpd__extensions li::before {
+    top: 0;
+    left: 0;
+    width: var(--space-7);
   }
 }
 
-@media (max-width: 36rem) {
-  .cp__gain {
-    grid-template-columns: 2.5rem minmax(0, 1fr);
-    gap: var(--space-4);
+@media (max-width: 44rem) {
+  .cmpd {
+    gap: var(--space-6);
   }
 
-  .cp__gains::before {
-    top: 1.25rem;
-    bottom: 1.25rem;
-    left: 1.25rem;
-  }
-
-  .cp__gain-node {
-    width: 2.5rem;
-    height: 2.5rem;
-  }
-
-  .cp__gain strong {
-    font-size: 1.1875rem;
+  .cmpd__question {
+    max-width: none;
   }
 }
 
@@ -2868,7 +2649,8 @@ body:has(.home-closing) .site-footer__bottom {
   }
 
   /* Swap to the authored narrow composition rather than reflowing the wide
-     one — the three beats stay one system instead of becoming a card stack. */
+     one — the thread runs vertically here, reading down into the journey rail
+     beneath it instead of being squeezed sideways. */
   .hero-art {
     max-width: 26rem;
   }
@@ -2879,14 +2661,6 @@ body:has(.home-closing) .site-footer__bottom {
 
   .hero-art__svg--narrow {
     display: block;
-  }
-
-  .hero-art {
-    --ha-cursor-from-x: 252px;
-    --ha-cursor-from-y: 168px;
-    --ha-cursor-x: 98px;
-    --ha-cursor-y: 230px;
-    --ha-cursor-press: 233px;
   }
 
   .hero-art__glow {
@@ -3245,21 +3019,18 @@ body:has(.home-closing) .site-footer__bottom {
     filter: none;
   }
 
-  .hero-art__scene--a,
-  .hero-art__scene--b,
-  .hero-art__scene--c,
-  .hero-art__cta,
-  .hero-art__cta-label,
-  .hero-art__tile,
-  .hero-art__query,
-  .hero-art__receipt,
-  .hero-art__cursor,
-  .hero-art__step-dot {
+  .ha__band,
+  .ha__strand,
+  .ha__converge,
+  .ha__route,
+  .ha__packet,
+  .ha__tick,
+  .ha__ring-arc,
+  .ha__continue-shell {
     animation: none;
   }
 
   .home-systems__stage > *,
-  .cp__detail > *,
   .home-faq__items [role="region"] {
     animation: none;
   }

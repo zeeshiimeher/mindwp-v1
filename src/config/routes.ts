@@ -19,7 +19,7 @@ export const CONTACT_PATH = "/contact";
  */
 export const HEADER_NAV = [
   { href: "/#work", label: "Work" },
-  { href: "/#beyond-website", label: "What we build" },
+  { href: "/#beyond-website", label: "Connected services" },
   { href: "/#review", label: "How we start" },
   { href: "/#faq", label: "FAQ" },
 ] as const;

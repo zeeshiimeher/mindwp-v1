@@ -7,7 +7,7 @@ export function HomeAuthority() {
         <div className="home-authority__copy section-intro" data-home-sequence>
           <div className="section-title-group">
             <p className="eyebrow" data-home-sequence-item>
-              Local visibility
+              Visibility support
             </p>
             <h2 data-home-sequence-item>Found nearby — trusted before they call.</h2>
           </div>
@@ -15,7 +15,8 @@ export function HomeAuthority() {
             Before anyone calls, they check quietly: does the service or treatment page match what
             they searched for, does the listing agree with the website, do the reviews feel real?
             Local visibility holds when the website, the local listing and the reputation all tell
-            the same story.
+            the same story. This is ongoing work, and it does not depend on us having built the
+            website.
           </p>
           {/* Found and Verified describe a state; Maintained is the part that
               is actually bought. Local SEO Authority is ongoing local discovery

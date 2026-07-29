@@ -26,31 +26,14 @@ interface SupportMoment {
  * Five visitor-facing moments, not a service catalogue. Each maps back to a
  * public service via its tag; two share Lead Response & Handling and two share
  * Follow-Up & CRM by design.
+ *
+ * New enquiries leads because it is the moment the website itself produces and
+ * the plainest statement of what the connected services are for. Missed calls
+ * ran first previously, which opened the whole connected offer on phone
+ * answering — the reading docs/WRITING.md specifically rules out for Lead
+ * Response & Handling.
  */
 const MOMENTS: readonly SupportMoment[] = [
-  {
-    slug: "missed-calls",
-    displayName: "Missed calls",
-    tag: "Lead Response & Handling",
-    icon: "phone",
-    problem:
-      "A call rings out while you're with a patient or on a job — with no acknowledgement and no clear owner for the return call.",
-    promise: "Acknowledge every missed call and keep the conversation open.",
-    earns: "Earns its place when nobody can watch the phone all day.",
-    mechanism: [
-      { icon: "phone", label: "Call missed", note: "It rings out while the team is busy or closed." },
-      {
-        icon: "message-square",
-        label: "Caller hears back",
-        note: "A message goes back so they know they've been seen.",
-      },
-      {
-        icon: "circle-check",
-        label: "Call returned",
-        note: "The missed call sits with a named person until it's returned.",
-      },
-    ],
-  },
   {
     slug: "new-enquiries",
     displayName: "New enquiries",
@@ -58,7 +41,7 @@ const MOMENTS: readonly SupportMoment[] = [
     icon: "mail",
     problem: "Forms and messages land in a shared inbox, then wait for whoever happens to notice.",
     promise: "Acknowledge each enquiry and place it with someone responsible.",
-    earns: "Earns its place when enquiries arrive faster than they get answered.",
+    earns: "Worth scoping when enquiries arrive faster than they get answered.",
     mechanism: [
       {
         icon: "message-square",
@@ -78,13 +61,36 @@ const MOMENTS: readonly SupportMoment[] = [
     ],
   },
   {
+    slug: "missed-calls",
+    displayName: "Missed calls",
+    tag: "Lead Response & Handling",
+    icon: "phone",
+    problem:
+      "A call rings out while you're with a patient or on a job — with no acknowledgement and no clear owner for the return call.",
+    promise: "Acknowledge every missed call and keep the conversation open.",
+    earns: "Worth scoping when nobody can watch the phone all day.",
+    mechanism: [
+      { icon: "phone", label: "Call missed", note: "It rings out while the team is busy or closed." },
+      {
+        icon: "message-square",
+        label: "Caller hears back",
+        note: "A message goes back so they know they've been seen.",
+      },
+      {
+        icon: "circle-check",
+        label: "Call returned",
+        note: "The missed call sits with a named person until it's returned.",
+      },
+    ],
+  },
+  {
     slug: "follow-up",
     displayName: "Follow-up",
     tag: "Follow-Up & CRM",
     icon: "folder",
     problem: "A quote or treatment plan goes out — then the next step depends on someone remembering.",
     promise: "Keep every open decision visible, with an owner and a next step.",
-    earns: "Earns its place when good enquiries stall between the quote and the decision.",
+    earns: "Worth scoping when good enquiries stall between the quote and the decision.",
     mechanism: [
       {
         icon: "folder",
@@ -104,39 +110,13 @@ const MOMENTS: readonly SupportMoment[] = [
     ],
   },
   {
-    slug: "reviews",
-    displayName: "Reviews",
-    tag: "Reputation & Review",
-    icon: "star",
-    problem: "Good work ends quietly — no review asked for, nothing carried back to the website.",
-    promise: "Invite genuine reviews at the right moment and show them where people decide.",
-    earns: "Earns its place when customers complete the work but the review request is easily forgotten.",
-    mechanism: [
-      {
-        icon: "circle-check",
-        label: "Work completed",
-        note: "The job or treatment is genuinely finished.",
-      },
-      {
-        icon: "star",
-        label: "Review invited",
-        note: "A real customer is asked to share their experience.",
-      },
-      {
-        icon: "globe",
-        label: "Proof visible",
-        note: "Their words appear where the next person is deciding.",
-      },
-    ],
-  },
-  {
     slug: "one-record",
     displayName: "One record",
     tag: "Follow-Up & CRM",
     icon: "search",
     problem: "Half the story sits in an inbox, half in someone's phone — nobody sees the whole picture.",
     promise: "One shared record of every enquiry: its status, its history and who moves it next.",
-    earns: "Earns its place when “where did that enquiry get to?” has no quick answer.",
+    earns: "Worth scoping when “where did that enquiry get to?” has no quick answer.",
     mechanism: [
       {
         icon: "mail",
@@ -155,10 +135,36 @@ const MOMENTS: readonly SupportMoment[] = [
       },
     ],
   },
+  {
+    slug: "reviews",
+    displayName: "Reviews",
+    tag: "Reputation & Review",
+    icon: "star",
+    problem: "Good work ends quietly — no review asked for, nothing carried back to the website.",
+    promise: "Invite genuine reviews at the right moment and show them where people decide.",
+    earns: "Worth scoping when customers complete the work but the review request is easily forgotten.",
+    mechanism: [
+      {
+        icon: "circle-check",
+        label: "Work completed",
+        note: "The job or treatment is genuinely finished.",
+      },
+      {
+        icon: "star",
+        label: "Review invited",
+        note: "A real customer is asked to share their experience.",
+      },
+      {
+        icon: "globe",
+        label: "Proof visible",
+        note: "Their words appear where the next person is deciding.",
+      },
+    ],
+  },
 ];
 
 /**
- * Beyond the website — desktop reads as a segmented console (segments above a
+ * Connected services — desktop reads as a segmented console (segments above a
  * wide stage, flow rail replaying on every switch); the same content becomes
  * stacked accordion rows on mobile, each opening its own flow in place.
  */
@@ -321,7 +327,7 @@ export function HomeSystemsSelector() {
       <div
         className="home-systems__segments"
         role="tablist"
-        aria-label="Support beyond the website"
+        aria-label="Connected services"
       >
         {MOMENTS.map((moment, index) => {
           const selected = moment.slug === activeSlugSafe;

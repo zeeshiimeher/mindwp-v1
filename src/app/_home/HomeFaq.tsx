@@ -4,19 +4,19 @@ import { useState } from "react";
 
 const FAQS = [
   {
-    question: "What makes a website “smart”?",
+    question: "Can I buy the enquiry side without rebuilding the website?",
     answer:
-      "It is built around the questions your customers actually ask, the evidence that answers them, and a next step that fits the decision — not a template with your logo on it.",
+      "Yes. Local SEO Authority, Lead Response & Handling, Follow-Up & CRM and Reputation & Review can each be scoped against a capable existing website. A rebuild is never a prerequisite.",
   },
   {
     question: "Can MindWP improve a website I already have?",
     answer:
-      "Often, yes. The review looks at what already works before recommending a rebuild. Sometimes the priority is a page, a clearer path, or the handling around the existing site.",
+      "Yes. The review looks at what already works before anything is recommended. Sometimes the priority is a page, a clearer path, or the handling around the site rather than the site itself.",
   },
   {
-    question: "Do I have to take the supporting services?",
+    question: "Do I have to take everything?",
     answer:
-      "No — the website stands on its own. Around it you can add what fits how work actually arrives: local visibility, enquiry handling, follow-up or reviews. Each is scoped separately, and we recommend only what the review shows is worth adding.",
+      "No, in either direction. Smart Website Systems is the usual place to start, but nothing is compulsory and nothing is a precondition for anything else. Each service is scoped separately, and we recommend only what the review shows is worth doing.",
   },
   {
     question: "Who sets all of this up — and do we end up running new software?",
@@ -41,12 +41,17 @@ const FAQS = [
   {
     question: "What happens during the Visibility & Enquiry Review?",
     answer:
-      "You share how work arrives today; MindWP reviews your visibility, your website and the enquiry path, then comes back with what is worth fixing first. It is a private conversation, not a demo or a sales script.",
+      "You share how work reaches you today; MindWP looks at your visibility, your website and the enquiry path, then comes back with what is worth doing first. It is a diagnosis rather than a pitch, and it works with or without an existing website.",
   },
   {
     question: "What happens after launch?",
     answer:
-      "The build is designed for a clean handover, and MindWP can remain involved with updates, improvements and care for the connected systems where agreed. Either way, the handover and ongoing responsibilities are made clear.",
+      "The build is designed for a clean handover. Where it helps, MindWP can stay responsible for agreed website and enquiry-system work on an ongoing basis. It is offered, never required, and what it covers is set out before it starts.",
+  },
+  {
+    question: "Do you run our advertising?",
+    answer:
+      "No. Advertising can bring attention; our responsibility starts with where that attention lands and what happens after someone acts on it.",
   },
 ] as const;
 

@@ -1,140 +1,136 @@
-"use client";
-
-import { useEffect, useRef, useState } from "react";
-
-import { HomeCompoundingArt } from "@/app/_home/HomeCompoundingArt";
-import { Icon, type IconName } from "@/components/ui/Icon";
-
-interface Gain {
-  icon: IconName;
-  short: string;
-  title: string;
-  note: string;
-}
-
-const COMPOUND_INTRO =
-  "Most websites are treated as a launch date — live, then slowly going stale. A smart website is the opposite: what it gains, it keeps.";
-
 /**
- * What a website keeps gaining after go-live. Qualitative throughout — nothing
- * here is a measured, financial or guaranteed return. Automation sits among the
- * five as one capability that compounds, described only within its approved
- * boundary: it acknowledges, routes, organises and prompts.
+ * One customer decision, answered once and reused three times.
+ *
+ * The argument is directional, not a set of agreements. The website establishes
+ * three things — who the service is for, what it covers, and the next step —
+ * and each later piece takes one of them and carries it further. Local presence
+ * repeats the service wherever someone looks first; proof sits beside the
+ * claims the page already makes; the acknowledgement continues the step the
+ * page already named. Nothing is re-decided, and compounding is legible in the
+ * repetition itself: the later pieces quote the website.
+ *
+ * Two structural consequences, both deliberate:
+ *
+ * - Remove any one later piece and the website still works. That is the
+ *   non-bundle protection, built into the structure rather than captioned.
+ * - Remove the website and the others have nothing to reuse. That is Strategy's
+ *   website-centred hierarchy expressed rather than asserted.
+ *
+ * Only the website answer has a ground. The three extensions sit directly on
+ * the section surface with a hairline running back toward it, because four
+ * equally-treated panels would say these are peers, which is the one thing this
+ * composition must not say.
+ *
+ * The question is the client's customer speaking, never MindWP addressing the
+ * visitor. It is set as a quotation with its speaker named beneath it, and that
+ * attribution is load-bearing rather than decorative.
+ *
+ * Demonstration wording throughout, labelled once for the whole payload. No
+ * rating, review, testimonial, metric, date, client or invented person appears
+ * anywhere — the acknowledgement states that a person owns the response without
+ * naming one.
  */
-const GAINS: readonly Gain[] = [
+
+const CUSTOMER_QUESTION =
+  "Are these the right people to help me — and what happens after I get in touch?";
+
+/** The establishing piece. Everything below reuses one of these three. */
+const WEBSITE_ANSWER = [
   {
-    icon: "star",
-    short: "Proof",
-    title: "Proof keeps adding up",
-    note: "Every satisfied customer can leave a review, and each one makes the next person's decision easier.",
+    label: "Who this is for",
+    body: "For people who have already been advised about treatment and want a second opinion before deciding.",
   },
   {
-    icon: "map-pin",
-    short: "Local presence",
-    title: "Local presence strengthens",
-    note: "As the site, the listing and the reviews stay aligned, you get easier to find and trust nearby.",
+    label: "What the consultation covers",
+    body: "Your options, what each involves, the likely cost, and who would carry it out.",
   },
   {
-    icon: "circle-check",
-    short: "Refinements",
-    title: "Each improvement stacks",
-    note: "The review keeps finding the next worthwhile fix — building on the last, not starting over.",
-  },
-  {
-    icon: "folder",
-    short: "Handling",
-    title: "The handling gets steadier",
-    note: "As acknowledgement, routing and reminders settle into one shared record, less depends on someone remembering. The judgement calls stay with your team.",
-  },
-  {
-    icon: "search",
-    short: "Channels",
-    title: "Every channel works harder",
-    note: "Search, referrals and ads all land on a site that answers better than it did last month.",
+    label: "The next step",
+    body: "Request a consultation and tell us what you have already been advised.",
   },
 ];
 
-const COMPOUND_CLOSE =
-  "A typical site peaks at launch and drifts. This one keeps building — which is exactly why it is worth getting right from the start.";
-
 /**
- * One website, and everything it has gained since launch.
- *
- * Split deliberately: the website is SVG artwork on the left, because it is
- * graphical; the gains are real HTML on the right, because they are text and
- * text in SVG cannot wrap or respect a visitor's font size. A CSS spine ties
- * the two together rather than an absolutely-positioned overlay that would
- * drift at every width.
- *
- * The build staggers instead of looping: when the section comes into view the
- * gains arrive one after another and then stay, because the argument is
- * accumulation. `armed` is only ever set by script, and only when motion is
- * allowed, so without JS or with reduced motion the finished state is what
- * renders.
+ * Each `reuse` names what the piece takes from the website rather than
+ * describing the service, and it is written to stand on its own — at narrow
+ * widths the hairline connectors have nothing to point at, so these labels are
+ * what keeps the relationship legible.
  */
+const EXTENSIONS = [
+  {
+    reuse: "Reuses the service the page describes",
+    title: "Local presence",
+    body: "Second-opinion consultations — the same service name, opening information and contact route wherever someone checks first.",
+  },
+  {
+    reuse: "Supports what the page claims",
+    title: "Proof",
+    body: "The practitioner's identity and relevant professional evidence sit beside the service claims they support, rather than on a disconnected proof page.",
+  },
+  {
+    reuse: "Continues the step the page names",
+    title: "Enquiry handling",
+    body: "Your request for a second-opinion consultation has arrived. The context you provided came with it. A person now owns the next response.",
+  },
+];
+
 export function HomeCompounding() {
-  const stageRef = useRef<HTMLDivElement>(null);
-  const [phase, setPhase] = useState<"still" | "armed" | "playing">("still");
-
-  useEffect(() => {
-    const stage = stageRef.current;
-    if (!stage) return;
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-
-    setPhase("armed");
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        if (!entries[0]?.isIntersecting) return;
-        observer.disconnect();
-        setPhase("playing");
-      },
-      { threshold: 0.2 },
-    );
-    observer.observe(stage);
-    return () => observer.disconnect();
-  }, []);
-
   return (
     <section id="compounding" className="home-compounding section section--focal on-mist">
       <div className="container section-intro section-intro--centered" data-home-sequence>
         <p className="eyebrow eyebrow--centered" data-home-sequence-item>
-          Not a launch — an asset
+          Built to keep working
         </p>
         <h2 data-home-sequence-item>
-          A smart website doesn&apos;t peak at launch. <em>It compounds.</em>
+          It isn&apos;t a launch. <em>It compounds.</em>
         </h2>
-        <p data-home-sequence-item>{COMPOUND_INTRO}</p>
+        <p data-home-sequence-item>
+          Later work does not start from nothing. What has already been learned about the customer
+          decision, written into the website and connected around the enquiry path gives the next
+          improvement a stronger place to begin.
+        </p>
       </div>
 
-      <div className="container cp" ref={stageRef} data-phase={phase}>
-        <div className="cp__art">
-          <HomeCompoundingArt />
-          <p className="cp__art-label">
-            <span>Your website</span>
-            Launched once. Added to ever since.
-          </p>
+      <div className="container cmpd">
+        <figure className="cmpd__question" data-home-fade>
+          <blockquote>&ldquo;{CUSTOMER_QUESTION}&rdquo;</blockquote>
+          <figcaption>Your customer, before they get in touch</figcaption>
+        </figure>
+
+        <p className="cmpd__label home-artifact-label" data-home-fade>
+          Demonstration wording — the kind of client-site and enquiry copy MindWP produces, not a
+          client&apos;s live system.
+        </p>
+
+        <div className="cmpd__grid">
+          <div className="cmpd__answer" data-home-fade>
+            <h3 className="cmpd__answer-role">The website answers it</h3>
+            <dl>
+              {WEBSITE_ANSWER.map(({ label, body }) => (
+                <div key={label}>
+                  <dt>{label}</dt>
+                  <dd>{body}</dd>
+                </div>
+              ))}
+            </dl>
+          </div>
+
+          <ol className="cmpd__extensions" data-home-stagger>
+            {EXTENSIONS.map((extension) => (
+              <li key={extension.title} data-home-stagger-item>
+                <p className="cmpd__reuse">{extension.reuse}</p>
+                <h3>{extension.title}</h3>
+                <p className="cmpd__extension-body">{extension.body}</p>
+              </li>
+            ))}
+          </ol>
         </div>
 
-        <ol className="cp__gains">
-          {GAINS.map((gain, i) => (
-            <li key={gain.title} className="cp__gain" style={{ "--i": i } as React.CSSProperties}>
-              <span className="cp__gain-node" aria-hidden="true">
-                <Icon name={gain.icon} size={18} />
-              </span>
-              <span className="cp__gain-body">
-                <span className="cp__gain-tag">{gain.short}</span>
-                <strong>{gain.title}</strong>
-                <span className="cp__gain-note">{gain.note}</span>
-              </span>
-            </li>
-          ))}
-        </ol>
+        <p className="cmpd__boundary" data-home-fade>
+          Each responsibility is agreed and scoped separately. None requires a website rebuild or
+          the purchase of every other service.
+        </p>
       </div>
-
-      <p className="container cp__close editorial-note" data-home-fade>
-        {COMPOUND_CLOSE}
-      </p>
     </section>
   );
 }

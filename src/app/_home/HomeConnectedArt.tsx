@@ -75,7 +75,7 @@ export function HomeConnectedArt() {
           Before
         </text>
         <text x="390" y="34" className="cx__stage cx__stage--lead">
-          The website leads
+          The public centre
         </text>
         <text x="730" y="34" className="cx__stage">
           After contact

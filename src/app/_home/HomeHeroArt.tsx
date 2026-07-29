@@ -1,60 +1,72 @@
 /**
- * Hero artwork — a looping three-scene sequence inside one website frame.
+ * One enquiry, drawn as a single continuous path.
  *
- * The frame never moves, because the website is the thing that leads. What
- * changes is what is happening inside it, cycling through the three promises
- * in the headline:
+ * The website is not an object on the line — it is the passage where the line
+ * widens and orders itself: scattered strands enter at every angle and leave
+ * parallel and evenly spaced. Clarity is therefore drawn as a change in the
+ * line's own behaviour, which is why this composition needs no frame, panel or
+ * browser chrome. The website holds the greatest length and the greatest width
+ * of the path; the connected half is thinner but materially different — a solid
+ * object, a confirmation, a ring that closes — so it answers the second half of
+ * the headline without claiming equal area.
  *
- *   Found      a nearby search resolves onto this business
- *   Understood the page answers what the visitor came to settle
- *   Chosen     the visitor acts, and the enquiry lands with an owner
+ * The recognisable gesture is the owner ring closing around the enquiry and
+ * holding it. If that ever renders as a small circle changing opacity, the
+ * artwork has failed and the whole thing is a glowing abstract line.
  *
- * Every scene is set in real copy rather than grey placeholder bars. Placeholder
- * bars made the frame a category — "a website" — which proves nothing; the
- * sentences below make it an instance a visitor can read. Wording is kept
- * sector-neutral (`consultation`, `who you'd see`) because the hero is the most
- * shared surface on the site and has to sit as credibly in front of a law
- * boutique as a clinic. Copy is declared once and rendered into both
- * compositions.
+ * Nothing continues automatically: the step after ownership is dashed, thinner
+ * and unterminated. There is deliberately no proof-returns arc — a loop that
+ * always closes would imply every engagement contains every service and that
+ * reputation always comes back.
  *
- * Two boundaries this artwork must not cross: it states that an enquiry reaches
- * a named owner but never when a reply arrives (no invented speed promise), and
- * it names no person, client or measured result.
+ * No text. The 01–05 journey rail beneath the hero is this artwork's caption,
+ * and a second miniature page to read is exactly what this replaced.
  *
- * Authored as SVG and driven by one shared CSS timeline, so there is no
- * animation dependency and no client boundary. Wide and narrow are separate
- * compositions rather than one reflowed layout. The copy is short, fixed-length
- * labelling that never needs to wrap, which is why it can stay in SVG text.
- *
- * Reduced motion resolves to a complete still: the search scene hides and the
- * page, its action and the sent confirmation all remain, with every step in
- * the rail marked. The rail's labels are real text at every moment, so no
- * meaning depends on the loop running.
+ * Every animated path carries `pathLength="1"`, so one dash-offset keyframe
+ * drives geometry of any length. Authored values are the settled state — path
+ * complete, ring closed, enquiry held — so the still frame, a script-free
+ * render and reduced motion all land on the frame that carries the argument.
  */
 
 const ART_LABEL =
-  "A website working through one visitor's decision: found in a nearby search, understood on a page that answers what is involved, what it costs and who they would see, then chosen by sending an enquiry that reaches a named owner";
+  "One enquiry travelling from scattered attention, through a website that brings it into order, to a truthful confirmation that it was sent and a named owner who takes responsibility for it, with any later step drawn as conditional rather than automatic";
 
-const STEPS = ["Found", "Understood", "Chosen"] as const;
+/** Scattered at the left edge, parallel and evenly spaced by the band's exit. */
+const STRANDS_WIDE = [
+  "M8 40 C 96 74 168 168 250 190 L390 190",
+  "M8 96 C 100 122 172 198 250 214 L390 214",
+  "M8 152 C 104 172 176 226 250 238 L390 238",
+  "M8 330 C 104 322 176 274 250 262 L390 262",
+  "M8 400 C 100 380 172 302 250 286 L390 286",
+  "M8 470 C 96 436 168 332 250 310 L390 310",
+];
 
-/** Written once, set twice. */
-const COPY = {
-  query: "consultation near me",
-  resultTitle: "Your practice",
-  resultMeta: "What's involved, and how to start.",
-  resultTag: "YOUR LISTING",
-  otherResults: ["Another provider", "A third result"],
-  pageHeading: ["What's involved,", "start to finish."],
-  pageBody: [
-    "The full process, what it costs, and who you would be",
-    "working with — set out before anyone gets in touch.",
-  ],
-  answers: ["What's involved", "What it costs", "Who you'd see"],
-  cta: "Request a consultation",
-  sentTitle: "Enquiry sent",
-  sentMeta: "It has a named owner",
-  sentMetaShort: "Named owner",
-} as const;
+const CONVERGE_WIDE = [
+  "M390 190 C 426 196 446 226 470 250",
+  "M390 214 C 428 219 450 236 470 250",
+  "M390 238 C 430 241 452 247 470 250",
+  "M390 262 C 430 259 452 253 470 250",
+  "M390 286 C 428 281 450 264 470 250",
+  "M390 310 C 426 304 446 274 470 250",
+];
+
+const STRANDS_NARROW = [
+  "M20 6 C 36 60 84 122 100 150 L100 232",
+  "M62 6 C 72 62 112 126 120 150 L120 232",
+  "M104 6 C 108 64 134 128 140 150 L140 232",
+  "M196 6 C 192 64 166 128 160 150 L160 232",
+  "M238 6 C 228 62 188 126 180 150 L180 232",
+  "M280 6 C 264 60 216 122 200 150 L200 232",
+];
+
+const CONVERGE_NARROW = [
+  "M100 232 C 112 250 132 268 150 282",
+  "M120 232 C 128 250 140 268 150 282",
+  "M140 232 C 144 250 148 268 150 282",
+  "M160 232 C 156 250 152 268 150 282",
+  "M180 232 C 172 250 160 268 150 282",
+  "M200 232 C 188 250 168 268 150 282",
+];
 
 export function HomeHeroArt() {
   return (
@@ -70,279 +82,109 @@ export function HomeHeroArt() {
         focusable="false"
       >
         <defs>
-          <linearGradient id="haFrame" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="var(--surface-navy-raised)" />
-            <stop offset="100%" stopColor="var(--surface-navy-panel)" />
-          </linearGradient>
-          <clipPath id="haClip">
-            <rect x="40" y="86" width="540" height="352" />
-          </clipPath>
+          <radialGradient id="haBand" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stopColor="var(--surface-navy-raised)" stopOpacity="0.95" />
+            <stop offset="58%" stopColor="var(--surface-navy-raised)" stopOpacity="0.55" />
+            <stop offset="100%" stopColor="var(--surface-navy-raised)" stopOpacity="0" />
+          </radialGradient>
         </defs>
 
-        {/* Frame */}
-        <rect
-          x="40"
-          y="30"
-          width="540"
-          height="408"
-          rx="18"
-          fill="url(#haFrame)"
-          className="hero-art__frame"
+        {/* the website: a widening of the path, not a container around it */}
+        <ellipse className="ha__band" cx="268" cy="250" rx="215" ry="145" fill="url(#haBand)" />
+
+        {STRANDS_WIDE.map((d, i) => (
+          <path
+            key={d}
+            className="ha__strand"
+            d={d}
+            pathLength="1"
+            style={{ "--i": i } as React.CSSProperties}
+          />
+        ))}
+
+        {CONVERGE_WIDE.map((d) => (
+          <path key={d} className="ha__converge" d={d} pathLength="1" />
+        ))}
+
+        {/* the route the enquiry takes, drawn before it travels */}
+        <path
+          className="ha__route"
+          d="M470 250 C 508 300 528 355 548 420"
+          pathLength="1"
         />
-        <path d="M40 86 H580" className="hero-art__hairline" />
-        <circle cx="66" cy="58" r="4" className="hero-art__dot" />
-        <circle cx="82" cy="58" r="4" className="hero-art__dot" />
-        <circle cx="98" cy="58" r="4" className="hero-art__dot" />
-        <rect x="122" y="49" width="196" height="18" rx="9" className="hero-art__chrome" />
 
-        <g clipPath="url(#haClip)">
-          {/* ---- Scene A · Found ---- */}
-          <g className="hero-art__scene hero-art__scene--a">
-            <rect x="74" y="112" width="472" height="40" rx="20" className="hero-art__searchbar" />
-            <g className="hero-art__searchglyph" transform="translate(102 132)">
-              <circle cx="0" cy="0" r="7" />
-              <path d="M5.2 5.2 L9.5 9.5" />
-            </g>
-            <text x="124" y="137" className="hero-art__query">
-              {COPY.query}
-            </text>
+        {/* truthful confirmation: it marks that the message was sent, and stays */}
+        <path className="ha__tick" d="M509 294 l6 6 L528 284" />
 
-            {/* the result that is this business */}
-            <rect x="74" y="172" width="472" height="76" rx="12" className="hero-art__result-live" />
-            <circle cx="112" cy="210" r="16" className="hero-art__pin-badge" />
-            <path
-              d="M112 202 c5 0 8 3.6 8 8 0 5.6 -6 10.4 -7.4 11.5 a1 1 0 0 1 -1.2 0 c-1.4 -1.1 -7.4 -5.9 -7.4 -11.5 0 -4.4 3 -8 8 -8 z"
-              className="hero-art__pin"
-            />
-            <circle cx="112" cy="210" r="2.6" className="hero-art__pin-dot" />
-            <text x="142" y="205" className="hero-art__t-title">
-              {COPY.resultTitle}
-            </text>
-            <text x="142" y="228" className="hero-art__t-meta">
-              {COPY.resultMeta}
-            </text>
-            <rect x="428" y="198" width="100" height="24" rx="12" className="hero-art__tag" />
-            <text x="478" y="214" textAnchor="middle" className="hero-art__t-tag">
-              {COPY.resultTag}
-            </text>
+        {/* the owner: two arcs that close around the enquiry and hold it */}
+        <path className="ha__ring-arc ha__ring-arc--a" d="M506 420 A 42 42 0 0 1 590 420" />
+        <path className="ha__ring-arc ha__ring-arc--b" d="M590 420 A 42 42 0 0 1 506 420" />
 
-            {/* the alternatives, quieter — named, not judged */}
-            {COPY.otherResults.map((label, i) => (
-              <g key={label}>
-                <rect
-                  x="74"
-                  y={264 + i * 68}
-                  width="472"
-                  height="56"
-                  rx="12"
-                  className="hero-art__result"
-                />
-                <text x="98" y={297 + i * 68} className="hero-art__t-quiet">
-                  {label}
-                </text>
-              </g>
-            ))}
-          </g>
-
-          {/* ---- Scene B · Understood (also the still state) ---- */}
-          <g className="hero-art__scene hero-art__scene--b">
-            {COPY.pageHeading.map((line, i) => (
-              <text key={line} x="74" y={136 + i * 30} className="hero-art__t-display">
-                {line}
-              </text>
-            ))}
-            {COPY.pageBody.map((line, i) => (
-              <text key={line} x="74" y={198 + i * 20} className="hero-art__t-body">
-                {line}
-              </text>
-            ))}
-
-            {COPY.answers.map((answer, i) => {
-              const x = 74 + i * 158;
-              return (
-                <g key={answer} className="hero-art__tile" style={{ "--i": i } as React.CSSProperties}>
-                  <rect x={x} y="248" width="148" height="76" rx="10" />
-                  <circle cx={x + 24} cy="274" r="9" className="hero-art__tile-mark" />
-                  <path
-                    d={`M${x + 20} 274 l3 3 L${x + 29} 270.4`}
-                    className="hero-art__tick"
-                  />
-                  <text x={x + 16} y="308" className="hero-art__t-tile">
-                    {answer}
-                  </text>
-                </g>
-              );
-            })}
-          </g>
-
-          {/* ---- The action ---- */}
-          <rect x="74" y="360" width="204" height="44" rx="10" className="hero-art__cta" />
-          <text x="176" y="388" textAnchor="middle" className="hero-art__cta-label">
-            {COPY.cta}
-          </text>
-
-          {/* ---- Scene C · Chosen ---- */}
-          <g className="hero-art__scene hero-art__scene--c">
-            <g className="hero-art__cursor">
-              <path
-                d="M0 0 L0 17 L4.4 13 L7.4 19.6 L10.6 18 L7.6 11.6 L13.4 11.2 Z"
-                className="hero-art__cursor-shape"
-              />
-            </g>
-            <g className="hero-art__receipt">
-              <rect x="306" y="352" width="240" height="60" rx="10" />
-              <circle cx="336" cy="382" r="13" className="hero-art__sent-mark" />
-              <path d="M330.6 382 l3.6 3.6 L342 377.6" className="hero-art__tick" />
-              <text x="362" y="378" className="hero-art__t-sent">
-                {COPY.sentTitle}
-              </text>
-              <text x="362" y="397" className="hero-art__t-meta">
-                {COPY.sentMeta}
-              </text>
-            </g>
-          </g>
+        {/* agreed, never automatic: thinner, dashed, and terminating in nothing */}
+        <g className="ha__continue-shell">
+          <path className="ha__continue" d="M548 462 C 548 492 551 508 557 528" />
         </g>
 
-        {/* ---- Step rail ---- */}
-        <path d="M74 490 H 546" className="hero-art__rail" />
-        {STEPS.map((step, i) => {
-          const x = 74 + i * 236;
-          return (
-            <g key={step} className="hero-art__step" style={{ "--i": i } as React.CSSProperties}>
-              <circle cx={x} cy="490" r="7" className="hero-art__step-dot" />
-              <text x={x} y="522" className="hero-art__step-label" textAnchor="start">
-                {step}
-              </text>
-            </g>
-          );
-        })}
+        {/* the enquiry, with its context attached — the only filled body here */}
+        <g className="ha__packet ha__packet--wide">
+          <path className="ha__context" d="M512 414 H527" />
+          <path className="ha__context" d="M512 426 H527" />
+          <rect className="ha__packet-body" x="531" y="408.5" width="34" height="23" rx="4" />
+          <path className="ha__packet-rule" d="M538 416 H558" />
+          <path className="ha__packet-rule" d="M538 424 H552" />
+        </g>
       </svg>
 
       {/* ---------- Narrow ---------- */}
       <svg
         className="hero-art__svg hero-art__svg--narrow"
-        viewBox="0 0 360 380"
+        viewBox="0 0 300 470"
         fill="none"
         aria-hidden="true"
         focusable="false"
       >
         <defs>
-          <linearGradient id="haFrameN" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="var(--surface-navy-raised)" />
-            <stop offset="100%" stopColor="var(--surface-navy-panel)" />
-          </linearGradient>
-          <clipPath id="haClipN">
-            <rect x="16" y="60" width="328" height="236" />
-          </clipPath>
+          <radialGradient id="haBandN" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stopColor="var(--surface-navy-raised)" stopOpacity="0.95" />
+            <stop offset="58%" stopColor="var(--surface-navy-raised)" stopOpacity="0.55" />
+            <stop offset="100%" stopColor="var(--surface-navy-raised)" stopOpacity="0" />
+          </radialGradient>
         </defs>
 
-        <rect
-          x="16"
-          y="16"
-          width="328"
-          height="280"
-          rx="14"
-          fill="url(#haFrameN)"
-          className="hero-art__frame"
-        />
-        <path d="M16 60 H344" className="hero-art__hairline" />
-        <circle cx="36" cy="38" r="3.4" className="hero-art__dot" />
-        <circle cx="49" cy="38" r="3.4" className="hero-art__dot" />
-        <circle cx="62" cy="38" r="3.4" className="hero-art__dot" />
-        <rect x="82" y="30" width="132" height="16" rx="8" className="hero-art__chrome" />
+        <ellipse className="ha__band" cx="150" cy="140" rx="155" ry="128" fill="url(#haBandN)" />
 
-        <g clipPath="url(#haClipN)">
-          <g className="hero-art__scene hero-art__scene--a">
-            <rect x="40" y="78" width="280" height="32" rx="16" className="hero-art__searchbar" />
-            <g className="hero-art__searchglyph" transform="translate(62 94)">
-              <circle cx="0" cy="0" r="6" />
-              <path d="M4.4 4.4 L8 8" />
-            </g>
-            <text x="80" y="99" className="hero-art__query">
-              {COPY.query}
-            </text>
+        {STRANDS_NARROW.map((d, i) => (
+          <path
+            key={d}
+            className="ha__strand"
+            d={d}
+            pathLength="1"
+            style={{ "--i": i } as React.CSSProperties}
+          />
+        ))}
 
-            <rect x="40" y="124" width="280" height="60" rx="10" className="hero-art__result-live" />
-            <circle cx="68" cy="154" r="13" className="hero-art__pin-badge" />
-            <path
-              d="M68 147 c4.4 0 7 3.2 7 7 0 4.9 -5.2 9.1 -6.4 10 a0.9 0.9 0 0 1 -1.1 0 c-1.3 -0.9 -6.5 -5.1 -6.5 -10 0 -3.8 2.6 -7 7 -7 z"
-              className="hero-art__pin"
-            />
-            <circle cx="68" cy="154" r="2.3" className="hero-art__pin-dot" />
-            <text x="92" y="150" className="hero-art__t-title">
-              {COPY.resultTitle}
-            </text>
-            <text x="92" y="169" className="hero-art__t-meta">
-              {COPY.resultMeta}
-            </text>
+        {CONVERGE_NARROW.map((d) => (
+          <path key={d} className="ha__converge" d={d} pathLength="1" />
+        ))}
 
-            <rect x="40" y="198" width="280" height="44" rx="10" className="hero-art__result" />
-            <text x="62" y="225" className="hero-art__t-quiet">
-              {COPY.otherResults[0]}
-            </text>
-          </g>
+        <path className="ha__route" d="M150 282 L150 386" pathLength="1" />
 
-          <g className="hero-art__scene hero-art__scene--b">
-            {COPY.pageHeading.map((line, i) => (
-              <text key={line} x="40" y={96 + i * 24} className="hero-art__t-display">
-                {line}
-              </text>
-            ))}
+        <path className="ha__tick" d="M178 324 l5 5 L193 316" />
 
-            {/* Rows rather than tiles: three boxes across 280 units would set
-                every label at a width its own words cannot fit. */}
-            {COPY.answers.map((answer, i) => {
-              const y = 154 + i * 26;
-              return (
-                <g key={answer} className="hero-art__tile" style={{ "--i": i } as React.CSSProperties}>
-                  <circle cx="50" cy={y - 5} r="8" className="hero-art__tile-mark" />
-                  <path d={`M46 ${y - 5} l3 3 L55 ${y - 9.5}`} className="hero-art__tick" />
-                  <text x="68" y={y} className="hero-art__t-tile">
-                    {answer}
-                  </text>
-                </g>
-              );
-            })}
-          </g>
+        <path className="ha__ring-arc ha__ring-arc--a" d="M114 386 A 36 36 0 0 1 186 386" />
+        <path className="ha__ring-arc ha__ring-arc--b" d="M186 386 A 36 36 0 0 1 114 386" />
 
-          <rect x="40" y="230" width="150" height="34" rx="8" className="hero-art__cta" />
-          <text x="115" y="252" textAnchor="middle" className="hero-art__cta-label">
-            {COPY.cta}
-          </text>
-
-          <g className="hero-art__scene hero-art__scene--c">
-            <g className="hero-art__cursor">
-              <path
-                d="M0 0 L0 15 L3.9 11.5 L6.5 17.3 L9.4 15.9 L6.7 10.2 L11.8 9.9 Z"
-                className="hero-art__cursor-shape"
-              />
-            </g>
-            <g className="hero-art__receipt">
-              <rect x="200" y="230" width="120" height="34" rx="8" />
-              <circle cx="218" cy="247" r="9" className="hero-art__sent-mark" />
-              <path d="M214 247 l3 3 L223 243" className="hero-art__tick" />
-              <text x="234" y="245" className="hero-art__t-sent">
-                {COPY.sentTitle}
-              </text>
-              <text x="234" y="258" className="hero-art__t-meta">
-                {COPY.sentMetaShort}
-              </text>
-            </g>
-          </g>
+        <g className="ha__continue-shell ha__continue-shell--narrow">
+          <path className="ha__continue" d="M150 422 L150 460" />
         </g>
 
-        <path d="M40 330 H264" className="hero-art__rail" />
-        {STEPS.map((step, i) => {
-          const x = 40 + i * 112;
-          return (
-            <g key={step} className="hero-art__step" style={{ "--i": i } as React.CSSProperties}>
-              <circle cx={x} cy="330" r="6" className="hero-art__step-dot" />
-              <text x={x} y="358" className="hero-art__step-label" textAnchor="start">
-                {step}
-              </text>
-            </g>
-          );
-        })}
+        <g className="ha__packet ha__packet--narrow">
+          <path className="ha__context" d="M118 380 H131" />
+          <path className="ha__context" d="M118 392 H131" />
+          <rect className="ha__packet-body" x="133" y="374.5" width="34" height="23" rx="4" />
+          <path className="ha__packet-rule" d="M140 382 H160" />
+          <path className="ha__packet-rule" d="M140 390 H154" />
+        </g>
       </svg>
     </div>
   );

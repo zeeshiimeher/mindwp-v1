@@ -44,7 +44,9 @@ test("homepage follows the approved reference structure", async ({ page }) => {
   await page.emulateMedia({ reducedMotion: "reduce" });
   await page.goto("/");
 
-  await expect(page.getByRole("heading", { level: 1, name: /A smarter website/ })).toHaveCount(1);
+  await expect(
+    page.getByRole("heading", { level: 1, name: /Smart websites and connected enquiry systems/ }),
+  ).toHaveCount(1);
   await expect(page.locator("header.site-header")).toHaveClass(/site-header--on-dark/);
 
   const sectionIds = await page
@@ -74,40 +76,53 @@ test("homepage follows the approved reference structure", async ({ page }) => {
   await expect(page.locator("#attention")).toContainText("The remembered name");
   await expect(page.locator("#attention").getByRole("tab")).toHaveCount(0);
 
-  const systemTablist = page.getByRole("tablist", { name: "Support beyond the website" });
+  // New enquiries leads the set: the connected services open on the moment the
+  // website itself produces, not on phone answering.
+  const systemTablist = page.getByRole("tablist", { name: "Connected services" });
   await expect(systemTablist.getByRole("tab")).toHaveCount(5);
-  const firstSystemTab = page.getByRole("tab", { name: "Missed calls" });
+  const firstSystemTab = page.getByRole("tab", { name: "New enquiries" });
   await expect(firstSystemTab).toHaveAttribute("aria-selected", "true");
-  await firstSystemTab.focus();
-  await page.keyboard.press("ArrowDown");
-  const enquiriesTab = page.getByRole("tab", { name: "New enquiries" });
-  await expect(enquiriesTab).toHaveAttribute("aria-selected", "true");
-  await expect(enquiriesTab).toBeFocused();
   await expect(page.getByRole("tabpanel", { name: "New enquiries" })).toContainText(
     "Forms and messages land in a shared inbox",
   );
+  await firstSystemTab.focus();
+  await page.keyboard.press("ArrowDown");
+  const missedCallsTab = page.getByRole("tab", { name: "Missed calls" });
+  await expect(missedCallsTab).toHaveAttribute("aria-selected", "true");
+  await expect(missedCallsTab).toBeFocused();
   await page.keyboard.press("End");
-  await expect(page.getByRole("tab", { name: "One record" })).toBeFocused();
+  await expect(page.getByRole("tab", { name: "Reviews" })).toBeFocused();
   await page.keyboard.press("Home");
   await expect(firstSystemTab).toBeFocused();
 
-  // Compounding is deliberately a composition rather than a third tab set:
-  // every gain is present and readable without any control being operated.
-  // Compounding is a composition, not a third tab set: every gain reads at once.
-  await expect(page.locator("#compounding .cp__gain")).toHaveCount(5);
-  await expect(page.locator("#compounding")).toContainText("Proof keeps adding up");
-  await expect(page.locator("#compounding")).toContainText("Every channel works harder");
+  // Compounding is a composition, not a third tab set: the website answer and
+  // all three extensions read at once, with no control to operate. The three
+  // are annotations on the answer, so the count is deliberately 3 and not 4.
+  await expect(page.locator("#compounding .cmpd__answer")).toHaveCount(1);
+  await expect(page.locator("#compounding .cmpd__extensions li")).toHaveCount(3);
+  await expect(page.locator("#compounding blockquote")).toContainText(
+    "Are these the right people to help me",
+  );
+  // The speaker attribution is load-bearing: without it the question reads as
+  // the page addressing the visitor rather than quoting their customer.
+  await expect(page.locator("#compounding figcaption")).toHaveText(
+    "Your customer, before they get in touch",
+  );
+  await expect(page.locator("#compounding")).toContainText(
+    "Demonstration wording — the kind of client-site and enquiry copy MindWP produces, not a client's live system.",
+  );
+  await expect(page.locator("#compounding")).toContainText(
+    "None requires a website rebuild or the purchase of every other service.",
+  );
   await expect(page.locator("#compounding").getByRole("tab")).toHaveCount(0);
 
   const faqButton = page.getByRole("button", {
-    name: "Do I have to take the supporting services?",
+    name: "Do I have to take everything?",
   });
   await expect(faqButton).toHaveAttribute("aria-expanded", "false");
   await faqButton.click();
   await expect(faqButton).toHaveAttribute("aria-expanded", "true");
-  await expect(
-    page.getByRole("region", { name: "Do I have to take the supporting services?" }),
-  ).toBeVisible();
+  await expect(page.getByRole("region", { name: "Do I have to take everything?" })).toBeVisible();
   // The footer carries the approved positioning line, not the meta description.
   await expect(page.locator("footer")).toContainText(
     "Website and enquiry systems for clinics and expert-led businesses",
@@ -119,7 +134,7 @@ test("system moments keep a single segment row at tablet width", async ({ page }
   await page.emulateMedia({ reducedMotion: "reduce" });
   await page.goto("/");
 
-  const systemTabs = page.getByRole("tablist", { name: "Support beyond the website" });
+  const systemTabs = page.getByRole("tablist", { name: "Connected services" });
   await expect(systemTabs).toBeVisible();
   const segmentTabs = systemTabs.getByRole("tab");
   await expect(segmentTabs).toHaveCount(5);
@@ -145,17 +160,17 @@ test("homepage tab navigation remains usable on mobile", async ({ browser, baseU
     await expect(page.locator("#attention .att__cell")).toHaveCount(6);
 
     await expect(page.locator("#attention")).toContainText("The exact search");
-    const missedCallsHead = page.getByRole("button", { name: "Missed calls", exact: true });
-    await expect(missedCallsHead).toBeVisible();
-    await expect(missedCallsHead).toHaveAttribute("aria-expanded", "true");
-    await expect(page.locator("#compounding")).toContainText("Proof keeps adding up");
+    const newEnquiriesHead = page.getByRole("button", { name: "New enquiries", exact: true });
+    await expect(newEnquiriesHead).toBeVisible();
+    await expect(newEnquiriesHead).toHaveAttribute("aria-expanded", "true");
+    await expect(page.locator("#compounding")).toContainText("The website answers it");
 
     await expect(page.locator("#attention")).toContainText("The remembered name");
 
-    const missedCallsBody = page.locator("#system-body-missed-calls");
+    const newEnquiriesBody = page.locator("#system-body-new-enquiries");
     const reviewsBody = page.locator("#system-body-reviews");
-    await expect(missedCallsBody).toBeVisible();
-    expect(await missedCallsBody.getAttribute("inert")).toBeNull();
+    await expect(newEnquiriesBody).toBeVisible();
+    expect(await newEnquiriesBody.getAttribute("inert")).toBeNull();
     await expect(reviewsBody).not.toBeVisible();
     expect(await reviewsBody.getAttribute("inert")).not.toBeNull();
 
@@ -167,11 +182,13 @@ test("homepage tab navigation remains usable on mobile", async ({ browser, baseU
     );
     await expect(reviewsBody).toBeVisible();
     expect(await reviewsBody.getAttribute("inert")).toBeNull();
-    await expect(missedCallsHead).toHaveAttribute("aria-expanded", "false");
-    await expect(missedCallsBody).not.toBeVisible();
-    expect(await missedCallsBody.getAttribute("inert")).not.toBeNull();
+    await expect(newEnquiriesHead).toHaveAttribute("aria-expanded", "false");
+    await expect(newEnquiriesBody).not.toBeVisible();
+    expect(await newEnquiriesBody.getAttribute("inert")).not.toBeNull();
 
-    await expect(page.locator("#compounding")).toContainText("Every channel works harder");
+    await expect(page.locator("#compounding")).toContainText(
+      "Continues the step the page names",
+    );
 
     const viewportWidth = await page.evaluate(() => document.documentElement.clientWidth);
     const pageWidth = await page.evaluate(() => document.documentElement.scrollWidth);
@@ -204,10 +221,15 @@ test("mobile tab compositions keep keyboard selection visible", async ({ page })
   await expect(followUpHead).toHaveAttribute("aria-expanded", "true");
   await expectHorizontallyContained(followUpHead, page.locator(".home-systems__accordion"));
 
-  // Compounding has no controls to keep visible — it must simply fit its column.
-  const gains = page.locator("#compounding .cp__gain");
-  await expect(gains).toHaveCount(5);
-  await expectHorizontallyContained(gains.last(), page.locator("#compounding .cp"));
+  // Compounding has no controls to keep visible — the answer and its
+  // annotations must simply stay inside their column at full body size.
+  const extensions = page.locator("#compounding .cmpd__extensions li");
+  await expect(extensions).toHaveCount(3);
+  await expectHorizontallyContained(extensions.last(), page.locator("#compounding .cmpd"));
+  await expectHorizontallyContained(
+    page.locator("#compounding .cmpd__answer"),
+    page.locator("#compounding .cmpd"),
+  );
 });
 
 test("mobile homepage content stays inside its sections", async ({ page }) => {

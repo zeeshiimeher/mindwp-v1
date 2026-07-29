@@ -4,7 +4,8 @@ import { CONTACT_PATH } from "@/config/routes";
 import { PRIMARY_CTA_LABEL, PRIMARY_CTA_LABEL_SHORT } from "@/lib/cta/labels";
 
 const GOOD_FIT = [
-  "An independent clinic or specialist service business where customers compare carefully before choosing.",
+  "An independent clinic or expert-led business where customers compare carefully before choosing.",
+  "You already have a website that does its job — and what actually needs fixing is the handling around it.",
   "Each enquiry represents a real decision — a patient, a project, a client — worth getting right.",
   "Trust and evidence matter to your buyers at least as much as price.",
   "You want a website you can maintain and adapt yourself, not one locked behind an agency.",
@@ -39,7 +40,7 @@ const REVIEW_STEPS: readonly {
   },
   {
     title: "A prioritised starting point, not a pitch.",
-    body: "A clear view of what is worth fixing first. Recommendations follow what the review finds — scope and cost are agreed before anything begins.",
+    body: "The review identifies what is worth doing first. Any recommendations follow what it finds, and scope and cost are agreed before anything begins.",
     tag: "You decide",
     icon: "circle-check",
   },
@@ -56,8 +57,8 @@ export function HomeFit() {
             Right fit
           </p>
           <h2 data-home-sequence-item>
-            For independent clinics and specialist service businesses{" "}
-            <em>where customers choose carefully.</em>
+            For independent clinics and expert-led businesses{" "}
+            <em>whose customers compare carefully before they choose.</em>
           </h2>
         </div>
         <div className="section-copy-group">
@@ -117,15 +118,14 @@ export function HomeReview() {
           </div>
           <p data-home-sequence-item>
             The Visibility &amp; Enquiry Review looks at how people find you, whether the website
-            answers what they need, and what happens once they make contact. What comes back is a
-            clear starting point, not a generic package.
+            answers what they need, and what happens once someone makes contact. It works whether
+            you have a website you are happy with, one you know needs replacing, or none yet.
           </p>
           <Button href={CONTACT_PATH} variant="on-dark" data-home-sequence-item>
             {PRIMARY_CTA_LABEL_SHORT}
           </Button>
           <small data-home-sequence-item>
-            No obligation to continue. You receive a clear starting point whether or not we work
-            together.
+            Any project scope and cost are agreed after the review, never before it.
           </small>
         </div>
 
@@ -162,14 +162,14 @@ export function HomeClosing() {
           See what should become easier <em>across your visibility, website and enquiry path.</em>
         </h2>
         <p data-home-sequence-item>
-          One private conversation. MindWP reviews your visibility, your website and the path every
-          enquiry takes, then shows you what&apos;s worth fixing first — useful whether or not you
-          build together afterwards.
+          MindWP looks at your visibility, your website and the path every enquiry takes, then sets
+          out what is worth doing first. It works whether you need a new website, want to keep the
+          one you have, or only want the handling around it put right.
         </p>
         <div
           className="home-closing__icons"
           role="img"
-          aria-label="The website and its optional supporting systems"
+          aria-label="The website and the connected services that can be scoped alongside it"
           data-home-stagger
         >
           {CLOSING_ICONS.map((icon) => (
