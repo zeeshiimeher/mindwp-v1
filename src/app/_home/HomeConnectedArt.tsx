@@ -1,9 +1,12 @@
 /**
  * "Connected where useful" — the real shape of the relationship.
  *
- * The website is the largest object and everything is oriented around it, so
+ * The engagement is the largest object and everything is oriented around it, so
  * the picture cannot be read as five peers or as the services feeding a
- * passive site. Each connection follows what the service actually does:
+ * passive site. The centre is named — Smart Website Systems is the principal
+ * engagement, and leaving it as a generic "your website" while naming all four
+ * surrounding services inverted the offer hierarchy in the one drawing that
+ * shows the whole model. Each connection follows what the service actually does:
  *
  *   Local SEO Authority   helps suitable people reach and evaluate it  → in
  *   Lead Response         begins once contact exists                   → out
@@ -15,7 +18,7 @@
  */
 
 const LABEL =
-  "The website at the centre. Local SEO Authority brings suitable people to it; Lead Response & Handling and Follow-Up & CRM continue after contact; Reputation & Review returns proof to the website for the next person deciding.";
+  "Smart Website Systems at the centre. Local SEO Authority brings suitable people to it; Lead Response & Handling and Follow-Up & CRM continue after contact; Reputation & Review returns proof to the website for the next person deciding. Each surrounding responsibility is scoped separately rather than included.";
 
 function Card({
   x,
@@ -89,7 +92,7 @@ export function HomeConnectedArt() {
           <circle cx="396" cy="78" r="3.6" />
           <circle cx="410" cy="78" r="3.6" />
           <text x="490" y="152" className="cx__site-title" textAnchor="middle">
-            Your website
+            Smart Website Systems
           </text>
           <text x="490" y="182" className="cx__site-note" textAnchor="middle">
             Understand · Trust · Act
@@ -173,7 +176,7 @@ export function HomeConnectedArt() {
           <circle cx="88" cy="132" r="3" />
           <circle cx="100" cy="132" r="3" />
           <text x="182" y="188" className="cx__site-title" textAnchor="middle">
-            Your website
+            Smart Website Systems
           </text>
           <text x="182" y="212" className="cx__site-note" textAnchor="middle">
             Understand · Trust · Act

@@ -1,140 +1,58 @@
-import { STATIONS } from "@/app/_home/compoundGeometry";
-import { HomeCompoundArt } from "@/app/_home/HomeCompoundArt";
-
 /**
- * The journey as a closed circuit, with what it leaves behind accumulating inside
- * it.
+ * Built to stay useful — the page's one type-led section.
  *
- * This is the only place on the page where a visitor follows one enquiry the whole
- * way — searched for, landed, sent, acknowledged, owned, written down — so it is
- * built as a route rather than as a set of points. The route is a loop because
- * that is the actual claim: it comes back, and the next pass starts from
- * everything the last one left. Inside the loop sits the ledger, which fills as
- * the enquiry travels, so "it compounds" is something the visitor watches instead
- * of a word the copy has to argue for.
+ * What this section has to say has no honest picture. "An established
+ * understanding that later work starts from" is a fact about how the work is
+ * organised, not a thing with a shape, and every attempt to draw it produces
+ * either a diagram of its own sentence or a record that would have to be
+ * invented. So the payload here is the statement itself, set large enough to be
+ * an object, held between two rules that run the full width of the viewport.
  *
- * The website is deliberately not the centre of this drawing. That composition
- * belongs to the section above about the website being the public centre, and
- * repeating it here would make two sections say one thing twice. Here the website
- * is one station on the route like the rest, and what sits at the centre is what
- * the business ends up owning.
+ * The two clauses are one heading — the shared roman-then-italic turn — but set
+ * at different scales and opposite alignments, so the turn is spatial as well as
+ * grammatical. The eye goes down the left, across to the right, then back to the
+ * quiet note at lower left. One emerald mark sits in the gap where the statement
+ * turns, and it is the only colour in the section.
  *
- * Each station names a moment and the asset that moment leaves. Nothing claims a
- * result, a measurement or an outcome: naming what a business owns at the end is a
- * fact about scope, and the boundary line says plainly that each piece is scoped
- * on its own.
+ * It sits where it does because of its neighbours: Business context above and
+ * Right fit below both ask the visitor to compare two columns of short items.
+ * This asks for one long read instead, which is the behaviour the middle of the
+ * page was missing.
  *
- * At rest the whole circuit is drawn, every station is lit and the ledger is full,
- * so the still frame, the script-free render and the reduced-motion render carry
- * the complete argument. Narrow widths drop the geometry and read the same content
- * as a numbered sequence — a circuit needs width to be a circuit.
+ * Claims boundary: the work is built to remain useful and a later change starts
+ * from what is already settled. Nothing here says anything improves on its own,
+ * that continuing is required, or that any outcome follows.
  */
-
-const JOURNEY: readonly { moment: string; body: string; asset: string }[] = [
-  {
-    moment: "Someone searches",
-    body: "For the service — not for your name yet.",
-    asset: "Local presence that matches the site",
-  },
-  {
-    moment: "They land on the website",
-    body: "Who the work is for, what it covers, what happens next.",
-    asset: "A website you own and can edit",
-  },
-  {
-    moment: "They get in touch",
-    body: "One route — and the page they were reading travels with it.",
-    asset: "One enquiry route, context attached",
-  },
-  {
-    moment: "It is acknowledged",
-    body: "Wording you approved goes back straight away.",
-    asset: "Acknowledgement wording, agreed once",
-  },
-  {
-    moment: "A person owns the reply",
-    body: "Named, not assumed. Nothing waits in a shared inbox.",
-    asset: "A named owner for every enquiry",
-  },
-  {
-    moment: "It is written down",
-    body: "What was asked and what happens next outlive the inbox.",
-    asset: "A record the next build starts from",
-  },
-];
-
-const STEP = (index: number) => String(index + 1).padStart(2, "0");
-
 export function HomeCompounding() {
   return (
-    <section id="compounding" className="home-compounding section section--focal on-mist">
-      <div className="container">
-        <div className="cmpd">
-          <header className="cmpd__intro">
-            <div className="cmpd__intro-title">
-              <p className="eyebrow" data-home-fade>
-                Built to keep working
-              </p>
-              <h2 data-home-fade>
-                It isn&apos;t a launch. <em>It compounds.</em>
-              </h2>
-            </div>
-            <div className="cmpd__intro-copy">
-              <p className="cmpd__lead" data-home-fade>
-                A website is one asset. The handling connected around it is the rest. Follow a
-                single enquiry the whole way round — and watch what the business is left holding.
-              </p>
-              <p className="cmpd__boundary" data-home-fade>
-                Each piece is agreed and scoped separately. None requires a website rebuild or the
-                purchase of every other service.
-              </p>
-            </div>
-          </header>
+    <section id="compounding" className="home-lasting section section--focal on-mist">
+      <div className="lasting" data-home-lasting>
+        <p className="container eyebrow lasting__eyebrow" data-home-lasting-item>
+          Built to stay useful
+        </p>
 
-          <div className="cmpd__circuit" data-home-circuit>
-            <HomeCompoundArt />
+        <span className="lasting__rule" data-home-rule aria-hidden="true" />
 
-            <ol className="cmpd__stations">
-              {JOURNEY.map(({ moment, body }, index) => (
-                <li
-                  key={moment}
-                  className={`cmpd__station cmpd__station--${STATIONS[index].place}`}
-                  style={
-                    {
-                      "--x": STATIONS[index].left,
-                      "--y": STATIONS[index].top,
-                      "--tier": STATIONS[index].tier,
-                    } as React.CSSProperties
-                  }
-                  data-home-station
-                >
-                  <span className="cmpd__dot" aria-hidden="true" />
-                  <div className="cmpd__station-copy">
-                    <p className="cmpd__station-step">{STEP(index)}</p>
-                    <h3>{moment}</h3>
-                    <p className="cmpd__station-body">{body}</p>
-                  </div>
-                </li>
-              ))}
-            </ol>
+        <div className="container lasting__statement-wrap">
+          <h2 className="lasting__statement">
+            <span className="lasting__first" data-home-lasting-item>
+              The first build is where the decisions get made.
+            </span>
+            <em className="lasting__turn" data-home-lasting-item>
+              Anything you do later starts from those, not from a blank page.
+            </em>
+          </h2>
+        </div>
 
-            <div className="cmpd__ledger">
-              <p className="cmpd__ledger-title">What the business owns after one pass</p>
-              <ol className="cmpd__assets">
-                {JOURNEY.map(({ asset }, index) => (
-                  <li key={asset} className="cmpd__asset" data-home-asset>
-                    <span className="cmpd__asset-step" aria-hidden="true">
-                      {STEP(index)}
-                    </span>
-                    {asset}
-                  </li>
-                ))}
-              </ol>
-              <p className="cmpd__ledger-note">
-                And round again — from everything the last pass left in place.
-              </p>
-            </div>
-          </div>
+        <span className="lasting__rule" data-home-rule aria-hidden="true" />
+
+        <div className="container lasting__foot">
+          <p className="lasting__note" data-home-lasting-item>
+            Who the work is for, what it covers, what proof it shows, where an enquiry goes and who
+            answers it — those get settled once, written down, and they are yours. A later change to
+            a service, a page, or the handling around it starts from that rather than from discovery
+            again. Whether anything continues is a separate agreement, made when it is worth making.
+          </p>
         </div>
       </div>
     </section>

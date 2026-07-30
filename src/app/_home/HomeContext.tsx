@@ -1,23 +1,23 @@
+/* Two examples, kept short on purpose. Home demonstrates that the decision
+   shapes the website; the worked decision model for a vertical — its full
+   question set, evidence needs and professional boundaries — belongs to that
+   industry's own page. */
 const CLINIC_QUESTIONS = [
   "Is this treatment right for my case?",
   "Who would actually be treating me?",
-  "What happens at the first consultation?",
 ];
 
 const CLINIC_LEADS = [
   "Treatment pages that answer a specific concern",
   "The practitioner — named and visible up front",
-  "A private, unhurried consultation path",
 ];
 
 const EMPLOYER_QUESTIONS = [
   "Can we qualify for a licence at all?",
-  "Who would actually be handling this?",
   "What happens if we are audited?",
 ];
 
 const ADVISER_LEADS = [
-  ["Situation", "Matter pages that name the employer's position, not the statute"],
   ["Accountability", "The adviser who would handle it, named"],
   ["First step", "A confidential conversation, not an open enquiry form"],
 ] as const;
@@ -47,8 +47,7 @@ export function HomeContext() {
             <h3>Specialist clinics</h3>
           </div>
           <p className="editorial-note">
-            The patient moves carefully. Credibility is weighed before contact, and the first step
-            has to feel private.
+            The patient moves carefully, and the first step has to feel private.
           </p>
           <p className="home-artifact-label">What a patient is really asking</p>
           <ol className="home-context__questions">
@@ -71,7 +70,7 @@ export function HomeContext() {
           </div>
           <p className="editorial-note">
             The employer is exposed. A licence carries duties they will be audited against, so
-            credentials get checked long before anyone picks up the phone.
+            credentials get checked early.
           </p>
           <p className="home-artifact-label">What an employer is really asking</p>
           <ol className="home-context__questions home-context__questions--numbered">

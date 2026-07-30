@@ -3,11 +3,13 @@ import { Icon, type IconName } from "@/components/ui/Icon";
 import { CONTACT_PATH } from "@/config/routes";
 import { PRIMARY_CTA_LABEL, PRIMARY_CTA_LABEL_SHORT } from "@/lib/cta/labels";
 
+/* Fit only. The non-claims that used to sit in the second column — no
+   guaranteed rankings, a website alone does not create demand — are answered
+   once in the FAQ, where an objection is actually being answered. */
 const GOOD_FIT = [
   "An independent clinic or expert-led business where customers compare carefully before choosing.",
-  "You already have a website that does its job — and what actually needs fixing is the handling around it.",
   "Each enquiry represents a real decision — a patient, a project, a client — worth getting right.",
-  "Trust and evidence matter to your buyers at least as much as price.",
+  "You already have a website that does its job, and what needs fixing is the handling around it.",
   "You want a website you can maintain and adapt yourself, not one locked behind an agency.",
   "Established or newer — as long as getting the website and its handling right from the start matters to you.",
 ];
@@ -15,8 +17,6 @@ const GOOD_FIT = [
 const NOT_FIT = [
   "Chasing the cheapest website available",
   "Looking for a brochure nobody has to act on",
-  "Expecting a website alone to create demand",
-  "Expecting guaranteed rankings or instant enquiries",
   "Wanting another software platform to operate day to day",
 ];
 
@@ -28,7 +28,7 @@ const REVIEW_STEPS: readonly {
 }[] = [
   {
     title: "How enquiries and customers reach you today.",
-    body: "The website, where visibility already comes from, and what happens after someone makes contact. That sets the starting point.",
+    body: "The website, where visibility already comes from, and what happens after contact. That sets the starting point.",
     tag: "You share",
     icon: "message-square",
   },
@@ -40,13 +40,11 @@ const REVIEW_STEPS: readonly {
   },
   {
     title: "A prioritised starting point, not a pitch.",
-    body: "The review identifies what is worth doing first. Any recommendations follow what it finds, and scope and cost are agreed before anything begins.",
+    body: "The review sets out what is worth doing first. Scope and cost are agreed before anything begins, and the decision is yours.",
     tag: "You decide",
     icon: "circle-check",
   },
 ];
-
-const CLOSING_ICONS: readonly IconName[] = ["globe", "map-pin", "phone", "folder", "star"];
 
 export function HomeFit() {
   return (
@@ -63,9 +61,8 @@ export function HomeFit() {
         </div>
         <div className="section-copy-group">
           <p data-home-sequence-item>
-            We would rather say this plainly than let a website assume it. MindWP works best for
-            businesses whose customers already compare carefully before they choose, and where each
-            enquiry has real value.
+            We would rather say this plainly than let a website assume it. MindWP works best where
+            each enquiry has real value and your customers already compare before they choose.
           </p>
         </div>
       </div>
@@ -148,33 +145,29 @@ export function HomeReview() {
   );
 }
 
+/**
+ * The invitation, not a second explanation of the Review. The section above
+ * owns what the Review examines and how the decision is reached; repeating it
+ * here made the pair read as one section twice with the FAQ in between.
+ *
+ * The five-icon row that sat below the copy carried no information — it echoed
+ * the service count and nothing else — so it is gone rather than relabelled
+ * into a service list this page already has twice.
+ */
 export function HomeClosing() {
   return (
     <section id="closing" className="home-closing section on-dark">
       <div className="container section-intro section-intro--centered" data-home-sequence>
         <p className="eyebrow eyebrow--centered" data-home-sequence-item>
-          Visibility &amp; enquiry review
+          Where to start
         </p>
         <h2 className="display-feature" data-home-sequence-item>
           See what should become easier <em>across your visibility, website and enquiry path.</em>
         </h2>
         <p data-home-sequence-item>
-          MindWP looks at your visibility, your website and the path every enquiry takes, then sets
-          out what is worth doing first. It works whether you need a new website, want to keep the
-          one you have, or only want the handling around it put right.
+          Tell us how people find and contact you today, and the review will show you where to
+          start. Scope and cost follow from what it finds.
         </p>
-        <div
-          className="home-closing__icons"
-          role="img"
-          aria-label="The website and the connected services that can be scoped alongside it"
-          data-home-stagger
-        >
-          {CLOSING_ICONS.map((icon) => (
-            <span key={icon} data-home-stagger-item>
-              <Icon name={icon} size={18} />
-            </span>
-          ))}
-        </div>
         <Button href={CONTACT_PATH} variant="on-dark" data-home-sequence-item>
           {PRIMARY_CTA_LABEL}
         </Button>

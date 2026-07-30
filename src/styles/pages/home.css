@@ -136,6 +136,15 @@
   color: var(--text-inverse-muted);
 }
 
+/* Two paths from the hero: the diagnostic primary, and the approved
+   lower-commitment action into the proof section further down the page. */
+.home-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-4);
+}
+
 .home-hero__art-column {
   min-width: 0;
   display: flex;
@@ -1116,10 +1125,12 @@
   fill: var(--border-navy-hairline);
 }
 
+/* Sized to hold the canonical offer name on one line inside the 260-unit card
+   without breaking it across two — the name is the point of the label. */
 .cx__site-title {
   fill: var(--text-inverse);
-  font: 600 26px/1 var(--font-display);
-  letter-spacing: -0.012em;
+  font: 600 20px/1 var(--font-display);
+  letter-spacing: -0.008em;
 }
 
 .cx__site-note {
@@ -1685,6 +1696,15 @@
   box-shadow: var(--elev-focal);
 }
 
+/* Constructed-status label, carried on the artefact itself rather than near it. */
+.home-authority__status {
+  margin-top: var(--space-5);
+  border-top: 1px solid var(--border-navy-hairline);
+  padding-top: var(--space-4);
+  color: var(--text-inverse-muted);
+  font: var(--body-xs);
+}
+
 .home-authority__search-bar {
   display: flex;
   align-items: center;
@@ -2064,417 +2084,125 @@
   text-align: center;
 }
 
-/* Compounding
-   The journey drawn as a closed circuit on a light drafting ground, with the
-   ledger of what it leaves behind sitting inside the loop and filling as a single
-   enquiry travels round. The loop is the argument: the route returns, and the next
-   pass starts from everything already in place.
+/* Built to stay useful
+   The page's one type-led section, and its only full-bleed moment.
 
-   Light on purpose. The section sits between a navy argument above and a paper one
-   below, and the page wants a bright, drawn, technical interlude there rather than
-   another dark panel. On the light end of the palette the plate therefore carries a
-   fill, a hairline and a real shadow.
+   What it says has no honest picture, so the statement itself is the payload:
+   set larger than any other heading on the page except the hero, held between
+   two rules that run edge to edge of the viewport. The rules give the section
+   its silhouette at page scale — a wide, shallow plate between two contained
+   navy/paper bands — and they are what makes the type read as an object rather
+   than as a long heading.
 
-   Everything rests complete — every trace drawn, every station lit, the ledger
-   full — so the still frame, the script-free render and the reduced-motion render
-   all carry the whole argument. HomeMotion adds the travel.
+   The two clauses are one h2 using the shared roman/italic turn, but set at
+   different scales and opposite alignments, so the turn is spatial as well as
+   grammatical: down the left at full display scale, across to the right at
+   roughly half of it, then back to the note at lower left. One emerald mark
+   sits in the gap where it turns.
 
-   Geometry comes from HomeCompoundArt: stations are positioned by the same
-   coordinates the paths are drawn from, so a dot cannot drift off its line. */
+   Narrow widths keep the same reading and drop the diagonal: both clauses go
+   left, the scale difference still carries the turn, and the pivot mark moves
+   to the left edge where the eye now is. */
 
-.home-compounding {
+.home-lasting {
   background: var(--surface-mist);
 }
 
-.cmpd {
-  display: flex;
-  flex-direction: column;
-  gap: clamp(var(--space-7), 4vw, var(--space-9));
-  border: 1px solid var(--border-hairline);
-  border-radius: clamp(1rem, 1.5vw, 1.75rem);
-  /* Drafting paper: a faint square grid, subdued at the edges so the drawing
-     reads as the subject and the grid as the surface it sits on. */
-  background:
-    linear-gradient(var(--surface-card), var(--surface-card)) padding-box,
-    repeating-linear-gradient(to right, var(--surface-sunken) 0 1px, transparent 1px 3rem)
-      padding-box,
-    repeating-linear-gradient(to bottom, var(--surface-sunken) 0 1px, transparent 1px 3rem)
-      padding-box;
-  padding: clamp(1.5rem, 3vw, 3rem);
-  box-shadow: var(--elev-focal);
-}
-
-/* ---- The header, inside the plate ---- */
-
-.cmpd__intro {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  align-items: end;
-  gap: var(--space-6) clamp(var(--space-8), 5vw, var(--space-10));
-}
-
-.cmpd__intro-title {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-5);
-}
-
-.cmpd__intro h2 {
-  font: var(--display-lg);
-  letter-spacing: var(--display-lg-tracking);
-}
-
-.cmpd__intro-copy {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-4);
-  max-width: 32rem;
-}
-
-.cmpd__lead {
-  font: var(--body-lg);
-}
-
-.cmpd__boundary {
-  border-top: 1px solid var(--border-hairline);
-  padding-top: var(--space-4);
-  color: var(--text-secondary);
-  font: var(--body-sm);
-}
-
-/* ---- The circuit ----
-   The aspect ratio matches the artwork's viewBox exactly, so percentage
-   positioning maps one-to-one onto SVG coordinates. */
-
-.cmpd__circuit {
-  position: relative;
-  aspect-ratio: 1400 / 780;
-}
-
-/* A faint wash inside the route, so what accumulates reads as being held by it. */
-.cmpd__field {
-  fill: var(--emerald-tint-weak);
-  stroke: none;
-}
-
-.cmpd__art {
-  position: absolute;
-  inset: 0;
+.lasting {
   width: 100%;
-  height: 100%;
-  overflow: visible;
-  fill: none;
-  stroke: var(--color-emerald-deep);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1.75rem, 3vw, 3rem);
 }
 
-.cmpd__trace {
-  stroke-linecap: round;
-  /* Drawn at rest; HomeMotion animates the offset back from 1. */
-  stroke-dasharray: 1;
-  stroke-dashoffset: 0;
+/* .container owns the width; .eyebrow owns the caps-and-rule treatment. */
+.lasting__eyebrow {
+  justify-content: flex-start;
 }
 
-/* Carries the travelling enquiry and is never painted. */
-.cmpd__rail {
-  stroke: none;
+.lasting__rule {
+  width: 100%;
+  height: 1px;
+  background: var(--border-mist-hairline);
+  transform-origin: left center;
 }
 
-.cmpd__token {
-  fill: var(--color-emerald);
-  stroke: var(--color-white);
-  stroke-width: 3;
-  filter: drop-shadow(0 0 0.5rem var(--emerald-glow));
+.lasting__statement-wrap {
+  padding-block: clamp(0.75rem, 1.8vw, 2rem);
 }
 
-/* ---- Stations ----
-   Each is a point on the loop. `--lit` rests at 1; HomeMotion sets it to 0 and
-   raises it as the enquiry arrives. */
-
-.cmpd__station {
-  --lit: 1;
-
-  position: absolute;
-  left: var(--x);
-  top: var(--y);
-  width: 0;
-  height: 0;
+/* This section's own display step. Larger than the global h2 so it dominates
+   its band; smaller than the hero h1 so the page keeps its order. Sized up from
+   a first pass where the band's height came from padding rather than from the
+   type — a focal section has to be filled by its payload. */
+.lasting__statement {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1.5rem, 2.4vw, 2.5rem);
+  font: 500 clamp(2.125rem, 1.18rem + 3.78vw, 4.5rem) / 1.04 var(--font-display);
+  letter-spacing: -0.028em;
+  font-variation-settings: var(--display-axes-hero);
 }
 
-.cmpd__dot {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 0.75rem;
-  height: 0.75rem;
-  translate: -50% -50%;
-  border-radius: var(--radius-pill);
-  border: 2px solid var(--surface-card);
-  background: var(--color-navy);
+.lasting__first {
+  display: block;
+  max-width: min(26ch, 100%);
 }
 
-/* The halo is the arrival: it only exists once the enquiry has been here. */
-.cmpd__dot::after {
-  content: "";
-  position: absolute;
-  inset: -0.375rem;
-  border-radius: inherit;
-  background: var(--emerald-tint);
-  opacity: var(--lit);
-  scale: calc(0.4 + 0.6 * var(--lit));
-}
-
-.cmpd__station-copy {
-  position: absolute;
-  width: clamp(9.5rem, 13vw, 12.5rem);
-  opacity: calc(0.42 + 0.58 * var(--lit));
-}
-
-/* Four placements, because a station on a turn has room to the side and a station
-   on a straight has room above or below. A tick joins each label to its dot, so a
-   station reads as one thing rather than as a caption near a line. */
-.cmpd__station--top .cmpd__station-copy,
-.cmpd__station--bottom .cmpd__station-copy {
-  left: 0;
-  translate: -50% 0;
-  text-align: center;
-}
-
-.cmpd__station--top .cmpd__station-copy {
-  bottom: calc(var(--space-6) + var(--tier, 0) * var(--space-8));
-}
-
-.cmpd__station--bottom .cmpd__station-copy {
-  top: calc(var(--space-6) + var(--tier, 0) * var(--space-8));
-}
-
-.cmpd__station--left .cmpd__station-copy,
-.cmpd__station--right .cmpd__station-copy {
-  top: 0;
-  translate: 0 -50%;
-}
-
-.cmpd__station--left .cmpd__station-copy {
-  right: var(--space-6);
+/* The turn: half the scale, italic, secondary, and pushed to the opposite edge.
+   `h2 em` already supplies the colour and the lighter weight. */
+.lasting__turn {
+  position: relative;
+  display: block;
+  max-width: min(25ch, 100%);
+  margin-inline-start: auto;
+  font-size: clamp(1.375rem, 0.9rem + 1.9vw, 2.625rem);
+  line-height: 1.15;
+  letter-spacing: -0.014em;
   text-align: right;
 }
 
-.cmpd__station--right .cmpd__station-copy {
-  left: var(--space-6);
-  text-align: left;
-}
-
-.cmpd__station-copy::after {
+/* The pivot — the only emerald in the section, and the only object. It marks
+   where the statement turns and carries no label. */
+.lasting__turn::before {
   content: "";
   position: absolute;
-  background: var(--border-hairline);
+  right: 0;
+  bottom: calc(100% + clamp(0.75rem, 1.5vw, 1.5rem));
+  width: 2.75rem;
+  height: 2px;
+  background: var(--color-emerald);
 }
 
-.cmpd__station--top .cmpd__station-copy::after,
-.cmpd__station--bottom .cmpd__station-copy::after {
-  left: 50%;
-  width: 1px;
-  height: calc(var(--space-5) + var(--tier, 0) * var(--space-8));
+/* Deliberate air on the right: the note is a coda, not a second column. */
+.lasting__foot {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.85fr);
+  gap: var(--space-6);
 }
 
-.cmpd__station--top .cmpd__station-copy::after {
-  top: 100%;
+.lasting__note {
+  max-width: var(--measure-copy);
 }
 
-.cmpd__station--bottom .cmpd__station-copy::after {
-  bottom: 100%;
-}
-
-.cmpd__station--left .cmpd__station-copy::after,
-.cmpd__station--right .cmpd__station-copy::after {
-  top: 50%;
-  width: var(--space-5);
-  height: 1px;
-}
-
-.cmpd__station--left .cmpd__station-copy::after {
-  left: 100%;
-}
-
-.cmpd__station--right .cmpd__station-copy::after {
-  right: 100%;
-}
-
-.cmpd__station-step {
-  color: var(--color-emerald-deep);
-  font: var(--label-caps);
-  letter-spacing: var(--label-caps-tracking);
-  font-variant-numeric: tabular-nums;
-}
-
-.cmpd__station-copy h3 {
-  margin-top: var(--space-2);
-  font: var(--display-sm);
-  letter-spacing: var(--display-sm-tracking);
-}
-
-.cmpd__station-body {
-  margin-top: var(--space-2);
-  color: var(--text-secondary);
-  font: var(--body-sm);
-}
-
-/* ---- The ledger, inside the loop ---- */
-
-/* Centred on the loop's own midline rather than the box's, and narrow enough to
-   sit clear of both straights — the ledger is inside the route, not across it. */
-.cmpd__ledger {
-  position: absolute;
-  left: 50%;
-  top: 51.9%;
-  width: min(24rem, 28%);
-  translate: -50% -50%;
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-4);
-  text-align: center;
-}
-
-.cmpd__ledger-title,
-.cmpd__ledger-note {
-  color: var(--text-secondary);
-}
-
-.cmpd__ledger-title {
-  font: var(--label-caps);
-  letter-spacing: var(--label-caps-tracking);
-  text-transform: uppercase;
-}
-
-.cmpd__assets {
-  display: flex;
-  flex-direction: column;
-}
-
-.cmpd__asset {
-  --lit: 1;
-
-  display: flex;
-  align-items: baseline;
-  justify-content: center;
-  gap: var(--space-3);
-  border-bottom: 1px solid var(--border-hairline);
-  padding-block: var(--space-2);
-  color: var(--text-primary);
-  font: var(--body-sm);
-  opacity: calc(0.3 + 0.7 * var(--lit));
-}
-
-.cmpd__asset:first-child {
-  border-top: 1px solid var(--border-hairline);
-}
-
-.cmpd__asset-step {
-  color: var(--color-emerald-deep);
-  font: var(--label-caps);
-  letter-spacing: var(--label-caps-tracking);
-  font-variant-numeric: tabular-nums;
-}
-
-.cmpd__ledger-note {
-  font: italic 500 1rem/1.5 var(--font-display);
-}
-
-@media (max-width: 80rem) {
-  .cmpd__station-body {
-    display: none;
-  }
-
-  .cmpd__ledger {
-    width: min(26rem, 44%);
-  }
-
-  .cmpd__asset {
-    font: var(--body-sm);
-  }
-}
-
-/* Narrow: a circuit needs width to be a circuit, so the geometry is dropped
-   rather than shrunk. The same stations read as a numbered sequence and the
-   ledger follows them as its summary. */
 @media (max-width: 64rem) {
-  .cmpd__intro {
+  .lasting__foot {
     grid-template-columns: minmax(0, 1fr);
-    align-items: start;
   }
+}
 
-  .cmpd__circuit {
-    aspect-ratio: auto;
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-8);
-  }
-
-  .cmpd__art {
-    display: none;
-  }
-
-  .cmpd__stations {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .cmpd__station {
-    --lit: 1;
-
-    position: relative;
-    left: 0;
-    top: 0;
-    width: auto;
-    height: auto;
-    border-top: 1px solid var(--border-hairline);
-    padding: var(--space-5) 0 var(--space-5) var(--space-7);
-  }
-
-  .cmpd__station:last-child {
-    border-bottom: 1px solid var(--border-hairline);
-  }
-
-  .cmpd__dot {
-    top: calc(var(--space-5) + 0.6rem);
-    left: 0;
-    translate: 0 0;
-  }
-
-  .cmpd__station-copy {
-    position: relative;
-    width: auto;
-    translate: 0 0;
+/* Narrow: the diagonal cannot survive, so it is dropped rather than squeezed.
+   Both clauses go left and the scale drop carries the turn on its own. */
+@media (max-width: 48rem) {
+  .lasting__turn {
+    margin-inline-start: 0;
     text-align: left;
   }
 
-  .cmpd__station-copy,
-  .cmpd__station--top .cmpd__station-copy,
-  .cmpd__station--bottom .cmpd__station-copy,
-  .cmpd__station--left .cmpd__station-copy,
-  .cmpd__station--right .cmpd__station-copy {
-    inset: auto;
-    text-align: left;
-  }
-
-  .cmpd__station-copy::after {
-    display: none;
-  }
-
-  .cmpd__station-body {
-    display: block;
-  }
-
-  .cmpd__ledger {
-    position: relative;
+  .lasting__turn::before {
+    right: auto;
     left: 0;
-    top: 0;
-    width: auto;
-    translate: 0 0;
-    text-align: left;
-  }
-
-  .cmpd__asset {
-    justify-content: flex-start;
+    width: 2.25rem;
   }
 }
 
@@ -2714,24 +2442,6 @@
   --section-padding-block: clamp(3.5rem, 6vw, 5rem);
 
   background: var(--surface-navy);
-}
-
-.home-closing__icons {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--space-4);
-}
-
-.home-closing__icons span {
-  width: 2.75rem;
-  height: 2.75rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  background: rgb(47 185 140 / 14%);
-  color: var(--color-emerald);
 }
 
 .home-closing + .site-footer,
@@ -3205,10 +2915,6 @@ body:has(.home-closing) .site-footer__bottom {
 
   .home-faq__items [role="region"] {
     padding-right: 0;
-  }
-
-  .home-closing__icons {
-    gap: var(--space-2);
   }
 
   .home-work__card-body {

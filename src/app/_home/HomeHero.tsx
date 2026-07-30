@@ -1,7 +1,7 @@
 import { HomeHeroArt } from "@/app/_home/HomeHeroArt";
 import { Button } from "@/components/ui/Button";
 import { CONTACT_PATH } from "@/config/routes";
-import { PRIMARY_CTA_LABEL } from "@/lib/cta/labels";
+import { PRIMARY_CTA_LABEL, SECONDARY_CTA_LABEL } from "@/lib/cta/labels";
 
 const JOURNEY = [
   ["01", "Found nearby"],
@@ -20,19 +20,27 @@ export function HomeHero() {
             <p className="eyebrow" data-home-hero-item>
               Website &amp; enquiry systems
             </p>
+            {/* The whole-business claim, deliberately not the Smart Website Systems
+                claim: this names the two halves MindWP sells and leaves the
+                engagement itself to be named where the architecture is drawn. */}
             <h1 data-home-hero-item>
-              <span className="home-hero__headline-line">Smart websites</span>
-              <em>and connected enquiry systems.</em>
+              <span className="home-hero__headline-line">Websites that earn the enquiry,</span>
+              <em>and the system that answers it.</em>
             </h1>
           </div>
           <p className="home-hero__lede text-lead" data-home-hero-item>
-            MindWP builds smart websites and connected enquiry systems for clinics and expert-led
-            businesses, designed to support growth through better visibility, better handling and
-            greater operational consistency.
+            MindWP works with clinics and expert-led businesses — building the website your customers
+            judge you on, and connecting the handling behind it. So you are easier to find, enquiries
+            are answered consistently, and less depends on someone remembering.
           </p>
-          <Button href={CONTACT_PATH} variant="on-dark" className="btn-lg" data-home-hero-item>
-            {PRIMARY_CTA_LABEL}
-          </Button>
+          <div className="home-hero__actions" data-home-hero-item>
+            <Button href={CONTACT_PATH} variant="on-dark" className="btn-lg">
+              {PRIMARY_CTA_LABEL}
+            </Button>
+            <Button href="#work" variant="ghost-dark" className="btn-lg">
+              {SECONDARY_CTA_LABEL}
+            </Button>
+          </div>
         </div>
 
         <div className="home-hero__art-column" data-home-hero-artifacts>

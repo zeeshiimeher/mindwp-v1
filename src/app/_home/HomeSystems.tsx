@@ -21,11 +21,13 @@ export function HomeDistance() {
               They do not need more information. <em>They need enough certainty to act.</em>
             </h2>
           </div>
+          {/* Opens by referring back to the six arrivals above, so this reads as
+              the answer to that section rather than a second statement of it. */}
           <p data-home-sequence-item>
-            Before anyone gets in touch, they need three things settled: that the page they landed
-            on actually answers their situation, that the proof on it can be checked, and that the
-            next step is obvious. A website built around that decision closes the distance instead
-            of adding to it.
+            However they arrived, the same three things decide it: that the page answers their
+            actual situation, that the proof on it can be checked, and that the next step is
+            obvious. A website built around that decision closes the distance instead of adding to
+            it.
           </p>
           <p className="editorial-note" data-home-sequence-item>
             Clarity is not more copy. It is less distance between the question and the answer.
@@ -76,11 +78,14 @@ export function HomeAfterEnquiry() {
         <h2 data-home-sequence-item>
           A form that submits <em>is not yet an enquiry that has been answered.</em>
         </h2>
+        {/* The engagement's ownership boundary is this section's point, not its
+            aside. The four stage labels below carry the handling stages, so the
+            paragraph names the boundary and stops. */}
         <p data-home-sequence-item>
-          Smart Website Systems owns the path as far as a useful enquiry — the person understood the
-          offer, gave enough context to be answered, and the request reached the destination you
-          agreed, with a truthful confirmation that it was sent. Acknowledgement, useful context,
-          routing and a visible owner are separate work, scoped on their own terms.
+          <strong>Smart Website Systems</strong> owns the public experience through to a working
+          enquiry — the offer understood, the enquiry actually captured, a truthful confirmation that
+          it was sent, and delivery to the destination you agreed. Handling that contact once it
+          exists is separate work, scoped on its own terms.
         </p>
       </div>
       <ol className="container home-after-enquiry__steps" data-home-stagger>
@@ -106,8 +111,13 @@ export function HomeOneSystem() {
         <p className="eyebrow eyebrow--centered" data-home-sequence-item>
           One partner, separately scoped
         </p>
+        {/* Where the offer hierarchy is established. The engagement is named here
+            and at the centre of the diagram below; the boundary paragraph is the
+            page's single clearest statement that nothing here is a bundle, so
+            other sections state it in a clause rather than in full. */}
         <h2 data-home-sequence-item>
-          The website is the public centre. <em>It is not the whole of what we can own.</em>
+          Smart Website Systems is where most engagements start.{" "}
+          <em>The website is its public centre.</em>
         </h2>
         {/* The promise leads and the negation qualifies it. Stated the other way
             round, the section opened on what MindWP is not — which reads as a
@@ -119,16 +129,20 @@ export function HomeOneSystem() {
           One partner for being <u>found</u>, <u>answered</u>, <u>owned</u> and <u>proven</u> — in
           whatever combination you need.
         </p>
+        {/* Names the fragmented alternative purchase, not a failed competitor:
+            "a CRM to set up yourself" describes what buying separately leaves
+            you holding, where "a half-set-up CRM" asserted the alternative had
+            failed. */}
         <p className="home-one-system__crossed" data-home-sequence-item>
           Not <s>a separate SEO retainer,</s> plus <s>a website agency,</s> plus{" "}
-          <s>a forms tool,</s> plus <s>a half-set-up CRM,</s> plus <s>a review platform.</s>
+          <s>a forms tool,</s> plus <s>a CRM to set up yourself,</s> plus <s>a review platform.</s>
         </p>
         <p data-home-sequence-item>
-          The website is the public centre and the usual place to start, but it is not a
-          precondition. Local SEO Authority supports discovery and evaluation before someone reaches
-          the website. Lead Response &amp; Handling, Follow-Up &amp; CRM and Reputation &amp; Review
-          begin once someone makes contact. Each is planned and scoped on its own, against a new
-          website or one you already have.
+          Local SEO Authority supports discovery and evaluation before anyone reaches the website.
+          Lead Response &amp; Handling, Follow-Up &amp; CRM and Reputation &amp; Review begin once
+          someone makes contact. Each is a first-class responsibility, planned and scoped on its own
+          — against a new website or the one you already have. Nothing here is a bundle, and a
+          rebuild is never a precondition.
         </p>
       </div>
 
@@ -147,10 +161,13 @@ export function HomeBeyondWebsite() {
           Connected services
         </p>
         <h2 data-home-sequence-item>What happens once someone gets in touch.</h2>
+        {/* "None requires a new website" and the separately-scoped boundary in
+            full now live once, in One system. Here it is a clause, and the
+            paragraph spends its length on the delivery posture instead. */}
         <p data-home-sequence-item>
-          Lead Response &amp; Handling, Follow-Up &amp; CRM and Reputation &amp; Review are
-          independently scoped responsibilities. MindWP plans how each should work, configures and
-          connects it, tests the path and onboards the team. None requires a new website.
+          Lead Response &amp; Handling, Follow-Up &amp; CRM and Reputation &amp; Review — each scoped
+          on its own. MindWP plans how it should work, configures and connects it, tests the complete
+          path and onboards your team.
         </p>
       </div>
       <div className="container">

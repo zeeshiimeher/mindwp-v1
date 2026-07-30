@@ -14,8 +14,12 @@ interface SupportMoment {
   icon: IconName;
   problem: string;
   promise: string;
-  earns: string;
-  mechanism: readonly [
+  /** Who decides what, for this specific moment. Rendered where the old
+      "worth scoping when" qualification line sat. */
+  judgement: string;
+  /** Three things that become easier, clearer or more consistent — not three
+      procedural steps. The service pages own the mechanism; Home orients. */
+  outcomes: readonly [
     { icon: IconName; label: string; note: string },
     { icon: IconName; label: string; note: string },
     { icon: IconName; label: string; note: string },
@@ -32,6 +36,10 @@ interface SupportMoment {
  * ran first previously, which opened the whole connected offer on phone
  * answering — the reading docs/WRITING.md specifically rules out for Lead
  * Response & Handling.
+ *
+ * Each tab is a commercial overview: what becomes easier, which canonical
+ * service owns it, and where human judgement stays. Step-by-step mechanism
+ * belongs to the individual service pages, not here.
  */
 const MOMENTS: readonly SupportMoment[] = [
   {
@@ -40,23 +48,23 @@ const MOMENTS: readonly SupportMoment[] = [
     tag: "Lead Response & Handling",
     icon: "mail",
     problem: "Forms and messages land in a shared inbox, then wait for whoever happens to notice.",
-    promise: "Acknowledge each enquiry and place it with someone responsible.",
-    earns: "Worth scoping when enquiries arrive faster than they get answered.",
-    mechanism: [
+    promise: "Every enquiry is acknowledged and placed with someone responsible.",
+    judgement: "You decide the reply. The system makes sure it reaches the person who should write it.",
+    outcomes: [
       {
         icon: "message-square",
-        label: "Enquiry arrives",
-        note: "A form, message or booking request lands.",
+        label: "Nothing sits unseen",
+        note: "The sender knows it arrived.",
       },
       {
         icon: "mail",
-        label: "Sender acknowledged",
-        note: "They know it was received and what happens next.",
+        label: "Someone owns it",
+        note: "A named person, not a shared inbox.",
       },
       {
         icon: "circle-check",
-        label: "Routed to an owner",
-        note: "It reaches a named person, not a shared inbox.",
+        label: "Context travels with it",
+        note: "Whoever replies can see what was asked.",
       },
     ],
   },
@@ -66,24 +74,24 @@ const MOMENTS: readonly SupportMoment[] = [
     tag: "Lead Response & Handling",
     icon: "phone",
     problem:
-      "A call rings out while you're with a patient or on a job — with no acknowledgement and no clear owner for the return call.",
-    promise: "Acknowledge every missed call and keep the conversation open.",
-    earns: "Worth scoping when nobody can watch the phone all day.",
-    mechanism: [
+      "A call rings out while you're with a patient or on a job, and nothing goes back to the caller.",
+    promise: "Missed calls are acknowledged and stay open until someone returns them.",
+    judgement: "The message buys you time. The call itself is still yours to make.",
+    outcomes: [
       {
         icon: "phone",
-        label: "Call missed",
-        note: "It rings out while the team is busy or closed.",
+        label: "The caller hears back",
+        note: "They know they were seen, not ignored.",
       },
       {
         icon: "message-square",
-        label: "Caller hears back",
-        note: "A message goes back so they know they've been seen.",
+        label: "The call stays open",
+        note: "It waits with a person, not in a call log.",
       },
       {
         icon: "circle-check",
-        label: "Call returned",
-        note: "The missed call sits with a named person until it's returned.",
+        label: "Less lost by default",
+        note: "A missed call no longer disappears on its own.",
       },
     ],
   },
@@ -94,23 +102,23 @@ const MOMENTS: readonly SupportMoment[] = [
     icon: "folder",
     problem:
       "A quote or treatment plan goes out — then the next step depends on someone remembering.",
-    promise: "Keep every open decision visible, with an owner and a next step.",
-    earns: "Worth scoping when good enquiries stall between the quote and the decision.",
-    mechanism: [
+    promise: "Open decisions stay visible, with an owner and a next action.",
+    judgement: "Prompts are automatic. Whether to follow up, and how, stays your call.",
+    outcomes: [
       {
         icon: "folder",
-        label: "Quote or plan sent",
-        note: "The open decision is recorded, not left to memory.",
+        label: "Nothing rests on memory",
+        note: "The open decision is written down, not carried in someone's head.",
       },
       {
         icon: "message-square",
-        label: "Reminder surfaces",
-        note: "A prompt appears when the next touch is due.",
+        label: "The next touch is visible",
+        note: "A prompt appears when one is due.",
       },
       {
         icon: "circle-check",
-        label: "Decision reached",
-        note: "The thread closes properly, one way or the other.",
+        label: "Threads close properly",
+        note: "One way or the other, and on the record.",
       },
     ],
   },
@@ -122,22 +130,22 @@ const MOMENTS: readonly SupportMoment[] = [
     problem:
       "Half the story sits in an inbox, half in someone's phone — nobody sees the whole picture.",
     promise: "One shared record of every enquiry: its status, its history and who moves it next.",
-    earns: "Worth scoping when “where did that enquiry get to?” has no quick answer.",
-    mechanism: [
+    judgement: "The record shows where every enquiry stands. Nothing in it moves on its own.",
+    outcomes: [
       {
         icon: "mail",
-        label: "Everything in one place",
-        note: "Calls, forms and messages land against one customer record.",
+        label: "One place to look",
+        note: "Calls, forms and messages against one customer.",
       },
       {
         icon: "folder",
         label: "Status stays current",
-        note: "The team sees what's new, what's open and what changed.",
+        note: "What is new, what is open, what changed.",
       },
       {
         icon: "circle-check",
-        label: "Next move owned",
-        note: "Every open conversation shows who acts next.",
+        label: "Handovers stop losing things",
+        note: "Anyone picking it up sees the whole thread.",
       },
     ],
   },
@@ -147,24 +155,23 @@ const MOMENTS: readonly SupportMoment[] = [
     tag: "Reputation & Review",
     icon: "star",
     problem: "Good work ends quietly — no review asked for, nothing carried back to the website.",
-    promise: "Invite genuine reviews at the right moment and show them where people decide.",
-    earns:
-      "Worth scoping when customers complete the work but the review request is easily forgotten.",
-    mechanism: [
+    promise: "Genuine reviews are invited at the right moment and shown where people decide.",
+    judgement: "We ask, with permission. What people write is theirs.",
+    outcomes: [
       {
         icon: "circle-check",
-        label: "Work completed",
-        note: "The job or treatment is genuinely finished.",
+        label: "The ask stops being forgotten",
+        note: "An invitation goes out when the work is genuinely done.",
       },
       {
         icon: "star",
-        label: "Review invited",
-        note: "A real customer is asked to share their experience.",
+        label: "Real words, freely given",
+        note: "No incentives, and nothing drafted on anyone's behalf.",
       },
       {
         icon: "globe",
-        label: "Proof visible",
-        note: "Their words appear where the next person is deciding.",
+        label: "Proof lands where it counts",
+        note: "On the pages people read before enquiring.",
       },
     ],
   },
@@ -298,16 +305,16 @@ export function HomeSystemsSelector() {
                       <span aria-hidden="true">✓</span>
                       {moment.promise}
                     </p>
-                    <p className="home-systems__earns">{moment.earns}</p>
+                    <p className="home-systems__earns">{moment.judgement}</p>
                     <p className="home-artifact-label">Part of {moment.tag}</p>
                   </div>
 
                   <div className="home-systems__row-flow">
-                    <p className="home-artifact-label">How it works</p>
+                    <p className="home-artifact-label">What changes</p>
                     <ol className="home-systems__row-flow-steps">
                       <span className="home-systems__row-flow-rail" aria-hidden="true" />
                       <span className="home-systems__row-flow-progress" aria-hidden="true" />
-                      {moment.mechanism.map((step) => (
+                      {moment.outcomes.map((step) => (
                         <li key={step.label} className="home-systems__row-flow-step">
                           <span className="home-systems__row-flow-node" aria-hidden="true">
                             <Icon name={step.icon} size={16} />
@@ -381,16 +388,16 @@ export function HomeSystemsSelector() {
             </p>
           </div>
 
-          <p className="home-systems__earns">{detail.earns}</p>
+          <p className="home-systems__earns">{detail.judgement}</p>
           <p className="home-artifact-label">Part of {detail.tag}</p>
         </div>
 
         <div className="home-systems__stage-flow">
-          <p className="home-artifact-label">How it works</p>
+          <p className="home-artifact-label">What changes</p>
           <ol className="home-systems__flow" ref={flowRef}>
             <span className="home-systems__flow-rail" aria-hidden="true" />
             <span className="home-systems__flow-progress" aria-hidden="true" />
-            {detail.mechanism.map((step) => (
+            {detail.outcomes.map((step) => (
               <li key={step.label} className="home-systems__flow-step">
                 <span className="home-systems__flow-node" aria-hidden="true">
                   <Icon name={step.icon} size={16} />

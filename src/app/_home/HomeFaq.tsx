@@ -2,6 +2,15 @@
 
 import { useState } from "react";
 
+/**
+ * Homepage-level objections only. Setup and software, website ownership and
+ * handover, and post-launch operation are engagement-level questions and belong
+ * to the Smart Website Systems page's own FAQ — answering them here turned a
+ * homepage into a proposal.
+ *
+ * This is also the single place the non-claims are stated. The Right fit
+ * section used to repeat them in its second column.
+ */
 const FAQS = [
   {
     question: "Can I buy the enquiry side without rebuilding the website?",
@@ -9,44 +18,24 @@ const FAQS = [
       "Yes. Local SEO Authority, Lead Response & Handling, Follow-Up & CRM and Reputation & Review can each be scoped against a capable existing website. A rebuild is never a prerequisite.",
   },
   {
-    question: "Can MindWP improve a website I already have?",
-    answer:
-      "Yes. The review looks at what already works before anything is recommended. Sometimes the priority is a page, a clearer path, or the handling around the site rather than the site itself.",
-  },
-  {
     question: "Do I have to take everything?",
     answer:
       "No, in either direction. Smart Website Systems is the usual place to start, but nothing is compulsory and nothing is a precondition for anything else. Each service is scoped separately, and we recommend only what the review shows is worth doing.",
   },
   {
-    question: "Who sets all of this up — and do we end up running new software?",
-    answer:
-      "MindWP handles the setup. We plan how the website, CRM and appropriate automation should work together, configure and connect each part, test the complete path, and onboard your team before handover. Where your team needs to use a shared inbox or CRM, it is organised around their responsibilities — you are not handed an empty platform and left to build the process yourself.",
-  },
-  {
     question: "Does MindWP replace my team's judgement?",
     answer:
-      "No. MindWP builds the structure that carries an enquiry to the right person — acknowledgement, routing and follow-up stay visible to your team, and every commercial or clinical decision stays with you.",
-  },
-  {
-    question: "How are website ownership and handover handled?",
-    answer:
-      "Ownership, licences, handover and ongoing responsibilities are set out clearly in the proposal before work begins. The exact arrangement depends on what is being built and which services are included.",
+      "No. MindWP builds the structure that carries an enquiry to the right person. Acknowledgement, routing and follow-up stay visible to your team, and every commercial or clinical decision stays with you.",
   },
   {
     question: "Does MindWP guarantee rankings or enquiries?",
     answer:
-      "No. MindWP does not promise rankings, leads or bookings. The website is built to improve clarity, proof and the route to an appropriate next step, but commercial outcomes depend on factors beyond the website alone.",
+      "No. MindWP does not promise rankings, leads, bookings or revenue, and a website alone does not create demand. What we are accountable for is the mechanism — how clearly the work is presented, where proof sits, and whether the enquiry path is built, tested and kept consistent.",
   },
   {
     question: "What happens during the Visibility & Enquiry Review?",
     answer:
-      "You share how work reaches you today; MindWP looks at your visibility, your website and the enquiry path, then comes back with what is worth doing first. It is a diagnosis rather than a pitch, and it works with or without an existing website.",
-  },
-  {
-    question: "What happens after launch?",
-    answer:
-      "The build is designed for a clean handover. Where it helps, MindWP can stay responsible for agreed website and enquiry-system work on an ongoing basis. It is offered, never required, and what it covers is set out before it starts.",
+      "You share how work reaches you today; MindWP looks at your visibility, your website and the enquiry path, then comes back with what is worth doing first. It is a diagnosis rather than a pitch.",
   },
   {
     question: "Do you run our advertising?",

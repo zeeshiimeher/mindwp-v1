@@ -20,41 +20,44 @@ import {
  * Beyond the Website, and repeating that here would give different material the
  * same reading pattern. Every word is present at once.
  */
+/* Each cell names a different thing the arrival needs, rather than six versions
+   of "and then they leave". The six are peers; the argument is cumulative, not
+   repeated. */
 const MOMENTS = [
   {
     number: "01",
     label: "The exact search",
-    body: "A search for one specific treatment or service opens onto a general homepage. The click already proved intent; the page didn't meet it.",
+    body: "Someone searches for one specific treatment and lands on a general homepage. The intent was already there — the page has to meet it.",
     Art: ArtExactSearch,
   },
   {
     number: "02",
     label: "The local search",
-    body: "A map listing gets someone as far as the website. If the site doesn't confirm the same service and area, the next result gets the click.",
+    body: "A map listing gets them as far as your site. From there the listing and the website have to agree: same service, same area, same details.",
     Art: ArtLocalSearch,
   },
   {
     number: "03",
     label: "The referral",
-    body: "A referred visitor arrives already inclined to trust you. A homepage that doesn't confirm what they were told wastes the warmest attention a business gets.",
+    body: "A referred visitor arrives already inclined to trust you. The site's job is narrow and urgent — confirm what they were told, quickly.",
     Art: ArtReferral,
   },
   {
     number: "04",
     label: "The paid click",
-    body: "Advertising can put the offer in front of the right person. What the click lands on still has to confirm relevance and offer a clear next step.",
+    body: "Advertising can put the offer in front of the right person. Where the click lands still has to be the page that offer promised.",
     Art: ArtPaidClick,
   },
   {
     number: "05",
     label: "The second look",
-    body: "Reviews, past work and credentials get checked quietly before contact. If the website doesn't hold that proof, the visitor goes looking elsewhere.",
+    body: "Reviews, past work and credentials get checked quietly before anyone makes contact. That proof has to be on the site, and checkable.",
     Art: ArtSecondLook,
   },
   {
     number: "06",
     label: "The remembered name",
-    body: "Someone returns directly, by name rather than by search. If the site still doesn't answer their question, familiarity alone won't close the gap.",
+    body: "Someone comes back by name, weeks later. What they need is the answer they didn't get first time, and a next step that is still obvious.",
     Art: ArtRemembered,
   },
 ] as const;
@@ -65,7 +68,7 @@ export function HomeAttention() {
       <div className="container section-intro" data-home-sequence>
         <div className="section-title-group">
           <p className="eyebrow" data-home-sequence-item>
-            Existing attention
+            Attention you already have
           </p>
           <h2 data-home-sequence-item>
             Search, referrals and advertising <em>still need somewhere convincing to land.</em>
