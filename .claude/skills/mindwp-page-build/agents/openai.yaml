@@ -1,4 +1,0 @@
-interface:
-  display_name: "MindWP Page Build"
-  short_description: "Implement an approved MindWP page design in source"
-  default_prompt: "Use $mindwp-page-build to implement this approved MindWP page or section design in source, following ENGINEERING.md, without substituting the approved payload, hierarchy or section weight."

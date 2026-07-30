@@ -29,8 +29,6 @@ test("orientation exports the canonical memory set in deterministic order", () =
       "docs/FOUNDATION.md",
       "docs/STRATEGY.md",
       "docs/WRITING.md",
-      "docs/PAGE-PLANNING.md",
-      "docs/DESIGN.md",
     ],
   );
 });
@@ -44,8 +42,6 @@ test("orientation includes Engineering only when requested", () => {
       "docs/FOUNDATION.md",
       "docs/STRATEGY.md",
       "docs/WRITING.md",
-      "docs/PAGE-PLANNING.md",
-      "docs/DESIGN.md",
       "docs/ENGINEERING.md",
     ],
   );
@@ -67,7 +63,7 @@ test("focused base accepts an explicit page plan and zero skills", async () => {
     assert.match(context, /Meaning stays page-specific\./);
     assert.doesNotMatch(
       context,
-      /## Source: docs\/(?:FOUNDATION|STRATEGY|WRITING|DESIGN|ENGINEERING)\.md/,
+      /## Source: docs\/(?:FOUNDATION|STRATEGY|WRITING|ENGINEERING)\.md/,
     );
     assert.doesNotMatch(context, /## Source: CLAUDE\.md/);
     assert.doesNotMatch(context, /## Source: \.claude\/skills\//);
@@ -85,15 +81,13 @@ test("focused optional sources and skills use deterministic order", () => {
     "--foundation",
     "--engineering",
     "--skill",
-    "mindwp-page-design",
+    "mindwp-design-eye",
     "--strategy",
     "--writing",
-    "--page-planning",
     "--page-plan",
     resolve(tmpdir(), "synthetic-page.md"),
-    "--design",
     "--skill",
-    "mindwp-page-design",
+    "mindwp-design-eye",
   ]);
 
   assert.deepEqual(
@@ -104,12 +98,10 @@ test("focused optional sources and skills use deterministic order", () => {
       "docs/FOUNDATION.md",
       "docs/STRATEGY.md",
       "docs/WRITING.md",
-      "docs/PAGE-PLANNING.md",
       "supplied page plan",
-      "docs/DESIGN.md",
       "docs/ENGINEERING.md",
+      ".claude/skills/mindwp-design-eye/SKILL.md",
       ".claude/skills/mindwp-frontend-quality/SKILL.md",
-      ".claude/skills/mindwp-page-design/SKILL.md",
     ],
   );
 });
@@ -129,8 +121,6 @@ test("focused canonical and repository selectors are independent", () => {
     ["--foundation", "docs/FOUNDATION.md"],
     ["--strategy", "docs/STRATEGY.md"],
     ["--writing", "docs/WRITING.md"],
-    ["--page-planning", "docs/PAGE-PLANNING.md"],
-    ["--design", "docs/DESIGN.md"],
     ["--engineering", "docs/ENGINEERING.md"],
   ];
 
@@ -144,12 +134,7 @@ test("focused canonical and repository selectors are independent", () => {
 });
 
 test("focused permits any single execution skill", () => {
-  for (const skill of [
-    "mindwp-page-design",
-    "mindwp-page-build",
-    "mindwp-design-eye",
-    "mindwp-frontend-quality",
-  ]) {
+  for (const skill of ["mindwp-design-eye", "mindwp-frontend-quality"]) {
     const parsed = options(["focused", "--skill", skill]);
     assert.deepEqual(parsed.skills, [skill]);
     assert.deepEqual(
@@ -166,8 +151,6 @@ test("export preserves complete canonical source bodies", async () => {
     "docs/FOUNDATION.md",
     "docs/STRATEGY.md",
     "docs/WRITING.md",
-    "docs/PAGE-PLANNING.md",
-    "docs/DESIGN.md",
   ];
 
   try {
@@ -207,8 +190,6 @@ test("arguments reject unknown profiles, options, skills, and profile-inapplicab
     "--foundation",
     "--strategy",
     "--writing",
-    "--page-planning",
-    "--design",
   ]) {
     assert.throws(() => options(["orientation", flag]), /focused profile/);
   }
@@ -216,7 +197,7 @@ test("arguments reject unknown profiles, options, skills, and profile-inapplicab
     () => options(["orientation", "--page-plan", resolve(tmpdir(), "synthetic-page.md")]),
     /focused profile/,
   );
-  assert.throws(() => options(["orientation", "--skill", "mindwp-page-design"]), /focused profile/);
+  assert.throws(() => options(["orientation", "--skill", "mindwp-design-eye"]), /focused profile/);
   assert.throws(() => options(["orientation", "--overwrite"]), /requires --output/);
 });
 

@@ -1,4 +1,0 @@
-interface:
-  display_name: "MindWP Page Design"
-  short_description: "Decide MindWP page and section design before any code"
-  default_prompt: "Use $mindwp-page-design to decide the design for this MindWP page or section — naming each section's material payload, weight, relationship and responsive transformation — and return a reviewable design specification without writing production code."

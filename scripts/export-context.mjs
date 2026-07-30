@@ -14,8 +14,6 @@ const ORIENTATION_SOURCES = [
   "docs/FOUNDATION.md",
   "docs/STRATEGY.md",
   "docs/WRITING.md",
-  "docs/PAGE-PLANNING.md",
-  "docs/DESIGN.md",
 ];
 
 const FOCUSED_BASE_SOURCES = ["docs/README.md"];
@@ -65,8 +63,6 @@ export function parseContextArguments(args, { repositoryRoot = defaultRepository
   let foundation = false;
   let strategy = false;
   let writing = false;
-  let pagePlanning = false;
-  let design = false;
   let engineering = false;
   let task;
   let outputPath;
@@ -104,10 +100,6 @@ export function parseContextArguments(args, { repositoryRoot = defaultRepository
       strategy = true;
     } else if (argument === "--writing") {
       writing = true;
-    } else if (argument === "--page-planning") {
-      pagePlanning = true;
-    } else if (argument === "--design") {
-      design = true;
     } else if (argument === "--engineering") {
       engineering = true;
     } else if (argument === "--overwrite") {
@@ -139,8 +131,6 @@ export function parseContextArguments(args, { repositoryRoot = defaultRepository
       foundation && "--foundation",
       strategy && "--strategy",
       writing && "--writing",
-      pagePlanning && "--page-planning",
-      design && "--design",
       requestedSkills.length && "--skill",
     ].filter(Boolean);
     if (focusedOptions.length) {
@@ -151,12 +141,10 @@ export function parseContextArguments(args, { repositoryRoot = defaultRepository
   const skills = [...skillSources.keys()].filter((skill) => requestedSkills.includes(skill));
 
   return {
-    design,
     engineering,
     foundation,
     outputPath,
     overwrite,
-    pagePlanning,
     pagePlanPath: pagePlan ? resolve(pagePlan) : undefined,
     profile,
     repository,
@@ -184,14 +172,12 @@ export function contextSourceList(options) {
   if (options.foundation) sources.push(canonicalSource("docs/FOUNDATION.md"));
   if (options.strategy) sources.push(canonicalSource("docs/STRATEGY.md"));
   if (options.writing) sources.push(canonicalSource("docs/WRITING.md"));
-  if (options.pagePlanning) sources.push(canonicalSource("docs/PAGE-PLANNING.md"));
   if (options.pagePlanPath) {
     sources.push({
       absolutePath: options.pagePlanPath,
       label: "supplied page plan",
     });
   }
-  if (options.design) sources.push(canonicalSource("docs/DESIGN.md"));
   if (options.engineering) sources.push(canonicalSource("docs/ENGINEERING.md"));
   const skillSources = discoverSkillSources(options.repositoryRoot);
   for (const skill of options.skills) sources.push(canonicalSource(skillSources.get(skill)));

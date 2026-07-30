@@ -9,8 +9,6 @@ This directory is MindWP's reusable project memory. Open only the authorities th
 | [FOUNDATION.md](./FOUNDATION.md)       | Durable identity, buyer principles, website-centred rationale, truth, proof, privacy and professional boundaries                                                  |
 | [STRATEGY.md](./STRATEGY.md)           | Current commercial direction, offers, service responsibilities, qualification, conversion direction, page roles and open decisions                                |
 | [WRITING.md](./WRITING.md)             | Voice, audience register, claims discipline and responsible public-language practice                                                                              |
-| [PAGE-PLANNING.md](./PAGE-PLANNING.md) | The page's commercial responsibility, buyer decision, sibling boundaries, matters, progression, reader demands, proof reality, weight and the handoff into design |
-| [DESIGN.md](./DESIGN.md)               | Shared visual grammar, meaning-bearing composition, page experience, responsive intent, motion intent and the criteria for judging a render                       |
 | [ENGINEERING.md](./ENGINEERING.md)     | Repository source, CSS, responsive, accessibility, interaction, motion mechanism, performance, capture commands and validation                                    |
 
 The documents have separate domains. When two statements appear to conflict, use the authority that owns the decision rather than combining both. Strategy settles the audience lane, market emphasis, pricing posture, public voice, offer hierarchy and conversion direction; their absence from this map is not an open question.
@@ -78,13 +76,13 @@ These labels describe confidence and scope, not a lifecycle or approval system.
 
 A canonical authority is selected when the user supplies or explicitly names it, or when a route below assigns it to the work in hand. Do not open the full set for orientation.
 
-**Page planning** — `PAGE-PLANNING.md`, plus `STRATEGY.md` for offer ownership and page roles, and `FOUNDATION.md` or `WRITING.md` where a truth, proof or claims question is genuinely open. Not `DESIGN.md`, and not `ENGINEERING.md`.
+**Page planning** — `STRATEGY.md` for offer ownership and page roles, and `FOUNDATION.md` or `WRITING.md` where a truth, proof or claims question is genuinely open. Not `ENGINEERING.md`. There is no dedicated planning authority; treat an open planning question as a gap to name rather than inventing an answer.
 
-**Page design or redesign** — the supplied page plan and `DESIGN.md`.
+**Page design or redesign** — the supplied page plan. There is no dedicated design authority; judge composition, hierarchy and experience against the plan and against `mindwp-design-eye`'s stated criteria.
 
 **Page build** — the approved composition and whatever section development exists, plus `ENGINEERING.md` and the existing foundational CSS the task needs. The design is already decided at this point, so a reference page adds nothing and invites drift.
 
-**Visual audit** — fresh captures of the page under review, and `DESIGN.md`.
+**Visual audit** — fresh captures of the page under review, judged against `mindwp-design-eye`'s stated criteria.
 
 **Repair, copy edit, tooling, or isolated technical work** — the changed scope and the authority that owns it. Nothing wider. A focused exporter or tool task must not inherit page, commercial or strategic context.
 
@@ -96,13 +94,11 @@ In every route, open Foundation, Strategy or Writing when a business, positionin
 
 Optional specialists, not a mandatory chain. Each declares its own trigger and context.
 
-| Skill                     | Use for                                                                                                                                                                                | May use a named reference page |
-| ------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------ |
-| `mindwp-page-design`      | Deciding how a page occupies space and what each moment is made of; direction, concept and critique. Produces a page composition first, then proportional section development. No code | On request — capture first     |
-| `mindwp-page-build`       | Implementing an approved composition in source                                                                                                                                         | No                             |
-| `mindwp-design-eye`       | Judging whether a built page is visually good                                                                                                                                          | Yes — capture only             |
-| `mindwp-frontend-quality` | Technical repair, finalisation and frontend quality review                                                                                                                             | No                             |
+| Skill                     | Use for                                                     | May use a named reference page |
+| ------------------------- | ------------------------------------------------------------ | ------------------------------ |
+| `mindwp-design-eye`       | Judging whether a built page is visually good                | Yes — capture only             |
+| `mindwp-frontend-quality` | Technical repair, finalisation and frontend quality review    | No                             |
 
-Page planning has no skill of its own; `PAGE-PLANNING.md` is applied directly.
+Page planning and page design currently have no dedicated skill or authority document of their own; apply the reading route above directly.
 
 **These are not a sequence.** No skill automatically follows another, none loads a broader authority bundle, and none selects a reference page for itself. A skill may recommend a next step and must not require it. Design is reviewed before implementation begins, but a request to build only is a request to build only — and a partial request is answered at the scope asked for, not expanded into the full process.

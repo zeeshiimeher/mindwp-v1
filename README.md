@@ -42,11 +42,11 @@ pnpm context:export -- focused \
   --page-plan /tmp/supplied-page-plan.md \
   --repository \
   --engineering \
-  --skill mindwp-page-design \
+  --skill mindwp-design-eye \
   --output /tmp/mindwp-page-context.md
 ```
 
-Use `--strategy` only for an unresolved commercial question. Select zero or more of `mindwp-page-design`, `mindwp-page-build`, `mindwp-design-eye` and `mindwp-frontend-quality`. Existing output requires `--overwrite`; repository destinations and symlinked output are refused.
+Use `--strategy` only for an unresolved commercial question. Select zero or more of `mindwp-design-eye` and `mindwp-frontend-quality`. Existing output requires `--overwrite`; repository destinations and symlinked output are refused.
 
 The exporter does not infer skill dependencies or repository state. Add `--repository`, `--engineering`, and the relevant skill explicitly when the receiving conversation needs them; current route source and renders remain separate implementation evidence.
 
