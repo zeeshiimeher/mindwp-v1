@@ -1,0 +1,3206 @@
+/* Smart Website Systems — page CSS.
+   Local to this route: the shared foundation owns tokens, typography, layout
+   roles and buttons, and nothing here reaches into the site shell. */
+
+.sws-hero,
+.sws-incidents,
+.sws-verdict,
+.sws-system,
+.sws-moment,
+.sws-carrying,
+.sws-thread,
+.sws-align,
+.sws-auto,
+.sws-reputation,
+.sws-work,
+.sws-fit,
+.sws-faq,
+.sws-closing {
+  position: relative;
+}
+
+.sws-artifact-label {
+  color: var(--color-emerald-deep);
+  font: var(--label-caps);
+  letter-spacing: var(--label-caps-tracking);
+  text-transform: uppercase;
+}
+
+.on-dark .sws-artifact-label {
+  color: var(--color-emerald);
+}
+
+@keyframes sws-panel-in {
+  from {
+    opacity: 0.35;
+    transform: translateY(0.45rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Hero
+   The copy holds the readable measure; the artwork column carries one drawn
+   system at a scale that can answer an 84px display serif. There is no journey
+   rail beneath it — the artwork is the sequence.
+--------------------------------------------------------------------------- */
+
+.sws-hero {
+  --section-padding-block: 0;
+  --section-gap: 0;
+
+  background: var(--surface-navy);
+  padding-top: var(--header-height);
+}
+
+.sws-hero__top {
+  --container-gap: clamp(2.5rem, 4.5vw, 5rem);
+
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: center;
+  padding-block: clamp(3.25rem, 5.5vw, 5rem) clamp(3.75rem, 6.5vw, 6rem);
+}
+
+.sws-hero__intro {
+  --container-gap: var(--space-7);
+
+  min-width: 0;
+  align-items: flex-start;
+}
+
+.sws-hero h1 {
+  color: var(--text-inverse);
+}
+
+.sws-hero__headline-line,
+.sws-hero h1 em {
+  display: block;
+}
+
+.sws-hero__lede {
+  max-width: var(--measure-copy-narrow);
+  color: var(--text-inverse-muted);
+}
+
+.sws-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.sws-hero__art-column {
+  min-width: 0;
+  display: flex;
+  justify-content: center;
+}
+
+/* ---------------------------------------------------------------------------
+   Hero artwork
+   One 24s timeline shared by every layer, so the five scenes stay in phase
+   without a JS clock. Drawn paths carry pathLength="1", which lets a single
+   dash-offset keyframe drive geometry of any length.
+
+   Authored values are the settled frame — page complete, route drawn, record
+   owned, branches extended. Reduced motion and a script-free render therefore
+   land on the state that carries the whole argument, and the loop only ever
+   removes and rebuilds something already true.
+--------------------------------------------------------------------------- */
+
+.sws-art {
+  --sw-loop: 24s;
+
+  position: relative;
+  width: 100%;
+  max-width: 38.75rem;
+}
+
+.sws-art__glow {
+  position: absolute;
+  top: 34%;
+  left: 22%;
+  width: 62%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--emerald-glow);
+  filter: blur(5rem);
+  pointer-events: none;
+}
+
+.sws-art__svg {
+  position: relative;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.sws-art__svg--narrow {
+  display: none;
+}
+
+/* The connected half warms as it assembles. Light behind the system, not a
+   panel around it — the composition needs no second frame. */
+.sw__bloom {
+  animation: sw-bloom var(--sw-loop) var(--ease-out) infinite;
+}
+
+/* ---- Scene 1: the website ---- */
+
+.sw__plate {
+  fill: var(--surface-navy-panel);
+  stroke: var(--border-navy-hairline);
+  stroke-width: 1.25;
+  transform-box: fill-box;
+  transform-origin: 50% 50%;
+  animation: sw-plate var(--sw-loop) var(--ease-out) infinite;
+}
+
+.sw__chrome {
+  animation: sw-chrome var(--sw-loop) var(--ease-out) infinite;
+}
+
+.sw__brand {
+  fill: var(--color-emerald);
+}
+
+.sw__nav {
+  fill: var(--text-inverse-muted);
+  opacity: 0.32;
+}
+
+.sw__divider,
+.sw__card-divider {
+  stroke: var(--border-navy-hairline);
+  stroke-width: 1.25;
+}
+
+/* The headline is the loudest thing on a page, so it is the brightest mark
+   here. Bars grow from their own left edge: the page is being composed, not
+   faded in. */
+.sw__bar {
+  fill: var(--text-inverse);
+  opacity: 0.92;
+  transform-box: fill-box;
+  transform-origin: left center;
+  animation: sw-bar var(--sw-loop) var(--ease-out) infinite;
+  animation-delay: calc(var(--i, 0) * 0.14s);
+}
+
+.sw__line {
+  fill: var(--text-inverse-muted);
+  opacity: 0.42;
+  transform-box: fill-box;
+  transform-origin: left center;
+  animation: sw-line var(--sw-loop) var(--ease-out) infinite;
+  animation-delay: calc(var(--i, 0) * 0.12s);
+}
+
+/* Each animated layer declares the opacity it rests at, so one keyframe can
+   serve marks of different weight without flattening them to a single value. */
+.sw__proof {
+  --rest-opacity: 0.55;
+
+  fill: none;
+  stroke: var(--text-inverse-muted);
+  stroke-width: 1.5;
+  opacity: 0.55;
+}
+
+.sw__proof-bar {
+  --rest-opacity: 0.3;
+
+  fill: var(--text-inverse-muted);
+  opacity: 0.3;
+}
+
+.sw__proof,
+.sw__proof-bar {
+  transform-box: fill-box;
+  transform-origin: 50% 50%;
+  animation: sw-proof var(--sw-loop) var(--ease-out) infinite;
+  animation-delay: calc(var(--i, 0) * 0.1s);
+}
+
+.sw__cell > rect:first-child {
+  fill: var(--surface-navy-raised);
+  stroke: var(--border-navy-hairline);
+  stroke-width: 1.25;
+}
+
+.sw__cell-dot,
+.sw__cell-bar {
+  fill: var(--text-inverse-muted);
+  opacity: 0.4;
+}
+
+.sw__cell {
+  transform-box: fill-box;
+  transform-origin: 50% 100%;
+  animation: sw-cell var(--sw-loop) var(--ease-out) infinite;
+  animation-delay: calc(var(--i, 0) * 0.12s);
+}
+
+/* The one place the page stops being a brochure — the only emerald object
+   inside the website plate. */
+.sw__field {
+  fill: rgb(47 185 140 / 5%);
+  stroke: var(--emerald-line-soft);
+  stroke-width: 1.5;
+}
+
+.sw__send {
+  fill: var(--emerald-tint-strong);
+  stroke: var(--emerald-line);
+  stroke-width: 1.5;
+}
+
+.sw__send-arrow {
+  stroke: var(--color-emerald);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.sw__enquiry {
+  transform-box: fill-box;
+  transform-origin: 50% 50%;
+  animation: sw-field var(--sw-loop) var(--ease-out) infinite;
+}
+
+.sw__caret {
+  stroke: var(--color-emerald);
+  stroke-width: 2;
+  stroke-linecap: round;
+  animation: sw-caret var(--sw-loop) steps(1, end) infinite;
+}
+
+/* ---- Scene 2 and 3: the route out, and everything that joins it ---- */
+
+.sw__route,
+.sw__feed,
+.sw__spine {
+  stroke: var(--text-inverse-muted);
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-dasharray: 1;
+  opacity: 0.5;
+}
+
+.sw__route {
+  animation: sw-route var(--sw-loop) var(--ease-out) infinite;
+}
+
+.sw__feed {
+  animation: sw-feed var(--sw-loop) var(--ease-out) infinite;
+  animation-delay: calc(var(--i, 0) * 0.16s);
+}
+
+.sw__spine {
+  animation: sw-spine var(--sw-loop) var(--ease-out) infinite;
+}
+
+.sw__source > circle {
+  fill: var(--surface-navy-panel);
+  stroke: var(--border-navy-hairline);
+  stroke-width: 1.5;
+}
+
+/* Authored on a 24-unit grid and scaled down by transform, so the stroke is
+   pre-compensated to land at the same optical weight as the rest of the piece. */
+.sw__source-mark {
+  fill: none;
+  stroke: var(--text-inverse-muted);
+  stroke-width: 2.1;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  opacity: 0.8;
+}
+
+.sw__source {
+  transform-box: fill-box;
+  transform-origin: 50% 50%;
+  animation: sw-source var(--sw-loop) var(--ease-out) infinite;
+  animation-delay: calc(var(--i, 0) * 0.14s);
+}
+
+.sw__junction {
+  fill: var(--color-emerald);
+  transform-box: fill-box;
+  transform-origin: 50% 50%;
+  animation: sw-junction var(--sw-loop) var(--ease-out) infinite;
+}
+
+/* ---- Scene 4: the record, and the person responsible for it ---- */
+
+.sw__card > rect {
+  fill: var(--surface-navy-panel);
+  stroke: var(--border-navy-hairline);
+  stroke-width: 1.25;
+}
+
+.sw__card {
+  transform-box: fill-box;
+  transform-origin: 50% 50%;
+  animation: sw-card var(--sw-loop) var(--ease-out) infinite;
+}
+
+.sw__owner-head {
+  fill: var(--text-inverse);
+}
+
+.sw__owner-body {
+  fill: var(--text-inverse);
+}
+
+.sw__owner {
+  transform-box: fill-box;
+  transform-origin: 50% 50%;
+  animation: sw-owner var(--sw-loop) var(--ease-out) infinite;
+}
+
+/* The recognisable gesture: two arcs swing shut around the owner and hold the
+   record. If this ever reads as a small circle changing opacity, the artwork
+   has lost its one moment. */
+.sw__ring {
+  stroke: var(--color-emerald);
+  stroke-width: 3;
+  stroke-linecap: round;
+  transform-box: view-box;
+  transform-origin: 300px 436px;
+}
+
+.sws-art__svg--narrow .sw__ring {
+  transform-origin: 52px 418px;
+}
+
+.sw__ring--a {
+  animation: sw-ring-a var(--sw-loop) var(--ease-out) infinite;
+}
+
+.sw__ring--b {
+  animation: sw-ring-b var(--sw-loop) var(--ease-out) infinite;
+}
+
+.sw__detail {
+  --rest-opacity: 0.42;
+
+  fill: var(--text-inverse-muted);
+  opacity: 0.42;
+}
+
+.sw__status > rect {
+  fill: var(--emerald-tint);
+  stroke: var(--emerald-line-soft);
+  stroke-width: 1.25;
+}
+
+.sw__status-dot {
+  fill: var(--color-emerald);
+}
+
+.sw__next > rect:first-child {
+  fill: none;
+  stroke: var(--border-navy-hairline);
+  stroke-width: 1.25;
+}
+
+.sw__next-bar {
+  fill: var(--text-inverse-muted);
+  opacity: 0.35;
+}
+
+.sw__detail,
+.sw__status,
+.sw__next {
+  transform-box: fill-box;
+  transform-origin: left center;
+  animation: sw-detail var(--sw-loop) var(--ease-out) infinite;
+  animation-delay: calc(var(--i, 0) * 0.09s);
+}
+
+.sw__card-divider {
+  transform-box: fill-box;
+  transform-origin: left center;
+  animation: sw-detail var(--sw-loop) var(--ease-out) infinite;
+  animation-delay: 0.18s;
+}
+
+/* ---- Scene 5: agreed, never automatic ---- */
+
+.sw__branch {
+  --rest-opacity: 0.5;
+
+  stroke: var(--text-inverse-muted);
+  stroke-width: 1.25;
+  stroke-linecap: round;
+  stroke-dasharray: 5 7;
+  opacity: 0.5;
+  transform-box: fill-box;
+  transform-origin: center top;
+  animation: sw-branch var(--sw-loop) var(--ease-out) infinite;
+  animation-delay: calc(var(--i, 0) * 0.12s);
+}
+
+.sw__glyph > circle {
+  fill: var(--surface-navy);
+  stroke: var(--border-navy-hairline);
+  stroke-width: 1.25;
+}
+
+.sw__glyph-mark {
+  stroke: var(--text-inverse-muted);
+  stroke-width: 1.75;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.sw__glyph-mark--fill {
+  fill: var(--color-emerald);
+  stroke: none;
+}
+
+.sw__glyph {
+  transform-box: fill-box;
+  transform-origin: 50% 50%;
+  animation: sw-glyph var(--sw-loop) var(--ease-out) infinite;
+  animation-delay: calc(var(--i, 0) * 0.14s);
+}
+
+/* ---- The shared timeline ----
+   0–9 % the plate arrives · 7–32 % the page composes itself part by part,
+   ending at the enquiry field · 31–42 % the field is used and the route
+   leaves the page · 41–54 % other agreed sources join the same route ·
+   53–68 % the record assembles and the owner ring closes · 68–78 % the two
+   conditional branches extend · 78–93 % settled hold · 93–100 % quiet fade
+   before the next build. */
+
+@keyframes sw-bloom {
+  0%,
+  38% {
+    opacity: 0;
+  }
+
+  62%,
+  93% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes sw-plate {
+  0% {
+    opacity: 0;
+    scale: 0.985;
+  }
+
+  9%,
+  93% {
+    opacity: 1;
+    scale: 1;
+  }
+
+  100% {
+    opacity: 0;
+    scale: 1;
+  }
+}
+
+@keyframes sw-chrome {
+  0%,
+  7% {
+    opacity: 0;
+  }
+
+  12%,
+  93% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes sw-bar {
+  0%,
+  10% {
+    opacity: 0;
+    scale: 0 1;
+  }
+
+  16%,
+  93% {
+    opacity: 0.92;
+    scale: 1 1;
+  }
+
+  100% {
+    opacity: 0;
+    scale: 1 1;
+  }
+}
+
+@keyframes sw-line {
+  0%,
+  14% {
+    opacity: 0;
+    scale: 0 1;
+  }
+
+  19%,
+  93% {
+    opacity: 0.42;
+    scale: 1 1;
+  }
+
+  100% {
+    opacity: 0;
+    scale: 1 1;
+  }
+}
+
+@keyframes sw-proof {
+  0%,
+  18% {
+    opacity: 0;
+    scale: 0.6;
+  }
+
+  23%,
+  93% {
+    opacity: var(--rest-opacity, 1);
+    scale: 1;
+  }
+
+  100% {
+    opacity: 0;
+    scale: 1;
+  }
+}
+
+@keyframes sw-cell {
+  0%,
+  22% {
+    opacity: 0;
+    translate: 0 8px;
+  }
+
+  28%,
+  93% {
+    opacity: 1;
+    translate: 0 0;
+  }
+
+  100% {
+    opacity: 0;
+    translate: 0 0;
+  }
+}
+
+@keyframes sw-field {
+  0%,
+  26% {
+    opacity: 0;
+    scale: 0.97;
+  }
+
+  32%,
+  35% {
+    opacity: 1;
+    scale: 1;
+  }
+
+  /* the send: one confident push, not a throb */
+  37% {
+    scale: 1.035;
+  }
+
+  40%,
+  93% {
+    opacity: 1;
+    scale: 1;
+  }
+
+  100% {
+    opacity: 0;
+    scale: 1;
+  }
+}
+
+@keyframes sw-caret {
+  0%,
+  31% {
+    opacity: 0;
+  }
+
+  32% {
+    opacity: 1;
+  }
+
+  34% {
+    opacity: 0;
+  }
+
+  36% {
+    opacity: 1;
+  }
+
+  38% {
+    opacity: 0;
+  }
+}
+
+@keyframes sw-route {
+  0%,
+  35% {
+    stroke-dashoffset: 1;
+    opacity: 0;
+  }
+
+  37% {
+    opacity: 0.5;
+  }
+
+  42%,
+  93% {
+    stroke-dashoffset: 0;
+    opacity: 0.5;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes sw-source {
+  0%,
+  41% {
+    opacity: 0;
+    scale: 0.6;
+  }
+
+  46%,
+  93% {
+    opacity: 1;
+    scale: 1;
+  }
+
+  100% {
+    opacity: 0;
+    scale: 1;
+  }
+}
+
+@keyframes sw-feed {
+  0%,
+  44% {
+    stroke-dashoffset: 1;
+    opacity: 0;
+  }
+
+  46% {
+    opacity: 0.5;
+  }
+
+  50%,
+  93% {
+    stroke-dashoffset: 0;
+    opacity: 0.5;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes sw-junction {
+  0%,
+  49% {
+    opacity: 0;
+    scale: 0.2;
+  }
+
+  52%,
+  93% {
+    opacity: 1;
+    scale: 1;
+  }
+
+  100% {
+    opacity: 0;
+    scale: 1;
+  }
+}
+
+@keyframes sw-spine {
+  0%,
+  50% {
+    stroke-dashoffset: 1;
+    opacity: 0;
+  }
+
+  52% {
+    opacity: 0.5;
+  }
+
+  55%,
+  93% {
+    stroke-dashoffset: 0;
+    opacity: 0.5;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes sw-card {
+  0%,
+  53% {
+    opacity: 0;
+    scale: 0.97;
+  }
+
+  59%,
+  93% {
+    opacity: 1;
+    scale: 1;
+  }
+
+  100% {
+    opacity: 0;
+    scale: 1;
+  }
+}
+
+@keyframes sw-ring-a {
+  0%,
+  57% {
+    rotate: -34deg;
+    opacity: 0;
+  }
+
+  60% {
+    opacity: 1;
+  }
+
+  63%,
+  93% {
+    rotate: 0deg;
+    opacity: 1;
+  }
+
+  100% {
+    rotate: 0deg;
+    opacity: 0;
+  }
+}
+
+@keyframes sw-ring-b {
+  0%,
+  57% {
+    rotate: 34deg;
+    opacity: 0;
+  }
+
+  60% {
+    opacity: 1;
+  }
+
+  63%,
+  93% {
+    rotate: 0deg;
+    opacity: 1;
+  }
+
+  100% {
+    rotate: 0deg;
+    opacity: 0;
+  }
+}
+
+@keyframes sw-owner {
+  0%,
+  59% {
+    opacity: 0;
+    scale: 0.7;
+  }
+
+  64%,
+  93% {
+    opacity: 1;
+    scale: 1;
+  }
+
+  100% {
+    opacity: 0;
+    scale: 1;
+  }
+}
+
+@keyframes sw-detail {
+  0%,
+  62% {
+    opacity: 0;
+    scale: 0 1;
+  }
+
+  68%,
+  93% {
+    opacity: var(--rest-opacity, 1);
+    scale: 1 1;
+  }
+
+  100% {
+    opacity: 0;
+    scale: 1 1;
+  }
+}
+
+@keyframes sw-branch {
+  0%,
+  68% {
+    opacity: 0;
+    scale: 1 0;
+  }
+
+  74%,
+  93% {
+    opacity: var(--rest-opacity, 1);
+    scale: 1 1;
+  }
+
+  100% {
+    opacity: 0;
+    scale: 1 1;
+  }
+}
+
+@keyframes sw-glyph {
+  0%,
+  72% {
+    opacity: 0;
+    scale: 0.6;
+  }
+
+  78%,
+  93% {
+    opacity: 1;
+    scale: 1;
+  }
+
+  100% {
+    opacity: 0;
+    scale: 1;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   How it actually goes
+   The composition is the argument. Every other section on this page hangs off
+   a spine, a thread or a rail — something that connects. This one has none:
+   six incidents sit unaligned, at slightly different angles and depths,
+   joined to nothing. The only aligned element is the verdict beneath them.
+
+   It is also the one section that is almost entirely free of emerald. Nothing
+   here is ours yet.
+--------------------------------------------------------------------------- */
+
+.sws-incidents {
+  --section-gap: clamp(2.5rem, 4.5vw, 3.75rem);
+
+  background: var(--surface-page);
+}
+
+.sws-incidents__head {
+  --container-gap: clamp(2.5rem, 5vw, 5rem);
+
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+}
+
+.sws-incidents__lede {
+  max-width: var(--measure-copy-narrow);
+}
+
+.sws-incidents__field {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: clamp(1.25rem, 2.5vw, 2rem) clamp(1rem, 2vw, 1.75rem);
+  margin: 0;
+  padding-bottom: clamp(2rem, 4vw, 3.5rem);
+}
+
+/* Placement, tilt and depth come from the data, so the irregularity is
+   authored rather than random — it survives a rebuild and reads the same on
+   every load. */
+.sws-incidents__field li {
+  grid-column: var(--column);
+  /* Natural height, not row height: stretching leaves dead space inside the
+     shorter incidents, and an incident with a hole in it reads as a card. */
+  align-self: start;
+  margin-top: var(--offset);
+  rotate: var(--tilt);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-sm);
+  background: var(--surface-card);
+  padding: clamp(1rem, 1.8vw, 1.375rem) clamp(1.125rem, 2vw, 1.5rem);
+  box-shadow: var(--elev-raised);
+}
+
+.sws-incidents__field small {
+  color: var(--text-secondary);
+  font: var(--label-caps);
+  letter-spacing: var(--label-caps-tracking);
+  text-transform: uppercase;
+}
+
+.sws-incidents__field p {
+  color: var(--text-primary);
+  font: var(--body-md);
+}
+
+.sws-incidents__outcome {
+  color: var(--text-secondary);
+  font: italic 400 1rem/1.5 var(--font-display);
+}
+
+/* The one thing on a straight axis. */
+.sws-incidents__verdict {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  border-top: 1px solid var(--border-hairline);
+  padding-top: clamp(1.75rem, 3vw, 2.5rem);
+}
+
+.sws-incidents__verdict > * {
+  max-width: var(--measure-intro);
+}
+
+.sws-incidents__verdict .editorial-note {
+  color: var(--text-primary);
+  font-size: clamp(1.1875rem, 1.05rem + 0.55vw, 1.5rem);
+}
+
+/* ---------------------------------------------------------------------------
+   What they judge you on
+   A verdict column read against a cropped ribbon. The ribbon bleeds off the
+   left edge and is never framed — this is a slice of an experience being read,
+   not a device showcase — and the type weight is inverted so the small thing
+   they noticed produces the large thing they concluded.
+--------------------------------------------------------------------------- */
+
+.sws-verdict {
+  --section-gap: clamp(2.75rem, 5vw, 4.25rem);
+
+  overflow: hidden;
+  background: var(--surface-navy);
+}
+
+.sws-verdict__head {
+  --container-gap: clamp(2.5rem, 5vw, 5rem);
+
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+}
+
+.sws-verdict__lede {
+  max-width: var(--measure-copy-narrow);
+}
+
+/* The ribbon column is narrower than the fragment inside it, which is what
+   crops it against the viewport edge. */
+.sws-verdict__layout {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: clamp(6rem, 16vw, 15rem) minmax(0, 1fr);
+  gap: clamp(2rem, 4vw, 4rem);
+  padding-inline: 0 var(--page-margin);
+}
+
+/* ---- The ribbon ---- */
+
+.sws-verdict__ribbon {
+  position: relative;
+  min-width: 0;
+}
+
+.sws-verdict__ribbon-glow {
+  position: absolute;
+  inset: 8% 0 12%;
+  border-radius: 50%;
+  background: var(--emerald-glow);
+  filter: blur(4.5rem);
+  pointer-events: none;
+}
+
+/* Pushed left so it runs off the edge: a fragment, never a whole page. */
+.sws-verdict__strip {
+  position: relative;
+  height: 100%;
+  min-height: 30rem;
+  display: flex;
+  flex-direction: column;
+  /* Natural spacing and its own clip, never space-between: the fragment must
+     continue past its bottom edge rather than stretch to fill the column. */
+  justify-content: flex-start;
+  gap: clamp(1.25rem, 2.5vw, 2rem);
+  overflow: hidden;
+  margin-inline-start: clamp(-9rem, -8vw, -4rem);
+  border-inline-end: 1px solid var(--border-navy-hairline);
+  border-radius: 0 var(--radius-lg) 0 0;
+  background: var(--surface-navy-panel);
+  padding: clamp(1.5rem, 3vw, 2.5rem) clamp(1.25rem, 2.2vw, 1.75rem);
+}
+
+.sws-verdict__band {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.sws-verdict__band--stack {
+  gap: 0.4rem;
+}
+
+.sws-verdict__band--action {
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.sws-verdict__mark {
+  width: 2.25rem;
+  height: 0.55rem;
+  border-radius: var(--radius-pill);
+  background: var(--color-emerald);
+}
+
+.sws-verdict__bar {
+  width: 100%;
+  height: 0.85rem;
+  border-radius: var(--radius-pill);
+  background: var(--text-inverse);
+  opacity: 0.9;
+}
+
+.sws-verdict__bar--short {
+  width: 68%;
+}
+
+.sws-verdict__line {
+  width: 100%;
+  height: 0.3rem;
+  border-radius: var(--radius-pill);
+  background: var(--text-inverse-muted);
+  opacity: 0.32;
+}
+
+.sws-verdict__line--short {
+  width: 62%;
+}
+
+.sws-verdict__block {
+  width: 100%;
+  height: 2.25rem;
+  border: 1px solid var(--border-navy-hairline);
+  border-radius: var(--radius-sm);
+  background: var(--surface-navy-raised);
+}
+
+.sws-verdict__faces {
+  display: flex;
+}
+
+.sws-verdict__faces i {
+  width: 1.1rem;
+  height: 1.1rem;
+  border: 1px solid var(--border-navy-hairline);
+  border-radius: 50%;
+  background: var(--surface-navy-raised);
+  margin-inline-start: -0.35rem;
+}
+
+.sws-verdict__faces i:first-child {
+  margin-inline-start: 0;
+}
+
+.sws-verdict__field {
+  flex: 1;
+  height: 1.85rem;
+  border: 1px solid var(--emerald-line-soft);
+  border-radius: var(--radius-sm);
+  background: rgb(47 185 140 / 5%);
+}
+
+.sws-verdict__send {
+  width: 2.5rem;
+  height: 1.85rem;
+  border: 1px solid var(--emerald-line);
+  border-radius: var(--radius-sm);
+  background: var(--emerald-tint-strong);
+}
+
+/* ---- The column ---- */
+
+.sws-verdict__column {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  min-width: 0;
+}
+
+.sws-verdict__column li {
+  display: grid;
+  grid-template-columns: clamp(1rem, 3vw, 2.75rem) minmax(0, 1fr);
+  align-items: start;
+  gap: var(--space-4);
+  border-top: 1px solid var(--border-navy-hairline);
+  padding-block: clamp(1.5rem, 3vw, 2.25rem);
+}
+
+.sws-verdict__column li:last-child {
+  border-bottom: 1px solid var(--border-navy-hairline);
+}
+
+/* Runs back toward the fragment it is reading. */
+.sws-verdict__leader {
+  width: 100%;
+  height: 1px;
+  margin-top: 1.15rem;
+  background: var(--emerald-line);
+  transform-origin: right center;
+}
+
+.sws-verdict__entry {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  min-width: 0;
+}
+
+.sws-verdict__sees {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--space-3);
+  color: var(--text-inverse-muted);
+  font: var(--body-sm);
+}
+
+/* The verdict is the loudest thing in the row, because it is what it cost. */
+.sws-verdict__concludes {
+  max-width: 26ch;
+  color: var(--text-inverse);
+  font: italic 500 clamp(1.25rem, 1.05rem + 0.8vw, 1.75rem) / 1.3 var(--font-display);
+  letter-spacing: -0.012em;
+}
+
+/* No verdict was formed, so it is not set as one. */
+.sws-verdict__concludes--absent {
+  color: var(--text-inverse-muted);
+  font-size: clamp(1.0625rem, 1rem + 0.3vw, 1.25rem);
+  font-style: normal;
+  font-weight: 400;
+  opacity: 0.85;
+}
+
+.sws-verdict__built {
+  max-width: var(--measure-copy);
+  border-left: 2px solid var(--emerald-line-soft);
+  padding-left: var(--space-4);
+  color: var(--text-inverse-muted);
+  font: var(--body-sm);
+}
+
+.sws-verdict__note {
+  max-width: var(--measure-intro);
+  color: var(--text-inverse-muted);
+  font: var(--body-sm);
+}
+
+/* ---------------------------------------------------------------------------
+   Every way they reach you
+   Channels as peers on the left, their routes bending into one junction, and a
+   single record panel as what comes out. The connector uses a 0–100 box with
+   preserveAspectRatio: none, so its five origins land on five equal grid rows
+   at any width without measuring anything — and non-scaling-stroke keeps the
+   line weight honest under that distortion.
+--------------------------------------------------------------------------- */
+
+.sws-system {
+  --section-gap: clamp(2.75rem, 5vw, 4.25rem);
+
+  background: var(--surface-page);
+}
+
+.sws-system__head {
+  --container-gap: clamp(2.5rem, 5vw, 5rem);
+
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+}
+
+.sws-system__lede {
+  max-width: var(--measure-copy-narrow);
+}
+
+.sws-system__stage {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) clamp(4rem, 11vw, 10rem) minmax(0, 1.02fr);
+  align-items: stretch;
+}
+
+/* Equal rows are what make the connector's proportional origins line up. The
+   visual gap between chips comes from margin, not from the track, so each
+   chip's centre stays on its row's centre. */
+.sws-system__channels {
+  display: grid;
+  grid-template-rows: repeat(5, 1fr);
+  margin: 0;
+  min-width: 0;
+}
+
+.sws-system__channels li {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  margin-block: var(--space-2);
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-md);
+  background: var(--surface-card);
+  padding: var(--space-4) var(--space-5);
+}
+
+.sws-system__icon {
+  position: relative;
+  width: 2.5rem;
+  height: 2.5rem;
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border-mist-hairline);
+  border-radius: var(--radius-sm);
+  background: var(--surface-mist);
+  color: var(--color-emerald-deep);
+}
+
+/* The one channel that is usually lost is marked as lost, not given its own
+   icon set — the strike is the meaning. */
+.sws-system__icon--missed::after {
+  content: "";
+  position: absolute;
+  inset-inline: 16%;
+  top: 50%;
+  height: 1.5px;
+  border-radius: 2px;
+  background: var(--color-danger);
+  rotate: -38deg;
+}
+
+.sws-system__channels strong {
+  display: block;
+  color: var(--text-primary);
+  font: var(--ui-strong);
+}
+
+.sws-system__channels small {
+  display: block;
+  color: var(--text-secondary);
+}
+
+.sws-system__connector {
+  position: relative;
+  min-width: 0;
+}
+
+.sws-system__connector svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.sws-system__route {
+  stroke: var(--color-emerald-deep);
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-dasharray: 1;
+  opacity: 0.45;
+}
+
+.sws-system__junction {
+  position: absolute;
+  right: -0.4rem;
+  top: 50%;
+  translate: 0 -50%;
+  width: 0.8rem;
+  height: 0.8rem;
+  border-radius: 50%;
+  background: var(--color-emerald);
+  box-shadow: 0 0 0 0.35rem var(--emerald-tint-weak);
+}
+
+.sws-system__target {
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  border: 1px solid var(--border-mist-hairline);
+  border-radius: var(--radius-lg);
+  background: var(--surface-card);
+  padding: clamp(1.25rem, 2.5vw, 1.875rem);
+  box-shadow: var(--elev-focal);
+}
+
+.sws-system__target-head {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.sws-system__target-head strong {
+  color: var(--text-primary);
+  font: 500 1.1875rem/1.3 var(--font-display);
+  letter-spacing: -0.008em;
+}
+
+.sws-system__rows {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+
+.sws-system__rows li {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: var(--space-3);
+  border-top: 1px solid var(--border-hairline);
+  padding-block: var(--space-3);
+}
+
+.sws-system__dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: var(--color-emerald);
+  opacity: 0.75;
+}
+
+.sws-system__row-label {
+  color: var(--text-primary);
+  font: var(--body-sm);
+}
+
+.sws-system__row-state {
+  border: 1px solid var(--emerald-line-soft);
+  border-radius: var(--radius-pill);
+  background: var(--emerald-tint-weak);
+  padding: 0.1rem 0.6rem;
+  color: var(--color-emerald-deep);
+  font: var(--body-xs);
+}
+
+.sws-system__target-foot {
+  color: var(--text-secondary);
+  font: var(--body-sm);
+}
+
+.sws-system__note {
+  max-width: var(--measure-intro);
+  font: italic 500 1.0625rem/1.55 var(--font-display);
+}
+
+/* ---------------------------------------------------------------------------
+   The moment after
+   One interval, drawn once, in two states — the same span empty and then
+   occupied. No scale, no axis and no duration anywhere: the composition
+   measures content, never minutes, because the minutes belong to the client's
+   team and cannot be promised.
+--------------------------------------------------------------------------- */
+
+.sws-moment {
+  --section-gap: clamp(2.5rem, 4.5vw, 3.75rem);
+}
+
+.sws-moment__head {
+  --container-gap: clamp(2.5rem, 5vw, 5rem);
+
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+}
+
+.sws-moment__lede {
+  max-width: var(--measure-copy-narrow);
+}
+
+.sws-moment__interval {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+/* ---- The two anchors ---- */
+
+.sws-moment__ends {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.sws-moment__end {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex: 0 0 auto;
+  color: var(--text-primary);
+  font: var(--ui-strong);
+}
+
+.sws-moment__end i {
+  width: 0.7rem;
+  height: 0.7rem;
+  border-radius: 50%;
+  background: var(--color-emerald-deep);
+}
+
+.sws-moment__span {
+  flex: 1;
+  height: 1px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--border-mist-hairline) 0 6px,
+    transparent 6px 13px
+  );
+}
+
+/* ---- Register one: the gap with nothing in it ----
+   Given real area on purpose. A thin strip would understate the thing the
+   section is actually describing. */
+
+.sws-moment__register {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.sws-artifact-label--muted {
+  color: var(--text-secondary);
+}
+
+.sws-moment__void {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: clamp(7rem, 12vw, 10rem);
+  border: 1px dashed var(--border-mist-hairline);
+  border-radius: var(--radius-md);
+  padding: var(--space-6);
+}
+
+.sws-moment__void p {
+  max-width: 34rem;
+  color: var(--text-secondary);
+  font: italic 400 clamp(1.0625rem, 1rem + 0.35vw, 1.25rem) / 1.5 var(--font-display);
+  text-align: center;
+}
+
+/* ---- Register two: the same span, occupied ---- */
+
+.sws-moment__channel {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 1px;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid var(--border-mist-hairline);
+  border-radius: var(--radius-md);
+  background: var(--border-mist-hairline);
+}
+
+/* Segments butt against each other with a hairline between: they occupy one
+   span rather than sitting beside each other as five separate objects. */
+.sws-moment__channel li {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  background: var(--surface-card);
+  padding: clamp(1.125rem, 2vw, 1.5rem);
+}
+
+.sws-moment__channel strong {
+  color: var(--text-primary);
+  font: 500 1.0625rem/1.3 var(--font-display);
+  letter-spacing: -0.006em;
+}
+
+.sws-moment__channel p {
+  font: var(--body-sm);
+}
+
+.sws-moment__note {
+  max-width: var(--measure-intro);
+  font: italic 500 1.0625rem/1.55 var(--font-display);
+}
+
+/* ---------------------------------------------------------------------------
+   What you stop carrying
+   A transfer ledger, not an interface. Each row shows a thing that currently
+   depends on somebody remembering and where it lives instead — dashed and
+   muted on the left, solid with an emerald edge on the right, with the
+   transfer drawn between them. Then the payoff underneath.
+--------------------------------------------------------------------------- */
+
+.sws-carrying {
+  --section-gap: clamp(2.5rem, 4.5vw, 3.75rem);
+
+  background: var(--surface-navy);
+}
+
+.sws-carrying__head {
+  --container-gap: clamp(2.5rem, 5vw, 5rem);
+
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  /* A single short headline should start level with the lede beside it rather
+     than sinking to its baseline. */
+  align-items: start;
+}
+
+.sws-carrying__lede {
+  max-width: var(--measure-copy-narrow);
+}
+
+.sws-carrying__ledger {
+  margin: 0;
+  border-top: 1px solid var(--border-navy-hairline);
+}
+
+.sws-carrying__ledger li {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) clamp(3rem, 7vw, 6rem) minmax(0, 1fr);
+  align-items: center;
+  gap: var(--space-4);
+  border-bottom: 1px solid var(--border-navy-hairline);
+  padding-block: clamp(1.125rem, 2.2vw, 1.625rem);
+}
+
+/* Still legible, but visibly provisional: this is the version held together by
+   somebody remembering. */
+.sws-carrying__carried {
+  border-inline-start: 1px dashed var(--text-inverse-muted);
+  padding-inline-start: var(--space-4);
+  color: var(--text-inverse-muted);
+  font: var(--body-md);
+  opacity: 0.72;
+}
+
+.sws-carrying__lives {
+  border-inline-start: 2px solid var(--color-emerald);
+  padding-inline-start: var(--space-4);
+  color: var(--text-inverse);
+  font: var(--body-md);
+}
+
+/* The transfer itself. Drawn from the left, so the motion is the handover. */
+.sws-carrying__transfer {
+  position: relative;
+  display: block;
+  height: 1px;
+}
+
+.sws-carrying__transfer i {
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, rgb(47 185 140 / 20%), var(--color-emerald));
+  transform-origin: left center;
+}
+
+.sws-carrying__transfer::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 0;
+  width: 0.4rem;
+  height: 0.4rem;
+  border-top: 1.5px solid var(--color-emerald);
+  border-right: 1.5px solid var(--color-emerald);
+  translate: 0 -50%;
+  rotate: 45deg;
+}
+
+/* ---- The payoff ---- */
+
+.sws-carrying__payoff {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-5);
+}
+
+.sws-carrying__payoff ul {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-4) clamp(2rem, 4vw, 3.5rem);
+  margin: 0;
+}
+
+/* Set as real questions, at a size worth reading: this is what the relief
+   sounds like on an ordinary Tuesday. */
+.sws-carrying__payoff li {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-3);
+  color: var(--text-inverse);
+  font: italic 500 clamp(1.0625rem, 1rem + 0.4vw, 1.3125rem) / 1.4 var(--font-display);
+}
+
+.sws-carrying__payoff li > span {
+  flex: 0 0 auto;
+  color: var(--color-emerald);
+  font: 600 0.875rem/1 var(--font-body);
+  font-style: normal;
+}
+
+.sws-carrying__note {
+  max-width: var(--measure-intro);
+  color: var(--text-inverse-muted);
+  font: var(--body-md);
+}
+
+/* ---------------------------------------------------------------------------
+   Follow-up and automation
+   Two lanes either side of one spine. Automated steps sit left and dashed;
+   human decisions sit right, solid, with an emerald edge. The boundary is the
+   argument, so it is drawn rather than described.
+--------------------------------------------------------------------------- */
+
+.sws-auto {
+  --auto-gutter: clamp(2rem, 5vw, 4.5rem);
+  --section-gap: clamp(2.75rem, 5vw, 4.25rem);
+
+  background: var(--surface-page);
+}
+
+.sws-auto__head {
+  --container-gap: clamp(2.5rem, 5vw, 5rem);
+
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+}
+
+.sws-auto__lede {
+  max-width: var(--measure-copy-narrow);
+}
+
+.sws-auto__flow {
+  position: relative;
+}
+
+.sws-auto__lanes {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) var(--auto-gutter) minmax(0, 1fr);
+  align-items: center;
+  margin-bottom: var(--space-6);
+}
+
+.sws-auto__lane {
+  font: var(--label-caps);
+  letter-spacing: var(--label-caps-tracking);
+  text-transform: uppercase;
+}
+
+.sws-auto__lane--auto {
+  grid-column: 1;
+  color: var(--text-secondary);
+  text-align: right;
+}
+
+.sws-auto__lane--human {
+  grid-column: 3;
+  color: var(--color-emerald-deep);
+}
+
+/* Fades at both ends: the process continues in both directions, and a spine
+   that stops hard would claim a beginning and an end it does not have. */
+.sws-auto__spine {
+  position: absolute;
+  top: 3.5rem;
+  bottom: 0;
+  left: 50%;
+  width: 1px;
+  translate: -50% 0;
+  background: linear-gradient(
+    180deg,
+    transparent,
+    var(--border-hairline) 6%,
+    var(--border-hairline) 94%,
+    transparent
+  );
+}
+
+.sws-auto__flow ol {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+
+/* The lanes alternate strictly, so consecutive cards are always in opposite
+   columns and can be pulled into each other's vertical space without ever
+   colliding. It buys back the dead half of every row. Two same-side steps in a
+   row would break this — keep the data alternating. */
+.sws-auto__flow li + li {
+  margin-top: clamp(-2.75rem, -2.5vw, -1.25rem);
+}
+
+.sws-auto__flow li {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) var(--auto-gutter) minmax(0, 1fr);
+  align-items: center;
+}
+
+/* Both cells are placed on row 1 explicitly. Without it, the node claims
+   column 2 first and grid auto-placement refuses to move backwards for a card
+   asking for column 1 — so every automated row silently gained a second row. */
+.sws-auto__node {
+  grid-column: 2;
+  grid-row: 1;
+  justify-self: center;
+  width: 0.875rem;
+  height: 0.875rem;
+  border-radius: 50%;
+  border: 2px solid var(--color-emerald-deep);
+  background: var(--surface-page);
+}
+
+.sws-auto__row--auto .sws-auto__node {
+  border-style: dashed;
+  border-color: var(--text-secondary);
+}
+
+.sws-auto__card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  border-radius: var(--radius-md);
+  background: var(--surface-card);
+  padding: clamp(1.125rem, 2vw, 1.5rem) clamp(1.25rem, 2.2vw, 1.75rem);
+}
+
+/* Automated: dashed edge, quiet label, sitting in the left lane. */
+.sws-auto__row--auto .sws-auto__card {
+  grid-column: 1;
+  grid-row: 1;
+  border: 1px dashed var(--border-mist-hairline);
+}
+
+/* Human: a solid edge and an emerald spine of its own — something a person
+   is standing behind. */
+.sws-auto__row--human .sws-auto__card {
+  grid-column: 3;
+  grid-row: 1;
+  border: 1px solid var(--border-hairline);
+  border-inline-start: 2px solid var(--color-emerald);
+  box-shadow: var(--elev-raised);
+}
+
+.sws-auto__kind {
+  color: var(--text-secondary);
+  font: var(--label-caps);
+  letter-spacing: var(--label-caps-tracking);
+  text-transform: uppercase;
+}
+
+.sws-auto__row--human .sws-auto__kind {
+  color: var(--color-emerald-deep);
+}
+
+.sws-auto__card h3 {
+  color: var(--text-primary);
+  font: 500 1.1875rem/1.3 var(--font-display);
+  letter-spacing: -0.008em;
+}
+
+.sws-auto__card p {
+  font: var(--body-sm);
+}
+
+.sws-auto__note {
+  max-width: var(--measure-intro);
+  font: italic 500 1.0625rem/1.55 var(--font-display);
+}
+
+/* ---------------------------------------------------------------------------
+   Reputation and reviews
+   The quiet one. It sits between a dense flow diagram and the engagement
+   track, so it is mostly air: a centred statement, one oversized mark and
+   three short columns. No panel, and no invented testimonial — a fabricated
+   quote here would be precisely what the section says MindWP does not do.
+--------------------------------------------------------------------------- */
+
+.sws-reputation {
+  --section-padding-block: clamp(5rem, 8vw, 7.5rem);
+  --section-gap: clamp(3rem, 6vw, 5rem);
+}
+
+.sws-reputation__mark {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(1.5rem, 3vw, 2.25rem);
+  text-align: center;
+}
+
+.sws-reputation__stars {
+  display: flex;
+  gap: clamp(0.5rem, 1.2vw, 0.85rem);
+}
+
+.sws-reputation__stars i {
+  width: clamp(1.75rem, 3.2vw, 2.75rem);
+  aspect-ratio: 1;
+  background: var(--color-emerald);
+  clip-path: polygon(
+    50% 0%,
+    61% 35%,
+    98% 35%,
+    68% 57%,
+    79% 91%,
+    50% 70%,
+    21% 91%,
+    32% 57%,
+    2% 35%,
+    39% 35%
+  );
+}
+
+/* Large enough to carry the section on its own, since nothing else here is
+   competing for attention. */
+.sws-reputation__line {
+  max-width: 44rem;
+  color: var(--text-primary);
+  font: italic 500 clamp(1.375rem, 1.05rem + 1.3vw, 2rem) / 1.35 var(--font-display);
+  letter-spacing: -0.012em;
+  text-wrap: balance;
+}
+
+.sws-reputation__stages {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(2rem, 4vw, 3.5rem);
+}
+
+.sws-reputation__stages article {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  border-top: 1px solid var(--border-mist-hairline);
+  padding-top: var(--space-5);
+}
+
+.sws-reputation__stages p:last-child {
+  font: var(--body-sm);
+}
+
+.sws-reputation__nonclaim {
+  max-width: var(--measure-intro);
+  margin-inline: auto;
+  color: var(--text-secondary);
+  font: var(--body-sm);
+  text-align: center;
+}
+
+/* ---------------------------------------------------------------------------
+   One accountable engagement
+   One continuous thread, six unequal strata, and the seams drawn as owned.
+   The stage contents sit quiet; the joins between them carry the emerald,
+   because the joins are what this section is actually selling.
+
+   The boundary rail runs the full height rather than closing the section — what
+   belongs to the client belongs to them throughout, not as a final concession.
+--------------------------------------------------------------------------- */
+
+.sws-thread {
+  --section-gap: clamp(2.5rem, 4.5vw, 3.75rem);
+
+  background: var(--surface-navy);
+}
+
+.sws-thread__head {
+  --container-gap: clamp(2.5rem, 5vw, 5rem);
+
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  align-items: start;
+}
+
+.sws-thread__lede {
+  max-width: var(--measure-copy-narrow);
+}
+
+.sws-thread__body {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) clamp(10rem, 15vw, 14rem);
+  gap: clamp(2rem, 4vw, 4rem);
+  align-items: stretch;
+}
+
+.sws-thread__strata {
+  --gutter: clamp(2.25rem, 4vw, 3.25rem);
+
+  position: relative;
+  margin: 0;
+  min-width: 0;
+}
+
+/* ---- The thread ---- */
+
+.sws-thread__spine {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: calc(var(--gutter) / 2);
+  width: 0.5rem;
+  translate: -50% 0;
+  pointer-events: none;
+}
+
+/* Widest where the most is still unresolved, narrowing as the work becomes
+   specific. One stroke, never segments — the continuity is the argument. */
+.sws-thread__spine i {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, var(--color-emerald), rgb(47 185 140 / 45%));
+  clip-path: polygon(0% 0%, 100% 0%, 62% 100%, 38% 100%);
+  transform-origin: top center;
+}
+
+/* ---- The strata ---- */
+
+.sws-thread__strata li {
+  position: relative;
+  display: grid;
+  grid-template-columns: var(--gutter) minmax(0, 1fr);
+  gap: clamp(1.25rem, 2.5vw, 2.25rem);
+  border-top: 1px solid var(--border-navy-hairline);
+  padding-block: calc(var(--weight, 1) * clamp(0.7rem, 1.4vw, 1.15rem));
+}
+
+.sws-thread__strata li:last-child {
+  border-bottom: 1px solid var(--border-navy-hairline);
+}
+
+.sws-thread__strata li[data-weight="1"] {
+  --weight: 1;
+}
+
+.sws-thread__strata li[data-weight="2"] {
+  --weight: 2;
+}
+
+.sws-thread__strata li[data-weight="3"] {
+  --weight: 3;
+}
+
+/* ---- The seams ---- */
+
+.sws-thread__seam {
+  position: relative;
+  align-self: start;
+  justify-self: center;
+  width: 0.8rem;
+  height: 0.8rem;
+  margin-top: 0.4rem;
+  border: 1.5px solid var(--color-emerald);
+  border-radius: 50%;
+  background: var(--surface-navy);
+}
+
+/* Reaches into the work it joins. */
+.sws-thread__seam::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  width: clamp(0.75rem, 2vw, 1.5rem);
+  height: 1px;
+  background: var(--emerald-line);
+}
+
+.sws-thread__stratum {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  min-width: 0;
+  padding-inline-start: calc((var(--weight, 1) - 1) * clamp(0.5rem, 1.2vw, 1.25rem));
+}
+
+.sws-thread__stage {
+  color: var(--text-inverse);
+  font: 500 clamp(1.125rem, 1.02rem + 0.4vw, 1.375rem) / 1.25 var(--font-display);
+  letter-spacing: -0.01em;
+}
+
+.sws-thread__carried {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--space-3);
+  color: var(--text-inverse-muted);
+  font: var(--body-sm);
+  opacity: 0.85;
+}
+
+.sws-thread__accountability {
+  max-width: var(--measure-copy);
+  color: var(--text-inverse-muted);
+  font: var(--body-md);
+}
+
+/* The stratum that answers for all of the others reads heaviest. */
+.sws-thread__strata li[data-weight="3"] .sws-thread__accountability {
+  color: var(--text-inverse);
+  font-size: 1.125rem;
+}
+
+/* ---- The boundary ---- */
+
+.sws-thread__boundary {
+  display: grid;
+  grid-template-columns: 1px minmax(0, 1fr);
+  gap: clamp(1rem, 2vw, 1.75rem);
+  align-items: stretch;
+}
+
+.sws-thread__boundary-rule {
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    transparent,
+    var(--border-navy-hairline) 6%,
+    var(--border-navy-hairline) 94%,
+    transparent
+  );
+}
+
+/* Held for the height of the engagement rather than stated once at the top:
+   the claim is that this boundary applies throughout, so it stays on screen
+   for the whole of what it is a boundary on. */
+.sws-thread__boundary > div {
+  position: sticky;
+  top: calc(var(--header-height) + var(--space-7));
+  align-self: start;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.sws-thread__boundary p {
+  color: var(--text-inverse-muted);
+  font: var(--body-sm);
+}
+
+/* ---------------------------------------------------------------------------
+   Full-bleed track inset
+   Aligns a full-width scrolling track's first item with the contained columns
+   above it, while letting the track itself run to the viewport edge.
+--------------------------------------------------------------------------- */
+
+.sws-work__rail {
+  --track-inset: max(
+    var(--page-margin),
+    calc((100vw - var(--container-max)) / 2 + var(--page-margin))
+  );
+}
+
+/* ---------------------------------------------------------------------------
+   Real smart website work
+   A showcase rail, not the homepage grid: tall portrait cards on a staggered
+   baseline with the neighbours peeking, so the strip reads as something to
+   move through.
+--------------------------------------------------------------------------- */
+
+.sws-work {
+  --section-gap: clamp(2rem, 4vw, 3rem);
+
+  overflow: hidden;
+  background: var(--surface-page);
+}
+
+.sws-work__head {
+  --container-gap: clamp(2.5rem, 5vw, 5rem);
+
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+}
+
+.sws-work__head .section-copy-group {
+  gap: var(--space-4);
+}
+
+.sws-work__provenance {
+  color: var(--text-secondary);
+  font: var(--body-sm);
+}
+
+.sws-work__controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-5);
+}
+
+.sws-work__count {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--text-secondary);
+  font: var(--body-sm);
+  font-variant-numeric: tabular-nums;
+}
+
+.sws-work__count strong {
+  color: var(--text-primary);
+  font: 500 1.375rem/1 var(--font-display);
+}
+
+.sws-work__count i {
+  width: 1rem;
+  height: 1px;
+  background: var(--border-hairline);
+}
+
+.sws-work__segments {
+  flex: 1 1 8rem;
+  display: flex;
+  gap: 0.3rem;
+}
+
+.sws-work__segments i {
+  flex: 1;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--border-hairline);
+  transition: background-color var(--duration-base) var(--ease-out);
+}
+
+.sws-work__segments i.is-filled {
+  background: var(--color-emerald-deep);
+}
+
+.sws-work__buttons {
+  display: flex;
+  gap: var(--space-3);
+}
+
+.sws-work__buttons button {
+  width: 2.75rem;
+  height: 2.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border-hairline);
+  border-radius: 50%;
+  background: var(--surface-card);
+  color: var(--text-primary);
+  cursor: pointer;
+  transition:
+    border-color var(--duration-fast) var(--ease-out),
+    background-color var(--duration-fast) var(--ease-out),
+    opacity var(--duration-fast) var(--ease-out);
+}
+
+.sws-work__buttons button svg {
+  width: 1.125rem;
+  height: 1.125rem;
+  fill: none;
+  stroke: currentcolor;
+  stroke-width: 1.75;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.sws-work__buttons button:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.sws-work__rail {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  gap: clamp(1rem, 2vw, 1.75rem);
+  margin: 0;
+  padding-inline: var(--track-inset) 0;
+  padding-block: var(--space-2) var(--space-5);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+
+.sws-work__rail::-webkit-scrollbar {
+  display: none;
+}
+
+.sws-work__rail li {
+  flex: 0 0 auto;
+  width: clamp(14rem, 24vw, 21rem);
+  scroll-snap-align: start;
+}
+
+/* The staggered baseline is what stops this reading as a generic carousel. */
+.sws-work__rail li:nth-child(even) {
+  margin-top: clamp(1.25rem, 3vw, 2.75rem);
+}
+
+.sws-work__rail figure {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  margin: 0;
+}
+
+.sws-work__frame {
+  position: relative;
+  display: block;
+  aspect-ratio: 5 / 6;
+  overflow: hidden;
+  border: 1px solid var(--border-mist-hairline);
+  border-radius: var(--radius-md);
+  background: var(--surface-mist);
+  transition:
+    border-color var(--duration-base) var(--ease-out),
+    box-shadow var(--duration-base) var(--ease-out);
+}
+
+.sws-work__rail li.is-active .sws-work__frame {
+  border-color: var(--emerald-line-soft);
+  box-shadow: var(--elev-focal);
+}
+
+.sws-work__image {
+  object-fit: cover;
+  object-position: top center;
+}
+
+.sws-work__rail figcaption {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.sws-work__rail figcaption small {
+  color: var(--color-emerald-deep);
+  font: var(--label-caps);
+  letter-spacing: var(--label-caps-tracking);
+  text-transform: uppercase;
+}
+
+.sws-work__rail figcaption strong {
+  color: var(--text-primary);
+  font: 500 1.0625rem/1.3 var(--font-display);
+}
+
+.sws-work__status {
+  color: var(--text-secondary);
+  font: var(--body-xs);
+  font-weight: 400;
+}
+
+/* ---------------------------------------------------------------------------
+   After launch
+   One living system, not a maintenance grid. Rings hold the offer, the pages,
+   the enquiry path and the connected workflows; changes land on the ring they
+   affect and push it off the shared centre. Nothing breaks — the rings simply
+   stop lining up, which is the argument.
+
+   The ghosts stay visible after realignment so the still frame carries cause,
+   consequence and correction at once.
+--------------------------------------------------------------------------- */
+
+.sws-align {
+  --section-gap: clamp(2.5rem, 4.5vw, 3.75rem);
+
+  background: var(--surface-navy);
+}
+
+.sws-align__head {
+  --container-gap: clamp(2.5rem, 5vw, 5rem);
+
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  align-items: start;
+}
+
+.sws-align__lede {
+  max-width: var(--measure-copy-narrow);
+}
+
+.sws-align__layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: clamp(2.5rem, 5vw, 5rem);
+  align-items: start;
+}
+
+.sws-align__stage {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1.5rem, 3vw, 2.25rem);
+  min-width: 0;
+}
+
+.sws-align__svg {
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+/* ---- The model ---- */
+
+.sws-align__ring {
+  fill: none;
+  stroke: var(--color-emerald);
+  stroke-width: 1.5;
+  opacity: 0.75;
+  transform-box: view-box;
+  transform-origin: center;
+}
+
+.sws-align__ghost {
+  fill: none;
+  stroke: var(--text-inverse-muted);
+  stroke-width: 1;
+  stroke-dasharray: 3 5;
+  opacity: 0.3;
+}
+
+.sws-align__core {
+  fill: var(--color-emerald);
+}
+
+.sws-align__correction line {
+  stroke: var(--color-emerald);
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
+.sws-align__correction circle {
+  fill: var(--color-emerald);
+}
+
+.sws-align__vector line {
+  stroke: var(--text-inverse-muted);
+  stroke-width: 1;
+  opacity: 0.45;
+}
+
+.sws-align__vector circle {
+  fill: var(--text-inverse-muted);
+  opacity: 0.6;
+}
+
+.sws-align__vector text {
+  fill: var(--text-inverse-muted);
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.06em;
+}
+
+.sws-align__legend {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-3) var(--space-5);
+  margin: 0;
+}
+
+.sws-align__legend li {
+  display: flex;
+  flex-direction: column;
+  border-left: 1px solid var(--emerald-line-soft);
+  padding-left: var(--space-3);
+}
+
+.sws-align__legend strong {
+  color: var(--text-inverse);
+  font: var(--ui-strong);
+}
+
+.sws-align__legend small {
+  color: var(--text-inverse-muted);
+}
+
+/* ---- The reading column ---- */
+
+.sws-align__reading {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(2rem, 4vw, 3rem);
+  min-width: 0;
+}
+
+.sws-align__register {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.sws-align__changes {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin: 0;
+}
+
+.sws-align__changes li {
+  display: grid;
+  grid-template-columns: 2rem minmax(0, 1fr);
+  gap: var(--space-3);
+  color: var(--text-inverse);
+  font: var(--body-md);
+}
+
+.sws-align__changes li > span {
+  color: var(--color-emerald);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.06em;
+}
+
+/* Cause and correction stay in one row rather than becoming two grids. */
+.sws-align__pairs {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+
+.sws-align__pairs li {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: var(--space-5);
+  border-top: 1px solid var(--border-navy-hairline);
+  padding-block: var(--space-4);
+}
+
+.sws-align__pairs li:last-child {
+  border-bottom: 1px solid var(--border-navy-hairline);
+}
+
+.sws-align__slips {
+  border-inline-start: 1px dashed var(--text-inverse-muted);
+  padding-inline-start: var(--space-4);
+  color: var(--text-inverse-muted);
+  font: var(--body-sm);
+  opacity: 0.78;
+}
+
+.sws-align__managed {
+  border-inline-start: 2px solid var(--color-emerald);
+  padding-inline-start: var(--space-4);
+  color: var(--text-inverse);
+  font: var(--body-sm);
+}
+
+.sws-align__note {
+  max-width: var(--measure-intro);
+  color: var(--text-inverse-muted);
+  font: var(--body-sm);
+}
+
+/* ---------------------------------------------------------------------------
+   Right for your business
+   An editorial ledger, not a checklist: indexed rows with a rule that draws
+   itself in, and the boundary demoted to a quiet full-bleed band underneath.
+--------------------------------------------------------------------------- */
+
+.sws-fit {
+  --section-gap: var(--space-9);
+
+  background: var(--surface-page);
+}
+
+.sws-fit__head {
+  --container-gap: clamp(2.5rem, 5vw, 5rem);
+
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+}
+
+.sws-fit__lede {
+  max-width: var(--measure-copy-narrow);
+}
+
+.sws-fit__ledger {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: clamp(2.5rem, 5vw, 5rem);
+  margin: 0;
+  border-bottom: 1px solid var(--border-hairline);
+}
+
+.sws-fit__ledger li {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: baseline;
+  gap: var(--space-4);
+  padding-block: clamp(var(--space-5), 2.5vw, var(--space-7));
+}
+
+/* Owned by the row rather than a border, so motion can draw it from the left
+   without animating layout. Rest state is the finished rule. */
+.sws-fit__rule {
+  position: absolute;
+  inset-inline: 0;
+  top: 0;
+  height: 1px;
+  background: var(--border-hairline);
+  transform-origin: left center;
+}
+
+.sws-fit__index {
+  color: var(--color-emerald-deep);
+  font: 500 clamp(1.375rem, 1.1rem + 1.1vw, 2rem) / 1 var(--font-display);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: var(--display-md-tracking);
+  opacity: 0.42;
+}
+
+.sws-fit__ledger p {
+  max-width: 30rem;
+  color: var(--text-primary);
+  font: var(--body-lg);
+}
+
+.sws-fit__band {
+  width: 100%;
+  border-block: 1px solid var(--border-mist-hairline);
+  background: var(--surface-mist);
+  padding-block: clamp(2rem, 4vw, 3rem);
+}
+
+.sws-fit__band-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-5);
+}
+
+.sws-fit__band-inner ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin: 0;
+}
+
+.sws-fit__band-inner li {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  border: 1px solid var(--border-mist-hairline);
+  border-radius: var(--radius-pill);
+  background: var(--surface-card);
+  padding: var(--space-2) var(--space-4);
+  color: var(--text-secondary);
+  font: var(--body-sm);
+}
+
+.sws-fit__band-inner li > span {
+  color: var(--color-danger);
+  font-weight: 600;
+}
+
+.sws-fit__band-inner s {
+  text-decoration-color: var(--border-mist-hairline);
+  text-decoration-thickness: 1px;
+}
+
+/* Keeps the boundary from ending on a flat refusal. */
+.sws-fit__note {
+  max-width: var(--measure-copy);
+  font: italic 500 1.0625rem/1.55 var(--font-display);
+}
+
+/* ---------------------------------------------------------------------------
+   FAQ
+   A rail that stays with the reader while they work down the questions, so the
+   heading and the action are present at the moment an objection is answered.
+--------------------------------------------------------------------------- */
+
+.sws-faq {
+  background: var(--surface-page);
+}
+
+.sws-faq__layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr);
+  gap: clamp(3rem, 5vw, 6rem);
+  align-items: start;
+}
+
+.sws-faq__rail {
+  position: sticky;
+  top: calc(var(--header-height) + var(--space-7));
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.sws-faq__rail-action {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-3);
+  margin-top: var(--space-2);
+}
+
+.sws-faq__items {
+  min-width: 0;
+}
+
+.sws-faq__items article {
+  border-top: 1px solid var(--border-hairline);
+  transition: background-color var(--duration-base) var(--ease-out);
+}
+
+.sws-faq__items article:last-child {
+  border-bottom: 1px solid var(--border-hairline);
+}
+
+/* This h3 wraps the accordion trigger <button>; it must read as plain
+   clickable question text, not a display heading — keep font: inherit. */
+.sws-faq__items h3 {
+  font: inherit;
+}
+
+.sws-faq__items button {
+  width: 100%;
+  min-height: 4.25rem;
+  display: grid;
+  grid-template-columns: 2.25rem minmax(0, 1fr) auto;
+  align-items: center;
+  gap: var(--space-4);
+  border: 0;
+  background: transparent;
+  padding: var(--space-5) 0;
+  cursor: pointer;
+  text-align: left;
+}
+
+.sws-faq__index {
+  color: var(--color-emerald-deep);
+  font: var(--label-caps);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: var(--label-caps-tracking);
+  opacity: 0.5;
+  transition: opacity var(--duration-fast) var(--ease-out);
+}
+
+.sws-faq__question {
+  color: var(--text-primary);
+  font: 500 1.1875rem/1.35 var(--font-display);
+  letter-spacing: -0.008em;
+  transition: color var(--duration-fast) var(--ease-out);
+}
+
+.sws-faq__toggle {
+  width: 1.75rem;
+  height: 1.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border-hairline);
+  border-radius: 50%;
+  color: var(--color-emerald-deep);
+  font-size: 1.125rem;
+  transition:
+    border-color var(--duration-fast) var(--ease-out),
+    background-color var(--duration-fast) var(--ease-out);
+}
+
+/* The open question lifts onto its own surface: on a paper section that reads
+   as the answer being brought forward, not as a row being highlighted. */
+.sws-faq__items article.is-open {
+  border-top-color: transparent;
+  border-radius: var(--radius-md);
+  background: var(--surface-card);
+  box-shadow: var(--elev-raised);
+  padding-inline: clamp(var(--space-4), 2vw, var(--space-6));
+  margin-inline: calc(-1 * clamp(var(--space-4), 2vw, var(--space-6)));
+}
+
+.sws-faq__items article.is-open + article {
+  border-top-color: transparent;
+}
+
+.sws-faq__items article.is-open .sws-faq__question {
+  color: var(--color-emerald-deep);
+}
+
+.sws-faq__items article.is-open .sws-faq__index {
+  opacity: 1;
+}
+
+.sws-faq__items article.is-open .sws-faq__toggle {
+  border-color: var(--emerald-line-soft);
+  background: var(--emerald-tint-weak);
+}
+
+.sws-faq__items [role="region"] {
+  padding: 0 var(--space-8) var(--space-6) calc(2.25rem + var(--space-4));
+  animation: sws-panel-in 320ms var(--ease-out) backwards;
+}
+
+.sws-faq__items [role="region"] p {
+  max-width: var(--measure-copy);
+}
+
+/* ---------------------------------------------------------------------------
+   Closing
+   Left-aligned, so the last display line lands on the same axis as the first.
+   The spine beneath it is the page's one deliberate echo.
+--------------------------------------------------------------------------- */
+
+.sws-closing {
+  --section-padding-block: clamp(4rem, 6.5vw, 5.5rem);
+  --section-gap: clamp(3rem, 6vw, 4.5rem);
+
+  background: var(--surface-navy);
+}
+
+.sws-closing__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-6);
+  max-width: 56rem;
+}
+
+.sws-closing h2 {
+  color: var(--text-inverse);
+}
+
+.sws-closing__inner > p {
+  max-width: var(--measure-copy);
+}
+
+.sws-closing__actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-4);
+  margin-top: var(--space-2);
+}
+
+.sws-closing__spine {
+  position: relative;
+  width: 100%;
+  height: 0.5rem;
+}
+
+.sws-closing__rule {
+  position: absolute;
+  inset-inline: 0;
+  top: 50%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--border-navy-hairline) 10%,
+    var(--emerald-line-soft) 50%,
+    var(--border-navy-hairline) 90%,
+    transparent
+  );
+  transform-origin: left center;
+}
+
+.sws-closing__nodes {
+  position: absolute;
+  inset-inline: 0;
+  top: 50%;
+  display: flex;
+  justify-content: space-between;
+  translate: 0 -50%;
+  padding-inline: var(--page-margin);
+}
+
+.sws-closing__nodes i {
+  width: 0.4rem;
+  height: 0.4rem;
+  border-radius: 50%;
+  background: var(--color-emerald);
+  opacity: 0.55;
+}
+
+body:has(.sws-closing) .site-footer {
+  background: var(--surface-navy);
+}
+
+body:has(.sws-closing) .site-footer__top {
+  padding-block: var(--space-8) var(--space-7);
+}
+
+body:has(.sws-closing) .site-footer__bottom {
+  padding-block: var(--space-5);
+}
+
+/* ---------------------------------------------------------------------------
+   Interaction and responsive
+--------------------------------------------------------------------------- */
+
+@media (hover: hover) and (pointer: fine) {
+  .sws-faq__items button:hover .sws-faq__question {
+    color: var(--color-emerald-deep);
+  }
+
+  .sws-faq__items button:hover .sws-faq__index {
+    opacity: 1;
+  }
+
+  .sws-faq__items button:hover .sws-faq__toggle {
+    border-color: var(--emerald-line-soft);
+    background: var(--emerald-tint-weak);
+  }
+}
+
+/* The eight-station rail needs real width. Below it the rail becomes two
+   stacked halves, and the break becomes the boundary between them. */
+/* Stacked, the convergence has nothing left to converge across: the channels
+   become a list and the record panel simply follows them. */
+@media (max-width: 64rem) {
+  .sws-system__stage {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+
+  .sws-system__connector {
+    display: none;
+  }
+
+  .sws-system__channels {
+    grid-template-rows: none;
+    gap: var(--space-3);
+  }
+
+  .sws-system__channels li {
+    margin-block: 0;
+  }
+}
+
+/* One lane. The spine moves to the left edge and both kinds of step read down
+   a single column — the card treatment still tells them apart, which is the
+   part that has to survive. */
+@media (max-width: 56rem) {
+  .sws-auto__lanes {
+    display: none;
+  }
+
+  .sws-auto__spine {
+    top: 0;
+    left: 0.4375rem;
+    translate: 0;
+  }
+
+  .sws-auto__flow li {
+    grid-template-columns: 2.5rem minmax(0, 1fr);
+    align-items: start;
+  }
+
+  .sws-auto__node {
+    grid-column: 1;
+    justify-self: start;
+    margin-top: 1.25rem;
+  }
+
+  .sws-auto__flow li + li {
+    margin-top: var(--space-4);
+  }
+
+  .sws-auto__row--auto .sws-auto__card,
+  .sws-auto__row--human .sws-auto__card {
+    grid-column: 2;
+  }
+}
+
+/* The model becomes a header for the reading rather than a companion to it,
+   and the required order survives: what changed, what slipped, what is
+   managed. */
+@media (max-width: 68rem) {
+  .sws-align__layout {
+    grid-template-columns: 1fr;
+  }
+
+  .sws-align__stage {
+    max-width: 30rem;
+  }
+}
+
+@media (max-width: 48rem) {
+  .sws-align__legend,
+  .sws-align__pairs li {
+    grid-template-columns: 1fr;
+  }
+
+  .sws-align__pairs li {
+    gap: var(--space-3);
+  }
+}
+
+/* The boundary stops being a rail beside the work and becomes a closing
+   statement under it — still the same claim, just no longer able to run the
+   full height of something it is no longer beside. */
+@media (max-width: 68rem) {
+  .sws-thread__body {
+    grid-template-columns: 1fr;
+  }
+
+  .sws-thread__boundary {
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+  }
+
+  .sws-thread__boundary > div {
+    position: static;
+  }
+
+  .sws-thread__boundary-rule {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, var(--color-emerald), var(--border-navy-hairline) 45%);
+  }
+}
+
+/* The transfer becomes vertical: the arrow turns to point down the row rather
+   than across it, so the handover still reads as a handover. */
+@media (max-width: 62rem) {
+  .sws-carrying__ledger li {
+    grid-template-columns: 1fr;
+    gap: var(--space-3);
+  }
+
+  .sws-carrying__transfer {
+    width: 1px;
+    height: 1.5rem;
+    margin-inline-start: var(--space-2);
+  }
+
+  .sws-carrying__transfer i {
+    width: 1px;
+    height: 100%;
+    background: linear-gradient(180deg, rgb(47 185 140 / 20%), var(--color-emerald));
+    transform-origin: top center;
+  }
+
+  .sws-carrying__transfer::after {
+    top: auto;
+    right: auto;
+    bottom: 0;
+    left: 50%;
+    translate: -50% 0;
+    rotate: 135deg;
+  }
+
+  .sws-carrying__payoff ul {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* The interval turns vertical rather than compressing: five segments across a
+   phone would make each one two words wide, and the span is still one span
+   read top to bottom. */
+@media (max-width: 62rem) {
+  .sws-moment__channel {
+    grid-template-columns: 1fr;
+  }
+
+  .sws-moment__ends {
+    flex-wrap: wrap;
+    gap: var(--space-3);
+  }
+
+  .sws-moment__span {
+    order: 1;
+    flex-basis: 100%;
+  }
+
+  .sws-moment__end--last {
+    order: 2;
+  }
+}
+
+/* The ribbon has nothing left to be read against once the column stacks, so
+   it becomes a header fragment: still cropped, still unframed, but horizontal
+   and above the verdicts rather than beside them. */
+@media (max-width: 62rem) {
+  .sws-verdict__layout {
+    grid-template-columns: 1fr;
+    padding-inline: 0;
+  }
+
+  .sws-verdict__ribbon {
+    padding-inline-end: var(--page-margin);
+  }
+
+  .sws-verdict__strip {
+    min-height: 0;
+    margin-inline-start: calc(-1 * var(--page-margin));
+  }
+
+  .sws-verdict__column {
+    padding-inline: var(--page-margin);
+  }
+
+  .sws-verdict__column li {
+    grid-template-columns: 1fr;
+    gap: var(--space-3);
+  }
+
+  .sws-verdict__leader {
+    display: none;
+  }
+}
+
+/* One column, and the tilt eases off rather than disappearing: a single stack
+   of perfectly square cards would read as organised, which is the opposite of
+   what the section is describing. */
+@media (max-width: 64rem) {
+  .sws-incidents__field {
+    grid-template-columns: 1fr;
+  }
+
+  .sws-incidents__field li {
+    grid-column: 1;
+    margin-top: 0;
+    rotate: calc(var(--tilt) * 0.5);
+  }
+}
+
+@media (max-width: 64rem) {
+  .sws-incidents__head,
+  .sws-work__head,
+  .sws-auto__head,
+  .sws-system__head,
+  .sws-hero__top,
+  .sws-fit__head,
+  .sws-faq__layout {
+    grid-template-columns: 1fr;
+    align-items: stretch;
+  }
+
+  /* The rail has nothing to stay beside once the columns stack. */
+  .sws-faq__rail {
+    position: static;
+  }
+
+  .sws-hero__intro {
+    max-width: 48rem;
+  }
+
+  .sws-hero__art-column {
+    justify-content: flex-start;
+  }
+
+  .sws-art {
+    max-width: 34rem;
+  }
+}
+
+@media (max-width: 48rem) {
+  .sws-hero {
+    padding-top: var(--header-height);
+  }
+
+  .sws-hero__top {
+    padding-block: clamp(2.5rem, 9vw, 3.5rem) clamp(3rem, 10vw, 4rem);
+  }
+
+  /* Swap to the authored narrow composition rather than reflowing the wide
+     one: the system reads top-to-bottom here — website, route, record, what
+     follows — instead of being squeezed sideways. */
+  .sws-art {
+    max-width: 24rem;
+  }
+
+  .sws-art__svg--wide {
+    display: none;
+  }
+
+  .sws-art__svg--narrow {
+    display: block;
+  }
+
+  .sws-art__glow {
+    top: 24%;
+    left: 18%;
+    width: 66%;
+    filter: blur(3.5rem);
+  }
+}
+
+@media (max-width: 48rem) {
+  .sws-work__rail li {
+    width: min(78vw, 18rem);
+  }
+
+  .sws-reputation__stages {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+
+  /* Two ledger columns stop comparing and start crowding once each statement
+     wraps to three lines — one column keeps the row as the unit. */
+  .sws-fit__ledger {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 36rem) {
+  .sws-art {
+    max-width: 21rem;
+  }
+
+  /* The primary label cannot fit one line here, and the shared button sets
+     line-height 1 for the single-line case. */
+  .sws-hero__intro .btn,
+  .sws-closing__actions .btn {
+    padding-block: var(--space-3);
+    line-height: 1.35;
+  }
+
+  .sws-faq__items button {
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: var(--space-3);
+  }
+
+  .sws-faq__index {
+    display: none;
+  }
+
+  .sws-faq__items [role="region"] {
+    padding-inline: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sws-art__glow {
+    filter: none;
+  }
+
+  .sws-art [class^="sw__"],
+  .sws-art [class*=" sw__"],
+  .sws-faq__items [role="region"] {
+    animation: none;
+  }
+}
