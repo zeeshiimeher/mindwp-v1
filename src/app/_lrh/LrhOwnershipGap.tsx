@@ -49,7 +49,9 @@ export function LrhOwnershipGap() {
               </li>
             ))}
           </ol>
-          <p className="lrh-gap__word lrh-gap__word--hollow">Handled</p>
+          <p className="lrh-gap__word lrh-gap__word--hollow" aria-hidden="true">
+            Handled
+          </p>
         </div>
       </div>
     </section>

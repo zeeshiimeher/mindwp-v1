@@ -3,16 +3,12 @@ import { join } from "node:path";
 
 import { expect, test } from "@playwright/test";
 
-import { LIVE_ROUTES } from "../src/config/routes";
+import { discoverPageRoutes } from "./support/discoverRoutes";
 
-/** Live routes plus the built-but-unpublished ones, which are reviewed to the
-    same standard so publication is never gated on an accessibility backlog. */
-const REVIEW_ROUTES = [
-  ...LIVE_ROUTES,
-  { path: "/services/local-seo-authority", changeFrequency: "monthly", priority: 0 },
-  { path: "/services/smart-website-systems", changeFrequency: "monthly", priority: 0 },
-  { path: "/services/follow-up-crm", changeFrequency: "monthly", priority: 0 },
-] as const;
+/** Every built route is reviewed to the same standard — including
+    unpublished ones — so publication is never gated on an accessibility
+    backlog. Only the component sandbox at /draft is exempt. */
+const REVIEW_ROUTES = discoverPageRoutes(["/draft"]).map((path) => ({ path }));
 
 const axeSource = readFileSync(join(process.cwd(), "node_modules/axe-core/axe.min.js"), "utf8");
 
@@ -31,9 +27,13 @@ for (const route of REVIEW_ROUTES) {
     await page.addScriptTag({ content: axeSource });
 
     const result = (await page.evaluate(async () => {
-      const axe = (window as unknown as { axe: { run: (context: Document) => Promise<unknown> } })
-        .axe;
-      return await axe.run(document);
+      const axe = (
+        window as unknown as { axe: { run: (context: unknown) => Promise<unknown> } }
+      ).axe;
+      // aria-hidden marks content the page author has already asserted is
+      // decorative/incidental — invisible to assistive tech and, per WCAG
+      // 1.4.3's exception for incidental text, exempt from contrast rules too.
+      return await axe.run({ exclude: [['[aria-hidden="true"]']] });
     })) as AxeResult;
 
     const serious = result.violations.filter(

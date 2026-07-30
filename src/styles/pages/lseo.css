@@ -1408,7 +1408,7 @@
 }
 
 .lsa-measures__grid header > span {
-  color: var(--lsa-card-border);
+  color: var(--text-secondary);
   font: 600 2.75rem/0.85 var(--font-display);
   letter-spacing: -0.03em;
 }

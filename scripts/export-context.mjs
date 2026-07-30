@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import { randomUUID } from "node:crypto";
-import { constants } from "node:fs";
+import { constants, existsSync, readdirSync } from "node:fs";
 import { lstat, open, readFile, realpath, rename, unlink } from "node:fs/promises";
 import { basename, dirname, relative, resolve, sep } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
@@ -20,12 +20,32 @@ const ORIENTATION_SOURCES = [
 
 const FOCUSED_BASE_SOURCES = ["docs/README.md"];
 
-const SKILL_SOURCES = new Map([
-  ["mindwp-page-design", ".claude/skills/mindwp-page-design/SKILL.md"],
-  ["mindwp-page-build", ".claude/skills/mindwp-page-build/SKILL.md"],
-  ["mindwp-design-eye", ".claude/skills/mindwp-design-eye/SKILL.md"],
-  ["mindwp-frontend-quality", ".claude/skills/mindwp-frontend-quality/SKILL.md"],
-]);
+/** Every execution skill available as `--skill <name>`, read from
+    .claude/skills/ so this list can never drift from what actually exists
+    there — no separate list to remember to update when a skill is added. */
+function discoverSkillSources(repositoryRoot) {
+  const skillsRoot = resolve(repositoryRoot, ".claude/skills");
+  let entries;
+  try {
+    entries = readdirSync(skillsRoot, { withFileTypes: true });
+  } catch {
+    return new Map();
+  }
+
+  const skillNames = entries
+    .filter((entry) => entry.isDirectory() && !entry.name.startsWith("."))
+    .map((entry) => entry.name)
+    .sort();
+
+  const sources = new Map();
+  for (const name of skillNames) {
+    const skillPath = `.claude/skills/${name}/SKILL.md`;
+    if (existsSync(resolve(repositoryRoot, skillPath))) {
+      sources.set(name, skillPath);
+    }
+  }
+  return sources;
+}
 
 function normalizeTask(value) {
   return value?.replace(/\s+/g, " ").trim();
@@ -102,10 +122,13 @@ export function parseContextArguments(args, { repositoryRoot = defaultRepository
   }
   if (overwrite && !outputPath) throw new Error("--overwrite requires --output.");
 
-  const unknownSkill = requestedSkills.find((skill) => !SKILL_SOURCES.has(skill));
+  const resolvedRepositoryRoot = resolve(repositoryRoot);
+  const skillSources = discoverSkillSources(resolvedRepositoryRoot);
+
+  const unknownSkill = requestedSkills.find((skill) => !skillSources.has(skill));
   if (unknownSkill) {
     throw new Error(
-      `Unknown execution skill '${unknownSkill}'. Use ${[...SKILL_SOURCES.keys()].join(" or ")}.`,
+      `Unknown execution skill '${unknownSkill}'. Use ${[...skillSources.keys()].join(" or ")}.`,
     );
   }
 
@@ -125,7 +148,7 @@ export function parseContextArguments(args, { repositoryRoot = defaultRepository
     }
   }
 
-  const skills = [...SKILL_SOURCES.keys()].filter((skill) => requestedSkills.includes(skill));
+  const skills = [...skillSources.keys()].filter((skill) => requestedSkills.includes(skill));
 
   return {
     design,
@@ -137,7 +160,7 @@ export function parseContextArguments(args, { repositoryRoot = defaultRepository
     pagePlanPath: pagePlan ? resolve(pagePlan) : undefined,
     profile,
     repository,
-    repositoryRoot: resolve(repositoryRoot),
+    repositoryRoot: resolvedRepositoryRoot,
     skills,
     strategy,
     task: normalizeTask(task),
@@ -170,7 +193,8 @@ export function contextSourceList(options) {
   }
   if (options.design) sources.push(canonicalSource("docs/DESIGN.md"));
   if (options.engineering) sources.push(canonicalSource("docs/ENGINEERING.md"));
-  for (const skill of options.skills) sources.push(canonicalSource(SKILL_SOURCES.get(skill)));
+  const skillSources = discoverSkillSources(options.repositoryRoot);
+  for (const skill of options.skills) sources.push(canonicalSource(skillSources.get(skill)));
   return sources;
 }
 

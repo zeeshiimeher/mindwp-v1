@@ -108,8 +108,8 @@ test("focused optional sources and skills use deterministic order", () => {
       "supplied page plan",
       "docs/DESIGN.md",
       "docs/ENGINEERING.md",
-      ".claude/skills/mindwp-page-design/SKILL.md",
       ".claude/skills/mindwp-frontend-quality/SKILL.md",
+      ".claude/skills/mindwp-page-design/SKILL.md",
     ],
   );
 });
