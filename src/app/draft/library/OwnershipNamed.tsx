@@ -62,9 +62,7 @@ export function OwnershipNamed() {
         <div className="lrh-named__person" data-lrh-fade>
           <span className="lrh-named__ring" aria-hidden="true" />
           <p className="lrh-named__person-label">A named person</p>
-          <p className="lrh-named__person-note">
-            Who can see the whole enquiry before they reply.
-          </p>
+          <p className="lrh-named__person-note">Who can see the whole enquiry before they reply.</p>
         </div>
 
         <div className="lrh-named__human">

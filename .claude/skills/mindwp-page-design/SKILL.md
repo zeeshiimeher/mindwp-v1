@@ -17,7 +17,7 @@ Work arrives at different stages. Recognise which from what was supplied, not fr
 - **Compose a page** — a plan exists; the composition does not. This is the common case and the deliverable below.
 - **Specify an approved composition** — the composition is decided or supplied. Develop sections; do not recompose.
 - **Critique a plan or direction** — say what is strong, what will fail and why. Do not answer a critique request with a redesign.
-- **Redesign an existing page** — see *Redesign and audit-to-rebuild*.
+- **Redesign an existing page** — see _Redesign and audit-to-rebuild_.
 - **Improve one section** — work within the page's existing composition, and check the result against its neighbours.
 - **Continue from approved external work** — treat supplied decisions as settled. Identify only real conflicts, unavailable proof, unsupported claims, open commercial terms or serious design and technical problems. Report gaps briefly and continue. Do not reformat a supplied plan into this skill's vocabulary as a precondition.
 
@@ -31,7 +31,7 @@ Decide and state:
 
 **Spatial thesis.** One sentence: how this page occupies the screen, and how that changes as the reader moves down it. If the honest answer is "a centred column throughout", say so as a decision and say what makes that right for this material.
 
-**Environments.** How many distinct spatial environments the page has, what each one is, and which matters live inside each. Several matters may share one continuous environment; one matter may need more than one. There is no correct number, and a page whose environment count equals its matter count has not made this decision.
+**Surface rhythm and continuity.** How navy, paper, mist and white run across the page. Alternating surfaces are valid house rhythm and often the right answer; a repeated surface is not a fault. Where two or three sections genuinely run continuously, say which and why — but grouping the page into environments or acts is optional and task-specific, never a required model, and it is not a substitute for designing each section.
 
 **Width behaviour.** Where the page is contained, wide, full-bleed or deliberately narrow. What leaves the container, and why the meaning needs it to. Width is a decision either way — an unstated envelope is not neutral, it is the container's default deciding on the design's behalf.
 
@@ -62,6 +62,36 @@ For each moment, name **what the reader actually does** — read one long thing,
 A page can carry a grid, a radial diagram, a row of panels, a tab set and an accordion and still ask the reader to do the same thing five times: read a label, read a sentence, repeat. That page is flat, and it will look varied in a specification and identical in a render.
 
 Where more than about half the moments share one reading path, the composition is not finished. This is diagnostic, not a quota — two matters may honestly want the same reading path, and a page whose material is genuinely uniform is allowed to say so.
+
+## Decide the section composition, not the component
+
+Before falling into a familiar section anatomy, decide what the section actually _is_. This is a judgement made while working, not a stage, a written report, an approval point or a reason to produce variants.
+
+**A section composition is the whole thing**, of the kind strong interactive sites are made of:
+
+- its overall silhouette;
+- its use of width and vertical space;
+- where the introduction sits;
+- the dominant visual or content material;
+- internal hierarchy and grouping;
+- depth, overlap and spatial relationships;
+- the reading or interaction behaviour;
+- motion where it is useful;
+- and how it meets the sections above and below it.
+
+**Cards, tabs, accordions, sticky behaviour, stacking and horizontal scroll are mechanisms available inside a section. None of them is a design concept on its own.** Choosing one is not the same as deciding the section, and a section whose only decision was which component to use has not been designed.
+
+Look before deciding. Read the complete page and the immediate neighbours: what reading behaviours are already spent, what section kinds are already used, what the surface rhythm is doing, where scale and density have already gone, and what interaction or motion already exists. Then make this section differ from its neighbours in **reading behaviour or dominant scale** — surface alternation is house rhythm and does not count as difference on its own.
+
+Three questions usually settle it:
+
+1. What relationship has to be visible here — a comparison, a sequence, a whole and its parts, evidence supporting a conclusion, a choice and its consequence, responsibility handed over, a state changing, or sheer scale?
+2. What should the reader do here that they have not done in the last two sections?
+3. What does this section hold that deserves to be the largest thing on screen — and if nothing does, is it quiet by decision?
+
+**Order of work.** Develop a substantial section composition first, then adapt the truthful content, grouping and copy to fit it. The opposite order — converting each supplied planning point into one visible item and arranging the results — is what produces a page of contained payloads under centred introductions. Content and composition inform each other in both directions; neither has to be finished before the other begins.
+
+Nothing false is invented to fill a composition. If a form needs proof, a client result, an interface or operational detail that does not exist, the form is wrong — not the truth boundary.
 
 ## Name the material before drawing
 
@@ -105,7 +135,7 @@ After the composition is approved or supplied, develop sections to the depth eac
 
 Two things prevent a correct payload from still producing a flat section:
 
-- **Say how it is built, not only what it means.** Moves worth having available — a payload with its own ground and different values inside it · a contrasting object rather than a changed band · the middle of the type scale · one dominant element · a surface change from its neighbour · a non-standard opening · something breaking its container. These are optional possibilities selected when the material creates the need, not a checklist, a quota or a variety programme. No section is expected to use several, and a solution outside the list is equally valid. A quiet section says *nothing, deliberately* — that is a valid answer, and leaving it blank is not.
+- **Say how it is built, not only what it means.** Moves worth having available — a payload with its own ground and different values inside it · a contrasting object rather than a changed band · the middle of the type scale · one dominant element · a surface change from its neighbour · a non-standard opening · something breaking its container. These are optional possibilities selected when the material creates the need, not a checklist, a quota or a variety programme. No section is expected to use several, and a solution outside the list is equally valid. A quiet section says _nothing, deliberately_ — that is a valid answer, and leaving it blank is not.
 - **Concentrate, don't spread.** A few moments carry the strong moves. Every section shouting is noise; no section doing anything is timid.
 
 The test for whether a specification line is worth writing: would a different answer change what gets built? If not, do not write it.
@@ -130,7 +160,15 @@ Carry forward only approved meaning, proof, claims and material the plan or the 
 
 "Different" means a different argument, spatial thesis, reading path, dominant material or hero idea. A rearrangement of the same content shape is the same page.
 
-Rebuilding one section *inside a page that is staying* is a narrower case: keep its job, its place in the argument, anything the plan pins, and its surface by default — a surface change moves its neighbours too, so it is a page decision. Everything else is free, and is where the new design comes from. Write down what the material could *become* before choosing any arrangement.
+Rebuilding one section _inside a page that is staying_ is a narrower case with a clear boundary.
+
+**Preserved by default, unless the prompt says otherwise:** the section's purpose; its background surface (a surface change moves its neighbours, so it is a page decision); its eyebrow wording; its headline wording; approved claims; proof boundaries; canonical wording.
+
+**Free — and this is where the new design comes from:** where the introduction sits and how it is aligned; supporting copy; section height; the kind of section it is; the dominant object; the number of items; grouping; hierarchy; layout; width; density; interaction; motion; and the complete inner composition.
+
+So a redesign may change what kind of section this is. It is not limited to rearranging the elements that were there before — and a new version whose copy could be poured back into the old one without either breaking is a rearrangement, not a redesign.
+
+Planning notes do not automatically become visible bullets, cards or objects. Three notes are three things the section must convey; how many objects express them is this decision, not the note's.
 
 ## A reference page, only if the user names one
 
@@ -146,9 +184,9 @@ When redesigning an existing page, capture that page regardless, and read the fu
 
 ## Protect meaning and truth
 
-Identify what the supplied plan marks fixed, adaptable, open and unavailable, and preserve it. Never invent proof, metrics, interfaces, client results, operational detail, pricing or professional capability to complete a design — a payload needing evidence the business does not have is a request, not a design decision, and belongs in what the page still needs.
+Identify what the supplied plan marks **Fixed**, **Approved**, **Open** or **Unavailable**, and preserve it. Never invent proof, metrics, interfaces, client results, operational detail, pricing or professional capability to complete a design — a payload needing evidence the business does not have is a request, not a design decision, and belongs in what the page still needs.
 
-Plan rows are meaning material, not object counts.
+**Everything else in a supplied plan is context.** It carries meaning that must survive; it does not prescribe the number of visible objects, the components, the public copy structure, the internal grouping, the hierarchy, the section type, the payload, the interaction, the motion or the visual anatomy. `docs/PAGE-PLANNING.md` owns that rule in full. Applied here: plan rows are meaning material, not object counts, and a note may be merged, expanded, carried by one object or kept out of public copy entirely provided its meaning survives where the page needs it.
 
 ## Work both scales
 
@@ -165,7 +203,7 @@ Do not design isolated strong sections and assemble them. Do not produce a page 
 
 ## Hand off
 
-The composition is complete when the page has a stated spatial thesis, its environments and width behaviour, a hero derived from this page, a named dominant moment or a reason there is none, an eye path, a weight distribution, proof placement, a reading-path count, and an answer on interaction and meaning-bearing motion.
+The composition is complete when the page has a stated spatial thesis, its surface rhythm and width behaviour, a hero derived from this page, a named dominant moment or a reason there is none, an eye path, a weight distribution, proof placement, a reading-path count, and an answer on interaction and meaning-bearing motion.
 
 Section development is complete when each section has the depth its weight requires and no more.
 

@@ -10,8 +10,7 @@ const scriptSrc = [
   .join(" ");
 
 // Dev-only allowance so impeccable live mode can load. Guarded by NODE_ENV.
-const __impeccableLiveDev =
-  process.env.NODE_ENV === "development" ? " http://localhost:8400" : "";
+const __impeccableLiveDev = process.env.NODE_ENV === "development" ? " http://localhost:8400" : "";
 
 const CSP = [
   "default-src 'self'",

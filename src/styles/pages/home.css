@@ -625,7 +625,6 @@
   font: var(--ui-strong);
 }
 
-
 /* Attention
    Six peers in a hairline lattice. Cells share their edges so the six read as
    one field rather than six floating tiles, and each carries a drawn artefact
@@ -2066,12 +2065,22 @@
 }
 
 /* Compounding
-   One customer question, the answer the website establishes, and three later
-   pieces that reuse what it settled. The relationship is directional, so the
-   treatment is deliberately unequal: the answer is the only element with a
-   ground, and the extensions are annotations tied back to it by a hairline.
-   Four equally-treated panels would say these are peers, which is the one
-   thing this composition must not say. */
+   The journey drawn as a closed circuit on a light drafting ground, with the
+   ledger of what it leaves behind sitting inside the loop and filling as a single
+   enquiry travels round. The loop is the argument: the route returns, and the next
+   pass starts from everything already in place.
+
+   Light on purpose. The section sits between a navy argument above and a paper one
+   below, and the page wants a bright, drawn, technical interlude there rather than
+   another dark panel. On the light end of the palette the plate therefore carries a
+   fill, a hairline and a real shadow.
+
+   Everything rests complete — every trace drawn, every station lit, the ledger
+   full — so the still frame, the script-free render and the reduced-motion render
+   all carry the whole argument. HomeMotion adds the travel.
+
+   Geometry comes from HomeCompoundArt: stations are positioned by the same
+   coordinates the paths are drawn from, so a dot cannot drift off its line. */
 
 .home-compounding {
   background: var(--surface-mist);
@@ -2080,179 +2089,392 @@
 .cmpd {
   display: flex;
   flex-direction: column;
-  gap: var(--space-7);
-}
-
-/* ---- The customer's question ---- */
-
-/* The speaker is named beneath the quotation because this is the client's
-   customer talking, never MindWP addressing the visitor. Without it the line
-   reads as the page asking the reader. */
-/* A rem measure, not `ch`: the figure inherits body size, so a ch value here
-   resolves against the wrong font and sets the question seven lines deep. */
-.cmpd__question {
-  max-width: 46rem;
-  margin-inline: auto;
-  text-align: center;
-}
-
-.cmpd__question blockquote {
-  color: var(--text-primary);
-  font: 600 clamp(1.9rem, 1.3rem + 2.1vw, 3rem) / 1.18 var(--font-display);
-  letter-spacing: var(--display-md-tracking);
-  text-wrap: balance;
-}
-
-.cmpd__question figcaption {
-  margin-top: var(--space-4);
-  color: var(--text-secondary);
-  font: var(--label-caps);
-  letter-spacing: var(--label-caps-tracking);
-  text-transform: uppercase;
-}
-
-/* Attached once to the whole payload, never repeated on a fragment. */
-.cmpd__label {
-  max-width: var(--measure-copy);
-  margin-inline: auto;
-  text-align: center;
-}
-
-/* ---- One object, three annotations ---- */
-
-.cmpd__grid {
-  display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
-  gap: var(--space-7);
-  align-items: start;
-}
-
-/* Fill, edge and shadow together: the light ladder spans a few steps, so a
-   white panel on mist needs all three to exist as an object at all. This is
-   the only element in the section that gets one. */
-.cmpd__answer {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-5);
-  background: var(--surface-card);
+  gap: clamp(var(--space-7), 4vw, var(--space-9));
   border: 1px solid var(--border-hairline);
-  border-radius: var(--radius-lg);
+  border-radius: clamp(1rem, 1.5vw, 1.75rem);
+  /* Drafting paper: a faint square grid, subdued at the edges so the drawing
+     reads as the subject and the grid as the surface it sits on. */
+  background:
+    linear-gradient(var(--surface-card), var(--surface-card)) padding-box,
+    repeating-linear-gradient(to right, var(--surface-sunken) 0 1px, transparent 1px 3rem)
+      padding-box,
+    repeating-linear-gradient(to bottom, var(--surface-sunken) 0 1px, transparent 1px 3rem)
+      padding-box;
+  padding: clamp(1.5rem, 3vw, 3rem);
   box-shadow: var(--elev-focal);
-  padding: clamp(1.5rem, 2.6vw, 2.5rem);
 }
 
-.cmpd__answer-role {
-  color: var(--color-emerald-deep);
-  font: var(--label-caps);
-  letter-spacing: var(--label-caps-tracking);
-  text-transform: uppercase;
+/* ---- The header, inside the plate ---- */
+
+.cmpd__intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: end;
+  gap: var(--space-6) clamp(var(--space-8), 5vw, var(--space-10));
 }
 
-.cmpd__answer dl {
+.cmpd__intro-title {
   display: flex;
   flex-direction: column;
   gap: var(--space-5);
 }
 
-.cmpd__answer dt {
-  color: var(--text-secondary);
-  font: var(--body-sm);
+.cmpd__intro h2 {
+  font: var(--display-lg);
+  letter-spacing: var(--display-lg-tracking);
 }
 
-/* The three statements the later pieces quote, at the middle of the type scale
-   so the answer reads as the dominant material without a display size. */
-.cmpd__answer dd {
-  margin-top: var(--space-2);
-  color: var(--text-primary);
-  font: 600 clamp(1.15rem, 1.02rem + 0.5vw, 1.45rem) / 1.34 var(--font-display);
-  letter-spacing: var(--display-md-tracking);
-  text-wrap: pretty;
-}
-
-.cmpd__extensions {
+.cmpd__intro-copy {
   display: flex;
   flex-direction: column;
-  gap: var(--space-6);
-  padding-top: var(--space-6);
+  gap: var(--space-4);
+  max-width: 32rem;
 }
 
-.cmpd__extensions li {
-  position: relative;
-  padding-left: var(--space-6);
-}
-
-/* The connector runs back toward the answer rather than enclosing the item:
-   these are annotations on the object beside them, not cards of their own. */
-.cmpd__extensions li::before {
-  content: "";
-  position: absolute;
-  top: 0.6rem;
-  left: calc(var(--space-7) * -1);
-  width: calc(var(--space-7) + var(--space-5));
-  height: 1px;
-  background: var(--border-hairline);
-}
-
-.cmpd__reuse {
-  color: var(--color-emerald-deep);
-  font: var(--label-caps);
-  letter-spacing: var(--label-caps-tracking);
-  text-transform: uppercase;
-}
-
-/* A deliberate step below the answer's statements: same family, smaller voice. */
-.cmpd__extensions h3 {
-  margin-top: var(--space-2);
-  color: var(--text-primary);
-  font: 600 1.25rem/1.3 var(--font-display);
-  letter-spacing: var(--display-md-tracking);
-}
-
-.cmpd__extension-body {
-  margin-top: var(--space-2);
-  color: var(--text-secondary);
-  font: var(--body-sm);
+.cmpd__lead {
+  font: var(--body-lg);
 }
 
 .cmpd__boundary {
-  max-width: var(--measure-copy);
-  margin-inline: auto;
+  border-top: 1px solid var(--border-hairline);
+  padding-top: var(--space-4);
   color: var(--text-secondary);
   font: var(--body-sm);
+}
+
+/* ---- The circuit ----
+   The aspect ratio matches the artwork's viewBox exactly, so percentage
+   positioning maps one-to-one onto SVG coordinates. */
+
+.cmpd__circuit {
+  position: relative;
+  aspect-ratio: 1400 / 780;
+}
+
+/* A faint wash inside the route, so what accumulates reads as being held by it. */
+.cmpd__field {
+  fill: var(--emerald-tint-weak);
+  stroke: none;
+}
+
+.cmpd__art {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  fill: none;
+  stroke: var(--color-emerald-deep);
+}
+
+.cmpd__trace {
+  stroke-linecap: round;
+  /* Drawn at rest; HomeMotion animates the offset back from 1. */
+  stroke-dasharray: 1;
+  stroke-dashoffset: 0;
+}
+
+/* Carries the travelling enquiry and is never painted. */
+.cmpd__rail {
+  stroke: none;
+}
+
+.cmpd__token {
+  fill: var(--color-emerald);
+  stroke: var(--color-white);
+  stroke-width: 3;
+  filter: drop-shadow(0 0 0.5rem var(--emerald-glow));
+}
+
+/* ---- Stations ----
+   Each is a point on the loop. `--lit` rests at 1; HomeMotion sets it to 0 and
+   raises it as the enquiry arrives. */
+
+.cmpd__station {
+  --lit: 1;
+
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  width: 0;
+  height: 0;
+}
+
+.cmpd__dot {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0.75rem;
+  height: 0.75rem;
+  translate: -50% -50%;
+  border-radius: var(--radius-pill);
+  border: 2px solid var(--surface-card);
+  background: var(--color-navy);
+}
+
+/* The halo is the arrival: it only exists once the enquiry has been here. */
+.cmpd__dot::after {
+  content: "";
+  position: absolute;
+  inset: -0.375rem;
+  border-radius: inherit;
+  background: var(--emerald-tint);
+  opacity: var(--lit);
+  scale: calc(0.4 + 0.6 * var(--lit));
+}
+
+.cmpd__station-copy {
+  position: absolute;
+  width: clamp(9.5rem, 13vw, 12.5rem);
+  opacity: calc(0.42 + 0.58 * var(--lit));
+}
+
+/* Four placements, because a station on a turn has room to the side and a station
+   on a straight has room above or below. A tick joins each label to its dot, so a
+   station reads as one thing rather than as a caption near a line. */
+.cmpd__station--top .cmpd__station-copy,
+.cmpd__station--bottom .cmpd__station-copy {
+  left: 0;
+  translate: -50% 0;
   text-align: center;
 }
 
-/* Stacked, the sideways connector has nothing to point at, so it becomes a
-   short rule above each item and the reuse label carries the relationship. */
-@media (max-width: 68rem) {
-  .cmpd__grid {
-    grid-template-columns: minmax(0, 1fr);
-    gap: var(--space-6);
+.cmpd__station--top .cmpd__station-copy {
+  bottom: calc(var(--space-6) + var(--tier, 0) * var(--space-8));
+}
+
+.cmpd__station--bottom .cmpd__station-copy {
+  top: calc(var(--space-6) + var(--tier, 0) * var(--space-8));
+}
+
+.cmpd__station--left .cmpd__station-copy,
+.cmpd__station--right .cmpd__station-copy {
+  top: 0;
+  translate: 0 -50%;
+}
+
+.cmpd__station--left .cmpd__station-copy {
+  right: var(--space-6);
+  text-align: right;
+}
+
+.cmpd__station--right .cmpd__station-copy {
+  left: var(--space-6);
+  text-align: left;
+}
+
+.cmpd__station-copy::after {
+  content: "";
+  position: absolute;
+  background: var(--border-hairline);
+}
+
+.cmpd__station--top .cmpd__station-copy::after,
+.cmpd__station--bottom .cmpd__station-copy::after {
+  left: 50%;
+  width: 1px;
+  height: calc(var(--space-5) + var(--tier, 0) * var(--space-8));
+}
+
+.cmpd__station--top .cmpd__station-copy::after {
+  top: 100%;
+}
+
+.cmpd__station--bottom .cmpd__station-copy::after {
+  bottom: 100%;
+}
+
+.cmpd__station--left .cmpd__station-copy::after,
+.cmpd__station--right .cmpd__station-copy::after {
+  top: 50%;
+  width: var(--space-5);
+  height: 1px;
+}
+
+.cmpd__station--left .cmpd__station-copy::after {
+  left: 100%;
+}
+
+.cmpd__station--right .cmpd__station-copy::after {
+  right: 100%;
+}
+
+.cmpd__station-step {
+  color: var(--color-emerald-deep);
+  font: var(--label-caps);
+  letter-spacing: var(--label-caps-tracking);
+  font-variant-numeric: tabular-nums;
+}
+
+.cmpd__station-copy h3 {
+  margin-top: var(--space-2);
+  font: var(--display-sm);
+  letter-spacing: var(--display-sm-tracking);
+}
+
+.cmpd__station-body {
+  margin-top: var(--space-2);
+  color: var(--text-secondary);
+  font: var(--body-sm);
+}
+
+/* ---- The ledger, inside the loop ---- */
+
+/* Centred on the loop's own midline rather than the box's, and narrow enough to
+   sit clear of both straights — the ledger is inside the route, not across it. */
+.cmpd__ledger {
+  position: absolute;
+  left: 50%;
+  top: 51.9%;
+  width: min(24rem, 28%);
+  translate: -50% -50%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  text-align: center;
+}
+
+.cmpd__ledger-title,
+.cmpd__ledger-note {
+  color: var(--text-secondary);
+}
+
+.cmpd__ledger-title {
+  font: var(--label-caps);
+  letter-spacing: var(--label-caps-tracking);
+  text-transform: uppercase;
+}
+
+.cmpd__assets {
+  display: flex;
+  flex-direction: column;
+}
+
+.cmpd__asset {
+  --lit: 1;
+
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: var(--space-3);
+  border-bottom: 1px solid var(--border-hairline);
+  padding-block: var(--space-2);
+  color: var(--text-primary);
+  font: var(--body-sm);
+  opacity: calc(0.3 + 0.7 * var(--lit));
+}
+
+.cmpd__asset:first-child {
+  border-top: 1px solid var(--border-hairline);
+}
+
+.cmpd__asset-step {
+  color: var(--color-emerald-deep);
+  font: var(--label-caps);
+  letter-spacing: var(--label-caps-tracking);
+  font-variant-numeric: tabular-nums;
+}
+
+.cmpd__ledger-note {
+  font: italic 500 1rem/1.5 var(--font-display);
+}
+
+@media (max-width: 80rem) {
+  .cmpd__station-body {
+    display: none;
   }
 
-  .cmpd__extensions {
-    padding-top: var(--space-2);
+  .cmpd__ledger {
+    width: min(26rem, 44%);
   }
 
-  .cmpd__extensions li {
-    padding-left: 0;
-    padding-top: var(--space-4);
-  }
-
-  .cmpd__extensions li::before {
-    top: 0;
-    left: 0;
-    width: var(--space-7);
+  .cmpd__asset {
+    font: var(--body-sm);
   }
 }
 
-@media (max-width: 44rem) {
-  .cmpd {
-    gap: var(--space-6);
+/* Narrow: a circuit needs width to be a circuit, so the geometry is dropped
+   rather than shrunk. The same stations read as a numbered sequence and the
+   ledger follows them as its summary. */
+@media (max-width: 64rem) {
+  .cmpd__intro {
+    grid-template-columns: minmax(0, 1fr);
+    align-items: start;
   }
 
-  .cmpd__question {
-    max-width: none;
+  .cmpd__circuit {
+    aspect-ratio: auto;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-8);
+  }
+
+  .cmpd__art {
+    display: none;
+  }
+
+  .cmpd__stations {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .cmpd__station {
+    --lit: 1;
+
+    position: relative;
+    left: 0;
+    top: 0;
+    width: auto;
+    height: auto;
+    border-top: 1px solid var(--border-hairline);
+    padding: var(--space-5) 0 var(--space-5) var(--space-7);
+  }
+
+  .cmpd__station:last-child {
+    border-bottom: 1px solid var(--border-hairline);
+  }
+
+  .cmpd__dot {
+    top: calc(var(--space-5) + 0.6rem);
+    left: 0;
+    translate: 0 0;
+  }
+
+  .cmpd__station-copy {
+    position: relative;
+    width: auto;
+    translate: 0 0;
+    text-align: left;
+  }
+
+  .cmpd__station-copy,
+  .cmpd__station--top .cmpd__station-copy,
+  .cmpd__station--bottom .cmpd__station-copy,
+  .cmpd__station--left .cmpd__station-copy,
+  .cmpd__station--right .cmpd__station-copy {
+    inset: auto;
+    text-align: left;
+  }
+
+  .cmpd__station-copy::after {
+    display: none;
+  }
+
+  .cmpd__station-body {
+    display: block;
+  }
+
+  .cmpd__ledger {
+    position: relative;
+    left: 0;
+    top: 0;
+    width: auto;
+    translate: 0 0;
+    text-align: left;
+  }
+
+  .cmpd__asset {
+    justify-content: flex-start;
   }
 }
 

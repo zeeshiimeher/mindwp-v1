@@ -36,7 +36,8 @@ export function MissedCallsReturn() {
           <p className="lrh-return__feature" data-lrh-sequence-item>
             <span className="lrh-artifact-label">The capability</span>
             <strong>Missed-call text-back.</strong> The call is detected, an agreed message goes out
-            on the number they rang, and the missed call is placed with the person who returns calls.
+            on the number they rang, and the missed call is placed with the person who returns
+            calls.
           </p>
         </div>
 
@@ -75,10 +76,7 @@ export function MissedCallsReturn() {
                 x2="360"
                 y2="45"
               />
-              <path
-                className="lrh-return__loop"
-                d="M360 45 C 408 45 408 105 344 105 L 120 105"
-              />
+              <path className="lrh-return__loop" d="M360 45 C 408 45 408 105 344 105 L 120 105" />
               <path className="lrh-return__rail lrh-return__rail--live" d="M360 45 L 560 45" />
               <circle className="lrh-return__node" cx="560" cy="45" r="7" />
               <text className="lrh-return__tag" x="8" y="26">

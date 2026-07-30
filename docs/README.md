@@ -4,14 +4,14 @@ This directory is MindWP's reusable project memory. Open only the authorities th
 
 ## Active authorities
 
-| Document                               | Owns                                                                                                                                        |
-| -------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
-| [FOUNDATION.md](./FOUNDATION.md)       | Durable identity, buyer principles, website-centred rationale, truth, proof, privacy and professional boundaries                            |
-| [STRATEGY.md](./STRATEGY.md)           | Current commercial direction, offers, service responsibilities, qualification, conversion direction, page roles and open decisions          |
-| [WRITING.md](./WRITING.md)             | Voice, audience register, claims discipline and responsible public-language practice                                                        |
+| Document                               | Owns                                                                                                                                                              |
+| -------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [FOUNDATION.md](./FOUNDATION.md)       | Durable identity, buyer principles, website-centred rationale, truth, proof, privacy and professional boundaries                                                  |
+| [STRATEGY.md](./STRATEGY.md)           | Current commercial direction, offers, service responsibilities, qualification, conversion direction, page roles and open decisions                                |
+| [WRITING.md](./WRITING.md)             | Voice, audience register, claims discipline and responsible public-language practice                                                                              |
 | [PAGE-PLANNING.md](./PAGE-PLANNING.md) | The page's commercial responsibility, buyer decision, sibling boundaries, matters, progression, reader demands, proof reality, weight and the handoff into design |
-| [DESIGN.md](./DESIGN.md)               | Shared visual grammar, meaning-bearing composition, page experience, responsive intent, motion intent and the criteria for judging a render |
-| [ENGINEERING.md](./ENGINEERING.md)     | Repository source, CSS, responsive, accessibility, interaction, motion mechanism, performance, capture commands and validation              |
+| [DESIGN.md](./DESIGN.md)               | Shared visual grammar, meaning-bearing composition, page experience, responsive intent, motion intent and the criteria for judging a render                       |
+| [ENGINEERING.md](./ENGINEERING.md)     | Repository source, CSS, responsive, accessibility, interaction, motion mechanism, performance, capture commands and validation                                    |
 
 The documents have separate domains. When two statements appear to conflict, use the authority that owns the decision rather than combining both. Strategy settles the audience lane, market emphasis, pricing posture, public voice, offer hierarchy and conversion direction; their absence from this map is not an open question.
 
@@ -36,15 +36,15 @@ Page work does not begin at a fixed point. It begins wherever the supplied mater
 
 Recognise the stage from what arrives, not from the words used to ask. Say in one line which stage you are entering at, then continue — do not ask the user to classify their own request or to adopt particular terminology.
 
-| What arrives | Already settled | Enter at |
-| ------------ | --------------- | -------- |
-| A route name, a business goal or a rough idea | nothing | Planning |
-| Argument, matters, proof, boundaries, reader demands | the plan | Design |
-| Composition, environments, what each moment is made of | plan and composition | Section development, then build |
-| Final copy and an approved design | plan, composition and copy | Build |
-| A built page and "is this good" | all | Visual judgement |
-| A built page and a named defect | all | Technical repair |
-| One section, one direction, one comparison | varies | The requested scope only |
+| What arrives                                              | Already settled            | Enter at                        |
+| --------------------------------------------------------- | -------------------------- | ------------------------------- |
+| A route name, a business goal or a rough idea             | nothing                    | Planning                        |
+| Argument, matters, proof, boundaries, reader demands      | the plan                   | Design                          |
+| Composition, surface rhythm, what each section is made of | plan and composition       | Section development, then build |
+| Final copy and an approved design                         | plan, composition and copy | Build                           |
+| A built page and "is this good"                           | all                        | Visual judgement                |
+| A built page and a named defect                           | all                        | Technical repair                |
+| One section, one direction, one comparison                | varies                     | The requested scope only        |
 
 A supplied plan that skips a stage does not mean that stage is done — it means there is a gap to name. Enter at the latest stage the material actually reaches, and report what an earlier stage left open rather than quietly filling it.
 
@@ -96,12 +96,12 @@ In every route, open Foundation, Strategy or Writing when a business, positionin
 
 Optional specialists, not a mandatory chain. Each declares its own trigger and context.
 
-| Skill | Use for | May use a named reference page |
-| ----- | ------- | ------------------------------ |
-| `mindwp-page-design`     | Deciding how a page occupies space and what each moment is made of; direction, concept and critique. Produces a page composition first, then proportional section development. No code | On request — capture first |
-| `mindwp-page-build`      | Implementing an approved composition in source                                                        | No                  |
-| `mindwp-design-eye`      | Judging whether a built page is visually good                                                         | Yes — capture only  |
-| `mindwp-frontend-quality`| Technical repair, finalisation and frontend quality review                                            | No                  |
+| Skill                     | Use for                                                                                                                                                                                | May use a named reference page |
+| ------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------ |
+| `mindwp-page-design`      | Deciding how a page occupies space and what each moment is made of; direction, concept and critique. Produces a page composition first, then proportional section development. No code | On request — capture first     |
+| `mindwp-page-build`       | Implementing an approved composition in source                                                                                                                                         | No                             |
+| `mindwp-design-eye`       | Judging whether a built page is visually good                                                                                                                                          | Yes — capture only             |
+| `mindwp-frontend-quality` | Technical repair, finalisation and frontend quality review                                                                                                                             | No                             |
 
 Page planning has no skill of its own; `PAGE-PLANNING.md` is applied directly.
 

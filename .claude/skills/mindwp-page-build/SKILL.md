@@ -11,9 +11,9 @@ Read `docs/ENGINEERING.md` for repository source, CSS, accessibility and validat
 
 ## Implement what was approved
 
-The approved composition owns the page's spatial thesis, its environments and width behaviour, the hero, the dominant object, the eye path, weight, proof placement, reading paths, and any interaction or meaning-bearing motion it names. Section development owns payload type, hierarchy, the relationship each section embodies, and surface role.
+The approved composition owns the page's spatial thesis, its surface rhythm and width behaviour, the hero, the dominant object, the eye path, weight, proof placement, reading paths, and any interaction or meaning-bearing motion it names. Section development owns the section composition — payload, hierarchy, grouping, scale, density, introduction placement, the relationship each section embodies, and surface role.
 
-**Preserve the spatial envelope.** Where the composition says a moment is wide, full-bleed, breaking its container or continuous across environments, build that. Quietly returning it to the default container is the single easiest way to deliver a different, flatter page while the markup looks correct — the container primitives make the narrow path free and every other path work.
+**Preserve the spatial envelope.** Where the composition says a section is wide, full-bleed, breaking its container or continuous with its neighbour, build that. Quietly returning it to the default container is the single easiest way to deliver a different, flatter page while the markup looks correct — the container primitives make the narrow path free and every other path work.
 
 If the user asks for build only, build only. Do not reopen strategy, rewrite supplied copy, or improve the composition on the way past.
 
@@ -22,6 +22,19 @@ Solve technical geometry freely: grid tracks, spacing, overflow, stacking, state
 **Fill technical silences; return design silences.** An unstated track, gap, breakpoint, easing or cleanup detail is yours. An unstated payload, hierarchy, relationship, proof, claim or spatial property is not — those go back to design or to the owner. An unstated width is a design silence, not a technical one, because the default is not neutral: it decides the question identically every time.
 
 **Do not silently substitute.** If a payload proves impractical, report the conflict and return to design. Replacing a named object with an easier text layout, dropping a named focal moment, collapsing a wide moment into the container, or downgrading a focal section to fit the available time is a design change made without a design decision — that is the failure this split exists to prevent.
+
+## How much design latitude the task carries
+
+There is no universal answer, and no general licence to change an approved composition. **The task prompt decides**, and these are the cases:
+
+- **Execution only** — preserve the approved composition exactly. Resolve technical detail and nothing else.
+- **Build from an approved design** — as above. Fill technical silences; return design silences.
+- **Direct design-and-build** — no separate composition exists, so make the design decisions the stated scope needs, within it. `mindwp-page-design`'s section-composition guidance applies.
+- **Redesign** — the section composition is expected to change substantially. See that skill's redesign boundary for what is preserved and what is free.
+
+Whichever case applies, missing proof, unsupported claims and open commercial decisions go back to the owner rather than being resolved locally.
+
+In every case, technical detail is yours: geometry, grid tracks, spacing, responsive behaviour, breakpoints, overflow, stacking, state handling and motion lifecycle. **What is never yours is silently redesigning an explicitly approved composition.**
 
 Where implementation reveals that the design itself is wrong, say so with the evidence. That is useful, and it is not the same as quietly building something else.
 
@@ -61,12 +74,12 @@ The specification's `Built by` row is a build instruction, not a note. If it say
 
 **Verify in the render that the relationship survived, move by move.** Markup that satisfies a named move is not the same as a render that shows it. A negative margin that breaks no visible edge, a fill within a step of its own ground, a "dominant" object that is not the largest thing in its band — each of these builds the instruction and loses the meaning. Before reporting, take each named move and each stated relationship, find it in the capture, and say where it is. Anything you cannot point at in the render did not get built, whatever the source says.
 
-Verify the composition's page-scale claims the same way, and in the capture rather than in the source: the stated width behaviour, every breakout, the environments actually reading as distinct, the named dominant object actually dominating, and the eye path arriving where it was supposed to. A page whose composition promised a wide moment and renders as a uniform centred column has lost its design, however faithful each section is.
+Verify the composition's page-scale claims the same way, and in the capture rather than in the source: the stated width behaviour, every breakout, each section reading as distinct from its neighbours, the named dominant object actually dominating, and the eye path arriving where it was supposed to. A page whose composition promised a wide moment and renders as a uniform centred column has lost its design, however faithful each section is.
 
 Five failures to check for in your own output before reporting:
 
 - **Padding standing in for emphasis.** `.section--focal` only changes padding and gap. On a small payload it produces a taller band with more empty space, not a focal section. Every focal section needs a payload that earns it.
-- **An object invisible against its own ground.** A card, panel or line whose value sits within a step or two of the surface behind it disappears in the render even though the markup is correct. On light surfaces the whole ladder spans a few points of lightness and `--elev-raised` is faint — an object there usually needs a fill *and* a hairline *and* a shadow, not one of the three.
+- **An object invisible against its own ground.** A card, panel or line whose value sits within a step or two of the surface behind it disappears in the render even though the markup is correct. On light surfaces the whole ladder spans a few points of lightness and `--elev-raised` is faint — an object there usually needs a fill _and_ a hairline _and_ a shadow, not one of the three.
 - **Text clipped by an overlapping neighbour.** Rotation, overlap and stagger are the moves most likely to crop their own content. Check the widest and narrowest widths, not just the design width.
 - **A missing middle.** Display heading straight to body copy, with nothing between, is the signature of a flat section. Use the scale's middle steps for payload headings.
 - **A responsive block that never arrived.** A multi-column payload with no narrow-width rule will clip and crush at 400px while looking perfect at 1640. Capture both before reporting.

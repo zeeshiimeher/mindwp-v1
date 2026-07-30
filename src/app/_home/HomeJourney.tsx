@@ -151,10 +151,7 @@ export function HomeReview() {
 export function HomeClosing() {
   return (
     <section id="closing" className="home-closing section on-dark">
-      <div
-        className="container section-intro section-intro--centered"
-        data-home-sequence
-      >
+      <div className="container section-intro section-intro--centered" data-home-sequence>
         <p className="eyebrow eyebrow--centered" data-home-sequence-item>
           Visibility &amp; enquiry review
         </p>

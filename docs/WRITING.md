@@ -32,7 +32,7 @@ Good copy makes three things easy to follow:
 2. what is currently unclear, unsupported or poorly handled;
 3. what the approved MindWP scope changes.
 
-The customer or patient in point 1 is the *buyer's* customer, not the reader. Describe their decision as something the owner is responsible for improving — never by addressing them directly or slipping into the voice of a business speaking to its own customers.
+The customer or patient in point 1 is the _buyer's_ customer, not the reader. Describe their decision as something the owner is responsible for improving — never by addressing them directly or slipping into the voice of a business speaking to its own customers.
 
 Reach the concrete offer and genuine evidence at the point the argument needs them, rather than holding the reader in problem language for a whole page. Each section and service page carries its own part of the argument; the complete MindWP model belongs in one place, not in every one of them.
 

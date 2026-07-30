@@ -30,12 +30,7 @@ export function HomeHero() {
             businesses, designed to support growth through better visibility, better handling and
             greater operational consistency.
           </p>
-          <Button
-            href={CONTACT_PATH}
-            variant="on-dark"
-            className="btn-lg"
-            data-home-hero-item
-          >
+          <Button href={CONTACT_PATH} variant="on-dark" className="btn-lg" data-home-hero-item>
             {PRIMARY_CTA_LABEL}
           </Button>
         </div>

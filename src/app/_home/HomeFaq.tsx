@@ -60,10 +60,7 @@ export function HomeFaq() {
 
   return (
     <section id="faq" className="home-faq section">
-      <div
-        className="container section-intro section-intro--centered"
-        data-home-sequence
-      >
+      <div className="container section-intro section-intro--centered" data-home-sequence>
         <p className="eyebrow eyebrow--centered" data-home-sequence-item>
           Straight answers
         </p>

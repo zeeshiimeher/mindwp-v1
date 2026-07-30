@@ -107,11 +107,7 @@ export function HomeHeroArt() {
         ))}
 
         {/* the route the enquiry takes, drawn before it travels */}
-        <path
-          className="ha__route"
-          d="M470 250 C 508 300 528 355 548 420"
-          pathLength="1"
-        />
+        <path className="ha__route" d="M470 250 C 508 300 528 355 548 420" pathLength="1" />
 
         {/* truthful confirmation: it marks that the message was sent, and stays */}
         <path className="ha__tick" d="M509 294 l6 6 L528 284" />

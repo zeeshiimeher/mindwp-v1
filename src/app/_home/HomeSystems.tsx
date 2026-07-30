@@ -92,10 +92,7 @@ export function HomeAfterEnquiry() {
           </li>
         ))}
       </ol>
-      <p
-        className="container home-after-enquiry__attribution home-artifact-label"
-        data-home-fade
-      >
+      <p className="container home-after-enquiry__attribution home-artifact-label" data-home-fade>
         Part of Lead Response &amp; Handling
       </p>
     </section>
@@ -130,8 +127,8 @@ export function HomeOneSystem() {
           The website is the public centre and the usual place to start, but it is not a
           precondition. Local SEO Authority supports discovery and evaluation before someone reaches
           the website. Lead Response &amp; Handling, Follow-Up &amp; CRM and Reputation &amp; Review
-          begin once someone makes contact. Each is planned and scoped on its own, against a new website or one
-          you already have.
+          begin once someone makes contact. Each is planned and scoped on its own, against a new
+          website or one you already have.
         </p>
       </div>
 
@@ -160,8 +157,8 @@ export function HomeBeyondWebsite() {
         <HomeSystemsSelector />
       </div>
       <p className="container home-systems__boundary" data-home-fade>
-        Automation can acknowledge, route, organise and prompt. The decisions that require
-        judgement remain with your team.
+        Automation can acknowledge, route, organise and prompt. The decisions that require judgement
+        remain with your team.
       </p>
     </section>
   );

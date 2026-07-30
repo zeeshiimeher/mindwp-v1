@@ -216,10 +216,7 @@ test("arguments reject unknown profiles, options, skills, and profile-inapplicab
     () => options(["orientation", "--page-plan", resolve(tmpdir(), "synthetic-page.md")]),
     /focused profile/,
   );
-  assert.throws(
-    () => options(["orientation", "--skill", "mindwp-page-design"]),
-    /focused profile/,
-  );
+  assert.throws(() => options(["orientation", "--skill", "mindwp-page-design"]), /focused profile/);
   assert.throws(() => options(["orientation", "--overwrite"]), /requires --output/);
 });
 

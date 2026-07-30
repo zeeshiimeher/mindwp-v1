@@ -8,15 +8,29 @@ Page-specific plans are supplied separately, and only when the relevant page is 
 
 ## What a plan owns, and what it must leave alone
 
-A plan owns the page's argument: who is deciding, what they must be able to do with the material, what evidence supports it, what belongs on another page, and what is still unresolved.
+A plan owns the page's argument: who is deciding, what the page must establish, what evidence supports it, what belongs on another page, and what is still unresolved.
 
-It does not own the page's shape. One principle carries the rest of this document:
+It does not own the page's shape.
 
-> **A matter in the page argument is not automatically a visual section, and a semantic section is not automatically an isolated spatial band.**
+### The context rule
 
-Several matters may belong to one continuous environment. One important matter may need several passages, a change of state or a participatory moment. A quiet matter may need very little. Design owns that grouping.
+> **Unlabelled planning material carries meaning and should be understood. It does not prescribe visual anatomy.**
 
-So state the matters and their progression, and mark which ones carry the page. Do not number them as sections, present them as a fixed count, or imply that each needs its own place on screen. A plan delivered as an ordered list of equal matters will be built as an ordered list of equal bands, whatever else it says.
+An ordinary planning note does not settle the number of visible objects, cards, columns, rows, steps or panels, public copy structure, internal grouping, content hierarchy, section type, payload, interaction, motion, or exact visual anatomy.
+
+What must survive is the business meaning, the truth, the proof, the claims and the boundaries. The rest is design's.
+
+In practice:
+
+- Three planning points are three things the section must convey — not three items on screen.
+- Four responsibilities are four facts — not four cards.
+- A working heading guides meaning; it is not the section's concept.
+- A note may be shortened, merged with another, expanded into a richer experience, carried by a single object, or kept out of public copy altogether, provided its meaning survives where the page needs it.
+- A stated count is an indication of scope, not an object count.
+
+A matter in the argument is not automatically a visual section, and a section is not automatically an isolated band. One matter may need several passages or a change of state; a quiet matter may need very little. Design owns that grouping.
+
+So state the matters and mark which ones carry the page. A plan delivered as an ordered list of equal matters will be built as an ordered list of equal bands, whatever else it says.
 
 ## Start from the decision being made
 
@@ -33,29 +47,29 @@ Specificity comes from the actual decision, its language, its evidence and its p
 
 ## Reader demands
 
-A reader demand states **what the visitor must be able to do with the material**. It is the plan's primary unit, and it is what gives design a relationship to compose rather than a topic to illustrate.
+A reader demand states **what the visitor must be able to do with the material**. Used where it clarifies, it gives design a relationship to compose rather than a topic to illustrate.
 
-Use a verb the reader performs — read, inspect, compare, trace, follow, weigh, verify, choose, distinguish, recognise, and others the material genuinely calls for. Use *understand* where understanding is honestly the most accurate verb; some material is simply explanation, and pretending otherwise produces a contrived demand.
+Use a verb the reader performs — read, inspect, compare, trace, follow, weigh, verify, choose, distinguish, recognise, and others the material genuinely calls for. Use _understand_ where understanding is honestly the most accurate verb; some material is simply explanation, and pretending otherwise produces a contrived demand.
 
 A demand may briefly state the understanding the action produces. Keep that subordinate. Two competing planning units is one too many, and the action is the one design can work from.
 
 The difference is not stylistic:
 
-> *The visitor should understand that public review and private feedback are offered equally.*
+> _The visitor should understand that public review and private feedback are offered equally._
 > → two labelled cards, one sentence each.
 
-> *The visitor must be able to read the actual invitation and check for themselves that both routes appear in it, at the same moment, described the same way.*
-> → the message itself, at a size where it can be read.
+> _The visitor must be able to read the actual invitation and check for themselves that both routes appear in it, at the same moment, described the same way._
+> → a section that has to make something genuinely readable and checkable.
 
-Both are true. Only the second tells a designer what has to be on screen.
+Both are true. The second gives design a relationship worth solving; it still does not say what the solution is, and it should not.
 
 Three things make a demand useful:
 
-- **It names the specific material the action is performed on** — this message, this record, this comparison, this piece of evidence. A demand about a category will be drawn as a labelled box.
+- **It is concrete about the reader's activity** — reading a real message, checking a record, comparing two things, following a sequence. A demand about a category tells design nothing and will be drawn as a labelled box.
 - **It could not be transplanted to another MindWP page unchanged.** If it could, it is too general to shape anything, and two pages carrying it will become the same page.
-- **It names no mechanism.** Not a card, tab, accordion, sticky passage, scroll sequence, gallery or animation. Those are answers, and answering is design's work.
+- **It names no mechanism, and no payload.** Not a card, tab, accordion, sticky passage, scroll sequence, gallery or animation — and not the object that must appear either. Naming the thing on screen settles a design decision inside a planning document; describing what the reader must be able to do leaves it open. Both sound similar and behave very differently.
 
-Do not turn the verbs into a controlled vocabulary, a checklist or a tally. There is no target number of demands, no requirement that they differ, and no virtue in variety for its own sake. Two matters may honestly carry the same demand.
+Do not turn the verbs into a controlled vocabulary, a checklist or a tally. There is no target number of demands, no requirement that they differ, and no virtue in variety for its own sake. Two matters may honestly carry the same demand, and a plan with no demands at all may still be a good plan.
 
 ## Proof reality
 
@@ -77,7 +91,7 @@ Do not reconstruct proof from memory or from another page. If evidence is not su
 
 State the narrative progression from arrival to action — how understanding, trust, evidence and readiness accumulate — and say which two or three matters carry the page.
 
-Weight is a planning decision because it is a commercial one: it says where the buyer's attention is worth spending. Design decides how that weight is expressed. A plan that marks everything important has marked nothing.
+Weight is a planning decision because it is a commercial one: it says where the buyer's attention is worth spending. It is not a statement about vertical extent, object size or section height — design decides how weight is expressed, and a marked matter may be carried by one dominant object rather than by a taller band. A plan that marks everything important has marked nothing.
 
 Say plainly which matters are connective. A matter that exists to move the reader from one part of the argument to the next is doing real work, and naming it as such prevents it being developed into something it does not need to be.
 
@@ -95,28 +109,24 @@ A plan may fix wording where meaning, law, search intent or an approved claim de
 
 Everything else is adaptable. Supporting detail is a source of meaning, not a required public-copy or object count; it may be shortened, deepened, regrouped or rewritten as content and composition develop. What may never be invented is missing strategy, proof, claims or operational detail.
 
-Headings and eyebrows may arrive at any of four statuses:
-
-- **Fixed** — preserve exactly.
-- **Meaning-fixed** — preserve the substance, allow responsible rewording.
-- **Open** — the plan states what the heading must establish; the wording is written later.
-- **Developed during design** — written once the composition is settled.
-
-Where a heading is not fixed, prefer the last two. A heading written before the composition exists tends to name a category, and a category has no shape, so the section becomes an illustration of a label. A heading written afterwards tends to make a claim about something actually on screen.
+A heading or eyebrow that is not marked **Fixed** is ordinary context: it guides meaning and may be rewritten, moved, merged or replaced once the composition exists. A heading written before the composition tends to name a category, and a category has no shape, so the section becomes an illustration of a label. A heading written afterwards tends to make a claim about something actually on screen.
 
 **A supplied heading guides meaning. It does not dictate section anatomy** — not the payload, the grouping, the count, the surface, the width, or whether the matter is one section or three.
 
 ## Status vocabulary
 
-- **Verbatim fixed:** preserve the exact approved wording.
-- **Meaning or fact fixed:** preserve the approved substance while allowing responsible wording changes.
-- **Adaptable:** may be rewritten, regrouped, shortened, deepened or reformatted while preserving its job and truth.
-- **Open:** requires a decision or evidence before it can be final. Mark it **blocking** only when the page cannot proceed responsibly; otherwise **deferrable**.
-- **Unavailable:** must not be simulated, especially as proof.
+Four statuses, used only where they are needed:
+
+- **Fixed** — must appear exactly. Canonical service and tier names, CTA labels, approved claims, legal wording.
+- **Approved** — an owner decision that stands. Preserve it; do not reopen it.
+- **Open** — undecided, and must not be invented.
+- **Unavailable** — must not be simulated, especially as proof.
+
+**Ordinary context requires no label.** Unlabelled material is understood and its meaning preserved, and it is adaptable in form under the context rule above. Do not extend this into a larger status framework, and do not treat unlabelled material as fixed because it happens to be written down.
 
 ## Unresolved decisions
 
-Record only decisions that would materially change *this page*, name their owner, and do not invent an answer.
+Record only decisions that would materially change _this page_, name their owner, and do not invent an answer.
 
 Where a commercial term is open, Strategy owns how to write to it. A page-specific plan may resolve a page-specific need without pretending to settle the wider business.
 
@@ -135,9 +145,11 @@ An incomplete plan is usually still usable. Fill what is fillable, say in one li
 
 ## The handoff into design
 
-Design should receive: the buyer and their decision; the page's responsibility and desired action; the matters and their progression; the reader demands; the proof reality; which matters carry the page and which are connective; the boundaries; and the status of any supplied wording.
+Design should receive: the buyer and their decision; the page's responsibility and desired action; the matters and what each must establish; the proof reality; which matters carry the page and which are connective; the boundaries; and anything marked Fixed, Approved, Open or Unavailable.
 
-Design owns everything else — grouping into environments, sectioning, spatial thesis, hero, width behaviour, payload material, reading paths, weight expression, interaction, motion, responsive transformation and the headings that are not fixed.
+Design owns everything else — sectioning and grouping, section composition, spatial use, hero, width behaviour, dominant material, payload, reading and interaction behaviour, weight expression, motion, responsive transformation, counts, and the wording that is not Fixed.
+
+This list is what design needs, not a form to complete. A shorter handoff that leaves more open is usually the better one.
 
 ## Reviewing a plan
 

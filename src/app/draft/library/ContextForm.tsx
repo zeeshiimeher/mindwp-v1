@@ -41,8 +41,8 @@ export function ContextForm() {
             Ask for what the next person needs. <em>Nothing else.</em>
           </h2>
           <p data-lrh-sequence-item>
-            Every extra field adds effort, so each one has to save the person replying from having to
-            ask. What belongs in a consultation belongs in the consultation.
+            Every extra field adds effort, so each one has to save the person replying from having
+            to ask. What belongs in a consultation belongs in the consultation.
           </p>
         </div>
 

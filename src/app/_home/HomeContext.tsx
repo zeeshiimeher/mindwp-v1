@@ -25,10 +25,7 @@ const ADVISER_LEADS = [
 export function HomeContext() {
   return (
     <section id="context" className="home-context section on-dark">
-      <div
-        className="container section-intro section-intro--centered"
-        data-home-sequence
-      >
+      <div className="container section-intro section-intro--centered" data-home-sequence>
         <p className="eyebrow eyebrow--centered" data-home-sequence-item>
           Built around a decision
         </p>
@@ -37,9 +34,9 @@ export function HomeContext() {
           <em>the questions, evidence and actions people need to decide.</em>
         </h2>
         <p data-home-sequence-item>
-          A patient weighing treatment and an employer facing a sponsor-licence decision are both looking
-          for confidence — just not from the same questions, the same evidence, or the same next
-          step. So each website is shaped around the work itself, not a shared template.
+          A patient weighing treatment and an employer facing a sponsor-licence decision are both
+          looking for confidence — just not from the same questions, the same evidence, or the same
+          next step. So each website is shaped around the work itself, not a shared template.
         </p>
       </div>
 

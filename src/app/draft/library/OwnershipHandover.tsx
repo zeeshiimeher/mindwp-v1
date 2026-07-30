@@ -31,8 +31,8 @@ export function OwnershipHandover() {
         </p>
         <h2 data-lrh-sequence-item>Then a person takes it.</h2>
         <p data-lrh-sequence-item>
-          Not a queue, and not a shared inbox everyone assumes someone else is watching. This is what
-          lands in front of the person who owns the next move.
+          Not a queue, and not a shared inbox everyone assumes someone else is watching. This is
+          what lands in front of the person who owns the next move.
         </p>
       </div>
 
@@ -50,7 +50,9 @@ export function OwnershipHandover() {
               Hi — are you taking on new clients at the moment? I&apos;d need something in the next
               few weeks if that&apos;s possible.
             </blockquote>
-            <p className="lrh-hand__meta">Website form · 14:32 · first time they have been in touch</p>
+            <p className="lrh-hand__meta">
+              Website form · 14:32 · first time they have been in touch
+            </p>
           </div>
 
           <div className="lrh-hand__block lrh-hand__block--sent">

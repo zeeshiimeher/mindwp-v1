@@ -76,7 +76,8 @@ export const SERVICES: NavGroup = {
       label: "Reputation & Review",
       href: null,
       planned: "/services/reputation-review",
-      description: "Ethical review requests, responsible replies and proof placed where people decide.",
+      description:
+        "Ethical review requests, responsible replies and proof placed where people decide.",
     },
   ],
 };
@@ -104,7 +105,11 @@ export const INDUSTRIES: NavGroup = {
       href: null,
       planned: "/industries/travel-venues-events",
     },
-    { label: "Craft, Automotive & Marine", href: null, planned: "/industries/craft-automotive-marine" },
+    {
+      label: "Craft, Automotive & Marine",
+      href: null,
+      planned: "/industries/craft-automotive-marine",
+    },
     {
       label: "Education & Specialist Support",
       href: null,

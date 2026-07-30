@@ -63,8 +63,8 @@ export function LrhFaq() {
           Acknowledgement, routing, handoff <em>and who stays responsible.</em>
         </h2>
         <p data-lrh-sequence-item>
-          The practical questions a business owner asks before connecting anything to the phone
-          line and the enquiry form.
+          The practical questions a business owner asks before connecting anything to the phone line
+          and the enquiry form.
         </p>
       </div>
 

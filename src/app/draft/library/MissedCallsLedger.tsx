@@ -40,9 +40,9 @@ export function MissedCallsLedger() {
         </div>
         <div className="section-copy-group">
           <p data-lrh-sequence-item>
-            No message, no name, no reason. Nobody can tell whether it was a new enquiry, a supplier,
-            or someone who has already tried once today — and the caller only knows that nobody
-            answered.
+            No message, no name, no reason. Nobody can tell whether it was a new enquiry, a
+            supplier, or someone who has already tried once today — and the caller only knows that
+            nobody answered.
           </p>
         </div>
       </div>

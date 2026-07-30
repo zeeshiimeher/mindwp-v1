@@ -70,7 +70,11 @@ const MOMENTS: readonly SupportMoment[] = [
     promise: "Acknowledge every missed call and keep the conversation open.",
     earns: "Worth scoping when nobody can watch the phone all day.",
     mechanism: [
-      { icon: "phone", label: "Call missed", note: "It rings out while the team is busy or closed." },
+      {
+        icon: "phone",
+        label: "Call missed",
+        note: "It rings out while the team is busy or closed.",
+      },
       {
         icon: "message-square",
         label: "Caller hears back",
@@ -88,7 +92,8 @@ const MOMENTS: readonly SupportMoment[] = [
     displayName: "Follow-up",
     tag: "Follow-Up & CRM",
     icon: "folder",
-    problem: "A quote or treatment plan goes out — then the next step depends on someone remembering.",
+    problem:
+      "A quote or treatment plan goes out — then the next step depends on someone remembering.",
     promise: "Keep every open decision visible, with an owner and a next step.",
     earns: "Worth scoping when good enquiries stall between the quote and the decision.",
     mechanism: [
@@ -114,7 +119,8 @@ const MOMENTS: readonly SupportMoment[] = [
     displayName: "One record",
     tag: "Follow-Up & CRM",
     icon: "search",
-    problem: "Half the story sits in an inbox, half in someone's phone — nobody sees the whole picture.",
+    problem:
+      "Half the story sits in an inbox, half in someone's phone — nobody sees the whole picture.",
     promise: "One shared record of every enquiry: its status, its history and who moves it next.",
     earns: "Worth scoping when “where did that enquiry get to?” has no quick answer.",
     mechanism: [
@@ -142,7 +148,8 @@ const MOMENTS: readonly SupportMoment[] = [
     icon: "star",
     problem: "Good work ends quietly — no review asked for, nothing carried back to the website.",
     promise: "Invite genuine reviews at the right moment and show them where people decide.",
-    earns: "Worth scoping when customers complete the work but the review request is easily forgotten.",
+    earns:
+      "Worth scoping when customers complete the work but the review request is easily forgotten.",
     mechanism: [
       {
         icon: "circle-check",
@@ -324,11 +331,7 @@ export function HomeSystemsSelector() {
 
   return (
     <div className="home-systems__layout">
-      <div
-        className="home-systems__segments"
-        role="tablist"
-        aria-label="Connected services"
-      >
+      <div className="home-systems__segments" role="tablist" aria-label="Connected services">
         {MOMENTS.map((moment, index) => {
           const selected = moment.slug === activeSlugSafe;
           return (

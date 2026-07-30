@@ -57,8 +57,7 @@ export function RequestsSwitchboard() {
           Different requests
         </p>
         <h2 data-lrh-sequence-item>
-          A treatment question, a booking and a new project{" "}
-          <em>should not take the same path.</em>
+          A treatment question, a booking and a new project <em>should not take the same path.</em>
         </h2>
         <p data-lrh-sequence-item>
           Every route below is a rule you agree once. Nothing is interpreted, and nothing is guessed

@@ -102,7 +102,12 @@ export function HomeConnectedArt() {
         <path d="M276 162 H 352" className="cx__link" markerEnd="url(#cxArrow)" />
 
         {/* ---- after ---- */}
-        <Card x={710} y={86} title="Lead Response &amp; Handling" note="Contact is answered and owned" />
+        <Card
+          x={710}
+          y={86}
+          title="Lead Response &amp; Handling"
+          note="Contact is answered and owned"
+        />
         <Card x={710} y={182} title="Follow-Up &amp; CRM" note="The open decision keeps moving" />
         <path d="M628 120 H 702" className="cx__link" markerEnd="url(#cxArrow)" />
         <path

@@ -10,11 +10,11 @@ import { PRIMARY_CTA_LABEL } from "@/lib/cta/labels";
  * column reads as five decisions rather than five sentences.
  */
 const GOOD_FIT: readonly (readonly [string, string])[] = [
+  ["Enquiries already arrive", "By phone, form or message — and some are missed or answered late."],
   [
-    "Enquiries already arrive",
-    "By phone, form or message — and some are missed or answered late.",
+    "Each one is worth something",
+    "Real money or real trust, so losing one is not a rounding error.",
   ],
-  ["Each one is worth something", "Real money or real trust, so losing one is not a rounding error."],
   ["The phone rings while you work", "With a patient, on a job, or after you have closed."],
   ["Someone can own it", "A person, or a rota, who takes responsibility after the first response."],
   [

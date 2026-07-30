@@ -1,8 +1,12 @@
 "use client";
 
 import { gsap } from "gsap";
+import { DrawSVGPlugin } from "gsap/DrawSVGPlugin";
+import { MotionPathPlugin } from "gsap/MotionPathPlugin";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect } from "react";
+
+import { STATION_PROGRESS } from "@/app/_home/compoundGeometry";
 
 function directItems(group: HTMLElement, attribute: string) {
   return Array.from(group.querySelectorAll<HTMLElement>(`:scope > [${attribute}]`));
@@ -30,7 +34,7 @@ export function HomeMotion() {
         return;
       }
 
-      gsap.registerPlugin(ScrollTrigger);
+      gsap.registerPlugin(ScrollTrigger, MotionPathPlugin, DrawSVGPlugin);
       root.dataset.homeMotion = "active";
       motionMedia = gsap.matchMedia();
 
@@ -179,6 +183,72 @@ export function HomeMotion() {
               start: "top 91%",
               once: true,
             },
+          });
+        });
+
+        // Compounding: above 64rem one enquiry travels the circuit while the
+        // section passes through the viewport. Everything hangs off that single
+        // journey — each trace draws, each station lights as the enquiry reaches
+        // it, and its entry in the ledger fills — because the accumulation is the
+        // section's argument and it has to be tied to travel rather than played on
+        // arrival.
+        //
+        // Station progress values come from the artwork's own geometry, so a
+        // station lights at the moment the enquiry is actually on it.
+        //
+        // Everything rests complete, so the script-free and reduced-motion renders
+        // keep the finished circuit. Below 64rem the section is a numbered
+        // sequence and has nothing to travel.
+        motionMedia?.add("(min-width: 64rem)", () => {
+          const circuit = document.querySelector<HTMLElement>("[data-home-circuit]");
+          const rail = circuit?.querySelector<SVGPathElement>("#cmpd-loop");
+          const token = circuit?.querySelector<SVGCircleElement>("[data-home-token]");
+          if (!circuit || !rail || !token) return;
+
+          const traces = Array.from(circuit.querySelectorAll<SVGPathElement>("[data-home-trace]"));
+          const stations = nestedItems(circuit, "data-home-station");
+          const assets = nestedItems(circuit, "data-home-asset");
+          const progress = stations.map((_, index) =>
+            Number(STATION_PROGRESS[index] ?? (index + 1) / stations.length),
+          );
+
+          gsap.set([...stations, ...assets], { "--lit": 0 });
+          gsap.set(traces, { drawSVG: "0%" });
+
+          const timeline = gsap.timeline({
+            defaults: { ease: "none" },
+            scrollTrigger: {
+              trigger: circuit,
+              start: "top 76%",
+              end: "bottom 64%",
+              scrub: 0.55,
+            },
+          });
+
+          // One unit of timeline is one lap, so a station's progress fraction is
+          // also its position in the timeline.
+          timeline.to(
+            token,
+            {
+              motionPath: { path: rail, align: rail, alignOrigin: [0.5, 0.5], start: 0, end: 1 },
+              duration: 1,
+            },
+            0,
+          );
+
+          traces.forEach((trace) => {
+            const lap = Number(trace.dataset.lap ?? 0);
+            // The base trace is drawn by the enquiry itself; the outer two are the
+            // body the route gains, so they follow from the turns.
+            timeline.to(trace, { drawSVG: "100%", duration: lap === 0 ? 1 : 0.55 }, lap * 0.34);
+          });
+
+          stations.forEach((station, index) => {
+            timeline.to(station, { "--lit": 1, duration: 0.06 }, progress[index]);
+          });
+
+          assets.forEach((asset, index) => {
+            timeline.to(asset, { "--lit": 1, duration: 0.08 }, progress[index]);
           });
         });
 

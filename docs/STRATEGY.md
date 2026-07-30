@@ -6,14 +6,14 @@ This document owns MindWP's current approved commercial direction. It is authori
 
 Strategy owns these; no other document restates them.
 
-| Decision | Settled position |
-|---|---|
-| Audience lane | Clinic-first, plus expert-led businesses |
-| Market emphasis | United Kingdom primary; Australia the natural second market. International English throughout; location not emphasised in public copy |
-| Business proposition | Website and enquiry systems partner for clinics and expert-led businesses |
-| Principal engagement | Smart Website Systems — the usual entry route, not the whole business |
-| Pricing posture | No public price, tier table or starting figure. Scope and cost are quoted after the Visibility & Enquiry Review |
-| Public voice | MindWP speaks as "we". The founder may be named or pictured on an About page when the exact use is approved, but MindWP is not positioned through a founder-led identity. No unsupported history, credentials, location or team-size implication |
+| Decision             | Settled position                                                                                                                                                                                                                                 |
+| -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Audience lane        | Clinic-first, plus expert-led businesses                                                                                                                                                                                                         |
+| Market emphasis      | United Kingdom primary; Australia the natural second market. International English throughout; location not emphasised in public copy                                                                                                            |
+| Business proposition | Website and enquiry systems partner for clinics and expert-led businesses                                                                                                                                                                        |
+| Principal engagement | Smart Website Systems — the usual entry route, not the whole business                                                                                                                                                                            |
+| Pricing posture      | No public price, tier table or starting figure. Scope and cost are quoted after the Visibility & Enquiry Review                                                                                                                                  |
+| Public voice         | MindWP speaks as "we". The founder may be named or pictured on an About page when the exact use is approved, but MindWP is not positioned through a founder-led identity. No unsupported history, credentials, location or team-size implication |
 
 Supporting market conditions are internal reasoning, not evidence, and must not become public claims.
 
@@ -46,14 +46,20 @@ Foundation's non-claims support these reasons; they must not dominate them. A pa
 
 ## Current offer architecture
 
-| Tier | What it is |
-|---|---|
-| **Principal engagement** | Smart Website Systems |
-| **Connected services** | Lead Response & Handling · Follow-Up & CRM · Reputation & Review |
-| **Visibility support** | Local SEO Authority |
-| **Recurring layer** | Ongoing management and improvement of agreed website and enquiry-system responsibilities |
+| Tier                     | What it is                                                                               |
+| ------------------------ | ---------------------------------------------------------------------------------------- |
+| **Principal engagement** | Smart Website Systems                                                                    |
+| **Connected services**   | Lead Response & Handling · Follow-Up & CRM · Reputation & Review                         |
+| **Visibility support**   | Local SEO Authority                                                                      |
+| **Recurring layer**      | Ongoing management and improvement of agreed website and enquiry-system responsibilities |
 
-**Smart Website Systems** is the principal engagement and the most common entry route. It may include strategy, site and page structure, copy, distinctive design, WordPress development and measurement around real customer decisions. It owns the public experience through to a useful enquiry: understanding, trust, proof, action, functioning capture, truthful submission confirmation, and delivery to the agreed contact destination.
+**Smart Website Systems** is the principal website engagement and the main commercial entry into MindWP's connected model. It combines a premium public website with useful enquiry capture, and may include strategy, site and page structure, copy, distinctive design, WordPress development and measurement around real customer decisions. It may also include selected connected handling, CRM, automation and reputation responsibilities where those are agreed.
+
+Its own ownership runs through to a useful enquiry: understanding, trust, proof, action, functioning capture, truthful submission confirmation, and delivery to the agreed contact destination. A connected responsibility taken on alongside it is still scoped as itself, on its own terms.
+
+**Connected responsibilities are configured according to need and separately scoped. They are never automatically included in a website engagement.** Selling the connected model strongly is legitimate; implying that buying a website means buying handling, CRM, automation and reputation is not.
+
+**A smart website is not simply a larger website, or a website with more software attached.** It is a premium public experience with useful enquiry capture, designed to connect with the agreed systems used to organise, acknowledge, route, follow up and learn from enquiries. The word describes that connection and the thinking behind it — not size, feature count or a bundled toolset.
 
 A **useful enquiry** means the person could understand the relevant offer and provide appropriate contact or request context through the intended channel. It does not mean a qualified lead, booked appointment, sale, quotation, clinical decision or guaranteed outcome. Lead Response & Handling begins once that contact event exists; it owns the acknowledgement, useful context, routing and visible human responsibility that follow.
 
@@ -130,7 +136,7 @@ WordPress, selected builders, WooCommerce and website rebuild work are delivery 
 Concise roles, to prevent overlap and offer confusion between pages:
 
 - Home orients the buyer to MindWP, the principal engagement, credible proof and a useful next step.
-- Smart Website Systems explains the principal engagement and its responsibility through a useful enquiry.
+- Smart Website Systems sells the premium website as the public front door, and may give substantial overview treatment to the connected handling, CRM, automation and reputation capabilities available around it. Connected-service pages own the detailed mechanism, boundaries and scope of each responsibility.
 - Connected-service and visibility pages own their specific customer moment and may mention adjacent services without absorbing them.
 - Work and case-study material makes real craft and evidence inspectable.
 - Industry pages help a defined buyer recognise their decision, evidence needs and boundaries; they should not be generic pages with a substituted industry name.

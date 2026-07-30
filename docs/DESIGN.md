@@ -14,6 +14,14 @@ That principle is bounded. The website evidences design, craft and implementatio
 
 Two consequences follow, and they run through everything below. Ambition is warranted: work that looks careful but timid understates the capability it is meant to prove. And restraint is not the same as thinness — a page that avoids every risk demonstrates only caution.
 
+### Visual quality is a first-class goal
+
+Beauty, presence and experiential strength are legitimate design goals in their own right, not decoration applied to a solved argument. Meaning and visual composition influence each other in both directions: a strong visual idea may shape the final grouping, the counts and the copy, provided the business meaning genuinely fits it and nothing false is invented to fill it.
+
+A section that is truthful, correctly argued and dull has not finished its job. So has a section that is beautiful and says something the business cannot support — but the first failure is the more common one here, and it is the one a careful executor is most likely to mistake for success.
+
+This is a principle, not a workflow. It does not make design-first, exploration or variants a default; the owner's prompt decides whether a task involves planning, direct execution, variants, exploration or redesign.
+
 ## 2 · Visual character
 
 MindWP should feel **composed rather than assembled**. Someone decided where things sit, how large they are and what the reader meets first. That impression comes before any sentence is read, and it is most of what a page communicates in its first two seconds.
@@ -30,7 +38,7 @@ The register is serious without severity, and warm without softness. Confidence 
 
 ### Two things every page carries
 
-MindWP sells a public website *and* the connected enquiry systems around it. Those two subjects want different qualities from the design:
+MindWP sells a public website _and_ the connected enquiry systems around it. Those two subjects want different qualities from the design:
 
 - The **public experience** carries distinction, trust, desirability, clarity and expressive craft.
 - The **connected work** carries ownership, state, sequence, handoff, control, consistency and human responsibility.
@@ -66,6 +74,8 @@ Measure matters as much as size: explanatory copy stays at a width that keeps it
 
 A surface may take another job where the composition justifies it, and a long page may return to any of them. Surface changes support progression, atmosphere, contrast and shifts in reading behaviour; hierarchy, scale and relationship remain the primary means of distinguishing one section from another.
 
+**Alternating navy, paper, mist and white is valid MindWP house rhythm, and often the preferred one.** A repeated surface is not a fault, and two or three related sections may share one where that genuinely helps — optionally, and because the material wants it, never as a required model. What is worth watching is repeated _inner anatomy_ and repeated _reading behaviour_: two sections on different grounds that ask the visitor to do exactly the same thing are the same section twice, whatever colour they sit on.
+
 **Emerald marks controlled attention** — small emphasis, connection paths, meaningful system relationships, active and selected states, focus treatment, and a primary action that deserves clear priority. Its strength comes from that reservation.
 
 Beyond navy, emerald and the neutral ladder, colour enters through real imagery and whatever colour that material genuinely has. The brand does not need a wider palette to be expressive.
@@ -74,7 +84,7 @@ Beyond navy, emerald and the neutral ladder, colour enters through real imagery 
 
 Hairline borders, restrained radii, subtle surface contrast, controlled shadows and intentional layering, where depth communicates belonging, priority, state or interaction. Overlap, rotation and curvature suit relationship, sequence and depth — the useful test is whether removing the effect would cost the reader information.
 
-**An object has to be visible against its own ground.** The light end of the palette spans only a few steps, so an object on a light surface usually needs a fill *and* an edge *and* a shadow to exist as an object at all — one of the three is rarely enough. Confirm that in the render rather than in the intent.
+**An object has to be visible against its own ground.** The light end of the palette spans only a few steps, so an object on a light surface usually needs a fill _and_ an edge _and_ a shadow to exist as an object at all — one of the three is rarely enough. Confirm that in the render rather than in the intent.
 
 Premium character comes from typography, scale, proportion, spacing, hierarchy and material contrast rather than from effects.
 
@@ -90,7 +100,19 @@ Composition exists to make a relationship visible. Before deciding how a section
 
 **Quiet sections are legitimate and necessary.** A page where every section competes has no hierarchy. Distinctiveness concentrates where the meaning benefits from it, and a transition may be nothing but well-set type.
 
-**A section introduction is one part of the section design.** The `eyebrow → heading → supporting paragraph` opening is valid and may recur where it serves the material; a section may equally open on an object, a statement, a situation or a visible state. What matters is that the material after and around the introduction carries the section's particular relationship, rather than every section resolving to `introduction → explanation → small object → next band`.
+**The section introduction is one element inside the composition. It is not the complete section design.**
+
+The ordinary shell is valid and is house language: a background surface, an eyebrow, a headline, supporting copy, inner content. None of that is a fault, and the `eyebrow → heading → supporting paragraph` opening may recur wherever it serves the material.
+
+The design effort belongs to what the shell contains and how it occupies space — the inner content composition, the dominant material, scale, grouping, width, density, hierarchy, spatial use, reading behaviour, interaction where it is useful, and how the section meets its neighbours. A section is designed when those are decided, not when an introduction has been written and an object placed beneath it.
+
+The introduction itself has somewhere to be. It may sit above the composition, beside it, inside it, overlaid on it, interrupted by it, or integrated into it. Centred-above is one placement among several and is not the resting position.
+
+What to avoid is one specific outcome, repeated:
+
+> surface → centred introduction → paragraph → small contained payload → next band
+
+That is the shape a section falls into when the shell is treated as the design.
 
 Familiar structures are used confidently when the information genuinely has that shape. Distinction comes from hierarchy, relationship, scale and craft within them.
 
@@ -152,7 +174,7 @@ A page is read as one thing before it is read as sections. Its progression, its 
 
 **Momentum.** Each screen should leave a reason to continue: something opened, something promised, something changed. A page that resolves everything in each band gives no reason to reach the next.
 
-**Continuity.** Narrative acts and surface rhythm are separate systems that inform each other. One act may move through several surfaces, and one surface environment may carry more than one act. Several sections may share a single visual environment where they form a continuous experience — each meaning inside that group still needs its own role, hierarchy and transition, or the group is ordinary bands inside a wrapper.
+**Continuity.** Sections may run continuously where the material is continuous — a shared surface, a carried-through object, an argument that does not resolve until the second of them. This is available and task-specific. It is not a page model: there is no requirement to group a page into acts or environments, and grouping already-designed sections under a shared wrapper produces bands inside a wrapper rather than a continuous experience. Where sections do run together, each still needs its own role, hierarchy and transition.
 
 **Responsive recomposition.** Narrow widths are a re-composition, not a shrunken copy. They preserve meaning and truthful boundaries, priority and focal hierarchy, the relationship the composition carries, proof and its connection to the claim, the intended action, and essential interaction. Linear stacking suits linear meaning; comparison, causality, sequence, ownership and proof association need a narrow-width composition that keeps those relationships intact — by reordering, simplifying supporting material, changing crop, reducing layering or replacing a dense explanation with a clearer one.
 

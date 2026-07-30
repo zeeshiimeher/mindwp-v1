@@ -50,7 +50,6 @@ When both skills are active, preserve the accepted meaning-bearing relationship 
 
 These are judgment prompts, not hard rules — apply what's actually true of the page, skip what isn't.
 
-
 - **Typography:** headings and paragraphs should inherit the global type scale unless a section has a genuine, deliberate display moment; remove page-local font-size duplication that just restates the global default.
 - **Measure and width:** let a container or a shared measure-governing mechanism (like a `.section-intro--centered` style primitive) control width rather than stacking ad hoc `max-width` on individual headlines and paragraphs. Watch for the same width value duplicated across several sections in slightly different forms — that's usually one mechanism trying to happen in many places.
 - **Layout mechanism:** flexbox or grid with `gap` for ordinary content and spacing. Reserve absolute positioning for genuinely layered or diagram-like compositions (radial diagrams, overlapping artifact cards) — not as a shortcut for centering or spacing ordinary content.

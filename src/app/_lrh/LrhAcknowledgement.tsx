@@ -43,8 +43,7 @@ export function LrhAcknowledgement() {
             Useful acknowledgement
           </p>
           <h2 data-lrh-sequence-item>
-            Everything that is already true can go out immediately.{" "}
-            <em>Nothing else can.</em>
+            Everything that is already true can go out immediately. <em>Nothing else can.</em>
           </h2>
           <p data-lrh-sequence-item>
             When someone gets in touch, they want a handful of things settled. Some are already true

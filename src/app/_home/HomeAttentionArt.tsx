@@ -73,7 +73,10 @@ export function ArtPaidClick() {
       <rect x="12" y="13" width="16" height="7" rx="3.5" className="att__art-tag" />
       <rect x="12" y="26" width="46" height="4" rx="2" className="att__art-ink" />
       <rect x="66" y="13" width="18" height="17" rx="3" className="att__art-block" />
-      <path d="M56 36 L56 51 L60 47.4 L63 53 L66 51.6 L63 46 L68 45.6 Z" className="att__art-cursor" />
+      <path
+        d="M56 36 L56 51 L60 47.4 L63 53 L66 51.6 L63 46 L68 45.6 Z"
+        className="att__art-cursor"
+      />
     </Frame>
   );
 }

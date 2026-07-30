@@ -7,9 +7,7 @@ async function expectHorizontallyContained(child: Locator, parent: Locator) {
   expect(childBox).not.toBeNull();
   expect(parentBox).not.toBeNull();
   expect(childBox!.x).toBeGreaterThanOrEqual(parentBox!.x - 1);
-  expect(childBox!.x + childBox!.width).toBeLessThanOrEqual(
-    parentBox!.x + parentBox!.width + 1,
-  );
+  expect(childBox!.x + childBox!.width).toBeLessThanOrEqual(parentBox!.x + parentBox!.width + 1);
 }
 
 for (const route of LIVE_ROUTES) {
@@ -186,9 +184,7 @@ test("homepage tab navigation remains usable on mobile", async ({ browser, baseU
     await expect(newEnquiriesBody).not.toBeVisible();
     expect(await newEnquiriesBody.getAttribute("inert")).not.toBeNull();
 
-    await expect(page.locator("#compounding")).toContainText(
-      "Continues the step the page names",
-    );
+    await expect(page.locator("#compounding")).toContainText("Continues the step the page names");
 
     const viewportWidth = await page.evaluate(() => document.documentElement.clientWidth);
     const pageWidth = await page.evaluate(() => document.documentElement.scrollWidth);
@@ -261,7 +257,9 @@ test("mobile homepage content stays inside its sections", async ({ page }) => {
   }
 });
 
-test("homepage mobile journey progresses with scroll and respects reduced motion", async ({ page }) => {
+test("homepage mobile journey progresses with scroll and respects reduced motion", async ({
+  page,
+}) => {
   await page.setViewportSize({ width: 400, height: 860 });
   await page.goto("/");
 
@@ -274,8 +272,9 @@ test("homepage mobile journey progresses with scroll and respects reduced motion
   });
   await expect
     .poll(async () =>
-      journey.evaluate((element) =>
-        Number.parseFloat(getComputedStyle(element).getPropertyValue("--journey-progress")) || 0,
+      journey.evaluate(
+        (element) =>
+          Number.parseFloat(getComputedStyle(element).getPropertyValue("--journey-progress")) || 0,
       ),
     )
     .toBeGreaterThan(0.9);
@@ -284,8 +283,9 @@ test("homepage mobile journey progresses with scroll and respects reduced motion
   await page.reload();
   await expect
     .poll(async () =>
-      journey.evaluate((element) =>
-        Number.parseFloat(getComputedStyle(element).getPropertyValue("--journey-progress")) || 0,
+      journey.evaluate(
+        (element) =>
+          Number.parseFloat(getComputedStyle(element).getPropertyValue("--journey-progress")) || 0,
       ),
     )
     .toBe(1);
