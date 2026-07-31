@@ -166,44 +166,6 @@ export function SwsMotion() {
           });
         });
 
-        // The accountable thread draws downward in one continuous stroke and
-        // each seam lights as it passes — a decision travelling through the
-        // engagement rather than six things arriving separately. Reveal only:
-        // nothing pins, and the authored rest state is the finished thread.
-        const thread = document.querySelector<HTMLElement>("[data-sws-thread]");
-        if (thread) {
-          const stroke = thread.querySelector<HTMLElement>("[data-sws-thread-stroke]");
-          const seams = items(thread, "data-sws-thread-seam");
-
-          const timeline = gsap.timeline({
-            scrollTrigger: { trigger: thread, start: "top 82%", once: true },
-          });
-
-          if (stroke) {
-            timeline.from(stroke, {
-              scaleY: 0,
-              transformOrigin: "top center",
-              duration: 1.35,
-              ease: "power2.out",
-              clearProps: "transform",
-            });
-          }
-          if (seams.length > 0) {
-            timeline.from(
-              seams,
-              {
-                autoAlpha: 0,
-                scale: 0.4,
-                duration: 0.45,
-                stagger: 0.13,
-                ease: "back.out(2)",
-                clearProps: "opacity,visibility,transform",
-              },
-              0.3,
-            );
-          }
-        }
-
         // Drift, then realignment. Each ring starts at the offset its own ghost
         // still marks and eases back onto the shared centre — slow and without
         // overshoot, because the section is describing something that happened

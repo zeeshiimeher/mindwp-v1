@@ -13,6 +13,11 @@
  * and reduced motion therefore carry cause, consequence and correction at once
  * rather than only one of the three.
  *
+ * Drift magnitudes are 15–42 on a 460-unit canvas. They were a third of that
+ * and the misalignment simply could not be seen at a glance, which cost the
+ * section its entire argument — the rings have to visibly fail to share a
+ * centre before anything else here means anything.
+ *
  * Changes are numbered in the drawing and numbered again in the reading column,
  * so the mapping between a business change and the ring it displaces is
  * explicit without putting wrapping prose inside an SVG.
@@ -34,10 +39,10 @@ interface Ring {
 }
 
 const RINGS: Ring[] = [
-  { name: "Connected workflows", holds: "how the work moves", radius: 178, driftX: -9, driftY: -13 },
-  { name: "The enquiry path", holds: "forms, context, routes", radius: 136, driftX: 14, driftY: 6 },
-  { name: "Pages and proof", holds: "what the site says", radius: 94, driftX: -11, driftY: 8 },
-  { name: "The offer", holds: "what you actually do", radius: 52, driftX: 7, driftY: -5 },
+  { name: "Connected workflows", holds: "how the work moves", radius: 178, driftX: -27, driftY: -39 },
+  { name: "The enquiry path", holds: "forms, context, routes", radius: 136, driftX: 42, driftY: 18 },
+  { name: "Pages and proof", holds: "what the site says", radius: 94, driftX: -33, driftY: 24 },
+  { name: "The offer", holds: "what you actually do", radius: 52, driftX: 21, driftY: -15 },
 ];
 
 interface Change {
