@@ -55,6 +55,8 @@ Two habits weaken a page:
 
 A page needs passages that dominate and passages that recede. How that is achieved belongs to the page in hand; there is no single required method, and this document does not prescribe one.
 
+Familiar components and conventional patterns are fully available. Distinction comes from how they are composed, styled, scaled and used, not from avoiding familiar forms — a conventional structure can still carry a strong and distinctive design.
+
 Operational material — ownership, state, sequence, handoff — deserves the same visual care as expressive material. A generic dashboard or a flat flowchart must not become the automatic answer to it. Dashboards, interfaces and diagrams stay available wherever they genuinely fit the material.
 
 ## Responsive experience
