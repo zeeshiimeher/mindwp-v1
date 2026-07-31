@@ -22,23 +22,11 @@ Current source and fresh renders own implemented reality. When implementation co
 
 Tailwind is not part of the current architecture.
 
-`package.json` owns the executable command definitions. The normal supported commands are:
+`package.json` owns the executable command definitions, and the root [README.md](../README.md) explains normal day-to-day use. Read commands there rather than maintaining a second list here.
 
-| Command               | Purpose                                                                            |
-| --------------------- | ---------------------------------------------------------------------------------- |
-| `pnpm dev`            | Run the active site locally                                                        |
-| `pnpm typecheck`      | Generate Next.js types and run TypeScript checks                                   |
-| `pnpm lint`           | Run ESLint                                                                         |
-| `pnpm check:skills`   | Validate repository skill structure                                                |
-| `pnpm check:tools`    | Run Node tests for repository scripts                                              |
-| `pnpm check`          | Run the current aggregate source and structural checks                             |
-| `pnpm build`          | Produce a production Next.js build                                                 |
-| `pnpm test`           | Run the Playwright suite against a production-like server                          |
-| `pnpm capture:route`  | Capture a route into an external review directory                                  |
-| `pnpm capture:home`   | Capture the homepage with its own dedicated script                                 |
-| `pnpm context:export` | Assemble an explicit derived orientation or focused context outside the repository |
+Do not claim an undocumented or unavailable command as a required check.
 
-Do not claim an undocumented or unavailable command as a required check. Lighthouse configuration is retained but is not a supported gate until its dependency and command are deliberately wired.
+Lighthouse is not part of the current supported checks. It may be introduced during final performance and launch preparation, when the audited routes, thresholds, failure behaviour and local reproduction method are deliberately defined.
 
 ## Repository shape and source ownership
 
@@ -151,7 +139,7 @@ Exact breakpoints, grids, and responsive transformations remain local unless ado
 
 Implement every state that the real interaction exposes: hover, focus-visible, active, open, selected, keyboard, touch, loading, success, and error as applicable. Keep hover enhancement subordinate to a complete non-hover state, and do not animate non-interactive material as though it were actionable.
 
-The approved design and [DESIGN.md](./DESIGN.md) own motion purpose and visual intent, including the distinction between foundational, meaning-bearing and atmospheric motion. This document owns their implementation.
+The approved design and [DESIGN.md](./DESIGN.md) own motion purpose and visual intent. This document owns their implementation.
 
 **Foundational site motion is owned here and inherited.** Page entry, section reveal, control and navigation feedback, and ordinary state transitions belong to the existing shared implementation — its trigger, timing, easing, stagger, cleanup and reduced-motion branch. A page extends that convention rather than inventing a parallel one, and an execution skill applies it rather than defining a competing version.
 
@@ -210,9 +198,9 @@ Treat large page components or CSS files as diagnosis prompts, not automatic ref
 
 ## Existing implementations as evidence
 
-[README.md](./README.md) owns the reference-page rule: a page becomes a reference only when the user names it, and no document records which page that is.
+[README.md](./README.md) owns the complete reference-page rule.
 
-Applied here: inspect another page's implementation only when directly editing or auditing it, answering a named implementation question, diagnosing a specific regression, or when the user names it. An existing implementation is not default reading, a template, a pattern library, or a source of universal breakpoints, grids, animation choreography, section anatomy or page-local CSS devices. A technique may transfer when the new implementation independently needs it; availability or recurrence alone does not make it global.
+Inspect another page's source only when directly editing or auditing it, answering a named implementation question, diagnosing a specific regression, or when Zeeshan names it. An existing implementation is evidence, not a template or an automatic source of universal breakpoints, grids, motion, section anatomy or page-local CSS devices. A technique transfers only when the new implementation independently needs it.
 
 ## Validation and rendered evidence
 
@@ -240,20 +228,10 @@ pnpm build
 pnpm test
 ```
 
-Select the rendered evidence the change needs. The capture tool is an optional capability:
+Select the rendered evidence the change needs. Use `pnpm capture:route` or `pnpm capture:home` where rendered evidence is required; the root [README.md](../README.md) documents ordinary use, and the executable source owns current syntax, options and defaults.
 
-```bash
-pnpm capture:route -- /route /tmp/mindwp-route-review              # 1640 and 400
-pnpm capture:route -- --desktop /route /tmp/mindwp-desktop-review  # 1640 only
-pnpm capture:route -- --full /route /tmp/mindwp-route-risk-review  # wider matrix
-pnpm capture:route -- --sections /route /tmp/mindwp-section-review # every section
-pnpm capture:route -- --section proof /route /tmp/mindwp-proof-review
-```
+Capture output must stay outside the repository, and a full page is read before its section crops. The available evidence includes the normal viewport pair, a wider matrix, reduced-motion evidence, full-page captures and section captures — capabilities selected according to risk, not a required packet.
 
-`--desktop` and `--full` are mutually exclusive, as are `--sections` and `--section`. An output directory is optional; without one the tool writes to a temporary directory and prints the path. `pnpm capture:home` is a separate homepage-specific capability.
-
-Capture output must stay outside the repository. The viewport pair, the wider matrix, reduced-motion captures, and section crops are convenient options rather than mandatory packets. When more than one section is captured, the tool also writes a contact sheet — read the full page before the crops, since page rhythm and accumulated fatigue do not exist in a crop, and thumbnails misrepresent type size and contrast in both directions.
-
-The all-section and targeted-section modes use direct `main > section` elements as their capture boundary; that DOM boundary is not proof that every planned meaning needs its own visible section or crop.
+A section-capture DOM boundary is not proof that every planned meaning needs its own visible section or crop.
 
 Use a live browser when static images cannot verify focus, keyboard, touch, disclosure, form, motion, or state behaviour. A successful check or build does not establish visual acceptance, and visual readiness does not imply publication approval.

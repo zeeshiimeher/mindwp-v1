@@ -26,6 +26,8 @@ It does not own business meaning, offers or claims ([FOUNDATION.md](./FOUNDATION
 
 The approved page plan owns the required meaning. The task prompt may add page-specific direction, and it is more specific than this document.
 
+The page plan owns required meaning, but it does not always fix the final visual grouping. A composition may combine, split or regroup material where that serves the page better. Raise the decision rather than settling it quietly — and never drop required meaning, change what a section is responsible for, or invent a claim or a piece of proof to make a composition work.
+
 ## The standard
 
 MindWP should feel modern, premium and carefully designed — interactive where that genuinely helps, and visually substantial enough to be remembered.
@@ -35,6 +37,10 @@ Design may draw from strong agency, SaaS, product and editorial websites, and fr
 **Visual style does not decide MindWP's business category.** Content, offers and claims control what the site means. An agency-like, SaaS-like, product-like or editorial register is a design decision, not a strategic one.
 
 Ambition is expected. A page that is only correct has not met the standard.
+
+A page should feel **composed rather than assembled**: hierarchy, scale, space and placement together make it clear that someone decided where things sit, how large they are, and what the reader meets first. That impression arrives before a sentence is read.
+
+The standard is high because this website is inspectable. A prospective client can look at it directly, and many will, so the way a page is made is itself a demonstration of MindWP's design and implementation quality. It demonstrates nothing beyond that — not client results, not growth, not operational outcomes. Those need real proof.
 
 ## Composition
 
@@ -48,6 +54,8 @@ Two habits weaken a page:
 - giving every section equal visual weight, which makes a page read flat however good its individual parts are.
 
 A page needs passages that dominate and passages that recede. How that is achieved belongs to the page in hand; there is no single required method, and this document does not prescribe one.
+
+Operational material — ownership, state, sequence, handoff — deserves the same visual care as expressive material. A generic dashboard or a flat flowchart must not become the automatic answer to it. Dashboards, interfaces and diagrams stay available wherever they genuinely fit the material.
 
 ## Responsive experience
 
