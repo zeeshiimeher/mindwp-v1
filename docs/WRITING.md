@@ -29,21 +29,21 @@ Calm, specific and commercially serious. Direct without being aggressive. Warm w
 
 This is the most important rule in this document. Internal strategy must not become public explanation.
 
-| Kind of fact                                         | Where it goes                                                       |
-| ---------------------------------------------------- | ------------------------------------------------------------------- |
-| What the buyer gets, and why they would want it      | Main copy                                                           |
-| Proof and visible work                               | Main copy and work pages                                            |
-| A limit that stops a wrong expectation before buying | One short line beside the claim, or an FAQ                          |
-| Detailed scope boundaries                            | Proposal                                                            |
-| How something is built, connected or configured      | Meeting or proposal                                                 |
-| How delivery, onboarding and management actually run | Meeting or proposal                                                 |
-| What ongoing management covers                       | Say it is available; agree what it covers in a meeting              |
-| Platform, account, subscription and data ownership   | Proposal and contract, and legal pages where disclosure requires it |
-| Whether an existing website is kept or rebuilt       | FAQ or conversation, briefly                                        |
-| The detailed definition of a useful enquiry          | Proposal                                                            |
-| How services relate to each other internally         | Strategy only. Not public                                           |
-| Why MindWP is organised this way                     | Rationale only. Not public                                          |
-| Anything that varies per client                      | Sales conversation                                                  |
+| Kind of fact                                             | Where it goes                                                       |
+| -------------------------------------------------------- | ------------------------------------------------------------------- |
+| What the buyer gets, and why they would want it          | Main copy                                                           |
+| Proof and visible work                                   | Main copy and work pages                                            |
+| A limit that stops a wrong expectation before buying     | One short line beside the claim, or an FAQ                          |
+| Detailed scope boundaries                                | Proposal                                                            |
+| How something is built, connected or configured          | Meeting or proposal                                                 |
+| How delivery, onboarding and management actually run     | Meeting or proposal                                                 |
+| What ongoing management covers                           | Say it is available; agree what it covers in a meeting              |
+| Platform, account, subscription and data ownership       | Proposal and contract, and legal pages where disclosure requires it |
+| Whether an existing website is kept, improved or rebuilt | FAQ or conversation, briefly                                        |
+| The detailed definition of a useful enquiry              | Proposal                                                            |
+| How services relate to each other internally             | Strategy only. Not public                                           |
+| Why MindWP is organised this way                         | Rationale only. Not public                                          |
+| The answer for a particular client                       | Sales conversation                                                  |
 
 ### The three questions
 
@@ -71,7 +71,7 @@ Explain mechanism only where it makes the responsibility believable. A reader wh
 
 - **Ordinary website anatomy, and how the work gets done.** Pages, sections, headings, forms and content blocks are not benefits, and neither is the build process, the handling process or how a form behaves. Name them only where a buyer needs them to understand scope.
 - **The whole business model on every page.** The complete picture belongs in at most one place. Every other page assumes it and gets on with its own job.
-- **Internal structures.** The enquiry path stages, the service family tree and the capability list are internal. They do not become section sequences or navigation.
+- **Internal structures.** How services relate to each other internally, and the capability list, are internal.
 - **Too many boundaries.** Boundaries should not dominate the main argument. Put a practical limit in a short line or an FAQ when a buyer needs it before purchasing. Keep detailed scope boundaries for proposals and meetings. A page that mostly says what MindWP will not promise has given nobody a reason to buy.
 
 These apply to every page on the site, not only the homepage.
@@ -123,7 +123,7 @@ Use the current names in Strategy: Smart Website Systems, Connected Enquiry Syst
 
 Planning shorthand does not authorise a public rename.
 
-**Never shorten "Visibility & Enquiry Review" to "Review".** Written alone it collides with Reputation & Reviews, and a buyer reading about reviews will misread the action. Use the full name, or a plain action that does not use the word.
+**Never shorten "Visibility & Enquiry Review" to "Review".** Written alone it collides with Reputation & Reviews, and a buyer reading about reviews will misread the action. Use the full name, or a plain action that does not use the word. It is a method name, not something to book.
 
 Phrasing risks to avoid:
 

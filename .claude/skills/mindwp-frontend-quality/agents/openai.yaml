@@ -1,4 +1,4 @@
 interface:
   display_name: "MindWP Frontend Quality"
   short_description: "Audit, finalize, or harden MindWP frontend implementation"
-  default_prompt: "Use $mindwp-frontend-quality to audit, repair, finalize, or support this MindWP implementation from current source and available rendered evidence while preserving supplied or explicitly accepted design intent."
+  default_prompt: "Use $mindwp-frontend-quality to audit, repair, finalize, or harden this approved MindWP implementation from current source and available rendered evidence, applying docs/ENGINEERING.md while preserving the approved design. Return composition, hierarchy or concept problems to design rather than changing them here, and do not reopen business strategy or page meaning."

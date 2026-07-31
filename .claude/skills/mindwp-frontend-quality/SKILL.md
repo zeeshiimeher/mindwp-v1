@@ -7,6 +7,8 @@ description: Use when specialist frontend support is requested during MindWP imp
 
 Apply `docs/ENGINEERING.md` to implemented evidence only when the user explicitly selects it. This is optional specialist support, not a mandatory finishing stage and not a second art-direction loop.
 
+`docs/ENGINEERING.md` owns implementation rules and technical mechanism. The approved design and `docs/DESIGN.md` own visual intent. Do not reopen business strategy, page meaning or the approved design.
+
 ## Match the requested mode
 
 - **Audit only:** inspect and report without changing source.
@@ -19,7 +21,7 @@ Do not force a repair when the user asks for an audit. Do not require this skill
 
 ## Start from implemented evidence
 
-Begin with relevant current source and available or task-required rendered evidence. Use the supplied page plan or design intent, relevant foundational CSS and only the canonical authorities explicitly selected by the user. Do not inherit a broad design route or infer wider commercial, strategic or writing context.
+Begin with relevant current source and available or task-required rendered evidence. Use the approved design and `docs/DESIGN.md` for visual intent, the supplied page plan for required meaning, relevant foundational CSS, and only the canonical authorities explicitly selected by the user. Do not inherit a broad design route or infer wider commercial, strategic or writing context.
 
 If a missing decision would materially change the technical result, identify it instead of widening context without permission. A focused exporter or isolated technical audit must not infer broader page context.
 
@@ -38,7 +40,7 @@ Trace the issue to the smallest coherent owner:
 - motion target, lifecycle, or reduced-motion branch;
 - form validation, privacy, routing, publication, performance, test, or tool.
 
-If the problem is an absent hierarchy, weak concept, page narrative, section relationship, or final body-copy decision, report it as a design-owned issue rather than resolving it here.
+If the problem is an absent hierarchy, weak concept, page narrative, section relationship, or final body-copy decision, report it as a design-owned issue and return it to the approved design and `docs/DESIGN.md` rather than resolving it here.
 
 ## Preserve accepted design intent
 
@@ -48,43 +50,27 @@ When both skills are active, preserve the accepted meaning-bearing relationship 
 
 ## What finalize looks for
 
-These are judgment prompts, not hard rules — apply what's actually true of the page, skip what isn't.
+These are judgment prompts, not hard rules — apply what's actually true of the page, skip what isn't. `docs/ENGINEERING.md` owns the underlying rules for CSS ownership, layout and responsive mechanics, and interaction and motion; apply those rather than restating them here.
 
 - **Typography:** headings and paragraphs should inherit the global type scale unless a section has a genuine, deliberate display moment; remove page-local font-size duplication that just restates the global default.
-- **Measure and width:** let a container or a shared measure-governing mechanism (like a `.section-intro--centered` style primitive) control width rather than stacking ad hoc `max-width` on individual headlines and paragraphs. Watch for the same width value duplicated across several sections in slightly different forms — that's usually one mechanism trying to happen in many places.
-- **Layout mechanism:** flexbox or grid with `gap` for ordinary content and spacing. Reserve absolute positioning for genuinely layered or diagram-like compositions (radial diagrams, overlapping artifact cards) — not as a shortcut for centering or spacing ordinary content.
-- **Spacing:** `gap` on the flex/grid parent over `margin` between siblings. When a divider or border sits inside a gapped layout, center it in the gap rather than letting it sit flush against one side's content.
+- **Measure and width:** let a container or a shared measure-governing primitive control width rather than stacking ad hoc `max-width` on individual headlines and paragraphs. Watch for the same width value duplicated across several sections in slightly different forms — that's usually one mechanism trying to happen in many places.
+- **Spacing:** when a divider or border sits inside a gapped layout, center it in the gap rather than letting it sit flush against one side's content.
 - **Sizing:** prefer content-driven height (padding plus line-height) over an enforced `min-height`. Keep `min-height` only where an element positions children absolutely inside itself and needs the reserved space, or where a `next/image fill` needs an explicitly sized parent — prefer `aspect-ratio` there instead of a fixed height that needs manual retuning per breakpoint.
 - **Grid tracks:** a `minmax()` floor wider than a track actually needs can silently steal space from its sibling track at specific viewport widths and distort an intended ratio — check whether every floor is load-bearing.
-- **Motion and hover:** extend the page's existing reveal/GSAP convention rather than inventing a new one; add hover feedback only to genuinely interactive elements — skip decorative or illustrative material — using the duration, easing, and transform vocabulary already active elsewhere on the site.
-- **Reveal animation:** entry animation should run once, when the section comes into view, and stagger its items rather than revealing them together.
-- **Responsive:** confirm padding, gaps,column order is correct and font sizes actually shrink at the existing breakpoints rather than just being copied from desktop.
+- **Responsive:** confirm padding, gaps and column order are correct, and that font sizes actually shrink at the existing breakpoints rather than just being copied from desktop.
 - **Code quality:** improve the page's markup and CSS while the rendered frontend stays materially the same. A visible change beyond what the existing implementation already expressed is a design decision — surface it rather than making it here.
 
 Converging a duplicated technical mechanism into one already-authorized shared owner is a repair. Changing the resulting width, proportion, or alignment beyond what the duplicated instances already expressed is a design decision — surface it, don't decide it.
 
 ## Repair coherently
 
-- Correct semantic structure and source order before compensating with CSS order or breakpoint patches.
-- Correct CSS ownership before adding specificity or overrides.
-- Let responsive mechanics preserve the intended comparison, sequence, causality, proof association, ownership, and hierarchy.
-- Implement the states that actually exist and remove false affordances from static material.
-- Preserve keyboard use, focus, contrast, touch behaviour, labels, disclosure semantics, and non-hover meaning.
-- Clean up observers, listeners, timelines, media-query branches, and delayed work; make reduced motion reach the same information and stable state.
-- Address measured or credible performance risk without reducing meaningful proof or design by reflex.
-- Remove wrappers, selectors, duplication, and local workarounds only when they have no remaining visual or behavioural job.
+Trace a defect to its root owner and repair there, in that order: semantic structure and source order first, then CSS ownership, then local overrides. Do not compensate at a later layer for a fault at an earlier one.
 
-Do not promote a local technique to a token, global rule, or shared component until repetition or an explicit project decision establishes a stable role. Recurrence across two pages alone is not enough.
+`docs/ENGINEERING.md` owns the rules themselves — semantics and source order, CSS ownership and promotion, layout and responsive mechanics, interaction states, motion lifecycle and reduced motion, forms and privacy, routing, and performance. Apply them rather than restating them here.
 
 ## Verify according to risk
 
-Use the smallest evidence that can establish the result, followed by wider checks when the changed owner affects them:
-
-- focused source or automated checks for deterministic behaviour;
-- affected widths and states for responsive, CSS, interaction, and motion changes;
-- keyboard or live-browser inspection where static captures cannot prove behaviour;
-- reduced-motion and intermediate-width checks when the implementation creates material risk;
-- build or full test gates when application source, dependencies, routes, or shared foundations are affected.
+Use the smallest evidence that can establish the result, followed by wider checks when the changed owner affects them. `docs/ENGINEERING.md` owns which checks, viewports, states and captures a given change requires.
 
 Do not repeat a whole-page compositional review already owned by design. Verify that the technical result preserves it.
 

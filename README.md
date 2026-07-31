@@ -1,6 +1,6 @@
 # MindWP
 
-The Next.js website for MindWP, a website-led partner for established service businesses and expert-led businesses.
+The Next.js website for MindWP, which builds websites, local visibility and connected enquiry systems for clinics and expert-led businesses.
 
 Read [CLAUDE.md](./CLAUDE.md) for repository safety and [docs/README.md](./docs/README.md) for the project-memory map and task-sensitive reading routes.
 
@@ -46,7 +46,7 @@ pnpm context:export -- focused \
   --output /tmp/mindwp-page-context.md
 ```
 
-Use `--strategy` only for an unresolved commercial question. Select zero or more of `mindwp-design-eye` and `mindwp-frontend-quality`. Existing output requires `--overwrite`; repository destinations and symlinked output are refused.
+Use `--strategy` only for an unresolved commercial question. Repeat `--skill` to select any installed repository skill the receiving context needs; the exporter discovers what is present in `.claude/skills/`. Existing output requires `--overwrite`; repository destinations and symlinked output are refused.
 
 The exporter does not infer skill dependencies or repository state. Add `--repository`, `--engineering`, and the relevant skill explicitly when the receiving conversation needs them; current route source and renders remain separate implementation evidence.
 

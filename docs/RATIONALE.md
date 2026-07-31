@@ -6,19 +6,21 @@ This is reasoning, not instruction. It never overrides [FOUNDATION.md](./FOUNDAT
 
 ## The situation
 
-MindWP has two real capability areas: website work, and connected enquiry work.
+MindWP has three real capability areas: website work, local visibility, and connected enquiry work.
 
 Website work is the strongest current delivery skill, sells in a category buyers already understand, and proves itself through the finished result.
 
+Local visibility is how a clinic is found before an enquiry exists. It sells on its own and has a natural recurring shape.
+
 Connected enquiry work has better long-term economics but little published proof so far.
 
-The question was: what should MindWP be known for, while keeping both independently sellable?
+The question was: what should MindWP be known for, while keeping each of them independently sellable?
 
 ## Options considered
 
 **Website-led.** Lead with premium websites; keep connected work as a strong second family. Easiest to sell now, easiest to prove. Risk: the business gets labelled a web agency and the wider ambition never arrives.
 
-**Connected-enquiry-led.** Lead with enquiry handling. Best recurring economics. Rejected as a starting position: buyers say they want more customers, not better handling; the marketing evidence in that category is largely old or untraceable and MindWP will not use it; software platforms already anchor the price low; and MindWP has no operational case studies yet.
+**Connected-enquiry-led.** Lead with enquiry handling. Best recurring economics. Rejected as a starting position: buyers are assumed to want more customers, not better handling; the marketing evidence in that category is largely old or untraceable and MindWP will not use it; software platforms already anchor the price low; and MindWP has no operational case studies yet.
 
 **Enquiry Path Partner.** Own the path from being found to being handled, with websites and specific problems as the doors. Chosen.
 
@@ -28,11 +30,11 @@ It answers the question the other two could not: why do these capabilities belon
 
 Because the buyer experiences one problem. They do not experience "a website problem" and "a CRM problem". They experience patients choosing someone else.
 
-It also keeps both routes fully sellable, and lets the business grow into more of the path without repositioning later.
+It also keeps each route fully sellable, and lets the business grow into more of the path without repositioning later.
 
 ## Why the public category stays plain
 
-The public category is plain: websites and connected enquiry systems for clinics and expert-led businesses.
+The public category is plain: websites, local visibility and connected enquiry systems for clinics and expert-led businesses.
 
 "Enquiry Path Partner" is not a phrase buyers search for, and naming a model in public invites explaining the model in public. That is what went wrong with the previous documents and website.
 
@@ -108,11 +110,5 @@ Voice AI and broader automation are useful capabilities that are not ready to be
 - Connected work converts far better than website work.
 - Local SEO produces poor results or unhappy clients.
 - A managed client churns before month six.
-- The first full end-to-end client is documented — at which point the path model can move to the front of public language.
+- The first full end-to-end client is documented — at which point whether the path model moves to the front of public language should be reconsidered.
 - The market focus changes.
-
-## Superseded thinking
-
-The previous documents treated the website as the centre of the business and connected work as adjacent to it. That framing is replaced: the path is the model, and the website is the strongest part of it.
-
-They also argued their case at length inside the documents themselves, which is why internal reasoning kept appearing on public pages. The reasoning now lives here instead.

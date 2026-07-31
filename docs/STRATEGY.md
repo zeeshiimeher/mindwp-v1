@@ -8,7 +8,7 @@ Everything here is authoritative now and revisable later.
 
 ## 1. Public category and market
 
-**Public category:** websites and connected enquiry systems for clinics and expert-led businesses.
+**Public category:** websites, local visibility and connected enquiry systems for clinics and expert-led businesses.
 
 That is the working meaning a buyer should get quickly. It is not fixed homepage copy.
 
@@ -31,6 +31,8 @@ The limits:
 | Pricing            | No public price, tier table or starting figure. Scope and cost are quoted privately |
 | Delivery platform  | GoHighLevel is internal. It is never the public product or a selling point          |
 
+Clinics normally lead examples and campaigns where suitable. Expert-led businesses remain valid and do not need an equal mention on every page. This never requires hiding useful non-clinic proof when clinic proof is unavailable.
+
 ## 2. Offer hierarchy
 
 | Item                               | Type                                     | Public status                                       |
@@ -48,6 +50,8 @@ The limits:
 | Voice AI                           | Experimental capability                  | Not a public offer                                  |
 | Business automation                | Delivery capability                      | Not a public offer                                  |
 
+Public means a service may be named and sold. It does not mean it needs its own page or navigation item. Page grouping and navigation are decided later in website planning.
+
 Three things carry the business commercially: **Smart Website Systems**, **Connected Enquiry Systems** and **Local SEO**. Everything else supports them.
 
 Do not give every capability equal status. A capability becomes a service only when it can be scoped, priced and delivered on its own.
@@ -59,6 +63,8 @@ Smart Website Systems is MindWP's main website engagement. It includes a premium
 **A website-only engagement is still Smart Website Systems.** The name does not mean combined work, and what is included is decided per client.
 
 The real distinction is premium website work built to support useful connection where the business needs it — not a website with more software attached.
+
+**Internal minimum:** every Smart Website Systems engagement includes a premium website, useful enquiry capture and tested delivery to the agreed destination. Selected connected responsibilities remain optional. This is an internal standard, not a public checklist or a required website section.
 
 There is no separate public offer called "Premium Websites", and combined work needs no second name. Describe combined scope plainly: Smart Website Systems with Local SEO, or with selected connected enquiry work.
 
@@ -117,7 +123,7 @@ Current main doors:
 2. **Local SEO**
 3. **Connected enquiry problems**
 
-Focused campaigns may later target missed calls, enquiry response, follow-up, CRM organisation, reputation, Voice AI, reactivation, or another clear business problem.
+Focused campaigns may later target missed calls, enquiry response, follow-up, CRM organisation, reputation, reactivation, or another clear business problem.
 
 A campaign door does not become the MindWP brand or a permanent top-level service.
 
@@ -139,14 +145,7 @@ Public pages may say ongoing management is available. What it covers is agreed i
 
 **The main public action is a normal enquiry — getting in touch.** The exact wording is decided at website planning.
 
-The **Visibility & Enquiry Review** is the conversation-led diagnostic that may follow. The normal flow:
-
-1. Someone gets in touch.
-2. MindWP asks questions through chat or a video call.
-3. MindWP gathers useful business context.
-4. MindWP looks at the relevant website, local visibility and enquiry handling.
-5. MindWP discusses a useful starting point.
-6. A proposal may follow.
+The **Visibility & Enquiry Review** is the conversation-led diagnostic that may follow. MindWP asks questions through chat or a call, gathers useful context, looks at the relevant website, local visibility and enquiry handling, and discusses a useful starting point. A proposal follows where appropriate.
 
 It is not a public offer, a self-serve audit, an automated report or a downloadable document, and it must never be offered as one.
 
@@ -156,18 +155,17 @@ The name may be used publicly where it helps, as long as it never reads like ord
 
 ## 10. Delivery policies
 
-These apply generally, and they are how MindWP works — not page material. Public copy does not explain them.
+These apply generally, and they are how MindWP works — not page material. Public copy does not explain how they run.
 
 - Every website engagement includes enquiry capture that is configured and tested before handover.
 - Scope, responsibilities, access, third-party costs, data handling and what happens after launch are made clear before work begins.
 - MindWP's delivery role is hands-on: plan it, configure it, connect it, test the whole path, and onboard the team.
 - Any connected engagement names a person on the client side who owns the process. Systems fail when nobody owns them.
 - A managed responsibility is sold only when MindWP can deliver it consistently.
-- Review requests and any automated contact follow the platform rules and the law in the market concerned.
 
 ## 11. Decided per engagement
 
-These are **settled as per-client decisions**. They are agreed in a meeting. They are not open questions, and public copy must not try to answer them.
+These are **settled as per-client decisions**. They are agreed in a meeting. They are not open questions, and public copy must not answer them for a particular client.
 
 - Whether an existing website is kept, improved or rebuilt.
 - Which connected responsibilities are included.

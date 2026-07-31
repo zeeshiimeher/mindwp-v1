@@ -2,7 +2,7 @@
 
 This document owns MindWP's repository-specific technical decisions: stack, source boundaries, semantic structure, CSS ownership, responsive implementation, accessibility, interaction states, motion lifecycle, privacy, routing, performance, tooling, and validation.
 
-It does not decide business truth, public language, page meaning, visual hierarchy, or page-specific experience. Those decisions belong to [FOUNDATION.md](./FOUNDATION.md), [STRATEGY.md](./STRATEGY.md), [WRITING.md](./WRITING.md), and the supplied page plan. Execution skills apply these authorities; they do not replace them.
+It does not decide business truth, public language, page meaning, visual hierarchy, or page-specific experience. [FOUNDATION.md](./FOUNDATION.md), [STRATEGY.md](./STRATEGY.md) and [WRITING.md](./WRITING.md) own business meaning, offers, claims and public language. The approved page plan owns required page meaning. The approved design and [DESIGN.md](./DESIGN.md) own visual composition, hierarchy and experience. This document owns technical implementation and mechanism. Execution skills apply these authorities; they do not replace them.
 
 Current source and fresh renders own implemented reality. When implementation conflicts with a canonical document, report the drift to its owning authority rather than treating the source as a silent business or design decision.
 
@@ -151,13 +151,13 @@ Exact breakpoints, grids, and responsive transformations remain local unless ado
 
 Implement every state that the real interaction exposes: hover, focus-visible, active, open, selected, keyboard, touch, loading, success, and error as applicable. Keep hover enhancement subordinate to a complete non-hover state, and do not animate non-interactive material as though it were actionable.
 
-The supplied page plan or design direction distinguishes foundational, meaning-bearing and atmospheric motion, and owns each one's visual purpose and character. This document owns their implementation.
+The approved design and [DESIGN.md](./DESIGN.md) own motion purpose and visual intent, including the distinction between foundational, meaning-bearing and atmospheric motion. This document owns their implementation.
 
 **Foundational site motion is owned here and inherited.** Page entry, section reveal, control and navigation feedback, and ordinary state transitions belong to the existing shared implementation — its trigger, timing, easing, stagger, cleanup and reduced-motion branch. A page extends that convention rather than inventing a parallel one, and an execution skill applies it rather than defining a competing version.
 
 This is an available shared behaviour, not a requirement: no section must animate, no single reveal is mandatory for every section, and a page may depart from the convention for a stated reason. Meaning-bearing motion is a design decision and arrives with the approved composition; implement its mechanism here without re-deciding its purpose.
 
-Design owns the communication purpose of interaction and motion. Engineering owns the mechanism, state correctness, lifecycle, accessibility, and performance:
+The approved design and [DESIGN.md](./DESIGN.md) own the communication purpose of interaction and motion. Engineering owns the mechanism, state correctness, lifecycle, cleanup, reduced-motion behaviour, accessibility, and performance:
 
 - use CSS transitions for simple local feedback;
 - load GSAP only inside the client island that uses it;

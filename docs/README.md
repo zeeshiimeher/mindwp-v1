@@ -4,13 +4,15 @@ This directory is MindWP's reusable project memory. Open only the authorities th
 
 ## Active authorities
 
-| Document                           | Owns                                                                                                                                     |
-| ---------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| [FOUNDATION.md](./FOUNDATION.md)   | Durable identity, audience principles, responsibility, truth, proof, privacy, professional boundaries and non-claims                     |
-| [STRATEGY.md](./STRATEGY.md)       | Current commercial decisions: public category, market, offer hierarchy, services, acquisition doors, delivery policy, per-client matters |
-| [WRITING.md](./WRITING.md)         | Public voice, and where each fact belongs — main copy, FAQ, proposal or meeting                                                          |
-| [RATIONALE.md](./RATIONALE.md)     | Why the direction was chosen, what was rejected, and what would justify changing it. Reasoning only — it never overrides the three above |
-| [ENGINEERING.md](./ENGINEERING.md) | Repository source, CSS, responsive, accessibility, interaction, motion mechanism, performance, capture commands and validation           |
+| Document                                                     | Owns                                                                                                                                                                          |
+| ------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [FOUNDATION.md](./FOUNDATION.md)                             | Durable identity, audience principles, responsibility, truth, proof, privacy, professional boundaries and non-claims                                                          |
+| [STRATEGY.md](./STRATEGY.md)                                 | Current commercial decisions: public category, market, offer hierarchy, services, acquisition doors, delivery policy, per-client matters                                      |
+| [WRITING.md](./WRITING.md)                                   | Public voice, and where each fact belongs — main copy, FAQ, proposal or meeting                                                                                               |
+| [RATIONALE.md](./RATIONALE.md)                               | Why the direction was chosen, what was rejected, and what would justify changing it. Reasoning only — it never overrides the three above                                      |
+| [INFORMATION-ARCHITECTURE.md](./INFORMATION-ARCHITECTURE.md) | The current website structure: which pages exist or are planned, what each page is responsible for, which pages own the main commercial offers, and how navigation is grouped |
+| [DESIGN.md](./DESIGN.md)                                     | Durable visual quality: composition, hierarchy, scale, use of space, responsive experience, and interaction and motion intent                                                 |
+| [ENGINEERING.md](./ENGINEERING.md)                           | Repository source, CSS, responsive, accessibility, interaction, motion mechanism, performance, capture commands and validation                                                |
 
 The documents have separate domains. When two statements appear to conflict, use the authority that owns the decision rather than combining both.
 
@@ -18,15 +20,18 @@ Foundation wins on identity, permission and boundaries. Strategy wins on what is
 
 Strategy owns the audience, market, pricing posture, offer hierarchy, acquisition doors and conversion direction. These decisions stay settled even when they are not repeated elsewhere.
 
+For page work: the approved page plan owns required meaning, `DESIGN.md` owns visual quality, and `ENGINEERING.md` owns implementation and technical mechanism. The task prompt may add more specific direction.
+
 **Do not read every document for background.** Open the ones the work in hand needs.
 
-| If you are…                                       | Read                                                                                                |
-| ------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
-| New to MindWP and need to understand the business | `STRATEGY.md`, then `FOUNDATION.md`. Add `RATIONALE.md` only if the reasoning matters               |
-| Planning a page                                   | `STRATEGY.md`, plus `FOUNDATION.md` or `WRITING.md` where a truth, proof or claims question is open |
-| Writing anything public                           | `WRITING.md`, plus `STRATEGY.md` for the current names and offers                                   |
-| Questioning or revising the strategy              | `RATIONALE.md` first, then `STRATEGY.md`                                                            |
-| Building or repairing                             | `ENGINEERING.md` and the approved design. Not the business documents                                |
+| If you are…                                       | Read                                                                                                                                                                          |
+| ------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| New to MindWP and need to understand the business | `STRATEGY.md`, then `FOUNDATION.md`. Add `RATIONALE.md` only if the reasoning matters                                                                                         |
+| Planning a page                                   | `INFORMATION-ARCHITECTURE.md` for the page's role in the site, `STRATEGY.md` for offers, plus `FOUNDATION.md` or `WRITING.md` where a truth, proof or claims question is open |
+| Designing or redesigning a page                   | The approved page plan and `DESIGN.md`. Not the business documents by default                                                                                                 |
+| Writing anything public                           | `WRITING.md`, plus `STRATEGY.md` for the current names and offers                                                                                                             |
+| Questioning or revising the strategy              | `RATIONALE.md` first, then `STRATEGY.md`                                                                                                                                      |
+| Building or repairing                             | `ENGINEERING.md` and the approved design. Not the business documents                                                                                                          |
 
 ## Source roles and precedence
 
@@ -91,11 +96,11 @@ These labels describe confidence and scope, not a lifecycle or approval system.
 
 A canonical authority is selected when the user supplies or explicitly names it, or when a route below assigns it to the work in hand. Do not open the full set for orientation.
 
-**Page planning** — `STRATEGY.md` for offer ownership and page roles, and `FOUNDATION.md` or `WRITING.md` where a truth, proof or claims question is genuinely open. Not `ENGINEERING.md`. There is no dedicated planning authority; treat an open planning question as a gap to name rather than inventing an answer.
+**Page planning** — `INFORMATION-ARCHITECTURE.md` for the page's role in the site, `STRATEGY.md` for offer ownership, and `FOUNDATION.md` or `WRITING.md` where a truth, proof or claims question is genuinely open. Not `ENGINEERING.md`. There is no dedicated planning authority; treat an open planning question as a gap to name rather than inventing an answer.
 
-**Page design or redesign** — the supplied page plan. There is no dedicated design authority; judge composition, hierarchy and experience against the plan and against `mindwp-design-eye`'s stated criteria.
+**Page design or redesign** — the approved page plan, `DESIGN.md`, and any task-specific reference or global design foundation the work needs. Not `FOUNDATION.md`, `STRATEGY.md`, `RATIONALE.md` or `ENGINEERING.md` by default.
 
-**Page build** — the approved composition and whatever section development exists, plus `ENGINEERING.md` and the existing foundational CSS the task needs. The design is already decided at this point, so a reference page adds nothing and invites drift.
+**Page build** — the approved design, the working or final copy, `ENGINEERING.md` and the relevant source files. The design is already decided at this point, so a reference page adds nothing and invites drift. Do not reopen business strategy or redesign the page unless Zeeshan asks.
 
 **Visual audit** — fresh captures of the page under review, judged against `mindwp-design-eye`'s stated criteria.
 
@@ -116,6 +121,6 @@ Optional specialists, not a mandatory chain. Each declares its own trigger and c
 | `mindwp-design-eye`       | Judging whether a built page is visually good              | Yes — capture only             |
 | `mindwp-frontend-quality` | Technical repair, finalisation and frontend quality review | No                             |
 
-Page planning and page design currently have no dedicated skill or authority document of their own; apply the reading route above directly.
+Page planning currently has no dedicated skill or authority document of its own; apply the reading route above directly.
 
 **These are not a sequence.** No skill automatically follows another, none loads a broader authority bundle, and none selects a reference page for itself. A skill may recommend a next step and must not require it. Design is reviewed before implementation begins, but a request to build only is a request to build only — and a partial request is answered at the scope asked for, not expanded into the full process.

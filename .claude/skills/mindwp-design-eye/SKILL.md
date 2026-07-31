@@ -7,7 +7,9 @@ description: Use to judge whether a built MindWP page or section is visually goo
 
 Judge the render. Implementation success and visual success are different judgements, and this skill only makes the second one.
 
-Judge against the criteria in this skill. Write no code and change no files.
+The approved page plan owns the page's required meaning, and `docs/DESIGN.md` owns durable visual quality. Judge against those. The criteria below are this skill's review method, not a higher authority — where they and `docs/DESIGN.md` appear to disagree, `docs/DESIGN.md` is the standard.
+
+Judge and report. Write no code and change no files, and do not repair or redesign unless Zeeshan explicitly asks for it.
 
 ## Capture, then read in order
 
@@ -63,7 +65,7 @@ Name what is working too, specifically enough to keep. A verdict that only remov
 
 ## What not to reward
 
-Do not score similarity to another page's constructions. Where the user has named a reference page, it sets the standard of **resolution** a section should reach, not the set of objects it should contain. A page that reproduces another's fans, tabs, browser scenes and hero mechanism has copied an anatomy, not met a standard. Where no reference has been named, judge against the criteria in this skill alone — do not go and find one.
+Do not score similarity to another page's constructions. Where the user has named a reference page, it sets the standard of **resolution** a section should reach, not the set of objects it should contain. A page that reproduces another's fans, tabs, browser scenes and hero mechanism has copied an anatomy, not met a standard. Do not search for or select a reference page unless Zeeshan names one; where none has been named, judge against the page plan, `docs/DESIGN.md` and the criteria here.
 
 Equally, do not treat familiar foundations as failures. Repeated surfaces, recurring eyebrow-and-heading grammar, cards, grids and centred introductions are shared MindWP language. Flatness is different meanings receiving the same inner hierarchy, weight and reading behaviour — not a page that looks like itself.
 

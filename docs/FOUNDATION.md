@@ -4,6 +4,10 @@ This document owns what does not change often: identity, audience principles, re
 
 It does not own offers, packaging, prices, campaigns, page plans or wording. Those belong to [STRATEGY.md](./STRATEGY.md) and [WRITING.md](./WRITING.md).
 
+These documents govern business meaning, offers, claims and public-content rules. They do not govern visual style, layout, composition, interaction or motion. Design and execution are decided separately.
+
+An agency-like, SaaS-like, product-like or editorial visual style is not a strategy conflict by itself. A real conflict exists only when the design changes the business meaning, makes a false claim, presents MindWP as software being sold, implies a compulsory bundle, or shows false proof.
+
 Durable means expected to last. An explicit later decision from the owner can still change it.
 
 ## What MindWP is
@@ -14,9 +18,7 @@ The enquiry path is how a business is found, considered, contacted, handled, fol
 
 MindWP may work on any part of that path.
 
-This is the internal organising model. It explains why website build and connected enquiry work belong in one business.
-
-It is not the required public category, headline or website structure. It may be used publicly where it genuinely improves clarity and is explained in plain language. Strategy owns the public category.
+This is the internal organising model. It explains why website work, local visibility and connected enquiry work belong in one business. Strategy owns the public category.
 
 The path describes responsibility MindWP may take. It does not claim completed work across every stage.
 
@@ -24,7 +26,7 @@ The path describes responsibility MindWP may take. It does not claim completed w
 
 Clinics are the primary audience. Expert-led businesses are secondary.
 
-An expert-led business is one where named expertise and professional judgement shape the service, and the buyer checks credibility and trust before making contact. Clinics, professional practices and advisory firms usually qualify. Businesses competing mainly on price, stock, venue or availability usually do not.
+An expert-led business is one where named expertise and professional judgement shape the service, and its customer or patient checks credibility and trust before making contact. Clinics, professional practices and advisory firms usually qualify. Businesses competing mainly on price, stock, venue or availability usually do not.
 
 The buyer is the owner, or the person responsible for how the business is found and how enquiries are handled.
 
@@ -50,7 +52,7 @@ Supporting growth and promising growth are different claims. Only the first is a
 
 The website is the part of the path MindWP controls most directly and a buyer can inspect most easily. It is where someone understands the work, judges whether to trust it, and decides to make contact. It is also MindWP's clearest proof of its own quality.
 
-It is not the whole business. Handling what happens after contact is a real capability beside it, not an extra.
+It is not the whole business. Being found, and handling what happens after contact, are real capabilities beside it, not extras.
 
 A rebuild is never a condition of working with MindWP. A business with a capable website is a valid client.
 
@@ -90,12 +92,14 @@ MindWP does not:
 
 Software and platforms support delivery. They are never the product.
 
-What MindWP sells is planned and implemented work: websites, and the connected business systems around them.
+What MindWP sells is planned and implemented work: websites, local visibility, and the connected business systems around them.
 
 ## How to use this document
 
 Read it when a question is about identity, fit, permission, responsibility or a claim.
 
 Do not read it for offer detail, current priorities or wording.
+
+Where these documents are silent, judgement decides. The absence of a rule is not a ban. Zeeshan will provide the extra context needed for each page, client and task. These documents are a reusable business brain, not an autopilot system.
 
 If Foundation and Strategy appear to disagree, Foundation wins on identity, permission and boundaries; Strategy wins on what is sold and how. If they genuinely contradict each other, report it rather than choosing quietly.
