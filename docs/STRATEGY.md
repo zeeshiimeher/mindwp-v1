@@ -1,162 +1,198 @@
 # MindWP strategy
 
-This document owns MindWP's current approved commercial direction. It is authoritative now but deliberately revisable as the business learns. [FOUNDATION.md](./FOUNDATION.md) owns the durable rationale and boundaries; an explicit later user decision overrides older strategy.
+This document owns MindWP's current commercial decisions: what is sold, to whom, how it is packaged, how clients are attracted, and how work is delivered.
 
-## Settled decisions
+It does not own identity or boundaries ([FOUNDATION.md](./FOUNDATION.md)), wording ([WRITING.md](./WRITING.md)), or reasoning ([RATIONALE.md](./RATIONALE.md)).
 
-Strategy owns these; no other document restates them.
+Everything here is authoritative now and revisable later.
 
-| Decision             | Settled position                                                                                                                                                                                                                                 |
-| -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Audience lane        | Clinic-first, plus expert-led businesses                                                                                                                                                                                                         |
-| Market emphasis      | United Kingdom primary; Australia the natural second market. International English throughout; location not emphasised in public copy                                                                                                            |
-| Business proposition | Website and enquiry systems partner for clinics and expert-led businesses                                                                                                                                                                        |
-| Principal engagement | Smart Website Systems — the usual entry route, not the whole business                                                                                                                                                                            |
-| Pricing posture      | No public price, tier table or starting figure. Scope and cost are quoted after the Visibility & Enquiry Review                                                                                                                                  |
-| Public voice         | MindWP speaks as "we". The founder may be named or pictured on an About page when the exact use is approved, but MindWP is not positioned through a founder-led identity. No unsupported history, credentials, location or team-size implication |
+## 1. Public category and market
 
-Supporting market conditions are internal reasoning, not evidence, and must not become public claims.
+**Public category:** websites and connected enquiry systems for clinics and expert-led businesses.
 
-## Current positioning
+That is the working meaning a buyer should get quickly. It is not fixed homepage copy.
 
-MindWP is a **website and enquiry systems partner for clinics and expert-led businesses**, combining strategic clarity, distinctive web design and careful implementation around real customer decisions. Independent clinics are the primary market and may lead audience language, content and proof, while the shared visual and verbal grammar stays sector-neutral. "Specialist" refers to the depth and precision of MindWP's thinking, not to any one sector's aesthetic.
+"Enquiry Path Partner" is the internal organising model. It is not the required public category, headline or website structure. It may be used publicly where it genuinely improves clarity and is explained in plain language.
 
-The business is website-centred: the website is the public-facing centre and the usual entry engagement, but not the definition of the whole business. Connected enquiry systems are a core capability alongside it.
+The limits:
 
-MindWP must not read as a compulsory bundle, SaaS product, CRM resale, advertising agency or automation package.
+- the path stages do not automatically become website sections, navigation, or a service for every stage;
+- no page has to explain the whole model;
+- public wording must not imply MindWP has already delivered every stage for many clients unless proof exists.
 
-### What growth means here
+| Decision           | Position                                                                            |
+| ------------------ | ----------------------------------------------------------------------------------- |
+| Primary audience   | Clinics                                                                             |
+| Secondary audience | Expert-led businesses                                                               |
+| Primary market     | United Kingdom                                                                      |
+| Secondary market   | Australia                                                                           |
+| Location in copy   | Not emphasised                                                                      |
+| Language           | International English                                                               |
+| Pricing            | No public price, tier table or starting figure. Scope and cost are quoted privately |
+| Delivery platform  | GoHighLevel is internal. It is never the public product or a selling point          |
 
-MindWP builds systems designed to support growth through better visibility, better handling and greater operational consistency. In practice that means clearer evaluation and trust, more suitable enquiry paths, fewer opportunities lost through poor handling, better follow-up, stronger reputation, less dependence on manual memory and better operational visibility.
+## 2. Offer hierarchy
 
-MindWP does not promise leads, bookings, revenue, rankings, ratings, conversion improvements, response times or guaranteed growth. **The defensible responsibility is the mechanism, its configuration, connection, testing and agreed ongoing consistency — never the client's commercial outcome.** Supporting growth and promising growth are different claims, and only the first is available.
+| Item                               | Type                                     | Public status                                       |
+| ---------------------------------- | ---------------------------------------- | --------------------------------------------------- |
+| Enquiry Path Partner               | Internal organising model                | Not the public category; usable where it helps      |
+| **Smart Website Systems**          | Flagship engagement                      | Public — the main website offer                     |
+| Website builds and rebuilds        | Major acquisition route and project work | Public                                              |
+| **Connected Enquiry Systems**      | First-class route and service family     | Public                                              |
+| Lead Response & Handling           | Service inside Connected Enquiry Systems | Public                                              |
+| Follow-Up & CRM                    | Service inside Connected Enquiry Systems | Public                                              |
+| Reputation & Reviews               | Service inside Connected Enquiry Systems | Public                                              |
+| **Local SEO**                      | Major standalone service and major door  | Public, standing beside the connected family        |
+| Ongoing management and improvement | Recurring layer                          | Public as a way of working, not a separate service  |
+| Visibility & Enquiry Review        | Conversion and diagnostic method         | Not a public offer. The public action is an enquiry |
+| Voice AI                           | Experimental capability                  | Not a public offer                                  |
+| Business automation                | Delivery capability                      | Not a public offer                                  |
 
-## Why MindWP is different
+Three things carry the business commercially: **Smart Website Systems**, **Connected Enquiry Systems** and **Local SEO**. Everything else supports them.
 
-Clients receive a planned and tested working system — not an isolated design, an empty platform or a collection of disconnected tools. The affirmative reasons to choose MindWP:
+Do not give every capability equal status. A capability becomes a service only when it can be scoped, priced and delivered on its own.
 
-1. The customer decision shapes the website.
-2. Strategy, copy, design and development stay connected.
-3. Responsibility continues through a functioning useful enquiry.
-4. CRM and automation are applied deliberately rather than sold as generic tooling.
-5. The complete path is configured and tested.
-6. Proof and professional boundaries remain truthful.
+## 3. Smart Website Systems
 
-Foundation's non-claims support these reasons; they must not dominate them. A page that only says what MindWP refuses to promise has not yet given anyone a reason to buy.
+Smart Website Systems is MindWP's main website engagement. It includes a premium website designed for useful connection. Selected connected responsibilities may be added when needed, but they are not compulsory.
 
-## Current offer architecture
+**A website-only engagement is still Smart Website Systems.** The name does not mean combined work, and what is included is decided per client.
 
-| Tier                     | What it is                                                                               |
-| ------------------------ | ---------------------------------------------------------------------------------------- |
-| **Principal engagement** | Smart Website Systems                                                                    |
-| **Connected services**   | Lead Response & Handling · Follow-Up & CRM · Reputation & Review                         |
-| **Visibility support**   | Local SEO Authority                                                                      |
-| **Recurring layer**      | Ongoing management and improvement of agreed website and enquiry-system responsibilities |
+The real distinction is premium website work built to support useful connection where the business needs it — not a website with more software attached.
 
-**Smart Website Systems** is the principal website engagement and the main commercial entry into MindWP's connected model. It combines a premium public website with useful enquiry capture, and may include strategy, site and page structure, copy, distinctive design, WordPress development and measurement around real customer decisions. It may also include selected connected handling, CRM, automation and reputation responsibilities where those are agreed.
+There is no separate public offer called "Premium Websites", and combined work needs no second name. Describe combined scope plainly: Smart Website Systems with Local SEO, or with selected connected enquiry work.
 
-Its own ownership runs through to a useful enquiry: understanding, trust, proof, action, functioning capture, truthful submission confirmation, and delivery to the agreed contact destination. A connected responsibility taken on alongside it is still scoped as itself, on its own terms.
+Quiet WordPress implementation for designers and agencies does not use the Smart Website Systems name publicly.
 
-**Connected responsibilities are configured according to need and separately scoped. They are never automatically included in a website engagement.** Selling the connected model strongly is legitimate; implying that buying a website means buying handling, CRM, automation and reputation is not.
+## 4. Website work
 
-**A smart website is not simply a larger website, or a website with more software attached.** It is a premium public experience with useful enquiry capture, designed to connect with the agreed systems used to organise, acknowledge, route, follow up and learn from enquiries. The word describes that connection and the thinking behind it — not size, feature count or a bundled toolset.
+Website builds and rebuilds are a major acquisition route and a major source of project revenue. They match MindWP's strongest current delivery skill, and the finished work is visible proof.
 
-A **useful enquiry** means the person could understand the relevant offer and provide appropriate contact or request context through the intended channel. It does not mean a qualified lead, booked appointment, sale, quotation, clinical decision or guaranteed outcome. Lead Response & Handling begins once that contact event exists; it owns the acknowledgement, useful context, routing and visible human responsibility that follow.
+Website work is independently sellable. A client may buy a website and nothing else, and that is a complete engagement.
 
-**The connected services are a first-class route, not an add-on.** They may be sold with a new website, after a website engagement, against a capable existing website, or as an ongoing managed responsibility. A client whose existing website already serves its purpose is a valid client: a rebuild is never a prerequisite. Local SEO Authority is substantial hands-on work rather than a light add-on.
+Website work often leads to wider connected work, but it never requires it.
 
-Each service is scoped individually and none is compulsory. Their relationship creates no automatic sequence, equal weighting or requirement to buy more than one.
+**Website improvement** is a secondary delivery option. Use it when a client has a suitable website but needs selected changes alongside visibility or handling work. It does not replace "website build" as the main website proposition.
 
-| Current public service name  | Current responsibility                                                                                     | Boundary                                                                                     |
-| ---------------------------- | ---------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
-| **Local SEO Authority**      | Ongoing local discovery and evaluation                                                                     | No ranking guarantees, advertising management or ownership of the complete website decision  |
-| **Lead Response & Handling** | Truthful acknowledgement, useful context, appropriate routing and visible human ownership after contact    | No invented speed promise, AI-replacement claim or ownership of the later follow-up sequence |
-| **Follow-Up & CRM**          | Justified next actions after the first response, respecting permission, stopping rules and human judgement | No CRM resale, automatic pressure, quote preparation or replacement of commercial judgement  |
-| **Reputation & Review**      | Ethical review requests, feedback, responsible replies and visible proof                                   | No bought or manipulated reviews, guaranteed ratings or ownership of all local discovery     |
+## 5. Connected Enquiry Systems
 
-**Local SEO Authority** and **Reputation & Review** are current working public names whose final naming remains open. Use them exactly as written until an explicit decision changes them; do not rename either in copy, routes, identifiers or navigation. The shorter labels Local SEO, Lead Response, Follow-Up and Reputation are planning shorthand only.
+A first-class commercial route, not an add-on. It may be sold with a new website, after one, against a capable existing website, or on its own.
 
-## Platform posture
+It improves how enquiries from suitable sources are captured, acknowledged, organised, routed, assigned, followed up, measured and managed.
 
-GoHighLevel is MindWP's internal delivery platform. It is not the public product, the headline proposition, a reseller-led identity or an implied proprietary MindWP system, and marketing language should describe configured responsibilities rather than the vendor.
+Sources and capabilities may include website forms, calls and missed calls, messages, booking requests, CRM organisation, internal notifications, appointment workflows, follow-up, reactivation, review requests, Voice AI where appropriate, campaigns, and selected business automation.
 
-Legal, privacy, contractual, proposal, access and ownership material may name the platform where transparency or accuracy requires it.
+Three named services sit inside this family:
 
-## Attention and measurement
+| Service                      | Responsibility                                                                    | Boundary                                                                |
+| ---------------------------- | --------------------------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| **Lead Response & Handling** | Acknowledgement, useful context, routing, and visible ownership after contact     | No invented speed promise, no AI-replacement claim                      |
+| **Follow-Up & CRM**          | Justified next actions, respecting permission, stopping rules and human judgement | No CRM resale, no automatic pressure, no replacing commercial judgement |
+| **Reputation & Reviews**     | Ethical review requests, feedback, responsible replies and visible proof          | No bought or manipulated reviews, no guaranteed ratings                 |
 
-Search, referrals and advertising may bring attention. MindWP does not manage advertising and should not claim advertising outcomes.
+Rules:
 
-Measurement should help reveal real customer decisions and useful weak points: what people can understand, where they act, whether an enquiry reaches the right place and what evidence supports future improvement. Measurement does not justify invented attribution, invasive tracking or guaranteed commercial outcomes.
+- Not every capability becomes a public service.
+- Each service is scoped on its own. None is compulsory, and buying one does not mean buying the others.
+- Reputation & Reviews is not the automatic lead of this family. No single service leads by default; demand decides where marketing attention goes.
+- This must never read as CRM resale, GoHighLevel setup, generic automation, a SaaS product, an AI replacement, or a compulsory bundle.
 
-## Audience and qualification
+## 6. Local SEO
 
-An **expert-led business** is one where identifiable expertise and accountable judgement materially shape the service, and the buyer evaluates credibility, fit and trust before making contact. This usually includes clinics and professional or advisory firms. It does not automatically include businesses whose primary value is inventory, venue access, transport, equipment hire or undifferentiated transaction handling.
+A major standalone service, a major acquisition door, a strong recurring opportunity, and an important part of the wider enquiry path.
 
-Approved examples alongside that definition:
+It is not a small add-on, and it does not sit beneath any other service.
 
-- **In lane:** independent clinics; sponsor-licence and corporate immigration boutiques; estate-planning and probate practices; forensic accounting and business-valuation boutiques; tax-investigation practices; medical-director and regulatory-compliance consultancies.
-- **Out of lane:** event and equipment hire; venues; chauffeur and transport operators; yacht and vehicle broking; and anything competing primarily on price or availability.
+It stands beside the connected handling family rather than inside it, because the responsibility is different: it works on how a business is found and considered, before an enquiry exists.
 
-Fit depends on the actual decision, value and trust at stake; available proof; capacity to act; and whether MindWP can own a useful scope. Qualification is diagnostic rather than exclusionary: do not infer that every buyer must be established, have an existing website, belong to one industry or purchase an ongoing service. A page plan may set a narrower audience when evidence supports it.
+A Local SEO client may also need reputation work, connected enquiry handling, website improvements or a website rebuild. Sell what the client needs; do not bundle by default.
 
-## Delivery, management and ownership posture
+Boundary: no ranking guarantees, no advertising management, no ownership of the whole website decision.
 
-Every engagement should make scope, responsibilities, access, support, third-party costs, data handling and handoff or ongoing management clear before work begins.
+## 7. Acquisition doors
 
-MindWP's delivery role is hands-on: it plans how each agreed piece should work, configures and connects it, tests the complete path and onboards the team before handover.
+Current main doors:
 
-Ongoing management and improvement of agreed website and enquiry-system responsibilities is a desirable recurring layer and should be offered wherever it creates continuing value. It is encouraged, never compulsory, and a one-off engagement remains legitimate.
+1. **Website builds and rebuilds**
+2. **Local SEO**
+3. **Connected enquiry problems**
 
-No single handover or ongoing-management model is approved for every engagement. Website ownership, service-account ownership, subscription responsibility, data access and ongoing management remain proposal-level decisions until a general policy is explicitly settled.
+Focused campaigns may later target missed calls, enquiry response, follow-up, CRM organisation, reputation, Voice AI, reactivation, or another clear business problem.
 
-Pricing is tailored and private. The absence of a public price, tier table, starting figure or universal qualification signal is a deliberate position rather than an unsettled one. A proposal must still make cost and scope clear before work begins.
+A campaign door does not become the MindWP brand or a permanent top-level service.
 
-## Current conversion direction
+WordPress implementation for designers and agencies may continue as a quiet direct or referral channel. It does not appear in the main public brand.
 
-The current direction is an internal working concept called a **Visibility & Enquiry Review**, useful with or without an existing website. It should diagnose the relevant public experience and enquiry path before prescribing a project.
+Rule: doors are marketing routes. The brand does not change because one door performs well.
 
-- Full label: **Request a Visibility & Enquiry Review**
-- Short label: **Request a Review**, where space is limited
-- **See the work** may be used as a lower-commitment navigational action where the page justifies it
+## 8. Recurring direction
 
-The Review's paid or unpaid status, commitment level, deliverable and response timing all remain open. Do not settle them in copy, design or a page plan.
+Ongoing management and improvement is an important recurring layer. It may cover agreed website responsibilities, local visibility, reputation, CRM, handling, follow-up, automation and measurement.
 
-### Writing to an open decision
+It is offered where it creates value. It is never compulsory, and a one-off engagement is legitimate.
 
-When a commercial term remains open, public copy states what is currently known, describes the responsibility or process at the supported level, and leaves the unsettled term unstated. It does not invent certainty, hide the whole offer behind vague language, or let a page-specific assumption silently settle the wider business decision.
+Do not assume recurring revenue exists simply because a CRM or an automation is involved. Recurring work is real only when a responsibility is agreed, can be delivered and is priced.
 
-Applied to the Review while its terms are open, a page may explain what it examines, who it is for, that it works with or without an existing website, that it identifies a prioritised starting point, and that project scope and price follow afterwards. A page must not invent a price, a duration, a response time, a written deliverable or a guaranteed recommendation.
+Public pages may say ongoing management is available. What it covers is agreed in a meeting, not explained on a page.
 
-## Implementation pathways
+## 9. Conversion direction
 
-WordPress, selected builders, WooCommerce and website rebuild work are delivery pathways rather than the public value proposition. They may support tool-aware search intent, but a platform, builder or project type is never the reason to buy.
+**The main public action is a normal enquiry — getting in touch.** The exact wording is decided at website planning.
 
-## Page ownership
+The **Visibility & Enquiry Review** is the conversation-led diagnostic that may follow. The normal flow:
 
-Concise roles, to prevent overlap and offer confusion between pages:
+1. Someone gets in touch.
+2. MindWP asks questions through chat or a video call.
+3. MindWP gathers useful business context.
+4. MindWP looks at the relevant website, local visibility and enquiry handling.
+5. MindWP discusses a useful starting point.
+6. A proposal may follow.
 
-- Home orients the buyer to MindWP, the principal engagement, credible proof and a useful next step.
-- Smart Website Systems sells the premium website as the public front door, and may give substantial overview treatment to the connected handling, CRM, automation and reputation capabilities available around it. Connected-service pages own the detailed mechanism, boundaries and scope of each responsibility.
-- Connected-service and visibility pages own their specific customer moment and may mention adjacent services without absorbing them.
-- Work and case-study material makes real craft and evidence inspectable.
-- Industry pages help a defined buyer recognise their decision, evidence needs and boundaries; they should not be generic pages with a substituted industry name.
-- About and process material establishes accountable expertise without invented founder or team claims.
-- Review or contact material supports a diagnostic next step without implying publication, delivery or fit in advance.
+It is not a public offer, a self-serve audit, an automated report or a downloadable document, and it must never be offered as one.
 
-## Proof development
+It is not required for every sale. A buyer who clearly wants a website, local visibility or connected handling should be able to enquire about that directly.
 
-Inspectable work currently carries a significant share of MindWP's trust burden. Foundation owns the permitted proof forms and the invented-proof prohibition; Strategy adds only the current commercial priority.
+The name may be used publicly where it helps, as long as it never reads like ordering a formal audit. Its format and timing are not fixed and settle through practice. It works with or without an existing website.
 
-Building proof is active business development, not something deferred until proof happens to appear. A thin proof surface is answered by gathering stronger evidence that meets the standard, never by lowering the standard.
+## 10. Delivery policies
 
-## Open commercial decisions
+These apply generally, and they are how MindWP works — not page material. Public copy does not explain them.
 
-These are deliberately open and do not block general design-system work:
+- Every website engagement includes enquiry capture that is configured and tested before handover.
+- Scope, responsibilities, access, third-party costs, data handling and what happens after launch are made clear before work begins.
+- MindWP's delivery role is hands-on: plan it, configure it, connect it, test the whole path, and onboard the team.
+- Any connected engagement names a person on the client side who owns the process. Systems fail when nobody owns them.
+- A managed responsibility is sold only when MindWP can deliver it consistently.
+- Review requests and any automated contact follow the platform rules and the law in the market concerned.
 
-- the preferred balance between handover and ongoing management;
-- standard website, service-account, data and subscription ownership terms;
-- the final public names for Local SEO Authority and Reputation & Review;
-- the Visibility & Enquiry Review's final public label, paid status, commitment level, deliverable and response timing;
-- future information-architecture expansion and publication order.
+## 11. Decided per engagement
 
-Record an answer here only after an explicit decision. Until then, a supplied page plan may resolve a page-specific need without pretending to settle the whole business.
+These are **settled as per-client decisions**. They are agreed in a meeting. They are not open questions, and public copy must not try to answer them.
+
+- Whether an existing website is kept, improved or rebuilt.
+- Which connected responsibilities are included.
+- Which parts of the enquiry path are in scope.
+- Account, subscription, platform and data ownership.
+- Handover or ongoing management.
+- Third-party costs.
+- Scope, price and timeline.
+- What reporting or proof the client receives.
+
+## 12. Experimental capabilities
+
+Under evaluation. Not public offers, not brand positions.
+
+| Capability                     | Status     | Conditions                                                                                                                                                                            |
+| ------------------------------ | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Voice AI                       | Developing | Use only where it solves a real problem, the client understands the responsibility, consent and professional boundaries are respected, and MindWP can deliver and support it properly |
+| Enquiry reactivation campaigns | Developing | Existing relationships and permitted contact only                                                                                                                                     |
+
+**Business automation** is a delivery capability, not an experiment and not yet a service. It is used inside engagements where it helps. It becomes a named service only when it meets the test in section 2 and buyers ask for it by name.
+
+## 13. Open decisions
+
+Genuinely unsettled. Do not invent answers, and do not let them block unrelated work.
+
+- **Information architecture and publication order** — which pages MindWP's own website has, what appears in navigation, and the order they are built and published. This is a website planning decision, not a core business decision. It will be planned separately and recorded in its own document. Do not settle it inside Strategy.
+
+Record an answer here only after an explicit decision.

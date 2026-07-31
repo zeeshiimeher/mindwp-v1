@@ -14,7 +14,7 @@ Every MindWP page addresses a business owner deciding whether to buy — never a
 ## Repository safety
 
 - Inspect the worktree before editing and preserve unrelated user changes.
-- Keep any archived material or isolated old-site copy unchanged and non-authoritative unless the user explicitly scopes archival work.
+- Treat superseded material, including anything recovered from git history, as non-authoritative.
 - Keep draft and variant routes out of navigation, sitemap, indexing, deployment, and publication unless release work is explicitly authorised.
 - Use truthful proof. Keep enquiry data, credentials, founder details, and private implementation information out of public source and logs unless their exact use is approved.
 - Use one meaningful semantic structure across widths unless the content itself genuinely differs.

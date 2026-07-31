@@ -4,14 +4,29 @@ This directory is MindWP's reusable project memory. Open only the authorities th
 
 ## Active authorities
 
-| Document                               | Owns                                                                                                                                                              |
-| -------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [FOUNDATION.md](./FOUNDATION.md)       | Durable identity, buyer principles, website-centred rationale, truth, proof, privacy and professional boundaries                                                  |
-| [STRATEGY.md](./STRATEGY.md)           | Current commercial direction, offers, service responsibilities, qualification, conversion direction, page roles and open decisions                                |
-| [WRITING.md](./WRITING.md)             | Voice, audience register, claims discipline and responsible public-language practice                                                                              |
-| [ENGINEERING.md](./ENGINEERING.md)     | Repository source, CSS, responsive, accessibility, interaction, motion mechanism, performance, capture commands and validation                                    |
+| Document                           | Owns                                                                                                                                     |
+| ---------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| [FOUNDATION.md](./FOUNDATION.md)   | Durable identity, audience principles, responsibility, truth, proof, privacy, professional boundaries and non-claims                     |
+| [STRATEGY.md](./STRATEGY.md)       | Current commercial decisions: public category, market, offer hierarchy, services, acquisition doors, delivery policy, per-client matters |
+| [WRITING.md](./WRITING.md)         | Public voice, and where each fact belongs — main copy, FAQ, proposal or meeting                                                          |
+| [RATIONALE.md](./RATIONALE.md)     | Why the direction was chosen, what was rejected, and what would justify changing it. Reasoning only — it never overrides the three above |
+| [ENGINEERING.md](./ENGINEERING.md) | Repository source, CSS, responsive, accessibility, interaction, motion mechanism, performance, capture commands and validation           |
 
-The documents have separate domains. When two statements appear to conflict, use the authority that owns the decision rather than combining both. Strategy settles the audience lane, market emphasis, pricing posture, public voice, offer hierarchy and conversion direction; their absence from this map is not an open question.
+The documents have separate domains. When two statements appear to conflict, use the authority that owns the decision rather than combining both.
+
+Foundation wins on identity, permission and boundaries. Strategy wins on what is sold and how. Writing wins on whether a fact is public and how it is worded. Rationale never wins — if it disagrees with an authority, the authority is right and Rationale is stale. A genuine contradiction between authorities is a documentation bug: report it rather than reconciling it quietly.
+
+Strategy owns the audience, market, pricing posture, offer hierarchy, acquisition doors and conversion direction. These decisions stay settled even when they are not repeated elsewhere.
+
+**Do not read every document for background.** Open the ones the work in hand needs.
+
+| If you are…                                       | Read                                                                                                |
+| ------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
+| New to MindWP and need to understand the business | `STRATEGY.md`, then `FOUNDATION.md`. Add `RATIONALE.md` only if the reasoning matters               |
+| Planning a page                                   | `STRATEGY.md`, plus `FOUNDATION.md` or `WRITING.md` where a truth, proof or claims question is open |
+| Writing anything public                           | `WRITING.md`, plus `STRATEGY.md` for the current names and offers                                   |
+| Questioning or revising the strategy              | `RATIONALE.md` first, then `STRATEGY.md`                                                            |
+| Building or repairing                             | `ENGINEERING.md` and the approved design. Not the business documents                                |
 
 ## Source roles and precedence
 
@@ -20,7 +35,7 @@ The documents have separate domains. When two statements appear to conflict, use
 3. An explicitly supplied page plan owns that page's job, audience, intent, action, meaning, proof and fixed boundaries. It does not silently redefine the wider business.
 4. `CLAUDE.md` owns repository operating safety. Execution skills apply specialised methods; they do not create business or design authority.
 5. Current source and fresh renders own implemented reality. Report drift from the documents instead of silently treating implementation as a new strategic decision.
-6. Archived or historical material, including anything recovered from git history, is a non-authoritative preservation source. Extract from it only when reconciled with current authority.
+6. Superseded material, including anything recovered from git history, is never authoritative. Do not treat it as a current instruction, and do not copy its wording or structure into new work.
 
 Public routes, navigation and publication state come from active source and explicit release decisions. A document entry does not make a route live.
 
@@ -90,14 +105,16 @@ A canonical authority is selected when the user supplies or explicitly names it,
 
 In every route, open Foundation, Strategy or Writing when a business, positioning or claims question is genuinely open — not for background. If a missing decision would materially change the result, identify the gap rather than inventing an answer.
 
+Strategy separates settled global decisions, matters decided per client, experimental capabilities and genuinely open decisions. Check which of those a question falls into before treating it as unresolved: a matter decided per engagement is settled, not open.
+
 ## Execution skills
 
 Optional specialists, not a mandatory chain. Each declares its own trigger and context.
 
-| Skill                     | Use for                                                     | May use a named reference page |
-| ------------------------- | ------------------------------------------------------------ | ------------------------------ |
-| `mindwp-design-eye`       | Judging whether a built page is visually good                | Yes — capture only             |
-| `mindwp-frontend-quality` | Technical repair, finalisation and frontend quality review    | No                             |
+| Skill                     | Use for                                                    | May use a named reference page |
+| ------------------------- | ---------------------------------------------------------- | ------------------------------ |
+| `mindwp-design-eye`       | Judging whether a built page is visually good              | Yes — capture only             |
+| `mindwp-frontend-quality` | Technical repair, finalisation and frontend quality review | No                             |
 
 Page planning and page design currently have no dedicated skill or authority document of their own; apply the reading route above directly.
 

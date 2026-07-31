@@ -56,7 +56,7 @@ scripts/        repository checks, context export, and capture capabilities
 tests/          script, smoke, interaction, and accessibility coverage
 ```
 
-Page-specific components, data, and CSS should stay near their route until reuse is proven. Archived audit inputs and any isolated old-site copy are preservation evidence, not importable application source or default implementation reference.
+Page-specific components, data, and CSS should stay near their route until reuse is proven.
 
 The implemented source roles are:
 
