@@ -1,0 +1,197 @@
+/* MindWP section laboratory — global stylesheet.
+ *
+ * Three jobs, in this order:
+ *   1. consume the website's real tokens and typography, unmodified;
+ *   2. bridge Tailwind's theme onto those variables rather than restating them;
+ *   3. add the minimal library-local foundation the catalogue needs.
+ *
+ * The website's `globals.css` and `layout.css` are deliberately NOT imported.
+ * They carry the site reset and the site shell (header, nav, drawer, footer),
+ * which are not what this laboratory is testing.
+ */
+
+/* Cascade layers, declared before the imports so the order is ours, not
+   Tailwind's. `mindwp` sits above Tailwind's `base` so the shared element
+   typography beats Preflight, and below `utilities` so a Tailwind utility can
+   still override it on a specific element. */
+@layer theme, base, mindwp, library, components, utilities;
+
+@import "tailwindcss" source(none);
+
+/* Shared foundation, owned by the website and never edited from here.
+   Live cross-root imports: one source of truth, token changes inherit. */
+@import "../../../src/styles/tokens.css" layer(mindwp);
+@import "../../../src/styles/typography.css" layer(mindwp);
+
+@import "./foundation.css" layer(library);
+
+/* Content sources. Explicit, so Tailwind never scans the website's `src/`. */
+@source "../../src/app";
+@source "../../src/components";
+@source "../../src/lib";
+
+/* ---------------------------------------------------------------------------
+   Token bridge
+   ---------------------------------------------------------------------------
+   Tailwind's own scales are cleared where MindWP already owns that decision, so
+   there is one palette, one elevation scale and one easing curve rather than
+   two. Kept: the numeric spacing multiplier (fine adjustment), breakpoints,
+   container-query sizes, tracking and leading.
+
+   `--text-*` is cleared and then partially rebuilt — see the typography
+   ownership boundary below. */
+@theme {
+  --color-*: initial;
+  --font-*: initial;
+  --text-*: initial;
+  --radius-*: initial;
+  --shadow-*: initial;
+  --inset-shadow-*: initial;
+  --ease-*: initial;
+}
+
+/* ---------------------------------------------------------------------------
+   Typography ownership boundary
+   ---------------------------------------------------------------------------
+   Two owners, split by role rather than by size.
+
+   MINDWP OWNS EVERY TYPE ROLE THAT CARRIES MEANING.
+   Headings and display copy come from `typography.css`: `h1`–`h4`,
+   `.display-feature`, `.text-lead`, `.eyebrow`, `.editorial-note`, and the
+   `.measure-*` reading widths. Those carry fluid `clamp()` sizing, per-step
+   optical tracking and Fraunces' SOFT/WONK variation axes. None of it is
+   reproduced here, because a flat utility scale would drop all three and the
+   loss would be quiet.
+
+   TAILWIND OWNS A SMALL SUPPORTING SCALE.
+   `text-xs` … `text-xl` exist for ordinary interface and supporting copy —
+   captions, chips, meta lines, table cells, control labels — where reaching for
+   a semantic heading role would be wrong. The values are deliberate and fixed
+   rather than fluid: supporting text should not swing with the viewport while
+   the headline beside it does.
+
+   These are the conventional Tailwind sizes on purpose. A future executor who
+   types `text-sm` expects 0.875rem, and quietly redefining it would be its own
+   trap. Only the line heights are tuned, to MindWP's reading rhythm rather than
+   Tailwind's defaults.
+
+   The scale deliberately stops at `xl`. Anything larger is a display decision,
+   and display belongs to `typography.css`. `text-2xl` and above therefore
+   generate nothing — if you want a headline, use a heading. */
+@theme {
+  --text-xs: 0.75rem;
+  --text-xs--line-height: 1.45;
+  --text-sm: 0.875rem;
+  --text-sm--line-height: 1.5;
+  --text-base: 1rem;
+  --text-base--line-height: 1.6;
+  --text-lg: 1.125rem;
+  --text-lg--line-height: 1.55;
+  --text-xl: 1.25rem;
+  --text-xl--line-height: 1.45;
+}
+
+/* `inline` matters: it makes each utility emit `var(--surface-page)` directly
+   instead of minting a second variable that copies the token's value. Nothing
+   below duplicates a literal — every entry points at a variable that already
+   exists in `src/styles/tokens.css`. Entries that look self-referential
+   (`--radius-sm: var(--radius-sm)`) are reading the MindWP token of that name;
+   Tailwind's own version was cleared above. */
+@theme inline {
+  /* Surfaces */
+  --color-page: var(--surface-page);
+  --color-card: var(--surface-card);
+  --color-sunken: var(--surface-sunken);
+  --color-mist: var(--surface-mist);
+  --color-navy: var(--surface-navy);
+  --color-navy-panel: var(--surface-navy-panel);
+  --color-navy-raised: var(--surface-navy-raised);
+  --color-white: var(--color-white);
+
+  /* Text */
+  --color-ink: var(--text-primary);
+  --color-muted: var(--text-secondary);
+  --color-inverse: var(--text-inverse);
+  --color-inverse-muted: var(--text-inverse-muted);
+
+  /* Emerald — the controlled attention colour, including its approved ladder.
+     These transparent steps are the only sanctioned ones; the ladder exists so
+     nobody hand-writes new rgb(47 185 140 / n%) values. */
+  --color-emerald: var(--color-emerald);
+  --color-emerald-deep: var(--color-emerald-deep);
+  --color-emerald-hover: var(--emerald-hover);
+  --color-emerald-tint-weak: var(--emerald-tint-weak);
+  --color-emerald-tint: var(--emerald-tint);
+  --color-emerald-tint-strong: var(--emerald-tint-strong);
+  --color-emerald-line-soft: var(--emerald-line-soft);
+  --color-emerald-line: var(--emerald-line);
+  --color-emerald-glow: var(--emerald-glow);
+
+  /* Edges */
+  --color-hairline: var(--border-hairline);
+  --color-navy-hairline: var(--border-navy-hairline);
+  --color-mist-hairline: var(--border-mist-hairline);
+  --color-focus: var(--focus-ring);
+
+  /* Status */
+  --color-warning: var(--color-warning);
+  --color-danger: var(--color-danger);
+
+  /* Families only. Sizing stays with typography.css. */
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+
+  /* Spacing rhythm. Named `step-*` so it cannot be mistaken for — or shadow —
+     Tailwind's numeric multiplier scale, which stays available for incidental
+     fine adjustment. */
+  --spacing-step-1: var(--space-1);
+  --spacing-step-2: var(--space-2);
+  --spacing-step-3: var(--space-3);
+  --spacing-step-4: var(--space-4);
+  --spacing-step-5: var(--space-5);
+  --spacing-step-6: var(--space-6);
+  --spacing-step-7: var(--space-7);
+  --spacing-step-8: var(--space-8);
+  --spacing-step-9: var(--space-9);
+  --spacing-step-10: var(--space-10);
+  --spacing-page-margin: var(--page-margin);
+
+  --radius-sm: var(--radius-sm);
+  --radius-md: var(--radius-md);
+  --radius-lg: var(--radius-lg);
+  --radius-pill: var(--radius-pill);
+
+  /* Three durable elevation steps, plus the inverse pair for navy ground. */
+  --shadow-raised: var(--elev-raised);
+  --shadow-focal: var(--elev-focal);
+  --shadow-raised-inverse: var(--elev-raised-inverse);
+  --shadow-focal-inverse: var(--elev-focal-inverse);
+  --inset-shadow-hairline: var(--elev-hairline);
+
+  /* Widths. `--container-max` maps to `max-w-page` because `max-w-max` is
+     already a static Tailwind utility (max-content). */
+  --container-narrow: var(--container-narrow);
+  --container-content: var(--container-content);
+  --container-wide: var(--container-wide);
+  --container-page: var(--container-max);
+  --container-copy: var(--measure-copy);
+  --container-copy-narrow: var(--measure-copy-narrow);
+  --container-intro: var(--measure-intro);
+
+  --ease-out: var(--ease-out);
+}
+
+/* Durations. Written as utilities rather than theme keys so they hold whatever
+   Tailwind's `duration-*` namespace does across minor versions. */
+@utility duration-fast {
+  transition-duration: var(--duration-fast);
+}
+@utility duration-base {
+  transition-duration: var(--duration-base);
+}
+@utility duration-slow {
+  transition-duration: var(--duration-slow);
+}
+@utility duration-choreo {
+  transition-duration: var(--duration-choreo);
+}

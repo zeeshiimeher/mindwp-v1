@@ -1,0 +1,101 @@
+/* Minimal library-local foundation.
+ *
+ * The website's reset and shell live in `src/app/globals.css` and
+ * `src/styles/layout.css` and are not imported here. This file is the smallest
+ * set of rules the catalogue needs so that shared typography renders honestly
+ * and sections sit on a neutral, correct ground.
+ *
+ * Library-only. It never edits or shadows a shared file.
+ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--surface-page);
+  color: var(--text-secondary);
+  font: var(--body-md);
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+svg,
+video,
+canvas {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 3px;
+}
+
+/* Catalogue chrome label.
+ *
+ * The catalogue uses real headings for its meta bars so the page keeps a sane
+ * outline, but those headings must not wear the display scale. Overriding the
+ * family and shrinking the text is not enough: `letter-spacing` inherits as a
+ * computed pixel value, so a heading tracked at -0.038em of a 78px display size
+ * passes roughly -3px down to any small text inside it and the letters collide.
+ * This resets the whole type role in one place.
+ */
+.catalogue-label {
+  margin: 0;
+  color: var(--text-primary);
+  font: var(--body-xs);
+  font-variation-settings: normal;
+  letter-spacing: normal;
+  text-wrap: initial;
+}
+
+/* Surface contexts.
+ *
+ * `typography.css` already branches on `.on-dark` (eyebrow colour, editorial
+ * note colour), so the laboratory has to provide the class for that branch to
+ * mean anything. This is a library-local implementation of the contract, not a
+ * copy of the website's: it remaps the semantic text and edge tokens so shared
+ * element rules — headings, paragraphs, lists — inherit correctly on navy.
+ */
+.on-dark {
+  --text-primary: var(--color-text-inverse);
+  --text-secondary: var(--color-text-inverse-muted);
+  --border-hairline: var(--color-navy-hairline);
+  --heading-turn-color: var(--color-text-inverse-muted);
+
+  color: var(--text-secondary);
+}
+
+.on-mist {
+  --border-hairline: var(--color-mist-hairline);
+}
+
+/* Motion contract.
+ *
+ * Every animated section must resolve to the same information without motion.
+ * Sections opt in by setting `data-motion="on"` from their own client island
+ * only after a `prefers-reduced-motion: no-preference` match; the static
+ * arrangement is what renders by default, before and without JavaScript.
+ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

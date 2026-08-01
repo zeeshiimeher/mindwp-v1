@@ -1,0 +1,18 @@
+# Nested workspace root.
+#
+# This file exists for isolation, not for multi-package management. Without it
+# pnpm walks up from /library and finds the website's pnpm-workspace.yaml, which
+# would make this application part of the website's install and put laboratory
+# dependencies in the root lockfile. Declaring a workspace root here stops that
+# search, so /library resolves its own dependencies into its own
+# library/pnpm-lock.yaml and library/node_modules.
+#
+# The website's pnpm-workspace.yaml is never edited to achieve this.
+packages: []
+
+# Same decisions as the website: sharp's native build is not needed, and the
+# Playwright browsers are already cached system-wide, so skip the download.
+allowBuilds:
+  sharp: false
+  playwright: false
+  playwright-core: false

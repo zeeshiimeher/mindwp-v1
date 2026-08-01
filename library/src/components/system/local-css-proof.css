@@ -1,0 +1,133 @@
+/* System check B — the local-CSS half.
+ *
+ * Tailwind owns the section's structure, spacing and responsive grid. This file
+ * owns one art-directed object, because a utility API would either not express
+ * it or would express it as an unreadable string of arbitrary values:
+ *
+ *   - a notched corner via clip-path;
+ *   - a ruled texture built from a repeating gradient, faded out with a mask;
+ *   - a pseudo-element glow layered behind the plate and offset from it;
+ *   - a marginal index rule drawn with ::before / ::after counters.
+ *
+ * Library-local. Every value still comes from the shared tokens.
+ *
+ * Declared in the `library` layer (ordered in styles/library.css) so a Tailwind
+ * utility can still win on a specific element. Unlayered component CSS would
+ * silently outrank every utility, which is the wrong default.
+ */
+
+@layer library {
+  .plate {
+    position: relative;
+    isolation: isolate;
+    background: var(--surface-card);
+    clip-path: polygon(0 0, calc(100% - 2.25rem) 0, 100% 2.25rem, 100% 100%, 0 100%);
+    box-shadow: var(--elev-focal);
+  }
+
+  /* Ruled texture, faded so it never competes with the copy sitting on it. */
+  .plate::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background-image: repeating-linear-gradient(
+      to bottom,
+      var(--emerald-tint) 0 1px,
+      transparent 1px 0.75rem
+    );
+    mask-image: linear-gradient(to bottom, rgb(0 0 0 / 90%), transparent 62%);
+    -webkit-mask-image: linear-gradient(to bottom, rgb(0 0 0 / 90%), transparent 62%);
+  }
+
+  /* The notch is a cut, so a normal border cannot follow it. This draws the edge
+   that the clip-path removed. */
+  .plate::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 2.25rem;
+    height: 2.25rem;
+    background: linear-gradient(
+      to bottom left,
+      var(--surface-mist) 0 49.6%,
+      var(--border-mist-hairline) 49.6% 50.4%,
+      transparent 50.4%
+    );
+  }
+
+  /* Offset glow, behind the plate and deliberately not concentric with it. */
+  .plate-stack {
+    position: relative;
+  }
+
+  .plate-stack::before {
+    content: "";
+    position: absolute;
+    inset: 1.75rem -1.25rem -1.75rem 1.75rem;
+    z-index: -1;
+    border-radius: var(--radius-lg);
+    background: radial-gradient(120% 90% at 78% 12%, var(--emerald-glow), transparent 68%);
+    filter: blur(2px);
+  }
+
+  /* Marginal index. The counter and its hairline are one job; splitting them into
+   utilities would spread a single idea across three elements. */
+  .plate-index {
+    counter-reset: plate-index;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .plate-index > li {
+    position: relative;
+    counter-increment: plate-index;
+    padding-left: 3.25rem;
+    padding-block: var(--space-4);
+  }
+
+  .plate-index > li + li {
+    border-top: 1px solid var(--border-hairline);
+  }
+
+  .plate-index > li::before {
+    content: counter(plate-index, decimal-leading-zero);
+    position: absolute;
+    left: 0;
+    top: var(--space-4);
+    color: var(--color-emerald-deep);
+    font: var(--label-caps);
+    letter-spacing: var(--label-caps-tracking);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .plate-index > li::after {
+    content: "";
+    position: absolute;
+    left: 2rem;
+    top: calc(var(--space-4) + 0.45em);
+    width: 0.75rem;
+    height: 1px;
+    background: var(--emerald-line);
+  }
+
+  /* Art-directed responsive change: below the medium width the notch shrinks and
+   the offset glow squares up, because a 2.25rem cut on a narrow plate reads as
+   damage rather than intent. */
+  @media (max-width: 47.9375rem) {
+    .plate {
+      clip-path: polygon(0 0, calc(100% - 1.25rem) 0, 100% 1.25rem, 100% 100%, 0 100%);
+    }
+
+    .plate::after {
+      width: 1.25rem;
+      height: 1.25rem;
+    }
+
+    .plate-stack::before {
+      inset: 1rem -0.5rem -1rem 1rem;
+    }
+  }
+}

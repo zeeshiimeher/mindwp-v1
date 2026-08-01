@@ -1,0 +1,9 @@
+# Owned by the concurrent research task. Never formatted, staged or rewritten here.
+README.md
+planning/
+
+.next/
+.next-dev/
+node_modules/
+screenshots/
+pnpm-lock.yaml

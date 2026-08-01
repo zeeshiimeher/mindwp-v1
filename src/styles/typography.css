@@ -49,8 +49,14 @@ h3,
 h4 {
   color: var(--text-primary);
   text-wrap: balance;
-  font-variation-settings: var(--display-axes);
 }
+
+/* The axes are set per level, after each `font:` shorthand, and never in the
+   grouped rule above. `font:` is a shorthand: it resets every font longhand it
+   does not name — including font-variation-settings — back to its initial
+   value. Declared before the shorthand, the axes are silently discarded, which
+   is a quiet failure rather than a loud one: the type still renders, just in
+   Fraunces' default instance instead of the tuned one. */
 
 h1 {
   font: var(--display-2xl);
@@ -61,16 +67,19 @@ h1 {
 h2 {
   font: var(--display-lg);
   letter-spacing: var(--display-lg-tracking);
+  font-variation-settings: var(--display-axes);
 }
 
 h3 {
   font: var(--display-md);
   letter-spacing: var(--display-md-tracking);
+  font-variation-settings: var(--display-axes);
 }
 
 h4 {
   font: var(--display-sm);
   letter-spacing: var(--display-sm-tracking);
+  font-variation-settings: var(--display-axes);
 }
 
 /* Muted heading turn — the shared two-tone device: a roman statement followed

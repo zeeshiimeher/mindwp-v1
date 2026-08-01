@@ -22,6 +22,8 @@ Current source and fresh renders own implemented reality. When implementation co
 
 Tailwind is not part of the current architecture.
 
+The one exception is the private `/library` application, which uses Tailwind as an isolated visual-exploration tool. It sits outside the root application and the pnpm workspace, and keeps its own dependencies, lockfile and build output. This does not make Tailwind a website dependency or a styling rule: nothing in `src/` may use it, and a library component selected for a page is rebuilt in handwritten CSS.
+
 `package.json` owns the executable command definitions, and the root [README.md](../README.md) explains normal day-to-day use. Read commands there rather than maintaining a second list here.
 
 Do not claim an undocumented or unavailable command as a required check.

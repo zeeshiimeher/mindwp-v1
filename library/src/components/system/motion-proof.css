@@ -1,0 +1,79 @@
+/* System check C — scene support for the GSAP proof.
+ *
+ * The static arrangement is the default: three panels stacked in normal flow,
+ * a plain numbered rail, no fixed heights. Nothing here depends on JavaScript.
+ *
+ * `[data-motion="on"]` is set by the client island only after GSAP has matched
+ * `prefers-reduced-motion: no-preference`. It is what converts the stack into a
+ * single pinned stage. If the branch never runs — reduced motion, JS disabled,
+ * an error — the section keeps its static meaning.
+ */
+
+@layer library {
+  .motion-proof {
+    --panel-count: 3;
+  }
+
+  .motion-stage {
+    display: grid;
+    align-content: center;
+    gap: var(--space-7);
+  }
+
+  .motion-panels {
+    display: grid;
+    gap: var(--space-5);
+  }
+
+  .motion-rail {
+    display: grid;
+    grid-auto-flow: column;
+    gap: var(--space-3);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .motion-rail > li {
+    position: relative;
+    padding-top: var(--space-3);
+    border-top: 2px solid var(--border-navy-hairline);
+    color: var(--text-inverse-muted);
+    font: var(--body-xs);
+  }
+
+  /* ---- Animated branch ---- */
+
+  .motion-proof[data-motion="on"] .motion-stage {
+    min-height: 100svh;
+    padding-block: var(--space-8);
+  }
+
+  .motion-proof[data-motion="on"] .motion-panels {
+    position: relative;
+    min-height: 22rem;
+  }
+
+  .motion-proof[data-motion="on"] .motion-panels > * {
+    position: absolute;
+    inset: 0;
+  }
+
+  .motion-proof[data-motion="on"] .motion-rail > li::after {
+    content: "";
+    position: absolute;
+    inset-block-start: -2px;
+    inset-inline-start: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--color-emerald);
+    transform: scaleX(var(--rail-progress, 0));
+    transform-origin: left center;
+  }
+
+  @media (min-width: 48rem) {
+    .motion-proof[data-motion="on"] .motion-panels {
+      min-height: 18rem;
+    }
+  }
+}

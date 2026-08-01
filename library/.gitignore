@@ -1,0 +1,19 @@
+# The repository root .gitignore anchors /node_modules and /.next to the root,
+# so this application needs its own entries. Planning and source stay tracked.
+
+/node_modules
+/out/
+
+# Production build output, and the separate development output that keeps
+# `pnpm build` from disturbing a running `pnpm dev` session.
+/.next/
+/.next-dev/
+
+*.tsbuildinfo
+next-env.d.ts
+
+# Capture output from `pnpm capture`.
+/screenshots/
+
+.DS_Store
+.env*
