@@ -9,11 +9,14 @@ Build rules are not here — [../BUILD-DEFAULTS.md](../BUILD-DEFAULTS.md) owns t
 
 ## Active
 
-| File                                       | Owns                                                     | Read when                                           |
-| ------------------------------------------ | -------------------------------------------------------- | --------------------------------------------------- |
-| [ARCHITECTURE.md](./ARCHITECTURE.md)       | The approved application architecture and its exclusions | The architecture is questioned or extended.         |
-| [TAXONOMY.md](./TAXONOMY.md)               | Categories, permanent ids, tag vocabulary, concept rules | Assigning metadata; judging concept versus variant. |
-| [BUILD-SELECTION.md](./BUILD-SELECTION.md) | Which of the 216 ids are selected, reserve, merged       | Planning a wave; promoting a reserve concept.       |
+| File                                       | Owns                                                     | Read when                                                                                                             |
+| ------------------------------------------ | -------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
+| [ARCHITECTURE.md](./ARCHITECTURE.md)       | The approved application architecture and its exclusions | The architecture is questioned or extended.                                                                           |
+| [TAXONOMY.md](./TAXONOMY.md)               | Categories, permanent ids, tag vocabulary, concept rules | Revising the taxonomy; adding or changing a vocabulary value; judging concept versus variant; planning a new concept. |
+| [BUILD-SELECTION.md](./BUILD-SELECTION.md) | Which of the 216 ids are selected, reserve, merged       | Planning a wave; promoting a reserve concept.                                                                         |
+
+**Writing an ordinary registry entry does not require the taxonomy.** The metadata a component needs
+is already carried by its brief; `registry.ts` types every value, so a wrong one is a build error.
 
 ## Waves
 

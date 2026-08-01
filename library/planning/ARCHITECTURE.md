@@ -40,8 +40,9 @@ application code is the authority on itself.
   rather than a parallel one.
 - **Library-local CSS** alongside it for work a utility API would flatten.
 - **GSAP with `useGSAP`**, so timelines are scoped and reverted by the component lifecycle.
-- **Live imports of the website's `tokens.css` and `typography.css`**, with the same `next/font`
-  setup — the cross-root CSS import that the repository audit flagged as unverified now works.
+- **Library-owned snapshots of the MindWP token and typography foundations**, at
+  `src/styles/foundation/`, with the library's own `next/font` setup supplying the Fraunces and Inter
+  variables. No cross-root CSS import remains.
 - **A catalogue index plus an isolated route per section.**
 - **Local linting and formatting**, independent of the root pipeline.
 - **Separate development and production outputs**, so nothing collides with the website's.
@@ -64,27 +65,37 @@ and often better answer.
 
 ## Relationship with MindWP tokens and typography
 
-The library reuses MindWP's existing foundations where practical, so that what is built here is
-judged in the real design system rather than in a substitute one:
+**The library owns local snapshots of the MindWP foundations**, so what is built here is judged in
+the real design system while the application stays inside its own directory:
 
-- `src/styles/tokens.css` — palette, surfaces, spacing, radii, elevation, easings, durations.
-- `src/styles/typography.css` — display and body scales, optical tracking, Fraunces variation axes.
-- The `next/font` setup from `src/app/layout.tsx`, so `--font-fraunces` and `--font-inter` resolve
-  and the type scale renders as it does on the website. Being a Next.js application is what makes
-  this possible.
+- `src/styles/foundation/tokens.css` — palette, surfaces, spacing, radii, elevation, easings,
+  durations, and the approved gradient, mask and texture set.
+- `src/styles/foundation/typography.css` — display and body scales, optical tracking, Fraunces
+  variation axes.
+- The library's own `next/font` setup in `src/app/layout.tsx`, so `--font-fraunces` and
+  `--font-inter` resolve and the type scale renders as it does on the website. Being a Next.js
+  application is what makes this possible. No font files are copied.
+
+**The snapshots originated from the website foundations** — `src/styles/tokens.css` and
+`src/styles/typography.css` — copied verbatim, with only an ownership comment added. They replaced
+the live cross-root imports the library previously used.
+
+**They do not update automatically.** A change to the website's foundation does not reach the library
+until somebody brings it forward, and that is deliberate: a laboratory should not change underneath a
+build because something moved elsewhere. **Synchronising a snapshot is an explicit foundation-sync
+task**, authorised on its own and never performed along the way.
+
+**Routine section work never reads or edits the website foundations.** The local snapshot is the
+authority for library work, and no ordinary build has a reason to look outside `/library`.
 
 **Tailwind maps to those variables rather than creating a second visual system.** A token bridge
-points Tailwind's colour, spacing, radius, easing and duration scales at the existing CSS variables.
-The display and body type scales stay in `typography.css`; they carry fluid clamps, per-step tracking
-and variation axes that a utility scale would flatten.
+points Tailwind's colour, spacing, radius, easing and duration scales at the snapshot's variables.
+The display and body type scales stay in the typography snapshot; they carry fluid clamps, per-step
+tracking and variation axes that a utility scale would flatten.
 
-**Routine library component work never edits shared website CSS.** Library-only rules stay in the
-library.
-
-The one exception is an **explicitly approved shared-foundation task** — work whose subject is the
-shared vocabulary itself. Such a task may amend shared tokens or typography, as happened when the
-controlled gradient foundation was added. That is a separate, authorised piece of work, never
-something a section build does along the way.
+A cross-repository task whose subject is the shared vocabulary itself — amending the website's tokens
+or typography, as happened when the controlled gradient foundation was added — remains a separate,
+explicitly authorised piece of work.
 
 ## Why not a workspace package initially
 
@@ -167,9 +178,9 @@ Recorded here as fact — the record that the questions are closed, not the rule
   at the end of Batch 1.
 
 Earlier resolutions still standing: `docs/ENGINEERING.md` already records the library-local Tailwind
-exception, so nothing is outstanding there; the cross-root CSS import works and is in use; the
-Tailwind token bridge exists; the custom catalogue is built rather than Storybook or Ladle; local
-ports, scripts and dev ergonomics are settled.
+exception, so nothing is outstanding there; the Tailwind token bridge exists; the custom catalogue is
+built rather than Storybook or Ladle; local ports, scripts and dev ergonomics are settled. The
+cross-root CSS import that was previously in use has been replaced by the local snapshots above.
 
 ## Deferred
 

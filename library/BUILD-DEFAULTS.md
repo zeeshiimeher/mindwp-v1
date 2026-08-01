@@ -22,7 +22,7 @@ a shared mechanism that has not been built yet. Those live in `planning/`.
 
 In this order of preference for any given job:
 
-1. **the shared visual primitives** — tokens, typography, spacing, widths, approved gradients;
+1. **the library's own visual primitives** — tokens, typography, spacing, widths, approved gradients;
 2. **Tailwind** for useful structural composition — grid, flex, spacing, ordinary type and colour;
 3. **library-local CSS**, co-located with the component and imported by it, for authored layout,
    unusual grids, named grid lines, responsive transformation, masks, clip paths, grain,
@@ -32,10 +32,24 @@ In this order of preference for any given job:
 Never automatically apply: cards; rounded containers; gradients; eyebrow-and-headline intros;
 entrance reveals; an identical spacing anatomy. Any of them is fine when chosen; none is a default.
 
-The type scale boundary in `library.css` holds: headings and display roles come from the shared
-typography, `text-xs`–`text-xl` are for supporting copy, and there is no `text-2xl` on purpose.
+The type scale boundary in `library.css` holds: headings and display roles come from the typography
+foundation, `text-xs`–`text-xl` are for supporting copy, and there is no `text-2xl` on purpose.
 
-**The library never edits shared website CSS.** Library-only rules stay in the library.
+## The foundation
+
+**Use the library-local tokens and typography.** They live at `src/styles/foundation/tokens.css` and
+`src/styles/foundation/typography.css`, are imported by `library.css` into `layer(mindwp)`, and carry
+the palette, surfaces, spacing, radii, elevation, easings, durations, the approved gradient set, and
+the display and body scales with their optical tracking and Fraunces variation axes.
+
+**The local foundation snapshot is the build authority for library work.** If a primitive is not in
+it, it does not exist for a library section — write library-local CSS instead.
+
+**Do not inspect the website source to discover more primitives.** Not to check a value, not to find
+a variable, not to see how a page uses one. Everything a build may reach for is inside `/library`,
+and a snapshot is brought forward only by an explicitly authorised foundation-sync task.
+
+Library-only rules stay in the library.
 
 ## W1 · Width and breakout vocabulary
 

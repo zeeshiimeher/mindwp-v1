@@ -5,7 +5,7 @@ import { Fraunces, Inter } from "next/font/google";
 import type { ReactNode } from "react";
 
 // Reproduced exactly from the website's src/app/layout.tsx. SOFT and WONK are
-// loaded so the display scale's font-variation-settings (src/styles/typography.css)
+// loaded so the display scale's font-variation-settings (styles/foundation/typography.css)
 // actually resolve; opsz lets the browser size Fraunces optically instead of
 // scaling one master across 17px–84px. A static webfont substitute would not
 // carry these axes, and the loss would be quiet rather than obvious.

@@ -9,18 +9,19 @@ practice.
 ## Boundary
 
 - **Work inside `/library/`.** Every file you create or edit lives here.
-- **Search and inspect inside `/library/` only.** Globs, greps and directory listings stop at this
+- **Search and inspect inside `/library/`.** Globs, greps and directory listings stop at this
   directory.
-- **One read-only exception:** the shared CSS files the library already consumes —
-  `src/styles/tokens.css` and `src/styles/typography.css` — may be inspected when a build genuinely
-  needs to know what a token is. Read only, never edited.
-- **Do not inspect other files outside `/library/`.** Not the website's components, not its pages,
-  not its docs.
-- **Do not edit anything outside `/library/`.** Ever, in an ordinary build.
+- **Do not inspect anything outside `/library/`.** Not the website's styles, components, pages or
+  docs.
+- **Do not edit anything outside `/library/`.**
 
-An **explicitly authorised shared-foundation task** — work whose subject is the shared vocabulary
-itself — is a different kind of task and must be stated as its own task by Zeeshan. It is never
-something a section build does along the way.
+There is no exception, because ordinary library work never needs an outside file. The MindWP tokens
+and typography are **local snapshots** at `src/styles/foundation/`, and they are the authority for
+everything built here.
+
+An **explicitly authorised cross-repository foundation task** — including a foundation sync that
+brings a snapshot forward — is a different kind of task and must be stated as its own task by
+Zeeshan. It is never something a section build does along the way.
 
 ## What an ordinary build reads
 
@@ -38,11 +39,20 @@ Nothing else.
 - `planning/BUILD-SELECTION.md`;
 - `planning/TAXONOMY.md`;
 - another batch's brief;
-- another wave;
-- `FINDINGS.md`.
+- another wave.
 
 **No broad scans.** Do not glob or grep across `planning/` to gather context. If something a build
 needs is missing from the reading set above, say so and stop — do not go looking for it.
+
+### The build-status files
+
+`DASHBOARD.md` and `FINDINGS.md` are **not standing build context and not build authorities**. They
+are never read to decide how a component should be built — the brief decides that.
+
+A build opens them only to write:
+
+- `DASHBOARD.md` at task start and at task end, solely to update its own rows;
+- `FINDINGS.md` at task end, solely to append its own entry.
 
 ## Build authority
 

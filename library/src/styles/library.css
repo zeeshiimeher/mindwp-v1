@@ -1,13 +1,14 @@
 /* MindWP section laboratory — global stylesheet.
  *
  * Three jobs, in this order:
- *   1. consume the website's real tokens and typography, unmodified;
+ *   1. consume the library's own snapshot of MindWP's tokens and typography;
  *   2. bridge Tailwind's theme onto those variables rather than restating them;
  *   3. add the minimal library-local foundation the catalogue needs.
  *
- * The website's `globals.css` and `layout.css` are deliberately NOT imported.
- * They carry the site reset and the site shell (header, nav, drawer, footer),
- * which are not what this laboratory is testing.
+ * Nothing outside `/library` is imported. The website's `globals.css` and
+ * `layout.css` were never wanted here — they carry the site reset and the site
+ * shell — and the token and typography foundations are now local copies rather
+ * than live cross-root imports, so this application builds from its own tree.
  */
 
 /* Cascade layers, declared before the imports so the order is ours, not
@@ -18,10 +19,12 @@
 
 @import "tailwindcss" source(none);
 
-/* Shared foundation, owned by the website and never edited from here.
-   Live cross-root imports: one source of truth, token changes inherit. */
-@import "../../../src/styles/tokens.css" layer(mindwp);
-@import "../../../src/styles/typography.css" layer(mindwp);
+/* The MindWP foundation, as a library-owned snapshot. Copies rather than live
+   imports: the laboratory does not reach outside its own directory, and it does
+   not change under a section build because the website's tokens moved. Bringing
+   a snapshot forward is an explicit foundation-sync task. */
+@import "./foundation/tokens.css" layer(mindwp);
+@import "./foundation/typography.css" layer(mindwp);
 
 @import "./foundation.css" layer(library);
 @import "./widths.css" layer(library);
@@ -95,7 +98,7 @@
 /* `inline` matters: it makes each utility emit `var(--surface-page)` directly
    instead of minting a second variable that copies the token's value. Nothing
    below duplicates a literal — every entry points at a variable that already
-   exists in `src/styles/tokens.css`. Entries that look self-referential
+   exists in `styles/foundation/tokens.css`. Entries that look self-referential
    (`--radius-sm: var(--radius-sm)`) are reading the MindWP token of that name;
    Tailwind's own version was cleared above. */
 @theme inline {
@@ -185,7 +188,7 @@
 /* ---------------------------------------------------------------------------
    Gradients — deliberately the smallest possible utility surface
    ---------------------------------------------------------------------------
-   Eleven gradient, mask and texture tokens exist in `src/styles/tokens.css`.
+   Eleven gradient, mask and texture tokens exist in `styles/foundation/tokens.css`.
    Exactly four are reachable as utilities, and they are the four that stay
    visually close to a solid surface.
 

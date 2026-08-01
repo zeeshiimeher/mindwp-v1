@@ -13,14 +13,14 @@ content. It is not trying to be a usable page kit, and not trying to cover every
 
 ## Now
 
-| Field    | Value                                                |
-| -------- | ---------------------------------------------------- |
-| Wave     | 1                                                    |
-| Gate     | Gate 0 pending                                       |
-| Building | `SEC-182` · Three-Position Breakout Ladder · batch 0 |
-| Status   | `review`                                             |
-| Next     | Fresh `SEC-182` visual review                        |
-| Blocker  | Zeeshan approval                                     |
+| Field   | Value                                                |
+| ------- | ---------------------------------------------------- |
+| Wave    | 1                                                    |
+| Gate    | Gate 0 pending                                       |
+| Current | `SEC-182` · Three-Position Breakout Ladder · batch 0 |
+| Status  | `review`                                             |
+| Next    | Fresh `SEC-182` visual review                        |
+| Blocker | Zeeshan approval                                     |
 
 ## Progress
 
