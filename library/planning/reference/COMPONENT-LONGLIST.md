@@ -1,12 +1,12 @@
 # Component longlist
 
 216 permanent identifiers covering 208 unmerged concepts, across the 18 categories
-defined in [TAXONOMY.md](./TAXONOMY.md) and built from the research in [RESEARCH.md](./RESEARCH.md).
+defined in [TAXONOMY.md](../TAXONOMY.md) and built from the research in [RESEARCH.md](./RESEARCH.md).
 
 A longlist, not a specification. Entries describe design and behaviour, never implementation — no
 class names, component APIs or timeline syntax. Selection of the initial build set follows
 [SHORTLIST-METHOD.md](./SHORTLIST-METHOD.md); the selection itself lives in
-[BUILD-SELECTION.md](./BUILD-SELECTION.md).
+[BUILD-SELECTION.md](../BUILD-SELECTION.md).
 
 Library-local planning, not a website authority.
 

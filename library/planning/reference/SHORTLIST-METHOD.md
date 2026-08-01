@@ -4,7 +4,7 @@ How the strongest initial build set is selected from the concepts in
 [COMPONENT-LONGLIST.md](./COMPONENT-LONGLIST.md).
 
 This file defines the method. The selection itself lives in
-[BUILD-SELECTION.md](./BUILD-SELECTION.md).
+[BUILD-SELECTION.md](../BUILD-SELECTION.md).
 
 Library-local planning, not a website authority.
 

@@ -4,7 +4,7 @@ External research conducted for the MindWP section library, August 2026. Finding
 follows from them for this library.
 
 Library-local planning, not a website authority. Nothing here overrides
-[docs/DESIGN.md](../../docs/DESIGN.md) or [docs/ENGINEERING.md](../../docs/ENGINEERING.md).
+[docs/DESIGN.md](../../../docs/DESIGN.md) or [docs/ENGINEERING.md](../../../docs/ENGINEERING.md).
 
 ## How to read this document
 

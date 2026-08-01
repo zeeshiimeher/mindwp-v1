@@ -1,7 +1,7 @@
 # Build selection
 
-Every permanent ID in [COMPONENT-LONGLIST.md](./COMPONENT-LONGLIST.md) carries exactly one status.
-Method: [SHORTLIST-METHOD.md](./SHORTLIST-METHOD.md).
+Every permanent ID in [reference/COMPONENT-LONGLIST.md](./reference/COMPONENT-LONGLIST.md) carries
+exactly one status. Method: [reference/SHORTLIST-METHOD.md](./reference/SHORTLIST-METHOD.md).
 
 Library-local planning, not a website authority.
 
@@ -327,18 +327,16 @@ bounded hold reads as intentional).
 
 ## Risks to revisit after the first wave
 
+Selection-level questions only. The wave's own review agenda — cost, mechanisms, intermediate-width
+failures, visual sameness — belongs to the wave and lives in its dashboard.
+
 - **Is 101 still right?** The feasibility scores are estimates. If wave one runs materially
   over, the honest response is to move concepts to reserve, not to build them worse.
-- **Does the reduced-motion obligation cost what we think?** Roughly half the set needs a separately
-  designed static composition rather than disabled tweens. That is build cost, and it has never been
-  measured here.
 - **Do the scroll-capturing five read as five, or as too many?** Judge them composed onto one page,
   which is the condition under which the research says they fail.
 - **Is the static work actually hard enough?** The critique's charge was that ambition had been
   equated with mechanism. If the selected static compositions turn out cheap and unremarkable to
   build, the correction did not take and the compositional bar needs raising.
-- **Does the catalogue need the taxonomy before more sections land?** The registry's `tags` field is
-  still a placeholder. Around twenty entries is where an untagged index stops being browsable.
 
 ## Reserve (106)
 

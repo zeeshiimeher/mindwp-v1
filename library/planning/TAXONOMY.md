@@ -1,9 +1,10 @@
 # Section taxonomy
 
 The category system, identifier scheme, tag vocabulary and concept-versus-variant rule for the
-library longlist in [COMPONENT-LONGLIST.md](./COMPONENT-LONGLIST.md).
+library longlist in [reference/COMPONENT-LONGLIST.md](./reference/COMPONENT-LONGLIST.md).
 
-Built from the research in [RESEARCH.md](./RESEARCH.md), before the longlist was written.
+Built from the research in [reference/RESEARCH.md](./reference/RESEARCH.md), before the longlist was
+written.
 
 Library-local planning, not a website authority.
 
@@ -237,10 +238,15 @@ Permanent IDs of the form `SEC-001` … `SEC-216`.
   its idea as a variant.
 - Variants are identified within the parent, not with their own IDs.
 
-## Tags for the future catalogue
+## Tag dimensions
 
 The suggested tag list has been reorganised into dimensions, and changed in four places where the
 research supports something better.
+
+**Implemented.** These dimensions are the catalogue's structured fields. `src/lib/registry.ts` types
+each one as a union, so a mistyped value is a build error rather than an orphan filter value, and the
+display tags are derived by `toTags()` rather than authored. One revision window remains open,
+closing at the end of Batch 1; after that the model is stable for the wave.
 
 ### Mechanism — what the section is built from
 
