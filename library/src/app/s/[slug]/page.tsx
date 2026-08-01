@@ -5,7 +5,7 @@ import { LibraryHeader } from "@/components/catalogue/LibraryHeader";
 import { ScrollRoom } from "@/components/catalogue/ScrollRoom";
 import { TagList } from "@/components/catalogue/TagList";
 import { ENTRIES } from "@/lib/entries";
-import { getEntry, SURFACE_CLASS } from "@/lib/registry";
+import { entryRef, getEntry, SURFACE_CLASS, toTags } from "@/lib/registry";
 
 type RouteParams = { slug: string };
 
@@ -30,8 +30,13 @@ export async function generateMetadata({
  * One section, alone.
  *
  * The catalogue home shows sections in sequence, which is how a page reads. This
- * route removes the neighbours so a section can be judged on its own — and gives
- * scroll-led work generous, deliberate room on both sides.
+ * route removes the neighbours so a section can be judged on its own.
+ *
+ * Scroll room is requested by the entry, exactly as it is on the catalogue home:
+ * `needsScrollRoom` means the section's entry and exit are half its behaviour
+ * and cannot be judged with nothing either side. A still section that is given
+ * that room anyway is not being shown neutrally — the empty regions become part
+ * of what the capture says about it.
  */
 export default async function SectionPage({ params }: { params: Promise<RouteParams> }) {
   const { slug } = await params;
@@ -50,19 +55,21 @@ export default async function SectionPage({ params }: { params: Promise<RoutePar
           <p className="measure-copy mt-step-2">{entry.summary}</p>
           <div className="mt-step-4 flex flex-wrap items-baseline gap-x-step-5 gap-y-step-2">
             <small className="text-muted">
-              {entry.slug} · {entry.namespace} · {entry.surface}
+              {entryRef(entry)} · {entry.namespace} · {entry.surface}
             </small>
-            <TagList tags={entry.tags} />
+            <TagList tags={toTags(entry)} />
           </div>
         </div>
       </div>
 
       <main>
-        <ScrollRoom label="Scroll room — approach" />
+        {entry.needsScrollRoom ? <ScrollRoom label="Scroll room — approach" /> : null}
         <div className={SURFACE_CLASS[entry.surface]}>
           <Section />
         </div>
-        <ScrollRoom label="Scroll room — release" height="120svh" />
+        {entry.needsScrollRoom ? (
+          <ScrollRoom label="Scroll room — release" height="120svh" />
+        ) : null}
       </main>
     </>
   );

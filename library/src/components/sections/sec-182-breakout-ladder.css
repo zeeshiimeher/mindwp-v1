@@ -1,0 +1,520 @@
+/* SEC-182 — Three-Position Breakout Ladder.
+ *
+ * The width positions themselves live in `src/styles/widths.css` and are not
+ * repeated here. This file is the section's own composition: vertical rhythm,
+ * the three specimens, and the narrow transformations that the collapsed
+ * vocabulary asks for.
+ *
+ * Declared in the `library` layer so a Tailwind utility can still win on a
+ * specific element.
+ */
+
+@layer library {
+  /* --- Rhythm ------------------------------------------------------------ */
+
+  .ladder {
+    padding-block: var(--space-10);
+  }
+
+  /* Grid items, so these margins never collapse into each other. That is the
+     point: the rhythm is stated once and is not the sum of two guesses. */
+  .ladder > * + * {
+    margin-block-start: var(--space-6);
+  }
+
+  /* An escape is a paragraph break at section scale. */
+  .ladder > figure,
+  .ladder > figure + *,
+  .ladder > .ladder-note,
+  .ladder > .ladder-note + * {
+    margin-block-start: var(--space-9);
+  }
+
+  .ladder > .ladder-figure--field,
+  .ladder > .ladder-figure--field + * {
+    margin-block-start: var(--space-10);
+  }
+
+  .ladder p {
+    /* The specimen reference in the copy is one 54-character unbroken token.
+       It has to fold inside the measure rather than push the track. */
+    overflow-wrap: break-word;
+  }
+
+  .ladder-ref {
+    color: var(--text-primary);
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0.01em;
+  }
+
+  .ladder-close {
+    padding-block-start: var(--space-5);
+    border-top: 1px solid var(--border-hairline);
+    font: var(--body-xs);
+  }
+
+  /* --- Specimen frame and the return to the measure ---------------------- */
+
+  .ladder-figure {
+    row-gap: var(--space-5);
+  }
+
+  /* Every escape lands back here. Same hairline, same width, same voice, three
+     times — which is what makes the escapes read as steps rather than as three
+     unrelated decisions. */
+  .ladder-caption {
+    padding-block-start: var(--space-4);
+    border-top: 1px solid var(--border-hairline);
+    color: var(--text-secondary);
+    font: var(--body-sm);
+  }
+
+  .ladder-caption b {
+    display: block;
+    margin-block-end: var(--space-2);
+    color: var(--color-emerald-deep);
+    font: var(--label-caps);
+    font-weight: 600;
+    letter-spacing: var(--label-caps-tracking);
+    text-transform: uppercase;
+  }
+
+  /* --- Escape 1 · margin · phase schematic -------------------------------- */
+
+  /* Column widths carry the durations, so the schematic says something the
+     labels do not repeat: framing and constraint own most of the calendar. */
+  .phase-track {
+    display: grid;
+    grid-template-columns: 2fr 2fr 1fr 1fr;
+  }
+
+  .phase {
+    position: relative;
+    padding: var(--space-5) var(--space-5) 0 0;
+    border-top: 1px solid var(--border-hairline);
+  }
+
+  .phase--long {
+    border-top-color: var(--emerald-line);
+  }
+
+  .phase::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0.4375rem;
+    height: 0.4375rem;
+    transform: translateY(-50%);
+    background: var(--color-emerald-deep);
+  }
+
+  .phase-span {
+    display: block;
+    color: var(--color-emerald-deep);
+    font: var(--label-caps);
+    font-variant-numeric: tabular-nums;
+    letter-spacing: var(--label-caps-tracking);
+  }
+
+  .phase-name {
+    margin-block-start: var(--space-3);
+    color: var(--text-primary);
+    font: var(--ui-strong);
+  }
+
+  .phase-note {
+    margin-block-start: var(--space-2);
+    font: var(--body-sm);
+  }
+
+  /* --- Escape 2 · half-bleed · the shaping record ------------------------- */
+
+  /* A plate, not a card: it is inset, ruled and paginated like the document it
+     depicts, and it needs the second escape because a six-session schedule and
+     the decisions carried out of it only argue with each other side by side. */
+  .record {
+    background: var(--surface-card);
+    box-shadow: var(--elev-focal);
+  }
+
+  .record-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: var(--space-3) var(--space-7);
+    padding: var(--space-6) var(--space-7);
+    border-bottom: 1px solid var(--border-hairline);
+  }
+
+  .record-title {
+    color: var(--text-primary);
+    font: var(--ui-strong);
+  }
+
+  .record-meta {
+    color: var(--text-secondary);
+    font: var(--body-xs);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .record-meta--filed {
+    margin-inline-start: auto;
+    color: var(--color-emerald-deep);
+    letter-spacing: var(--label-caps-tracking);
+    text-transform: uppercase;
+  }
+
+  .record-body {
+    display: grid;
+    grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+  }
+
+  .record-panel {
+    padding: var(--space-6) var(--space-7);
+  }
+
+  .record-panel--carried {
+    border-left: 1px solid var(--border-hairline);
+  }
+
+  /* Runs the plate's full width beneath both columns, which is where a working
+     document would put the things it has not resolved. */
+  .record-panel--open {
+    border-top: 1px solid var(--border-hairline);
+  }
+
+  .record-label {
+    color: var(--text-primary);
+    font: var(--label-caps);
+    letter-spacing: var(--label-caps-tracking);
+    text-transform: uppercase;
+  }
+
+  /* One row shape, used by the presentational header and by every session. */
+  .record-row {
+    display: grid;
+    grid-template-columns: 3.5rem minmax(0, 1.25fr) minmax(0, 1fr) minmax(0, 1.4fr);
+    gap: var(--space-4);
+    padding-block: var(--space-4);
+    padding-inline-start: var(--space-4);
+    align-items: baseline;
+  }
+
+  .record-rows {
+    margin-block-start: var(--space-4);
+    border-top: 1px solid var(--border-hairline);
+  }
+
+  .record-head-row + .record-rows {
+    margin-block-start: 0;
+  }
+
+  .record-rows > li {
+    border-bottom: 1px solid var(--border-hairline);
+    font: var(--body-sm);
+  }
+
+  .record-rows > li:last-child {
+    border-bottom: 0;
+  }
+
+  .record-head-row {
+    padding-block: var(--space-3);
+    color: var(--text-secondary);
+    font: var(--body-xs);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .record-week {
+    color: var(--color-emerald-deep);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .record-session {
+    color: var(--text-primary);
+  }
+
+  /* The two sessions that produced a decision the engagement now carries. An
+     edge tick rather than an inline mark, so it cannot end up on a line of its
+     own when a session title wraps. */
+  .record-rows > li[data-carried="true"] {
+    box-shadow: inset 2px 0 0 0 var(--color-emerald-deep);
+  }
+
+  .record-carried {
+    counter-reset: carried;
+    margin-block-start: var(--space-4);
+  }
+
+  .record-carried > li {
+    position: relative;
+    counter-increment: carried;
+    padding: var(--space-4) 0 var(--space-4) var(--space-7);
+    font: var(--body-sm);
+  }
+
+  .record-carried > li {
+    border-top: 1px solid var(--border-hairline);
+  }
+
+  .record-carried > li::before {
+    content: counter(carried, decimal-leading-zero);
+    position: absolute;
+    left: 0;
+    top: calc(var(--space-4) + 0.15em);
+    color: var(--color-emerald-deep);
+    font: var(--label-caps);
+    font-variant-numeric: tabular-nums;
+    letter-spacing: var(--label-caps-tracking);
+  }
+
+  .record-stamp {
+    display: block;
+    margin-block-start: var(--space-2);
+    color: var(--text-secondary);
+    font: var(--body-xs);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .record-open {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--space-6);
+    margin-block-start: var(--space-4);
+  }
+
+  .record-open > li {
+    padding-block-start: var(--space-3);
+    border-top: 1px solid var(--border-hairline);
+    font: var(--body-sm);
+  }
+
+  .record-foot {
+    padding: var(--space-4) var(--space-7);
+    border-top: 1px solid var(--border-hairline);
+    background: var(--surface-sunken);
+    color: var(--text-secondary);
+    font: var(--body-xs);
+  }
+
+  /* --- Escape 3 · full-bleed · the field ---------------------------------- */
+
+  /* The one position whose job is mass rather than internal structure. Depth
+     rather than a flat slab is the named reason for the gradient here: a band
+     this large in one flat navy reads as a printing error, and the wall on top
+     of it needs a ground that recedes. */
+  .field {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    padding-block: var(--space-8);
+    background-color: var(--surface-navy);
+    background-image: var(--gradient-navy-depth);
+  }
+
+  /* Monochrome noise, at the token's own opacity. The navy sweep behind it
+     quantises into visible bands on 8-bit displays at this size. */
+  .field::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background-image: var(--texture-grain);
+    opacity: var(--texture-grain-opacity);
+    pointer-events: none;
+  }
+
+  .field-wall {
+    display: grid;
+    grid-template-columns: repeat(14, minmax(0, 1fr));
+    gap: clamp(0.25rem, 0.55vw, 0.6875rem);
+    /* Cropped rather than framed: the wall is meant to read as part of
+       something larger that the section happens to be looking at. */
+    mask-image: var(--mask-edge-horizontal);
+    -webkit-mask-image: var(--mask-edge-horizontal);
+  }
+
+  /* Portrait, with a header band, so at this distance the wall reads as paper
+     rather than as a swatch grid — which is the difference between mass and
+     decoration. */
+  .field-card {
+    aspect-ratio: 3 / 4;
+    background-repeat: no-repeat;
+    background-size: 100% 16%;
+    background-image: linear-gradient(
+      color-mix(in srgb, var(--color-text-inverse) 8%, transparent),
+      color-mix(in srgb, var(--color-text-inverse) 8%, transparent)
+    );
+  }
+
+  .field-card[data-tone="1"] {
+    background-color: color-mix(in srgb, var(--surface-navy-panel) 70%, transparent);
+  }
+
+  .field-card[data-tone="2"] {
+    background-color: var(--surface-navy-panel);
+  }
+
+  .field-card[data-tone="3"] {
+    background-color: var(--surface-navy-raised);
+  }
+
+  .field-card[data-tone="4"] {
+    background-color: color-mix(
+      in srgb,
+      var(--surface-navy-raised) 84%,
+      var(--color-text-inverse) 16%
+    );
+  }
+
+  .field-card[data-tone="5"] {
+    background-color: var(--emerald-tint-strong);
+    box-shadow: inset 0 0 0 1px var(--emerald-line);
+  }
+
+  /* --- The out-of-order return to escape 1 -------------------------------- */
+
+  /* `margin` used again after `full-bleed`, and used for something that is not
+     a figure. The position is a width, not a component slot. */
+  .ladder-note {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-8);
+  }
+
+  .ladder-note > div {
+    padding-block-start: var(--space-4);
+    border-top: 1px solid var(--text-primary);
+  }
+
+  .note-label {
+    color: var(--text-primary);
+    font: var(--label-caps);
+    letter-spacing: var(--label-caps-tracking);
+    text-transform: uppercase;
+  }
+
+  .note-list {
+    margin-block-start: var(--space-4);
+  }
+
+  .note-list > li {
+    padding-block: var(--space-3);
+    font: var(--body-sm);
+  }
+
+  .note-list > li + li {
+    border-top: 1px solid var(--border-hairline);
+  }
+
+  /* --- Intermediate ------------------------------------------------------- */
+
+  /* The plate stops arguing side by side before it stops fitting. Below this
+     the schedule and the decisions carried are stacked while both are still
+     comfortably legible, rather than squeezed until one of them is not. */
+  /* The plate stops arguing side by side well before it stops fitting. Stacked,
+     the six-session schedule gets the whole half-bleed width for its four
+     columns — which is the argument for the second escape — while the decisions
+     carried pair off beneath it instead of being squeezed into a rail. */
+  @media (max-width: 64rem) {
+    .record-body {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    .record-panel--carried {
+      border-left: 0;
+      border-top: 1px solid var(--border-hairline);
+    }
+
+    .record-carried {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: var(--space-7);
+    }
+  }
+
+  /* --- Narrow ------------------------------------------------------------- */
+
+  /* Two positions survive — `measure` and `full-bleed` — so the two specimens
+     that lose their escape are re-composed rather than shrunk into it. */
+  /* The schematic re-composes at exactly the width where the `margin` position
+     it was drawn for disappears: a figure that has lost its escape should be
+     re-composed rather than left running the same layout in a narrower box.
+     The track turns through ninety degrees and the durations become type,
+     because four proportional columns at the measure are four slivers. */
+  @media (max-width: 57.5rem) {
+    .phase-track {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    .phase {
+      padding: var(--space-4) 0 var(--space-4) var(--space-6);
+      border-top: 0;
+      border-left: 1px solid var(--border-hairline);
+    }
+
+    .phase--long {
+      border-left-color: var(--emerald-line);
+    }
+
+    .phase::before {
+      top: var(--space-4);
+      left: 0;
+      transform: translateX(-50%);
+    }
+
+    .phase-name {
+      margin-block-start: var(--space-1);
+    }
+  }
+
+  @media (max-width: 45rem) {
+    /* The plate keeps its plate-ness — head, rules, foot, filed stamp — and
+       gives up its columns. Each session becomes a record with its week
+       leading, which is what the document itself would do on a smaller page. */
+    .record-head,
+    .record-panel,
+    .record-foot {
+      padding-inline: var(--space-5);
+    }
+
+    .record-meta--filed {
+      margin-inline-start: 0;
+    }
+
+    .record-carried,
+    .record-open {
+      grid-template-columns: minmax(0, 1fr);
+      gap: var(--space-4);
+    }
+
+    .record-row {
+      grid-template-columns: 2.75rem minmax(0, 1fr);
+      gap: var(--space-1) var(--space-3);
+      padding-inline-start: var(--space-3);
+    }
+
+    .record-head-row {
+      display: none;
+    }
+
+    .record-head-row + .record-rows {
+      margin-block-start: var(--space-4);
+    }
+
+    .record-week {
+      grid-row: 1 / span 3;
+    }
+
+    .field-wall {
+      grid-template-columns: repeat(7, minmax(0, 1fr));
+    }
+
+    .ladder-note {
+      grid-template-columns: minmax(0, 1fr);
+      gap: var(--space-7);
+    }
+  }
+}

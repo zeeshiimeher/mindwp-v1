@@ -24,6 +24,7 @@
 @import "../../../src/styles/typography.css" layer(mindwp);
 
 @import "./foundation.css" layer(library);
+@import "./widths.css" layer(library);
 
 /* Content sources. Explicit, so Tailwind never scans the website's `src/`. */
 @source "../../src/app";

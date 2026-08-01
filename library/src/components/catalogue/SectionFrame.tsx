@@ -1,7 +1,7 @@
 import Link from "next/link";
 
-import type { SectionEntry } from "@/lib/registry";
-import { SURFACE_CLASS } from "@/lib/registry";
+import type { CatalogueEntry } from "@/lib/registry";
+import { entryRef, SURFACE_CLASS, toTags } from "@/lib/registry";
 
 import { TagList } from "./TagList";
 
@@ -12,7 +12,7 @@ import { TagList } from "./TagList";
  * box. Full-section work is judged at real width, with real scroll — which is
  * the reason this catalogue is custom rather than Storybook.
  */
-export function SectionFrame({ entry }: { entry: SectionEntry }) {
+export function SectionFrame({ entry }: { entry: CatalogueEntry }) {
   const Section = entry.component;
 
   return (
@@ -22,8 +22,8 @@ export function SectionFrame({ entry }: { entry: SectionEntry }) {
           <h2 id={`${entry.slug}-title`} className="catalogue-label">
             {entry.title}
           </h2>
-          <small className="text-muted">{entry.slug}</small>
-          <TagList tags={entry.tags} />
+          <small className="text-muted">{entryRef(entry)}</small>
+          <TagList tags={toTags(entry)} />
           <Link
             href={`/s/${entry.slug}`}
             className="ml-auto text-emerald-deep transition-colors duration-fast ease-out hover:text-emerald"

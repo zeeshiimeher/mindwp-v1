@@ -1,8 +1,9 @@
 /**
- * Placeholder classification chips.
+ * Classification chips.
  *
- * Flat strings on purpose. The researched taxonomy will replace what goes in
- * them; this component only has to keep rendering when it does.
+ * Flat strings on purpose, and it stays that way: what goes in them is now
+ * derived from the registry's typed taxonomy fields by `toTags()`, so this
+ * component renders one list and owns none of its meaning.
  */
 export function TagList({ tags }: { tags: readonly string[] }) {
   if (tags.length === 0) return null;

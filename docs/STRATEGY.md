@@ -187,10 +187,8 @@ Under evaluation. Not public offers, not brand positions.
 
 **Business automation** is a delivery capability, not an experiment and not yet a service. It is used inside engagements where it helps. It becomes a named service only when it meets the test in section 2 and buyers ask for it by name.
 
-## 13. Open decisions
+## 13. Website structure and publication
 
-Genuinely unsettled. Do not invent answers, and do not let them block unrelated work.
+The current sitemap, page ownership and navigation direction are recorded in INFORMATION-ARCHITECTURE.md.
 
-- **Information architecture and publication order** — which pages MindWP's own website has, what appears in navigation, and the order they are built and published. This is a website planning decision, not a core business decision. It will be planned separately and recorded in its own document. Do not settle it inside Strategy.
-
-Record an answer here only after an explicit decision.
+The exact order in which pages are designed, built, published or promoted is not globally fixed. Zeeshan decides it according to current commercial need, proof, opportunity and readiness.

@@ -1,0 +1,142 @@
+/* W1 — the library's width and breakout vocabulary.
+ *
+ * One default reading position plus three declared escape positions, and
+ * nothing else:
+ *
+ *   measure       the reading column. Every child gets this without asking.
+ *   margin        escape 1 — the measure plus a symmetric band. Marginal
+ *                 figures, diagrams, sidenotes.
+ *   half-bleed    escape 2 — the shared content container. Artefact plates.
+ *   full-bleed    escape 3 — the grid's own edges.
+ *
+ * The whole vocabulary is in this file on purpose: a width system that has to
+ * be reconstructed from four component stylesheets is not a vocabulary, it is
+ * a run of one-off widths with a shared prefix.
+ *
+ * Named grid lines, never negative margins. A negative margin inside a padded
+ * wrapper has to know its ancestor's padding, so it stops composing the moment
+ * the wrapper changes. Grid lines are computed once on the root and every
+ * descendant position is exact without knowing anything about its ancestors.
+ *
+ * No `100vw` anywhere. On a desktop page with a classic scrollbar, `100vw`
+ * is wider than the document and produces horizontal scroll; the `full-bleed`
+ * line is the grid's own edge and cannot.
+ *
+ * Composition-neutral. This file sets widths and nothing else — no spacing
+ * rhythm, no surfaces, no type, no vertical anything. Sections own their own
+ * composition, and this must never grow into a section framework.
+ *
+ * ADDING A POSITION IS A DECISION, NOT AN IMPLEMENTATION DETAIL. One-sided
+ * bleed (`bleed-left` / `bleed-right`) is SEC-183's concept and is deliberately
+ * absent here rather than written speculatively ahead of a real use.
+ *
+ * Library-local. Every value comes from the shared tokens.
+ */
+
+@layer library {
+  .width-grid {
+    /* --- Tunables -------------------------------------------------------- */
+
+    /* No position may ever cross this. */
+    --width-pad: var(--page-margin);
+    /* The reading measure, ~65 characters. */
+    --width-measure: var(--measure-copy);
+    /* Escape 1's band, per side. Deliberately closer to fixed than fluid: if it
+       tracked the container it would keep a constant ratio to `half-bleed` and
+       the two steps would never separate. */
+    --width-margin-band: clamp(2.75rem, 7vw, 5.5rem);
+    /* Escape 2. The shared content container — taxonomy `wide`. */
+    --width-half-bleed: var(--container-content);
+
+    /* --- Derived tracks --------------------------------------------------- */
+
+    /* Percentages here resolve against this grid's own inline size, which is
+       what makes every position independent of ancestor padding. */
+    --width-safe: calc(100% - 2 * var(--width-pad));
+    --width-measure-track: min(var(--width-measure), var(--width-safe));
+    --width-margin-track: max(
+      0px,
+      min(var(--width-margin-band), (var(--width-safe) - var(--width-measure-track)) / 2)
+    );
+    --width-half-track: max(
+      0px,
+      (min(var(--width-half-bleed), var(--width-safe)) - var(--width-measure-track)) / 2 -
+        var(--width-margin-track)
+    );
+
+    display: grid;
+    grid-template-columns:
+      [full-bleed-start] minmax(0, 1fr)
+      [half-bleed-start] var(--width-half-track)
+      [margin-start] var(--width-margin-track)
+      [measure-start] var(--width-measure-track) [measure-end]
+      var(--width-margin-track) [margin-end]
+      var(--width-half-track) [half-bleed-end]
+      minmax(0, 1fr) [full-bleed-end];
+  }
+
+  /* A breakout may re-expose the same lines to its own children, so a caption
+     or a paragraph inside it returns to the measure through the same four
+     names rather than through a second, parallel width mechanism. This is the
+     one thing that makes "escape, then return" structural instead of a
+     max-width that happens to match. */
+  .width-grid [data-width-subgrid] {
+    display: grid;
+    grid-template-columns: subgrid;
+  }
+
+  /* The default. Ordinary content is prose, and prose reads at the measure. */
+  .width-grid > *,
+  .width-grid [data-width-subgrid] > * {
+    grid-column: measure;
+    /* Fixed tracks do not stretch, so an unbreakable token would spill out of
+       one rather than widen it. `auto` min-width would let it try. */
+    min-width: 0;
+  }
+
+  /* The three declared escapes, plus the default written out for the cases
+     where saying it is clearer than relying on it. Ordered after the defaults
+     above because they carry the same specificity. */
+  .width-grid [data-width="measure"] {
+    grid-column: measure;
+  }
+
+  .width-grid [data-width="margin"] {
+    grid-column: margin;
+  }
+
+  .width-grid [data-width="half-bleed"] {
+    grid-column: half-bleed;
+  }
+
+  .width-grid [data-width="full-bleed"] {
+    grid-column: full-bleed;
+  }
+
+  /* --- Convergence ------------------------------------------------------- */
+
+  /* The 700–1100 band is where a width ladder loses a rung by arithmetic
+     rather than by design. `margin` is close to fixed and `half-bleed` tracks
+     the container, so as the container narrows the two close on each other:
+     below roughly 890px they land within one page margin of one another and
+     read as the same step drawn twice.
+
+     `margin` returns to `measure` at 920px rather than surviving as a
+     near-duplicate. Two honest positions beat three where one is an accident. */
+  @media (max-width: 57.5rem) {
+    .width-grid [data-width="margin"] {
+      grid-column: measure;
+    }
+  }
+
+  /* Below roughly 720px the measure already fills the safe width, so
+     `half-bleed` has nothing left to escape into and the grid collapses it
+     without being asked. Stated rather than left implicit, because a section
+     transforming its narrow composition needs to know the position is gone.
+     Narrow is two positions: `measure` and `full-bleed`. */
+  @media (max-width: 45rem) {
+    .width-grid [data-width="half-bleed"] {
+      grid-column: measure;
+    }
+  }
+}

@@ -35,8 +35,8 @@ export default function CataloguePage() {
               <TagList tags={tags} />
             </div>
             <p className="editorial-note mt-step-6">
-              Only system checks so far — the section collection begins once the concept research
-              lands.
+              Four system checks, then the collection. Wave 1 opens with SEC-182, whose subject is
+              the width vocabulary the sections after it inherit.
             </p>
           </div>
         </div>
