@@ -46,9 +46,9 @@ application code is the authority on itself.
 - **Local linting and formatting**, independent of the root pipeline.
 - **Separate development and production outputs**, so nothing collides with the website's.
 
-The catalogue currently holds only `system` entries — technical checks that the foundation behaves.
-The section collection has not started, and the registry's `tags` field is a deliberate placeholder
-until the researched taxonomy lands.
+The catalogue holds the `system` entries — technical checks that the foundation behaves — and the
+section collection has begun. The registry is taxonomy-backed and typed, and display tags are derived
+from the structured fields rather than authored.
 
 ## Styling and motion
 
@@ -155,22 +155,16 @@ The isolated route per section already in place is the third tier.
 
 ## Settled since this file was written
 
-Recorded here as fact. The detail lives in [WAVE-01-PLAN.md](./WAVE-01-PLAN.md), which owns how the
-library is built; this is only the record that the questions are closed.
+Recorded here as fact — the record that the questions are closed, not the rules themselves.
+[../BUILD-DEFAULTS.md](../BUILD-DEFAULTS.md) owns how the library is built.
 
-- **Runtime.** Static work **prefers Server Components**. Interactive, measured and GSAP work uses
-  **Client Components where required** — and only for the part that requires them, so a static
-  section with one measured guard is a Server Component with a small client child. Rendering model is
-  chosen per section, never applied uniformly for consistency.
-- **Content policy.** **Neutral demo content is the default.** Built sections carry placeholder or
-  specimen copy written to expose the composition, not real MindWP copy, and `docs/WRITING.md` does
-  not apply. Invented material stays visibly invented; fictional testimonials, outcomes, awards and
-  figures are never presented as real MindWP evidence.
-- **Catalogue registry model.** The **structured, taxonomy-backed registry model begins during the
-  `SEC-182` build**, replacing the placeholder `tags` field. Permanent `SEC-nnn` ids become part of
-  the catalogue's data at that point, and `tags` becomes derived rather than authored. **One revision
-  window** follows, at the end of Batch 1, while there are few entries to correct; after that the
-  model is stable for the wave.
+- **Runtime.** Rendering model is chosen per section — Server Components by default, Client
+  Components only for the part that requires them — and never applied uniformly for consistency.
+- **Content policy.** Neutral demo content is the default, and `docs/WRITING.md` does not apply.
+- **Catalogue registry model.** The structured, taxonomy-backed registry **is implemented**:
+  `src/lib/registry.ts` carries typed unions, permanent `SEC-nnn` ids are part of the catalogue's
+  data, and display tags are derived rather than authored. One revision window remains open, closing
+  at the end of Batch 1.
 
 Earlier resolutions still standing: `docs/ENGINEERING.md` already records the library-local Tailwind
 exception, so nothing is outstanding there; the cross-root CSS import works and is in use; the

@@ -165,5 +165,5 @@ already holds is worth less than a rougher one that opens a register it does not
 Not a live-website design document. Not a page-planning method. Not a copywriting guide. Not a
 generic accessibility checklist. Not an implementation manual. Not a component recipe.
 
-Per-wave build defaults, shared mechanisms and component briefs live in
-[planning/WAVE-01-PLAN.md](./planning/WAVE-01-PLAN.md).
+Reusable build defaults live in [BUILD-DEFAULTS.md](./BUILD-DEFAULTS.md). Component briefs, shared
+mechanisms and wave status live in [planning/](./planning/README.md).
