@@ -190,15 +190,9 @@ where the section moves:
 pnpm capture sec-182-breakout-ladder --full --width 1440
 ```
 
-```bash
-pnpm capture sec-182-breakout-ladder --full --narrow
-```
-
-```bash
-pnpm capture sec-182-breakout-ladder --full --reduced-motion
-```
-
-`screenshots/` is gitignored. Captures are evidence for a review, not repository content.
+Also `--width 1280`, `--width 960`, `--width 820`, `--narrow`, and `--reduced-motion` where the
+section moves. `screenshots/` is gitignored — captures are evidence for a review, not repository
+content.
 
 ## Completion standard
 

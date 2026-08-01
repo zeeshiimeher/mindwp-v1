@@ -71,8 +71,9 @@ begins. Never after an ordinary code change.
 
 ## Batches and build order
 
-Batch membership and the build order within each batch are **approved as written and do not change
-during Wave 1**.
+**Approved decision 3.** Batch membership and the build order within each batch are approved as
+written and **do not change during Wave 1**. The other four approved decisions are per-component and
+live in the briefs they bind: 1 in `SEC-162`, 2 in `SEC-107`, 4 in `SEC-182`, 5 in `SEC-147`.
 
 | Batch | Concepts                                                  | Build order                                               |
 | ----- | --------------------------------------------------------- | --------------------------------------------------------- |
