@@ -1,0 +1,199 @@
+/* System check D — gradient proof, library-local layout and the treatments that
+ * are deliberately not Tailwind utilities.
+ *
+ * Everything here reads shared tokens from `src/styles/tokens.css`. Nothing in
+ * this file defines a gradient; it only applies them. If a rule below looks
+ * like effort, that is intentional — the variable-only treatments are meant to
+ * cost a few lines of deliberate CSS rather than one reflexive class name.
+ */
+
+@layer library {
+  /* Comparison frame. Each treatment sits beside its solid fallback, split by a
+     hairline, because a restrained gradient can only be judged against the flat
+     surface it is replacing. */
+  .grad-compare {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 26rem;
+    border-block: 1px solid var(--border-hairline);
+  }
+
+  .grad-compare--tall {
+    min-height: 38rem;
+  }
+
+  .grad-compare--on-dark {
+    border-block-color: var(--border-navy-hairline);
+  }
+
+  .grad-compare > * {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: var(--space-6);
+  }
+
+  /* The seam. A single hairline so the eye can find the boundary without a
+     heavy divider competing with the gradient itself. */
+  .grad-compare > * + * {
+    border-inline-start: 1px solid var(--border-hairline);
+  }
+
+  .grad-compare--on-dark > * + * {
+    border-inline-start-color: var(--border-navy-hairline);
+  }
+
+  .grad-caption {
+    position: relative;
+    z-index: 1;
+    margin: 0;
+  }
+
+  /* ---- Treatments that are variable-only by design ---- */
+
+  .grad-navy-side-light {
+    background-color: var(--surface-navy);
+    background-image: var(--gradient-navy-side-light);
+  }
+
+  .grad-light-side-wash {
+    background-color: var(--surface-page);
+    background-image: var(--gradient-light-side-wash);
+  }
+
+  /* Vignette is an overlay, so it needs its own layer above a navy base rather
+     than being a background of its own. Shown over navy-raised, the lightest
+     navy surface, because that is where it has the most range to darken. */
+  .grad-navy-vignette {
+    background-color: var(--surface-navy-raised);
+  }
+
+  .grad-navy-vignette::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: var(--gradient-navy-vignette);
+    pointer-events: none;
+  }
+
+  .grad-navy-atmosphere {
+    background-color: var(--surface-navy);
+    background-image: var(--gradient-navy-atmosphere);
+  }
+
+  /* ---- Grain ----
+     Its own layer, above the gradient and below the text. Applied only where
+     banding is actually visible, never as a default finish. */
+  .grad-grain::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: var(--texture-grain);
+    opacity: var(--texture-grain-opacity);
+    pointer-events: none;
+  }
+
+  /* ---- Contained objects ----
+     The same treatments at card scale, where the section-scale gradients are
+     expected to disappear. That failure is the point of the comparison. */
+  .grad-objects {
+    display: grid;
+    gap: var(--space-5);
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  }
+
+  .grad-object {
+    position: relative;
+    min-height: 11rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: var(--space-5);
+    border: 1px solid var(--border-hairline);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+  }
+
+  .grad-object--navy {
+    border-color: var(--border-navy-hairline);
+  }
+
+  /* ---- Horizontal rail with the edge mask ----
+     The mask is colour-agnostic, so the identical declaration works over paper
+     and over navy. That is the whole argument for a mask over a background
+     fade. */
+  .grad-rail {
+    display: flex;
+    gap: var(--space-4);
+    overflow-x: auto;
+    padding-block: var(--space-2);
+    mask-image: var(--mask-edge-horizontal);
+    -webkit-mask-image: var(--mask-edge-horizontal);
+  }
+
+  .grad-rail > * {
+    flex: 0 0 14rem;
+    min-height: 8rem;
+    display: flex;
+    align-items: flex-end;
+    padding: var(--space-4);
+    border-radius: var(--radius-md);
+    background: var(--surface-card);
+    border: 1px solid var(--border-hairline);
+  }
+
+  .grad-rail--on-dark > * {
+    background: var(--surface-navy-panel);
+    border-color: var(--border-navy-hairline);
+  }
+
+  /* Vertical counterpart, for a scrollable region rather than a rail. */
+  .grad-column {
+    max-height: 14rem;
+    overflow-y: auto;
+    mask-image: var(--mask-edge-vertical);
+    -webkit-mask-image: var(--mask-edge-vertical);
+  }
+
+  /* ---- Status label ----
+     Meta, not design. Neutral on purpose so it never reads as part of the
+     treatment being judged. */
+  .grad-status {
+    display: inline-block;
+    padding: var(--space-1) var(--space-3);
+    border: 1px solid var(--border-hairline);
+    border-radius: var(--radius-pill);
+    background: var(--surface-sunken);
+    color: var(--text-secondary);
+    font: var(--body-xs);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .grad-status[data-level="rare"] {
+    border-color: var(--border-mist-hairline);
+    color: var(--text-primary);
+    background: var(--surface-mist);
+  }
+
+  @media (max-width: 47.9375rem) {
+    .grad-compare {
+      grid-template-columns: 1fr;
+      min-height: 0;
+    }
+
+    .grad-compare > * {
+      min-height: 16rem;
+    }
+
+    .grad-compare > * + * {
+      border-inline-start: 0;
+      border-block-start: 1px solid var(--border-hairline);
+    }
+
+    .grad-compare--on-dark > * + * {
+      border-block-start-color: var(--border-navy-hairline);
+    }
+  }
+}

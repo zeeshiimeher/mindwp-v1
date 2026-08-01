@@ -4,8 +4,13 @@ The approved architecture for the MindWP section library. Settled by Zeeshan; re
 work does not reopen it.
 
 This file is library-local planning. It is not a website design or engineering authority.
-[docs/DESIGN.md](../../docs/DESIGN.md) and [docs/ENGINEERING.md](../../docs/ENGINEERING.md) keep that
-authority for the live website, and nothing here changes them.
+
+**[library/DESIGN.md](../DESIGN.md) owns visual direction for the library.** The root website
+documents — [docs/DESIGN.md](../../docs/DESIGN.md),
+[docs/ENGINEERING.md](../../docs/ENGINEERING.md), `docs/WRITING.md`, `docs/FOUNDATION.md`,
+`docs/STRATEGY.md` and the page plans — remain authorities **only for the live website**. They do not
+govern library component design, writing or composition, and nothing here changes them. The library
+reuses their primitives; it does not inherit their section anatomy.
 
 ## Purpose
 
@@ -73,7 +78,13 @@ points Tailwind's colour, spacing, radius, easing and duration scales at the exi
 The display and body type scales stay in `typography.css`; they carry fluid clamps, per-step tracking
 and variation axes that a utility scale would flatten.
 
-The library never edits shared CSS. Library-only rules stay in the library.
+**Routine library component work never edits shared website CSS.** Library-only rules stay in the
+library.
+
+The one exception is an **explicitly approved shared-foundation task** — work whose subject is the
+shared vocabulary itself. Such a task may amend shared tokens or typography, as happened when the
+controlled gradient foundation was added. That is a separate, authorised piece of work, never
+something a section build does along the way.
 
 ## Why not a workspace package initially
 
@@ -115,6 +126,13 @@ Out of scope for the library: heroes, navigation, footers, contact forms, genera
 cookie notices, login and account interfaces, complete dashboards, full application screens, complete
 pages, and production website integration.
 
+Everything the library builds is a **full page section**. Small UI parts — buttons, badges, chips,
+tooltips, modals, dropdowns — are never entries, though they legitimately appear inside a section.
+
+Pricing is **in scope** and is not on that list. No pricing concept is in the initial build set, for
+reasons recorded in [BUILD-SELECTION.md](./BUILD-SELECTION.md) — that is a selection decision, not a
+scope one.
+
 A dashboard-like composition may appear as a visual section concept where it genuinely fits the
 material, but the library does not become a product-dashboard collection.
 
@@ -135,25 +153,35 @@ the ladder the index and the section never render on the same page.
 
 The isolated route per section already in place is the third tier.
 
+## Settled since this file was written
+
+Recorded here as fact. The detail lives in [WAVE-01-PLAN.md](./WAVE-01-PLAN.md), which owns how the
+library is built; this is only the record that the questions are closed.
+
+- **Runtime.** Static work **prefers Server Components**. Interactive, measured and GSAP work uses
+  **Client Components where required** — and only for the part that requires them, so a static
+  section with one measured guard is a Server Component with a small client child. Rendering model is
+  chosen per section, never applied uniformly for consistency.
+- **Content policy.** **Neutral demo content is the default.** Built sections carry placeholder or
+  specimen copy written to expose the composition, not real MindWP copy, and `docs/WRITING.md` does
+  not apply. Invented material stays visibly invented; fictional testimonials, outcomes, awards and
+  figures are never presented as real MindWP evidence.
+- **Catalogue registry model.** The **structured, taxonomy-backed registry model begins during the
+  `SEC-182` build**, replacing the placeholder `tags` field. Permanent `SEC-nnn` ids become part of
+  the catalogue's data at that point, and `tags` becomes derived rather than authored. **One revision
+  window** follows, at the end of Batch 1, while there are few entries to correct; after that the
+  model is stable for the wave.
+
+Earlier resolutions still standing: `docs/ENGINEERING.md` already records the library-local Tailwind
+exception, so nothing is outstanding there; the cross-root CSS import works and is in use; the
+Tailwind token bridge exists; the custom catalogue is built rather than Storybook or Ladle; local
+ports, scripts and dev ergonomics are settled.
+
 ## Deferred
 
 Still open:
 
-- **Recording the Tailwind exception in `docs/ENGINEERING.md`.** That document states Tailwind is not
-  part of the architecture. The exception is approved, and the library application now exists, so
-  this is due — but it is a core-document change and belongs to a task that explicitly authorises it.
-- **Whether library components mirror the website's runtime** — Server Components, `next/image`,
-  `next/link` — or are simply client components.
-- **Content policy**: real MindWP copy versus neutral placeholder content in built sections.
-- **When the researched taxonomy replaces the registry's placeholder `tags` field**, and whether
-  permanent `SEC-nnn` ids become part of the catalogue's data.
 - **Whether `/library` is ever published**, privately or otherwise. Currently it is not.
-
-Resolved since this file was written: the cross-root CSS import works and is in use; the Tailwind
-token bridge exists; the custom catalogue is built rather than Storybook or Ladle; local ports,
-scripts and dev ergonomics are settled.
-
-- **Whether `/library/` is ever published**, privately or otherwise. Currently it is not.
 
 ## Status of this file
 

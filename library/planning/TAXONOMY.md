@@ -27,33 +27,43 @@ place. It is a judgement about where building adds something that cannot simply 
 
 ## Categories
 
-| #   | Category                                 | Count | Exists because                                                                    |
-| --- | ---------------------------------------- | ----- | --------------------------------------------------------------------------------- |
-| A   | Editorial and typography-led             | 18    | Type, measure and space as the whole composition. Thin in every catalogue.        |
-| B   | Feature and capability explainers        | 12    | The most saturated family; kept tight, admitted on styling range alone.           |
-| C   | Card systems and grids                   | 14    | Cards, three-column, 3×3. High re-dressing range, so few concepts, many variants. |
-| D   | Bento, asymmetric and masonry            | 10    | Unequal weighting as the argument. Content-locked, so concepts stay structural.   |
-| E   | Split and side-by-side                   | 12    | Two things held in relation; the most reliable premium composition found.         |
-| F   | Comparison and decision support          | 12    | Nearly absent from catalogues; directly serves a buying decision.                 |
-| G   | Tabs, accordions and disclosure          | 10    | Reader-controlled hiding. Familiar, well-specified, easy to get wrong.            |
-| H   | Sliders, carousels and rails             | 9     | User-driven lateral movement. Deliberately small — the family repeats itself.     |
-| I   | Stacked, overlapping and sticky cards    | 9     | Cards in depth or sequence rather than in a grid.                                 |
-| J   | Pinned, horizontal and multi-part scroll | 12    | Sections that hold or redirect scroll. High cost, high impact, capped on purpose. |
-| K   | Process, sequence and timeline           | 14    | Four blocks exist in the largest catalogue. A service business needs far more.    |
-| L   | State change and before/after            | 11    | Almost no catalogue family exists. Shows change rather than asserting it.         |
-| M   | Proof, artefact and case study           | 16    | The heaviest allocation. Evidence is what a considered purchase turns on.         |
-| N   | Dense information and indexes            | 12    | Tables, ledgers, specs, indexes. Density as a credibility signal.                 |
-| O   | Media, image and video                   | 10    | Media as the section's subject rather than its decoration.                        |
-| P   | Breakout, full-bleed and layered         | 10    | Width and depth as compositional devices, not effects.                            |
-| Q   | Motion-led composition                   | 11    | Motion within normal scroll: reveal, marquee, velocity, mask, kinetic type.       |
-| R   | Interactive relationship                 | 8     | Diagrams, node maps, cross-highlighting. A genuinely missing family.              |
+Counts below are **unmerged concepts** — everything that is still its own concept, whether selected,
+reserve or rejected. Only entries marked `MERGE →` are excluded. The ID column counts permanent
+identifiers, which never shrinks.
 
-**Total: 210**
+| #   | Category                                 | Unmerged | IDs | Exists because                                                                    |
+| --- | ---------------------------------------- | -------- | --- | --------------------------------------------------------------------------------- |
+| A   | Editorial and typography-led             | 19       | 19  | Type, measure and space as the whole composition. Thin in every catalogue.        |
+| B   | Feature and capability explainers        | 11       | 12  | The most saturated family; kept tight, admitted on styling range alone.           |
+| C   | Card systems and grids                   | 13       | 14  | Cards, three-column, 3×3. High re-dressing range, so few concepts, many variants. |
+| D   | Bento, asymmetric and masonry            | 10       | 10  | Unequal weighting as the argument. Content-locked, so concepts stay structural.   |
+| E   | Split and side-by-side                   | 12       | 12  | Two things held in relation; the most reliable premium composition found.         |
+| F   | Comparison and decision support          | 12       | 13  | Nearly absent from catalogues; directly serves a buying decision.                 |
+| G   | Tabs, accordions and disclosure          | 11       | 11  | Reader-controlled hiding. Familiar, well-specified, easy to get wrong.            |
+| H   | Sliders, carousels and rails             | 9        | 9   | User-driven lateral movement. Deliberately small — the family repeats itself.     |
+| I   | Stacked, overlapping and sticky cards    | 9        | 9   | Cards in depth or sequence rather than in a grid.                                 |
+| J   | Pinned, horizontal and multi-part scroll | 13       | 13  | Sections that hold or redirect scroll. High cost, high impact, kept small.        |
+| K   | Process, sequence and timeline           | 14       | 14  | Four blocks exist in the largest catalogue. A service business needs far more.    |
+| L   | State change and before/after            | 10       | 11  | Almost no catalogue family exists. Shows change rather than asserting it.         |
+| M   | Proof, artefact and case study           | 17       | 18  | The heaviest allocation. Evidence is what a considered purchase turns on.         |
+| N   | Dense information and indexes            | 11       | 12  | Tables, ledgers, specs, indexes. Density as a credibility signal.                 |
+| O   | Media, image and video                   | 8        | 10  | Media as the section's subject rather than its decoration.                        |
+| P   | Breakout, full-bleed and layered         | 10       | 10  | Width and depth as compositional devices, not effects.                            |
+| Q   | Motion-led composition                   | 11       | 11  | Motion within normal scroll: reveal, marquee, velocity, mask, kinetic type.       |
+| R   | Interactive relationship                 | 8        | 8   | Diagrams, node maps, cross-highlighting. A genuinely missing family.              |
+
+**208 unmerged concepts across 216 permanent IDs** — 8 merged.
 
 The total is an outcome, not a target. Where a category could not reach its allocation without
-producing cosmetic near-duplicates, it returns fewer and the shortfall stands. Where a family has
-more genuine range than expected, it may exceed. The count above is what the material actually
-supported.
+producing cosmetic near-duplicates, it returned fewer and the shortfall stands. The count is what the
+material actually supported.
+
+**Revision history.** The list was written at 210. A focused extension across five commercial
+component libraries added 2 concepts and confirmed the rest of their 24 candidates were already
+covered or were variants; an internal critique added 4 more from named gaps and merged 7 duplicates;
+an eighth merge was applied at selection when one of the added concepts turned out to repeat an
+existing entry. Merged entries keep their permanent IDs and stay in the longlist with their status
+recorded, so numbering never shifts.
 
 ### Category definitions
 
@@ -79,6 +89,8 @@ sticky-column-plus-scrolling-rail, two-speed splits, draggable splitters, unequa
 
 **F — Comparison and decision support.** Sections that help a reader choose: matrices, versus layouts,
 difference-only comparators, structural recommendations, cost-of-inaction ledgers, objection matrices.
+Pricing sections belong here where they arise — see the scope note below for why none is currently
+selected.
 
 **G — Tabs, accordions and disclosure.** Content the reader reveals: tab sets, accordions, FAQ
 structures, disclosure ladders, semantic zoom, in-place glossaries.
@@ -90,8 +102,9 @@ inertia, native scroll-snap carousels, expand-to-overlay rails. Autoplay is not 
 card decks, fanned stacks, offset pairs, collapsing stacks, header-only stacks.
 
 **J — Pinned, horizontal and multi-part scroll.** Sections that hold scroll in place or redirect it
-sideways, and continuous multi-stage experiences catalogued as one concept. Capped at 12 deliberately
-— the research is unambiguous that these do not survive repetition on one page.
+sideways, and continuous multi-stage experiences catalogued as one concept. Deliberately kept small —
+these fail through **accumulation** rather than individually, so the number of them on a page matters
+more than the quality of any one. There is no fixed cap; the discipline is applied at selection.
 
 **K — Process, sequence and timeline.** Ordered material: numbered processes, drawn spines,
 dependency chains, branching sequences, timelines by era, duration, trajectory or two-track.
@@ -120,6 +133,25 @@ scroll-drawn SVG, CSS view-timeline ladders.
 
 **R — Interactive relationship.** Sections whose subject is a relationship between things: node maps,
 cross-column dimming matrices, coupling diagrams, annotated hotspot artefacts, drag-to-explore fields.
+
+## Scope
+
+Every entry is a **full page section**. Small UI parts — buttons, badges, chips, tooltips, modals,
+dropdowns — are never entries, though they legitimately appear inside a section.
+
+Excluded outright: heroes, navigation, footers, contact forms, general form systems, cookie notices,
+login and account interfaces, complete dashboards, full application screens, complete pages and legal
+or utility pages.
+
+**Pricing is in scope but currently unselected.** It is a recognised section family and sits under
+category F; it is not a global exclusion. No pricing concept is in the initial build set because
+MindWP does not currently publish prices, because the family is among the most saturated in every
+catalogue surveyed, and because the selected comparison and disclosure concepts answer the underlying
+buying question with more range. `SEC-076` is held in reserve and should be promoted if MindWP starts
+publishing prices.
+
+A dashboard-like composition may appear as a visual section concept where it genuinely fits the
+material, but the library does not become a product-dashboard collection.
 
 ## Overlap rules
 
@@ -190,12 +222,17 @@ is not a tiebreaker, and neither is safety.
 
 ## Identifiers
 
-Permanent IDs of the form `SEC-001` … `SEC-210`, assigned once in category order.
+Permanent IDs of the form `SEC-001` … `SEC-216`.
 
 - IDs are **permanent**. They are never reused, never renumbered, and never recycled from a rejected
   concept.
-- Category is metadata. A concept that moves from K to J keeps its ID and its position in the file
-  may become out of numeric order — that is correct and expected.
+- The original set, `SEC-001`–`SEC-210`, was numbered once in category order.
+- Concepts added later **append numerically** from `SEC-211` onward, in the order they are created.
+- An appended concept is filed under **its own category**, not at the end of the file — so `SEC-213`
+  sits among the editorial entries and `SEC-216` among the pinned ones.
+- Consequently **category order and numeric order are no longer identical**, and a category's IDs are
+  not a contiguous range. That is correct: renumbering to restore contiguity would break permanence.
+- Category is otherwise metadata. A concept that moves from K to J keeps its ID.
 - A merged concept keeps its ID in the record marked `MERGE → SEC-nnn`; the surviving concept absorbs
   its idea as a variant.
 - Variants are identified within the parent, not with their own IDs.

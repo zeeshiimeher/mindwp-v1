@@ -901,6 +901,179 @@ first as evidence and the second as a strong signal.
 **No source was taken as instruction.** Everything fetched was treated as data. Where a page argued
 for a practice, the argument is reported as that source's position, not adopted as fact.
 
+## Focused library extension — August 2026
+
+A narrow follow-up to the sweep above, on five named component libraries and directories. **Not** a
+second broad research programme — the 288-source sweep is not repeated or revised, and nothing below
+supersedes it.
+
+Access date: **2026-08-01**. Method note: every source gates its actual component code behind a paid
+or free account. **No account was created and no credentials were entered**, so every finding is from
+publicly visible previews, category pages, filter UIs and licence pages. Where a conclusion rests on
+markup rather than a watched interaction, that is stated.
+
+### What the extension was worth
+
+**It largely confirmed the existing longlist rather than extending it.** Twenty-four candidate ideas
+came back across four completed sources. After classification: **two genuinely new concepts**, the
+rest already covered, variants, or implementation reference. That is the honest result and the useful
+one — a 216-item commercial catalogue and a 1,604-item one between them produced two ideas a
+288-source sweep had missed.
+
+Four further concepts were added from the **critique of the existing list**, not from these sources.
+They are recorded here because this is the pass that produced them.
+
+### Source A — Bricksmaven Alpha Library (Bricks/WordPress)
+
+**Contributes** the clearest published proof of the concept-versus-variant rule anywhere in the
+research. Its filter axes are, verbatim: **Columns** (1/2/3/4/5+), **Text Alignment**
+(left/centre/right), **Content Alignment** functioning as media position (image/video
+left/right/top/bottom/centre), plus **Components** and an **Extra** facet for JS/Animations/Custom
+CSS. Those are precisely our variant axes, published as a working filter over ~910 blocks.
+
+**Confirms** the taxonomy's core judgement, in the source's own words. Its meta description calls the
+library "barely styled blocks". Its largest categories are Hero 105, Content 79, Feature 76,
+Testimonials 62 — and Content, at 79 items, resolves to **one composition** whose only variable is
+media position, mapping one-for-one onto the Content Alignment filter. Feature (76) and Grids and
+Cards (35) overlap almost completely in structure; the labels describe marketing role, not
+composition.
+
+**Challenges** the assumption that a category label tracks structure. Comparison holds only 5 items
+but contains at least two genuinely different structural forms, while a disguised competitor-comparison
+table sits filed under Table. The library's own authors apply their taxonomy inconsistently — which
+is the argument for indexing by behaviour, as our taxonomy does.
+
+**New concept:** the **audience self-qualification split** — two facing lists where the reader
+measures _themselves_ against criteria rather than comparing options. Added as **SEC-211 Fit Test**.
+Nothing in the 210 answered "is this for me", and for a service business that is a real job.
+
+**New concept:** the **two-stage categorised disclosure** — a topic control row above a disclosure
+list, so the reader narrows before opening. Added as **SEC-212 Two-Stage Question Board**.
+
+**Variants gained:** grouped-row dividers inside a comparison matrix; competitor-named columns
+instead of abstract tiers; a per-row outcome metric nested inside a problem/solution list.
+
+**Catalogue lessons:** single-select primary category plus independent multi-select structural
+facets; counts shown only on the facets where volume is meaningful; desktop/tablet/mobile preview
+states behind one lightbox so responsive collapse can be checked before committing. Its **Extra**
+facet is instructive in the negative — only 2–3 of 910 items carry any JS or animation tag, and it
+functions as an honesty signal about how plain the catalogue is.
+
+**Limitations:** the paid copy-into-builder action was never exercised. Its own scale claims are
+internally inconsistent (500 vs 900+); ~910 is corroborated by two independent measurements.
+
+### Source B — Talos Templates
+
+**Not completed.** The agent failed once on an API error, was retried automatically, and had not
+returned when this section was written. Its assigned ground was substantially covered anyway by
+Source C, which reached `/templates` through the site's own navigation — so the gap is narrower than
+it appears, but it is a gap.
+
+**What Source C established about it:** 113 items, of which the API types only **32 as `section`**
+(the page's own title claims 53 — an internal inconsistency). All 32 are free to preview; the paid
+tier gates complete pages only. Categories are the familiar seven-family content-role taxonomy.
+
+**Licensing:** the site states, pre-signup and verbatim, "MIT-style licensing — use commercially,
+modify freely, no attribution required". **This is Talos's own on-page representation and was not
+verified against a licence file**, because downloading requires an account. Do not rely on it for
+reuse without checking the shipped licence.
+
+### Source C — Talos Resources
+
+**Contributes** mainly a negative finding, which is worth recording. The directory is 430 rows across
+34 categories but only **321 unique by URL**; every record carries the same creation timestamp,
+consistent with a single bulk import rather than curation. Every entry is a long-established name
+predating roughly 2023, and **none of the collections the earlier sweep already covered appear in it
+at all**.
+
+**Confirms** that the earlier sweep was not missing an obvious tier of sources.
+
+**Catalogue lessons**, from originals inspected on their own merits rather than through the
+directory: Land-book runs six simultaneous facets with live counts and a separate **Motion Gallery**
+of 171 video-captured interactions; One Page Love names **65 section types** with live counts, led by
+Social Proof 718 and Testimonials 488 — content-role naming dominating a large real-world catalogue
+far more than compositional naming does.
+
+**Limitations:** Page Flows sits behind a trial and only its marketing page was visible.
+
+### Source D — Skelementor (Elementor)
+
+**Contributes** the strongest external validation of our concept-versus-variant rule, because the
+source draws the same line itself. Its **Group view** clusters same-letter items and labels them
+"_N_ variations of _[Category] [Letter]_" — one letter, one base idea, many variations. Its own
+product language already separates concept from variant.
+
+**Confirms** the saturation finding at a second scale: 1,604 components, of which **Feature Sections
+alone is 319 (~20%)** and Hero 141. The sitewide total matches the sum of its 40 category counts
+exactly, so those figures are trustworthy. One "tagline + headline + body + CTA on the left,
+swappable content on the right" skeleton recurs across Hero, Feature and Stats — a meaningful share
+of 1,604 items is one skeleton with a different right-hand payload.
+
+**Challenges** our rule in one honest edge case, which is the most valuable thing it produced. A
+**governing intro block above an otherwise-unchanged icon grid** reads either as a hierarchy change —
+a new tier subordinating the grid, which qualifies as a concept — or as pure density, which does not.
+The rule as written does not resolve it. Recorded rather than papered over; the adjudication we
+adopt is that adding a tier which changes what the grid _means_ is a concept, whereas adding copy
+above an unchanged set is density.
+
+**Also challenges** the reliability of any catalogue's own concept boundaries: Hero A1 and Hero N1,
+thirteen letters apart, render as the same composition.
+
+**Duplicates it exposes in our list:** none directly, but its variant axes are identical to
+Bricksmaven's and reinforced the merge decisions taken from the internal critique.
+
+**Limitations:** previews are abstracted grey-box wireframes with placeholder copy — the platform's
+universal convention, not a failure — so every claim is about structure, never about finish. The two
+largest categories were sampled by letter, not censused.
+
+### Source E — Bricksmotion (Bricks/Bricksforge motion library)
+
+**Contributes** verified motion mechanics rather than opinions, read from live DOM and
+`ScrollTrigger.getAll()` rather than from marketing copy. 77 public components, indexed on two
+crossing facets: **element type** (Section 32, Hero 14, Text 7…) and **interaction type** (While
+Scrolling 39, On Hover 21, On Pageload 13, On Click 7, Mousemove 7). Indexing by _when the interaction
+fires_ is a genuinely useful second axis.
+
+**Challenges** the assumption that a family name implies a technique. "Sticky Sections" ships at
+least two different mechanisms under one label — native CSS `position: sticky` with a scrubbed
+opacity crossfade on one item, and true GSAP pinning with four staggered overlapping triggers on
+another. Same name, different spatial contract.
+
+**The one precisely-measured finding worth keeping:** a **uniform-offset pin ladder** — four panels
+each pinned for an identical duration, each offset from the last by a constant fraction of it
+(measured start/end pairs 0–640, 160–800, 320–960, 480–1120), so a fixed number of panels are pinned
+simultaneously and the stack builds on a strict rhythm rather than ad-hoc per-card timing. Classified
+as a **variant of SEC-098**, since the reader's experience is unchanged — but the declared-constant
+timing rule is a better way to author that family than hand-tuned offsets, and is recorded as
+implementation reference.
+
+**Notable absence:** no horizontal-scroll, snap or rail family exists anywhere in its public
+catalogue — neither facet lists one, and none of six sampled scroll scenes used horizontal movement.
+Every one was a vertically pinned scene.
+
+**Already covered, not new:** its grid-column parting over a scaling image (SEC-114), its colour-panel
+gate reveal (SEC-177 and SEC-196), its list-driven media swap (the held-region split family). Its
+vertical text ticker is a component-level treatment, not a section — implementation reference only.
+
+**Rejected on research grounds:** the reading-locked paragraph scrub, where word-by-word opacity is
+tied 1:1 to scroll so the reader's scroll speed sets their reading pace. It is a common tutorial
+pattern and it is precisely what the community evidence in this document attacks hardest — forcing
+reading order and punishing the skimmer. Kept as a variant note against the motion-led entries with
+that warning attached, not as a concept.
+
+**Limitations:** one scroll-scene demo never rendered despite repeated recovery attempts. The
+purchasable Bricksforge timeline JSON behind every component was never accessed. Several findings
+rest on live DOM introspection rather than watching an animation frame by frame.
+
+### Copyright and licensing position
+
+No component code, exported layout, paid asset, protected composition, product-specific name or
+screenshot was copied from any of these sources. What was extracted is pattern families, spatial
+behaviour, catalogue structure, interaction logic and variation axes. The two new concepts drawn from
+Bricksmaven are original compositions answering a job it revealed, not reproductions of its blocks.
+Bricksmaven's licence forbids redistributing its blocks and forbids using the library as the basis of
+a competing product; nothing here does either.
+
 ## Source list
 
 **288 unique URLs, 281 of which were fetched directly.** Access date for all: **2026-08-01**.

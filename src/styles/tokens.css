@@ -96,6 +96,117 @@
   --shadow-card-lg: var(--elev-focal);
   --shadow-inset-hairline: var(--elev-hairline);
 
+  /* ---- Gradients and texture ----
+     Optional compositional tools. Solid surfaces stay the default MindWP
+     treatment; these are not a finish applied on top of a design.
+
+     Reach for one only to solve a specific job — depth, atmosphere, separation,
+     focus or overflow — and never to make something look premium. Every
+     composition built on one must still read correctly when the gradient is
+     replaced by its solid fallback surface.
+
+     Limits that keep this set from turning into a style:
+       - not on buttons, and not on every card in a grid;
+       - normally at most one visibly gradient-led section per page;
+       - `navy-depth` and `light-depth` may repeat, because they stay visually
+         close to a solid surface. The side-light, vignette and atmosphere
+         treatments carry real presence and should not;
+       - `navy-atmosphere` is rare: at most once per page;
+       - do not invent new shared gradients inside page code. A page-specific
+         gradient is legitimate only when this set genuinely cannot do the job.
+
+     Emerald is deliberately absent. It stays a solid accent colour — a
+     navy-to-emerald or teal-to-midnight sweep is not part of this system, and
+     neither is gradient text, a glowing border or a luminous button.
+
+     Sweeps stay inside one tonal cluster. The palette has four navy values
+     between L* 7 and 23 and five light values between L* 93 and 100, with
+     nothing between; a gradient that crosses that gap stops being MindWP. */
+
+  /* Navy family. All four read as navy at every stop — none introduces a
+     lighter hue, a teal cast or a light source. */
+  --gradient-navy-depth: linear-gradient(
+    180deg,
+    var(--surface-navy-panel) 0%,
+    var(--surface-navy) 62%
+  );
+  --gradient-navy-depth-strong: linear-gradient(
+    180deg,
+    var(--surface-navy-raised) 0%,
+    var(--surface-navy) 72%
+  );
+  --gradient-navy-side-light: radial-gradient(
+    80% 120% at var(--navy-light-x, 0%) var(--navy-light-y, 50%),
+    var(--surface-navy-raised) 0%,
+    var(--surface-navy) 68%
+  );
+  /* Overlay, not a background: transparent in the middle so it can darken any
+     navy surface or composition beneath it. Needs a ground lighter than
+     `--surface-navy` to have anything to darken — over navy-raised it has 9.3
+     L* of range, over navy-panel 5.6, and over plain navy it does nothing. */
+  --gradient-navy-vignette: radial-gradient(
+    105% 85% at 50% 45%,
+    transparent 38%,
+    color-mix(in srgb, var(--color-navy) 90%, transparent) 100%
+  );
+
+  /* Rare. Two offset navy light sources over a depth base. One per page at
+     most, and only where a section is genuinely the focal moment. */
+  --gradient-navy-atmosphere:
+    radial-gradient(
+      46% 58% at 22% 12%,
+      color-mix(in srgb, var(--color-navy-hairline) 42%, transparent),
+      transparent 64%
+    ),
+    radial-gradient(
+      58% 72% at 78% 30%,
+      color-mix(in srgb, var(--surface-navy-raised) 70%, transparent),
+      transparent 70%
+    ),
+    linear-gradient(180deg, var(--surface-navy-panel) 0%, var(--surface-navy) 72%);
+
+  /* Light family. Deltas here are 3–6 L*, so these read as air rather than as
+     colour. Direction is top-lit throughout, matching the elevation tokens. */
+  --gradient-light-depth: linear-gradient(180deg, var(--surface-card) 0%, var(--surface-page) 62%);
+  --gradient-neutral-wash: linear-gradient(
+    180deg,
+    var(--surface-page) 0%,
+    var(--surface-mist) 100%
+  );
+  --gradient-light-side-wash: radial-gradient(
+    75% 110% at var(--light-wash-x, 100%) var(--light-wash-y, 0%),
+    var(--color-white) 0%,
+    var(--surface-sunken) 70%
+  );
+
+  /* Structural masks. Masks rather than background fades on purpose: a
+     background fade has to match the surface beneath it and would need one
+     variant per surface, where a mask is colour-agnostic and works on all of
+     them. `--edge-fade` is the companion width. */
+  --edge-fade: 2.5rem;
+  --mask-edge-horizontal: linear-gradient(
+    90deg,
+    transparent 0,
+    #000 var(--edge-fade),
+    #000 calc(100% - var(--edge-fade)),
+    transparent 100%
+  );
+  --mask-edge-vertical: linear-gradient(
+    180deg,
+    transparent 0,
+    #000 var(--edge-fade),
+    #000 calc(100% - var(--edge-fade)),
+    transparent 100%
+  );
+
+  /* Grain is a technical fix, not an aesthetic. The palette's sweeps are so
+     tight that they quantise into wide bands on 8-bit displays; monochrome
+     noise dithers those edges away. Apply it only where banding is actually
+     visible, on its own layer, at this opacity — above roughly 6% it stops
+     being a fix and becomes a texture, which is a different decision. */
+  --texture-grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23g)'/%3E%3C/svg%3E");
+  --texture-grain-opacity: 0.035;
+
   --ease-out: cubic-bezier(0.2, 0, 0, 1);
   --duration-fast: 140ms;
   --duration-base: 240ms;

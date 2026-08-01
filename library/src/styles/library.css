@@ -181,6 +181,53 @@
   --ease-out: var(--ease-out);
 }
 
+/* ---------------------------------------------------------------------------
+   Gradients — deliberately the smallest possible utility surface
+   ---------------------------------------------------------------------------
+   Eleven gradient, mask and texture tokens exist in `src/styles/tokens.css`.
+   Exactly four are reachable as utilities, and they are the four that stay
+   visually close to a solid surface.
+
+   The omissions are the point. `--gradient-navy-side-light`,
+   `--gradient-navy-vignette`, `--gradient-navy-atmosphere`,
+   `--gradient-light-side-wash`, both edge masks and `--texture-grain` are
+   variable-only and must be written into local CSS by hand. Those carry real
+   presence, need positioning, or need their own stacking layer — making them a
+   one-word utility would mean they get applied by reflex, which is exactly the
+   failure this system is built to avoid.
+
+   Deliberately absent, and not to be added later without a decision:
+   a generic `bg-gradient`, arbitrary-angle helpers, gradient-text utilities,
+   and glow utilities.
+
+   Solid surfaces remain the default. `bg-navy` is the normal way to make a
+   section navy; `bg-navy-depth` is for when a large dark section is reading as
+   a flat slab. If you cannot name the problem the gradient solves, use the
+   solid colour.
+
+   Written as `@utility` rather than `--background-image-*` theme keys for two
+   reasons: it compiles predictably across Tailwind minor versions, and it
+   generates exactly these four names and no family around them.
+
+   `--gradient-navy-depth-strong` is not called `navy-raised`, because
+   `bg-navy-raised` already exists as the solid `--surface-navy-raised`. */
+@utility bg-navy-depth {
+  background-color: var(--surface-navy);
+  background-image: var(--gradient-navy-depth);
+}
+@utility bg-navy-depth-strong {
+  background-color: var(--surface-navy);
+  background-image: var(--gradient-navy-depth-strong);
+}
+@utility bg-light-depth {
+  background-color: var(--surface-page);
+  background-image: var(--gradient-light-depth);
+}
+@utility bg-neutral-wash {
+  background-color: var(--surface-page);
+  background-image: var(--gradient-neutral-wash);
+}
+
 /* Durations. Written as utilities rather than theme keys so they hold whatever
    Tailwind's `duration-*` namespace does across minor versions. */
 @utility duration-fast {

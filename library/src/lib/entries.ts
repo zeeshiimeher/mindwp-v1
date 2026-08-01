@@ -1,3 +1,4 @@
+import { GradientProof } from "@/components/system/GradientProof";
 import { LocalCssProof } from "@/components/system/LocalCssProof";
 import { MotionProof } from "@/components/system/MotionProof";
 import { TokenProof } from "@/components/system/TokenProof";
@@ -33,6 +34,16 @@ export const ENTRIES: readonly SectionEntry[] = [
     tags: ["tailwind", "local-css", "pseudo-elements", "masking", "art-direction"],
     surface: "mist",
     component: LocalCssProof,
+  },
+  {
+    slug: "system-gradients",
+    namespace: "system",
+    title: "Controlled gradient foundation",
+    summary:
+      "Eleven navy and neutral gradient, mask and texture tokens, each shown beside the solid surface it would replace.",
+    tags: ["gradients", "tokens", "navy", "masking", "grain", "light-and-dark"],
+    surface: "page",
+    component: GradientProof,
   },
   {
     slug: "system-motion",

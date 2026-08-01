@@ -1,7 +1,7 @@
 # Component longlist
 
-210 full-section concepts across the 18 categories defined in [TAXONOMY.md](./TAXONOMY.md), built from
-the external research recorded in [RESEARCH.md](./RESEARCH.md).
+216 permanent identifiers covering 208 unmerged concepts, across the 18 categories
+defined in [TAXONOMY.md](./TAXONOMY.md) and built from the research in [RESEARCH.md](./RESEARCH.md).
 
 A longlist, not a specification. Entries describe design and behaviour, never implementation — no
 class names, component APIs or timeline syntax. Selection of the initial build set follows
@@ -12,49 +12,59 @@ Library-local planning, not a website authority.
 
 ## How to read an entry
 
-**IDs are permanent.** `SEC-001`…`SEC-210` are assigned once, in category order. They are never
-reused, never renumbered, and never recycled from a rejected concept. Category is metadata — a concept
-that later moves category keeps its ID, which will put the file out of numeric order. That is correct.
+**IDs are permanent.** They are never reused, never renumbered, and never recycled from a rejected
+concept.
+
+- The original set was numbered `SEC-001`–`SEC-210` in category order.
+- Concepts added later **append numerically** from `SEC-211` onward.
+- An appended concept is filed under **its own category**, not at the end of the file.
+- So category order and numeric order are no longer the same thing, and a category's IDs are not a
+  contiguous range. That is correct and expected — renumbering to restore contiguity would break the
+  permanence rule.
+
+**Counts.** _Permanent IDs_ counts identifiers. _Unmerged concepts_ counts everything that is still
+its own concept — selected, reserve and rejected entries — and excludes only entries marked
+`MERGE →`.
 
 **Variants are not concepts.** A variant changes surface, radius, typeface, imagery, alignment, item
-count or indicator styling. Where two ideas differed only cosmetically they were folded into one entry
-with named variants, rather than counted twice. Rich variant lists are deliberate.
+count or indicator styling. Where two ideas differed only cosmetically they were folded into one
+entry with named variants rather than counted twice.
 
 **Every entry has a narrow-width direction.** Where a composition has no honest small-screen form, the
 entry says so plainly. That is a finding to design around, not a defect.
 
 **Risky concepts are flagged, never removed.** Accessibility and performance concerns are named
-specifically so the shortlist can price them.
+specifically so the selection can price them.
 
 ## Category counts
 
-| Code | Category                                 | Concepts | IDs             |
-| ---- | ---------------------------------------- | -------- | --------------- |
-| A    | Editorial and typography-led             | 18       | SEC-001–SEC-018 |
-| B    | Feature and capability explainers        | 12       | SEC-019–SEC-030 |
-| C    | Card systems and grids                   | 14       | SEC-031–SEC-044 |
-| D    | Bento, asymmetric and masonry            | 10       | SEC-045–SEC-054 |
-| E    | Split and side-by-side                   | 12       | SEC-055–SEC-066 |
-| F    | Comparison and decision support          | 12       | SEC-067–SEC-078 |
-| G    | Tabs, accordions and disclosure          | 10       | SEC-079–SEC-088 |
-| H    | Sliders, carousels and rails             | 9        | SEC-089–SEC-097 |
-| I    | Stacked, overlapping and sticky cards    | 9        | SEC-098–SEC-106 |
-| J    | Pinned, horizontal and multi-part scroll | 12       | SEC-107–SEC-118 |
-| K    | Process, sequence and timeline           | 14       | SEC-119–SEC-132 |
-| L    | State change and before/after            | 11       | SEC-133–SEC-143 |
-| M    | Proof, artefact and case study           | 16       | SEC-144–SEC-159 |
-| N    | Dense information and indexes            | 12       | SEC-160–SEC-171 |
-| O    | Media, image and video                   | 10       | SEC-172–SEC-181 |
-| P    | Breakout, full-bleed and layered         | 10       | SEC-182–SEC-191 |
-| Q    | Motion-led composition                   | 11       | SEC-192–SEC-202 |
-| R    | Interactive relationship                 | 8        | SEC-203–SEC-210 |
-|      | **Total**                                | **210**  |                 |
+| Code | Category                                 | Permanent IDs | Unmerged concepts |
+| ---- | ---------------------------------------- | ------------- | ----------------- |
+| A    | Editorial and typography-led             | 19            | 19                |
+| B    | Feature and capability explainers        | 12            | 11                |
+| C    | Card systems and grids                   | 14            | 13                |
+| D    | Bento, asymmetric and masonry            | 10            | 10                |
+| E    | Split and side-by-side                   | 12            | 12                |
+| F    | Comparison and decision support          | 13            | 12                |
+| G    | Tabs, accordions and disclosure          | 11            | 11                |
+| H    | Sliders, carousels and rails             | 9             | 9                 |
+| I    | Stacked, overlapping and sticky cards    | 9             | 9                 |
+| J    | Pinned, horizontal and multi-part scroll | 13            | 13                |
+| K    | Process, sequence and timeline           | 14            | 14                |
+| L    | State change and before/after            | 11            | 10                |
+| M    | Proof, artefact and case study           | 18            | 17                |
+| N    | Dense information and indexes            | 12            | 11                |
+| O    | Media, image and video                   | 10            | 8                 |
+| P    | Breakout, full-bleed and layered         | 10            | 10                |
+| Q    | Motion-led composition                   | 11            | 11                |
+| R    | Interactive relationship                 | 8             | 8                 |
+|      | **Total**                                | **216**       | **208**           |
 
 ## A — Editorial and typography-led
 
 ### SEC-001 · Standfirst Opener Plate
 
-`A` · static · static · difficulty low
+`A` · static · static · difficulty low · **SELECTED** · wave 1
 
 A section head composed as a magazine opener: category kicker, balanced headline, a standfirst set larger and looser than body, a hairline rule, an attribution line, then a sunken initial cap starting the body. The entry point is made entirely of scale, rule and space, with no image anywhere.
 
@@ -70,7 +80,7 @@ A section head composed as a magazine opener: category kicker, balanced headline
 
 ### SEC-002 · Numbered Chapter Divider
 
-`A` · static · static · difficulty low
+`A` · static · static · difficulty low · **RESERVE**
 
 A full-width pause between long sections: an oversized ordinal, a rule, and one line of thesis that sets up what follows. Designed so that reading only the dividers gives the whole argument.
 
@@ -86,7 +96,7 @@ A full-width pause between long sections: an oversized ordinal, a rule, and one 
 
 ### SEC-003 · Hanging Pull-Quote Breakout
 
-`A` · static · static · difficulty medium
+`A` · static · static · difficulty medium · **RESERVE**
 
 A quotation set larger than the body hangs out of the measure into the margin and the surrounding paragraphs narrow to accommodate it, attributed by a rule-and-name pair rather than a centred credit. The measure bending around the quote is the event.
 
@@ -102,7 +112,7 @@ A quotation set larger than the body hangs out of the measure into the margin an
 
 ### SEC-004 · Sidenote Margin Rail
 
-`A` · static · static · difficulty medium
+`A` · static · static · difficulty medium · **SELECTED**
 
 A body column at a controlled measure with a persistent outer rail carrying numbered sidenotes, small margin figures and caption asides, all open by default. Footnote friction becomes saccade distance — the reader never leaves the line.
 
@@ -118,7 +128,7 @@ A body column at a controlled measure with a persistent outer rail carrying numb
 
 ### SEC-005 · Dual-Voice Commentary Rail
 
-`A` · static · React-interactive · difficulty medium
+`A` · static · React-interactive · difficulty medium · **RESERVE**
 
 The client-facing argument runs in the measure while a second, named annotator voice runs in the margin in a different cut and colour — a delivery lead marking up the sales copy. One control mutes the second voice.
 
@@ -135,7 +145,7 @@ The client-facing argument runs in the measure while a second, named annotator v
 
 ### SEC-006 · Manifesto In Empty Field
 
-`A` · static · static · difficulty low
+`A` · static · static · difficulty low · **SELECTED**
 
 One sentence at display scale in an otherwise empty viewport — no image, no supporting paragraph, no button. The emptiness is the composition, and the sentence is given more room than anything else on the page.
 
@@ -151,7 +161,7 @@ One sentence at display scale in an otherwise empty viewport — no image, no su
 
 ### SEC-007 · Broadsheet Column Shift
 
-`A` · static · static · difficulty low
+`A` · static · static · difficulty low · **SELECTED**
 
 One long block of prose that runs as a single column at small widths, two at tablet and three at desktop, with hairline gutter rules and a balanced final rag. The same text is a materially different object at each width.
 
@@ -167,7 +177,7 @@ One long block of prose that runs as a single column at small widths, two at tab
 
 ### SEC-008 · Narrowing Measure Long Read
 
-`A` · static · static · difficulty medium
+`A` · static · static · difficulty medium · **RESERVE**
 
 A long read whose measure tightens step by step down the section — wide and dense at the top, calm and narrow by the close — interrupted once in the middle by a dense fact band. The argument physically closes in on its conclusion.
 
@@ -178,11 +188,11 @@ A long read whose measure tightens step by step down the section — wide and de
 - **Variants** — Three-step narrowing · Widening instead of narrowing · Interrupting fact band · Rule-marked steps · Inverted closing panel
 - **Overlap** — P owns the breakout ladder where figures escape the measure; here nothing escapes and only the measure itself moves.
 - **References** — Obys dense/calm alternation, Butterick 45–90ch, Codrops editorial rhythm blocks
-- **Tags** — `no-motion` `static` `contained` `density-medium` `build-low` `budget-none` `rm-free`
+- **Tags** — `no-motion` `static` `contained` `density-medium` `budget-none` `rm-free` `build-medium`
 
 ### SEC-009 · Epigraph And Answer
 
-`A` · sticky · CSS-interactive · difficulty medium
+`A` · sticky · CSS-interactive · difficulty medium · **RESERVE**
 
 A client quotation in a distinct face opens the section and the body answers it directly, the quote staying on screen while the answer scrolls beneath. The section is structured as a reply rather than as a statement.
 
@@ -198,7 +208,7 @@ A client quotation in a distinct face opens the section and the body answers it 
 
 ### SEC-010 · Sticky Question Dialogue
 
-`A` · sticky · CSS-interactive · difficulty low
+`A` · sticky · CSS-interactive · difficulty low · **RESERVE**
 
 Oversized questions set in the margin, answers set in the measure, each question sticky until its answer ends. A dialogue laid out spatially, with nothing hidden and nothing to open.
 
@@ -214,7 +224,7 @@ Oversized questions set in the margin, answers set in the measure, each question
 
 ### SEC-011 · Offer Specimen Rig
 
-`A` · user-driven · React-interactive · difficulty medium
+`A` · user-driven · React-interactive · difficulty medium · **SELECTED**
 
 A service name or claim presented as a type specimen at four sizes with live controls for size, tracking, leading and column count, plus a toggle that reveals the underlying grid. The section exposes the craft instead of asserting it.
 
@@ -230,7 +240,7 @@ A service name or claim presented as a type specimen at four sizes with live con
 
 ### SEC-012 · Annotation Reading Layer
 
-`A` · layered · React-interactive · difficulty high
+`A` · layered · React-interactive · difficulty high · **RESERVE**
 
 Cited terms, figures and names carry a distinct underline encoding what lies behind them; focusing one opens a small in-page source card without leaving the sentence, and a section-level control turns the whole layer off.
 
@@ -246,7 +256,7 @@ Cited terms, figures and names carry a distinct underline encoding what lies beh
 
 ### SEC-013 · Task-Stem Grouped Index
 
-`A` · static · static · difficulty low
+`A` · static · static · difficulty low · **SELECTED**
 
 Services grouped under sentence fragments — 'Help you to…', 'Ask us about…' — with the stem set enormous and the items hairline-small beneath it, so the list reads as prose the reader completes. The contrast ratio between stem and item is the whole design.
 
@@ -255,14 +265,14 @@ Services grouped under sentence fragments — 'Help you to…', 'Ask us about…
 - **Desktop** — Three stems stacked down the section, each at display scale spanning the container, with eight to twelve items set at caption size in two tight columns hanging beneath the stem's last word.
 - **Narrow** — The stem wraps to two or three lines and items become one hairline-ruled column; the size contrast is preserved rather than flattened.
 - **Risk** — The stem and its items must be a real heading and list, or the grammatical completion is announced as two unrelated fragments.
-- **Variants** — Two stems · Enormous stem, hairline items · Stem as a quiet eyebrow · Ruled item columns · Count appended per stem
+- **Variants** — Two stems · Enormous stem, hairline items · Stem as a quiet eyebrow · Ruled item columns · Count appended per stem · Inverted scale with a full-width rule · Stems as questions · Stems in display serif, items in mono
 - **Overlap** — N owns the alphabetical filterable index; here the grouping grammar rather than the density is the composition.
 - **References** — GOV.UK Design System's three pattern stems, darkroom.engineering three-column reference matrix, Klim scale contrast
 - **Tags** — `no-motion` `static` `wide` `density-high` `build-low` `budget-none` `rm-free` `semantics-fragile`
 
 ### SEC-014 · Marginal Case Study
 
-`A` · static · static · difficulty medium
+`A` · static · static · difficulty medium · **RESERVE**
 
 A narrative runs in the measure while results run as large numerals down the margin, aligned to the sentence that earned each one. The margin reads correctly on its own, without a word of the prose.
 
@@ -278,7 +288,7 @@ A narrative runs in the measure while results run as large numerals down the mar
 
 ### SEC-015 · Data In Prose
 
-`A` · static · scroll-driven · difficulty medium
+`A` · static · scroll-driven · difficulty medium · **SELECTED**
 
 The numbers live inside the sentences: sparklines set at x-height, proportion bars behind a figure, numerals that count to value as their own sentence enters. Claim and evidence occupy the same line, so the chart-versus-prose split disappears.
 
@@ -295,7 +305,7 @@ The numbers live inside the sentences: sparklines set at x-height, proportion ba
 
 ### SEC-016 · Typographic Redline
 
-`A` · static · static · difficulty medium
+`A` · static · static · difficulty medium · **SELECTED**
 
 One piece of real client copy set twice in the same block: the original marked with deletions, insertions and margin queries in a proofreader's vocabulary, the clean result beneath it. The markup is treated as a designed type system, not a diff view.
 
@@ -311,7 +321,7 @@ One piece of real client copy set twice in the same block: the original marked w
 
 ### SEC-017 · Reading Meter And Map
 
-`A` · sticky · React-interactive · difficulty medium
+`A` · sticky · React-interactive · difficulty medium · **RESERVE**
 
 A long explanation carries its own thin progress rule along the container edge naming the sub-heading currently in view; expanding it reveals a jumpable map of the section's parts with a reading estimate for each.
 
@@ -328,7 +338,7 @@ A long explanation carries its own thin progress rule along the container edge n
 
 ### SEC-018 · Sans Claim, Mono Receipt
 
-`A` · static · static · difficulty low
+`A` · static · static · difficulty low · **SELECTED**
 
 A restrained four-column grid where a sans column carries the claim and headline type and a monospace column footnotes it line by line with dates, roles, formats and process notes. The page gets two voices without two personalities: the claim and the receipt.
 
@@ -336,16 +346,34 @@ A restrained four-column grid where a sans column carries the claim and headline
 - **Use** — Makes a capability statement look documented rather than decorated, which is what a buyer checks before believing it.
 - **Desktop** — Columns one and two carry the headline and a short argument in the display and body faces, column three is deliberately empty, and column four carries mono annotations aligned to the first baseline of each claim line across a hairline.
 - **Narrow** — The mono column drops beneath each claim as a small ruled metadata block, preserving the pairing; the empty column simply disappears.
+- **Risk** — Baseline alignment between a mono annotation and a specific claim line breaks on rewrap, so each annotation needs an anchor to its claim rather than a fixed offset; the deliberately empty third column must be genuinely empty in source, not a spacer announced as content.
 - **Variants** — Empty third column · Mono in the outer margin · Mono in the accent colour · Numbered claim lines · Dark inverted grid
 - **Overlap** — A-05 pairs two voices as well, but its second voice carries opinion and can be muted; this one is metadata and permanently still.
 - **References** — Bisous four-column sans/mono grid, darkroom.engineering reference matrix, Locomotive capability ledgers
 - **Tags** — `no-motion` `static` `wide` `density-high` `build-low` `budget-none` `rm-free`
 
+### SEC-213 · Letterform Aperture
+
+`A` · layered · CSS-interactive · difficulty experimental · **SELECTED**
+
+A single letterform at display scale is the window: its counter is the only opening through which a field of client names, work titles or artefacts is read. The type is the container, not the message.
+
+- **Distinct** — Composition and the relationship between type and content both change — type stops carrying words and becomes the aperture that governs what is visible, which no other entry does.
+- **Use** — Turns a plain list of clients or engagements into a section that states the practice's initial without writing a word of marketing copy.
+- **Desktop** — One glyph occupying most of the section height, cut from the surface so the ground shows through its counter. The content field sits behind and moves or is simply longer than the aperture, so the reader always sees a fragment and infers the rest.
+- **Motion** — The field behind may drift slowly or hold entirely still; movement is optional and the section reads correctly with none.
+- **Narrow** — Below the tablet width the aperture cannot hold a legible fragment, so the glyph becomes a plain oversized mark above the list and the content is read directly — a different section, stated as such.
+- **Risk** — The names must exist as real text in source order and read correctly with the letterform treated as presentational, or the section's whole content is invisible to assistive technology, reader modes and crawlers. If the field moves, travel must be removed entirely under reduced motion rather than slowed.
+- **Variants** — Field still, glyph the only event · Field drifting at constant slow rate · Aperture as the studio's own counter shape · Photographic field rather than type · Two glyphs, two apertures
+- **Overlap** — SEC-194 is a band of travelling content in an ordinary rectangle; here the shape of the opening is the concept and the travel is optional.
+- **References** — Promoted from a variant buried in the marquee entry; Codrops glowing-marquee clipping technique; the text-integrity requirement modelled by SEC-185
+- **Tags** — `css-motion` `layered` `full-bleed` `density-low` `experimental` `budget-none` `rm-designed` `text-integrity`
+
 ## B — Feature and capability explainers
 
 ### SEC-019 · Ruled Equal-Column Register
 
-`B` · static · static · difficulty low
+`B` · static · static · difficulty low · **SELECTED**
 
 Three or four peer capabilities as typographic columns held by a shared top rule and a shared closing rule, so unequal copy lengths are absorbed by the grid instead of being trimmed to fit the column. No cards, no elevation: rules and baselines do the composing.
 
@@ -361,7 +389,7 @@ Three or four peer capabilities as typographic columns held by a shared top rule
 
 ### SEC-020 · Alternating Artefact Rows
 
-`B` · static · scroll-driven · difficulty low
+`B` · static · scroll-driven · difficulty low · **SELECTED** · wave 1
 
 Five to seven full-width rows, each a single claim paired with one real artefact, alternating side. One continuous hairline runs the section's full height at the seam so every row registers against the same spine instead of floating as a template.
 
@@ -378,7 +406,7 @@ Five to seven full-width rows, each a single claim paired with one real artefact
 
 ### SEC-021 · Oversized Deliverable Plate
 
-`B` · static · static · difficulty low
+`B` · static · static · difficulty low · **RESERVE**
 
 One capability takes the whole section: a narrow copy column against a plate two and a half times its width carrying a real deliverable, cropped by the page edge rather than scaled down, so the reader infers there is more document than is shown.
 
@@ -394,7 +422,7 @@ One capability takes the whole section: a narrow copy column against a plate two
 
 ### SEC-022 · Numbered Capability Ledger
 
-`B` · static · GSAP-enhanced · difficulty medium
+`B` · static · GSAP-enhanced · difficulty medium · **SELECTED**
 
 Capabilities as a numbered, countable set where each entry carries its own evidence directly beneath it — a claim line, a one-line definition and two real artefact cards — so a claim and its proof can never be separated by a fold.
 
@@ -411,7 +439,7 @@ Capabilities as a numbered, countable set where each entry carries its own evide
 
 ### SEC-023 · Lead Capability And Ledger
 
-`B` · static · scroll-driven · difficulty low
+`B` · static · scroll-driven · difficulty low · **RESERVE**
 
 One capability is given a full split treatment at the top of the section and the remaining four are compressed into a hairline ledger beneath it. Two ranks, two densities, one section — which is the truth about most service businesses.
 
@@ -428,7 +456,7 @@ One capability is given a full split treatment at the top of the section and the
 
 ### SEC-024 · Benefit-Footed Cards
 
-`B` · static · static · difficulty low
+`B` · static · static · difficulty low · **RESERVE**
 
 A capability card system where every unit ends in a fixed 'what this changes for you' strip set in a different type register, so no card can terminate on a feature and the scan path always closes in the buyer's language.
 
@@ -444,7 +472,7 @@ A capability card system where every unit ends in a fixed 'what this changes for
 
 ### SEC-025 · Proof-Interleaved Capability Column
 
-`B` · static · static · difficulty low
+`B` · static · static · difficulty low · **RESERVE**
 
 One measured column alternates two registers down the page: a capability claim, then a receipt for it — a named client line, a stat pair, or a redacted artefact — set in the same measure at the exact point the claim is made.
 
@@ -460,7 +488,7 @@ One measured column alternates two registers down the page: a capability claim, 
 
 ### SEC-026 · Weighted Service Register
 
-`B` · static · static · difficulty low
+`B` · static · static · difficulty low · **RESERVE**
 
 Every service as an identically structured full-width row on hairlines — name, one-line definition, deliverables cluster — but with two of seven rows given double height and a real artefact strip, so hierarchy exists inside the repetition rather than being flattened by it.
 
@@ -476,7 +504,7 @@ Every service as an identically structured full-width row on hairlines — name,
 
 ### SEC-027 · Contained Panel Section
 
-`B` · static · static · difficulty low
+`B` · static · static · difficulty low · **RESERVE**
 
 The whole explainer sits inside one large inset panel with its own surface, reading as a slab set down on the page — and a single element, the artefact, deliberately crosses the panel's edge so the panel reads as a window rather than a box.
 
@@ -492,7 +520,7 @@ The whole explainer sits inside one large inset panel with its own surface, read
 
 ### SEC-028 · At-A-Glance Companion Panel
 
-`B` · sticky · CSS-interactive · difficulty medium
+`B` · sticky · CSS-interactive · difficulty medium · **RESERVE**
 
 Long-form explanation of one service in the main column, with a companion panel holding the commercial facts — scope, typical duration, deliverables, price band — that stays with the reader for the whole section.
 
@@ -509,7 +537,7 @@ Long-form explanation of one service in the main column, with a companion panel 
 
 ### SEC-029 · Scope And Exclusion Pairs
 
-`B` · static · static · difficulty low
+`B` · static · static · difficulty low · **SELECTED**
 
 Each capability is stated as a pair — what is included, and what explicitly is not — with the exclusion set in a deliberately quieter register on the same rule. Naming the boundary is the strongest credibility move a premium service has.
 
@@ -523,7 +551,9 @@ Each capability is stated as a pair — what is included, and what explicitly is
 - **References** — USWDS Deprecated and Retired lifecycle states, the design-system deprecation strip, NN/g on incomplete attribute data in comparison sections
 - **Tags** — `no-motion` `static` `contained` `density-high` `build-low` `budget-none` `rm-free` `text-integrity`
 
-### SEC-030 · Task-Stem Capability Index
+### SEC-030 · Task-Stem Capability Index — MERGE → SEC-013
+
+> **Merged into SEC-013.** Same task-stem index; differs only in item count and column arrangement. Its distinguishing material now lives in SEC-013's variants. The permanent id is retained so numbering never shifts.
 
 `B` · static · static · difficulty low
 
@@ -543,7 +573,7 @@ Capabilities grouped under sentence fragments the reader completes — 'Help you
 
 ### SEC-031 · Consequence-footed claim cards
 
-`C` · static · static · difficulty low
+`C` · static · static · difficulty low · **SELECTED**
 
 Three equal cards on a regular grid, each with a fixed internal ladder: small label, one-line claim at heading scale, two lines of plain explanation, then a rule-separated consequence strip at the foot. The repetition is the point; the foot strip stops any card ending on a feature.
 
@@ -559,7 +589,7 @@ Three equal cards on a regular grid, each with a fixed internal ladder: small la
 
 ### SEC-032 · Ninth-cell call to action
 
-`C` · static · static · difficulty low
+`C` · static · static · difficulty low · **RESERVE**
 
 A 3x3 grid of nine equal cells where the ninth is deliberately not a card: it carries the section's one instruction, in the same cell geometry but on the accent surface. The exit lives inside the argument rather than appended after it.
 
@@ -575,7 +605,7 @@ A 3x3 grid of nine equal cells where the ninth is deliberately not a card: it ca
 
 ### SEC-033 · Centre-radiating batch reveal
 
-`C` · scroll-driven · GSAP-enhanced · difficulty medium
+`C` · scroll-driven · GSAP-enhanced · difficulty medium · **SELECTED**
 
 A regular grid whose only motion is its arrival: items crossing the line together are collected into one grid-aware stagger radiating from the centre cell outward, so the set reads as a single object landing rather than nine unrelated fades.
 
@@ -592,7 +622,7 @@ A regular grid whose only motion is its arrival: items crossing the line togethe
 
 ### SEC-034 · Cross-ruled quadrant
 
-`C` · static · static · difficulty low
+`C` · static · static · difficulty low · **RESERVE**
 
 Four items placed as regions of one continuous ruled field — a single vertical and horizontal hairline crossing the section — rather than as four card objects. Shared baselines make the quadrant read as one composition.
 
@@ -608,7 +638,7 @@ Four items placed as regions of one continuous ruled field — a single vertical
 
 ### SEC-035 · Chip-filtered work index
 
-`C` · user-driven · GSAP-dependent · difficulty medium
+`C` · user-driven · GSAP-dependent · difficulty medium · **SELECTED**
 
 A regular grid of engagement cards above a short chip row tagged by the reader's own industry rather than by our disciplines. Choosing a chip re-lays the same cards into new cells: survivors travel, departures leave the flow cleanly.
 
@@ -623,7 +653,9 @@ A regular grid of engagement cards above a short chip row tagged by the reader's
 - **References** — Instrument and Unseen filter chips, 14islands industry tagging, GSAP Flip absoluteOnLeave, Codrops Flip filter walkthrough
 - **Tags** — `gsap-core` `user-driven` `contained` `density-medium` `build-medium` `budget-none` `rm-designed` `kbd-path`
 
-### SEC-036 · Typed query, dimmed field
+### SEC-036 · Typed query, dimmed field — MERGE → SEC-163
+
+> **Merged into SEC-163.** Same dim-in-place zero-reflow filter; differs only in density. Its distinguishing material now lives in SEC-163's variants. The permanent id is retained so numbering never shifts.
 
 `C` · static · React-interactive · difficulty low
 
@@ -642,7 +674,7 @@ A large plain input above an already-populated grid. Typing rearranges nothing: 
 
 ### SEC-037 · Grid-to-detail in-place expansion
 
-`C` · swap-in-place · GSAP-dependent · difficulty high
+`C` · swap-in-place · GSAP-dependent · difficulty high · **SELECTED**
 
 A regular card grid where activating a card expands it into a full-width reading panel in the same place; the surrounding grid dims and reflows around it, and closing returns the card to its own cell.
 
@@ -659,7 +691,7 @@ A regular card grid where activating a card expands it into a full-width reading
 
 ### SEC-038 · Family index with live counts
 
-`C` · swap-in-place · React-interactive · difficulty medium
+`C` · swap-in-place · React-interactive · difficulty medium · **RESERVE**
 
 A regular grid of family cards — Retainers 12, Audits 6, Programmes 4 — where the number is the card's primary typography. Activating a family expands it downward into its own list of named variants while the rest of the grid stays put.
 
@@ -668,7 +700,7 @@ A regular grid of family cards — Retainers 12, Audits 6, Programmes 4 — wher
 - **Desktop** — Six equal cells; the eye meets six numerals first and the family names second. Opening one pushes the rows beneath it down rather than covering them.
 - **Motion** — The opened card grows to its content height and the rows below settle down; no other card animates.
 - **Narrow** — One column with the same push-down expansion, which is the honest small-screen form of this pattern rather than a compromise.
-- **Risk** — Animating to intrinsic height still needs a measured path underneath since calc-size and interpolate-size are not Baseline; the disclosure must expose expanded state and keep heading order intact.
+- **Risk** — Animating to intrinsic height still needs a measured path underneath since calc-size and interpolate-size are not Baseline; the disclosure must expose expanded state and keep heading order intact. As authored each card is an independent disclosure and a details-and-summary pair is acceptable. The exclusive one-open-at-a-time variant is a different concept rather than a styling variant: coordinated exclusivity makes it an accordion needing heading-contained buttons, managed state, aria-expanded and aria-controls, and it must not be built on the details name attribute.
 - **Variants** — Counts only · Count plus one named example · Two-tier with sub-counts · Exclusive one-open-at-a-time
 - **Overlap** — N owns dense indexes as sections; here the card grid and the two-tier count are the composition.
 - **References** — Family index with counts (design-system catalogue seed), header-only stack seed, Locomotive team census counts
@@ -676,7 +708,7 @@ A regular grid of family cards — Retainers 12, Audits 6, Programmes 4 — wher
 
 ### SEC-039 · Nine-way specimen matrix
 
-`C` · static · CSS-interactive · difficulty medium
+`C` · static · CSS-interactive · difficulty medium · **RESERVE**
 
 One offer rendered nine ways in a labelled 3x3 — three delivery depths across, three client contexts down — so the axes carry the meaning and each cell is a small true specimen rather than a description.
 
@@ -693,7 +725,7 @@ One offer rendered nine ways in a labelled 3x3 — three delivery depths across,
 
 ### SEC-040 · Metered capability cards
 
-`C` · static · scroll-driven · difficulty low
+`C` · static · scroll-driven · difficulty low · **RESERVE**
 
 Every card in the grid ends on a thin proportion meter carrying one truthful figure — share of a typical engagement, coverage, elapsed weeks — and the meters align across the row, so the set doubles as a small chart.
 
@@ -710,7 +742,7 @@ Every card in the grid ends on a thin proportion meter carrying one truthful fig
 
 ### SEC-041 · Tile index with one shared caption
 
-`C` · static · React-interactive · difficulty medium
+`C` · static · React-interactive · difficulty medium · **RESERVE**
 
 Twenty-four to forty small square artefact tiles on a strict grid, each carrying only an index numeral. One shared caption line beneath names whichever tile is hovered or focused, and holds its last state when the pointer leaves.
 
@@ -727,7 +759,7 @@ Twenty-four to forty small square artefact tiles on a strict grid, each carrying
 
 ### SEC-042 · Claim-to-evidence flip cards
 
-`C` · swap-in-place · React-interactive · difficulty medium
+`C` · swap-in-place · React-interactive · difficulty medium · **RESERVE**
 
 Every card in the grid has two faces: a short claim, and on the reverse its evidence — a figure with period and denominator, or one line from a named client. The reader turns cards individually, so the grid ends in a state they composed.
 
@@ -744,7 +776,7 @@ Every card in the grid has two faces: a short claim, and on the reverse its evid
 
 ### SEC-043 · Density switch: grid or ledger
 
-`C` · user-driven · GSAP-dependent · difficulty high
+`C` · user-driven · GSAP-dependent · difficulty high · **RESERVE**
 
 One dataset in two arrangements the reader chooses: a spacious three-up card grid, or a compact ruled index of the same items in the same source order. Items travel between the two rather than being re-rendered.
 
@@ -754,14 +786,14 @@ One dataset in two arrangements the reader chooses: a spacious three-up card gri
 - **Motion** — Items animate from card cells to ledger rows so the reader can follow one item across the change.
 - **Narrow** — The control persists but both states resolve to one column, differing in row height and how much metadata each row carries.
 - **Risk** — The choice should persist and be a genuine toggle with pressed state; under reduced motion cross-fade the two layouts rather than morphing, and Flip must capture after the DOM has committed.
-- **Variants** — Grid or ledger · Comfortable or compact grid · Three-up to six-up · Sortable ledger state
+- **Variants** — Grid or ledger · Comfortable or compact grid · Three-up to six-up · Sortable ledger state · Compact state as a contained, named, focusable scrolling table
 - **Overlap** — N owns the ledger as a section in its own right; here it is one of two states of a card system.
 - **References** — Awwwards Layout collection (Studio Pic list/grid view, Kin layout switch), Codrops Flip responsive-grid recipe, density-switch catalogue seed
 - **Tags** — `gsap-core` `user-driven` `wide` `density-high` `build-high` `budget-none` `rm-designed` `kbd-path`
 
 ### SEC-044 · Claim columns with attached proof
 
-`C` · static · static · difficulty low
+`C` · static · static · difficulty low · **SELECTED**
 
 Three numbered claim columns where each claim owns two evidence cells stacked directly beneath it, and the evidence rows align across all three columns. The grid reads down as claim-plus-proof and across as a comparison of evidence types.
 
@@ -779,7 +811,7 @@ Three numbered claim columns where each claim owns two evidence cells stacked di
 
 ### SEC-045 · Protagonist Cell Bento
 
-`D` · static · GSAP-enhanced · difficulty low
+`D` · static · GSAP-enhanced · difficulty low · **SELECTED**
 
 One cell is four times the area of every other and carries the section's only display-scale claim, with identical gutters throughout so the size difference reads as a decision rather than an accident. Size, never position, encodes rank.
 
@@ -796,7 +828,7 @@ One cell is four times the area of every other and carries the section's only di
 
 ### SEC-046 · Mixed-Medium Proof Bento
 
-`D` · static · static · difficulty low
+`D` · static · static · difficulty low · **SELECTED**
 
 Six cells, six different kinds of evidence — a figure, a named quote, a document plate, a client mark, a small chart, an excerpt — sharing one surface at deliberately unequal sizes, so the strongest form of proof is also the largest.
 
@@ -812,7 +844,7 @@ Six cells, six different kinds of evidence — a figure, a named quote, a docume
 
 ### SEC-047 · Single-Live-Cell Bento
 
-`D` · static · React-interactive · difficulty medium
+`D` · static · React-interactive · difficulty medium · **RESERVE**
 
 Every cell in an asymmetric field is still except one, which holds a small working artefact. Interactivity is scarce enough to become the hierarchy, so nothing needs to be enlarged to be the focus.
 
@@ -829,7 +861,7 @@ Every cell in an asymmetric field is still except one, which holds a small worki
 
 ### SEC-048 · Offset Quad On A Hairline
 
-`D` · static · static · difficulty low
+`D` · static · static · difficulty low · **RESERVE**
 
 Four cells in two columns, the right column dropped half a row, with one continuous hairline running down the left column, stepping across the gutter at the offset and continuing down the right. The step reads as drawn rather than as a misalignment.
 
@@ -845,7 +877,7 @@ Four cells in two columns, the right column dropped half a row, with one continu
 
 ### SEC-049 · Unequal Column Rates
 
-`D` · scroll-driven · scroll-driven · difficulty medium
+`D` · scroll-driven · scroll-driven · difficulty medium · **RESERVE**
 
 Three columns at deliberately unequal widths, where the narrow middle column advances a few per cent ahead of its neighbours as the section passes. The eye is pulled to it without any image parallax and without any column being labelled primary.
 
@@ -853,16 +885,16 @@ Three columns at deliberately unequal widths, where the narrow middle column adv
 - **Use** — Lets a capability set carry a lead column honestly, when calling one item "primary" would overclaim.
 - **Desktop** — Columns at roughly five, three and four twelfths, each a stack of short titled blocks; the narrow centre column holds the sharpest claims and drifts ahead of the outer two by a bounded offset that resolves at the section's end.
 - **Motion** — A small offset per column, derived from column index rather than per item, settling to true alignment before the section leaves.
-- **Narrow** — Columns collapse to one sequence in authored order and the rate difference is removed entirely rather than reduced, since below tablet there is no second column for the offset to read against.
+- **Narrow** — Below the tablet width neither the unequal widths nor the differential rate survives, so the section becomes a plain authored sequence — the concept has no narrow form.
 - **Risk** — Several elements moving at different speeds is named by WCAG 2.3.3 as a vestibular trigger, so the offset must be removed under reduced motion and kept small enough that no caption ever detaches from its block.
-- **Variants** — Pure CSS scroll() timelines · Outer columns lag, centre true · Elastic settle when scrolling stops · Rate difference only above 1200px
+- **Variants** — Pure CSS scroll() timelines · Outer columns lag, centre true · Elastic settle when scrolling stops · Rate difference only above 1200px · Applied to a full-bleed image field rather than a bento
 - **Overlap** — Q owns motion inside normal scroll, but here the unequal column widths are the concept and the rate only reinforces what the widths already say.
 - **References** — Codrops Elastic Grid Scroll, Codrops opposing-direction columns via CSS scroll() timelines, Josh Comeau on gating scroll-driven motion, WCAG 2.3.3
 - **Tags** — `scroll-css` `scroll-driven` `wide` `density-medium` `build-medium` `budget-none` `rm-designed` `motion-sensitive`
 
 ### SEC-050 · Declared-Order Masonry Wall
 
-`D` · static · static · difficulty medium
+`D` · static · static · difficulty medium · **RESERVE**
 
 Real artefacts at their true proportions in a masonry wall, with a source order authored so the wall reads correctly both as masonry and as the plain multi-column fallback. Two designed compositions, not one composition plus a shim.
 
@@ -878,7 +910,7 @@ Real artefacts at their true proportions in a masonry wall, with a source order 
 
 ### SEC-051 · Ragged Baseline Proof Wall
 
-`D` · static · static · difficulty medium
+`D` · static · static · difficulty medium · **SELECTED**
 
 A masonry-like wall whose uneven bottom edge is composed rather than accidental: a full-width hairline sits at the shortest column's foot, one column deliberately overhangs it, and the closing line of the section occupies the space the rag opens.
 
@@ -894,7 +926,7 @@ A masonry-like wall whose uneven bottom edge is composed rather than accidental:
 
 ### SEC-052 · Flip-Reflowed Tag Wall
 
-`D` · user-driven · GSAP-dependent · difficulty high
+`D` · user-driven · GSAP-dependent · difficulty high · **RESERVE**
 
 An irregular wall of tagged artefacts where selecting a chip does not re-render anything: surviving items travel to new cells and new spans, so the reader watches the same set re-weight rather than a different set arrive.
 
@@ -911,7 +943,7 @@ An irregular wall of tagged artefacts where selecting a chip does not re-render 
 
 ### SEC-053 · Three-Stage Re-Weighting Grid
 
-`D` · scroll-driven · GSAP-dependent · difficulty high
+`D` · scroll-driven · GSAP-dependent · difficulty high · **RESERVE**
 
 The same eight items are laid out three ways down one normally-scrolling section — ranked list, equal grid, then weighted bento — so the reader sees one set argued three ways rather than three different sets.
 
@@ -928,7 +960,7 @@ The same eight items are laid out three ways down one normally-scrolling section
 
 ### SEC-054 · Proportional Span Census
 
-`D` · static · static · difficulty medium
+`D` · static · static · difficulty medium · **SELECTED**
 
 A grid whose cell areas are computed from a real figure — engagements per sector, weeks per workstream — so the irregularity is measured rather than editorial and the largest cell is largest because the number says so.
 
@@ -946,7 +978,7 @@ A grid whose cell areas are computed from a real figure — engagements per sect
 
 ### SEC-055 · Held Claim, Passing Proof
 
-`E` · sticky · scroll-driven · difficulty medium
+`E` · sticky · scroll-driven · difficulty medium · **RESERVE**
 
 A narrow column holds the claim, its counter and one link while a wide rail scrolls evidence past it; the heading is replaced as each rail group takes the centre, so one argument accumulates several proofs. Sticky, never pinned.
 
@@ -963,7 +995,7 @@ A narrow column holds the claim, its counter and one link while a wide rail scro
 
 ### SEC-056 · Standfirst That Stays
 
-`E` · sticky · static · difficulty low
+`E` · sticky · static · difficulty low · **SELECTED**
 
 A narrow column carrying kicker, headline, standfirst and metadata simply stays put while a long body column scrolls past. Nothing swaps, nothing counts, nothing reveals — the premise is permanently available while the evidence passes.
 
@@ -979,14 +1011,15 @@ A narrow column carrying kicker, headline, standfirst and metadata simply stays 
 
 ### SEC-057 · Unequal Diptych
 
-`E` · static · static · difficulty low
+`E` · static · static · difficulty low · **SELECTED** · wave 1
 
 Two regions at a deliberately unequal ratio sharing one baseline grid: the narrow side carries only a caption stack or spec list, the wide side carries the artefact. The asymmetry and the shared baselines do the composing, so no decoration is required.
 
 - **Distinct** — There is no scroll relationship — both regions are read in one view, so hierarchy comes from ratio and alignment rather than sequence.
 - **Use** — Gives one deliverable or positioning statement a whole section without inventing filler to balance a symmetrical grid.
 - **Desktop** — Roughly 38/62. The artefact runs the wide side's full height; the narrow side hangs three short blocks from the artefact's own baselines, locked top and bottom.
-- **Narrow** — The narrow column becomes a caption block beneath the artefact, preserving the baseline relationship as vertical rhythm.
+- **Narrow** — Narrow is a different section, not a degraded one — asymmetry and shared baselines both need two regions, so the small-screen form is an artefact with a caption stack beneath it and the ratio argument is not made.
+- **Risk** — Rank and relationship are carried entirely by ratio and baseline alignment, both invisible non-visually and both absent in one column, so the caption stack must read correctly as ordinary prose on its own.
 - **Variants** — 62/38 flipped · Artefact bleeding off the outer edge · Full-height surface seam between halves · Narrow side as a hairline spec list · Narrow side as one oversized numeral
 - **Overlap** — Bento (D) also uses unequal weight, but that is a cell map; this is two regions.
 - **References** — Tailwind Plus split feature with product screenshot, BASIC/DEPT, Bisous four-column editorial grid, Locomotive
@@ -994,7 +1027,7 @@ Two regions at a deliberately unequal ratio sharing one baseline grid: the narro
 
 ### SEC-058 · Two-Speed Pair
 
-`E` · scroll-driven · scroll-driven · difficulty medium
+`E` · scroll-driven · scroll-driven · difficulty medium · **RESERVE**
 
 Both columns scroll, but one advances slightly slower, so a caption and its subject drift apart and come into exact alignment at one designed anchor line. The section rewards reading pace rather than announcing itself.
 
@@ -1011,7 +1044,7 @@ Both columns scroll, but one advances slightly slower, so a caption and its subj
 
 ### SEC-059 · Reader-Set Seam
 
-`E` · user-driven · React-interactive · difficulty high
+`E` · user-driven · React-interactive · difficulty high · **RESERVE**
 
 A full-height splitter between a narrative region and an evidence region that the reader drags, so the section's balance is a decision rather than an authored ratio. Both regions reflow live and neither ever closes fully.
 
@@ -1028,7 +1061,7 @@ A full-height splitter between a narrative region and an evidence region that th
 
 ### SEC-060 · Handover Split
 
-`E` · sticky · scroll-driven · difficulty medium
+`E` · sticky · scroll-driven · difficulty medium · **SELECTED**
 
 The media region holds still while copy scrolls past it, then at the midpoint the roles invert: copy becomes the fixed side and the media stack scrolls beneath it. One section makes two arguments with the same two columns.
 
@@ -1045,7 +1078,7 @@ The media region holds still while copy scrolls past it, then at the midpoint th
 
 ### SEC-061 · Objection in the Margin
 
-`E` · sticky · static · difficulty low
+`E` · sticky · static · difficulty low · **SELECTED**
 
 The buyer's own objections, set large in the outer column, each stay in place only until their answer in the measure has finished, then release and hand over to the next. A dialogue laid out spatially, with nothing hidden.
 
@@ -1061,7 +1094,7 @@ The buyer's own objections, set large in the outer column, each stay in place on
 
 ### SEC-062 · Fixed Reading, Scrolling Evidence
 
-`E` · user-driven · CSS-interactive · difficulty medium
+`E` · user-driven · CSS-interactive · difficulty medium · **RESERVE**
 
 One region is a fixed, complete piece of reading; the other is its own bounded scroll surface holding an artefact column with its own beginning and end. The reader chooses which of the two to advance.
 
@@ -1077,7 +1110,7 @@ One region is a fixed, complete piece of reading; the other is its own bounded s
 
 ### SEC-063 · Three Parallel Streams
 
-`E` · static · static · difficulty low
+`E` · static · static · difficulty low · **RESERVE**
 
 Three unlike content streams — writing, engagements, artefacts — presented side by side as one section rather than three, each with its own count, its own short list and its own link out. The parallelism is the argument: these run at once.
 
@@ -1093,7 +1126,7 @@ Three unlike content streams — writing, engagements, artefacts — presented s
 
 ### SEC-064 · Migrating Seam
 
-`E` · static · static · difficulty low
+`E` · static · static · difficulty low · **RESERVE**
 
 A run of three or four paired regions where the seam moves across the section: an even split at the top, and by the last pair the artefact is almost full width with the text reduced to a hung caption. The composition itself concludes.
 
@@ -1109,7 +1142,7 @@ A run of three or four paired regions where the seam moves across the section: a
 
 ### SEC-065 · Index and Its Frame
 
-`E` · swap-in-place · React-interactive · difficulty medium
+`E` · swap-in-place · React-interactive · difficulty medium · **RESERVE**
 
 A typographic index of engagements occupies one region and owns a single large frame in the other; focusing or hovering a row swaps what the frame holds, and the frame keeps its last state when the pointer leaves. No thumbnails, no reset flicker.
 
@@ -1126,7 +1159,7 @@ A typographic index of engagements occupies one region and owns a single large f
 
 ### SEC-066 · One Artefact, Many Readings
 
-`E` · sticky · GSAP-enhanced · difficulty medium
+`E` · sticky · GSAP-enhanced · difficulty medium · **SELECTED**
 
 A single real deliverable is held in view for the whole section and never replaced; as each prose block passes on the other side, a different region of it is called out or dimmed. The reader builds one mental model instead of five.
 
@@ -1145,7 +1178,7 @@ A single real deliverable is held in view for the whole section and never replac
 
 ### SEC-067 · Contained Matrix, Both Axes
 
-`F` · sticky · static · difficulty medium
+`F` · sticky · static · difficulty medium · **SELECTED** · wave 1
 
 One real table carries the whole comparison inside a named, focusable scroll region, so only the matrix moves sideways while the heading, legend, footnotes and CTA reflow normally around it. Hairline rules, tabular numerals, words rather than tick glyphs.
 
@@ -1161,7 +1194,7 @@ One real table carries the whole comparison inside a named, focusable scroll reg
 
 ### SEC-068 · Seven Differences, Eighteen Shared
 
-`F` · user-driven · React-interactive · difficulty medium
+`F` · user-driven · React-interactive · difficulty medium · **RESERVE**
 
 The same matrix with one prominent control that collapses every row on which all options agree, leaving only the rows that separate them, and rewrites the section heading to state the result.
 
@@ -1178,7 +1211,7 @@ The same matrix with one prominent control that collapses every row on which all
 
 ### SEC-069 · Any Two of Six
 
-`F` · swap-in-place · React-interactive · difficulty medium
+`F` · swap-in-place · React-interactive · difficulty medium · **SELECTED**
 
 Chips name six engagements; the reader picks two and the section renders only that pair, differing rows ruled and agreeing rows dimmed. The full set is never displayed at once.
 
@@ -1186,7 +1219,7 @@ Chips name six engagements; the reader picks two and the section renders only th
 - **Use** — Makes a six-option service range decidable instead of overwhelming.
 - **Desktop** — A chip row across the container, then two large named columns either side of a centred criteria spine, so each criterion is read once with a value to its left and right.
 - **Motion** — Values step to their replacements in place while the criteria spine holds absolutely still.
-- **Narrow** — The pair stays side by side — never stacked — with each criterion label moving above its two values as a small caption; chips wrap to two rows.
+- **Narrow** — The pair stays side by side, so cell values must be authored to a declared two-or-three-word budget and the criteria label moves above each pair rather than holding a third track. Any criterion whose honest answer is a sentence belongs in a different section.
 - **Risk** — Chips must be real toggle buttons carrying pressed state, with a stated rule for a third pick, or keyboard and screen-reader readers cannot tell what is currently being compared.
 - **Variants** — Chip selector · Two large named plates · Centred criteria spine · Difference rules only · Locked left option
 - **Overlap** — F-02 reduces rows; this reduces columns, and the reader's choice is about which options exist rather than which rows matter.
@@ -1195,7 +1228,7 @@ Chips name six engagements; the reader picks two and the section renders only th
 
 ### SEC-070 · Recommended By Structure
 
-`F` · static · static · difficulty low
+`F` · static · static · difficulty low · **SELECTED** · wave 1
 
 Three approaches where the recommended one is wider, taller and one surface step darker than its neighbours, carrying no badge, ribbon or most-popular label. The recommendation is a fact of the layout.
 
@@ -1211,7 +1244,7 @@ Three approaches where the recommended one is wider, taller and one surface step
 
 ### SEC-071 · Do Nothing Ledger
 
-`F` · scroll-driven · scroll-driven · difficulty medium
+`F` · scroll-driven · scroll-driven · difficulty medium · **SELECTED**
 
 Two columns of identical rows — do nothing, engage — where the do-nothing column fills in row by row while the adjacent column empties to hairlines, both driven by the same normal-scroll range and resolving on one balance line.
 
@@ -1228,14 +1261,14 @@ Two columns of identical rows — do nothing, engage — where the do-nothing co
 
 ### SEC-072 · Two Type Systems Arguing
 
-`F` · static · static · difficulty low
+`F` · static · static · difficulty low · **SELECTED**
 
 The incumbent approach is set in a dull condensed system at tight leading and small size; ours is set in the display face at a generous measure. Cells carry only verifiable facts, so the typography does the arguing rather than the copy.
 
 - **Distinct** — Persuasion lives in the type system, not in cell content, emphasis colour or an applied recommendation device.
 - **Use** — Contrasts how the category usually works with how we work, without making a claim that cannot be evidenced.
 - **Desktop** — A wide two-column ledger sharing one baseline grid: the left column grey, condensed, dense and hairline-ruled; the right column on paper with display-scale row headings and roughly twice the leading.
-- **Narrow** — The two stay adjacent as narrow columns rather than stacking — the condensed system tolerates a very short measure, and the contrast is the content.
+- **Narrow** — Narrow is a different section, not a degraded one — two facing columns of prose cannot hold at 320 CSS pixels, and the condensed grey column is the first thing to fail contrast and 200% zoom. The two type systems stack as labelled blocks read in sequence, and the contrast is carried by the labels rather than by adjacency.
 - **Risk** — The de-emphasised column still has to meet contrast minimums and stay readable at 200% zoom; condensed grey type at small sizes is the first thing to fail.
 - **Variants** — Grey condensed against display · Monospace incumbent · All-caps incumbent · Ours on a navy panel · Rule-weight inversion
 - **Overlap** — A is typography-led as a whole composition; here the type treatment exists to compare two approaches.
@@ -1244,7 +1277,7 @@ The incumbent approach is set in a dull condensed system at tight leading and sm
 
 ### SEC-073 · Sentences, Not Ticks
 
-`F` · static · static · difficulty medium
+`F` · static · static · difficulty medium · **SELECTED**
 
 The buyer's own objections as rows, three delivery models as columns, and every cell a full sentence rather than a glyph. The matrix is deliberately unscannable so the reader has to read it.
 
@@ -1256,11 +1289,11 @@ The buyer's own objections as rows, three delivery models as columns, and every 
 - **Variants** — Three delivery models · Two models plus do-nothing · Oversized question column · Answers attributed to a named person · Mono answer column
 - **Overlap** — G would hide the same content behind disclosure and become a different concept; here nothing is hidden and nothing is scannable.
 - **References** — NN/g Comparison Tables (the 'it depends' problem); seed objection matrix; darkroom.engineering specificity of proof
-- **Tags** — `no-motion` `static` `wide` `density-high` `build-low` `budget-none` `rm-free`
+- **Tags** — `no-motion` `static` `wide` `density-high` `budget-none` `rm-free` `build-medium`
 
 ### SEC-074 · Re-weighting Columns
 
-`F` · user-driven · CSS-interactive · difficulty medium
+`F` · user-driven · CSS-interactive · difficulty medium · **RESERVE**
 
 Three approach columns share a criteria spine on a subgrid; attending to one column dims the other two and steps their type down a size, or in the widening variant expands it while the neighbours compress with row baselines still aligned.
 
@@ -1277,7 +1310,7 @@ Three approach columns share a criteria spine on a subgrid; attending to one col
 
 ### SEC-075 · Margin Table, Read Along
 
-`F` · scroll-driven · scroll-driven · difficulty medium
+`F` · scroll-driven · scroll-driven · difficulty medium · **SELECTED**
 
 Two paragraphs describe two options in prose while their figures are lifted into a small hairline table in the margin; the matching row highlights as the sentence describing it crosses the reading band.
 
@@ -1290,11 +1323,11 @@ Two paragraphs describe two options in prose while their figures are lifted into
 - **Variants** — Sticky margin table · Inline figures only · Two-option prose · Highlight by rule weight · Three-row summary table
 - **Overlap** — A owns margin-column long reads; here the margin holds a comparison and the section exists to compare two options.
 - **References** — Seed: sentence-linked comparison table; Gwern and Tufte sidenote practice; MDN view-timeline support caveats
-- **Tags** — `scroll-css` `sticky` `wide` `density-medium` `build-medium` `budget-none` `rm-designed`
+- **Tags** — `scroll-css` `wide` `density-medium` `build-medium` `budget-none` `rm-designed` `scroll-driven`
 
 ### SEC-076 · What Moves This Number
 
-`F` · user-driven · CSS-interactive · difficulty medium
+`F` · user-driven · CSS-interactive · difficulty medium · **RESERVE**
 
 Each price column carries a disclosure that opens into the assumptions behind the figure — scope, team shape, review cycle, what pushes it up — so the number is explained rather than asserted.
 
@@ -1311,7 +1344,7 @@ Each price column carries a disclosure that opens into the assumptions behind th
 
 ### SEC-077 · Not For You, Honestly
 
-`F` · static · static · difficulty low
+`F` · static · static · difficulty low · **SELECTED**
 
 Two columns of plain statements — when this engagement fits and when it does not — given identical typographic weight, with the misfit column naming who should go elsewhere and where.
 
@@ -1320,14 +1353,14 @@ Two columns of plain statements — when this engagement fits and when it does n
 - **Desktop** — Two equal columns beneath a single rule, around ten short statements each, at reading size with no icons, ticks or colour coding. The misfit column is not dimmed and not apologised for.
 - **Narrow** — Columns stack with their headings as the only differentiator; statements keep their full length.
 - **Risk** — Fit and misfit must be distinguished in words by their headings, never by colour alone, since colour is the only thing carrying the distinction if the headings are decorative.
-- **Variants** — Two equal columns · Alternating-rule ledger · Misfit column on navy · Named alternative per misfit line · Single-column struck list
+- **Variants** — Two equal columns · Alternating-rule ledger · Misfit column on navy · Named alternative per misfit line · Single-column struck list · Unequal weight — fit column lifted, misfit flat · Each misfit line naming a real alternative · Refusal column set larger than the invitation · Written as questions the reader answers
 - **Overlap** — F-07 compares three delivery models against objections; this compares one offer against the reader.
 - **References** — NN/g on honest attribute data; darkroom.engineering's specific, unpadded proof; seed objection-led writing
 - **Tags** — `no-motion` `static` `contained` `density-medium` `build-low` `budget-none` `rm-free`
 
 ### SEC-078 · Two Questions, Three Options
 
-`F` · swap-in-place · React-interactive · difficulty high
+`F` · swap-in-place · React-interactive · difficulty high · **RESERVE**
 
 All three engagements are shown in full from the start; answering two short questions about the reader's situation annotates each with a verdict line and re-orders them. Nothing is ever hidden or removed.
 
@@ -1342,16 +1375,34 @@ All three engagements are shown in full from the start; answering two short ques
 - **References** — Seed: engagement-model selector re-laid with Flip; GSAP Flip caveats; NN/g on tabs preventing compensatory comparison
 - **Tags** — `js-motion` `swap-in-place` `contained` `density-medium` `build-high` `budget-none` `rm-designed` `kbd-path`
 
+### SEC-211 · Fit Test — MERGE → SEC-077
+
+> **Merged into SEC-077.** Duplicate of the existing fit/misfit pair — same reader task (self-diagnosis against stated criteria), same two-column form. Caught during selection; the Bricksmaven candidate that produced it was already covered. Its distinguishing material now lives in SEC-077's variants. The permanent id is retained so numbering never shifts.
+
+`F` · static · static · difficulty low
+
+Two facing lists the reader measures themselves against rather than each other: one names who this work suits, the other names who it does not. The refusal column is the credible one, and it is set with the same care as the invitation.
+
+- **Distinct** — Reader activity changes: this is self-diagnosis against stated criteria, not evaluation of two options. Nothing is being compared — the reader is deciding whether to disqualify themselves.
+- **Use** — Lets a business owner rule themselves in or out before enquiring, which raises enquiry quality and reads as confidence rather than salesmanship.
+- **Desktop** — Two columns under one rule at unequal weight — the fit column on a lifted surface with a full-height rule, the not-a-fit column flat on paper at the same type size. Criteria are short sentences, not ticks, and the not-a-fit column names a real alternative for each line rather than leaving the reader nowhere.
+- **Narrow** — Columns stack with the fit column first; the not-a-fit column keeps its full weight and is never collapsed behind a control, since hiding the refusal would defeat the concept.
+- **Risk** — Polarity must not rest on colour or icon glyphs alone — each column needs a written heading that states its meaning, or the distinction is invisible non-visually and to anyone who reads the icons as decorative.
+- **Variants** — Refusal column set larger than the invitation · Each not-a-fit line naming a real alternative · Navy fit panel on paper ground · Three columns — fit, sometimes, never · Written as questions the reader answers
+- **Overlap** — SEC-070 recommends one option among several; this one recommends nothing and asks the reader to exclude themselves, which is the opposite reader task.
+- **References** — Bricksmaven Alpha Library comparison family (audience self-qualification split, observed 2026-08-01); NN/g on comparison tables having no cell for 'it depends'
+- **Tags** — `no-motion` `static` `contained` `density-medium` `build-low` `budget-none` `rm-free` `surface-critical`
+
 ## G — Tabs, accordions and disclosure
 
 ### SEC-079 · Tab-Grown Panel
 
-`G` · swap-in-place · GSAP-enhanced · difficulty medium
+`G` · swap-in-place · GSAP-enhanced · difficulty medium · **SELECTED**
 
 The active indicator and the incoming panel behave as one object: the marker under the chosen label expands into the panel beneath it, so the panel reads as having grown out of its tab rather than cross-fading into view.
 
 - **Distinct** — The interaction is ordinary tabs; the motion logic is what changes — one shared layout transition binds indicator and panel instead of two unrelated fades.
-- **Use** — Lets three or four genuinely parallel propositions — sectors, engagement models, delivery tiers — occupy one screen while keeping the reader's eye tied to the choice they just made.
+- **Use** — Lets three or four genuinely parallel propositions — sectors, engagement models, delivery approaches — occupy one screen while keeping only one on show at a time.
 - **Desktop** — A hairline strip of four one-word labels across a contained width; beneath it one large panel carrying a claim line, a three-row spec list and a single artefact plate. Every panel shares that layout and differs only in data.
 - **Motion** — The indicator's rectangle is captured and re-fitted to the panel frame in a single short transition, replaced by an instant swap under reduced motion.
 - **Narrow** — The strip becomes a snapped scrollable row with the active label brought to the start, and the panel settles to its new height rather than animating to it.
@@ -1363,7 +1414,7 @@ The active indicator and the incoming panel behave as one object: the marker und
 
 ### SEC-080 · Plated Tab Panel
 
-`G` · swap-in-place · React-interactive · difficulty medium
+`G` · swap-in-place · React-interactive · difficulty medium · **RESERVE**
 
 Tabs swap a compact copy panel while a persistent full-bleed media plate behind it changes with the same control, so switching tabs changes the whole field rather than one text block.
 
@@ -1380,7 +1431,7 @@ Tabs swap a compact copy panel while a persistent full-bleed media plate behind 
 
 ### SEC-081 · Two-Up Exclusive Accordion
 
-`G` · user-driven · CSS-interactive · difficulty low
+`G` · user-driven · CSS-interactive · difficulty medium · **RESERVE**
 
 A group of panels kept to one open at a time, laid out two-up rather than as a stack of bars: the open row spans both columns and the closed rows stay legible around it.
 
@@ -1393,11 +1444,11 @@ A group of panels kept to one open at a time, laid out two-up rather than as a s
 - **Variants** — Two-up capability board · Single-column ruled ledger · Oversized numbered plates · Question-led register
 - **Overlap** — G-04 uses the same platform mechanism but exists for its relocating companion pane.
 - **References** — MDN interpolate-size / calc-size, ARIA APG accordion pattern, Adrian Roselli on disclosure widgets, The Component Gallery Accordion aliases
-- **Tags** — `css-motion` `user-driven` `contained` `density-medium` `build-low` `budget-none` `rm-free` `semantics-fragile`
+- **Tags** — `css-motion` `user-driven` `contained` `density-medium` `build-medium` `budget-none` `rm-free` `semantics-fragile`
 
 ### SEC-082 · Relocating Pane Accordion
 
-`G` · swap-in-place · CSS-interactive · difficulty medium
+`G` · swap-in-place · CSS-interactive · difficulty medium · **SELECTED** · wave 1
 
 A list of rows beside one persistent media pane; opening a row changes the pane, and below the breakpoint that same pane moves inside the open row, so the small-screen version is a different composition from identical markup.
 
@@ -1414,7 +1465,7 @@ A list of rows beside one persistent media pane; opening a row changes the pane,
 
 ### SEC-083 · Diagnostic Accordion
 
-`G` · user-driven · React-interactive · difficulty medium
+`G` · user-driven · React-interactive · difficulty medium · **RESERVE**
 
 Each row names a symptom the owner already recognises; opening it resolves into a two-column panel with the measured figure on the left and the intervention on the right, so every disclosure ends in a diagnosis and a response.
 
@@ -1423,7 +1474,7 @@ Each row names a symptom the owner already recognises; opening it resolves into 
 - **Desktop** — Five wide rows on hairline rules, each a short symptom sentence with a quiet ordinal. The open panel splits roughly one-third to two-thirds: a display-scale figure with its period and source on the left, three lines of intervention plus one artefact link on the right.
 - **Motion** — Both columns of the panel settle in one short transition, and the figure never re-counts when a row is reopened.
 - **Narrow** — The figure block sits above the intervention, both full width, with the source line staying attached to the figure.
-- **Risk** — Figures without period, denominator and source read as fabricated; and the open transition must not depend on a JS height measurement that font loading invalidates.
+- **Risk** — Figures without period, denominator and source read as fabricated; and the open transition must not depend on a JS height measurement that font loading invalidates. This is a coordinated accordion, so it needs heading-contained buttons, managed open state, aria-expanded and aria-controls rather than native details elements, whose exposed role varies across assistive technology.
 - **Variants** — Figure-led left column · Before/after pair on the left · Sparkline instead of a numeral · Priced intervention column
 - **Overlap** — F comparison sections also support a decision, but this one diagnoses a single situation rather than ranking options.
 - **References** — Tailwind Plus two-column FAQ, evidence-footed figure discipline, NN/g comparison guidance
@@ -1431,11 +1482,11 @@ Each row names a symptom the owner already recognises; opening it resolves into 
 
 ### SEC-084 · Ledger and Shared Answer
 
-`G` · swap-in-place · React-interactive · difficulty medium
+`G` · swap-in-place · React-interactive · difficulty medium · **SELECTED**
 
 Questions run as a numbered ledger down the left and every answer opens into one shared pane on the right, so the full question set stays visible while any single answer is read and the list never reflows.
 
-- **Distinct** — Spatial relationship: the disclosure target is a fixed region beside the list rather than the row itself, so opening an answer moves nothing.
+- **Distinct** — This is not a disclosure set — a single pane is replaced, so the correct model is a tab list with one shared panel, not an accordion and never a details element.
 - **Use** — Lets a buyer see every objection at once and read only the ones that apply to them without losing sight of the rest.
 - **Desktop** — A left column of eight to twelve questions on hairline rules with small ordinals, the active one ruled heavier; a right pane at roughly 55% width holding the answer, the question repeated as its heading, and one related-artefact line at the foot.
 - **Motion** — The answer replaces in place with no height animation; the pane reserves height from the longest answer so the section is dimensionally stable.
@@ -1448,7 +1499,7 @@ Questions run as a numbered ledger down the left and every answer opens into one
 
 ### SEC-085 · Read-Tracked Objection Set
 
-`G` · sticky · React-interactive · difficulty medium
+`G` · sticky · React-interactive · difficulty medium · **RESERVE**
 
 A push-down accordion of the buyer's own objections, written in their words, with a persistent aside that records which have been opened — so a long list gains a sense of completion instead of unknowable depth.
 
@@ -1456,7 +1507,7 @@ A push-down accordion of the buyer's own objections, written in their words, wit
 - **Use** — Makes a fifteen-item objection section feel finishable and shows a cautious buyer they have covered the ground.
 - **Desktop** — A two-thirds column of question rows that push the section taller as they open, beside a sticky one-third aside carrying a count such as '6 of 15 read', a compact list of titles with the read ones marked, and a working expand-all control.
 - **Narrow** — The aside becomes one line above the list carrying the count and the expand-all control, and stops being sticky.
-- **Risk** — The count must update a polite live region rather than only re-render, and expand-all has to change real disclosure state rather than restyle rows.
+- **Risk** — The count must update a polite live region rather than only re-render, and expand-all has to change real disclosure state rather than restyle rows. Because the aside reports coverage and the expand-all control writes to every row, open state must be managed in one place; native details elements would let the tracker and the rows disagree, and details cannot supply the grouping semantics an accordion needs.
 - **Variants** — Count-only aside · Ruled checklist aside · Thin coverage meter · Per-category coverage
 - **Overlap** — G-06 also lists questions, but nothing there is tracked and the answers share one pane.
 - **References** — FAQ with a read-tracker (design-system catalogues), objection sections written in the buyer's words, Tailwind Plus FAQ variants
@@ -1464,7 +1515,7 @@ A push-down accordion of the buyer's own objections, written in their words, wit
 
 ### SEC-086 · Diagram-State Accordion
 
-`G` · swap-in-place · GSAP-enhanced · difficulty high
+`G` · swap-in-place · GSAP-enhanced · difficulty high · **RESERVE**
 
 Opening a row does more than reveal text: it advances a small schematic beside the list to the labelled state that row describes, so the reader assembles one model of the system instead of collecting five separate answers.
 
@@ -1473,7 +1524,7 @@ Opening a row does more than reveal text: it advances a small schematic beside t
 - **Desktop** — A left column of four to six rows against a contained SVG diagram at fixed aspect on the right: nodes, hairline connectors and a legend. The active node and its connector are emphasised and labelled; the rest stay legible but quiet.
 - **Motion** — The diagram tweens between authored states — a rule drawing, a node filling — rather than being redrawn, and jumps straight to the state under reduced motion.
 - **Narrow** — The diagram relocates above the open row at reduced complexity, keeping the same node labels and the same active state.
-- **Risk** — The diagram needs a written description plus the same relationships stated as text, or the section's actual meaning exists only inside an image.
+- **Risk** — Opening a row changes the diagram, a region elsewhere on screen, so this is a coordinated accordion driving a remote target — heading-contained buttons with aria-expanded and aria-controls, managed open state and defined keyboard behaviour are all required, and the HTML details element cannot express any of it because its target is only its own subtree. The diagram region needs an accessible name and its active-state change announced, or a screen-reader user activates a control and nothing happens. The diagram also needs a written description with the same relationships stated as text, or the section's meaning exists only inside an image.
 - **Variants** — Pipeline schematic · Responsibility map · Coverage grid · Document-flow diagram
 - **Overlap** — K process spines carry the same subject but advance on scroll; here the reader sets the state.
 - **References** — GSAP DrawSVG accordion demos, W3C complex-image alternatives, node map with a live caption region
@@ -1481,7 +1532,7 @@ Opening a row does more than reveal text: it advances a small schematic beside t
 
 ### SEC-087 · Open The Working
 
-`G` · user-driven · CSS-interactive · difficulty medium
+`G` · user-driven · CSS-interactive · difficulty medium · **SELECTED**
 
 A short, confident summary paragraph carrying inline disclosure controls — open the working — that expand method, figures and caveats in place, so a sceptic can reach the detail without a scanner ever having to see it.
 
@@ -1490,7 +1541,7 @@ A short, confident summary paragraph carrying inline disclosure controls — ope
 - **Desktop** — A single measured column set a step above body scale, with three or four bracketed chevron controls sitting inline in the prose. Opening one inserts a quietly tinted block at the same measure holding a method note, a small figure table and a caveat line.
 - **Motion** — The inserted block resolves over its own height only, with nothing above the reader's current line moving.
 - **Narrow** — Identical behaviour at a narrower measure; the inline controls become full-width rows directly beneath the sentence they belong to.
-- **Risk** — Any expansion that opens above the reader's position shifts the line being read, so the inserted block must always land below its anchor and the control must remain a real button.
+- **Risk** — Any expansion that opens above the reader's position shifts the line being read, so the inserted block must always land below its anchor and the control must remain a real button. This is a plain disclosure rather than an accordion, but it cannot be a details element: details is not permitted inside a paragraph, so an inline control must be a real button carrying aria-expanded with aria-controls pointing at a block that sits after the paragraph.
 - **Variants** — Inline method notes · Figures-and-source drawer · Caveats only · Section-level show-the-working control
 - **Overlap** — A editorial sidenotes show the same material permanently; here it is the reader's choice to summon it.
 - **References** — Gwern collapsible depth sections and semantic zoom, MDN interpolate-size, Tufte-style margin notes
@@ -1498,7 +1549,7 @@ A short, confident summary paragraph carrying inline disclosure controls — ope
 
 ### SEC-088 · Inline Glossary
 
-`G` · user-driven · CSS-interactive · difficulty low
+`G` · user-driven · CSS-interactive · difficulty low · **RESERVE**
 
 A section that names the vocabulary a buyer will meet in a proposal; activating a term opens a definition panel in the flow of the index, including the other names clients use for the same thing.
 
@@ -1506,17 +1557,34 @@ A section that names the vocabulary a buyer will meet in a proposal; activating 
 - **Use** — Removes the vocabulary gap that quietly stalls decisions when an owner is not certain what they would be buying.
 - **Desktop** — Two or three columns of terms as a dense alphabetical index on hairline rules. Activating a term opens a panel across the full width at that row holding a one-sentence definition, the aliases, and one line on where the term appears in our work; every other term stays exactly where it was.
 - **Narrow** — A single column in the same order, with the panel opening directly under its term.
-- **Risk** — A multi-column index that reflows on open moves terms the reader was scanning, so the panel must occupy a full grid row rather than push a column downward.
+- **Risk** — A multi-column index that reflows on open moves terms the reader was scanning, so the panel must occupy a full grid row rather than push a column downward. The panel must be a sibling occupying its own full grid row, so the control is a real button with aria-expanded and aria-controls rather than a details element, whose panel can only be its own child. The index must be CSS grid rather than multi-column: in a column layout nothing keeps the remaining terms in place.
 - **Variants** — Alphabetical index · Grouped by phase of work · Alias-led entries · Definition plus what-it-costs line
 - **Overlap** — N indexes carry similar density, but there the list is the statement; here the reveal is the point.
 - **References** — The Component Gallery alias listings, alphabetical dense capability index, inline glossary section seed
 - **Tags** — `no-motion` `user-driven` `contained` `density-high` `build-low` `budget-none` `rm-free` `kbd-path`
 
+### SEC-212 · Two-Stage Question Board
+
+`G` · user-driven · React-interactive · difficulty medium · **SELECTED**
+
+A short row of topic controls above a disclosure list, so the reader narrows before they open. Choosing a topic changes which questions exist; opening one still works as it always did.
+
+- **Distinct** — Adds a second reader action and a second content tier above disclosure — the reader filters, then reveals. A flat accordion asks one question of the reader; this asks two.
+- **Use** — Keeps a long objection or FAQ set usable when the questions divide cleanly by audience or engagement type, without a page of collapsed rows.
+- **Desktop** — Topic controls as a single hairline row under the heading with a live count beside each, then the filtered list beneath at full measure. Switching topic replaces the list in place; the row of controls never moves.
+- **Motion** — The outgoing list fades and the incoming one arrives at rest — no height animation on the container, so nothing below the section jumps as the count changes.
+- **Narrow** — Controls become a horizontally scrollable row within a focusable, named region; the list below is unchanged.
+- **Risk** — Two coordinated controls in one section: the topic row is a tab list needing roving tabindex and arrow keys, and the disclosure set beneath is an accordion needing heading-contained buttons with aria-expanded and aria-controls. Changing topic must announce the new count, or a screen-reader user hears nothing change. Native details elements cannot supply either contract.
+- **Variants** — Topic controls as a left rail rather than a row · One topic open by default versus none · Counts shown per topic · Topics as buyer roles rather than subjects
+- **Overlap** — SEC-084 replaces one shared pane and is tab-shaped throughout; here the second tier is a genuine disclosure set whose rows open independently.
+- **References** — Bricksmaven Alpha Library accordion family (two-stage tabbed accordion, observed 2026-08-01); ARIA APG tabs and accordion patterns; NN/g on tab overflow becoming undiscoverable
+- **Tags** — `js-motion` `user-driven` `contained` `density-medium` `build-medium` `budget-none` `rm-free` `kbd-path`
+
 ## H — Sliders, carousels and rails
 
 ### SEC-089 · Peek Shelf With Controls
 
-`H` · user-driven · CSS-interactive · difficulty low
+`H` · user-driven · CSS-interactive · difficulty low · **SELECTED**
 
 A single row of engagement cards on a snap track with a visible progress rule, persistent prev/next and the next card deliberately cropped in half, so the reader can see there is more and reach it identically on touch and desktop.
 
@@ -1533,7 +1601,7 @@ A single row of engagement cards on a snap track with a visible progress rule, p
 
 ### SEC-090 · Platform Carousel Section
 
-`H` · user-driven · CSS-interactive · difficulty medium
+`H` · user-driven · CSS-interactive · difficulty medium · **SELECTED**
 
 A carousel assembled from the browser's own carousel primitives — a snap track, generated prev/next buttons and a marker group of real tabbable markers — so roles, keyboard behaviour and current-item state come from the platform rather than from us.
 
@@ -1550,7 +1618,7 @@ A carousel assembled from the browser's own carousel primitives — a snap track
 
 ### SEC-091 · Weighted Drag Rail
 
-`H` · user-driven · GSAP-dependent · difficulty medium
+`H` · user-driven · GSAP-dependent · difficulty medium · **RESERVE**
 
 A rail the reader throws rather than scrolls: momentum carries it, deceleration lands on a card index, and the weight of the physics is the section's character.
 
@@ -1559,7 +1627,7 @@ A rail the reader throws rather than scrolls: momentum carries it, deceleration 
 - **Desktop** — Wide plate-like artefact cards on one line at mid-height, a grab affordance across the whole band, and an index counter with prev/next at the lower left carrying the full keyboard route.
 - **Motion** — A flick decelerates with inertia and settles on the nearest card index rather than stopping wherever friction ran out.
 - **Narrow** — Native touch drag already does this, so the inertia layer is handed back to the browser while the same snap indices are kept.
-- **Risk** — Drag-only rails have no keyboard path whatsoever unless prev/next carry complete parity and the current index is exposed as text, not only as position.
+- **Risk** — Drag-only rails have no keyboard path whatsoever unless prev/next carry complete parity and the current index is exposed as text, not only as position. A pointer-drag band competes with page scroll on touch, so the drag must be axis-locked and must never swallow a vertical gesture; a grab affordance across the whole band also suppresses text selection, so card copy must remain selectable.
 - **Variants** — Single-line plate rail · Two rows dragged together · Snap to centre · Snap to leading edge · Elastic resistance at the ends
 - **Overlap** — H-01 — the shelf rides native scroll; this deliberately does not, which is what makes it usable for mouse readers who cannot scroll sideways.
 - **References** — GSAP Draggable and Inertia card rail, Locomotive Play grid, Made With GSAP drag-to-explore, Codrops draggable product grid
@@ -1567,7 +1635,7 @@ A rail the reader throws rather than scrolls: momentum carries it, deceleration 
 
 ### SEC-092 · Counted Rail, Scrub Handle
 
-`H` · user-driven · React-interactive · difficulty medium
+`H` · user-driven · React-interactive · difficulty medium · **RESERVE**
 
 A rail whose position is stated as a fact: a persistent oh-seven-of-twenty-four set at display scale beside a heavy scrub bar the reader can also drag, so the size of the set and the place within it are always legible.
 
@@ -1584,7 +1652,7 @@ A rail whose position is stated as a fact: a persistent oh-seven-of-twenty-four 
 
 ### SEC-093 · Rail That Opens In Place
 
-`H` · swap-in-place · GSAP-enhanced · difficulty high
+`H` · swap-in-place · GSAP-enhanced · difficulty high · **SELECTED**
 
 A rail of tall case cards where activating one expands it, inside the same section, into a full-width reading panel; the rail holds its position beneath, and closing returns the card to its own slot.
 
@@ -1601,7 +1669,7 @@ A rail of tall case cards where activating one expands it, inside the same secti
 
 ### SEC-094 · Quote Track With Named Index
 
-`H` · user-driven · React-interactive · difficulty medium
+`H` · user-driven · React-interactive · difficulty medium · **RESERVE**
 
 A horizontal track of client statements paired with a visible list of every speaker's name, role and sector; choosing a name moves the track, and the list is legible content in its own right rather than a set of dots.
 
@@ -1618,7 +1686,7 @@ A horizontal track of client statements paired with a visible list of every spea
 
 ### SEC-095 · Stream That Rests
 
-`H` · horizontal · GSAP-enhanced · difficulty medium
+`H` · horizontal · GSAP-enhanced · difficulty medium · **RESERVE**
 
 A continuous horizontal stream of real artefacts that decelerates to a complete stop when the pointer rests on it and resumes when the pointer leaves — motion as a response rather than a default — with the same items written out as a plain list beneath.
 
@@ -1635,7 +1703,7 @@ A continuous horizontal stream of real artefacts that decelerates to a complete 
 
 ### SEC-096 · Unequal-Width Reel
 
-`H` · user-driven · CSS-interactive · difficulty low
+`H` · user-driven · CSS-interactive · difficulty low · **RESERVE**
 
 A rail in which item width encodes significance — one panel three times the width of its neighbours — so the reader meets the flagship engagement first and the rest read honestly as supporting evidence.
 
@@ -1643,7 +1711,7 @@ A rail in which item width encodes significance — one panel three times the wi
 - **Use** — Lets one flagship engagement dominate a browse without demoting everything else to a footnote.
 - **Desktop** — The track opens with a wide full-height panel carrying an outcome sentence and one artefact, followed by narrow tiles carrying only client name and sector; widths drawn from a small declared ladder rather than set per item.
 - **Narrow** — The width ladder collapses to two steps — one featured card at full width and the remainder as a compact named list beneath it.
-- **Risk** — A very wide panel can strand the reader mid-item at a snap point, and must still fit within 320 CSS pixels at 400 per cent zoom or become a stacked block instead.
+- **Risk** — A very wide panel can strand the reader mid-item at a snap point, and must still fit within 320 CSS pixels at 400 per cent zoom or become a stacked block instead. Safari gives no native keyboard access to scroll containers and Chrome only gained it in 132, so without a focusable, named region role every card past the first is unreachable by keyboard. No prev/next affordance is specified, and a very wide lead panel can strand the reader mid-item at a snap point.
 - **Variants** — Three-to-one lead panel · Wide panel as a closing conclusion · Alternating wide and narrow · Type-only narrow tiles
 - **Overlap** — H-01 — equal cards there; here the width ladder is the entire concept and the affordances are secondary.
 - **References** — Awwwards horizontal collections with mixed panel widths, GSAP content-derived track widths, One Page Love gallery sliders
@@ -1651,7 +1719,7 @@ A rail in which item width encodes significance — one panel three times the wi
 
 ### SEC-097 · Filmstrip And Stage
 
-`H` · user-driven · React-interactive · difficulty medium
+`H` · user-driven · React-interactive · difficulty medium · **RESERVE**
 
 A large fixed stage showing one deliverable at full size above a draggable strip of every item in the set, so the reader selects from a visible whole instead of advancing through a queue.
 
@@ -1670,7 +1738,7 @@ A large fixed stage showing one deliverable at full size above a draggable strip
 
 ### SEC-098 · Deck That Accumulates
 
-`I` · sticky · scroll-driven · difficulty medium
+`I` · sticky · scroll-driven · difficulty medium · **SELECTED** · wave 1
 
 Each card sticks at the same top offset and the next slides over it with a small offset and a slight scale-down, so a physical stack of five claims is built by the section's end and the count is readable as a stepped edge.
 
@@ -1679,7 +1747,7 @@ Each card sticks at the same top offset and the next slides over it with a small
 - **Desktop** — Full-measure cards at roughly three-quarter viewport height, each carrying a number, a claim line and one artefact, with the stack's stepped edge growing at the top of the viewport.
 - **Motion** — Each outgoing card steps down in scale and loses a little contrast as it is covered, so depth reads without shadow theatre.
 - **Narrow** — Same behaviour with reduced offsets, falling back to plainly stacked cards wherever a card exceeds the viewport height.
-- **Risk** — Cards whose height changes with copy silently break the timing unless each card's scroll allocation derives from its own measured height minus the viewport and is recalculated on resize and font load.
+- **Risk** — Cards whose height changes with copy silently break the timing unless each card's scroll allocation derives from its own measured height minus the viewport and is recalculated on resize and font load. The card-exceeds-viewport test must not be made against viewport units on mobile, where the toolbar retracting changes the value mid-scroll and dynamic viewport units are throttled — the threshold must come from measured content height, recalculated on resize and font load.
 - **Variants** — Paper cards on navy · Full-bleed image cards · Thin editorial slabs · Visible header stub · Corner-rounding instead of scale-down
 - **Overlap** — J pinned decks — a pinned deck holds the page; this one is ordinary sticky and the reader never loses scroll.
 - **References** — GSAP forum thread 45008, Codrops sticky stacking cards, Awwwards sticky card collections, daisyUI stack
@@ -1687,7 +1755,7 @@ Each card sticks at the same top offset and the next slides over it with a small
 
 ### SEC-099 · Fan From A Single Cell
 
-`I` · layered · GSAP-dependent · difficulty medium
+`I` · layered · GSAP-dependent · difficulty medium · **RESERVE**
 
 Cards begin perfectly stacked in one grid cell and separate into an offset fan as the section enters, each card's rotation and offset derived from its index so the arrangement is a rule rather than a set of hand-placed positions.
 
@@ -1704,12 +1772,12 @@ Cards begin perfectly stacked in one grid cell and separate into an offset fan a
 
 ### SEC-100 · Cards That Leave A Line
 
-`I` · sticky · scroll-driven · difficulty high
+`I` · sticky · scroll-driven · difficulty high · **SELECTED**
 
 As each card is covered it collapses into a single-line summary that accumulates as a strip at the top of the section, so the reader ends with the last card in full and a legible record of everything already passed.
 
 - **Distinct** — What the departing card becomes: the stack produces a running summary rather than a pile of hidden edges.
-- **Use** — Suits engagement tiers or phases where the buyer needs to remember what came before in order to judge what is on screen.
+- **Use** — Suits engagement phases or stages where the buyer needs to remember what came before in order to judge what is on screen.
 - **Desktop** — Full-width cards moving beneath a growing strip of one-line rows, each row carrying a name and one figure and ruled from the row above it.
 - **Motion** — The collapsing card's title travels into its summary row instead of fading, so the two are visibly the same item.
 - **Narrow** — The strip caps at three rows with the remainder counted, keeping the active card above a readable height.
@@ -1721,7 +1789,7 @@ As each card is covered it collapses into a single-line summary that accumulates
 
 ### SEC-101 · Objection And Answer Pair
 
-`I` · scroll-driven · scroll-driven · difficulty low
+`I` · layered · scroll-driven · difficulty low · **RESERVE**
 
 Two overlapping cards — a client objection in the buyer's own words and our answer sitting partly behind it — separate slightly as the section is read and settle apart, so the answer is seen emerging from the question.
 
@@ -1738,7 +1806,7 @@ Two overlapping cards — a client objection in the buyer's own words and our an
 
 ### SEC-102 · Sheared Diagonal Plates
 
-`I` · layered · scroll-driven · difficulty medium
+`I` · layered · scroll-driven · difficulty medium · **RESERVE**
 
 Four artefact plates overlapping along a diagonal, each carrying a slightly different scroll speed so the diagonal shears as the section passes and straightens again — depth expressed as movement, with no pin and no captured scroll.
 
@@ -1755,7 +1823,7 @@ Four artefact plates overlapping along a diagonal, each carrying a slightly diff
 
 ### SEC-103 · Header-Only Stack
 
-`I` · user-driven · CSS-interactive · difficulty medium
+`I` · user-driven · CSS-interactive · difficulty medium · **RESERVE**
 
 A pile of cards showing only their headers, so the whole set occupies a short vertical span; activating one expands it and pushes the remainder down rather than covering them, keeping every other header on screen.
 
@@ -1764,15 +1832,15 @@ A pile of cards showing only their headers, so the whole set occupies a short ve
 - **Desktop** — Nine tight rows, each a card edge with a number and a name, overlapping by a few pixels so the set reads as a physical pile; the open card carries a paragraph and one artefact.
 - **Motion** — The open card animates to its intrinsic height so the rows beneath settle rather than jump.
 - **Narrow** — Identical behaviour with the overlap reduced and the artefact moving beneath the paragraph inside the open card.
-- **Risk** — Animating auto height is the usual failure point, and without a real disclosure element the expanded state, keyboard behaviour and exclusivity all have to be rebuilt by hand and usually are not.
+- **Risk** — Coordinated exclusivity makes this an accordion, not a plain disclosure — it needs heading-contained buttons, managed open state, aria-expanded, aria-controls and defined keyboard behaviour. The HTML details element is not a safe substitute: its exposed role varies across assistive technology, forcing role=button makes macOS Safari drop the expanded state, removing the default marker degrades state announcement in VoiceOver, JAWS and NVDA, and Chromium auto-opens details on find-in-page. Separately, the headers overlap by a few pixels, so each header's hit area and focus ring must not be clipped by the card stacked above it; and animating to intrinsic height is not Baseline, so the honest fallback is an instant open rather than a JS measuring loop.
 - **Variants** — One open at a time · Several open at once · Numbered headers · Hairline pile · Shadowed pile
 - **Overlap** — G accordions — an accordion is a list of separated rows; here the rows physically overlap and the pile's compressed height is the composition.
-- **References** — Design-system catalogue header-only stack, exclusive accordion with animated details-content, daisyUI stack
+- **References** — UI Layouts stacked accordions, ARIA APG accordion pattern, Adrian Roselli and Scott O'Hara on details/summary, MDN interpolate-size
 - **Tags** — `css-motion` `user-driven` `contained` `density-medium` `build-medium` `budget-none` `rm-free` `semantics-fragile`
 
 ### SEC-104 · Cluster Resolving To Grid
 
-`I` · scroll-driven · GSAP-enhanced · difficulty high
+`I` · scroll-driven · GSAP-enhanced · difficulty high · **RESERVE**
 
 A loose overlapping cluster of artefact cards separates into a legible three-column grid as the section is read and re-overlaps as it leaves, so the section opens and closes on the same gesture.
 
@@ -1789,7 +1857,7 @@ A loose overlapping cluster of artefact cards separates into a legible three-col
 
 ### SEC-105 · Stack Ends As An Index
 
-`I` · sticky · GSAP-enhanced · difficulty high
+`I` · sticky · GSAP-enhanced · difficulty high · **SELECTED**
 
 A sticky project stack that, at the end of its range, collapses into a plain numbered index of the same items — the section spends its length on presentation and its final moment on legibility.
 
@@ -1806,7 +1874,7 @@ A sticky project stack that, at the end of its range, collapses into a plain num
 
 ### SEC-106 · Shortlist Tray Stack
 
-`I` · user-driven · GSAP-enhanced · difficulty high
+`I` · user-driven · GSAP-enhanced · difficulty high · **SELECTED**
 
 Choosing capabilities adds them to a small physical pile in a tray and removing one makes the remainder settle into new positions, so set membership is shown as a stack that grows and shrinks under the reader's hand.
 
@@ -1825,7 +1893,7 @@ Choosing capabilities adds them to a small physical pile in a tray and removing 
 
 ### SEC-107 · Held Interface, Moving Argument
 
-`J` · pinned · GSAP-dependent · difficulty medium
+`J` · pinned · GSAP-dependent · difficulty high · **SELECTED** · wave 1
 
 One real deliverable surface — a reporting view, a booking screen, a schedule — is pinned at large scale while the copy column scrolls past it, and each copy block changes something inside that same surface: a panel cross-fades, a row lights, a sidebar swaps. Three states of one interface, never three different screenshots.
 
@@ -1842,7 +1910,7 @@ One real deliverable surface — a reporting view, a booking screen, a schedule 
 
 ### SEC-108 · Content-Weighted Case Track
 
-`J` · horizontal · GSAP-dependent · difficulty high
+`J` · horizontal · GSAP-dependent · difficulty high · **RESERVE**
 
 A pinned horizontal run of case panels where the travel distance is measured from the track's real scroll width rather than a panel count, so a long case takes physically longer to traverse than a short one. A segmented progress rule beneath, one segment per panel at its true proportional width, tells the reader how much is left and how heavy each panel is.
 
@@ -1859,7 +1927,7 @@ A pinned horizontal run of case panels where the travel distance is measured fro
 
 ### SEC-109 · Formation Lock
 
-`J` · pinned · GSAP-dependent · difficulty high
+`J` · pinned · GSAP-dependent · difficulty high · **RESERVE**
 
 Capability cards arrive from scattered off-canvas origins while the section is pinned, converge and lock into a strict 3x3, and the section then unpins with that grid left behind as an ordinary readable composition. The layout assembling itself is the payload; the resting state is a normal grid.
 
@@ -1876,7 +1944,7 @@ Capability cards arrive from scattered off-canvas origins while the section is p
 
 ### SEC-110 · Close-Read Artefact
 
-`J` · pinned · GSAP-dependent · difficulty high
+`J` · pinned · GSAP-dependent · difficulty high · **RESERVE**
 
 One genuine deliverable — a proposal page, a schedule, a redacted report — is pinned for the whole section and never replaced. Prose triggers act on it: highlight a span, zoom to a named region, pan across it, scale it back out. The reader builds one mental model of one document instead of five impressions of five images.
 
@@ -1893,7 +1961,7 @@ One genuine deliverable — a proposal page, a schedule, a redacted report — i
 
 ### SEC-111 · Statement Snap Deck
 
-`J` · pinned · GSAP-enhanced · difficulty medium
+`J` · pinned · GSAP-enhanced · difficulty medium · **RESERVE**
 
 Four or five full-height statements that the page snaps to, with directional snapping so a reader moving up settles on the statement above rather than being dragged forward. Each statement runs one short scrubbed move inside its own range and nothing else. Native scroll is still doing the scrolling; the snap only decides where it comes to rest.
 
@@ -1910,7 +1978,7 @@ Four or five full-height statements that the page snaps to, with directional sna
 
 ### SEC-112 · Wheel-Claiming Panel Deck
 
-`J` · swap-in-place · GSAP-dependent · difficulty high
+`J` · swap-in-place · GSAP-dependent · difficulty high · **RESERVE**
 
 A pinned wrapper takes the wheel and swaps full-screen panels in place, then hands scroll back the moment the last panel is reached. Prev/next controls and a panel index are permanently visible rather than hover-revealed, so the deck has a real non-gesture route through it and never depends on a gesture nobody discovers.
 
@@ -1927,7 +1995,7 @@ A pinned wrapper takes the wheel and swaps full-screen panels in place, then han
 
 ### SEC-113 · Continuous Ground, Three Stages
 
-`J` · pinned · GSAP-dependent · difficulty experimental
+`J` · pinned · GSAP-dependent · difficulty experimental · **RESERVE**
 
 Three consecutive pinned stages that share one background element transforming continuously across all three — a plane that shifts hue, scale and crop from the first stage to the last. Authored as one timeline with three named labels rather than three independent triggers, so the ground never resets between stages and the trio reads as one movement.
 
@@ -1944,7 +2012,7 @@ Three consecutive pinned stages that share one background element transforming c
 
 ### SEC-114 · Grid Zoom-Through
 
-`J` · pinned · GSAP-dependent · difficulty high
+`J` · pinned · GSAP-dependent · difficulty high · **SELECTED**
 
 A multi-column wall of client artefacts scales past the reader while the outer columns translate outward and the centre column parts vertically, opening a hole through which one positioning line and one link resolve. The section ends on the sentence, not on the effect.
 
@@ -1961,7 +2029,7 @@ A multi-column wall of client artefacts scales past the reader while the outer c
 
 ### SEC-115 · Bounded Hold
 
-`J` · pinned · GSAP-enhanced · difficulty medium
+`J` · pinned · GSAP-enhanced · difficulty medium · **SELECTED** · wave 1
 
 A pin with a deliberately short, declared range — roughly one viewport of extra distance — that resolves exactly one thing and then releases. One figure establishing itself, one diagram completing, one sentence finishing. Skimming is never punished because there is almost nothing to skim past.
 
@@ -1978,7 +2046,7 @@ A pin with a deliberately short, declared range — roughly one viewport of extr
 
 ### SEC-116 · Brand-Geometry Mask Reveal
 
-`J` · pinned · GSAP-dependent · difficulty medium
+`J` · pinned · GSAP-dependent · difficulty medium · **RESERVE**
 
 The section pins and an SVG mask opens to reveal one full-bleed artefact beneath. The mask is not a generic wipe — it is drawn from the brand's own geometry, a counter from the logotype or the layout grid's module, so the transition carries identity rather than just timing.
 
@@ -1995,24 +2063,24 @@ The section pins and an SVG mask opens to reveal one full-bleed artefact beneath
 
 ### SEC-117 · Collapse-to-Chip Stage
 
-`J` · sticky · GSAP-dependent · difficulty high
+`J` · sticky · GSAP-dependent · difficulty high · **RESERVE**
 
-A sticky stage presents one thing at full height — a pricing shape, a scope model, a commitment — and on exit collapses in one continuous move into a compact one-line summary chip that docks and stays for the rest of the page. What was the section becomes the reader's persistent reference.
+A sticky stage presents one thing at full height — a scope model, a commitment, a guarantee — and on exit collapses in one continuous move into a compact one-line summary chip that stays docked for the rest of the page.
 
 - **Distinct** — The exit is the concept: the section does not end, it becomes something smaller that survives, which is a spatial behaviour no other pinned pattern has.
 - **Use** — Keeps a number or a commitment the buyer needs while reading everything after it, without repeating the section.
 - **Desktop** — Full-height stage with the figure at display scale; as the stage leaves, its heading, figure and one qualifier shrink into a single ruled line docked at the top edge.
 - **Motion** — One continuous shrink-and-travel from stage to chip rather than a fade-out followed by a fade-in.
 - **Narrow** — Below tablet the collapse is dropped: the stage scrolls away normally and the summary line is simply repeated as a small ruled band later in the page.
-- **Risk** — A persistent docked chip over moving content is the wrong place for a blurred surface — recompositing it every frame produces documented stutter on Android and Firefox; keep it solid.
+- **Risk** — A persistent docked chip over moving content is the wrong place for a blurred surface — recompositing it every frame produces documented stutter on Android and Firefox; keep it solid. A persistent docked chip must not obscure content reached by anchor jumps or by keyboard focus, and must carry a dismissal control since it survives beyond the section that produced it. It is also the wrong place for a blurred surface — recompositing every frame produces documented stutter on Android and Firefox, so keep it solid.
 - **Variants** — Accumulating strip of several chips · Chip docks bottom-right · Chip carries a jump-back control · Figure only, no label
 - **Overlap** — I stacked and sticky card sequences accumulate cards; this accumulates one summary out of a full stage and keeps it beyond the section.
 - **References** — Codrops cover-card to sticky label, Bramus CSS cover-card morph, Codrops sticky pricing collapse strip
-- **Tags** — `gsap-core` `sticky` `wide` `density-low` `build-high` `budget-adds-scroll` `rm-designed` `kbd-path`
+- **Tags** — `gsap-core` `sticky` `wide` `density-low` `build-high` `budget-adds-scroll` `rm-designed` `kbd-path` `motion-sensitive`
 
 ### SEC-118 · Overscroll Panel Slide
 
-`J` · layered · GSAP-dependent · difficulty high
+`J` · layered · GSAP-dependent · difficulty high · **SELECTED**
 
 Three or four full-bleed statement panels pin in place without adding any page height, so each new panel slides up over the last and the stack builds within a scroll budget no longer than a normal section. Layer, not distance, carries the sequence.
 
@@ -2027,11 +2095,28 @@ Three or four full-bleed statement panels pin in place without adding any page h
 - **References** — GSAP 'Pinned panels with overscroll' demo, Awwwards sticky overlap collections, GSAP pinSpacing caveats
 - **Tags** — `gsap-core` `layered` `full-bleed` `density-low` `build-high` `budget-captures-scroll` `rm-designed` `motion-sensitive` `surface-critical`
 
+### SEC-216 · True-Duration Track
+
+`J` · horizontal · GSAP-dependent · difficulty high · **SELECTED**
+
+A horizontally traversed engagement track whose panel widths are the real elapsed durations, so scrolling a nine-month phase genuinely takes longer than scrolling a two-week one. The axis is measured time.
+
+- **Distinct** — The horizontal axis carries meaning rather than merely holding panels — traversal distance equals duration, which is a content relationship no other entry expresses.
+- **Use** — Shows the true shape of a programme to a buyer planning around it, where evenly-spaced milestones would flatten a nine-month commitment into the same width as a fortnight.
+- **Desktop** — A pinned run translating sideways, panels sized from real week counts rather than evenly, with a persistent scale rule reading in months and a progress marker that is also the position indicator. Short phases pass quickly by design.
+- **Motion** — The track is driven by vertical scroll with panel entrances bound to horizontal position rather than page position, so a caption lands when its phase arrives, not when the page has moved a fixed distance.
+- **Narrow** — Below the tablet width the run becomes a vertical rail whose row heights carry the same durations — the meaning survives because the measured axis simply rotates.
+- **Risk** — A horizontal track needs a focusable, named region with keyboard traversal — Safari gives no native keyboard access to scroll containers and Chrome only gained it in 132. Panel content must fit 320 CSS pixels or the section fails WCAG 1.4.10 Reflow, and the scroll capture must be dropped entirely below the tablet width.
+- **Variants** — Scale rule in months versus in weeks · Phases coloured by workstream · Deliverable markers pinned to real dates · Two stacked tracks — our work above, client change below
+- **Overlap** — SEC-108 derives panel width from content length; here width is calendar time, which is a different claim about what the distance means.
+- **References** — Gap identified by the ambition critique — only two horizontal entries across the whole list and neither made the axis mean anything; the duration-bar idea resolved statically elsewhere
+- **Tags** — `gsap-core` `horizontal` `full-bleed` `density-medium` `build-high` `budget-captures-scroll` `rm-designed` `kbd-path`
+
 ## K — Process, sequence and timeline
 
 ### SEC-119 · Deterministic Engagement Stepper
 
-`K` · user-driven · React-interactive · difficulty low
+`K` · user-driven · React-interactive · difficulty low · **SELECTED** · wave 1
 
 One step panel at a time inside a locked frame, advanced by real prev/next buttons and arrow keys, with a large tabular "03 / 05" beside a segmented rule. Nothing in the section responds to scroll, so it behaves identically on a trackpad, a phone and a keyboard.
 
@@ -2048,7 +2133,7 @@ One step panel at a time inside a locked frame, advanced by real prev/next butto
 
 ### SEC-120 · Drawn Method Spine
 
-`K` · scroll-driven · GSAP-enhanced · difficulty medium
+`K` · scroll-driven · GSAP-enhanced · difficulty medium · **SELECTED**
 
 A hairline SVG spine runs the inner gutter and draws itself as the section passes at ordinary reading speed; at each node a step opens with one outcome line and one real deliverable thumbnail. The drawing supplies progression without consuming a pixel of extra scroll.
 
@@ -2065,7 +2150,7 @@ A hairline SVG spine runs the inner gutter and draws itself as the section passe
 
 ### SEC-121 · Hand-off Chain
 
-`K` · static · static · difficulty low
+`K` · static · static · difficulty low · **SELECTED**
 
 Each step shows two artefacts — the one it received and the one it produces — and the produced artefact reappears as the next step's input. The repetition is the argument: the order cannot be shuffled without the pictures stopping matching.
 
@@ -2081,7 +2166,7 @@ Each step shows two artefacts — the one it received and the one it produces �
 
 ### SEC-122 · Branch and Road Not Taken
 
-`K` · user-driven · React-interactive · difficulty medium
+`K` · user-driven · React-interactive · difficulty medium · **RESERVE**
 
 A process rail that splits once at a genuine decision point — fixed scope against discovery-first — with both branches drawn and the untaken one kept fully legible in a quieter register rather than hidden. The reader watches the choice being made instead of being told the outcome.
 
@@ -2098,7 +2183,7 @@ A process rail that splits once at a genuine decision point — fixed scope agai
 
 ### SEC-123 · Process as Schedule
 
-`K` · static · static · difficulty low
+`K` · static · static · difficulty low · **SELECTED**
 
 Every step carries its typical duration in the same position, and the section foot totals them into one honest range with a caveat line. The process stops being a diagram and becomes something a buyer can put in a calendar.
 
@@ -2113,7 +2198,7 @@ Every step carries its typical duration in the same position, and the section fo
 
 ### SEC-124 · Margin Numeral Rail
 
-`K` · sticky · scroll-driven · difficulty medium
+`K` · sticky · scroll-driven · difficulty medium · **RESERVE**
 
 The step numeral sits in the outer margin at display scale, parked sticky, and swaps as each step's copy passes it. The reader always knows which step they are in without any fixed navigation, and the numeral is the section's only ornament.
 
@@ -2130,7 +2215,7 @@ The step numeral sits in the outer margin at display scale, parked sticky, and s
 
 ### SEC-125 · Sticky Year Gutter
 
-`K` · sticky · GSAP-enhanced · difficulty medium
+`K` · sticky · GSAP-enhanced · difficulty medium · **SELECTED**
 
 A continuous spine runs the section's height while the year label sticks in the gutter beside it, morphing digit by digit as the next year's blocks pass. Entries carry unequal media weight so the years never read as twenty identical dated cards.
 
@@ -2147,7 +2232,7 @@ A continuous spine runs the section's height while the year label sticks in the 
 
 ### SEC-126 · Trajectory Plot
 
-`K` · static · CSS-interactive · difficulty medium
+`K` · static · CSS-interactive · difficulty medium · **RESERVE**
 
 Time runs along the horizontal axis and engagement magnitude up the vertical, so the shape of the practice is legible before a single label is read. It is a chart honest enough to be a section rather than a rail with decoration.
 
@@ -2164,7 +2249,7 @@ Time runs along the horizontal axis and engagement magnitude up the vertical, so
 
 ### SEC-127 · True-Length Duration Bars
 
-`K` · static · CSS-interactive · difficulty medium
+`K` · static · CSS-interactive · difficulty medium · **RESERVE**
 
 Each engagement is a bar whose length is its real elapsed weeks on a shared scale, so a nine-month programme physically occupies nine months of the rail and a two-week sprint looks like two weeks. The comparison happens in the layout before a word is read.
 
@@ -2181,7 +2266,7 @@ Each engagement is a bar whose length is its real elapsed weeks on a shared scal
 
 ### SEC-128 · Cause and Effect Tracks
 
-`K` · static · CSS-interactive · difficulty medium
+`K` · static · CSS-interactive · difficulty medium · **SELECTED**
 
 Two tracks share one date axis — what we did above the line, what changed for the client below — so causation reads as vertical alignment rather than as a claim in a sentence.
 
@@ -2198,7 +2283,7 @@ Two tracks share one date axis — what we did above the line, what changed for 
 
 ### SEC-129 · Axis-Switching Milestone Rail
 
-`K` · static · scroll-driven · difficulty medium
+`K` · static · scroll-driven · difficulty medium · **SELECTED**
 
 One list of milestones, one DOM order and one progress marker, rendered as a horizontal rail where the container is wide enough and a vertical spine where it is not. The composition genuinely changes while the semantics do not.
 
@@ -2215,7 +2300,7 @@ One list of milestones, one DOM order and one progress marker, rendered as a hor
 
 ### SEC-130 · Shipping Log
 
-`K` · user-driven · React-interactive · difficulty medium
+`K` · user-driven · React-interactive · difficulty medium · **RESERVE**
 
 A reverse-chronological log of dated one-line entries, each with a category tag, filterable in place with a live count in the heading. It is offered as proof of continuous work rather than as a highlight reel.
 
@@ -2232,7 +2317,7 @@ A reverse-chronological log of dated one-line entries, each with a category tag,
 
 ### SEC-131 · Weighted Release Rail
 
-`K` · static · static · difficulty low
+`K` · static · static · difficulty low · **SELECTED**
 
 Dated entries on a hairline spine where only the two most significant carry media and every other entry is text alone. The inequality is the design: hierarchy appears inside a repetitive structure without any entry being decorated for its own sake.
 
@@ -2247,7 +2332,7 @@ Dated entries on a hairline spine where only the two most significant carry medi
 
 ### SEC-132 · Lifecycle With Retirements
 
-`K` · static · CSS-interactive · difficulty low
+`K` · static · CSS-interactive · difficulty low · **RESERVE**
 
 Named phases each expand to their real sub-states, including retired ones kept on the page and struck through rather than deleted. The honesty of the struck line is what makes the rest read as governance instead of marketing.
 
@@ -2266,7 +2351,7 @@ Named phases each expand to their real sub-states, including retired ones kept o
 
 ### SEC-133 · Single-Control Delta Slider
 
-`L` · user-driven · React-interactive · difficulty medium
+`L` · user-driven · React-interactive · difficulty medium · **SELECTED** · wave 1
 
 One artefact frame holding both states, the boundary between them driven by a single visible native range control sitting under the frame rather than a hidden drag handle. The readout names the measured delta at the handle's position, so the interaction produces evidence instead of a party trick.
 
@@ -2283,7 +2368,7 @@ One artefact frame holding both states, the boundary between them driven by a si
 
 ### SEC-134 · Wipe Counter Band
 
-`L` · scroll-driven · GSAP-enhanced · difficulty medium
+`L` · scroll-driven · GSAP-enhanced · difficulty medium · **RESERVE**
 
 A full-bleed section holding two complete states of one composition where the boundary between them is scroll progress itself. A small fixed label counts nought to a hundred per cent at the seam, so the reader can read how far through the change they are.
 
@@ -2300,7 +2385,7 @@ A full-bleed section holding two complete states of one composition where the bo
 
 ### SEC-135 · Cost-Of-Inaction Peel
 
-`L` · layered · GSAP-enhanced · difficulty medium
+`L` · layered · GSAP-enhanced · difficulty medium · **RESERVE**
 
 Two panels with identical composition — same headings, same rule positions, same layout — stacked in one grid cell and differing only in their figures. Scroll lifts the top one away; because nothing else moves, the reader's eye lands precisely on the digits that changed.
 
@@ -2309,15 +2394,15 @@ Two panels with identical composition — same headings, same rule positions, sa
 - **Desktop** — One full-bleed panel fills the section, a seam shadow at one corner signalling the layer beneath. The lift runs from that corner so the lower panel is exposed progressively. Both panels carry their label in the same corner slot.
 - **Motion** — The top panel translates and rotates a few degrees from one corner across a short scroll range while the shadow beneath it deepens.
 - **Narrow** — The peel becomes a straight upward slide; where the panel exceeds the viewport, the two states become two stacked panels sharing one rule and one label slot.
-- **Risk** — Stacked copies pin the section height to the taller state, so the panels must be structurally identical or the layout jumps; the reduced-motion path must show both panels stacked rather than an empty stage.
+- **Risk** — Stacked copies pin the section height to the taller state, so the panels must be structurally identical or the layout jumps; the reduced-motion path must show both panels stacked rather than an empty stage. A full-bleed panel translating and rotating across the viewport is large-surface positional motion named by WCAG 2.3.3, so the offset must be removed entirely under reduced motion rather than shortened, and both panels must be legible stacked with no motion at all.
 - **Variants** — Corner peel · Straight edge lift · Torn seam · Three-panel escalation by year · Navy beneath paper
 - **Overlap** — Category I stacks a sequence of different cards; here two layers are one thing in two states.
 - **References** — Codrops cost-of-inaction peel demos, GSAP same-grid-cell stacking recipe, One Page Love Transformation sections
-- **Tags** — `gsap-core` `layered` `full-bleed` `density-medium` `build-medium` `budget-adds-scroll` `rm-designed` `surface-critical`
+- **Tags** — `gsap-core` `layered` `full-bleed` `density-medium` `build-medium` `budget-adds-scroll` `rm-designed` `surface-critical` `motion-sensitive`
 
 ### SEC-136 · Rolling Figures Diff
 
-`L` · swap-in-place · React-interactive · difficulty medium
+`L` · swap-in-place · React-interactive · difficulty medium · **SELECTED**
 
 One layout, two datasets, one control. Nothing wipes and nothing moves: digits roll to their new values and labels swap on the same baseline, so the grid never has to settle because it never changed.
 
@@ -2334,7 +2419,7 @@ One layout, two datasets, one control. Nothing wipes and nothing moves: digits r
 
 ### SEC-137 · Tracked-Change Redline
 
-`L` · swap-in-place · React-interactive · difficulty medium
+`L` · swap-in-place · React-interactive · difficulty medium · **SELECTED**
 
 One piece of real client copy shown before and after with tracked-change styling — struck deletions, underlined insertions, marginal change marks — swapped from a single control so the surrounding layout never has to settle.
 
@@ -2351,7 +2436,7 @@ One piece of real client copy shown before and after with tracked-change styling
 
 ### SEC-138 · Four-Region Flip Plate
 
-`L` · swap-in-place · React-interactive · difficulty medium
+`L` · swap-in-place · React-interactive · difficulty medium · **RESERVE**
 
 One artefact divided into four regions that flip between before and after independently. The reader assembles the comparison at their own pace and can hold a mixed state that a single divider cannot express.
 
@@ -2359,7 +2444,7 @@ One artefact divided into four regions that flip between before and after indepe
 - **Use** — Lets a buyer see exactly which parts of a deliverable changed, which reads as more honest than an all-or-nothing reveal.
 - **Desktop** — A large plate split two by two on hairline seams. Each quadrant carries a small corner control and a one-word label naming what it shows, with a quiet counter reading how many are showing the after state. States persist as the reader moves on.
 - **Motion** — Each quadrant swaps with a short single-axis flip so the seams stay fixed and neighbouring regions never move.
-- **Narrow** — Quadrants stack into four full-width bands, each keeping its own control and label — the same four state changes read down one column.
+- **Narrow** — Below the tablet width the plate cannot be divided and still read, so the section becomes four independently switchable bands with the shared-artefact framing stated in the heading and the after-state counter retained — the mixed-state reading of one plate is a wide-width form.
 - **Risk** — Per-region controls must be real buttons with a pressed state and a text label rather than click handlers on image divs, and a show-all control is needed so the comparison never requires four separate actions.
 - **Variants** — Two-by-two plate · Three-by-two six-region · Hover preview with click to lock · Show-all master control · Dark plate with paper seams
 - **Overlap** — L-01 proves the same evidence, but a divider forces one boundary while this permits mixed states.
@@ -2368,12 +2453,12 @@ One artefact divided into four regions that flip between before and after indepe
 
 ### SEC-139 · Scope Retiming Toggle
 
-`L` · swap-in-place · React-interactive · difficulty high
+`L` · swap-in-place · React-interactive · difficulty high · **SELECTED**
 
 One segmented control changes the engagement scope and everything on screen answers at once: every figure retimes, the deliverable list relabels, and the process gains or loses a step — all in place, so the reader sees the shape of the trade-off rather than three separate offer blocks.
 
 - **Distinct** — The state change spans three different content structures at once and includes a structural change — the step count — not only values.
-- **Use** — Answers what an engagement would cost and take at the buyer's own size without making them read three pricing columns.
+- **Use** — Answers what an engagement would involve and how long it would take at the buyer's own size, in place, rather than as three separate offer blocks.
 - **Desktop** — The control sits at the section head. Beneath it, a three-part row: a duration figure, a deliverables list, and a numbered step strip. Switching scope rolls the figures, travels the list rows to their new positions, and re-divides the strip rather than redrawing it.
 - **Motion** — Figures roll, list rows travel to their new slots, and the step strip's divisions slide to their new positions.
 - **Narrow** — The control becomes a full-width scrollable segmented rail and the three parts stack in the same order, the step strip becoming a vertical numbered list.
@@ -2383,7 +2468,9 @@ One segmented control changes the engagement scope and everything on screen answ
 - **References** — Tailwind Plus pricing and scope patterns, GSAP Flip layout transitions, Chrome same-document view transitions
 - **Tags** — `gsap-core` `swap-in-place` `contained` `density-high` `build-high` `budget-none` `rm-designed` `kbd-path`
 
-### SEC-140 · Comfortable-To-Compact Switch
+### SEC-140 · Comfortable-To-Compact Switch — MERGE → SEC-043
+
+> **Merged into SEC-043.** Same density switch; two high-cost slots on one mechanism. Its distinguishing material now lives in SEC-043's variants. The permanent id is retained so numbering never shifts.
 
 `L` · swap-in-place · GSAP-dependent · difficulty high
 
@@ -2402,7 +2489,7 @@ The same content rendered two ways — a comfortable editorial stack with genero
 
 ### SEC-141 · One Element Resolving
 
-`L` · scroll-driven · scroll-driven · difficulty medium
+`L` · scroll-driven · scroll-driven · difficulty medium · **SELECTED**
 
 The whole motion budget goes to a single object — a form filling in, a chart resolving from scatter to trend, a card being routed through a queue — which passes from its empty state to its finished state as the section crosses the viewport. Everything around it stays still.
 
@@ -2419,7 +2506,7 @@ The whole motion budget goes to a single object — a form filling in, a chart r
 
 ### SEC-142 · Cover Card To Header Bar
 
-`L` · sticky · GSAP-enhanced · difficulty high
+`L` · sticky · GSAP-enhanced · difficulty high · **RESERVE**
 
 A full-bleed opening card carrying the section title and one image contracts in a single continuous move into a compact header bar that then stays with the reader. One element, two roles, no swap.
 
@@ -2428,15 +2515,15 @@ A full-bleed opening card carrying the section title and one image contracts in 
 - **Desktop** — The section opens on a full-width plate at roughly two-thirds viewport height carrying an oversized title, a kicker and a rule. As the content beneath rises, the plate contracts toward the top edge, the title steps down the scale, and the rule becomes the bar's underline.
 - **Motion** — Plate height, type scale and image crop are driven by the section's own entry range and land exactly on the docked bar state.
 - **Narrow** — A shorter cover plate and a docked bar carrying only the title and a hairline; where the bar would take more than a tenth of the viewport it does not dock at all.
-- **Risk** — Sticky chrome blurred over moving content is a documented frame-rate cost on Android and Firefox, and the docked bar must not steal the top of the viewport from anchor jumps or in-page focus.
+- **Risk** — Sticky chrome blurred over moving content is a documented frame-rate cost on Android and Firefox, and the docked bar must not steal the top of the viewport from anchor jumps or in-page focus. A scroll-driven type-scale and crop change must resolve to the docked state as the reduced-motion default.
 - **Variants** — Title-only bar · Bar carrying a step counter · Image crop collapsing to a colour band · Bar releasing at section end · Paper-to-navy inversion on dock
 - **Overlap** — Category I stacks a sequence of cards; here one element transforms into a different kind of object entirely.
 - **References** — Codrops cover-card to sticky label, GSAP Flip.fit, container scroll-state(stuck) patterns
-- **Tags** — `gsap-core` `sticky` `full-bleed` `density-low` `build-high` `budget-none` `rm-designed` `surface-critical`
+- **Tags** — `gsap-core` `sticky` `full-bleed` `density-low` `build-high` `budget-none` `rm-designed` `surface-critical` `motion-sensitive`
 
 ### SEC-143 · Screenshot X-Ray Peel
 
-`L` · scroll-driven · GSAP-dependent · difficulty high
+`L` · scroll-driven · GSAP-dependent · difficulty high · **RESERVE**
 
 A finished product screenshot peels back on scroll to reveal the annotated wireframe of the same view registered exactly beneath it, with numbered callouts arriving on the exposed region. The section shows the thinking under the surface rather than two versions of it.
 
@@ -2455,7 +2542,7 @@ A finished product screenshot peels back on scroll to reveal the annotated wiref
 
 ### SEC-144 · Annotated Deliverable Plate
 
-`M` · user-driven · React-interactive · difficulty medium
+`M` · user-driven · React-interactive · difficulty medium · **SELECTED** · wave 1
 
 One large, real deliverable held at reading size with small numbered markers placed on it; activating a marker expands its note in place beside the plate. A full written description sits permanently beneath, so the section argues correctly even with the image unseen.
 
@@ -2465,14 +2552,14 @@ One large, real deliverable held at reading size with small numbered markers pla
 - **Motion** — The active note expands with a short height-and-opacity change while its marker gains weight; nothing else on the plate moves.
 - **Narrow** — The plate goes full width, markers become a numbered list beneath the image, and each note opens inline in document order.
 - **Risk** — Hotspots are routinely built as divs with click handlers, which strands keyboard and screen-reader users, and W3C WAI requires a real long description for a complex image — the standing prose must actually be that description.
-- **Variants** — Photographic document plate · Screen-capture plate · Marker rail set left of the artefact · Notes as numbered footnotes beneath · Navy plate with emerald markers
+- **Variants** — Photographic document plate · Screen-capture plate · Marker rail set left of the artefact · Notes as numbered footnotes beneath · Navy plate with emerald markers · Note anchored to its marker rather than in a fixed column · Plan page with leader rules · Dark plate with emerald markers
 - **Overlap** — B feature explainers — but the subject is one real deliverable used as evidence, not a set of capabilities.
 - **References** — W3C WAI complex-images guidance, Magic UI div-onClick accessibility issue, Apple product-page close-read sections
 - **Tags** — `css-motion` `user-driven` `contained` `density-medium` `build-medium` `budget-none` `rm-free` `kbd-path` `semantics-fragile`
 
 ### SEC-145 · Redacted Document Plate
 
-`M` · static · static · difficulty low
+`M` · static · static · difficulty low · **SELECTED** · wave 1
 
 A genuine client document shown as a plate with identifying fields blocked out in solid bars set on the document's own baselines, so the redaction reads as deliberate typographic composition rather than damage. The caption states what the document was for.
 
@@ -2488,7 +2575,7 @@ A genuine client document shown as a plate with identifying fields blocked out i
 
 ### SEC-146 · True-Proportion Artefact Triptych
 
-`M` · static · CSS-interactive · difficulty low
+`M` · static · CSS-interactive · difficulty low · **SELECTED**
 
 Three real deliverables — a deck page, a project schedule, a report cover — shown together at their true page proportions rather than cropped into uniform cards, each captioned with the decision it was made for rather than a design credit.
 
@@ -2505,7 +2592,7 @@ Three real deliverables — a deck page, a project schedule, a report cover — 
 
 ### SEC-147 · Evidence-Footed Figure Band
 
-`M` · static · GSAP-enhanced · difficulty low
+`M` · static · GSAP-enhanced · difficulty low · **SELECTED** · wave 1
 
 Four display-scale figures, each standing above a permanently visible foot line giving source, period and denominator. The numerals count once on entry and never animate again.
 
@@ -2522,7 +2609,7 @@ Four display-scale figures, each standing above a permanently visible foot line 
 
 ### SEC-148 · Bound Testimonial
 
-`M` · static · static · difficulty low
+`M` · static · static · difficulty low · **SELECTED**
 
 Every quote is structurally bound to one artefact from the same engagement — the pair shares a frame and the block cannot render one without the other, so praise never appears unaccompanied.
 
@@ -2538,7 +2625,7 @@ Every quote is structurally bound to one artefact from the same engagement — t
 
 ### SEC-149 · Quality-Tagged Quote Trio
 
-`M` · static · static · difficulty low
+`M` · static · static · difficulty low · **SELECTED**
 
 Three short client statements, each explicitly tagged with the one quality it evidences — seniority, clarity of communication, delivery — and nothing else on screen. No portraits, no logos, no company blurb.
 
@@ -2554,7 +2641,7 @@ Three short client statements, each explicitly tagged with the one quality it ev
 
 ### SEC-150 · Outcome-First Case Excerpt
 
-`M` · swap-in-place · React-interactive · difficulty medium
+`M` · swap-in-place · React-interactive · difficulty medium · **SELECTED**
 
 The case study leads with its measurable outcome at display scale plus one sentence of context, and reveals the work that produced it only on demand beneath, so the reader chooses whether to descend into method.
 
@@ -2571,7 +2658,7 @@ The case study leads with its measurable outcome at display scale plus one sente
 
 ### SEC-151 · Four-Block Case Vocabulary
 
-`M` · static · static · difficulty medium
+`M` · static · static · difficulty medium · **RESERVE**
 
 Every case excerpt is assembled from exactly four block types — statement, artefact, metric, quote — so each project is authored by recombining a closed vocabulary rather than by designing a new layout. Three projects look related without looking identical.
 
@@ -2587,7 +2674,7 @@ Every case excerpt is assembled from exactly four block types — statement, art
 
 ### SEC-152 · Outcome-Sentence Work Trio
 
-`M` · static · React-interactive · difficulty medium
+`M` · static · React-interactive · difficulty medium · **RESERVE**
 
 Three featured engagements where the headline is a full outcome sentence with the client's name set as a link inside it. There are no per-row thumbnails — one shared fixed frame fills with the relevant image only while a row is hovered or focused.
 
@@ -2604,7 +2691,7 @@ Three featured engagements where the headline is a full outcome sentence with th
 
 ### SEC-153 · Recognition Tally Block
 
-`M` · static · static · difficulty low
+`M` · static · static · difficulty low · **RESERVE**
 
 Awards presented as counts rather than badges. Aggregate numerals are the primary typography and the individual award names sit behind them as a low-contrast background register. No logos anywhere.
 
@@ -2620,7 +2707,7 @@ Awards presented as counts rather than badges. Aggregate numerals are the primar
 
 ### SEC-154 · Cycling Client Field
 
-`M` · static · React-interactive · difficulty medium
+`M` · static · React-interactive · difficulty medium · **RESERVE**
 
 A client list rendered as type, not marks. At rest one name at a time changes in place on a slow interval; hovering or focusing the field reveals the full set. A logo wall with no marquee and no continuous movement.
 
@@ -2629,7 +2716,7 @@ A client list rendered as type, not marks. At rest one name at a time changes in
 - **Desktop** — A wide field of client names in a strict multi-column grid on hairlines, every name present in the markup, with one cell at a time exchanging its name on a several-second interval so the field has life without sustained movement.
 - **Motion** — One cell cross-fades to a different name every few seconds; the interval pauses on hover, on focus and under reduced motion.
 - **Narrow** — Two columns with no cycling at all — the full list simply reads as a list, which is the honest small-screen form.
-- **Risk** — Marquee alternatives duplicate DOM and get announced twice; here the swapping cell must not move focus or re-announce, so it needs to be inert to assistive technology while the full list stays readable.
+- **Risk** — Marquee alternatives duplicate DOM and get announced twice; here the swapping cell must not move focus or re-announce, so it needs to be inert to assistive technology while the full list stays readable. Content that updates automatically for longer than five seconds needs a persistent, visible pause control — hover and focus pausing do not serve a touch reader. The swapping cell must be inert to assistive technology so it never re-announces or moves focus, with the full list readable as text.
 - **Variants** — Names only · Names with sector · Navy field with paper names · Single-cell slow swap · Fully static grid with no cycling
 - **Overlap** — H sliders and rails — nothing moves laterally and the reader drives nothing; this is a still field with one substitution.
 - **References** — One Page Love Client Name List category, OFF+BRAND client field treatment, Ryan Mulligan marquee accessibility write-up
@@ -2637,7 +2724,7 @@ A client list rendered as type, not marks. At rest one name at a time changes in
 
 ### SEC-155 · Holding-Frame Engagement Index
 
-`M` · sticky · React-interactive · difficulty medium
+`M` · sticky · React-interactive · difficulty medium · **RESERVE**
 
 A long typographic index of engagements — number, client, sector, year — where hovering or focusing a row swaps one persistent media frame that holds its last state when the pointer leaves. No per-row thumbnails, no reset flicker.
 
@@ -2654,7 +2741,7 @@ A long typographic index of engagements — number, client, sector, year — whe
 
 ### SEC-156 · Case Card In-Place Expansion
 
-`M` · swap-in-place · GSAP-dependent · difficulty high
+`M` · swap-in-place · GSAP-dependent · difficulty high · **RESERVE**
 
 A grid of case cards where activating one expands it in place into a full-width reading panel; the surrounding grid dims and reflows around it, with no modal and no route change.
 
@@ -2669,7 +2756,9 @@ A grid of case cards where activating one expands it in place into a full-width 
 - **References** — GSAP Flip documentation caveats, Chrome for Developers same-document view transitions, Codrops grid-to-detail demos
 - **Tags** — `gsap-core` `swap-in-place` `contained` `density-medium` `build-high` `budget-none` `rm-designed` `kbd-path` `semantics-fragile`
 
-### SEC-157 · Coverage Square Grid
+### SEC-157 · Coverage Square Grid — MERGE → SEC-171
+
+> **Merged into SEC-171.** Same coverage-square grid; SEC-171 carries the stronger risk and commercial use. Its distinguishing material now lives in SEC-171's variants. The permanent id is retained so numbering never shifts.
 
 `M` · scroll-driven · scroll-driven · difficulty medium
 
@@ -2688,7 +2777,7 @@ One small square per capability, sector or delivered engagement, filling in as t
 
 ### SEC-158 · Team Census by Function
 
-`M` · static · static · difficulty low
+`M` · static · static · difficulty low · **SELECTED**
 
 The team presented as functional groups with hard counts and, beneath each, every person's role and start year. No photographs at all — the counts and the tenure are the argument.
 
@@ -2704,7 +2793,7 @@ The team presented as functional groups with hard counts and, beneath each, ever
 
 ### SEC-159 · Proof Quartet Card Row
 
-`M` · static · CSS-interactive · difficulty low
+`M` · static · CSS-interactive · difficulty low · **RESERVE**
 
 Three case excerpts in a row, each a fixed quartet — one pull-quote, one metric, one real artefact thumbnail and exactly one link. The structure never varies; only the artefact type does.
 
@@ -2719,11 +2808,43 @@ Three case excerpts in a row, each a fixed quartet — one pull-quote, one metri
 - **References** — Tailwind Plus and Preline proof-card families, Developers Digest identical-feature-card critique, Adrian Roselli card-link guidance
 - **Tags** — `css-motion` `static` `contained` `density-medium` `build-low` `budget-none` `rm-free` `kbd-path`
 
+### SEC-214 · Client Sentence At Scale
+
+`M` · static · static · difficulty low · **SELECTED**
+
+One client's sentence set at the scale a manifesto would get, with the attribution treated as the proof rather than as a credit line. The loudest thing on the page is someone else's voice.
+
+- **Distinct** — Hierarchy and whose voice carries it both change. Every other proof entry contains the client's words inside a card, a rail or a trio; here the sentence is the section and the studio says nothing.
+- **Use** — A buyer discounts the seller's voice and does not discount a peer's — this puts the peer's voice where the seller's usually goes.
+- **Desktop** — One sentence at display scale across a wide measure with generous air above and below. Beneath it, small: the person, their role, the organisation, the engagement and a reference to one verifying artefact. No portrait, no quotation marks as ornament, no card.
+- **Narrow** — The sentence steps down a size and keeps its air; the attribution block stays complete rather than being trimmed, since the attribution is the proof.
+- **Risk** — The sentence must be genuinely attributable and the artefact reference real — over-produced or unverifiable praise now reads as fabrication and damages the thing it exists to build.
+- **Variants** — Navy field, inverted type · Attribution ranged left under a hairline · Sentence set in the body cut rather than display · One accent word in a contrasting cut · Paired with a single artefact plate beneath
+- **Overlap** — SEC-006 is the studio speaking at this scale; SEC-149 tags three quotes by quality. This is one client sentence given the whole section.
+- **References** — Gap identified by the ambition critique — the client's voice was answered only quietly across five entries while the studio's voice had two bold answers; research finding on readers fact-checking named clients
+- **Tags** — `no-motion` `static` `wide` `density-low` `build-low` `budget-none` `rm-free`
+
+### SEC-215 · Assigned Team Composition
+
+`M` · static · static · difficulty low · **SELECTED**
+
+Who is actually on the engagement, at what proportion, and who is not — as a composition of named roles with allocations, rather than a wall of portraits. Seniority is shown by where the time goes.
+
+- **Distinct** — Answers the same job as the team census at a different register: this is about a specific engagement's composition and allocation, not the practice's overall headcount.
+- **Use** — Answers the buyer's top-three question — who will actually do this work, and how much of them do I get — which a photo grid never answers.
+- **Desktop** — Named roles as rows with a proportion bar or figure ranged right, tenure beside the name, and a closing line naming what is explicitly not included. Proportions are real numbers that total to something stated.
+- **Narrow** — Rows stack with the proportion moving beneath each name; the not-included line stays as the section's last word.
+- **Risk** — Proportion bars need their value as text beside them, not encoded in width alone. Naming real people carries a currency obligation — a stale allocation is worse than none.
+- **Variants** — Allocation as a proportion bar · Allocation as a plain figure only · Grouped by phase rather than by person · Including the explicitly-not-included line · Tenure shown as a start year
+- **Overlap** — SEC-158 censuses the whole practice by function; this composes one engagement's actual team and is read at a different moment in the decision.
+- **References** — Gap identified by the ambition critique — one entry answered 'who does the work' and had no alternative register; the same critique's finding that studio portraits now read as fabrication
+- **Tags** — `no-motion` `static` `contained` `density-medium` `build-low` `budget-none` `rm-free`
+
 ## N — Dense information and indexes
 
 ### SEC-160 · Engagement Specification Sheet
 
-`N` · static · static · difficulty low
+`N` · static · static · difficulty low · **SELECTED**
 
 A two-column definition list on hairline rules — term left, value right, tabular numerals throughout, no cards, no icons, no illustration. Density and rule weight are the entire design, and on a page otherwise made of cards this one block reads as documentation rather than marketing.
 
@@ -2739,7 +2860,7 @@ A two-column definition list on hairline rules — term left, value right, tabul
 
 ### SEC-161 · Expandable Engagement Table
 
-`N` · user-driven · React-interactive · difficulty medium
+`N` · user-driven · React-interactive · difficulty medium · **SELECTED**
 
 A dense sortable table of past engagements whose header row is sticky only within the table's own bounds, and whose rows open in place into a detail panel rather than navigating away. Volume is carried without summarising it away or hiding it behind an accordion stack.
 
@@ -2747,8 +2868,8 @@ A dense sortable table of past engagements whose header row is sticky only withi
 - **Use** — Lets a sceptical buyer sort real past work by the axis they care about — duration, sector, outcome — and open the one that matches them.
 - **Desktop** — Six columns across the contained width: engagement, sector, weeks, team shape, outcome figure, year. Sort affordances live in the header cells; an opened row's panel spans the full table width directly beneath it and carries two sentences plus one artefact thumbnail.
 - **Motion** — The detail panel opens from zero to its intrinsic height while the row caret rotates; nothing else on the page moves.
-- **Narrow** — Rows become stacked records using inline column labels from the same markup — never a second DOM — and sorting moves to a single select above.
-- **Risk** — Animating to intrinsic height depends on interpolate-size/calc-size, which MDN marks not Baseline, so a measured fallback must exist; a re-sort also needs announcing in a live region or keyboard users lose their place.
+- **Narrow** — The real table is kept intact inside a named, focusable, horizontally scrolling region, with the sticky first column retained — never reshaped into stacked records by overriding display properties.
+- **Risk** — Reshaping a table into stacked records by overriding display properties removes table semantics in most screen readers, so the narrow form must either keep the real table inside a named focusable scroll region or be a second genuine rendering from one data source. The row control must be a real button inside a cell carrying aria-expanded, with the detail rendered as a companion row spanning the table — a details element cannot be placed in table row structure, and a caret with a click handler exposes no state.
 - **Variants** — Sort by duration, sector or outcome · Expand-all control · Zebra rows versus hairline only · Navy header band · Artefact thumbnail inside the panel
 - **Overlap** — F comparison sections — this compares nothing between options, it exhaustively lists one history.
 - **References** — Tailwind Plus responsive feature comparison, MDN interpolate-size, Adrian Roselli Under-Engineered Responsive Tables, USWDS component status table
@@ -2756,7 +2877,7 @@ A dense sortable table of past engagements whose header row is sticky only withi
 
 ### SEC-162 · Deliverables Ledger
 
-`N` · static · static · difficulty low
+`N` · static · static · difficulty low · **SELECTED** · wave 1
 
 Every deliverable in an engagement listed with format, owner, review cycle and week number, deliberately unsummarised. The refusal to condense is the argument: this is what you actually receive, in the order you receive it.
 
@@ -2772,7 +2893,7 @@ Every deliverable in an engagement listed with format, owner, review cycle and w
 
 ### SEC-163 · Alphabetical Capability Index
 
-`N` · user-driven · React-interactive · difficulty low
+`N` · user-driven · React-interactive · difficulty medium · **SELECTED** · wave 1
 
 Every capability in one ungrouped alphabetical list with an instant keyword filter that dims non-matches in place with zero reflow, and a live result count written into the heading. Nothing moves; contrast alone does the filtering.
 
@@ -2782,14 +2903,14 @@ Every capability in one ungrouped alphabetical list with an instant keyword filt
 - **Motion** — Non-matching entries drop to a dim tint over about 150ms while matches hold full contrast; no item changes position.
 - **Narrow** — Two columns, with the filter field pinned only to the top of the section rather than the viewport.
 - **Risk** — The dimming has no non-visual equivalent, so the result count must live in a polite live region and dimmed entries must either keep contrast or be honestly removed from the accessibility tree.
-- **Variants** — Dim in place · Remove and reflow with a layout transition · With an A–Z jump rail · Grouped under letter headings · Navy inverted
+- **Variants** — Dim in place · Remove and reflow with a layout transition · With an A–Z jump rail · Grouped under letter headings · Navy inverted · Grid of cards rather than a name list · Highlight the matched substring
 - **Overlap** — N-09 search-first grid — there the input is the section's largest element and the heading rewrites into a sentence about the query; here nothing moves and nothing is restated.
 - **References** — USWDS component index with live count, GOV.UK components index, The Component Gallery
 - **Tags** — `css-motion` `user-driven` `contained` `density-high` `build-medium` `budget-none` `rm-free` `kbd-path`
 
 ### SEC-164 · Numbered Work Index
 
-`N` · static · CSS-interactive · difficulty low
+`N` · static · CSS-interactive · difficulty low · **SELECTED**
 
 Every engagement as a numbered row carrying an outcome sentence and two metadata lines — sectors and disciplines — with no featured item and no hero treatment. Completeness is the argument and the metadata columns act as an implicit filter before any filter exists.
 
@@ -2806,7 +2927,7 @@ Every engagement as a numbered row carrying an outcome sentence and two metadata
 
 ### SEC-165 · Delivery Status Matrix
 
-`N` · sticky · CSS-interactive · difficulty medium
+`N` · sticky · CSS-interactive · difficulty medium · **SELECTED**
 
 Engagement types as rows against delivery stages as columns, cells carrying short state words rather than glyphs, with a sticky first column and a legend held at the section head. The matrix answers a question no card grid can: what is included, where, right now.
 
@@ -2822,7 +2943,7 @@ Engagement types as rows against delivery stages as columns, cells carrying shor
 
 ### SEC-166 · Federated Proof Wall
 
-`N` · user-driven · GSAP-enhanced · difficulty medium
+`N` · user-driven · GSAP-enhanced · difficulty medium · **RESERVE**
 
 One dense wall aggregating evidence from several origins — client launches, open-source releases, internal tooling, published writing — each tile carrying a small source mark, filterable by source with the count updating in the heading. Provenance is what makes the density credible.
 
@@ -2839,7 +2960,7 @@ One dense wall aggregating evidence from several origins — client launches, op
 
 ### SEC-167 · Version Ledger With Sparklines
 
-`N` · user-driven · React-interactive · difficulty medium
+`N` · user-driven · React-interactive · difficulty medium · **RESERVE**
 
 A dense reverse-chronological table of shipped periods where one narrow column carries a sparkline drawn at x-height, and rows expand in place to list what actually changed. The chart lives inside the row rather than beside the table.
 
@@ -2848,7 +2969,7 @@ A dense reverse-chronological table of shipped periods where one narrow column c
 - **Desktop** — Date, label and a one-line summary across the contained width, with a short sparkline column ranged right; activating a row opens a compact changed-list beneath it in the same register.
 - **Motion** — Each sparkline draws once as its row enters, then holds permanently; expansion animates height only.
 - **Narrow** — The sparkline relocates beneath its summary line at full row width so it stays legible rather than shrinking to noise.
-- **Risk** — Sparklines are complex images: each needs a short identifier plus a real text equivalent, and the expanded row must carry the same numbers as prose or the column is decorative.
+- **Risk** — The row control must be a real button inside a cell carrying aria-expanded, with the detail rendered as a companion row spanning the table — a details element cannot be placed in table row structure, and a caret with a click handler exposes no state. The sparkline must not be the row's only carrier of the change data. Animating to intrinsic height is not Baseline, so a measured path has to exist underneath.
 - **Variants** — Tag-filterable dated log · No sparkline, pure ledger · Delta figure column instead of a spark · Grouped by quarter · Navy inverted
 - **Overlap** — K timeline sections — a timeline argues about trajectory; this argues about cadence and stays a table.
 - **References** — Linear and Attio changelogs, darkroom.engineering running log, W3C WAI complex images tutorial, GSAP DrawSVG
@@ -2856,7 +2977,7 @@ A dense reverse-chronological table of shipped periods where one narrow column c
 
 ### SEC-168 · Search-First Result Grid
 
-`N` · user-driven · React-interactive · difficulty medium
+`N` · user-driven · React-interactive · difficulty medium · **RESERVE**
 
 A large empty input set at display scale above an already-populated result grid; typing narrows the results live while the section heading rewrites itself to state the query. The input is the section's dominant typographic element, not a utility bar.
 
@@ -2873,7 +2994,7 @@ A large empty input set at display scale above an already-populated result grid;
 
 ### SEC-169 · Badge-Annotated Capability List
 
-`N` · static · static · difficulty low
+`N` · static · static · difficulty low · **SELECTED**
 
 A grouped text list where each item carries an inline lifecycle badge — active, by referral only, waitlist, retired — with retired items struck through and left in place rather than deleted. Honesty about what is not on offer is the section's credibility device.
 
@@ -2887,7 +3008,9 @@ A grouped text list where each item carries an inline lifecycle badge — active
 - **References** — Atlassian deprecated category, USWDS deprecated and retired states, storybook-addon-tag-badges, Primer status page
 - **Tags** — `no-motion` `static` `contained` `density-medium` `build-low` `budget-none` `rm-free` `text-integrity`
 
-### SEC-170 · Task-Stem Grouped Index
+### SEC-170 · Task-Stem Grouped Index — MERGE → SEC-013
+
+> **Merged into SEC-013.** Same task-stem index; the claimed distinction is one the reader cannot perform. Its distinguishing material now lives in SEC-013's variants. The permanent id is retained so numbering never shifts.
 
 `N` · static · static · difficulty low
 
@@ -2906,7 +3029,7 @@ Capabilities grouped under sentence fragments — help you to, ask us about, we 
 
 ### SEC-171 · Coverage Census Grid
 
-`N` · scroll-driven · scroll-driven · difficulty medium
+`N` · scroll-driven · scroll-driven · difficulty medium · **SELECTED**
 
 One small square per capability filling in as the section is read, with a sticky legend and a running count — breadth proved by area rather than claimed by a list. The reader sees the shape of what is covered before reading a single label.
 
@@ -2915,8 +3038,8 @@ One small square per capability filling in as the section is read, with a sticky
 - **Desktop** — A ten-column field of small squares fills the left two-thirds; the legend and the running figure sit in a sticky right column stating in-house against partnered counts, each square labelled on hover or focus.
 - **Motion** — Squares fill in reading order as the section crosses the viewport, once, then hold permanently.
 - **Narrow** — The field becomes six wider squares per row with the legend above it, and the running figure counts once rather than tracking scroll.
-- **Risk** — The grid is a complex image whose meaning is carried entirely by fill state — the same counts must be present as text, or the section says nothing under reduced motion or to a screen reader.
-- **Variants** — Fills on entry · Fully filled static · Squares carrying capability initials · In-house and partnered split by tint and pattern · Navy inverted
+- **Risk** — The grid is a complex image whose meaning is carried entirely by fill state — the same counts must be present as text, or the section says nothing under reduced motion or to a screen reader. Making several hundred squares individually focusable creates a tab sequence a keyboard reader cannot escape, and hover labelling has no touch equivalent — the squares must be one decorative field with the labels published as a written list beside it. The grid is a complex image whose meaning is carried entirely by fill state, so the same counts must be present as text.
+- **Variants** — Fills on entry · Fully filled static · Squares carrying capability initials · In-house and partnered split by tint and pattern · Navy inverted · Squares by sector with a colour key · Squares by engagement
 - **Overlap** — Q motion-led composition — the fill here reports data as it is read, rather than motion being the section's subject.
 - **References** — USWDS status matrix, W3C WAI complex images tutorial, GSAP ScrollTrigger.batch, Locomotive team census counts
 - **Tags** — `scroll-css` `scroll-driven` `contained` `density-medium` `build-medium` `budget-none` `rm-designed` `motion-sensitive` `semantics-fragile`
@@ -2925,24 +3048,24 @@ One small square per capability filling in as the section is read, with a sticky
 
 ### SEC-172 · Poster-First Proof Reel
 
-`O` · static · React-interactive · difficulty medium
+`O` · static · React-interactive · difficulty medium · **SELECTED**
 
 A video band whose resting state is a real deliverable still — a schedule page, a workshop board — set at full plate size and captioned with what it was for. Nothing loads until the reader engages, so the section costs a poster and reads as evidence rather than as a brand film.
 
 - **Distinct** — Reader activity: the section is a still artefact until an explicit control is pressed, so playback is opt-in rather than ambient.
 - **Use** — Shows a buyer real work in motion without asking them to sit through anything they did not choose.
 - **Desktop** — One wide plate carrying the poster, a hairline control row beneath it holding play, pause, duration and a caption; the heading sits above at the measure so the plate is the largest thing in view.
-- **Motion** — Playback begins only once the plate crosses the viewport centre and pauses the moment it leaves.
+- **Motion** — Nothing plays until the reader presses the control; the plate is a still artefact until then, and pressing again returns it to the poster.
 - **Narrow** — Same plate at full width with the control row stacked beneath, and the poster alone where the connection is metered.
-- **Risk** — Default preload is metadata so bytes are spent before anyone engages — preload must be none, the poster needs high fetch priority if it is the LCP candidate, and reduced motion or Save-Data must hold the poster.
+- **Risk** — Playback is opt-in, so nothing may start on scroll. Default preload is metadata, so bytes are spent before anyone engages — preload must be none, and the poster needs high fetch priority if it is the LCP candidate. If an auto-start variant is ever built it must be muted, must stop under reduced motion and Save-Data, and anything running beyond five seconds needs a persistent pause control under WCAG 2.2.2.
 - **Variants** — Deliverable-still poster · Navy plate with emerald control rule · Chaptered control row · Captions on by default
 - **Overlap** — M proof and case study — there a clip is one exhibit among several; here the clip is the whole section.
 - **References** — web.dev 'Lazy-loading video', Magic UI Hero Video Dialog (a11y issue), Tailwind Plus media sections
-- **Tags** — `js-motion` `static` `wide` `density-low` `build-medium` `budget-none` `rm-designed` `kbd-path`
+- **Tags** — `js-motion` `static` `wide` `density-low` `build-medium` `budget-none` `rm-designed` `kbd-path` `motion-sensitive`
 
 ### SEC-173 · Transcript-Led Clip
 
-`O` · static · React-interactive · difficulty medium
+`O` · static · React-interactive · difficulty medium · **SELECTED**
 
 The clip sits on one side and a timestamped transcript on the other, set as readable editorial type rather than a caption dump. The transcript is the section's actual content: skimmable, quotable and indexable whether or not anyone presses play.
 
@@ -2959,7 +3082,7 @@ The clip sits on one side and a timestamped transcript on the other, set as read
 
 ### SEC-174 · Un-Cropping Clip
 
-`O` · scroll-driven · GSAP-enhanced · difficulty medium
+`O` · scroll-driven · GSAP-enhanced · difficulty medium · **RESERVE**
 
 A muted clip begins as a narrow letterbox slot inside the measure and opens outward to full width across its entry range; only once it has finished opening does it start playing. The opening is the section's punctuation.
 
@@ -2976,7 +3099,7 @@ A muted clip begins as a narrow letterbox slot inside the measure and opens outw
 
 ### SEC-175 · Sticky-Caption Figure
 
-`O` · sticky · scroll-driven · difficulty medium
+`O` · sticky · scroll-driven · difficulty medium · **SELECTED**
 
 A tall photograph or long document scan travels inside a held frame as the section is read, while the caption stays anchored at the frame's foot and rewrites itself as different regions of the image pass.
 
@@ -2993,7 +3116,7 @@ A tall photograph or long document scan travels inside a held frame as the secti
 
 ### SEC-176 · Re-Cropping Argument
 
-`O` · swap-in-place · GSAP-enhanced · difficulty medium
+`O` · swap-in-place · GSAP-enhanced · difficulty medium · **RESERVE**
 
 One photograph is re-framed four times — the room, then a pair of hands, then the document on the table, then a single line on it — with a numbered rail naming what each crop is evidence of. The image never changes; only the argument about it does.
 
@@ -3010,7 +3133,7 @@ One photograph is re-framed four times — the room, then a pair of hands, then 
 
 ### SEC-177 · Brand-Geometry Mask Reveal
 
-`O` · scroll-driven · GSAP-enhanced · difficulty high
+`O` · scroll-driven · GSAP-enhanced · difficulty high · **SELECTED**
 
 A full-bleed still is uncovered through a mask built from the studio's own geometry — the counter of a letterform, one module of the layout grid — rather than a generic wipe. The shape is the brand's, so the reveal cannot be borrowed.
 
@@ -3027,7 +3150,7 @@ A full-bleed still is uncovered through a mask built from the studio's own geome
 
 ### SEC-178 · Ordered Plate Gallery
 
-`O` · static · static · difficulty low
+`O` · static · static · difficulty low · **RESERVE**
 
 A gallery with a declared reading order: plates are numbered in the margin, sized by significance, and each carries one sentence saying what to notice. The order is stated rather than implied by position, so the set argues instead of decorating.
 
@@ -3035,12 +3158,15 @@ A gallery with a declared reading order: plates are numbered in the margin, size
 - **Use** — Walks a buyer through a body of work in the order that makes the case rather than leaving them to guess.
 - **Desktop** — Six plates on a shared baseline alternating between one measure-width plate and a pair of half-width plates; ordinals hang in the outer margin and captions sit small beneath each plate.
 - **Narrow** — One plate per row in the same source order, the ordinal moving inline above each caption.
+- **Risk** — Six plates at mixed portrait and landscape proportions each need a declared intrinsic size or the composition shifts as images decode, and the authored ordinal must be real text since the reading order is the concept.
 - **Variants** — Numbered margin ordinals · Ruled caption ledger · Navy plate field · Mixed portrait and landscape rhythm · Six-plate and three-plate lengths
 - **Overlap** — D asymmetric grids — there cell size encodes importance across mixed content; here every cell is media and the ordinal, not the size, carries the sequence.
 - **References** — Tailwind Plus gallery grids, Preline Gallery Grids, Bisous four-column editorial grid
 - **Tags** — `no-motion` `static` `contained` `density-medium` `build-low` `budget-none` `rm-free`
 
-### SEC-179 · Annotated Artefact Plate
+### SEC-179 · Annotated Artefact Plate — MERGE → SEC-144
+
+> **Merged into SEC-144.** Same annotated plate; differs only in where the open note sits. Its distinguishing material now lives in SEC-144's variants. The permanent id is retained so numbering never shifts.
 
 `O` · user-driven · React-interactive · difficulty medium
 
@@ -3051,13 +3177,15 @@ One large real deliverable — a plan page, a dashboard export — carrying numb
 - **Desktop** — The plate occupies most of the width with generous margin; small numbered markers sit on it and one open note at a time appears anchored to its marker, the plate itself never moving.
 - **Motion** — The note opens with a short height and opacity change and nothing else in the section responds.
 - **Narrow** — Markers stay on the plate but activating one scrolls the matching numbered note in the list beneath into view instead of overlaying the image.
-- **Risk** — Complex-image guidance requires a short identifier plus a genuine long description — the written note list is that description and must never be collapsed behind the hotspots.
+- **Risk** — Complex-image guidance requires a short identifier plus a genuine long description — the written note list is that description and must never be collapsed behind the hotspots. Hotspot markers on a plate at phone width fall below minimum target size and cannot be reliably separated by touch, so the markers move off the plate into a numbered list beneath it at narrow width.
 - **Variants** — Redacted client document · Dashboard export with five notes · Plan page with leader rules · Dark plate with emerald markers
 - **Overlap** — R interactive relationship — hotspots relate notes to one image, not things to each other.
 - **References** — W3C WAI Images Tutorial (Complex Images), Magic UI a11y issue on div click handlers, Preline Case Studies
 - **Tags** — `js-motion` `user-driven` `contained` `density-medium` `build-medium` `budget-none` `rm-free` `kbd-path` `semantics-fragile`
 
-### SEC-180 · Column-Lag Gallery
+### SEC-180 · Column-Lag Gallery — MERGE → SEC-049
+
+> **Merged into SEC-049.** Identical column-indexed lag mechanism, differing only in host content. Its distinguishing material now lives in SEC-049's variants. The permanent id is retained so numbering never shifts.
 
 `O` · scroll-driven · GSAP-dependent · difficulty medium
 
@@ -3067,7 +3195,7 @@ A three or four column field of work images where adjacent columns travel at sli
 - **Use** — Shows breadth of delivered work in a single view without asking anyone to click.
 - **Desktop** — Columns of unequal-height plates fill the page edge to edge, the outer columns trailing the centre by a few percent of the section's travel; no captions, no chrome, just the field.
 - **Motion** — Column offsets follow scroll with a short easing tail so the field settles rather than stopping dead.
-- **Narrow** — Two columns with the lag much reduced, or a plain stacked gallery below the tablet width.
+- **Narrow** — Below the tablet width the lag is removed entirely and the field becomes a plain stacked gallery — narrow scrolling is faster per pixel, so a reduced offset reads as instability rather than as material behaviour.
 - **Risk** — Several planes moving at different rates is exactly what WCAG 2.3.3 names, with documented nausea — the offset must be removed entirely under reduced motion, not slowed.
 - **Variants** — Three-column outward lag · Centre-leading four columns · Velocity-scaled overshoot · Composed static grid as the reduced-motion form
 - **Overlap** — Q motion-led composition — the motion here is a modifier on a media field whose subject is the work itself.
@@ -3076,7 +3204,7 @@ A three or four column field of work images where adjacent columns travel at sli
 
 ### SEC-181 · Tilted Artefact Plates
 
-`O` · layered · CSS-interactive · difficulty low
+`O` · layered · CSS-interactive · difficulty low · **RESERVE**
 
 Real deliverables — a deck page, a schedule, a report cover, a device mock — shown as physical plates lying at slight angles on a shared field. Hovering or focusing one straightens it and lifts it clear of the others. Stillness is the resting state.
 
@@ -3085,7 +3213,7 @@ Real deliverables — a deck page, a schedule, a report cover, a device mock —
 - **Desktop** — Four to six plates at true document proportions overlapping slightly across the full width, each captioned with the decision it was made for; the raised plate gains one elevation step and its caption gains weight.
 - **Motion** — A short rotate-to-true and lift on hover or focus, well under a quarter second, with no idle animation anywhere.
 - **Narrow** — Plates stack vertically at their angle with no overlap; tapping straightens and raises one, tapping again releases it.
-- **Risk** — Hover-only affordances have no touch equivalent and no keyboard path — the straighten must bind to focus and the plates must be real focusable elements, not divs with handlers.
+- **Risk** — Hover-only affordances have no touch equivalent and no keyboard path — the straighten must bind to focus and the plates must be real focusable elements, not divs with handlers. Rotated plates overflow horizontally at narrow and intermediate widths and throw captions off the horizontal, so the angle must reduce to zero below the tablet width or the plates must be clipped at the section. Hover-only affordances have no touch equivalent — the straighten must bind to focus and the plates must be real focusable elements.
 - **Variants** — Overlapping paper plates · Device mock trio · Torn-edge scan treatment · Navy field with paper plates · Single hero plate with two behind
 - **Overlap** — I stacked and overlapping cards — those are related by sequence or depth; these are separate objects that merely share a field.
 - **References** — Rauno Freiberg's Web Interface Guidelines (hover gating), Aceternity Macbook Scroll and Container Scroll, Locomotive device-mockup block vocabulary
@@ -3095,7 +3223,7 @@ Real deliverables — a deck page, a schedule, a report cover, a device mock —
 
 ### SEC-182 · Three-Position Breakout Ladder
 
-`P` · static · static · difficulty low
+`P` · static · static · difficulty low · **SELECTED** · wave 1
 
 A measured column sits inside a wide named-line grid with exactly three declared escape positions — margin, half-bleed, full-bleed. Every figure lands on one of the three, so breakouts read as a system rather than as a run of one-off widths.
 
@@ -3111,7 +3239,7 @@ A measured column sits inside a wide named-line grid with exactly three declared
 
 ### SEC-183 · Single-Edge Bleed Rhythm
 
-`P` · static · static · difficulty low
+`P` · static · static · difficulty low · **SELECTED**
 
 Artefacts run off one page edge only and alternate sides down the section, so the page edge itself becomes the rhythm. Each bleeding plate is paired with a short caption stack set hard against the opposite margin.
 
@@ -3127,7 +3255,7 @@ Artefacts run off one page edge only and alternate sides down the section, so th
 
 ### SEC-184 · Single Statement Band
 
-`P` · static · static · difficulty low
+`P` · static · static · difficulty low · **RESERVE**
 
 One sentence at display scale on a full-bleed colour field, balance-wrapped, with a single accent word in a contrasting cut and nothing else in the band — no eyebrow, no button, no image. Used exactly once on a page.
 
@@ -3143,7 +3271,7 @@ One sentence at display scale on a full-bleed colour field, balance-wrapped, wit
 
 ### SEC-185 · Sentence Cut By The Fold
 
-`P` · static · static · difficulty medium
+`P` · static · static · difficulty medium · **SELECTED**
 
 Two stacked full-bleed bands share one continuous background, and a single headline is split across the seam — the first half at the foot of the upper band, the completion at the head of the lower. The reader has to scroll to finish the sentence.
 
@@ -3159,7 +3287,7 @@ Two stacked full-bleed bands share one continuous background, and a single headl
 
 ### SEC-186 · Widening Stair
 
-`P` · static · static · difficulty low
+`P` · static · static · difficulty low · **RESERVE**
 
 A stepped sequence in which each step sits in a wider container than the last — measure, contained, wide, then full-bleed — so the reader physically feels the argument opening out. Width carries the ordering.
 
@@ -3175,7 +3303,7 @@ A stepped sequence in which each step sits in a wider container than the last �
 
 ### SEC-187 · Bounded Depth Frame
 
-`P` · layered · scroll-driven · difficulty medium
+`P` · layered · scroll-driven · difficulty medium · **RESERVE**
 
 Three planes — ground, subject and caption — move at slightly different rates as the section passes, with offsets deliberately small enough that no caption ever separates from the thing it names. Depth without drift.
 
@@ -3192,7 +3320,7 @@ Three planes — ground, subject and caption — move at slightly different rate
 
 ### SEC-188 · Converging Planes
 
-`P` · scroll-driven · GSAP-enhanced · difficulty medium
+`P` · scroll-driven · GSAP-enhanced · difficulty medium · **RESERVE**
 
 Caption, subject and ground begin visibly separated in depth and resolve into a single flat plane by the section's end, so the depth has a destination instead of drifting ambiently for as long as the section is on screen.
 
@@ -3200,7 +3328,7 @@ Caption, subject and ground begin visibly separated in depth and resolve into a 
 - **Use** — Ends a proof or capability section on a composed still image the reader can sit with.
 - **Desktop** — The three planes enter offset and rotated a degree or two apart across a full-bleed field; by the time the section's foot reaches the viewport they are aligned into one artefact with its caption locked beneath it.
 - **Motion** — Offsets and the small rotations resolve to zero across the section's own range and then hold.
-- **Narrow** — Planes start already converged and only opacity resolves, so the composition is identical at rest.
+- **Narrow** — Below the tablet width the concept is not present — the section renders as the converged composition with a short opacity settle, which is an ordinary entry animation rather than this concept.
 - **Risk** — Multi-plane movement is a vestibular trigger; the reduced-motion path must be the converged end state from first paint, not a shortened version of the move.
 - **Variants** — Three-plane convergence · Rotation-only resolve · Convergence onto a device plate · Convergence into a full-bleed statement
 - **Overlap** — P-06 — bounded depth never resolves and is ambient by design; this one has an end state.
@@ -3209,14 +3337,14 @@ Caption, subject and ground begin visibly separated in depth and resolve into a 
 
 ### SEC-189 · Interrupting Bleed Band
 
-`P` · static · static · difficulty low
+`P` · static · static · difficulty low · **RESERVE**
 
 A measured editorial column is interrupted by a band running the full viewport width that carries one thing — a single image or a single display-scale line — before the column resumes at exactly the same measure.
 
 - **Distinct** — The concept is the interruption and the return: it only exists relative to a maintained measure, which makes it host-dependent rather than a standalone band.
 - **Use** — Places a piece of proof at the precise sentence in an argument where it is needed, at a scale the argument itself cannot reach.
 - **Desktop** — Prose at the measure, then the band breaking out edge to edge with no caption and no chrome inside it, then the prose continuing. The band's height comes from its content, never from the viewport.
-- **Narrow** — The band still bleeds to both edges while the surrounding column keeps its side padding, so the interruption survives even where the width difference is small.
+- **Narrow** — At phone width the width difference is too small to register as an interruption, so the band is marked by a surface change and rules at its edges rather than by width alone.
 - **Risk** — Used more than once or twice on a page the interruption stops registering, because breakout only means anything against a maintained measure.
 - **Variants** — Single image band · Single display line band · Colour-field band with no content · Band with caption set back in the measure
 - **Overlap** — P-03 statement band — that is a standalone act; this is punctuation inside a column that continues.
@@ -3225,7 +3353,7 @@ A measured editorial column is interrupted by a band running the full viewport w
 
 ### SEC-190 · Chrome-Less Artefact Window
 
-`P` · swap-in-place · React-interactive · difficulty high
+`P` · swap-in-place · React-interactive · difficulty high · **SELECTED**
 
 A calm grid of artefact plates where activating one hands it the entire window — no header, no surrounding page, nothing but the artefact, one close control and a caption — and closing returns the reader to their exact scroll position and the plate they came from.
 
@@ -3234,7 +3362,7 @@ A calm grid of artefact plates where activating one hands it the entire window �
 - **Desktop** — Four to six plates on a plain field, each with a small open-full affordance; the open state shows the artefact at native proportions with a single close control and one caption line at the foot.
 - **Motion** — The plate travels and scales from its grid cell into the full window and back into the same cell on close.
 - **Narrow** — The same full-window state entered from a single-column list, with close returning to the originating row.
-- **Risk** — A chrome-less overlay must trap and restore focus, close on Escape and restore scroll exactly, or the reader is dumped at the top of the page with no orientation.
+- **Risk** — A chrome-less overlay must trap and restore focus, close on Escape and restore scroll exactly, or the reader is dumped at the top of the page with no orientation. Because the overlay occupies the whole window it is a modal dialog and must be built as one — dialog semantics, an accessible name, the background rendered inert, focus trapped and restored to the originating plate, Escape closing, and scroll position restored exactly.
 - **Variants** — Full-window document viewer · Image with caption rail · Zoomable plan view · Dark-field viewer
 - **Overlap** — C and D grid-to-detail expansion — those expand within the section; this replaces the window and must restore position.
 - **References** — shadcn full-page block previews, Storybook Issue #5598 (scroll position on switch), GSAP Flip documentation
@@ -3242,7 +3370,7 @@ A calm grid of artefact plates where activating one hands it the entire window �
 
 ### SEC-191 · Depth Without Movement
 
-`P` · layered · static · difficulty low
+`P` · layered · static · difficulty low · **SELECTED**
 
 A layered composition whose depth comes entirely from colour, opacity and blur — a receded ground tint, a mid plane at reduced contrast, a foreground at full strength — with nothing positioned differently as the page scrolls.
 
@@ -3260,7 +3388,7 @@ A layered composition whose depth comes entirely from colour, opacity and blur �
 
 ### SEC-192 · Centre-Out Grid Arrival
 
-`Q` · static · GSAP-enhanced · difficulty medium
+`Q` · static · GSAP-enhanced · difficulty medium · **RESERVE**
 
 A regular capability grid arrives as one composed event: a single grid-aware stagger radiating outward from the centre cell in rings, so the reader sees a shape being placed rather than nine unrelated animations firing as they cross a line.
 
@@ -3277,7 +3405,7 @@ A regular capability grid arrives as one composed event: a single grid-aware sta
 
 ### SEC-193 · Line-Masked Statement
 
-`Q` · static · GSAP-dependent · difficulty medium
+`Q` · static · GSAP-dependent · difficulty medium · **SELECTED** · wave 1
 
 One display-scale sentence set alone on the field, revealed line by line out of overflow-clipped masks as the section enters. The movement follows the reading direction, so it reads as craft rather than decoration.
 
@@ -3294,7 +3422,7 @@ One display-scale sentence set alone on the field, revealed line by line out of 
 
 ### SEC-194 · Reader-Steered Marquee Band
 
-`Q` · scroll-driven · GSAP-dependent · difficulty medium
+`Q` · scroll-driven · GSAP-dependent · difficulty medium · **RESERVE**
 
 A seamless band of client names or capability words loops at a slow base speed, but flips direction with the reader's scroll direction and gains speed with their velocity — so the band is legibly a response to the reader rather than ambient wallpaper.
 
@@ -3311,7 +3439,7 @@ A seamless band of client names or capability words loops at a slow base speed, 
 
 ### SEC-195 · Velocity Skew Rail
 
-`Q` · scroll-driven · GSAP-dependent · difficulty medium
+`Q` · scroll-driven · GSAP-dependent · difficulty medium · **RESERVE**
 
 A rail of real artefact stills stays exactly where the layout puts it, but skews slightly off-axis and loses saturation in proportion to how fast the reader is moving, settling true and full-colour the moment they stop.
 
@@ -3328,7 +3456,7 @@ A rail of real artefact stills stays exactly where the layout puts it, but skews
 
 ### SEC-196 · Blind-Mask Reveal
 
-`Q` · scroll-driven · GSAP-enhanced · difficulty medium
+`Q` · scroll-driven · GSAP-enhanced · difficulty medium · **SELECTED**
 
 A full-bleed proof image is uncovered through an SVG blind mask whose slat count, angle and direction come from the site's own grid and letterform geometry, so the reveal is branded rather than a generic wipe.
 
@@ -3345,7 +3473,7 @@ A full-bleed proof image is uncovered through an SVG blind mask whose slat count
 
 ### SEC-197 · Drawn Connective Rule
 
-`Q` · scroll-driven · GSAP-dependent · difficulty medium
+`Q` · scroll-driven · GSAP-dependent · difficulty medium · **RESERVE**
 
 A set of labelled claims sits across the section and a single hairline SVG rule draws between them in the order they enter the viewport, so the connection between separate statements is made visible as a line rather than asserted in copy.
 
@@ -3362,7 +3490,7 @@ A set of labelled claims sits across the section and a single hairline SVG rule 
 
 ### SEC-198 · CSS Reveal Ladder
 
-`Q` · scroll-driven · CSS-interactive · difficulty low
+`Q` · scroll-driven · CSS-interactive · difficulty low · **SELECTED** · wave 1
 
 A long argument in which paragraphs, hairline rules and figures each resolve at their own point in the section's entry — pure CSS view timelines, no JavaScript, no library lifecycle, and a fully resolved resting state where unsupported.
 
@@ -3379,7 +3507,7 @@ A long argument in which paragraphs, hairline rules and figures each resolve at 
 
 ### SEC-199 · Scrubbed Counter Band
 
-`Q` · scroll-driven · GSAP-dependent · difficulty medium
+`Q` · scroll-driven · GSAP-dependent · difficulty medium · **RESERVE**
 
 Four figures scrub with scroll position rather than counting on entry, snapping to whole units as they go, above a thin rule that fills across the band as the section is read — so the number is watched being established.
 
@@ -3396,7 +3524,7 @@ Four figures scrub with scroll position rather than counting on entry, snapping 
 
 ### SEC-200 · Focus-Pull Specification
 
-`Q` · scroll-driven · CSS-interactive · difficulty low
+`Q` · scroll-driven · CSS-interactive · difficulty low · **RESERVE**
 
 A dense specification table arrives soft and unfocused, reading first as the texture of a real document, then resolves to full sharpness as the section enters — the legibility change is itself the argument that this is documentation, not marketing.
 
@@ -3413,7 +3541,7 @@ A dense specification table arrives soft and unfocused, reading first as the tex
 
 ### SEC-201 · Scroll-Velocity Type Band
 
-`Q` · scroll-driven · GSAP-dependent · difficulty medium
+`Q` · scroll-driven · GSAP-dependent · difficulty medium · **SELECTED**
 
 A wide band of display type that is completely motionless at rest and translates only in proportion to the reader's scroll velocity, reversing with their direction — motion that exists purely as feedback and stops dead the instant they do.
 
@@ -3422,15 +3550,15 @@ A wide band of display type that is completely motionless at rest and translates
 - **Desktop** — One full-bleed line of display type, well over viewport width, cut by the band's own edges so the reader always sees it mid-phrase; a small ranged caption fixed beneath it.
 - **Motion** — Horizontal offset is driven by eased scroll velocity and returns to zero on stop; direction follows the reader.
 - **Narrow** — Reduced maximum travel and a shorter phrase so the whole line can still be assembled by scrolling once through the band.
-- **Risk** — Horizontal movement of decorative content under vertical scroll is named directly by WCAG 2.3.3, so the travel must be removed entirely under reduced motion, leaving a still, complete, legible line.
+- **Risk** — Horizontal movement of decorative content under vertical scroll is named directly by WCAG 2.3.3, so the travel must be removed entirely under reduced motion, leaving a still, complete, legible line. The phrase is never fully visible, so it must exist as one intact string in source order and must read correctly to assistive technology, reader modes and crawlers without any travel having occurred.
 - **Variants** — Display type · Thin caption rule of client names · Image strip instead of type · Two bands travelling in opposition
 - **Overlap** — Q-03 always runs and must be pausable; this is still at rest. H owns lateral movement the reader drags.
 - **References** — Magic UI scroll-based-velocity (text and image demos), ScrollTrigger.getVelocity + quickTo, W3C Understanding 2.3.3
-- **Tags** — `gsap-core` `scroll-driven` `full-bleed` `density-low` `build-medium` `budget-none` `rm-designed` `motion-sensitive`
+- **Tags** — `gsap-core` `scroll-driven` `full-bleed` `density-low` `build-medium` `budget-none` `rm-designed` `motion-sensitive` `text-integrity`
 
 ### SEC-202 · Resolving Logo Wall
 
-`Q` · scroll-driven · GSAP-enhanced · difficulty medium
+`Q` · scroll-driven · GSAP-enhanced · difficulty medium · **SELECTED**
 
 Client marks enter scattered and faint, settle into a strict monochrome grid as the section comes into view, and then stay permanently still — motion with a destination, in a family that is normally either dead or endlessly scrolling.
 
@@ -3449,7 +3577,7 @@ Client marks enter scattered and faint, settle into a strict monochrome grid as 
 
 ### SEC-203 · Node Map With Live Caption
 
-`R` · user-driven · GSAP-enhanced · difficulty medium
+`R` · user-driven · GSAP-enhanced · difficulty medium · **SELECTED**
 
 A small relationship diagram where hovering or focusing a node highlights its edges and swaps one caption line in a live region, with the complete set of relationships also written out as an ordinary list beneath the diagram. The diagram is interactive; the list is the section's actual content.
 
@@ -3466,7 +3594,7 @@ A small relationship diagram where hovering or focusing a node highlights its ed
 
 ### SEC-204 · Cross-Column Reference Matrix
 
-`R` · user-driven · CSS-interactive · difficulty medium
+`R` · user-driven · CSS-interactive · difficulty medium · **SELECTED**
 
 Three parallel dense lists — services, sectors, outcomes — where focusing or hovering any single entry dims everything unconnected in the other two columns. The resting state shows every connection, so nothing is hidden behind interaction.
 
@@ -3483,7 +3611,7 @@ Three parallel dense lists — services, sectors, outcomes — where focusing or
 
 ### SEC-205 · Coupling Map
 
-`R` · user-driven · GSAP-dependent · difficulty high
+`R` · user-driven · GSAP-dependent · difficulty high · **RESERVE**
 
 Two facing columns — what we do on the left, what changes for you on the right — joined by connectors drawn in the gutter. Every connector is present faintly by default; selecting a row on either side thickens its path and highlights its counterpart.
 
@@ -3500,7 +3628,7 @@ Two facing columns — what we do on the left, what changes for you on the right
 
 ### SEC-206 · Annotated Artefact With Note Rail
 
-`R` · user-driven · GSAP-enhanced · difficulty medium
+`R` · user-driven · GSAP-enhanced · difficulty medium · **RESERVE**
 
 One large real deliverable carrying numbered hotspots beside a scrolling note rail; activating a number moves the rail to the matching note and draws a connector between the two. A full written description sits beneath and reads correctly with no image at all.
 
@@ -3517,7 +3645,7 @@ One large real deliverable carrying numbered hotspots beside a scrolling note ra
 
 ### SEC-207 · Drag-To-Explore Artefact Field
 
-`R` · user-driven · GSAP-dependent · difficulty high
+`R` · user-driven · GSAP-dependent · difficulty high · **RESERVE**
 
 A field of real artefacts the reader pushes around with momentum rather than scrolls, with an explicit index-view control presenting the same items in the same DOM order as a plain ordered list. The escape hatch is designed into the composition, not bolted underneath it.
 
@@ -3534,7 +3662,7 @@ A field of real artefacts the reader pushes around with momentum rather than scr
 
 ### SEC-208 · Magnetic Decision Grid
 
-`R` · user-driven · GSAP-enhanced · difficulty medium
+`R` · user-driven · GSAP-enhanced · difficulty medium · **REJECT**
 
 Option tiles lean a bounded few pixels toward the pointer while it is inside a radius, and their neighbours ease away. The grid acknowledges the reader before they commit, and is complete and fully usable with the effect entirely absent.
 
@@ -3551,7 +3679,7 @@ Option tiles lean a bounded few pixels toward the pointer while it is inside a r
 
 ### SEC-209 · Alias Reveal
 
-`R` · user-driven · CSS-interactive · difficulty low
+`R` · user-driven · CSS-interactive · difficulty low · **SELECTED**
 
 A terminology section where each canonical term expands to show the three other names clients use for the same thing, plus one sentence saying what it actually means here. The equivalence between vocabularies is the subject; the disclosure is only its mechanism.
 
@@ -3560,15 +3688,15 @@ A terminology section where each canonical term expands to show the three other 
 - **Desktop** — Two columns of canonical terms at body-large on hairline rules with a chevron marker; expanding a term pushes the column down to reveal its aliases in hairline caps and one clarifying line, never overlaying.
 - **Motion** — Height opens to the content's own intrinsic size and the marker rotates; nothing else on the page shifts.
 - **Narrow** — Single column with identical behaviour and identical markup — this composition genuinely does not need a different small-screen form.
-- **Risk** — Exclusive one-open behaviour comes from the browser's own disclosure grouping, but animating to intrinsic height depends on non-Baseline calc-size, so a measured path has to exist underneath.
+- **Risk** — Each term is an independent disclosure, not a coordinated accordion, so a summary-and-details pair or a button carrying aria-expanded both suffice. Exclusivity must not be reintroduced through the details name attribute — a coordinated group needs heading-contained buttons, managed state, aria-expanded and aria-controls, and the exposed role of summary varies across assistive technology. Animating to intrinsic height depends on non-Baseline calc-size, so a measured path has to exist underneath, and in the two-column layout the expanded panel must occupy a full grid row rather than push one column down past terms the reader is scanning.
 - **Variants** — All open by default · Aliases always visible as a hairline subscript · Alias-first with the canonical term small · Expand-all control · Navy inverted
 - **Overlap** — G disclosure sections — those exist so the reader can choose depth; this exists to publish an equivalence, and would still work fully expanded.
-- **References** — The Component Gallery alias listings, MDN interpolate-size, GOV.UK vocabulary grouping
+- **References** — The Component Gallery disclosure aliases, ARIA APG disclosure pattern, Adrian Roselli and Scott O'Hara on details/summary
 - **Tags** — `css-motion` `user-driven` `contained` `density-medium` `build-low` `budget-none` `rm-free` `kbd-path`
 
 ### SEC-210 · Overlap Field
 
-`R` · user-driven · CSS-interactive · difficulty medium
+`R` · user-driven · CSS-interactive · difficulty medium · **RESERVE**
 
 Three overlapping tinted fields — strategy, design, delivery — where focusing a field or one of its intersections names in words what lives there. The complete set of regions is also written out beneath, so the geometry is an entry point rather than the only record.
 

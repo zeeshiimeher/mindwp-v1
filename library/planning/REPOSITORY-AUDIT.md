@@ -6,6 +6,8 @@ the time of inspection, plus architecture options and the decisions still open.
 This is not a design authority and must not be cited as one. It expires once the architecture is
 chosen and the real configuration exists.
 
+**Status.** Superseded by events but kept as written: the library application now exists, and the architecture it recommended was built. See [ARCHITECTURE.md](./ARCHITECTURE.md) for what was implemented.
+
 Inspected at commit `7ac888d` on a clean worktree. No application source, dependency, shared CSS,
 route or canonical document was changed by this audit.
 

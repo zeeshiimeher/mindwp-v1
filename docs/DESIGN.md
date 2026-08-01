@@ -59,6 +59,14 @@ Familiar components and conventional patterns are fully available. Distinction c
 
 Operational material — ownership, state, sequence, handoff — deserves the same visual care as expressive material. A generic dashboard or a flat flowchart must not become the automatic answer to it. Dashboards, interfaces and diagrams stay available wherever they genuinely fit the material.
 
+## Surfaces and gradients
+
+Solid navy, paper, mist and white surfaces remain the default. Gradients are optional compositional tools used only when they provide purposeful depth, atmosphere, focus, separation or overflow treatment.
+
+Use the approved shared set before creating a new gradient. Restrained navy-to-navy and light neutral gradients fit the MindWP register. Navy-to-emerald, blue-purple, rainbow, generic SaaS gradients and default gradient text do not.
+
+Gradients should not be applied automatically to buttons, headings, cards or every section. Keep clearly gradient-led moments rare, and ensure every composition still works with an appropriate solid surface. Deliberate new treatments remain possible when a page has a specific design reason for them.
+
 ## Responsive experience
 
 Narrow widths should feel intentionally designed, not compressed. Keep the meaning and the priorities, and compose them for the width — rather than taking the wide layout and removing its air.
